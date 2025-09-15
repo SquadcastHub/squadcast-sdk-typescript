@@ -1,0 +1,21 @@
+# GlobalEventRulesListGlobalEventRulesRequest
+
+## Example Usage
+
+```typescript
+import { GlobalEventRulesListGlobalEventRulesRequest } from "SquadcastSDK/models/operations";
+
+let value: GlobalEventRulesListGlobalEventRulesRequest = {
+  ownerId: "<id>",
+};
+```
+
+## Fields
+
+| Field              | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `ownerId`          | *string*           | :heavy_check_mark: | N/A                |
+| `pageSize`         | *string*           | :heavy_minus_sign: | N/A                |
+| `pageNumber`       | *string*           | :heavy_minus_sign: | N/A                |
+| `filtersOwnerId`   | *string*[]         | :heavy_minus_sign: | N/A                |
+| `filtersSearch`    | *string*           | :heavy_minus_sign: | N/A                |

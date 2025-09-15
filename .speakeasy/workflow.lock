@@ -1,0 +1,44 @@
+speakeasyVersion: 1.615.2
+sources:
+    Squadcast:
+        sourceNamespace: squadcast
+        sourceRevisionDigest: sha256:3bceb30e0e0e1441241bad792507d5361308ff6f07d3a350412fe2f640aa4e2e
+        sourceBlobDigest: sha256:7a71a574b0a34594454188b81cde1a53fa9db6ace9ef151a476de16128e48048
+        tags:
+            - latest
+            - 1.0.0
+targets:
+    squadcast-sdk:
+        source: Squadcast
+        sourceNamespace: squadcast
+        sourceRevisionDigest: sha256:3bceb30e0e0e1441241bad792507d5361308ff6f07d3a350412fe2f640aa4e2e
+        sourceBlobDigest: sha256:7a71a574b0a34594454188b81cde1a53fa9db6ace9ef151a476de16128e48048
+        codeSamplesNamespace: squadcast-typescript-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:c702bae8e84e38eba34209ce4d81b320602a4c5e5cd30a6847a00b3f4ebfb979
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Squadcast:
+            inputs:
+                - location: https://raw.githubusercontent.com/solarwinds-cloud/sq-squadcast-public-api-docs/main/build/openapi3/openapi.json
+                  authHeader: Authorization
+                  authSecret: $openapi_doc_auth_token
+            overlays:
+                - location: .speakeasy/overlay.openapi.yaml
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/swo/incident-response/squadcast
+    targets:
+        squadcast-sdk:
+            target: typescript
+            source: Squadcast
+            output: squadcastv1
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/swo/incident-response/squadcast-typescript-typescript-code-samples
+                labelOverride:
+                    fixedValue: Typescript (SDK)
+                blocking: false
+            testing:
+                enabled: false

@@ -1,0 +1,24 @@
+# GlobalEventRulesListRulesetRulesRequest
+
+## Example Usage
+
+```typescript
+import { GlobalEventRulesListRulesetRulesRequest } from "SquadcastSDK/models/operations";
+
+let value: GlobalEventRulesListRulesetRulesRequest = {
+  gerId: 397993,
+  alertSourceVersion: "<value>",
+  alertSourceShortname: "<value>",
+};
+```
+
+## Fields
+
+| Field                  | Type                   | Required               | Description            |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| `gerId`                | *number*               | :heavy_check_mark:     | N/A                    |
+| `alertSourceVersion`   | *string*               | :heavy_check_mark:     | N/A                    |
+| `alertSourceShortname` | *string*               | :heavy_check_mark:     | N/A                    |
+| `pageSize`             | *string*               | :heavy_minus_sign:     | N/A                    |
+| `pageNumber`           | *string*               | :heavy_minus_sign:     | N/A                    |
+| `filtersSearch`        | *string*               | :heavy_minus_sign:     | N/A                    |

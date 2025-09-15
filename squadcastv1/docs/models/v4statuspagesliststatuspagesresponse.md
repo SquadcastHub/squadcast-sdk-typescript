@@ -1,0 +1,22 @@
+# V4StatusPagesListStatusPagesResponse
+
+## Example Usage
+
+```typescript
+import { V4StatusPagesListStatusPagesResponse } from "SquadcastSDK/models";
+
+let value: V4StatusPagesListStatusPagesResponse = {
+  data: [],
+  meta: {
+    totalCount: 427899,
+    orgTotalCount: 248194,
+  },
+};
+```
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `data`                                                                                                   | [models.V4StatusPagesStatusPage](../models/v4statuspagesstatuspage.md)[]                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `meta`                                                                                                   | [models.V4StatusPagesListStatusPagesResponseMeta](../models/v4statuspagesliststatuspagesresponsemeta.md) | :heavy_check_mark:                                                                                       | N/A                                                                                                      |

@@ -1,0 +1,25 @@
+# OverridesListOverridesResponse
+
+The request has succeeded.
+
+## Example Usage
+
+```typescript
+import { OverridesListOverridesResponse } from "SquadcastSDK/models/operations";
+
+let value: OverridesListOverridesResponse = {
+  data: [],
+  pageInfo: {
+    pageSize: 94168,
+    hasNext: true,
+    hasPrevious: true,
+  },
+};
+```
+
+## Fields
+
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `data`                                                            | [models.V4OverrideResponse](../../models/v4overrideresponse.md)[] | :heavy_check_mark:                                                | N/A                                                               |
+| `pageInfo`                                                        | [models.CommonV4PageInfo](../../models/commonv4pageinfo.md)       | :heavy_check_mark:                                                | N/A                                                               |
