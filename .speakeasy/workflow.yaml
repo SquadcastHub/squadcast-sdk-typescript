@@ -16,6 +16,9 @@ targets:
         target: typescript
         source: Squadcast
         output: squadcastv1
+        publish:
+            npm:
+                token: $npm_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/swo/incident-response/squadcast-typescript-typescript-code-samples
