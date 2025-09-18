@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { OverlayGetAllCustomContentTemplateOverlayByServiceResponse } from "SquadcastSDK/models/operations";
+import { OverlayGetAllCustomContentTemplateOverlayByServiceResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: OverlayGetAllCustomContentTemplateOverlayByServiceResponse = {
   data: [

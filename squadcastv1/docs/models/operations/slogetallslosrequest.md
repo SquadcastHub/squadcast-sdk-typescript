@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SLOGetAllSLOsRequest } from "SquadcastSDK/models/operations";
+import { SLOGetAllSLOsRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SLOGetAllSLOsRequest = {
   ownerId: "<id>",

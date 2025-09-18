@@ -5,7 +5,7 @@ reCAPTCHA credentials to be validated
 ## Example Usage
 
 ```typescript
-import { V3WebformsRecaptchaSecrets } from "SquadcastSDK/models";
+import { V3WebformsRecaptchaSecrets } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WebformsRecaptchaSecrets = {
   siteKey: "<value>",

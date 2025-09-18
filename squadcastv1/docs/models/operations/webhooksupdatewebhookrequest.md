@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WebhooksUpdateWebhookRequest } from "SquadcastSDK/models/operations";
+import { WebhooksUpdateWebhookRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: WebhooksUpdateWebhookRequest = {
   eventWebhookID: "<id>",

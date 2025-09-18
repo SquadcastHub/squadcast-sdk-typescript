@@ -5,7 +5,7 @@ Represents an additional responder for an incident.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsAdditionalRespondersAdditionalResponder } from "SquadcastSDK/models";
+import { V3IncidentsAdditionalRespondersAdditionalResponder } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsAdditionalRespondersAdditionalResponder = {
   id: "<id>",

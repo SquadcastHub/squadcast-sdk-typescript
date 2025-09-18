@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ServicesCreateOrUpdateAPTAConfigData } from "SquadcastSDK/models/operations";
+import { ServicesCreateOrUpdateAPTAConfigData } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ServicesCreateOrUpdateAPTAConfigData = {
   msg: "<value>",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { MaintenanceModeGetMaintenanceModeRequest } from "SquadcastSDK/models/operations";
+import { MaintenanceModeGetMaintenanceModeRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: MaintenanceModeGetMaintenanceModeRequest = {
   serviceID: "<id>",

@@ -17,7 +17,7 @@ Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header wi
 
 <!-- UsageSnippet language="typescript" operationID="Notes_deleteNote" method="delete" path="/v3/incidents/{IncidentId}/warroom/{NoteId}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -40,8 +40,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { notesDelete } from "SquadcastSDK/funcs/notesDelete.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { notesDelete } from "@solarwinds/squadcast-sdk-typescript/funcs/notesDelete.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

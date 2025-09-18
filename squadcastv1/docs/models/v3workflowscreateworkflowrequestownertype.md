@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3WorkflowsCreateWorkflowRequestOwnerType } from "SquadcastSDK/models";
+import { V3WorkflowsCreateWorkflowRequestOwnerType } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WorkflowsCreateWorkflowRequestOwnerType = "squad";
 ```

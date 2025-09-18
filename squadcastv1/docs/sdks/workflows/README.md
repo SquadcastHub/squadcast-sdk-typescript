@@ -24,7 +24,7 @@ Get a list of all Workflows
 
 <!-- UsageSnippet language="typescript" operationID="Workflows_listWorkflows" method="get" path="/v3/workflows" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -46,8 +46,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { workflowsList } from "SquadcastSDK/funcs/workflowsList.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { workflowsList } from "@solarwinds/squadcast-sdk-typescript/funcs/workflowsList.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -108,7 +108,7 @@ Create a Workflow
 
 <!-- UsageSnippet language="typescript" operationID="Workflows_createWorkflow" method="post" path="/v3/workflows" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -141,8 +141,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { workflowsCreate } from "SquadcastSDK/funcs/workflowsCreate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { workflowsCreate } from "@solarwinds/squadcast-sdk-typescript/funcs/workflowsCreate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -214,7 +214,7 @@ Bulk enable or disable workflows
 
 <!-- UsageSnippet language="typescript" operationID="Workflows_bulkEnabledisableWorkflows" method="put" path="/v3/workflows/enable" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -240,8 +240,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { workflowsBulkEnableDisable } from "SquadcastSDK/funcs/workflowsBulkEnableDisable.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { workflowsBulkEnableDisable } from "@solarwinds/squadcast-sdk-typescript/funcs/workflowsBulkEnableDisable.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -306,7 +306,7 @@ Delete a workflow by ID
 
 <!-- UsageSnippet language="typescript" operationID="Workflows_deleteWorkflow" method="delete" path="/v3/workflows/{workflowID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -328,8 +328,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { workflowsDelete } from "SquadcastSDK/funcs/workflowsDelete.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { workflowsDelete } from "@solarwinds/squadcast-sdk-typescript/funcs/workflowsDelete.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -390,7 +390,7 @@ Get a workflow by ID
 
 <!-- UsageSnippet language="typescript" operationID="Workflows_getWorkflowById" method="get" path="/v3/workflows/{workflowID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -412,8 +412,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { workflowsGetById } from "SquadcastSDK/funcs/workflowsGetById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { workflowsGetById } from "@solarwinds/squadcast-sdk-typescript/funcs/workflowsGetById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -474,7 +474,7 @@ Update a Workflow
 
 <!-- UsageSnippet language="typescript" operationID="Workflows_updateWorkflow" method="patch" path="/v3/workflows/{workflowID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -497,8 +497,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { workflowsUpdate } from "SquadcastSDK/funcs/workflowsUpdate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { workflowsUpdate } from "@solarwinds/squadcast-sdk-typescript/funcs/workflowsUpdate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -560,7 +560,7 @@ Update action order in a workflow
 
 <!-- UsageSnippet language="typescript" operationID="Workflows_updateActionsOrder" method="patch" path="/v3/workflows/{workflowID}/actions/reorder" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -583,8 +583,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { workflowsUpdateActionsOrder } from "SquadcastSDK/funcs/workflowsUpdateActionsOrder.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { workflowsUpdateActionsOrder } from "@solarwinds/squadcast-sdk-typescript/funcs/workflowsUpdateActionsOrder.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -646,7 +646,7 @@ Delete an action by action ID
 
 <!-- UsageSnippet language="typescript" operationID="Workflows_deleteWorkflowAction" method="delete" path="/v3/workflows/{workflowID}/actions/{actionID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -669,8 +669,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { workflowsDeleteAction } from "SquadcastSDK/funcs/workflowsDeleteAction.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { workflowsDeleteAction } from "@solarwinds/squadcast-sdk-typescript/funcs/workflowsDeleteAction.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -732,7 +732,7 @@ Update an action by action ID
 
 <!-- UsageSnippet language="typescript" operationID="Workflows_updateWorkflowAction" method="patch" path="/v3/workflows/{workflowID}/actions/{actionID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -758,8 +758,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { workflowsUpdateAction } from "SquadcastSDK/funcs/workflowsUpdateAction.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { workflowsUpdateAction } from "@solarwinds/squadcast-sdk-typescript/funcs/workflowsUpdateAction.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -824,7 +824,7 @@ Enable or disable workflow by ID
 
 <!-- UsageSnippet language="typescript" operationID="Workflows_enabledisableWorkflow" method="patch" path="/v3/workflows/{workflowID}/enable" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -847,8 +847,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { workflowsEnableDisable } from "SquadcastSDK/funcs/workflowsEnableDisable.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { workflowsEnableDisable } from "@solarwinds/squadcast-sdk-typescript/funcs/workflowsEnableDisable.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

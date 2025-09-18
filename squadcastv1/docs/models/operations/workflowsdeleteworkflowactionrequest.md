@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WorkflowsDeleteWorkflowActionRequest } from "SquadcastSDK/models/operations";
+import { WorkflowsDeleteWorkflowActionRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: WorkflowsDeleteWorkflowActionRequest = {
   workflowID: "<id>",

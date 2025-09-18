@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DependenciesCreateOrUpdateDependenciesRequest } from "SquadcastSDK/models/operations";
+import { DependenciesCreateOrUpdateDependenciesRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: DependenciesCreateOrUpdateDependenciesRequest = {
   serviceID: "<id>",

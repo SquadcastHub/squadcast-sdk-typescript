@@ -5,7 +5,7 @@ Defines a mapping from a Squadcast Team/Service to a specific MS Teams channel.
 ## Example Usage
 
 ```typescript
-import { V3ExtensionsMSTeamsChannelConfiguration } from "SquadcastSDK/models";
+import { V3ExtensionsMSTeamsChannelConfiguration } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ExtensionsMSTeamsChannelConfiguration = {
   squadcastTeamId: "<id>",

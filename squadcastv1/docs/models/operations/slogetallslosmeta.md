@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SLOGetAllSLOsMeta } from "SquadcastSDK/models/operations";
+import { SLOGetAllSLOsMeta } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SLOGetAllSLOsMeta = {
   total: 408103,

@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { ComponentGroupsGetComponentGroupByIdResponse } from "SquadcastSDK/models/operations";
+import { ComponentGroupsGetComponentGroupByIdResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ComponentGroupsGetComponentGroupByIdResponse = {
   data: {

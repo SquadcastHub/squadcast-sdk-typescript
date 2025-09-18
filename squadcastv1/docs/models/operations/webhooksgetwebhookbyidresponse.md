@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { WebhooksGetWebhookByIdResponse } from "SquadcastSDK/models/operations";
+import { WebhooksGetWebhookByIdResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: WebhooksGetWebhookByIdResponse = {
   data: {

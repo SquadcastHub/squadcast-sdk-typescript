@@ -5,7 +5,7 @@ Represents the request body for creating a new runbook.
 ## Example Usage
 
 ```typescript
-import { V3RunbooksCreateRunbookRequest } from "SquadcastSDK/models";
+import { V3RunbooksCreateRunbookRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3RunbooksCreateRunbookRequest = {
   name: "<value>",

@@ -16,7 +16,7 @@ Get Org level analytics
 
 <!-- UsageSnippet language="typescript" operationID="Analytics_getOrgAnalytics" method="get" path="/v3/analyticsv2/organization" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -39,8 +39,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { analyticsGetOrganization } from "SquadcastSDK/funcs/analyticsGetOrganization.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { analyticsGetOrganization } from "@solarwinds/squadcast-sdk-typescript/funcs/analyticsGetOrganization.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -102,7 +102,7 @@ Get Team level analytics
 
 <!-- UsageSnippet language="typescript" operationID="Analytics_getTeamAnalytics" method="get" path="/v3/analyticsv2/team" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -126,8 +126,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { analyticsGetTeam } from "SquadcastSDK/funcs/analyticsGetTeam.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { analyticsGetTeam } from "@solarwinds/squadcast-sdk-typescript/funcs/analyticsGetTeam.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

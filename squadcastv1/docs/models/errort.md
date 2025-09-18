@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ErrorT } from "SquadcastSDK/models";
+import { ErrorT } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: ErrorT = {
   code: "<value>",

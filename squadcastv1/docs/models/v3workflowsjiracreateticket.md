@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3WorkflowsJiraCreateTicket } from "SquadcastSDK/models";
+import { V3WorkflowsJiraCreateTicket } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WorkflowsJiraCreateTicket = {
   name: "jira_create_ticket",

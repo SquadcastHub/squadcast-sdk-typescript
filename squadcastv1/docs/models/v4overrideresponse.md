@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V4OverrideResponse } from "SquadcastSDK/models";
+import { V4OverrideResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V4OverrideResponse = {
   id: 239648,

@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { IncidentActionsCreateATicketOnJiraCloudResponse } from "SquadcastSDK/models/operations";
+import { IncidentActionsCreateATicketOnJiraCloudResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentActionsCreateATicketOnJiraCloudResponse = {
   data: "<value>",

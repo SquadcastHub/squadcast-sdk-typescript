@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SchedulesChangeTimezoneRequestBody } from "SquadcastSDK/models/operations";
+import { SchedulesChangeTimezoneRequestBody } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SchedulesChangeTimezoneRequestBody = {};
 ```

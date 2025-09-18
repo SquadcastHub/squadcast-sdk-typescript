@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V4Tag } from "SquadcastSDK/models";
+import { V4Tag } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V4Tag = {
   key: "<key>",

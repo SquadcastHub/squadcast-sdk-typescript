@@ -15,7 +15,7 @@ Rebuild a Project In CircleCI
 
 <!-- UsageSnippet language="typescript" operationID="IncidentActions_rebuildAProjectInCircleci" method="post" path="/v3/incidents/{incidentID}/actions/circleci/rebuild/{buildNumber}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -43,8 +43,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentActionsCircleciRebuild } from "SquadcastSDK/funcs/incidentActionsCircleciRebuild.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentActionsCircleciRebuild } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentActionsCircleciRebuild.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

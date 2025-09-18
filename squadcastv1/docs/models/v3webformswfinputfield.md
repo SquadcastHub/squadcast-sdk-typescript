@@ -5,7 +5,7 @@ Input field definition for a webform
 ## Example Usage
 
 ```typescript
-import { V3WebformsWFInputField } from "SquadcastSDK/models";
+import { V3WebformsWFInputField } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WebformsWFInputField = {
   label: "<value>",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComponentGroupsGetComponentGroupByIdRequest } from "SquadcastSDK/models/operations";
+import { ComponentGroupsGetComponentGroupByIdRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ComponentGroupsGetComponentGroupByIdRequest = {
   statuspageID: "<id>",

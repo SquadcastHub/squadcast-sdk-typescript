@@ -5,7 +5,7 @@ Server error
 ## Example Usage
 
 ```typescript
-import { InternalServerError } from "SquadcastSDK/models/errors";
+import { InternalServerError } from "@solarwinds/squadcast-sdk-typescript/models/errors";
 
 // No examples available for this model
 ```

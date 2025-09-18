@@ -24,7 +24,7 @@ deduped - if set to true, it will return only the deduplicated events. if set to
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_getIncidentEvents" method="get" path="/v3/incidents/{incidentID}/events" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -50,8 +50,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsEventsList } from "SquadcastSDK/funcs/incidentsEventsList.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsEventsList } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsEventsList.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

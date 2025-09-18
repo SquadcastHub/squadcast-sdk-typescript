@@ -5,7 +5,7 @@ Request body for updating an existing postmortem.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsPostmortemsUpdatePostmortemRequest } from "SquadcastSDK/models";
+import { V3IncidentsPostmortemsUpdatePostmortemRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsPostmortemsUpdatePostmortemRequest = {};
 ```

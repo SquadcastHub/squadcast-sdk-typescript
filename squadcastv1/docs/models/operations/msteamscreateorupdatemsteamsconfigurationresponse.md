@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { MSTeamsCreateOrUpdateMsteamsConfigurationResponse } from "SquadcastSDK/models/operations";
+import { MSTeamsCreateOrUpdateMsteamsConfigurationResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: MSTeamsCreateOrUpdateMsteamsConfigurationResponse = {
   data: {

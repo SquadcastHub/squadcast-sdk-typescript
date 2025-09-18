@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V4StatusPagesIssuesGetIssueByIdResponse } from "SquadcastSDK/models";
+import { V4StatusPagesIssuesGetIssueByIdResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V4StatusPagesIssuesGetIssueByIdResponse = {
   id: 15889,

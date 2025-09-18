@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PreviousSuccessfulBuild } from "SquadcastSDK/models";
+import { PreviousSuccessfulBuild } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: PreviousSuccessfulBuild = {
   buildNum: 8084,

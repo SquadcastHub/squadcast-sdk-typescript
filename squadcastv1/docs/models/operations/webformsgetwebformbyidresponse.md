@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { WebformsGetWebformByIdResponse } from "SquadcastSDK/models/operations";
+import { WebformsGetWebformByIdResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: WebformsGetWebformByIdResponse = {
   data: {

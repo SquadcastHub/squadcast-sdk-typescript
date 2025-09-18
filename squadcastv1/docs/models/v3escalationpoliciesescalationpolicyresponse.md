@@ -5,7 +5,7 @@ Represents an Escalation Policy in the system.
 ## Example Usage
 
 ```typescript
-import { V3EscalationPoliciesEscalationPolicyResponse } from "SquadcastSDK/models";
+import { V3EscalationPoliciesEscalationPolicyResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3EscalationPoliciesEscalationPolicyResponse = {
   id: "<id>",

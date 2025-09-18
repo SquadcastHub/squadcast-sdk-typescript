@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesSuppressionRulesBasicExpression } from "SquadcastSDK/models";
+import { V3ServicesSuppressionRulesBasicExpression } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesSuppressionRulesBasicExpression = {
   lhs: "<value>",

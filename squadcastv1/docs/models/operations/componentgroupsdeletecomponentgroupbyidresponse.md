@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { ComponentGroupsDeleteComponentGroupByIdResponse } from "SquadcastSDK/models/operations";
+import { ComponentGroupsDeleteComponentGroupByIdResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ComponentGroupsDeleteComponentGroupByIdResponse = {
   data: {

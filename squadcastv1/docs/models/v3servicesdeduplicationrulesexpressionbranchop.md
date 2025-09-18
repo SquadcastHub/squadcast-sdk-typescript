@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesDeduplicationRulesExpressionBranchOp } from "SquadcastSDK/models";
+import { V3ServicesDeduplicationRulesExpressionBranchOp } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesDeduplicationRulesExpressionBranchOp = "field_gt_eq";
 ```

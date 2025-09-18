@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EscalationPoliciesUpdateEscalationPolicyRequest } from "SquadcastSDK/models/operations";
+import { EscalationPoliciesUpdateEscalationPolicyRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 // No examples available for this model
 ```

@@ -5,7 +5,7 @@ Analytics metrics for TTA (Time to Acknowledge) and TTR (Time to Resolve).
 ## Example Usage
 
 ```typescript
-import { V3IncidentsAnalyticsMetrics } from "SquadcastSDK/models";
+import { V3IncidentsAnalyticsMetrics } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsAnalyticsMetrics = {
   time: 741790,

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest } from "SquadcastSDK/models/operations";
+import { GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest = {
   ownerId: "<id>",

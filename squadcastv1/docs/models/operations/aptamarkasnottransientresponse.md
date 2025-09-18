@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { AptaMarkAsNotTransientResponse } from "SquadcastSDK/models/operations";
+import { AptaMarkAsNotTransientResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: AptaMarkAsNotTransientResponse = {
   data: {

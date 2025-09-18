@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SLOMarkSLOFalsePositiveRequest } from "SquadcastSDK/models/operations";
+import { SLOMarkSLOFalsePositiveRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SLOMarkSLOFalsePositiveRequest = {
   sloID: 674015,

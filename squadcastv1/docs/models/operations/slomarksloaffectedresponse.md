@@ -5,7 +5,7 @@ The request has succeeded and a new resource has been created as a result.
 ## Example Usage
 
 ```typescript
-import { SLOMarkSLOAffectedResponse } from "SquadcastSDK/models/operations";
+import { SLOMarkSLOAffectedResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SLOMarkSLOAffectedResponse = {
   data: {

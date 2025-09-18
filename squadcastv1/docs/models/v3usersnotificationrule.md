@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3UsersNotificationRule } from "SquadcastSDK/models";
+import { V3UsersNotificationRule } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3UsersNotificationRule = {
   type: "<value>",

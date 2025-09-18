@@ -5,7 +5,7 @@ The server could not understand the request due to invalid syntax.
 ## Example Usage
 
 ```typescript
-import { BadRequestError } from "SquadcastSDK/models/errors";
+import { BadRequestError } from "@solarwinds/squadcast-sdk-typescript/models/errors";
 
 // No examples available for this model
 ```

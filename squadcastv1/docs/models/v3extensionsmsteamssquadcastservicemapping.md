@@ -5,7 +5,7 @@ Maps a specific Squadcast service to a channel configuration.
 ## Example Usage
 
 ```typescript
-import { V3ExtensionsMSTeamsSquadCastServiceMapping } from "SquadcastSDK/models";
+import { V3ExtensionsMSTeamsSquadCastServiceMapping } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ExtensionsMSTeamsSquadCastServiceMapping = {
   squadcastServiceId: "<id>",

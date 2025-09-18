@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WebformsGetAllWebformsMeta } from "SquadcastSDK/models/operations";
+import { WebformsGetAllWebformsMeta } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: WebformsGetAllWebformsMeta = {
   totalCount: 707171,

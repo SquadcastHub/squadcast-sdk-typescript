@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { RotationsUpdateRotationRequest } from "SquadcastSDK/models/operations";
+import { RotationsUpdateRotationRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: RotationsUpdateRotationRequest = {
   scheduleID: "<id>",

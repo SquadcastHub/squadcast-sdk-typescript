@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3WorkflowsEntityOwner } from "SquadcastSDK/models";
+import { V3WorkflowsEntityOwner } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WorkflowsEntityOwner = {
   id: "<id>",

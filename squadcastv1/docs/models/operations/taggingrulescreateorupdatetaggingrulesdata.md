@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TaggingRulesCreateOrUpdateTaggingRulesData } from "SquadcastSDK/models/operations";
+import { TaggingRulesCreateOrUpdateTaggingRulesData } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: TaggingRulesCreateOrUpdateTaggingRulesData = {
   rules: [

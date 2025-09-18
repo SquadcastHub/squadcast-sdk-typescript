@@ -5,7 +5,7 @@ Represents the metadata for a CircleCI error response.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsIncidentActionsCircleCIErrorMeta } from "SquadcastSDK/models";
+import { V3IncidentsIncidentActionsCircleCIErrorMeta } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsIncidentActionsCircleCIErrorMeta = {
   statusCode: 146274,

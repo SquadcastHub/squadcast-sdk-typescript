@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { RotationsUpdateRotationParticipantsResponse } from "SquadcastSDK/models/operations";
+import { RotationsUpdateRotationParticipantsResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: RotationsUpdateRotationParticipantsResponse = {
   data: {

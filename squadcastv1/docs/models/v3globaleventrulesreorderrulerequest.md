@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3GlobalEventRulesReorderRuleRequest } from "SquadcastSDK/models";
+import { V3GlobalEventRulesReorderRuleRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3GlobalEventRulesReorderRuleRequest = {};
 ```

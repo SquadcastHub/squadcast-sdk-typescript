@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { SnoozeNotificationsUnsnoozeIncidentNotificationsResponse } from "SquadcastSDK/models/operations";
+import { SnoozeNotificationsUnsnoozeIncidentNotificationsResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SnoozeNotificationsUnsnoozeIncidentNotificationsResponse = {
   data: {

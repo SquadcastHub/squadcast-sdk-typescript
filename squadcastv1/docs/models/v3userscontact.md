@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3UsersContact } from "SquadcastSDK/models";
+import { V3UsersContact } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3UsersContact = {
   dialCode: "<value>",

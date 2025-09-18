@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ExtensionsWebhooksGetAllWebhooksResponseMeta } from "SquadcastSDK/models";
+import { V3ExtensionsWebhooksGetAllWebhooksResponseMeta } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ExtensionsWebhooksGetAllWebhooksResponseMeta = {
   totalCount: 23207,

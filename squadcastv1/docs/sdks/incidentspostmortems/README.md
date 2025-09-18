@@ -18,7 +18,7 @@
 
 <!-- UsageSnippet language="typescript" operationID="Postmortems_getAllPostmortems" method="get" path="/v3/incidents/postmortem" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -43,8 +43,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsPostmortemsGetAll } from "SquadcastSDK/funcs/incidentsPostmortemsGetAll.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsPostmortemsGetAll } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsPostmortemsGetAll.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -109,7 +109,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Postmortems_getPostmortemByIncident" method="get" path="/v3/incidents/{incidentID}/postmortem" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -131,8 +131,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsPostmortemsGetByIncident } from "SquadcastSDK/funcs/incidentsPostmortemsGetByIncident.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsPostmortemsGetByIncident } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsPostmortemsGetByIncident.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -194,7 +194,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Postmortems_createPostmortem" method="post" path="/v3/incidents/{incidentID}/postmortem" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -226,8 +226,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsPostmortemsCreate } from "SquadcastSDK/funcs/incidentsPostmortemsCreate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsPostmortemsCreate } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsPostmortemsCreate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

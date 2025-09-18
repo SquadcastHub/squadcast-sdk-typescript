@@ -21,7 +21,7 @@ Create a GER Ruleset.
 
 <!-- UsageSnippet language="typescript" operationID="GlobalEventRules_createRuleset" method="post" path="/v3/global-event-rules/{ger_id}/rulesets" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -47,8 +47,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalEventRulesRulesetsCreate } from "SquadcastSDK/funcs/globalEventRulesRulesetsCreate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalEventRulesRulesetsCreate } from "@solarwinds/squadcast-sdk-typescript/funcs/globalEventRulesRulesetsCreate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -113,7 +113,7 @@ Get a GER Ruleset
 
 <!-- UsageSnippet language="typescript" operationID="GlobalEventRules_getRuleset" method="get" path="/v3/global-event-rules/{ger_id}/rulesets/{alert_source_version}/{alert_source_shortname}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -137,8 +137,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalEventRulesRulesetsGet } from "SquadcastSDK/funcs/globalEventRulesRulesetsGet.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalEventRulesRulesetsGet } from "@solarwinds/squadcast-sdk-typescript/funcs/globalEventRulesRulesetsGet.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -201,7 +201,7 @@ Update a GER Ruleset
 
 <!-- UsageSnippet language="typescript" operationID="GlobalEventRules_updateRuleset" method="patch" path="/v3/global-event-rules/{ger_id}/rulesets/{alert_source_version}/{alert_source_shortname}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -226,8 +226,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalEventRulesRulesetsUpdate } from "SquadcastSDK/funcs/globalEventRulesRulesetsUpdate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalEventRulesRulesetsUpdate } from "@solarwinds/squadcast-sdk-typescript/funcs/globalEventRulesRulesetsUpdate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -291,7 +291,7 @@ Reorder rules of a GER Ruleset
 
 <!-- UsageSnippet language="typescript" operationID="GlobalEventRules_reorderRuleset" method="patch" path="/v3/global-event-rules/{ger_id}/rulesets/{alert_source_version}/{alert_source_shortname}/priority" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -316,8 +316,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalEventRulesRulesetsReorder } from "SquadcastSDK/funcs/globalEventRulesRulesetsReorder.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalEventRulesRulesetsReorder } from "@solarwinds/squadcast-sdk-typescript/funcs/globalEventRulesRulesetsReorder.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -370,7 +370,7 @@ Get all rules of a GER Ruleset.
 
 <!-- UsageSnippet language="typescript" operationID="GlobalEventRules_listRulesetRules" method="get" path="/v3/global-event-rules/{ger_id}/rulesets/{alert_source_version}/{alert_source_shortname}/rules" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -394,8 +394,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalEventRulesRulesetsListRules } from "SquadcastSDK/funcs/globalEventRulesRulesetsListRules.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalEventRulesRulesetsListRules } from "@solarwinds/squadcast-sdk-typescript/funcs/globalEventRulesRulesetsListRules.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -458,7 +458,7 @@ Create a GER Ruleset Rule.
 
 <!-- UsageSnippet language="typescript" operationID="GlobalEventRules_createRule" method="post" path="/v3/global-event-rules/{ger_id}/rulesets/{alert_source_version}/{alert_source_shortname}/rules" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -489,8 +489,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalEventRulesRulesetsCreateRule } from "SquadcastSDK/funcs/globalEventRulesRulesetsCreateRule.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalEventRulesRulesetsCreateRule } from "@solarwinds/squadcast-sdk-typescript/funcs/globalEventRulesRulesetsCreateRule.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -560,7 +560,7 @@ Update a GER Ruleset Rule by its ID.
 
 <!-- UsageSnippet language="typescript" operationID="GlobalEventRules_updateRuleById" method="patch" path="/v3/global-event-rules/{ger_id}/rulesets/{alert_source_version}/{alert_source_shortname}/rules/{rule_id}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -586,8 +586,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalEventRulesRulesetsUpdateRule } from "SquadcastSDK/funcs/globalEventRulesRulesetsUpdateRule.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalEventRulesRulesetsUpdateRule } from "@solarwinds/squadcast-sdk-typescript/funcs/globalEventRulesRulesetsUpdateRule.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -5,7 +5,7 @@ Service details for a webform
 ## Example Usage
 
 ```typescript
-import { V3WebformsWFService } from "SquadcastSDK/models";
+import { V3WebformsWFService } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WebformsWFService = {
   serviceId: "<id>",

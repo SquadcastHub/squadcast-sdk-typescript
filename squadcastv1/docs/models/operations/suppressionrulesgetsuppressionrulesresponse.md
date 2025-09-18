@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { SuppressionRulesGetSuppressionRulesResponse } from "SquadcastSDK/models/operations";
+import { SuppressionRulesGetSuppressionRulesResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SuppressionRulesGetSuppressionRulesResponse = {
   data: {

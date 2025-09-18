@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OverridesUpdateScheduleOverrideRequest } from "SquadcastSDK/models/operations";
+import { OverridesUpdateScheduleOverrideRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: OverridesUpdateScheduleOverrideRequest = {
   scheduleID: "<id>",

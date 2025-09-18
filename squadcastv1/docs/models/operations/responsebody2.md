@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ResponseBody2 } from "SquadcastSDK/models/operations";
+import { ResponseBody2 } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ResponseBody2 = {
   data: {

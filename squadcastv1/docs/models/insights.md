@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Insights } from "SquadcastSDK/models";
+import { Insights } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: Insights = {
   errorBudgetConsumptionForPast30days: 659751,

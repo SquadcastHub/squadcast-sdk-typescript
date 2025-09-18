@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesDeduplicationRulesDeduplicationRuleResponse } from "SquadcastSDK/models";
+import { V3ServicesDeduplicationRulesDeduplicationRuleResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesDeduplicationRulesDeduplicationRuleResponse = {
   expression: "<value>",

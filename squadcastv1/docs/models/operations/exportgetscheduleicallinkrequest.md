@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ExportGetScheduleIcalLinkRequest } from "SquadcastSDK/models/operations";
+import { ExportGetScheduleIcalLinkRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ExportGetScheduleIcalLinkRequest = {
   scheduleID: "<id>",

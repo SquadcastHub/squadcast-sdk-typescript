@@ -5,7 +5,7 @@ Access is unauthorized.
 ## Example Usage
 
 ```typescript
-import { UnauthorizedError } from "SquadcastSDK/models/errors";
+import { UnauthorizedError } from "@solarwinds/squadcast-sdk-typescript/models/errors";
 
 // No examples available for this model
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TagsAppendTagRequest } from "SquadcastSDK/models/operations";
+import { TagsAppendTagRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: TagsAppendTagRequest = {
   incidentId: "<id>",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AnalyticsGetOrgAnalyticsRequest } from "SquadcastSDK/models/operations";
+import { AnalyticsGetOrgAnalyticsRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: AnalyticsGetOrgAnalyticsRequest = {
   from: "<value>",

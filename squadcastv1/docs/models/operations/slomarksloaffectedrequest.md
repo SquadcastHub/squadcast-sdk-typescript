@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SLOMarkSLOAffectedRequest } from "SquadcastSDK/models/operations";
+import { SLOMarkSLOAffectedRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SLOMarkSLOAffectedRequest = {
   sloID: 884297,

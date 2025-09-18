@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GlobalEventRulesGetGlobalEventRuleByIdRequest } from "SquadcastSDK/models/operations";
+import { GlobalEventRulesGetGlobalEventRuleByIdRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: GlobalEventRulesGetGlobalEventRuleByIdRequest = {
   gerId: 594946,

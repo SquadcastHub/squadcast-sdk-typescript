@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OverlayCreateOrUpdateNotificationTemplateOverlayRequest } from "SquadcastSDK/models/operations";
+import { OverlayCreateOrUpdateNotificationTemplateOverlayRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: OverlayCreateOrUpdateNotificationTemplateOverlayRequest = {
   serviceID: "<id>",

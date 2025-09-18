@@ -5,7 +5,7 @@ There is no content to send for this request, but the headers may be useful.
 ## Example Usage
 
 ```typescript
-import { AdditionalRespondersRemoveAdditionalRespondersResponseBody } from "SquadcastSDK/models/operations";
+import { AdditionalRespondersRemoveAdditionalRespondersResponseBody } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: AdditionalRespondersRemoveAdditionalRespondersResponseBody = {};
 ```

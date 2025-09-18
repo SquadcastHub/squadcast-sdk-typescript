@@ -5,7 +5,7 @@ Reference to a merged incident entity.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsMergeIncidentEntityReference } from "SquadcastSDK/models";
+import { V3IncidentsMergeIncidentEntityReference } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsMergeIncidentEntityReference = {
   id: "<id>",

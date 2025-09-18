@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ExtensionsUpdateSlackExtensionRequest } from "SquadcastSDK/models/operations";
+import { ExtensionsUpdateSlackExtensionRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ExtensionsUpdateSlackExtensionRequest = {
   serviceID: "<id>",

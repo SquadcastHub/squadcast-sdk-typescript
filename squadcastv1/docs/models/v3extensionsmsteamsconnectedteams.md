@@ -5,7 +5,7 @@ Represents a connected MS Team and its channel configurations.
 ## Example Usage
 
 ```typescript
-import { V3ExtensionsMSTeamsConnectedTeams } from "SquadcastSDK/models";
+import { V3ExtensionsMSTeamsConnectedTeams } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ExtensionsMSTeamsConnectedTeams = {
   teamId: "<id>",

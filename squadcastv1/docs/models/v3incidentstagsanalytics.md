@@ -5,7 +5,7 @@ Incident analytics data.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsTagsAnalytics } from "SquadcastSDK/models";
+import { V3IncidentsTagsAnalytics } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsTagsAnalytics = {
   tta: {

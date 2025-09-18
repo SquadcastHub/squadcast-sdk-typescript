@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3IncidentsIncidentExportRequestIsStarred } from "SquadcastSDK/models";
+import { V3IncidentsIncidentExportRequestIsStarred } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsIncidentExportRequestIsStarred = "no";
 ```

@@ -5,7 +5,7 @@ Represents a rule within an escalation policy.
 ## Example Usage
 
 ```typescript
-import { V3EscalationPoliciesEscalationPolicyRule } from "SquadcastSDK/models";
+import { V3EscalationPoliciesEscalationPolicyRule } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3EscalationPoliciesEscalationPolicyRule = {
   escalationTime: 292092,

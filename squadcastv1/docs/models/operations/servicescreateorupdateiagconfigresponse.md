@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { ServicesCreateOrUpdateIAGConfigResponse } from "SquadcastSDK/models/operations";
+import { ServicesCreateOrUpdateIAGConfigResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ServicesCreateOrUpdateIAGConfigResponse = {
   data: {

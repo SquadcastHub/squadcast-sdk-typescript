@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { PostmortemsDeletePostmortemByIncidentResponse } from "SquadcastSDK/models/operations";
+import { PostmortemsDeletePostmortemByIncidentResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: PostmortemsDeletePostmortemByIncidentResponse = {
   data: {

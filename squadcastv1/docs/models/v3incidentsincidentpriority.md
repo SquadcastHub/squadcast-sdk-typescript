@@ -5,7 +5,7 @@ Represents the priority of an incident.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsIncidentPriority } from "SquadcastSDK/models";
+import { V3IncidentsIncidentPriority } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsIncidentPriority = "P4";
 ```

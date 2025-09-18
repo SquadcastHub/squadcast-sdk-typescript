@@ -5,7 +5,7 @@ Request body for updating a communication card.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsCommunicationCardsUpdateCommunicationCardRequest } from "SquadcastSDK/models";
+import { V3IncidentsCommunicationCardsUpdateCommunicationCardRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsCommunicationCardsUpdateCommunicationCardRequest = {
   title: "<value>",

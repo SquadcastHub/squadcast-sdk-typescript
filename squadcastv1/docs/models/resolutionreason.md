@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ResolutionReason } from "SquadcastSDK/models";
+import { ResolutionReason } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: ResolutionReason = {
   message: "<value>",

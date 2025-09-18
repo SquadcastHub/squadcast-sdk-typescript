@@ -16,7 +16,7 @@ Update Tag
 
 <!-- UsageSnippet language="typescript" operationID="Tags_updateTag" method="put" path="/v3/incidents/{IncidentId}/tags" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsTagsUpdate } from "SquadcastSDK/funcs/incidentsTagsUpdate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsTagsUpdate } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsTagsUpdate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -106,7 +106,7 @@ Append Tag
 
 <!-- UsageSnippet language="typescript" operationID="Tags_appendTag" method="patch" path="/v3/incidents/{IncidentId}/tags" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -129,8 +129,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsTagsAppend } from "SquadcastSDK/funcs/incidentsTagsAppend.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsTagsAppend } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsTagsAppend.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

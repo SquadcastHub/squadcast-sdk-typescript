@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EscalationPoliciesGetEscalationPolicyByIdRequest } from "SquadcastSDK/models/operations";
+import { EscalationPoliciesGetEscalationPolicyByIdRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: EscalationPoliciesGetEscalationPolicyByIdRequest = {
   escalationPolicyID: "<id>",

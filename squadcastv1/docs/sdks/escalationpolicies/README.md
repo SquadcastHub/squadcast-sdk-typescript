@@ -20,7 +20,7 @@ Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header wi
 
 <!-- UsageSnippet language="typescript" operationID="EscalationPolicies_getEscalationPolicyByTeam" method="get" path="/v3/escalation-policies" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -40,8 +40,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { escalationPoliciesListByTeam } from "SquadcastSDK/funcs/escalationPoliciesListByTeam.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { escalationPoliciesListByTeam } from "@solarwinds/squadcast-sdk-typescript/funcs/escalationPoliciesListByTeam.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -101,7 +101,7 @@ Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header wi
 
 <!-- UsageSnippet language="typescript" operationID="EscalationPolicies_createEscalationPolicies" method="post" path="/v3/escalation-policies" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -146,8 +146,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { escalationPoliciesCreate } from "SquadcastSDK/funcs/escalationPoliciesCreate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { escalationPoliciesCreate } from "@solarwinds/squadcast-sdk-typescript/funcs/escalationPoliciesCreate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -232,7 +232,7 @@ Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header wi
 
 <!-- UsageSnippet language="typescript" operationID="EscalationPolicies_removeEscalationPolicy" method="delete" path="/v3/escalation-policies/{escalationPolicyID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -254,8 +254,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { escalationPoliciesRemove } from "SquadcastSDK/funcs/escalationPoliciesRemove.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { escalationPoliciesRemove } from "@solarwinds/squadcast-sdk-typescript/funcs/escalationPoliciesRemove.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -317,7 +317,7 @@ Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header wi
 
 <!-- UsageSnippet language="typescript" operationID="EscalationPolicies_getEscalationPolicyById" method="get" path="/v3/escalation-policies/{escalationPolicyID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -339,8 +339,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { escalationPoliciesGetById } from "SquadcastSDK/funcs/escalationPoliciesGetById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { escalationPoliciesGetById } from "@solarwinds/squadcast-sdk-typescript/funcs/escalationPoliciesGetById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -402,7 +402,7 @@ Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header wi
 
 <!-- UsageSnippet language="typescript" operationID="EscalationPolicies_updateEscalationPolicy" method="post" path="/v3/escalation-policies/{escalationPolicyID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 import { openAsBlob } from "node:fs";
 
 const squadcastSDK = new SquadcastSDK({
@@ -426,8 +426,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { escalationPoliciesUpdate } from "SquadcastSDK/funcs/escalationPoliciesUpdate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { escalationPoliciesUpdate } from "@solarwinds/squadcast-sdk-typescript/funcs/escalationPoliciesUpdate.js";
 import { openAsBlob } from "node:fs";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.

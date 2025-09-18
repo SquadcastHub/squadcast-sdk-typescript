@@ -5,7 +5,7 @@ Public API request for creating a webform
 ## Example Usage
 
 ```typescript
-import { V3WebformsCreateOrUpdateWebformRequest } from "SquadcastSDK/models";
+import { V3WebformsCreateOrUpdateWebformRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WebformsCreateOrUpdateWebformRequest = {
   ownerId: "<id>",

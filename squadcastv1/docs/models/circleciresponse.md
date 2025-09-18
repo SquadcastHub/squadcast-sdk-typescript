@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CircleciResponse } from "SquadcastSDK/models";
+import { CircleciResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: CircleciResponse = {
   username: "Kristofer73",

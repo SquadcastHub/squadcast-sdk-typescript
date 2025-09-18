@@ -5,7 +5,7 @@ Represents a Postmortem in the system.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsPostmortemsPostmortemResponse } from "SquadcastSDK/models";
+import { V3IncidentsPostmortemsPostmortemResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsPostmortemsPostmortemResponse = {
   id: "<id>",

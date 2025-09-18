@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { ServicesDelayedNotificationConfigResponse } from "SquadcastSDK/models/operations";
+import { ServicesDelayedNotificationConfigResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ServicesDelayedNotificationConfigResponse = {
   data: {

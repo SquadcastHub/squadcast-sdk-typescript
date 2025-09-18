@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { GlobalEventRulesReorderRulesetByIndexResponse } from "SquadcastSDK/models/operations";
+import { GlobalEventRulesReorderRulesetByIndexResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: GlobalEventRulesReorderRulesetByIndexResponse = {
   data: {

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesIAGConfigRequest } from "SquadcastSDK/models";
+import { V3ServicesIAGConfigRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesIAGConfigRequest = {
   isEnabled: true,

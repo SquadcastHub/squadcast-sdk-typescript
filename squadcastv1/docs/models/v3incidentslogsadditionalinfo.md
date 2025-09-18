@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3IncidentsLogsAdditionalInfo } from "SquadcastSDK/models";
+import { V3IncidentsLogsAdditionalInfo } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsLogsAdditionalInfo = {};
 ```

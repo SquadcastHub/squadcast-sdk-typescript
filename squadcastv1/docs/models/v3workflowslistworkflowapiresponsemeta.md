@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3WorkflowsListWorkflowAPIResponseMeta } from "SquadcastSDK/models";
+import { V3WorkflowsListWorkflowAPIResponseMeta } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WorkflowsListWorkflowAPIResponseMeta = {
   totalCount: 869165,

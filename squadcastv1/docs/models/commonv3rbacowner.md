@@ -5,7 +5,7 @@ Represents the RBAC owner of an entity.
 ## Example Usage
 
 ```typescript
-import { CommonV3RBACOwner } from "SquadcastSDK/models";
+import { CommonV3RBACOwner } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: CommonV3RBACOwner = {
   id: "<id>",

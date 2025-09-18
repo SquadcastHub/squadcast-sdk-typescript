@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { GlobalOncallReminderRulesCreateGlobalOncallReminderRulesResponse } from "SquadcastSDK/models/operations";
+import { GlobalOncallReminderRulesCreateGlobalOncallReminderRulesResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: GlobalOncallReminderRulesCreateGlobalOncallReminderRulesResponse = {
   data: {

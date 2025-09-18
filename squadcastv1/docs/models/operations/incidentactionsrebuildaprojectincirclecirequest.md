@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { IncidentActionsRebuildAProjectInCircleciRequest } from "SquadcastSDK/models/operations";
+import { IncidentActionsRebuildAProjectInCircleciRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentActionsRebuildAProjectInCircleciRequest = {
   incidentID: "<id>",

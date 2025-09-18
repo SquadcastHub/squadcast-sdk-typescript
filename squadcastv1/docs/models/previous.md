@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Previous } from "SquadcastSDK/models";
+import { Previous } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: Previous = {
   buildNum: 576855,

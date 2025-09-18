@@ -5,7 +5,7 @@ The body type of the operation request or response.
 ## Example Usage
 
 ```typescript
-import { PostmortemsCreatePostmortemBody } from "SquadcastSDK/models/operations";
+import { PostmortemsCreatePostmortemBody } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: PostmortemsCreatePostmortemBody = {
   data: {

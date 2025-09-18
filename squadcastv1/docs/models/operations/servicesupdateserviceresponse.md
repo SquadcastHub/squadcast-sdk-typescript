@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { ServicesUpdateServiceResponse } from "SquadcastSDK/models/operations";
+import { ServicesUpdateServiceResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ServicesUpdateServiceResponse = {
   data: {

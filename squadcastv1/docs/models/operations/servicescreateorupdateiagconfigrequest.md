@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ServicesCreateOrUpdateIAGConfigRequest } from "SquadcastSDK/models/operations";
+import { ServicesCreateOrUpdateIAGConfigRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ServicesCreateOrUpdateIAGConfigRequest = {
   serviceID: "<id>",

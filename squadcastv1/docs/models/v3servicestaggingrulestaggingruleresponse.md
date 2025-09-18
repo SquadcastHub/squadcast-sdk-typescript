@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesTaggingRulesTaggingRuleResponse } from "SquadcastSDK/models";
+import { V3ServicesTaggingRulesTaggingRuleResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesTaggingRulesTaggingRuleResponse = {};
 ```

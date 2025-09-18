@@ -5,7 +5,7 @@ Represents an incident.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsIncidentResponse } from "SquadcastSDK/models";
+import { V3IncidentsIncidentResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsIncidentResponse = {
   id: "<id>",

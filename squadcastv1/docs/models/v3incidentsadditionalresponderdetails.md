@@ -5,7 +5,7 @@ Details for an additional responder.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsAdditionalResponderDetails } from "SquadcastSDK/models";
+import { V3IncidentsAdditionalResponderDetails } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsAdditionalResponderDetails = {
   id: "<id>",

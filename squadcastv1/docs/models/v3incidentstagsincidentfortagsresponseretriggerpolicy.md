@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy } from "SquadcastSDK/models";
+import { V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy = {
   escalationPolicyId: "<id>",

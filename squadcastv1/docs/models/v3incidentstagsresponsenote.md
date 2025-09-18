@@ -5,7 +5,7 @@ Represents a response note in an incident.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsTagsResponseNote } from "SquadcastSDK/models";
+import { V3IncidentsTagsResponseNote } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsTagsResponseNote = {
   timeOfNote: new Date("2025-01-04T07:36:04.648Z"),

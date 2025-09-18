@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WebformsUpdateWebformRequest } from "SquadcastSDK/models/operations";
+import { WebformsUpdateWebformRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: WebformsUpdateWebformRequest = {
   webformId: 547465,

@@ -5,7 +5,7 @@ Access is forbidden.
 ## Example Usage
 
 ```typescript
-import { ForbiddenError } from "SquadcastSDK/models/errors";
+import { ForbiddenError } from "@solarwinds/squadcast-sdk-typescript/models/errors";
 
 // No examples available for this model
 ```

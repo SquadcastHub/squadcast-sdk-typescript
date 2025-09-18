@@ -5,7 +5,7 @@ Represents an entity to be notified in an escalation rule.
 ## Example Usage
 
 ```typescript
-import { V3EscalationPoliciesEscalationEntity } from "SquadcastSDK/models";
+import { V3EscalationPoliciesEscalationEntity } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3EscalationPoliciesEscalationEntity = {
   type: "user",

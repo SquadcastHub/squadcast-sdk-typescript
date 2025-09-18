@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3IncidentsIncidentActionsWebhookActionResponseHeader } from "SquadcastSDK/models";
+import { V3IncidentsIncidentActionsWebhookActionResponseHeader } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsIncidentActionsWebhookActionResponseHeader = {
   contentType: "<value>",

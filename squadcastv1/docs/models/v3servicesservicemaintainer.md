@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesServiceMaintainer } from "SquadcastSDK/models";
+import { V3ServicesServiceMaintainer } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesServiceMaintainer = {
   id: "<id>",

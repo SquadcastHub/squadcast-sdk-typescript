@@ -5,7 +5,7 @@ Details about incident snoozing.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsSnoozeDetails } from "SquadcastSDK/models";
+import { V3IncidentsSnoozeDetails } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsSnoozeDetails = {
   isSnoozed: true,

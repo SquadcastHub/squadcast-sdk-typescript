@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { OverlayGetOptinForKeyBasedDeduplicationForAServiceResponse } from "SquadcastSDK/models/operations";
+import { OverlayGetOptinForKeyBasedDeduplicationForAServiceResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: OverlayGetOptinForKeyBasedDeduplicationForAServiceResponse = {
   data: {

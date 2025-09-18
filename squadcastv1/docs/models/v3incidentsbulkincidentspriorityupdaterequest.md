@@ -5,7 +5,7 @@ Request body for bulk updating incident priority.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsBulkIncidentsPriorityUpdateRequest } from "SquadcastSDK/models";
+import { V3IncidentsBulkIncidentsPriorityUpdateRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsBulkIncidentsPriorityUpdateRequest = {
   incidentIds: [

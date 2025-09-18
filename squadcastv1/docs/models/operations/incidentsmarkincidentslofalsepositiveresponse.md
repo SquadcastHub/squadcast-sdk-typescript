@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { IncidentsMarkIncidentSloFalsePositiveResponse } from "SquadcastSDK/models/operations";
+import { IncidentsMarkIncidentSloFalsePositiveResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentsMarkIncidentSloFalsePositiveResponse = {};
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesJiraCloudExtension } from "SquadcastSDK/models";
+import { V3ServicesJiraCloudExtension } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesJiraCloudExtension = {
   jiraClientKey: "<value>",

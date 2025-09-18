@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3WorkflowsActionRequestSqAttachRunbooks } from "SquadcastSDK/models";
+import { V3WorkflowsActionRequestSqAttachRunbooks } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WorkflowsActionRequestSqAttachRunbooks = {
   name: "sq_attach_runbooks",

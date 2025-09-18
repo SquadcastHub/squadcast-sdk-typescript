@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { IncidentActionsTriggerAWebhookManuallyResponse } from "SquadcastSDK/models/operations";
+import { IncidentActionsTriggerAWebhookManuallyResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentActionsTriggerAWebhookManuallyResponse = {
   data: {

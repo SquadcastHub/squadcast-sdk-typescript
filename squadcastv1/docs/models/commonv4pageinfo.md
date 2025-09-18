@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CommonV4PageInfo } from "SquadcastSDK/models";
+import { CommonV4PageInfo } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: CommonV4PageInfo = {
   pageSize: 490075,

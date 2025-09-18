@@ -5,7 +5,7 @@ Service unavailable.
 ## Example Usage
 
 ```typescript
-import { ServiceUnavailableError } from "SquadcastSDK/models/errors";
+import { ServiceUnavailableError } from "@solarwinds/squadcast-sdk-typescript/models/errors";
 
 // No examples available for this model
 ```

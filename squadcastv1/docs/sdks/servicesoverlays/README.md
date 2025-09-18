@@ -18,7 +18,7 @@ Opt-in for Key Based Deduplication for a service
 
 <!-- UsageSnippet language="typescript" operationID="Overlay_optinForKeyBasedDeduplicationForAService" method="patch" path="/v3/services/{serviceID}/config" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { servicesOverlaysOptinKeyBasedDeduplication } from "SquadcastSDK/funcs/servicesOverlaysOptinKeyBasedDeduplication.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { servicesOverlaysOptinKeyBasedDeduplication } from "@solarwinds/squadcast-sdk-typescript/funcs/servicesOverlaysOptinKeyBasedDeduplication.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -104,7 +104,7 @@ Render Custom Content Overlay
 
 <!-- UsageSnippet language="typescript" operationID="Overlay_renderCustomContentOverlay" method="post" path="/v3/services/{serviceID}/overlays/custom-content/render" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -131,8 +131,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { servicesOverlaysRenderCustomContent } from "SquadcastSDK/funcs/servicesOverlaysRenderCustomContent.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { servicesOverlaysRenderCustomContent } from "@solarwinds/squadcast-sdk-typescript/funcs/servicesOverlaysRenderCustomContent.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -198,7 +198,7 @@ Delete Notification Template Overlay
 
 <!-- UsageSnippet language="typescript" operationID="Overlay_deleteNotificationTemplateOverlay" method="delete" path="/v3/services/{serviceID}/overlays/custom-content/{alertSource}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -221,8 +221,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { servicesOverlaysDeleteCustomContent } from "SquadcastSDK/funcs/servicesOverlaysDeleteCustomContent.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { servicesOverlaysDeleteCustomContent } from "@solarwinds/squadcast-sdk-typescript/funcs/servicesOverlaysDeleteCustomContent.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -284,7 +284,7 @@ Get Custom Content Template Overlay
 
 <!-- UsageSnippet language="typescript" operationID="Overlay_getCustomContentTemplateOverlay" method="get" path="/v3/services/{serviceID}/overlays/custom-content/{alertSource}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -307,8 +307,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { servicesOverlaysGetCustomContentTemplate } from "SquadcastSDK/funcs/servicesOverlaysGetCustomContentTemplate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { servicesOverlaysGetCustomContentTemplate } from "@solarwinds/squadcast-sdk-typescript/funcs/servicesOverlaysGetCustomContentTemplate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

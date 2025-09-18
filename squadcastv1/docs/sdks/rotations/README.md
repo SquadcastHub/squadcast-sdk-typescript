@@ -19,7 +19,7 @@ List Schedule Rotations
 
 <!-- UsageSnippet language="typescript" operationID="Rotations_getScheduleRotations" method="get" path="/v4/schedules/{scheduleID}/rotations" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { rotationsGetScheduleRotations } from "SquadcastSDK/funcs/rotationsGetScheduleRotations.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { rotationsGetScheduleRotations } from "@solarwinds/squadcast-sdk-typescript/funcs/rotationsGetScheduleRotations.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -94,7 +94,7 @@ Delete Rotation
 
 <!-- UsageSnippet language="typescript" operationID="Rotations_deleteRotation" method="delete" path="/v4/schedules/{scheduleID}/rotations/{rotationID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -117,8 +117,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { rotationsDelete } from "SquadcastSDK/funcs/rotationsDelete.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { rotationsDelete } from "@solarwinds/squadcast-sdk-typescript/funcs/rotationsDelete.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -171,7 +171,7 @@ Get Schedule Rotation by ID
 
 <!-- UsageSnippet language="typescript" operationID="Rotations_getScheduleRotationById" method="get" path="/v4/schedules/{scheduleID}/rotations/{rotationID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -194,8 +194,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { rotationsGetById } from "SquadcastSDK/funcs/rotationsGetById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { rotationsGetById } from "@solarwinds/squadcast-sdk-typescript/funcs/rotationsGetById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -248,7 +248,7 @@ Get Rotation Participants
 
 <!-- UsageSnippet language="typescript" operationID="Rotations_getRotationParticipants" method="get" path="/v4/schedules/{scheduleID}/rotations/{rotationID}/participants" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -271,8 +271,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { rotationsGetParticipants } from "SquadcastSDK/funcs/rotationsGetParticipants.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { rotationsGetParticipants } from "@solarwinds/squadcast-sdk-typescript/funcs/rotationsGetParticipants.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -325,7 +325,7 @@ Update Rotation Participants
 
 <!-- UsageSnippet language="typescript" operationID="Rotations_updateRotationParticipants" method="put" path="/v4/schedules/{scheduleID}/rotations/{rotationID}/participants" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -351,8 +351,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { rotationsUpdateParticipants } from "SquadcastSDK/funcs/rotationsUpdateParticipants.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { rotationsUpdateParticipants } from "@solarwinds/squadcast-sdk-typescript/funcs/rotationsUpdateParticipants.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

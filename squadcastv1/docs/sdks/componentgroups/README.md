@@ -18,7 +18,7 @@ List Component Groups
 
 <!-- UsageSnippet language="typescript" operationID="ComponentGroups_listComponentGroups" method="get" path="/v4/statuspages/{statuspageID}/groups" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -40,8 +40,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { statusPagesComponentGroupsList } from "SquadcastSDK/funcs/statusPagesComponentGroupsList.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { statusPagesComponentGroupsList } from "@solarwinds/squadcast-sdk-typescript/funcs/statusPagesComponentGroupsList.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -102,7 +102,7 @@ Create Component Group
 
 <!-- UsageSnippet language="typescript" operationID="ComponentGroups_createComponentGroup" method="post" path="/v4/statuspages/{statuspageID}/groups" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -127,8 +127,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { statusPagesComponentGroupsCreate } from "SquadcastSDK/funcs/statusPagesComponentGroupsCreate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { statusPagesComponentGroupsCreate } from "@solarwinds/squadcast-sdk-typescript/funcs/statusPagesComponentGroupsCreate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -192,7 +192,7 @@ Delete Component Group By ID
 
 <!-- UsageSnippet language="typescript" operationID="ComponentGroups_deleteComponentGroupById" method="delete" path="/v4/statuspages/{statuspageID}/groups/{group_id}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -215,8 +215,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { statusPagesComponentGroupsDeleteById } from "SquadcastSDK/funcs/statusPagesComponentGroupsDeleteById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { statusPagesComponentGroupsDeleteById } from "@solarwinds/squadcast-sdk-typescript/funcs/statusPagesComponentGroupsDeleteById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -278,7 +278,7 @@ Get Component Group By ID
 
 <!-- UsageSnippet language="typescript" operationID="ComponentGroups_getComponentGroupById" method="get" path="/v4/statuspages/{statuspageID}/groups/{group_id}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -301,8 +301,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { statusPagesComponentGroupsGetById } from "SquadcastSDK/funcs/statusPagesComponentGroupsGetById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { statusPagesComponentGroupsGetById } from "@solarwinds/squadcast-sdk-typescript/funcs/statusPagesComponentGroupsGetById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

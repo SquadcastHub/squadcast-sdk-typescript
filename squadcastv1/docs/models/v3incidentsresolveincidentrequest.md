@@ -5,7 +5,7 @@ Request body for resolving an incident.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsResolveIncidentRequest } from "SquadcastSDK/models";
+import { V3IncidentsResolveIncidentRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsResolveIncidentRequest = {
   resolutionReason: {

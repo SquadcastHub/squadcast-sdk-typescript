@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WebhooksGetAllWebhooksRequest } from "SquadcastSDK/models/operations";
+import { WebhooksGetAllWebhooksRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: WebhooksGetAllWebhooksRequest = {};
 ```

@@ -15,7 +15,7 @@ Get Export Details
 
 <!-- UsageSnippet language="typescript" operationID="Export_getExportDetails" method="get" path="/v3/exports/{export_id}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -37,8 +37,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { exportsGetDetails } from "SquadcastSDK/funcs/exportsGetDetails.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { exportsGetDetails } from "@solarwinds/squadcast-sdk-typescript/funcs/exportsGetDetails.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Security } from "SquadcastSDK/models";
+import { Security } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: Security = {
   bearerAuth: "<value>",

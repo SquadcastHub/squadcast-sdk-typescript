@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { EscalationPoliciesGetEscalationPolicyByTeamResponse } from "SquadcastSDK/models/operations";
+import { EscalationPoliciesGetEscalationPolicyByTeamResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: EscalationPoliciesGetEscalationPolicyByTeamResponse = {
   data: [

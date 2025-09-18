@@ -15,7 +15,7 @@ Create or Update Dependencies
 
 <!-- UsageSnippet language="typescript" operationID="Dependencies_createOrUpdateDependencies" method="post" path="/v3/services/{serviceID}/dependencies" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -44,8 +44,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { servicesDependenciesCreateOrUpdate } from "SquadcastSDK/funcs/servicesDependenciesCreateOrUpdate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { servicesDependenciesCreateOrUpdate } from "@solarwinds/squadcast-sdk-typescript/funcs/servicesDependenciesCreateOrUpdate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SLOMarkSLOFalsePositiveRequestBody } from "SquadcastSDK/models/operations";
+import { SLOMarkSLOFalsePositiveRequestBody } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SLOMarkSLOFalsePositiveRequestBody = {};
 ```

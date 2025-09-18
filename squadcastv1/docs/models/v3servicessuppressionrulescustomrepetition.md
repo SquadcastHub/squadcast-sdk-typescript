@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesSuppressionRulesCustomRepetition } from "SquadcastSDK/models";
+import { V3ServicesSuppressionRulesCustomRepetition } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesSuppressionRulesCustomRepetition = {
   repeatsCount: 437694,

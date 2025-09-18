@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesTaggingRulesExpressionBranchOp } from "SquadcastSDK/models";
+import { V3ServicesTaggingRulesExpressionBranchOp } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesTaggingRulesExpressionBranchOp = "field_is_not";
 ```

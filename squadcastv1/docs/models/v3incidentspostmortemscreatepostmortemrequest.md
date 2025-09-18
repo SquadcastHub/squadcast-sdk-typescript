@@ -5,7 +5,7 @@ Request body for creating a new postmortem.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsPostmortemsCreatePostmortemRequest } from "SquadcastSDK/models";
+import { V3IncidentsPostmortemsCreatePostmortemRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsPostmortemsCreatePostmortemRequest = {
   ownerId: "<id>",

@@ -5,7 +5,7 @@ Represents the name of a global RBAC ability.
 ## Example Usage
 
 ```typescript
-import { V3UsersGlobalRBACAbilityName } from "SquadcastSDK/models";
+import { V3UsersGlobalRBACAbilityName } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3UsersGlobalRBACAbilityName = "manage-extensions";
 ```

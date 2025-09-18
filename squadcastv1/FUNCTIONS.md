@@ -19,8 +19,8 @@ specific category of applications.
 ## Example
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { analyticsGetOrganization } from "SquadcastSDK/funcs/analyticsGetOrganization.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { analyticsGetOrganization } from "@solarwinds/squadcast-sdk-typescript/funcs/analyticsGetOrganization.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

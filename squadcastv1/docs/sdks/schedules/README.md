@@ -25,7 +25,7 @@ List Schedules
 
 <!-- UsageSnippet language="typescript" operationID="Schedules_listSchedules" method="get" path="/v4/schedules" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -47,8 +47,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesList } from "SquadcastSDK/funcs/schedulesList.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesList } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesList.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -100,7 +100,7 @@ Create Schedule
 
 <!-- UsageSnippet language="typescript" operationID="Schedules_createSchedule" method="post" path="/v4/schedules" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -134,8 +134,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesCreate } from "SquadcastSDK/funcs/schedulesCreate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesCreate } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesCreate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -199,7 +199,7 @@ Delete Schedule
 
 <!-- UsageSnippet language="typescript" operationID="Schedules_deleteSchedule" method="delete" path="/v4/schedules/{scheduleID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -221,8 +221,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesDelete } from "SquadcastSDK/funcs/schedulesDelete.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesDelete } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesDelete.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -274,7 +274,7 @@ Get Schedule by ID
 
 <!-- UsageSnippet language="typescript" operationID="Schedules_getScheduleById" method="get" path="/v4/schedules/{scheduleID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -296,8 +296,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesGetById } from "SquadcastSDK/funcs/schedulesGetById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesGetById } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesGetById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -349,7 +349,7 @@ Update Schedule
 
 <!-- UsageSnippet language="typescript" operationID="Schedules_updateSchedule" method="put" path="/v4/schedules/{scheduleID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -378,8 +378,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesUpdate } from "SquadcastSDK/funcs/schedulesUpdate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesUpdate } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesUpdate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -438,7 +438,7 @@ Change Timezone
 
 <!-- UsageSnippet language="typescript" operationID="Schedules_changeTimezone" method="patch" path="/v4/schedules/{scheduleID}/change-timezone" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -461,8 +461,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesChangeTimezone } from "SquadcastSDK/funcs/schedulesChangeTimezone.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesChangeTimezone } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesChangeTimezone.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -515,7 +515,7 @@ Clone Schedule
 
 <!-- UsageSnippet language="typescript" operationID="Schedules_cloneSchedule" method="post" path="/v4/schedules/{scheduleID}/clone" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -538,8 +538,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesClone } from "SquadcastSDK/funcs/schedulesClone.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesClone } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesClone.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -592,7 +592,7 @@ Create Schedule ICal Link
 
 <!-- UsageSnippet language="typescript" operationID="Export_createScheduleIcalLink" method="post" path="/v4/schedules/{scheduleID}/ical-link" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -616,8 +616,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesCreateIcalLink } from "SquadcastSDK/funcs/schedulesCreateIcalLink.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesCreateIcalLink } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesCreateIcalLink.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -671,7 +671,7 @@ Delete Schedule Override
 
 <!-- UsageSnippet language="typescript" operationID="Overrides_deleteScheduleOverride" method="delete" path="/v4/schedules/{scheduleID}/overrides/{overrideID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -694,8 +694,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesDeleteOverride } from "SquadcastSDK/funcs/schedulesDeleteOverride.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesDeleteOverride } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesDeleteOverride.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -748,7 +748,7 @@ Get Override by ID
 
 <!-- UsageSnippet language="typescript" operationID="Overrides_getOverrideById" method="get" path="/v4/schedules/{scheduleID}/overrides/{overrideID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -771,8 +771,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesGetOverrideById } from "SquadcastSDK/funcs/schedulesGetOverrideById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesGetOverrideById } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesGetOverrideById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -825,7 +825,7 @@ Create Rotation
 
 <!-- UsageSnippet language="typescript" operationID="Rotations_createRotation" method="post" path="/v4/schedules/{scheduleID}/rotations" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -855,8 +855,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesCreateRotation } from "SquadcastSDK/funcs/schedulesCreateRotation.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesCreateRotation } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesCreateRotation.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

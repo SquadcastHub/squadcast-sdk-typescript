@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GlobalEventRulesListRulesetRulesMeta } from "SquadcastSDK/models/operations";
+import { GlobalEventRulesListRulesetRulesMeta } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: GlobalEventRulesListRulesetRulesMeta = {
   totalCount: 846302,

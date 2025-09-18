@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesTaggingRulesExpressionBranch } from "SquadcastSDK/models";
+import { V3ServicesTaggingRulesExpressionBranch } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesTaggingRulesExpressionBranch = {
   lhs: "<value>",

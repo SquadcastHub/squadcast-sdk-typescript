@@ -5,7 +5,7 @@ The request has been accepted for processing, but processing has not yet complet
 ## Example Usage
 
 ```typescript
-import { IncidentsIncidentExportAsyncResponseBody } from "SquadcastSDK/models/operations";
+import { IncidentsIncidentExportAsyncResponseBody } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentsIncidentExportAsyncResponseBody = {
   body: {

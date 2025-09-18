@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { RoutingRulesGetRoutingRulesResponse } from "SquadcastSDK/models/operations";
+import { RoutingRulesGetRoutingRulesResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: RoutingRulesGetRoutingRulesResponse = {
   data: {

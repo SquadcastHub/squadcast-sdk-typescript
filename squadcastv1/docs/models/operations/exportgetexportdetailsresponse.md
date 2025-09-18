@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { ExportGetExportDetailsResponse } from "SquadcastSDK/models/operations";
+import { ExportGetExportDetailsResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ExportGetExportDetailsResponse = {
   data: {

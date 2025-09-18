@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { IncidentsGetIncidentsStatusByRequestidsMeta } from "SquadcastSDK/models/operations";
+import { IncidentsGetIncidentsStatusByRequestidsMeta } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentsGetIncidentsStatusByRequestidsMeta = {
   errorCount: 130101,

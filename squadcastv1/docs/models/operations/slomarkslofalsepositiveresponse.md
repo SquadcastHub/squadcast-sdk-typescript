@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { SLOMarkSLOFalsePositiveResponse } from "SquadcastSDK/models/operations";
+import { SLOMarkSLOFalsePositiveResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SLOMarkSLOFalsePositiveResponse = {
   data: {

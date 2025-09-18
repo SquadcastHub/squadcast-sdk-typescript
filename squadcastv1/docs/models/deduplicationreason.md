@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DeduplicationReason } from "SquadcastSDK/models";
+import { DeduplicationReason } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: DeduplicationReason = {
   matchedEventId: "<id>",

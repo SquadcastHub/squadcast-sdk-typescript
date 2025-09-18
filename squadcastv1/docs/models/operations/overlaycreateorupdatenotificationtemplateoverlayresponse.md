@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { OverlayCreateOrUpdateNotificationTemplateOverlayResponse } from "SquadcastSDK/models/operations";
+import { OverlayCreateOrUpdateNotificationTemplateOverlayResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: OverlayCreateOrUpdateNotificationTemplateOverlayResponse = {
   data: {

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { IncidentActionsTriggerAWebhookManuallyRequest } from "SquadcastSDK/models/operations";
+import { IncidentActionsTriggerAWebhookManuallyRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentActionsTriggerAWebhookManuallyRequest = {
   incidentID: "<id>",

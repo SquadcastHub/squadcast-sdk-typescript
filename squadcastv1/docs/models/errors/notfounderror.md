@@ -5,7 +5,7 @@ The server cannot find the requested resource.
 ## Example Usage
 
 ```typescript
-import { NotFoundError } from "SquadcastSDK/models/errors";
+import { NotFoundError } from "@solarwinds/squadcast-sdk-typescript/models/errors";
 
 // No examples available for this model
 ```

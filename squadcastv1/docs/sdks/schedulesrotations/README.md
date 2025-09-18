@@ -15,7 +15,7 @@ Update Rotation
 
 <!-- UsageSnippet language="typescript" operationID="Rotations_updateRotation" method="put" path="/v4/schedules/{scheduleID}/rotations/{rotationID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -45,8 +45,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { schedulesRotationsUpdate } from "SquadcastSDK/funcs/schedulesRotationsUpdate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { schedulesRotationsUpdate } from "@solarwinds/squadcast-sdk-typescript/funcs/schedulesRotationsUpdate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

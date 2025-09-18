@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesRoutingRulesExpressionBranch } from "SquadcastSDK/models";
+import { V3ServicesRoutingRulesExpressionBranch } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesRoutingRulesExpressionBranch = {
   lhs: "<value>",

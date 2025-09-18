@@ -16,7 +16,7 @@ Create Maintenance
 
 <!-- UsageSnippet language="typescript" operationID="Maintenances_createMaintenance" method="post" path="/v4/statuspages/{statuspageID}/maintenance" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -49,8 +49,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { maintenancesCreate } from "SquadcastSDK/funcs/maintenancesCreate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { maintenancesCreate } from "@solarwinds/squadcast-sdk-typescript/funcs/maintenancesCreate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -122,7 +122,7 @@ Delete Maintenance By ID
 
 <!-- UsageSnippet language="typescript" operationID="Maintenances_deleteMaintenanceById" method="delete" path="/v4/statuspages/{statuspageID}/maintenance/{maintenance_id}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -145,8 +145,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { maintenancesDeleteById } from "SquadcastSDK/funcs/maintenancesDeleteById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { maintenancesDeleteById } from "@solarwinds/squadcast-sdk-typescript/funcs/maintenancesDeleteById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

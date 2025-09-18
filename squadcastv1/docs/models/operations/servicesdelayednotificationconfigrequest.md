@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ServicesDelayedNotificationConfigRequest } from "SquadcastSDK/models/operations";
+import { ServicesDelayedNotificationConfigRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ServicesDelayedNotificationConfigRequest = {
   serviceID: "<id>",

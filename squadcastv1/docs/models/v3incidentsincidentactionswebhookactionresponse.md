@@ -5,7 +5,7 @@ Represents the response structure for triggering a webhook manually.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsIncidentActionsWebhookActionResponse } from "SquadcastSDK/models";
+import { V3IncidentsIncidentActionsWebhookActionResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsIncidentActionsWebhookActionResponse = {
   id: "<id>",

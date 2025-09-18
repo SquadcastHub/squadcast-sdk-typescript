@@ -5,7 +5,7 @@ Represents a Runbook in the system.
 ## Example Usage
 
 ```typescript
-import { V3RunbooksRunbookResponse } from "SquadcastSDK/models";
+import { V3RunbooksRunbookResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3RunbooksRunbookResponse = {
   id: "<id>",

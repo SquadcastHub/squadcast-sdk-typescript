@@ -5,7 +5,7 @@ Server error
 ## Example Usage
 
 ```typescript
-import { BadGatewayError } from "SquadcastSDK/models/errors";
+import { BadGatewayError } from "@solarwinds/squadcast-sdk-typescript/models/errors";
 
 // No examples available for this model
 ```

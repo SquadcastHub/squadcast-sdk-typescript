@@ -15,7 +15,7 @@ Create Communication Card
 
 <!-- UsageSnippet language="typescript" operationID="CommunicationCards_createCommunicationCard" method="post" path="/v3/incidents/{IncidentId}/communication_cards" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsCommunicationCardsCreate } from "SquadcastSDK/funcs/incidentsCommunicationCardsCreate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsCommunicationCardsCreate } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsCommunicationCardsCreate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

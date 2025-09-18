@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3WorkflowsSqTriggerManualWebhook } from "SquadcastSDK/models";
+import { V3WorkflowsSqTriggerManualWebhook } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WorkflowsSqTriggerManualWebhook = {
   name: "sq_trigger_manual_webhook",

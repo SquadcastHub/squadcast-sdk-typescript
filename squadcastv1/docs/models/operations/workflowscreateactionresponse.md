@@ -5,7 +5,7 @@ The request has succeeded and a new resource has been created as a result.
 ## Example Usage
 
 ```typescript
-import { WorkflowsCreateActionResponse } from "SquadcastSDK/models/operations";
+import { WorkflowsCreateActionResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: WorkflowsCreateActionResponse = {
   data: {

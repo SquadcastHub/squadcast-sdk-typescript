@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V4StatusPagesComponentGroupsCreateComponentGroupRequest } from "SquadcastSDK/models";
+import { V4StatusPagesComponentGroupsCreateComponentGroupRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V4StatusPagesComponentGroupsCreateComponentGroupRequest = {
   name: "<value>",

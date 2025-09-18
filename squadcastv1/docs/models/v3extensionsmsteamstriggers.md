@@ -5,7 +5,7 @@ Defines the trigger conditions for sending alerts.
 ## Example Usage
 
 ```typescript
-import { V3ExtensionsMSTeamsTriggers } from "SquadcastSDK/models";
+import { V3ExtensionsMSTeamsTriggers } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ExtensionsMSTeamsTriggers = {
   allActive: true,

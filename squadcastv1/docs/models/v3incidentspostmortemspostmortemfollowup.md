@@ -5,7 +5,7 @@ Represents a single follow-up task in a postmortem.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsPostmortemsPostmortemFollowUp } from "SquadcastSDK/models";
+import { V3IncidentsPostmortemsPostmortemFollowUp } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsPostmortemsPostmortemFollowUp = {
   task: "<value>",

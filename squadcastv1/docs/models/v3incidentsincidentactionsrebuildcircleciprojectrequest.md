@@ -5,7 +5,7 @@ Request body for rebuilding a project in CircleCI.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsIncidentActionsRebuildCircleCIProjectRequest } from "SquadcastSDK/models";
+import { V3IncidentsIncidentActionsRebuildCircleCIProjectRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsIncidentActionsRebuildCircleCIProjectRequest = {
   vcsType: "<value>",

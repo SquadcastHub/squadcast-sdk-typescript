@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { StakeholderGroups } from "SquadcastSDK/models";
+import { StakeholderGroups } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: StakeholderGroups = {};
 ```

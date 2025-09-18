@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { IncidentActionsCreateAnIncidentInServicenowRequest } from "SquadcastSDK/models/operations";
+import { IncidentActionsCreateAnIncidentInServicenowRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentActionsCreateAnIncidentInServicenowRequest = {
   incidentID: "<id>",

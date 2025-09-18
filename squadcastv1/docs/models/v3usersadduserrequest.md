@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3UsersAddUserRequest } from "SquadcastSDK/models";
+import { V3UsersAddUserRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3UsersAddUserRequest = {
   email: "Dorcas.Littel88@hotmail.com",

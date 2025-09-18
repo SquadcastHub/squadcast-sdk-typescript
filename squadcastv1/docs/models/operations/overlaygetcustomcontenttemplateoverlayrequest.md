@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OverlayGetCustomContentTemplateOverlayRequest } from "SquadcastSDK/models/operations";
+import { OverlayGetCustomContentTemplateOverlayRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: OverlayGetCustomContentTemplateOverlayRequest = {
   serviceID: "<id>",

@@ -5,7 +5,7 @@ Policy for delaying notifications.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsNotificationDelayPolicy } from "SquadcastSDK/models";
+import { V3IncidentsNotificationDelayPolicy } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsNotificationDelayPolicy = {
   isNotificationDelayed: true,

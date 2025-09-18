@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V4ShiftTimeSlot } from "SquadcastSDK/models";
+import { V4ShiftTimeSlot } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V4ShiftTimeSlot = {
   startHour: 32303,

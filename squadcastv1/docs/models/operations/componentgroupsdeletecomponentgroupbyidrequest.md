@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComponentGroupsDeleteComponentGroupByIdRequest } from "SquadcastSDK/models/operations";
+import { ComponentGroupsDeleteComponentGroupByIdRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ComponentGroupsDeleteComponentGroupByIdRequest = {
   statuspageID: "<id>",

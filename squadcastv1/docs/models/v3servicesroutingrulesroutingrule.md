@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesRoutingRulesRoutingRule } from "SquadcastSDK/models";
+import { V3ServicesRoutingRulesRoutingRule } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesRoutingRulesRoutingRule = {
   expression: "<value>",

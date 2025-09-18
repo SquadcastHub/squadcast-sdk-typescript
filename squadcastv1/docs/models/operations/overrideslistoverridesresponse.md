@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { OverridesListOverridesResponse } from "SquadcastSDK/models/operations";
+import { OverridesListOverridesResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: OverridesListOverridesResponse = {
   data: [],

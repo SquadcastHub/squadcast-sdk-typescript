@@ -37,7 +37,7 @@ Archive Slack Channel
 
 <!-- UsageSnippet language="typescript" operationID="CommunicationCards_archiveSlackChannel" method="post" path="/v3/extensions/slack_v2/channel/archive" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -59,8 +59,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsArchiveSlackChannel } from "SquadcastSDK/funcs/incidentsArchiveSlackChannel.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsArchiveSlackChannel } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsArchiveSlackChannel.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -122,7 +122,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="CommunicationCards_getAllCommunicationCard" method="get" path="/v3/incidents/{IncidentId}/communication_cards" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -144,8 +144,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsGetAllCommunicationCards } from "SquadcastSDK/funcs/incidentsGetAllCommunicationCards.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsGetAllCommunicationCards } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsGetAllCommunicationCards.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -206,7 +206,7 @@ Update Communication Card
 
 <!-- UsageSnippet language="typescript" operationID="CommunicationCards_updateCommunicationCard" method="put" path="/v3/incidents/{IncidentId}/communication_cards/{communicationCardId}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -234,8 +234,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsUpdateCommunicationCard } from "SquadcastSDK/funcs/incidentsUpdateCommunicationCard.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsUpdateCommunicationCard } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsUpdateCommunicationCard.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -302,7 +302,7 @@ Attach Runbooks
 
 <!-- UsageSnippet language="typescript" operationID="Runbooks_attachRunbooks" method="post" path="/v3/incidents/{IncidentId}/runbooks" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -330,8 +330,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsAttachRunbooks } from "SquadcastSDK/funcs/incidentsAttachRunbooks.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsAttachRunbooks } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsAttachRunbooks.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -398,7 +398,7 @@ Create a Ticket on Jira Server
 
 <!-- UsageSnippet language="typescript" operationID="IncidentActions_createATicketOnJiraServer" method="post" path="/v3/incidents/{incidentID}/actions/jira/new/jira-server" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -420,8 +420,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsCreateJiraServerTicket } from "SquadcastSDK/funcs/incidentsCreateJiraServerTicket.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsCreateJiraServerTicket } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsCreateJiraServerTicket.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -482,7 +482,7 @@ Create an Incident in ServiceNow
 
 <!-- UsageSnippet language="typescript" operationID="IncidentActions_createAnIncidentInServicenow" method="post" path="/v3/incidents/{incidentID}/actions/servicenow/new" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -504,8 +504,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsCreateInServiceNow } from "SquadcastSDK/funcs/incidentsCreateInServiceNow.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsCreateInServiceNow } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsCreateInServiceNow.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -566,7 +566,7 @@ Trigger a Webhook Manually
 
 <!-- UsageSnippet language="typescript" operationID="IncidentActions_triggerAWebhookManually" method="post" path="/v3/incidents/{incidentID}/actions/webhook/{eventWebhookID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -589,8 +589,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsTriggerWebhook } from "SquadcastSDK/funcs/incidentsTriggerWebhook.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsTriggerWebhook } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsTriggerWebhook.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -654,7 +654,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="AdditionalResponders_getAdditionalResponders" method="get" path="/v3/incidents/{incidentID}/additional-responders" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -676,8 +676,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsGetAdditionalResponders } from "SquadcastSDK/funcs/incidentsGetAdditionalResponders.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsGetAdditionalResponders } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsGetAdditionalResponders.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -740,7 +740,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="AdditionalResponders_removeAdditionalResponders" method="delete" path="/v3/incidents/{incidentID}/additional-responders/{responderID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -763,8 +763,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsRemoveAdditionalResponder } from "SquadcastSDK/funcs/incidentsRemoveAdditionalResponder.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsRemoveAdditionalResponder } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsRemoveAdditionalResponder.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -826,7 +826,7 @@ Mark as Transient
 
 <!-- UsageSnippet language="typescript" operationID="Apta_markAsTransient" method="put" path="/v3/incidents/{incidentID}/mark-as-transient" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -848,8 +848,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsMarkAsTransient } from "SquadcastSDK/funcs/incidentsMarkAsTransient.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsMarkAsTransient } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsMarkAsTransient.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -911,7 +911,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Postmortems_updatePostmortemByIncident" method="put" path="/v3/incidents/{incidentID}/postmortem" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -934,8 +934,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsUpdatePostmortem } from "SquadcastSDK/funcs/incidentsUpdatePostmortem.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsUpdatePostmortem } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsUpdatePostmortem.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -997,7 +997,7 @@ Unsnooze Incident Notifications
 
 <!-- UsageSnippet language="typescript" operationID="SnoozeNotifications_unsnoozeIncidentNotifications" method="put" path="/v3/incidents/{incidentID}/unsnooze" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1025,8 +1025,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsUnsnoozeNotifications } from "SquadcastSDK/funcs/incidentsUnsnoozeNotifications.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsUnsnoozeNotifications } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsUnsnoozeNotifications.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1112,7 +1112,7 @@ tags: filter by tags key=value
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_incidentExport" method="get" path="/v3/incidents/export" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1137,8 +1137,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsExport } from "SquadcastSDK/funcs/incidentsExport.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsExport } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsExport.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1220,7 +1220,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_incidentExportAsync" method="post" path="/v3/incidents/export/async" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1278,8 +1278,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsExportAsync } from "SquadcastSDK/funcs/incidentsExportAsync.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsExportAsync } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsExportAsync.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1378,7 +1378,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_bulkIncidentsPriorityUpdate" method="put" path="/v3/incidents/priority" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1401,8 +1401,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsBulkUpdatePriority } from "SquadcastSDK/funcs/incidentsBulkUpdatePriority.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsBulkUpdatePriority } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsBulkUpdatePriority.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1465,7 +1465,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_bulkResolveIncidents" method="post" path="/v3/incidents/resolve" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1489,8 +1489,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsBulkResolve } from "SquadcastSDK/funcs/incidentsBulkResolve.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsBulkResolve } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsBulkResolve.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1554,7 +1554,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_getIncidentById" method="get" path="/v3/incidents/{incidentID}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1576,8 +1576,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsGetById } from "SquadcastSDK/funcs/incidentsGetById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsGetById } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsGetById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1639,7 +1639,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_acknowledgeIncident" method="post" path="/v3/incidents/{incidentID}/acknowledge" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1661,8 +1661,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsAcknowledge } from "SquadcastSDK/funcs/incidentsAcknowledge.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsAcknowledge } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsAcknowledge.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1725,7 +1725,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_markIncidentSloFalsePositive" method="patch" path="/v3/incidents/{incidentID}/mark-slo-incident-false-postive/{value}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1748,8 +1748,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsMarkSloFalsePositive } from "SquadcastSDK/funcs/incidentsMarkSloFalsePositive.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsMarkSloFalsePositive } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsMarkSloFalsePositive.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1813,7 +1813,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_incidentPriorityUpdate" method="patch" path="/v3/incidents/{incidentID}/priority" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1836,8 +1836,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsUpdatePriority } from "SquadcastSDK/funcs/incidentsUpdatePriority.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsUpdatePriority } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsUpdatePriority.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1901,7 +1901,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_reassignIncident" method="post" path="/v3/incidents/{incidentID}/reassign" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -1929,8 +1929,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsReassign } from "SquadcastSDK/funcs/incidentsReassign.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsReassign } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsReassign.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2001,7 +2001,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_resolveIncident" method="post" path="/v3/incidents/{incidentID}/resolve" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -2028,8 +2028,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsResolve } from "SquadcastSDK/funcs/incidentsResolve.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsResolve } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsResolve.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2105,7 +2105,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Incidents_getIncidentsStatusByRequestids" method="post" path="/v3/requests/status" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -2131,8 +2131,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsGetStatusByRequestIds } from "SquadcastSDK/funcs/incidentsGetStatusByRequestIds.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsGetStatusByRequestIds } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsGetStatusByRequestIds.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

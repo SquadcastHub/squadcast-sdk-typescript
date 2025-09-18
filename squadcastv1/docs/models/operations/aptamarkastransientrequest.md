@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AptaMarkAsTransientRequest } from "SquadcastSDK/models/operations";
+import { AptaMarkAsTransientRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: AptaMarkAsTransientRequest = {
   incidentID: "<id>",

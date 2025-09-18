@@ -5,7 +5,7 @@ Represents information about the creation or updation of an entity.
 ## Example Usage
 
 ```typescript
-import { V3RunbooksUpdationInfo } from "SquadcastSDK/models";
+import { V3RunbooksUpdationInfo } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3RunbooksUpdationInfo = {
   userName: "Katelyn.Gottlieb",

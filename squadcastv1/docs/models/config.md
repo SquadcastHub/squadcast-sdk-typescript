@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Config } from "SquadcastSDK/models";
+import { Config } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: Config = {
   dedupKeyEnabled: false,

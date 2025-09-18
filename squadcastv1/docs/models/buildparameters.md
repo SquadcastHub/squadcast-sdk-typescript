@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { BuildParameters } from "SquadcastSDK/models";
+import { BuildParameters } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: BuildParameters = {
   circleJob: "<value>",

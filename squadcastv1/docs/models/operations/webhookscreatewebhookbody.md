@@ -5,7 +5,7 @@ The body type of the operation request or response.
 ## Example Usage
 
 ```typescript
-import { WebhooksCreateWebhookBody } from "SquadcastSDK/models/operations";
+import { WebhooksCreateWebhookBody } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: WebhooksCreateWebhookBody = {
   data: {

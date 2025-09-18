@@ -5,7 +5,7 @@ Represents the response structure for rebuilding a project in CircleCI.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsIncidentActionsCircleCIRebuildResponse } from "SquadcastSDK/models";
+import { V3IncidentsIncidentActionsCircleCIRebuildResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsIncidentActionsCircleCIRebuildResponse = {
   actionId: "<id>",

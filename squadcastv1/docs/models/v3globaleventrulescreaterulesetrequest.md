@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3GlobalEventRulesCreateRulesetRequest } from "SquadcastSDK/models";
+import { V3GlobalEventRulesCreateRulesetRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3GlobalEventRulesCreateRulesetRequest = {
   alertSourceShortname: "<value>",

@@ -15,7 +15,7 @@ Get All Dedup Key Overlay by Service
 
 <!-- UsageSnippet language="typescript" operationID="Overlay_getAllDedupKeyOverlayByService" method="get" path="/v3/services/{serviceID}/overlays/dedup-key" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -37,8 +37,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { overlaysGetAllDedupKeysByService } from "SquadcastSDK/funcs/overlaysGetAllDedupKeysByService.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { overlaysGetAllDedupKeysByService } from "@solarwinds/squadcast-sdk-typescript/funcs/overlaysGetAllDedupKeysByService.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

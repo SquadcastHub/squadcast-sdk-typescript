@@ -5,7 +5,7 @@ The body type of the operation request or response.
 ## Example Usage
 
 ```typescript
-import { ServicesCreateServiceBody } from "SquadcastSDK/models/operations";
+import { ServicesCreateServiceBody } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ServicesCreateServiceBody = {
   data: {

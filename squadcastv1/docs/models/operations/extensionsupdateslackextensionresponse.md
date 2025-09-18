@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { ExtensionsUpdateSlackExtensionResponse } from "SquadcastSDK/models/operations";
+import { ExtensionsUpdateSlackExtensionResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ExtensionsUpdateSlackExtensionResponse = {
   data: {

@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { UsersUpdateOrgLevelPermissionsResponse } from "SquadcastSDK/models/operations";
+import { UsersUpdateOrgLevelPermissionsResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: UsersUpdateOrgLevelPermissionsResponse = {
   data: "<value>",

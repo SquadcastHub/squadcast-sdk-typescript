@@ -5,7 +5,7 @@ Request body for bulk incident operations (acknowledge, resolve).
 ## Example Usage
 
 ```typescript
-import { V3IncidentsBulkIncidentIDsRequest } from "SquadcastSDK/models";
+import { V3IncidentsBulkIncidentIDsRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsBulkIncidentIDsRequest = {
   incidentIds: [],

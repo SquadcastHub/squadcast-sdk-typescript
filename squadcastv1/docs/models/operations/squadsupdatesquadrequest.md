@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SquadsUpdateSquadRequest } from "SquadcastSDK/models/operations";
+import { SquadsUpdateSquadRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SquadsUpdateSquadRequest = {
   squadID: "<id>",

@@ -5,7 +5,7 @@ Represents the assignment target for delayed notifications.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsTagsAssignTo } from "SquadcastSDK/models";
+import { V3IncidentsTagsAssignTo } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsTagsAssignTo = {
   id: "<id>",

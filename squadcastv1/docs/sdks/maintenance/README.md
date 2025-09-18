@@ -16,7 +16,7 @@ Get Maintenance Mode
 
 <!-- UsageSnippet language="typescript" operationID="MaintenanceMode_getMaintenanceMode" method="get" path="/v3/services/{serviceID}/maintenance" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -38,8 +38,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { servicesMaintenanceGet } from "SquadcastSDK/funcs/servicesMaintenanceGet.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { servicesMaintenanceGet } from "@solarwinds/squadcast-sdk-typescript/funcs/servicesMaintenanceGet.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -100,7 +100,7 @@ Create or Update Maintenance Mode
 
 <!-- UsageSnippet language="typescript" operationID="MaintenanceMode_createOrUpdateMaintenanceMode" method="post" path="/v3/services/{serviceID}/maintenance" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -137,8 +137,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { servicesMaintenanceCreateOrUpdate } from "SquadcastSDK/funcs/servicesMaintenanceCreateOrUpdate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { servicesMaintenanceCreateOrUpdate } from "@solarwinds/squadcast-sdk-typescript/funcs/servicesMaintenanceCreateOrUpdate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

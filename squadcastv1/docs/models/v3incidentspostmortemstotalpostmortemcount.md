@@ -5,7 +5,7 @@ Represents the total count of postmortems.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsPostmortemsTotalPostmortemCount } from "SquadcastSDK/models";
+import { V3IncidentsPostmortemsTotalPostmortemCount } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsPostmortemsTotalPostmortemCount = {
   count: 907437,

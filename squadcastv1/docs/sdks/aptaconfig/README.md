@@ -15,7 +15,7 @@ Auto Pause Transient Alerts (APTA)
 
 <!-- UsageSnippet language="typescript" operationID="Services_createOrUpdateAPTAConfig" method="put" path="/v3/services/{serviceID}/apta-config" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { servicesAptaConfigCreateOrUpdate } from "SquadcastSDK/funcs/servicesAptaConfigCreateOrUpdate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { servicesAptaConfigCreateOrUpdate } from "@solarwinds/squadcast-sdk-typescript/funcs/servicesAptaConfigCreateOrUpdate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

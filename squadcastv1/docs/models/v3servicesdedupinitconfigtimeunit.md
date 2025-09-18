@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesDedupInitConfigTimeUnit } from "SquadcastSDK/models";
+import { V3ServicesDedupInitConfigTimeUnit } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesDedupInitConfigTimeUnit = "minute";
 ```

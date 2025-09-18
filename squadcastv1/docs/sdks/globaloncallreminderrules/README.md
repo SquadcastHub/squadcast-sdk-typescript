@@ -18,7 +18,7 @@ Delete Global Oncall Reminder Rules
 
 <!-- UsageSnippet language="typescript" operationID="GlobalOncallReminderRules_deleteGlobalOncallReminderRules" method="delete" path="/v3/global-oncall-reminder-rules" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -40,8 +40,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalOncallReminderRulesDelete } from "SquadcastSDK/funcs/globalOncallReminderRulesDelete.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalOncallReminderRulesDelete } from "@solarwinds/squadcast-sdk-typescript/funcs/globalOncallReminderRulesDelete.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -102,7 +102,7 @@ Get Global Oncall Reminder Rules
 
 <!-- UsageSnippet language="typescript" operationID="GlobalOncallReminderRules_getGlobalOncallReminderRules" method="get" path="/v3/global-oncall-reminder-rules" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -124,8 +124,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalOncallReminderRulesGet } from "SquadcastSDK/funcs/globalOncallReminderRulesGet.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalOncallReminderRulesGet } from "@solarwinds/squadcast-sdk-typescript/funcs/globalOncallReminderRulesGet.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -186,7 +186,7 @@ Create Global Oncall Reminder Rules
 
 <!-- UsageSnippet language="typescript" operationID="GlobalOncallReminderRules_createGlobalOncallReminderRules" method="post" path="/v3/global-oncall-reminder-rules" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -210,8 +210,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalOncallReminderRulesCreate } from "SquadcastSDK/funcs/globalOncallReminderRulesCreate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalOncallReminderRulesCreate } from "@solarwinds/squadcast-sdk-typescript/funcs/globalOncallReminderRulesCreate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -274,7 +274,7 @@ Update Global Oncall Reminder Rules
 
 <!-- UsageSnippet language="typescript" operationID="GlobalOncallReminderRules_updateGlobalOncallReminderRules" method="put" path="/v3/global-oncall-reminder-rules" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -300,8 +300,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalOncallReminderRulesUpdate } from "SquadcastSDK/funcs/globalOncallReminderRulesUpdate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalOncallReminderRulesUpdate } from "@solarwinds/squadcast-sdk-typescript/funcs/globalOncallReminderRulesUpdate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

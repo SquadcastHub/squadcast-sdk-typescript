@@ -5,7 +5,7 @@ Represents a pinned message in the warroom.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsTagsPinnedMessage } from "SquadcastSDK/models";
+import { V3IncidentsTagsPinnedMessage } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsTagsPinnedMessage = {
   message: "<value>",

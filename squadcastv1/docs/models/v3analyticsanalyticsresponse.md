@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3AnalyticsAnalyticsResponse } from "SquadcastSDK/models";
+import { V3AnalyticsAnalyticsResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3AnalyticsAnalyticsResponse = {
   mtta: 9158.51,

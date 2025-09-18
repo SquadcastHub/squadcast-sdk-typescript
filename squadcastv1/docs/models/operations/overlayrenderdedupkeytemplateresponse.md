@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { OverlayRenderDedupKeyTemplateResponse } from "SquadcastSDK/models/operations";
+import { OverlayRenderDedupKeyTemplateResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: OverlayRenderDedupKeyTemplateResponse = {
   data: "<value>",

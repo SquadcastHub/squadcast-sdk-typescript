@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesNotificationDelayConfigFixedTimeslotConfig } from "SquadcastSDK/models";
+import { V3ServicesNotificationDelayConfigFixedTimeslotConfig } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesNotificationDelayConfigFixedTimeslotConfig = {};
 ```

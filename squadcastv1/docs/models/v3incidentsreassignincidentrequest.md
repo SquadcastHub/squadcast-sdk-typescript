@@ -5,7 +5,7 @@ Request body for reassigning an incident.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsReassignIncidentRequest } from "SquadcastSDK/models";
+import { V3IncidentsReassignIncidentRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsReassignIncidentRequest = {
   reassignTo: {

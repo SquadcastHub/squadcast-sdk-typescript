@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3WorkflowsSqMarkIncidentSLOAffectingUpdate } from "SquadcastSDK/models";
+import { V3WorkflowsSqMarkIncidentSLOAffectingUpdate } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WorkflowsSqMarkIncidentSLOAffectingUpdate = {
   name: "sq_mark_incident_slo_affecting",

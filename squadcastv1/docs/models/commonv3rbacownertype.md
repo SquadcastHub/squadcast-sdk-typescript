@@ -5,7 +5,7 @@ The type of the owner.
 ## Example Usage
 
 ```typescript
-import { CommonV3RBACOwnerType } from "SquadcastSDK/models";
+import { CommonV3RBACOwnerType } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: CommonV3RBACOwnerType = "team";
 ```

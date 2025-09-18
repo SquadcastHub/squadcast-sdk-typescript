@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComponentsUpdateComponentByIdRequest } from "SquadcastSDK/models/operations";
+import { ComponentsUpdateComponentByIdRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ComponentsUpdateComponentByIdRequest = {
   statuspageID: "<id>",

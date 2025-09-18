@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OverlayGetDedupKeyOverlayForAlertSourceRequest } from "SquadcastSDK/models/operations";
+import { OverlayGetDedupKeyOverlayForAlertSourceRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: OverlayGetDedupKeyOverlayForAlertSourceRequest = {
   serviceID: "<id>",

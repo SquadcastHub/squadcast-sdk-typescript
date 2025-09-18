@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SuppressionRulesGetSuppressionRulesRequest } from "SquadcastSDK/models/operations";
+import { SuppressionRulesGetSuppressionRulesRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SuppressionRulesGetSuppressionRulesRequest = {
   serviceID: "<id>",

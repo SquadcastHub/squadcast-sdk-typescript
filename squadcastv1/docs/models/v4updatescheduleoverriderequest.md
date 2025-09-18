@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V4UpdateScheduleOverrideRequest } from "SquadcastSDK/models";
+import { V4UpdateScheduleOverrideRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V4UpdateScheduleOverrideRequest = {
   startTime: "<value>",

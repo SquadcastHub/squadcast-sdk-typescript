@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V4StatusPagesListSubscribersResponseMeta } from "SquadcastSDK/models";
+import { V4StatusPagesListSubscribersResponseMeta } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V4StatusPagesListSubscribersResponseMeta = {
   maximumSubscribersLimit: 172814,

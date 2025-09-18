@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { GlobalEventRulesUpdateGlobalEventRuleByIdResponse } from "SquadcastSDK/models/operations";
+import { GlobalEventRulesUpdateGlobalEventRuleByIdResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: GlobalEventRulesUpdateGlobalEventRuleByIdResponse = {
   data: {

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OverlayOptinForKeyBasedDeduplicationForAServiceRequest } from "SquadcastSDK/models/operations";
+import { OverlayOptinForKeyBasedDeduplicationForAServiceRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: OverlayOptinForKeyBasedDeduplicationForAServiceRequest = {
   serviceID: "<id>",

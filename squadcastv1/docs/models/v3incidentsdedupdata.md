@@ -5,7 +5,7 @@ Deduplication data for an incident.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsDedupData } from "SquadcastSDK/models";
+import { V3IncidentsDedupData } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsDedupData = {};
 ```

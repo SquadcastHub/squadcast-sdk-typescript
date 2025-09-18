@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { CommunicationCardsArchiveSlackChannelResponse } from "SquadcastSDK/models/operations";
+import { CommunicationCardsArchiveSlackChannelResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: CommunicationCardsArchiveSlackChannelResponse = {
   data: {

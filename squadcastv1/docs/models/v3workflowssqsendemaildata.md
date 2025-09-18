@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3WorkflowsSqSendEmailData } from "SquadcastSDK/models";
+import { V3WorkflowsSqSendEmailData } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WorkflowsSqSendEmailData = {
   to: [

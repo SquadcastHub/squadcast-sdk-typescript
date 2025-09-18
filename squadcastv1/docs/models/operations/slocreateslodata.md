@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SLOCreateSLOData } from "SquadcastSDK/models/operations";
+import { SLOCreateSLOData } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SLOCreateSLOData = {
   slo: {

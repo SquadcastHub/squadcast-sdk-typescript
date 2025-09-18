@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesOverlayCustomContentOverlayResponse } from "SquadcastSDK/models";
+import { V3ServicesOverlayCustomContentOverlayResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesOverlayCustomContentOverlayResponse = {
   createdAt: new Date("2023-02-25T22:29:20.932Z"),

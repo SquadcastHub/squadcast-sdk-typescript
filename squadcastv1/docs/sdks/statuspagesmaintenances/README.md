@@ -17,7 +17,7 @@ List Maintenances
 
 <!-- UsageSnippet language="typescript" operationID="Maintenances_listMaintenances" method="get" path="/v4/statuspages/{statuspageID}/maintenance" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { statusPagesMaintenancesList } from "SquadcastSDK/funcs/statusPagesMaintenancesList.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { statusPagesMaintenancesList } from "@solarwinds/squadcast-sdk-typescript/funcs/statusPagesMaintenancesList.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -105,7 +105,7 @@ Get Maintenance By ID
 
 <!-- UsageSnippet language="typescript" operationID="Maintenances_getMaintenanceById" method="get" path="/v4/statuspages/{statuspageID}/maintenance/{maintenance_id}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -128,8 +128,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { statusPagesMaintenancesGetById } from "SquadcastSDK/funcs/statusPagesMaintenancesGetById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { statusPagesMaintenancesGetById } from "@solarwinds/squadcast-sdk-typescript/funcs/statusPagesMaintenancesGetById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -191,7 +191,7 @@ Update Maintenance By ID
 
 <!-- UsageSnippet language="typescript" operationID="Maintenances_updateMaintenanceById" method="put" path="/v4/statuspages/{statuspageID}/maintenance/{maintenance_id}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -220,8 +220,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { statusPagesMaintenancesUpdateById } from "SquadcastSDK/funcs/statusPagesMaintenancesUpdateById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { statusPagesMaintenancesUpdateById } from "@solarwinds/squadcast-sdk-typescript/funcs/statusPagesMaintenancesUpdateById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V4StatusPagesUpdateStatusPageByIdResponseThemeColor } from "SquadcastSDK/models";
+import { V4StatusPagesUpdateStatusPageByIdResponseThemeColor } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V4StatusPagesUpdateStatusPageByIdResponseThemeColor = {
   primary: "<value>",

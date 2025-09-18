@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { IncidentsIncidentExportRequest } from "SquadcastSDK/models/operations";
+import { IncidentsIncidentExportRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentsIncidentExportRequest = {
   startTime: new Date("2025-07-27T14:27:51.810Z"),

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesDedupInitConfig } from "SquadcastSDK/models";
+import { V3ServicesDedupInitConfig } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesDedupInitConfig = {
   timeWindow: 159192,

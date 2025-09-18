@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3GlobalEventRulesEntityOwnerUpdateType } from "SquadcastSDK/models";
+import { V3GlobalEventRulesEntityOwnerUpdateType } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3GlobalEventRulesEntityOwnerUpdateType = "team";
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Detail } from "SquadcastSDK/models";
+import { Detail } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: Detail = {
   field: "<value>",

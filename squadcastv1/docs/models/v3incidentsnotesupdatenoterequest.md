@@ -5,7 +5,7 @@ Request body for updating an existing note.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsNotesUpdateNoteRequest } from "SquadcastSDK/models";
+import { V3IncidentsNotesUpdateNoteRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsNotesUpdateNoteRequest = {
   message: "<value>",

@@ -5,7 +5,7 @@ Represents a single step in a runbook.
 ## Example Usage
 
 ```typescript
-import { V3RunbooksStep } from "SquadcastSDK/models";
+import { V3RunbooksStep } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3RunbooksStep = {
   content: "<value>",

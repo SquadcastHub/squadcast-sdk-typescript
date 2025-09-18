@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PostmortemsGetAllPostmortemsData } from "SquadcastSDK/models/operations";
+import { PostmortemsGetAllPostmortemsData } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: PostmortemsGetAllPostmortemsData = {
   result: [

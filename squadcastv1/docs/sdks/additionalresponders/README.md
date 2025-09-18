@@ -17,7 +17,7 @@
 
 <!-- UsageSnippet language="typescript" operationID="AdditionalResponders_addAdditionalResponders" method="put" path="/v3/incidents/{incidentID}/additional-responders" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsAdditionalRespondersAdd } from "SquadcastSDK/funcs/incidentsAdditionalRespondersAdd.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsAdditionalRespondersAdd } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsAdditionalRespondersAdd.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

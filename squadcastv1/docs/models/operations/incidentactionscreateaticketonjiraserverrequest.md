@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { IncidentActionsCreateATicketOnJiraServerRequest } from "SquadcastSDK/models/operations";
+import { IncidentActionsCreateATicketOnJiraServerRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentActionsCreateATicketOnJiraServerRequest = {
   incidentID: "<id>",

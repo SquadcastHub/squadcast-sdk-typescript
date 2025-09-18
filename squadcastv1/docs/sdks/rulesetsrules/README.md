@@ -16,7 +16,7 @@ Get a GER Ruleset Rule by its ID.
 
 <!-- UsageSnippet language="typescript" operationID="GlobalEventRules_getRuleById" method="get" path="/v3/global-event-rules/{ger_id}/rulesets/{alert_source_version}/{alert_source_shortname}/rules/{rule_id}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalEventRulesRulesetsRulesGet } from "SquadcastSDK/funcs/globalEventRulesRulesetsRulesGet.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalEventRulesRulesetsRulesGet } from "@solarwinds/squadcast-sdk-typescript/funcs/globalEventRulesRulesetsRulesGet.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -106,7 +106,7 @@ Reorder a GER Ruleset Rule by its index in the ruleset.
 
 <!-- UsageSnippet language="typescript" operationID="GlobalEventRules_reorderRulesetByIndex" method="patch" path="/v3/global-event-rules/{ger_id}/rulesets/{alert_source_version}/{alert_source_shortname}/rules/{rule_id}/priority" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -132,8 +132,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { globalEventRulesRulesetsRulesReorderByIndex } from "SquadcastSDK/funcs/globalEventRulesRulesetsRulesReorderByIndex.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { globalEventRulesRulesetsRulesReorderByIndex } from "@solarwinds/squadcast-sdk-typescript/funcs/globalEventRulesRulesetsRulesReorderByIndex.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

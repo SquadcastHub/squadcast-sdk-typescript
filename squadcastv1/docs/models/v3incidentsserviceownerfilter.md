@@ -5,7 +5,7 @@ Filter criteria for service owner in an export.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsServiceOwnerFilter } from "SquadcastSDK/models";
+import { V3IncidentsServiceOwnerFilter } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsServiceOwnerFilter = {
   userIDs: [],

@@ -5,7 +5,7 @@ The request body for creating or updating an MS Teams extension configuration.
 ## Example Usage
 
 ```typescript
-import { V3ExtensionsMSTeamsMSTeamsConfigResponse } from "SquadcastSDK/models";
+import { V3ExtensionsMSTeamsMSTeamsConfigResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ExtensionsMSTeamsMSTeamsConfigResponse = {
   defaultConversationName: "<value>",

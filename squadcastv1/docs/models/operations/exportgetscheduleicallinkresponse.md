@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { ExportGetScheduleIcalLinkResponse } from "SquadcastSDK/models/operations";
+import { ExportGetScheduleIcalLinkResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ExportGetScheduleIcalLinkResponse = {
   data: {},

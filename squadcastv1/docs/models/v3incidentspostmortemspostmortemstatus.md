@@ -5,7 +5,7 @@ Represents the status of a postmortem.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsPostmortemsPostmortemStatus } from "SquadcastSDK/models";
+import { V3IncidentsPostmortemsPostmortemStatus } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsPostmortemsPostmortemStatus = "under_review";
 ```

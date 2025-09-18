@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { TaggingRulesGetTaggingRulesResponse } from "SquadcastSDK/models/operations";
+import { TaggingRulesGetTaggingRulesResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: TaggingRulesGetTaggingRulesResponse = {
   data: {

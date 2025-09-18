@@ -5,7 +5,7 @@ Key-value tags for the webform
 ## Example Usage
 
 ```typescript
-import { V3WebformsCreateOrUpdateWebformRequestTags } from "SquadcastSDK/models";
+import { V3WebformsCreateOrUpdateWebformRequestTags } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WebformsCreateOrUpdateWebformRequestTags = {};
 ```

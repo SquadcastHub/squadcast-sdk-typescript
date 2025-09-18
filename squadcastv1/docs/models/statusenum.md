@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { StatusEnum } from "SquadcastSDK/models";
+import { StatusEnum } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: StatusEnum = "queued";
 ```

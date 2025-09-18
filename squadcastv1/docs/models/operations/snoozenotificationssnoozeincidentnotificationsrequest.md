@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SnoozeNotificationsSnoozeIncidentNotificationsRequest } from "SquadcastSDK/models/operations";
+import { SnoozeNotificationsSnoozeIncidentNotificationsRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SnoozeNotificationsSnoozeIncidentNotificationsRequest = {
   incidentID: "<id>",

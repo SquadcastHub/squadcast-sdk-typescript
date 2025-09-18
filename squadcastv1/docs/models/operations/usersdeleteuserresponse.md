@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { UsersDeleteUserResponse } from "SquadcastSDK/models/operations";
+import { UsersDeleteUserResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: UsersDeleteUserResponse = {
   data: {},

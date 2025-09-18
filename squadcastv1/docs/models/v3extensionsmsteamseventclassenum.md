@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ExtensionsMSTeamsEventClassEnum } from "SquadcastSDK/models";
+import { V3ExtensionsMSTeamsEventClassEnum } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ExtensionsMSTeamsEventClassEnum = "incident_notes_added";
 ```

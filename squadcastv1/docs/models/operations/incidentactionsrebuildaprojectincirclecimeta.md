@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { IncidentActionsRebuildAProjectInCircleciMeta } from "SquadcastSDK/models/operations";
+import { IncidentActionsRebuildAProjectInCircleciMeta } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentActionsRebuildAProjectInCircleciMeta = {
   statusCode: 453521,

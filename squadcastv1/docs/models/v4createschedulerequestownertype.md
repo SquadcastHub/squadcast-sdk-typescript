@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V4CreateScheduleRequestOwnerType } from "SquadcastSDK/models";
+import { V4CreateScheduleRequestOwnerType } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V4CreateScheduleRequestOwnerType = "user";
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V4RotationResponse } from "SquadcastSDK/models";
+import { V4RotationResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V4RotationResponse = {
   id: 404870,

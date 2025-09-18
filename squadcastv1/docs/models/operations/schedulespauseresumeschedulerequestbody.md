@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SchedulesPauseresumeScheduleRequestBody } from "SquadcastSDK/models/operations";
+import { SchedulesPauseresumeScheduleRequestBody } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SchedulesPauseresumeScheduleRequestBody = {};
 ```

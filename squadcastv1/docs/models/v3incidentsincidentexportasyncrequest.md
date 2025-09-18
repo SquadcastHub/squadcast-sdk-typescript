@@ -5,7 +5,7 @@ Request body for async incident export.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsIncidentExportAsyncRequest } from "SquadcastSDK/models";
+import { V3IncidentsIncidentExportAsyncRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsIncidentExportAsyncRequest = {
   ownerId: "<id>",

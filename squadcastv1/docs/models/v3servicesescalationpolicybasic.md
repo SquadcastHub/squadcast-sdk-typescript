@@ -5,7 +5,7 @@ Represents the basic details of an Escalation Policy for a service.
 ## Example Usage
 
 ```typescript
-import { V3ServicesEscalationPolicyBasic } from "SquadcastSDK/models";
+import { V3ServicesEscalationPolicyBasic } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesEscalationPolicyBasic = {
   id: "<id>",

@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { WorkflowsGetWorkflowActionByIdResponse } from "SquadcastSDK/models/operations";
+import { WorkflowsGetWorkflowActionByIdResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: WorkflowsGetWorkflowActionByIdResponse = {
   data: {

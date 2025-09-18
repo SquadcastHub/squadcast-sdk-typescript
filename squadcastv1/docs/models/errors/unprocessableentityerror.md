@@ -5,7 +5,7 @@ Client error
 ## Example Usage
 
 ```typescript
-import { UnprocessableEntityError } from "SquadcastSDK/models/errors";
+import { UnprocessableEntityError } from "@solarwinds/squadcast-sdk-typescript/models/errors";
 
 // No examples available for this model
 ```

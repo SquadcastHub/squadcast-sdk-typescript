@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CommunicationCardsCreateCommunicationCardRequest } from "SquadcastSDK/models/operations";
+import { CommunicationCardsCreateCommunicationCardRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: CommunicationCardsCreateCommunicationCardRequest = {
   incidentId: "<id>",

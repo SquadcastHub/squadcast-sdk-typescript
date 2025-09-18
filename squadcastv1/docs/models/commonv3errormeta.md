@@ -5,7 +5,7 @@ Represents a single response containing data of type T.
 ## Example Usage
 
 ```typescript
-import { CommonV3ErrorMeta } from "SquadcastSDK/models";
+import { CommonV3ErrorMeta } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: CommonV3ErrorMeta = {
   status: 31487,

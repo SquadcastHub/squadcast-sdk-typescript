@@ -5,13 +5,13 @@
 import dotenv from "dotenv";
 dotenv.config();
 /**
- * Example usage of the SquadcastSDK SDK
+ * Example usage of the @solarwinds/squadcast-sdk-typescript SDK
  *
  * To run this example from the examples directory:
  * npm run build && npx tsx analyticsGetOrganization.example.ts
  */
 
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",

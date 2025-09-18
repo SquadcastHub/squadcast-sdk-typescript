@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Condition } from "SquadcastSDK/models";
+import { Condition } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: Condition = "and";
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ReassignTo } from "SquadcastSDK/models";
+import { ReassignTo } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: ReassignTo = {
   id: "<id>",

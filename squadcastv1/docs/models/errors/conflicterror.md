@@ -5,7 +5,7 @@ The request conflicts with the current state of the server.
 ## Example Usage
 
 ```typescript
-import { ConflictError } from "SquadcastSDK/models/errors";
+import { ConflictError } from "@solarwinds/squadcast-sdk-typescript/models/errors";
 
 // No examples available for this model
 ```

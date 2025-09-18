@@ -5,7 +5,7 @@ Request body for creating a communication card.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsCommunicationCardsCreateCommunicationCardRequest } from "SquadcastSDK/models";
+import { V3IncidentsCommunicationCardsCreateCommunicationCardRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsCommunicationCardsCreateCommunicationCardRequest = {
   type: "<value>",

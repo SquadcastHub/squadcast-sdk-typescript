@@ -5,7 +5,7 @@ Represents a log entry for an incident action.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsLogs } from "SquadcastSDK/models";
+import { V3IncidentsLogs } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsLogs = {
   action: "<value>",

@@ -5,7 +5,7 @@ Request body for archiving a Slack channel.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsCommunicationCardsArchiveSlackChannelRequest } from "SquadcastSDK/models";
+import { V3IncidentsCommunicationCardsArchiveSlackChannelRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsCommunicationCardsArchiveSlackChannelRequest = {
   slackChannelId: "<id>",

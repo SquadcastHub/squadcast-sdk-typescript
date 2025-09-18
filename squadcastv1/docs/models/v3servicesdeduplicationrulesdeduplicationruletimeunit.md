@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit } from "SquadcastSDK/models";
+import { V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit = "hour";
 ```

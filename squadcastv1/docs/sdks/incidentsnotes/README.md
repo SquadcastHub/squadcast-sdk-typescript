@@ -17,7 +17,7 @@ Create Notes
 
 <!-- UsageSnippet language="typescript" operationID="Notes_createNotes" method="post" path="/v3/incidents/{IncidentId}/warroom" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -45,8 +45,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsNotesCreate } from "SquadcastSDK/funcs/incidentsNotesCreate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsNotesCreate } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsNotesCreate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -114,7 +114,7 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="Notes_getAllNotes" method="get" path="/v3/incidents/{IncidentId}/warroom" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -136,8 +136,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsNotesList } from "SquadcastSDK/funcs/incidentsNotesList.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsNotesList } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsNotesList.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -198,7 +198,7 @@ This API can be used to update a Note or a Resolution reason associated with an 
 
 <!-- UsageSnippet language="typescript" operationID="Notes_updateNote" method="put" path="/v3/incidents/{IncidentId}/warroom/{NoteId}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -225,8 +225,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { incidentsNotesUpdate } from "SquadcastSDK/funcs/incidentsNotesUpdate.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { incidentsNotesUpdate } from "@solarwinds/squadcast-sdk-typescript/funcs/incidentsNotesUpdate.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

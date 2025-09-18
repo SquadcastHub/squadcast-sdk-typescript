@@ -16,7 +16,7 @@ Create Slack Channel in Communication Card
 
 <!-- UsageSnippet language="typescript" operationID="CommunicationCards_createSlackChannelInCommunicationCard" method="post" path="/v3/extensions/slack_v2/channel" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -39,8 +39,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { communicationCardsCreateSlackChannel } from "SquadcastSDK/funcs/communicationCardsCreateSlackChannel.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { communicationCardsCreateSlackChannel } from "@solarwinds/squadcast-sdk-typescript/funcs/communicationCardsCreateSlackChannel.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -104,7 +104,7 @@ Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header wi
 
 <!-- UsageSnippet language="typescript" operationID="CommunicationCards_deleteCommunicationCard" method="delete" path="/v3/incidents/{IncidentId}/communication_cards/{communicationCardId}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -127,8 +127,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { communicationCardsDelete } from "SquadcastSDK/funcs/communicationCardsDelete.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { communicationCardsDelete } from "@solarwinds/squadcast-sdk-typescript/funcs/communicationCardsDelete.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

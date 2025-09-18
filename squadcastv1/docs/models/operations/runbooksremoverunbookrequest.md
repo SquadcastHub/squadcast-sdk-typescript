@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { RunbooksRemoveRunbookRequest } from "SquadcastSDK/models/operations";
+import { RunbooksRemoveRunbookRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: RunbooksRemoveRunbookRequest = {
   runbookID: "<id>",

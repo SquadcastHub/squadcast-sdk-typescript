@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EscalationPoliciesGetEscalationPolicyByTeamMeta } from "SquadcastSDK/models/operations";
+import { EscalationPoliciesGetEscalationPolicyByTeamMeta } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: EscalationPoliciesGetEscalationPolicyByTeamMeta = {
   totalCount: 108411,

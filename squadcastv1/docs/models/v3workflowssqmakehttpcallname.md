@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3WorkflowsSqMakeHTTPCallName } from "SquadcastSDK/models";
+import { V3WorkflowsSqMakeHTTPCallName } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3WorkflowsSqMakeHTTPCallName = "sq_make_http_call";
 ```

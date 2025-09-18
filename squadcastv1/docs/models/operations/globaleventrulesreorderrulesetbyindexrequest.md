@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GlobalEventRulesReorderRulesetByIndexRequest } from "SquadcastSDK/models/operations";
+import { GlobalEventRulesReorderRulesetByIndexRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: GlobalEventRulesReorderRulesetByIndexRequest = {
   gerId: 506053,

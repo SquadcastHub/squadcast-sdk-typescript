@@ -5,7 +5,7 @@ The request has succeeded and a new resource has been created as a result.
 ## Example Usage
 
 ```typescript
-import { NotesCreateNotesResponse } from "SquadcastSDK/models/operations";
+import { NotesCreateNotesResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: NotesCreateNotesResponse = {
   body: {

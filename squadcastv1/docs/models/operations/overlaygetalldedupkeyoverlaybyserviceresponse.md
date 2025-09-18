@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { OverlayGetAllDedupKeyOverlayByServiceResponse } from "SquadcastSDK/models/operations";
+import { OverlayGetAllDedupKeyOverlayByServiceResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: OverlayGetAllDedupKeyOverlayByServiceResponse = {
   data: [

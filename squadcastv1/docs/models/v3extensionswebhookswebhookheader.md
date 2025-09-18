@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ExtensionsWebhooksWebhookHeader } from "SquadcastSDK/models";
+import { V3ExtensionsWebhooksWebhookHeader } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ExtensionsWebhooksWebhookHeader = {};
 ```

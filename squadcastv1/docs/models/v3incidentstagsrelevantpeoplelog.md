@@ -5,7 +5,7 @@ Represents a relevant people log entry.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsTagsRelevantPeopleLog } from "SquadcastSDK/models";
+import { V3IncidentsTagsRelevantPeopleLog } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsTagsRelevantPeopleLog = {
   userId: "<id>",

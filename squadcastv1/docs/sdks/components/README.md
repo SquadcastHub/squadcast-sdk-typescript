@@ -16,7 +16,7 @@ List Components
 
 <!-- UsageSnippet language="typescript" operationID="Components_listComponents" method="get" path="/v4/statuspages/{statuspageID}/components" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -38,8 +38,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { componentsList } from "SquadcastSDK/funcs/componentsList.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { componentsList } from "@solarwinds/squadcast-sdk-typescript/funcs/componentsList.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -100,7 +100,7 @@ Delete Component By ID
 
 <!-- UsageSnippet language="typescript" operationID="Components_deleteComponentById" method="delete" path="/v4/statuspages/{statuspageID}/components/{component_id}" -->
 ```typescript
-import { SquadcastSDK } from "SquadcastSDK";
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -123,8 +123,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SquadcastSDKCore } from "SquadcastSDK/core.js";
-import { componentsDeleteById } from "SquadcastSDK/funcs/componentsDeleteById.js";
+import { SquadcastSDKCore } from "@solarwinds/squadcast-sdk-typescript/core.js";
+import { componentsDeleteById } from "@solarwinds/squadcast-sdk-typescript/funcs/componentsDeleteById.js";
 
 // Use `SquadcastSDKCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

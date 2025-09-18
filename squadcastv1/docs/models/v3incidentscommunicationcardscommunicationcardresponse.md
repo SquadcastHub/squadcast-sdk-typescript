@@ -5,7 +5,7 @@ Represents a communication card.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsCommunicationCardsCommunicationCardResponse } from "SquadcastSDK/models";
+import { V3IncidentsCommunicationCardsCommunicationCardResponse } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsCommunicationCardsCommunicationCardResponse = {
   createdAt: "1712669946449",

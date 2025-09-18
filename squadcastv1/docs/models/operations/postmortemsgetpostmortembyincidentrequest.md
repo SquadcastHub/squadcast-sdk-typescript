@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PostmortemsGetPostmortemByIncidentRequest } from "SquadcastSDK/models/operations";
+import { PostmortemsGetPostmortemByIncidentRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: PostmortemsGetPostmortemByIncidentRequest = {
   incidentID: "<id>",

@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { ServicesCreateOrUpdateAPTAConfigResponse } from "SquadcastSDK/models/operations";
+import { ServicesCreateOrUpdateAPTAConfigResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ServicesCreateOrUpdateAPTAConfigResponse = {
   data: {

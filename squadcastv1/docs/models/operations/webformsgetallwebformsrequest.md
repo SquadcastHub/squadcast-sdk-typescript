@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { WebformsGetAllWebformsRequest } from "SquadcastSDK/models/operations";
+import { WebformsGetAllWebformsRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: WebformsGetAllWebformsRequest = {
   ownerId: "<id>",

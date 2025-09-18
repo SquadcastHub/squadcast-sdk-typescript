@@ -1,6 +1,6 @@
-# SquadcastSDK Examples
+# @solarwinds/squadcast-sdk-typescript Examples
 
-This directory contains example scripts demonstrating how to use the SquadcastSDK SDK.
+This directory contains example scripts demonstrating how to use the @solarwinds/squadcast-sdk-typescript SDK.
 
 ## Prerequisites
 

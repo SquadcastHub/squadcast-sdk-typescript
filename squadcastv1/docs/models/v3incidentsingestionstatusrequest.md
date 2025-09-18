@@ -5,7 +5,7 @@ Request body for getting ingestion status.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsIngestionStatusRequest } from "SquadcastSDK/models";
+import { V3IncidentsIngestionStatusRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsIngestionStatusRequest = {
   requestIds: [],

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TeamsCreateTeamRoleRequest } from "SquadcastSDK/models/operations";
+import { TeamsCreateTeamRoleRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: TeamsCreateTeamRoleRequest = {
   teamId: "<id>",

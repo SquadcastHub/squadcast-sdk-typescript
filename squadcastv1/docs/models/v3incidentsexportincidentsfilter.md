@@ -5,7 +5,7 @@ Filter criteria for incidents in an export.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsExportIncidentsFilter } from "SquadcastSDK/models";
+import { V3IncidentsExportIncidentsFilter } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsExportIncidentsFilter = {
   services: [

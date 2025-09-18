@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { DeduplicationRulesGetDeduplicationRulesResponse } from "SquadcastSDK/models/operations";
+import { DeduplicationRulesGetDeduplicationRulesResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: DeduplicationRulesGetDeduplicationRulesResponse = {
   data: {

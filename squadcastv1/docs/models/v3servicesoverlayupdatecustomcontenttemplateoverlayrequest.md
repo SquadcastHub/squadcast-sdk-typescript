@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest } from "SquadcastSDK/models";
+import { V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest = {
   overlayTemplateType: "<value>",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest } from "SquadcastSDK/models/operations";
+import { DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest = {
   serviceID: "<id>",

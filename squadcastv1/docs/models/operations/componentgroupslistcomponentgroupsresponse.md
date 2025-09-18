@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { ComponentGroupsListComponentGroupsResponse } from "SquadcastSDK/models/operations";
+import { ComponentGroupsListComponentGroupsResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: ComponentGroupsListComponentGroupsResponse = {
   data: [],

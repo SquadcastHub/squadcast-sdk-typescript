@@ -5,7 +5,7 @@ Schema for an assigned entity in an incident.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsAssignedTo } from "SquadcastSDK/models";
+import { V3IncidentsAssignedTo } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsAssignedTo = {
   id: "<id>",

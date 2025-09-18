@@ -5,7 +5,7 @@ Request body for creating a new note.
 ## Example Usage
 
 ```typescript
-import { V3IncidentsNotesCreateNoteRequest } from "SquadcastSDK/models";
+import { V3IncidentsNotesCreateNoteRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsNotesCreateNoteRequest = {
   message: "<value>",

@@ -5,7 +5,7 @@ Represents the owner of an entity.
 ## Example Usage
 
 ```typescript
-import { CommonV3EntityOwner } from "SquadcastSDK/models";
+import { CommonV3EntityOwner } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: CommonV3EntityOwner = {
   id: "<id>",

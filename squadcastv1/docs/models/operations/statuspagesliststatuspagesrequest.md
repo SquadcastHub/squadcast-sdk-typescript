@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { StatusPagesListStatusPagesRequest } from "SquadcastSDK/models/operations";
+import { StatusPagesListStatusPagesRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: StatusPagesListStatusPagesRequest = {
   pageSize: "<value>",

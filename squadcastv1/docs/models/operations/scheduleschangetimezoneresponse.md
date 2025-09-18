@@ -5,7 +5,7 @@ The request has succeeded.
 ## Example Usage
 
 ```typescript
-import { SchedulesChangeTimezoneResponse } from "SquadcastSDK/models/operations";
+import { SchedulesChangeTimezoneResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: SchedulesChangeTimezoneResponse = {
   data: {

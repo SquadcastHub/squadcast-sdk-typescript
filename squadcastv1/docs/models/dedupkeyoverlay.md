@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DedupKeyOverlay } from "SquadcastSDK/models";
+import { DedupKeyOverlay } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: DedupKeyOverlay = {
   template: "<value>",

@@ -5,7 +5,7 @@ A set of booleans to easily configure which incident-related alerts are sent to 
 ## Example Usage
 
 ```typescript
-import { V3ExtensionsMSTeamsIncidentActionAlertState } from "SquadcastSDK/models";
+import { V3ExtensionsMSTeamsIncidentActionAlertState } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ExtensionsMSTeamsIncidentActionAlertState = {
   isTriggerActive: true,

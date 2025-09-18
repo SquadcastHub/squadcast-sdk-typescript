@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { V3ServicesNotificationDelayConfigRequest } from "SquadcastSDK/models";
+import { V3ServicesNotificationDelayConfigRequest } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3ServicesNotificationDelayConfigRequest = {
   isEnabled: true,

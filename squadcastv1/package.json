@@ -1,11 +1,11 @@
 {
-  "name": "SquadcastSDK",
-  "version": "0.1.3",
+  "name": "@solarwinds/squadcast-sdk-typescript",
+  "version": "0.1.4",
   "author": "Speakeasy",
   "type": "module",
   "tshy": {
     "sourceDialects": [
-      "SquadcastSDK/source"
+      "@solarwinds/squadcast-sdk-typescript/source"
     ],
     "exports": {
       ".": "./src/index.ts",
@@ -39,7 +39,7 @@
   "exports": {
     ".": {
       "import": {
-        "SquadcastSDK/source": "./src/index.ts",
+        "@solarwinds/squadcast-sdk-typescript/source": "./src/index.ts",
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
       },
@@ -51,7 +51,7 @@
     "./package.json": "./package.json",
     "./types": {
       "import": {
-        "SquadcastSDK/source": "./src/types/index.ts",
+        "@solarwinds/squadcast-sdk-typescript/source": "./src/types/index.ts",
         "types": "./dist/esm/types/index.d.ts",
         "default": "./dist/esm/types/index.js"
       },
@@ -62,7 +62,7 @@
     },
     "./models/errors": {
       "import": {
-        "SquadcastSDK/source": "./src/models/errors/index.ts",
+        "@solarwinds/squadcast-sdk-typescript/source": "./src/models/errors/index.ts",
         "types": "./dist/esm/models/errors/index.d.ts",
         "default": "./dist/esm/models/errors/index.js"
       },
@@ -73,7 +73,7 @@
     },
     "./models": {
       "import": {
-        "SquadcastSDK/source": "./src/models/index.ts",
+        "@solarwinds/squadcast-sdk-typescript/source": "./src/models/index.ts",
         "types": "./dist/esm/models/index.d.ts",
         "default": "./dist/esm/models/index.js"
       },
@@ -84,7 +84,7 @@
     },
     "./models/operations": {
       "import": {
-        "SquadcastSDK/source": "./src/models/operations/index.ts",
+        "@solarwinds/squadcast-sdk-typescript/source": "./src/models/operations/index.ts",
         "types": "./dist/esm/models/operations/index.d.ts",
         "default": "./dist/esm/models/operations/index.js"
       },
@@ -95,7 +95,7 @@
     },
     "./*.js": {
       "import": {
-        "SquadcastSDK/source": "./src/*.ts",
+        "@solarwinds/squadcast-sdk-typescript/source": "./src/*.ts",
         "types": "./dist/esm/*.d.ts",
         "default": "./dist/esm/*.js"
       },
@@ -106,7 +106,7 @@
     },
     "./*": {
       "import": {
-        "SquadcastSDK/source": "./src/*.ts",
+        "@solarwinds/squadcast-sdk-typescript/source": "./src/*.ts",
         "types": "./dist/esm/*.d.ts",
         "default": "./dist/esm/*.js"
       },

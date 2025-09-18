@@ -5,7 +5,7 @@ Represents a rule for sending incident reminders.
 ## Example Usage
 
 ```typescript
-import { V3EscalationPoliciesIncidentReminderRule } from "SquadcastSDK/models";
+import { V3EscalationPoliciesIncidentReminderRule } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3EscalationPoliciesIncidentReminderRule = {
   via: [

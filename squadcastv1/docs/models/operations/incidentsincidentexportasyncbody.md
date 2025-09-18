@@ -5,7 +5,7 @@ The body type of the operation request or response.
 ## Example Usage
 
 ```typescript
-import { IncidentsIncidentExportAsyncBody } from "SquadcastSDK/models/operations";
+import { IncidentsIncidentExportAsyncBody } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentsIncidentExportAsyncBody = {
   data: {
