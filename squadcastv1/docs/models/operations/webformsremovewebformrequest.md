@@ -7,6 +7,7 @@ import { WebformsRemoveWebformRequest } from "@solarwinds/squadcast-sdk-typescri
 
 let value: WebformsRemoveWebformRequest = {
   webformId: 716869,
+  ownerId: "<id>",
 };
 ```
 
@@ -15,4 +16,4 @@ let value: WebformsRemoveWebformRequest = {
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `webformId`        | *number*           | :heavy_check_mark: | N/A                |
-| `ownerId`          | *string*           | :heavy_minus_sign: | N/A                |
+| `ownerId`          | *string*           | :heavy_check_mark: | N/A                |

@@ -17,7 +17,6 @@ export type RotationsGetScheduleRotationsRequest = {
  */
 export type RotationsGetScheduleRotationsResponse = {
   data: Array<models.V4RotationResponse>;
-  pageInfo: models.CommonV4PageInfo;
 };
 
 /** @internal */
@@ -86,13 +85,11 @@ export const RotationsGetScheduleRotationsResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   data: z.array(models.V4RotationResponse$inboundSchema),
-  pageInfo: models.CommonV4PageInfo$inboundSchema,
 });
 
 /** @internal */
 export type RotationsGetScheduleRotationsResponse$Outbound = {
   data: Array<models.V4RotationResponse$Outbound>;
-  pageInfo: models.CommonV4PageInfo$Outbound;
 };
 
 /** @internal */
@@ -102,7 +99,6 @@ export const RotationsGetScheduleRotationsResponse$outboundSchema: z.ZodType<
   RotationsGetScheduleRotationsResponse
 > = z.object({
   data: z.array(models.V4RotationResponse$outboundSchema),
-  pageInfo: models.CommonV4PageInfo$outboundSchema,
 });
 
 /**

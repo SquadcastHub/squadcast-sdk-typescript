@@ -181,11 +181,6 @@ export class SquadcastSDK extends ClientSDK {
     return (this._slo ??= new Slo(this._options));
   }
 
-  private _squads?: Squads;
-  get squads(): Squads {
-    return (this._squads ??= new Squads(this._options));
-  }
-
   private _teams?: Teams;
   get teams(): Teams {
     return (this._teams ??= new Teams(this._options));
@@ -234,6 +229,11 @@ export class SquadcastSDK extends ClientSDK {
   private _rotations?: Rotations;
   get rotations(): Rotations {
     return (this._rotations ??= new Rotations(this._options));
+  }
+
+  private _squads?: Squads;
+  get squads(): Squads {
+    return (this._squads ??= new Squads(this._options));
   }
 
   private _squadsV4?: SquadsV4;

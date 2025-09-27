@@ -9,6 +9,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as models from "../index.js";
 
 export type SchedulesListSchedulesRequest = {
+  teamID: string;
   scheduleIDs?: Array<number> | undefined;
   participants?: Array<string> | undefined;
   scheduleName?: string | undefined;
@@ -20,8 +21,7 @@ export type SchedulesListSchedulesRequest = {
   escalationPolicies?: Array<string> | undefined;
   withoutEscalationPolicy?: boolean | undefined;
   pageSize?: number | undefined;
-  pageNumber?: number | undefined;
-  teamID: string;
+  cursor?: string | undefined;
 };
 
 /**
@@ -38,6 +38,7 @@ export const SchedulesListSchedulesRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  teamID: z.string(),
   scheduleIDs: z.array(z.number().int()).optional(),
   participants: z.array(z.string()).optional(),
   scheduleName: z.string().optional(),
@@ -49,12 +50,12 @@ export const SchedulesListSchedulesRequest$inboundSchema: z.ZodType<
   escalationPolicies: z.array(z.string()).optional(),
   withoutEscalationPolicy: z.boolean().optional(),
   pageSize: z.number().int().optional(),
-  pageNumber: z.number().int().optional(),
-  teamID: z.string(),
+  cursor: z.string().optional(),
 });
 
 /** @internal */
 export type SchedulesListSchedulesRequest$Outbound = {
+  teamID: string;
   scheduleIDs?: Array<number> | undefined;
   participants?: Array<string> | undefined;
   scheduleName?: string | undefined;
@@ -66,8 +67,7 @@ export type SchedulesListSchedulesRequest$Outbound = {
   escalationPolicies?: Array<string> | undefined;
   withoutEscalationPolicy?: boolean | undefined;
   pageSize?: number | undefined;
-  pageNumber?: number | undefined;
-  teamID: string;
+  cursor?: string | undefined;
 };
 
 /** @internal */
@@ -76,6 +76,7 @@ export const SchedulesListSchedulesRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   SchedulesListSchedulesRequest
 > = z.object({
+  teamID: z.string(),
   scheduleIDs: z.array(z.number().int()).optional(),
   participants: z.array(z.string()).optional(),
   scheduleName: z.string().optional(),
@@ -87,8 +88,7 @@ export const SchedulesListSchedulesRequest$outboundSchema: z.ZodType<
   escalationPolicies: z.array(z.string()).optional(),
   withoutEscalationPolicy: z.boolean().optional(),
   pageSize: z.number().int().optional(),
-  pageNumber: z.number().int().optional(),
-  teamID: z.string(),
+  cursor: z.string().optional(),
 });
 
 /**

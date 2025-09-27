@@ -13,8 +13,8 @@ export type OverridesListOverridesRequest = {
   startTime: string;
   endTime: string;
   participantID?: string | undefined;
-  pageNumber?: number | undefined;
   pageSize?: number | undefined;
+  cursor?: string | undefined;
 };
 
 /**
@@ -35,8 +35,8 @@ export const OverridesListOverridesRequest$inboundSchema: z.ZodType<
   startTime: z.string(),
   endTime: z.string(),
   participantID: z.string().optional(),
-  pageNumber: z.number().int().optional(),
   pageSize: z.number().int().optional(),
+  cursor: z.string().optional(),
 });
 
 /** @internal */
@@ -45,8 +45,8 @@ export type OverridesListOverridesRequest$Outbound = {
   startTime: string;
   endTime: string;
   participantID?: string | undefined;
-  pageNumber?: number | undefined;
   pageSize?: number | undefined;
+  cursor?: string | undefined;
 };
 
 /** @internal */
@@ -59,8 +59,8 @@ export const OverridesListOverridesRequest$outboundSchema: z.ZodType<
   startTime: z.string(),
   endTime: z.string(),
   participantID: z.string().optional(),
-  pageNumber: z.number().int().optional(),
   pageSize: z.number().int().optional(),
+  cursor: z.string().optional(),
 });
 
 /**

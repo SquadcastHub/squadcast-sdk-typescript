@@ -8,3 +8,4 @@ export * from "./httpclienterrors.js";
 export * from "./responsevalidationerror.js";
 export * from "./sdkdefaulterror.js";
 export * from "./sdkvalidationerror.js";
+export * from "./squadcastsdkerror.js";

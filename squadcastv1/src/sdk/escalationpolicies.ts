@@ -21,9 +21,7 @@ export class EscalationPolicies extends ClientSDK {
    * Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header with `read` scope.
    */
   async listByTeam(
-    request?:
-      | operations.EscalationPoliciesGetEscalationPolicyByTeamRequest
-      | undefined,
+    request: operations.EscalationPoliciesGetEscalationPolicyByTeamRequest,
     options?: RequestOptions,
   ): Promise<operations.EscalationPoliciesGetEscalationPolicyByTeamResponse> {
     return unwrapAsync(escalationPoliciesListByTeam(

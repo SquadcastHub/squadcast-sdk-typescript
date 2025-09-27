@@ -14,6 +14,7 @@ let value: SchedulesListSchedulesRequest = {
 
 | Field                     | Type                      | Required                  | Description               |
 | ------------------------- | ------------------------- | ------------------------- | ------------------------- |
+| `teamID`                  | *string*                  | :heavy_check_mark:        | N/A                       |
 | `scheduleIDs`             | *number*[]                | :heavy_minus_sign:        | N/A                       |
 | `participants`            | *string*[]                | :heavy_minus_sign:        | N/A                       |
 | `scheduleName`            | *string*                  | :heavy_minus_sign:        | N/A                       |
@@ -25,5 +26,4 @@ let value: SchedulesListSchedulesRequest = {
 | `escalationPolicies`      | *string*[]                | :heavy_minus_sign:        | N/A                       |
 | `withoutEscalationPolicy` | *boolean*                 | :heavy_minus_sign:        | N/A                       |
 | `pageSize`                | *number*                  | :heavy_minus_sign:        | N/A                       |
-| `pageNumber`              | *number*                  | :heavy_minus_sign:        | N/A                       |
-| `teamID`                  | *string*                  | :heavy_check_mark:        | N/A                       |
+| `cursor`                  | *string*                  | :heavy_minus_sign:        | N/A                       |

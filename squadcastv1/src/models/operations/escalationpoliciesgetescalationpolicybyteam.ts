@@ -13,7 +13,7 @@ export type EscalationPoliciesGetEscalationPolicyByTeamRequest = {
   /**
    * here owner_id represents team_id, if  team_id is not provided, it will return escalation policies of all teams.
    */
-  ownerId?: string | undefined;
+  ownerId: string;
   pageNumber?: string | undefined;
   pageSize?: string | undefined;
 };
@@ -37,7 +37,7 @@ export const EscalationPoliciesGetEscalationPolicyByTeamRequest$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.object({
-    owner_id: z.string().optional(),
+    owner_id: z.string(),
     page_number: z.string().optional(),
     page_size: z.string().optional(),
   }).transform((v) => {
@@ -50,7 +50,7 @@ export const EscalationPoliciesGetEscalationPolicyByTeamRequest$inboundSchema:
 
 /** @internal */
 export type EscalationPoliciesGetEscalationPolicyByTeamRequest$Outbound = {
-  owner_id?: string | undefined;
+  owner_id: string;
   page_number?: string | undefined;
   page_size?: string | undefined;
 };
@@ -62,7 +62,7 @@ export const EscalationPoliciesGetEscalationPolicyByTeamRequest$outboundSchema:
     z.ZodTypeDef,
     EscalationPoliciesGetEscalationPolicyByTeamRequest
   > = z.object({
-    ownerId: z.string().optional(),
+    ownerId: z.string(),
     pageNumber: z.string().optional(),
     pageSize: z.string().optional(),
   }).transform((v) => {

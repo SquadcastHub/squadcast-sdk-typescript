@@ -34,9 +34,7 @@ import { Result } from "../types/fp.js";
  */
 export function escalationPoliciesListByTeam(
   client: SquadcastSDKCore,
-  request?:
-    | operations.EscalationPoliciesGetEscalationPolicyByTeamRequest
-    | undefined,
+  request: operations.EscalationPoliciesGetEscalationPolicyByTeamRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -71,9 +69,7 @@ export function escalationPoliciesListByTeam(
 
 async function $do(
   client: SquadcastSDKCore,
-  request?:
-    | operations.EscalationPoliciesGetEscalationPolicyByTeamRequest
-    | undefined,
+  request: operations.EscalationPoliciesGetEscalationPolicyByTeamRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -107,7 +103,7 @@ async function $do(
     (value) =>
       operations
         .EscalationPoliciesGetEscalationPolicyByTeamRequest$outboundSchema
-        .optional().parse(value),
+        .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -119,9 +115,9 @@ async function $do(
   const path = pathToFunc("/v3/escalation-policies")();
 
   const query = encodeFormQuery({
-    "owner_id": payload?.owner_id,
-    "page_number": payload?.page_number,
-    "page_size": payload?.page_size,
+    "owner_id": payload.owner_id,
+    "page_number": payload.page_number,
+    "page_size": payload.page_size,
   });
 
   const headers = new Headers(compactMap({

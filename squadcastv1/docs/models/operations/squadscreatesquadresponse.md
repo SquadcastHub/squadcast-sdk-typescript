@@ -9,26 +9,20 @@ import { SquadsCreateSquadResponse } from "@solarwinds/squadcast-sdk-typescript/
 
 let value: SquadsCreateSquadResponse = {
   data: {
+    organizationId: "<id>",
+    ownerId: "<id>",
     id: "<id>",
     name: "<value>",
     slug: "<value>",
     members: [],
-    organizationId: "<id>",
-    owner: {
-      id: "<id>",
-      type: "<value>",
-    },
-    organization: {
-      id: "<id>",
-      name: "<value>",
-      slug: "<value>",
-    },
+    createdAt: "1722958552863",
+    createdBy: "<value>",
   },
 };
 ```
 
 ## Fields
 
-| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `data`                                                                | [models.V3SquadsSquadResponse](../../models/v3squadssquadresponse.md) | :heavy_check_mark:                                                    | N/A                                                                   |
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `data`                                                                            | [models.V4SquadsCreateSquadResponse](../../models/v4squadscreatesquadresponse.md) | :heavy_check_mark:                                                                | N/A                                                                               |

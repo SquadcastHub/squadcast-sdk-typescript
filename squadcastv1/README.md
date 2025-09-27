@@ -68,10 +68,7 @@ bun add @solarwinds/squadcast-sdk-typescript
 ### Yarn
 
 ```bash
-yarn add @solarwinds/squadcast-sdk-typescript zod
-
-# Note that Yarn does not install peer dependencies automatically. You will need
-# to install zod as shown above.
+yarn add @solarwinds/squadcast-sdk-typescript
 ```
 
 > [!NOTE]
@@ -483,15 +480,11 @@ run();
 
 ### [squads](docs/sdks/squads/README.md)
 
-* [listByTeam](docs/sdks/squads/README.md#listbyteam) - Get Squad By team
-* [create](docs/sdks/squads/README.md#create) - Create Squad
-* [delete](docs/sdks/squads/README.md#delete) - Delete Squad
-* [getById](docs/sdks/squads/README.md#getbyid) - Get Squad By ID
-* [update](docs/sdks/squads/README.md#update) - Update Squad
 * [list](docs/sdks/squads/README.md#list) - Get All Squads
 * [createV4](docs/sdks/squads/README.md#createv4) - Create Squad
 * [updateMember](docs/sdks/squads/README.md#updatemember) - Update Squad Member
 * [updateName](docs/sdks/squads/README.md#updatename) - Update Squad Name
+* [delete](docs/sdks/squads/README.md#delete) - Delete Squad
 
 #### [squads.members](docs/sdks/squadsmembers/README.md)
 
@@ -788,14 +781,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`slosMarkFalsePositive`](docs/sdks/slos/README.md#markfalsepositive) - Mark SLO False Positive
 - [`slosRemove`](docs/sdks/slos/README.md#remove) - Remove SLO
 - [`slosUpdate`](docs/sdks/slos/README.md#update) - Update SLO
-- [`squadsCreate`](docs/sdks/squads/README.md#create) - Create Squad
 - [`squadsCreateV4`](docs/sdks/squads/README.md#createv4) - Create Squad
 - [`squadsDelete`](docs/sdks/squads/README.md#delete) - Delete Squad
-- [`squadsGetById`](docs/sdks/squads/README.md#getbyid) - Get Squad By ID
 - [`squadsList`](docs/sdks/squads/README.md#list) - Get All Squads
-- [`squadsListByTeam`](docs/sdks/squads/README.md#listbyteam) - Get Squad By team
 - [`squadsMembersRemove`](docs/sdks/squadsmembers/README.md#remove) - Remove Squad Member
-- [`squadsUpdate`](docs/sdks/squads/README.md#update) - Update Squad
 - [`squadsUpdateMember`](docs/sdks/squads/README.md#updatemember) - Update Squad Member
 - [`squadsUpdateName`](docs/sdks/squads/README.md#updatename) - Update Squad Name
 - [`squadsV4GetById`](docs/sdks/squadsv4/README.md#getbyid) - Get Squad By ID
@@ -1056,9 +1045,9 @@ run();
 
 
 **Inherit from [`SquadcastSDKError`](./src/models/errors/squadcastsdkerror.ts)**:
-* [`CommonV4Error`](./src/models/errors/commonv4error.ts): The server could not understand the request due to invalid syntax. Applicable to 31 of 229 methods.*
-* [`ResponseBodyError1`](./src/models/errors/responsebodyerror1.ts): Represents a CircleCI error response for a 400 status code. Status code `400`. Applicable to 1 of 229 methods.*
-* [`ResponseBodyError2`](./src/models/errors/responsebodyerror2.ts): Represents a CircleCI error response for a 400 status code. Status code `400`. Applicable to 1 of 229 methods.*
+* [`CommonV4Error`](./src/models/errors/commonv4error.ts): The server could not understand the request due to invalid syntax. Applicable to 32 of 225 methods.*
+* [`ResponseBodyError1`](./src/models/errors/responsebodyerror1.ts): Represents a CircleCI error response for a 400 status code. Status code `400`. Applicable to 1 of 225 methods.*
+* [`ResponseBodyError2`](./src/models/errors/responsebodyerror2.ts): Represents a CircleCI error response for a 400 status code. Status code `400`. Applicable to 1 of 225 methods.*
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>
@@ -1076,7 +1065,7 @@ The default server can be overridden globally by passing a URL to the `serverURL
 import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
 
 const squadcastSDK = new SquadcastSDK({
-  serverURL: "https://api.squadcast.tech",
+  serverURL: "https://api.squadcast.com",
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
@@ -1139,7 +1128,7 @@ httpClient.addHook("requestError", (error, request) => {
   console.groupEnd();
 });
 
-const sdk = new SquadcastSDK({ httpClient });
+const sdk = new SquadcastSDK({ httpClient: httpClient });
 ```
 <!-- End Custom HTTP Client [http-client] -->
 

@@ -9,11 +9,6 @@ import { RotationsGetScheduleRotationsResponse } from "@solarwinds/squadcast-sdk
 
 let value: RotationsGetScheduleRotationsResponse = {
   data: [],
-  pageInfo: {
-    pageSize: 94168,
-    hasNext: true,
-    hasPrevious: true,
-  },
 };
 ```
 
@@ -22,4 +17,3 @@ let value: RotationsGetScheduleRotationsResponse = {
 | Field                                                             | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `data`                                                            | [models.V4RotationResponse](../../models/v4rotationresponse.md)[] | :heavy_check_mark:                                                | N/A                                                               |
-| `pageInfo`                                                        | [models.CommonV4PageInfo](../../models/commonv4pageinfo.md)       | :heavy_check_mark:                                                | N/A                                                               |
