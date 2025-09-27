@@ -12,7 +12,7 @@ import * as models from "../index.js";
  * The request has succeeded and a new resource has been created as a result.
  */
 export type SquadsCreateSquadResponse = {
-  data: models.V3SquadsSquadResponse;
+  data: models.V4SquadsCreateSquadResponse;
 };
 
 /** @internal */
@@ -21,12 +21,12 @@ export const SquadsCreateSquadResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  data: models.V3SquadsSquadResponse$inboundSchema,
+  data: models.V4SquadsCreateSquadResponse$inboundSchema,
 });
 
 /** @internal */
 export type SquadsCreateSquadResponse$Outbound = {
-  data: models.V3SquadsSquadResponse$Outbound;
+  data: models.V4SquadsCreateSquadResponse$Outbound;
 };
 
 /** @internal */
@@ -35,7 +35,7 @@ export const SquadsCreateSquadResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   SquadsCreateSquadResponse
 > = z.object({
-  data: models.V3SquadsSquadResponse$outboundSchema,
+  data: models.V4SquadsCreateSquadResponse$outboundSchema,
 });
 
 /**

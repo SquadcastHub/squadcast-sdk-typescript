@@ -31,7 +31,9 @@ const squadcastSDK = new SquadcastSDK({
 });
 
 async function run() {
-  const result = await squadcastSDK.services.list();
+  const result = await squadcastSDK.services.list({
+    ownerId: "<id>",
+  });
 
   console.log(result);
 }
@@ -54,7 +56,9 @@ const squadcastSDK = new SquadcastSDKCore({
 });
 
 async function run() {
-  const res = await servicesList(squadcastSDK);
+  const res = await servicesList(squadcastSDK, {
+    ownerId: "<id>",
+  });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);

@@ -40,17 +40,7 @@ export function squadsDelete(
 ): APIPromise<
   Result<
     Uint8Array,
-    | errors.BadRequestError
-    | errors.UnauthorizedError
-    | errors.PaymentRequiredError
-    | errors.ForbiddenError
-    | errors.NotFoundError
-    | errors.ConflictError
-    | errors.UnprocessableEntityError
-    | errors.InternalServerError
-    | errors.BadGatewayError
-    | errors.ServiceUnavailableError
-    | errors.GatewayTimeoutError
+    | errors.CommonV4Error
     | SquadcastSDKError
     | ResponseValidationError
     | ConnectionError
@@ -76,17 +66,7 @@ async function $do(
   [
     Result<
       Uint8Array,
-      | errors.BadRequestError
-      | errors.UnauthorizedError
-      | errors.PaymentRequiredError
-      | errors.ForbiddenError
-      | errors.NotFoundError
-      | errors.ConflictError
-      | errors.UnprocessableEntityError
-      | errors.InternalServerError
-      | errors.BadGatewayError
-      | errors.ServiceUnavailableError
-      | errors.GatewayTimeoutError
+      | errors.CommonV4Error
       | SquadcastSDKError
       | ResponseValidationError
       | ConnectionError
@@ -117,7 +97,7 @@ async function $do(
     }),
   };
 
-  const path = pathToFunc("/v3/squads/{squadID}")(pathParams);
+  const path = pathToFunc("/v4/squads/{squadID}")(pathParams);
 
   const headers = new Headers(compactMap({
     Accept: "*/*",
@@ -188,17 +168,7 @@ async function $do(
 
   const [result] = await M.match<
     Uint8Array,
-    | errors.BadRequestError
-    | errors.UnauthorizedError
-    | errors.PaymentRequiredError
-    | errors.ForbiddenError
-    | errors.NotFoundError
-    | errors.ConflictError
-    | errors.UnprocessableEntityError
-    | errors.InternalServerError
-    | errors.BadGatewayError
-    | errors.ServiceUnavailableError
-    | errors.GatewayTimeoutError
+    | errors.CommonV4Error
     | SquadcastSDKError
     | ResponseValidationError
     | ConnectionError
@@ -209,17 +179,11 @@ async function $do(
     | SDKValidationError
   >(
     M.bytes(204, b64$.zodInbound, { ctype: "*/*" }),
-    M.jsonErr(400, errors.BadRequestError$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedError$inboundSchema),
-    M.jsonErr(402, errors.PaymentRequiredError$inboundSchema),
-    M.jsonErr(403, errors.ForbiddenError$inboundSchema),
-    M.jsonErr(404, errors.NotFoundError$inboundSchema),
-    M.jsonErr(409, errors.ConflictError$inboundSchema),
-    M.jsonErr(422, errors.UnprocessableEntityError$inboundSchema),
-    M.jsonErr(500, errors.InternalServerError$inboundSchema),
-    M.jsonErr(502, errors.BadGatewayError$inboundSchema),
-    M.jsonErr(503, errors.ServiceUnavailableError$inboundSchema),
-    M.jsonErr(504, errors.GatewayTimeoutError$inboundSchema),
+    M.jsonErr(
+      [400, 401, 402, 403, 404, 409, 422],
+      errors.CommonV4Error$inboundSchema,
+    ),
+    M.jsonErr([500, 502, 503, 504], errors.CommonV4Error$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req, { extraFields: responseFields });

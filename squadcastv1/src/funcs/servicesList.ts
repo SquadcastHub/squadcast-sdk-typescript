@@ -30,7 +30,7 @@ import { Result } from "../types/fp.js";
  */
 export function servicesList(
   client: SquadcastSDKCore,
-  request?: operations.ServicesGetServicesRequest | undefined,
+  request: operations.ServicesGetServicesRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -65,7 +65,7 @@ export function servicesList(
 
 async function $do(
   client: SquadcastSDKCore,
-  request?: operations.ServicesGetServicesRequest | undefined,
+  request: operations.ServicesGetServicesRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -97,9 +97,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ServicesGetServicesRequest$outboundSchema.optional().parse(
-        value,
-      ),
+      operations.ServicesGetServicesRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -111,9 +109,9 @@ async function $do(
   const path = pathToFunc("/v3/services")();
 
   const query = encodeFormQuery({
-    "entity_owner": payload?.entity_owner,
-    "name": payload?.name,
-    "owner_id": payload?.owner_id,
+    "entity_owner": payload.entity_owner,
+    "name": payload.name,
+    "owner_id": payload.owner_id,
   }, { explode: false });
 
   const headers = new Headers(compactMap({

@@ -89,11 +89,11 @@ async function $do(
   const path = pathToFunc("/v4/schedules")();
 
   const query = encodeFormQuery({
+    "cursor": payload.cursor,
     "escalationPolicies": payload.escalationPolicies,
     "hidePaused": payload.hidePaused,
     "myOnCall": payload.myOnCall,
     "ownerID": payload.ownerID,
-    "pageNumber": payload.pageNumber,
     "pageSize": payload.pageSize,
     "participants": payload.participants,
     "scheduleIDs": payload.scheduleIDs,

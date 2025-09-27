@@ -10,19 +10,12 @@ import { SquadsUpdateSquadResponse } from "@solarwinds/squadcast-sdk-typescript/
 let value: SquadsUpdateSquadResponse = {
   data: {
     id: "<id>",
+    orgId: "<id>",
+    teamId: "<id>",
     name: "<value>",
-    slug: "<value>",
     members: [],
-    organizationId: "<id>",
-    owner: {
-      id: "<id>",
-      type: "<value>",
-    },
-    organization: {
-      id: "<id>",
-      name: "<value>",
-      slug: "<value>",
-    },
+    createdAt: "1727732577699",
+    updatedAt: "1735628359093",
   },
 };
 ```
@@ -31,4 +24,4 @@ let value: SquadsUpdateSquadResponse = {
 
 | Field                                                                 | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `data`                                                                | [models.V3SquadsSquadResponse](../../models/v3squadssquadresponse.md) | :heavy_check_mark:                                                    | N/A                                                                   |
+| `data`                                                                | [models.V4SquadsSquadResponse](../../models/v4squadssquadresponse.md) | :heavy_check_mark:                                                    | N/A                                                                   |

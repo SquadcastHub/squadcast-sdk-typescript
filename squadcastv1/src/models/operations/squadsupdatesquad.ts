@@ -11,14 +11,14 @@ import * as models from "../index.js";
 
 export type SquadsUpdateSquadRequest = {
   squadID: string;
-  v3SquadsUpdateSquadRequest: models.V3SquadsUpdateSquadRequest;
+  v4SquadsUpdateSquadRequest: models.V4SquadsUpdateSquadRequest;
 };
 
 /**
  * The request has succeeded.
  */
 export type SquadsUpdateSquadResponse = {
-  data: models.V3SquadsSquadResponse;
+  data: models.V4SquadsSquadResponse;
 };
 
 /** @internal */
@@ -28,18 +28,18 @@ export const SquadsUpdateSquadRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   squadID: z.string(),
-  "V3.Squads.UpdateSquadRequest":
-    models.V3SquadsUpdateSquadRequest$inboundSchema,
+  "V4.Squads.UpdateSquadRequest":
+    models.V4SquadsUpdateSquadRequest$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    "V3.Squads.UpdateSquadRequest": "v3SquadsUpdateSquadRequest",
+    "V4.Squads.UpdateSquadRequest": "v4SquadsUpdateSquadRequest",
   });
 });
 
 /** @internal */
 export type SquadsUpdateSquadRequest$Outbound = {
   squadID: string;
-  "V3.Squads.UpdateSquadRequest": models.V3SquadsUpdateSquadRequest$Outbound;
+  "V4.Squads.UpdateSquadRequest": models.V4SquadsUpdateSquadRequest$Outbound;
 };
 
 /** @internal */
@@ -49,10 +49,10 @@ export const SquadsUpdateSquadRequest$outboundSchema: z.ZodType<
   SquadsUpdateSquadRequest
 > = z.object({
   squadID: z.string(),
-  v3SquadsUpdateSquadRequest: models.V3SquadsUpdateSquadRequest$outboundSchema,
+  v4SquadsUpdateSquadRequest: models.V4SquadsUpdateSquadRequest$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
-    v3SquadsUpdateSquadRequest: "V3.Squads.UpdateSquadRequest",
+    v4SquadsUpdateSquadRequest: "V4.Squads.UpdateSquadRequest",
   });
 });
 
@@ -93,12 +93,12 @@ export const SquadsUpdateSquadResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  data: models.V3SquadsSquadResponse$inboundSchema,
+  data: models.V4SquadsSquadResponse$inboundSchema,
 });
 
 /** @internal */
 export type SquadsUpdateSquadResponse$Outbound = {
-  data: models.V3SquadsSquadResponse$Outbound;
+  data: models.V4SquadsSquadResponse$Outbound;
 };
 
 /** @internal */
@@ -107,7 +107,7 @@ export const SquadsUpdateSquadResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   SquadsUpdateSquadResponse
 > = z.object({
-  data: models.V3SquadsSquadResponse$outboundSchema,
+  data: models.V4SquadsSquadResponse$outboundSchema,
 });
 
 /**

@@ -3,10 +3,15 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as models from "../index.js";
+
+export type SquadsGetAllSquadsRequest = {
+  ownerId: string;
+};
 
 /**
  * The request has succeeded.
@@ -15,6 +20,68 @@ export type SquadsGetAllSquadsResponse = {
   data: Array<models.V4SquadsSquadResponse>;
   pageInfo: models.CommonV4PageInfo;
 };
+
+/** @internal */
+export const SquadsGetAllSquadsRequest$inboundSchema: z.ZodType<
+  SquadsGetAllSquadsRequest,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  owner_id: z.string(),
+}).transform((v) => {
+  return remap$(v, {
+    "owner_id": "ownerId",
+  });
+});
+
+/** @internal */
+export type SquadsGetAllSquadsRequest$Outbound = {
+  owner_id: string;
+};
+
+/** @internal */
+export const SquadsGetAllSquadsRequest$outboundSchema: z.ZodType<
+  SquadsGetAllSquadsRequest$Outbound,
+  z.ZodTypeDef,
+  SquadsGetAllSquadsRequest
+> = z.object({
+  ownerId: z.string(),
+}).transform((v) => {
+  return remap$(v, {
+    ownerId: "owner_id",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace SquadsGetAllSquadsRequest$ {
+  /** @deprecated use `SquadsGetAllSquadsRequest$inboundSchema` instead. */
+  export const inboundSchema = SquadsGetAllSquadsRequest$inboundSchema;
+  /** @deprecated use `SquadsGetAllSquadsRequest$outboundSchema` instead. */
+  export const outboundSchema = SquadsGetAllSquadsRequest$outboundSchema;
+  /** @deprecated use `SquadsGetAllSquadsRequest$Outbound` instead. */
+  export type Outbound = SquadsGetAllSquadsRequest$Outbound;
+}
+
+export function squadsGetAllSquadsRequestToJSON(
+  squadsGetAllSquadsRequest: SquadsGetAllSquadsRequest,
+): string {
+  return JSON.stringify(
+    SquadsGetAllSquadsRequest$outboundSchema.parse(squadsGetAllSquadsRequest),
+  );
+}
+
+export function squadsGetAllSquadsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<SquadsGetAllSquadsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => SquadsGetAllSquadsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'SquadsGetAllSquadsRequest' from JSON`,
+  );
+}
 
 /** @internal */
 export const SquadsGetAllSquadsResponse$inboundSchema: z.ZodType<

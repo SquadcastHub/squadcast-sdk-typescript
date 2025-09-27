@@ -36,11 +36,11 @@ import { Result } from "../types/fp.js";
  */
 export function squadsV4Update(
   client: SquadcastSDKCore,
-  request: operations.SquadsUpdateSquadV4Request,
+  request: operations.SquadsUpdateSquadRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.SquadsUpdateSquadV4Response,
+    operations.SquadsUpdateSquadResponse,
     | errors.CommonV4Error
     | SquadcastSDKError
     | ResponseValidationError
@@ -61,12 +61,12 @@ export function squadsV4Update(
 
 async function $do(
   client: SquadcastSDKCore,
-  request: operations.SquadsUpdateSquadV4Request,
+  request: operations.SquadsUpdateSquadRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.SquadsUpdateSquadV4Response,
+      operations.SquadsUpdateSquadResponse,
       | errors.CommonV4Error
       | SquadcastSDKError
       | ResponseValidationError
@@ -82,8 +82,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      operations.SquadsUpdateSquadV4Request$outboundSchema.parse(value),
+    (value) => operations.SquadsUpdateSquadRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -115,7 +114,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "Squads_updateSquadV4",
+    operationID: "Squads_updateSquad",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -172,7 +171,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.SquadsUpdateSquadV4Response,
+    operations.SquadsUpdateSquadResponse,
     | errors.CommonV4Error
     | SquadcastSDKError
     | ResponseValidationError
@@ -183,7 +182,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.SquadsUpdateSquadV4Response$inboundSchema),
+    M.json(200, operations.SquadsUpdateSquadResponse$inboundSchema),
     M.jsonErr(
       [400, 401, 402, 403, 404, 409, 422],
       errors.CommonV4Error$inboundSchema,

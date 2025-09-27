@@ -358,6 +358,7 @@ const squadcastSDK = new SquadcastSDK({
 async function run() {
   const result = await squadcastSDK.webforms.remove({
     webformId: 842504,
+    ownerId: "<id>",
   });
 
   console.log(result);
@@ -383,6 +384,7 @@ const squadcastSDK = new SquadcastSDKCore({
 async function run() {
   const res = await webformsRemove(squadcastSDK, {
     webformId: 842504,
+    ownerId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -443,6 +445,7 @@ const squadcastSDK = new SquadcastSDK({
 async function run() {
   const result = await squadcastSDK.webforms.getById({
     webformId: 831002,
+    ownerId: "<id>",
   });
 
   console.log(result);
@@ -468,6 +471,7 @@ const squadcastSDK = new SquadcastSDKCore({
 async function run() {
   const res = await webformsGetById(squadcastSDK, {
     webformId: 831002,
+    ownerId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;

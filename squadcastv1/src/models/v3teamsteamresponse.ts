@@ -20,7 +20,7 @@ import {
   V3TeamsTeamRole$outboundSchema,
 } from "./v3teamsteamrole.js";
 
-export type V3TeamsTeamResponseOrganization = {
+export type Organization = {
   id: string;
   name: string;
   slug: string;
@@ -38,12 +38,12 @@ export type V3TeamsTeamResponse = {
   members: Array<V3TeamsTeamMember>;
   roles: Array<V3TeamsTeamRole>;
   default: boolean;
-  organization: V3TeamsTeamResponseOrganization;
+  organization: Organization;
 };
 
 /** @internal */
-export const V3TeamsTeamResponseOrganization$inboundSchema: z.ZodType<
-  V3TeamsTeamResponseOrganization,
+export const Organization$inboundSchema: z.ZodType<
+  Organization,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -53,17 +53,17 @@ export const V3TeamsTeamResponseOrganization$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type V3TeamsTeamResponseOrganization$Outbound = {
+export type Organization$Outbound = {
   id: string;
   name: string;
   slug: string;
 };
 
 /** @internal */
-export const V3TeamsTeamResponseOrganization$outboundSchema: z.ZodType<
-  V3TeamsTeamResponseOrganization$Outbound,
+export const Organization$outboundSchema: z.ZodType<
+  Organization$Outbound,
   z.ZodTypeDef,
-  V3TeamsTeamResponseOrganization
+  Organization
 > = z.object({
   id: z.string(),
   name: z.string(),
@@ -74,32 +74,26 @@ export const V3TeamsTeamResponseOrganization$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace V3TeamsTeamResponseOrganization$ {
-  /** @deprecated use `V3TeamsTeamResponseOrganization$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsTeamResponseOrganization$inboundSchema;
-  /** @deprecated use `V3TeamsTeamResponseOrganization$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsTeamResponseOrganization$outboundSchema;
-  /** @deprecated use `V3TeamsTeamResponseOrganization$Outbound` instead. */
-  export type Outbound = V3TeamsTeamResponseOrganization$Outbound;
+export namespace Organization$ {
+  /** @deprecated use `Organization$inboundSchema` instead. */
+  export const inboundSchema = Organization$inboundSchema;
+  /** @deprecated use `Organization$outboundSchema` instead. */
+  export const outboundSchema = Organization$outboundSchema;
+  /** @deprecated use `Organization$Outbound` instead. */
+  export type Outbound = Organization$Outbound;
 }
 
-export function v3TeamsTeamResponseOrganizationToJSON(
-  v3TeamsTeamResponseOrganization: V3TeamsTeamResponseOrganization,
-): string {
-  return JSON.stringify(
-    V3TeamsTeamResponseOrganization$outboundSchema.parse(
-      v3TeamsTeamResponseOrganization,
-    ),
-  );
+export function organizationToJSON(organization: Organization): string {
+  return JSON.stringify(Organization$outboundSchema.parse(organization));
 }
 
-export function v3TeamsTeamResponseOrganizationFromJSON(
+export function organizationFromJSON(
   jsonString: string,
-): SafeParseResult<V3TeamsTeamResponseOrganization, SDKValidationError> {
+): SafeParseResult<Organization, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => V3TeamsTeamResponseOrganization$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3TeamsTeamResponseOrganization' from JSON`,
+    (x) => Organization$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Organization' from JSON`,
   );
 }
 
@@ -120,7 +114,7 @@ export const V3TeamsTeamResponse$inboundSchema: z.ZodType<
   members: z.array(V3TeamsTeamMember$inboundSchema),
   roles: z.array(V3TeamsTeamRole$inboundSchema),
   default: z.boolean(),
-  organization: z.lazy(() => V3TeamsTeamResponseOrganization$inboundSchema),
+  organization: z.lazy(() => Organization$inboundSchema),
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
@@ -143,7 +137,7 @@ export type V3TeamsTeamResponse$Outbound = {
   members: Array<V3TeamsTeamMember$Outbound>;
   roles: Array<V3TeamsTeamRole$Outbound>;
   default: boolean;
-  organization: V3TeamsTeamResponseOrganization$Outbound;
+  organization: Organization$Outbound;
 };
 
 /** @internal */
@@ -163,7 +157,7 @@ export const V3TeamsTeamResponse$outboundSchema: z.ZodType<
   members: z.array(V3TeamsTeamMember$outboundSchema),
   roles: z.array(V3TeamsTeamRole$outboundSchema),
   default: z.boolean(),
-  organization: z.lazy(() => V3TeamsTeamResponseOrganization$outboundSchema),
+  organization: z.lazy(() => Organization$outboundSchema),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",

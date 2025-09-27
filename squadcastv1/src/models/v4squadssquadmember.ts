@@ -10,6 +10,9 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V4SquadsSquadMember = {
   userId: string;
+  /**
+   * this field is required if you are using OBAC permission model
+   */
   role?: string | undefined;
 };
 

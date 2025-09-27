@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type WebformsRemoveWebformRequest = {
   webformId: number;
-  ownerId?: string | undefined;
+  ownerId: string;
 };
 
 /**
@@ -27,7 +27,7 @@ export const WebformsRemoveWebformRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   webformId: z.number().int(),
-  owner_id: z.string().optional(),
+  owner_id: z.string(),
 }).transform((v) => {
   return remap$(v, {
     "owner_id": "ownerId",
@@ -37,7 +37,7 @@ export const WebformsRemoveWebformRequest$inboundSchema: z.ZodType<
 /** @internal */
 export type WebformsRemoveWebformRequest$Outbound = {
   webformId: number;
-  owner_id?: string | undefined;
+  owner_id: string;
 };
 
 /** @internal */
@@ -47,7 +47,7 @@ export const WebformsRemoveWebformRequest$outboundSchema: z.ZodType<
   WebformsRemoveWebformRequest
 > = z.object({
   webformId: z.number().int(),
-  ownerId: z.string().optional(),
+  ownerId: z.string(),
 }).transform((v) => {
   return remap$(v, {
     ownerId: "owner_id",

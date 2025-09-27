@@ -96,8 +96,8 @@ async function $do(
   const path = pathToFunc("/v4/schedules/{scheduleID}/overrides")(pathParams);
 
   const query = encodeFormQuery({
+    "cursor": payload.cursor,
     "endTime": payload.endTime,
-    "pageNumber": payload.pageNumber,
     "pageSize": payload.pageSize,
     "participantID": payload.participantID,
     "startTime": payload.startTime,

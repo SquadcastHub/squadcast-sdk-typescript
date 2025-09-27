@@ -41,7 +41,7 @@ export function squadsCreateV4(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.SquadsCreateSquadV4Response,
+    operations.SquadsCreateSquadResponse,
     | errors.CommonV4Error
     | SquadcastSDKError
     | ResponseValidationError
@@ -67,7 +67,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.SquadsCreateSquadV4Response,
+      operations.SquadsCreateSquadResponse,
       | errors.CommonV4Error
       | SquadcastSDKError
       | ResponseValidationError
@@ -106,7 +106,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "Squads_createSquadV4",
+    operationID: "Squads_createSquad",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -163,7 +163,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.SquadsCreateSquadV4Response,
+    operations.SquadsCreateSquadResponse,
     | errors.CommonV4Error
     | SquadcastSDKError
     | ResponseValidationError
@@ -174,7 +174,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(201, operations.SquadsCreateSquadV4Response$inboundSchema),
+    M.json(201, operations.SquadsCreateSquadResponse$inboundSchema),
     M.jsonErr(
       [400, 401, 402, 403, 404, 409, 422],
       errors.CommonV4Error$inboundSchema,

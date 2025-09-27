@@ -12,7 +12,7 @@ let value: V4SquadsSquadMember = {
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `userId`           | *string*           | :heavy_check_mark: | N/A                |
-| `role`             | *string*           | :heavy_minus_sign: | N/A                |
+| Field                                                         | Type                                                          | Required                                                      | Description                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `userId`                                                      | *string*                                                      | :heavy_check_mark:                                            | N/A                                                           |
+| `role`                                                        | *string*                                                      | :heavy_minus_sign:                                            | this field is required if you are using OBAC permission model |

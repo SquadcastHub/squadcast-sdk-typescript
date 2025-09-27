@@ -1,11 +1,11 @@
-# SquadsGetSquadByTeamRequest
+# SquadsGetAllSquadsRequest
 
 ## Example Usage
 
 ```typescript
-import { SquadsGetSquadByTeamRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
+import { SquadsGetAllSquadsRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
-let value: SquadsGetSquadByTeamRequest = {
+let value: SquadsGetAllSquadsRequest = {
   ownerId: "<id>",
 };
 ```

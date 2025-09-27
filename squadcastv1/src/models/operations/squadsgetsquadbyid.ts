@@ -16,7 +16,7 @@ export type SquadsGetSquadByIdRequest = {
  * The request has succeeded.
  */
 export type SquadsGetSquadByIdResponse = {
-  data: models.V3SquadsSquadResponse;
+  data: models.V4SquadsSquadResponse;
 };
 
 /** @internal */
@@ -79,12 +79,12 @@ export const SquadsGetSquadByIdResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  data: models.V3SquadsSquadResponse$inboundSchema,
+  data: models.V4SquadsSquadResponse$inboundSchema,
 });
 
 /** @internal */
 export type SquadsGetSquadByIdResponse$Outbound = {
-  data: models.V3SquadsSquadResponse$Outbound;
+  data: models.V4SquadsSquadResponse$Outbound;
 };
 
 /** @internal */
@@ -93,7 +93,7 @@ export const SquadsGetSquadByIdResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   SquadsGetSquadByIdResponse
 > = z.object({
-  data: models.V3SquadsSquadResponse$outboundSchema,
+  data: models.V4SquadsSquadResponse$outboundSchema,
 });
 
 /**

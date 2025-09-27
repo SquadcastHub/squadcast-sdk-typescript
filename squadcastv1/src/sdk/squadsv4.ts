@@ -17,9 +17,9 @@ export class SquadsV4 extends ClientSDK {
    * Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header with `squad-read` scope.
    */
   async getById(
-    request: operations.SquadsGetSquadByIdV4Request,
+    request: operations.SquadsGetSquadByIdRequest,
     options?: RequestOptions,
-  ): Promise<operations.SquadsGetSquadByIdV4Response> {
+  ): Promise<operations.SquadsGetSquadByIdResponse> {
     return unwrapAsync(squadsV4GetById(
       this,
       request,
@@ -37,9 +37,9 @@ export class SquadsV4 extends ClientSDK {
    * Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header with `squad-create` scope.
    */
   async update(
-    request: operations.SquadsUpdateSquadV4Request,
+    request: operations.SquadsUpdateSquadRequest,
     options?: RequestOptions,
-  ): Promise<operations.SquadsUpdateSquadV4Response> {
+  ): Promise<operations.SquadsUpdateSquadResponse> {
     return unwrapAsync(squadsV4Update(
       this,
       request,

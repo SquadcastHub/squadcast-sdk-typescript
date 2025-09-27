@@ -11,7 +11,7 @@ import * as models from "../index.js";
 
 export type WebformsGetWebformByIdRequest = {
   webformId: number;
-  ownerId?: string | undefined;
+  ownerId: string;
 };
 
 /**
@@ -28,7 +28,7 @@ export const WebformsGetWebformByIdRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   webformId: z.number().int(),
-  owner_id: z.string().optional(),
+  owner_id: z.string(),
 }).transform((v) => {
   return remap$(v, {
     "owner_id": "ownerId",
@@ -38,7 +38,7 @@ export const WebformsGetWebformByIdRequest$inboundSchema: z.ZodType<
 /** @internal */
 export type WebformsGetWebformByIdRequest$Outbound = {
   webformId: number;
-  owner_id?: string | undefined;
+  owner_id: string;
 };
 
 /** @internal */
@@ -48,7 +48,7 @@ export const WebformsGetWebformByIdRequest$outboundSchema: z.ZodType<
   WebformsGetWebformByIdRequest
 > = z.object({
   webformId: z.number().int(),
-  ownerId: z.string().optional(),
+  ownerId: z.string(),
 }).transform((v) => {
   return remap$(v, {
     ownerId: "owner_id",

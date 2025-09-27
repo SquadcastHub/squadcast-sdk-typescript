@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as models from "../index.js";
 
 export type ServicesGetServicesRequest = {
-  ownerId?: string | undefined;
+  ownerId: string;
   entityOwner?: string | undefined;
   name?: string | undefined;
 };
@@ -28,7 +28,7 @@ export const ServicesGetServicesRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  owner_id: z.string().optional(),
+  owner_id: z.string(),
   entity_owner: z.string().optional(),
   name: z.string().optional(),
 }).transform((v) => {
@@ -40,7 +40,7 @@ export const ServicesGetServicesRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type ServicesGetServicesRequest$Outbound = {
-  owner_id?: string | undefined;
+  owner_id: string;
   entity_owner?: string | undefined;
   name?: string | undefined;
 };
@@ -51,7 +51,7 @@ export const ServicesGetServicesRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ServicesGetServicesRequest
 > = z.object({
-  ownerId: z.string().optional(),
+  ownerId: z.string(),
   entityOwner: z.string().optional(),
   name: z.string().optional(),
 }).transform((v) => {

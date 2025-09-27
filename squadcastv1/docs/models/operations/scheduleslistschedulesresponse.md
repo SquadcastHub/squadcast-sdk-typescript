@@ -10,9 +10,9 @@ import { SchedulesListSchedulesResponse } from "@solarwinds/squadcast-sdk-typesc
 let value: SchedulesListSchedulesResponse = {
   data: [],
   pageInfo: {
-    pageSize: 94168,
+    pageSize: 214802,
     hasNext: true,
-    hasPrevious: true,
+    hasPrevious: false,
   },
 };
 ```

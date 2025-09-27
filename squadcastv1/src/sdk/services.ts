@@ -63,7 +63,7 @@ export class Services extends ClientSDK {
    * Get All Services
    */
   async list(
-    request?: operations.ServicesGetServicesRequest | undefined,
+    request: operations.ServicesGetServicesRequest,
     options?: RequestOptions,
   ): Promise<operations.ServicesGetServicesResponse> {
     return unwrapAsync(servicesList(

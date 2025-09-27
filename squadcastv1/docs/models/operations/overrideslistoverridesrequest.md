@@ -20,5 +20,5 @@ let value: OverridesListOverridesRequest = {
 | `startTime`        | *string*           | :heavy_check_mark: | N/A                |
 | `endTime`          | *string*           | :heavy_check_mark: | N/A                |
 | `participantID`    | *string*           | :heavy_minus_sign: | N/A                |
-| `pageNumber`       | *number*           | :heavy_minus_sign: | N/A                |
 | `pageSize`         | *number*           | :heavy_minus_sign: | N/A                |
+| `cursor`           | *string*           | :heavy_minus_sign: | N/A                |

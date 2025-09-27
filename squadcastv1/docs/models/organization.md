@@ -1,11 +1,11 @@
-# V3TeamsTeamResponseOrganization
+# Organization
 
 ## Example Usage
 
 ```typescript
-import { V3TeamsTeamResponseOrganization } from "@solarwinds/squadcast-sdk-typescript/models";
+import { Organization } from "@solarwinds/squadcast-sdk-typescript/models";
 
-let value: V3TeamsTeamResponseOrganization = {
+let value: Organization = {
   id: "<id>",
   name: "<value>",
   slug: "<value>",
