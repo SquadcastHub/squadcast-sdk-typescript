@@ -5,8 +5,11 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.631.0
   generationVersion: 2.716.10
-  releaseVersion: 0.1.6
-  configChecksum: e627e732319ec25e9e5239461c6deda6
+  releaseVersion: 0.1.7
+  configChecksum: 7e8b7c1032a8076a9bf4d880cb8c929a
+  repoURL: https://github.com/SquadcastHub/squadcast-sdk-typescript.git
+  repoSubDirectory: squadcastv1
+  installationURL: https://gitpkg.now.sh/SquadcastHub/squadcast-sdk-typescript/squadcastv1
   published: true
 features:
   typescript:
@@ -8644,3 +8647,7 @@ examples:
         "504":
           application/json: {"meta": {"status": "<value>", "error_message": "<value>"}}
 examplesVersion: 1.0.2
+releaseNotes: |
+  ## Typescript SDK Changes Detected:
+  * `squadcastsdk.squads.delete()`: **Added**
+  * `squadcastsdk.squads.squadsDeleteSquad()`: **Deleted** **Breaking** :warning:
