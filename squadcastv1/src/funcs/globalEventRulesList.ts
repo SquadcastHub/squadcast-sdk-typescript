@@ -3,6 +3,7 @@
  */
 
 import { SquadcastSDKCore } from "../core.js";
+import { dlv } from "../lib/dlv.js";
 import { encodeFormQuery } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -24,6 +25,12 @@ import { SquadcastSDKError } from "../models/errors/squadcastsdkerror.js";
 import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
+import {
+  createPageIterator,
+  haltIterator,
+  PageIterator,
+  Paginator,
+} from "../types/operations.js";
 
 /**
  * List Global Event Rules
@@ -36,42 +43,7 @@ export function globalEventRulesList(
   request: operations.GlobalEventRulesListGlobalEventRulesRequest,
   options?: RequestOptions,
 ): APIPromise<
-  Result<
-    operations.GlobalEventRulesListGlobalEventRulesResponse,
-    | errors.BadRequestError
-    | errors.UnauthorizedError
-    | errors.PaymentRequiredError
-    | errors.ForbiddenError
-    | errors.NotFoundError
-    | errors.ConflictError
-    | errors.UnprocessableEntityError
-    | errors.InternalServerError
-    | errors.BadGatewayError
-    | errors.ServiceUnavailableError
-    | errors.GatewayTimeoutError
-    | SquadcastSDKError
-    | ResponseValidationError
-    | ConnectionError
-    | RequestAbortedError
-    | RequestTimeoutError
-    | InvalidRequestError
-    | UnexpectedClientError
-    | SDKValidationError
-  >
-> {
-  return new APIPromise($do(
-    client,
-    request,
-    options,
-  ));
-}
-
-async function $do(
-  client: SquadcastSDKCore,
-  request: operations.GlobalEventRulesListGlobalEventRulesRequest,
-  options?: RequestOptions,
-): Promise<
-  [
+  PageIterator<
     Result<
       operations.GlobalEventRulesListGlobalEventRulesResponse,
       | errors.BadRequestError
@@ -94,6 +66,47 @@ async function $do(
       | UnexpectedClientError
       | SDKValidationError
     >,
+    { page: number }
+  >
+> {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: SquadcastSDKCore,
+  request: operations.GlobalEventRulesListGlobalEventRulesRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    PageIterator<
+      Result<
+        operations.GlobalEventRulesListGlobalEventRulesResponse,
+        | errors.BadRequestError
+        | errors.UnauthorizedError
+        | errors.PaymentRequiredError
+        | errors.ForbiddenError
+        | errors.NotFoundError
+        | errors.ConflictError
+        | errors.UnprocessableEntityError
+        | errors.InternalServerError
+        | errors.BadGatewayError
+        | errors.ServiceUnavailableError
+        | errors.GatewayTimeoutError
+        | SquadcastSDKError
+        | ResponseValidationError
+        | ConnectionError
+        | RequestAbortedError
+        | RequestTimeoutError
+        | InvalidRequestError
+        | UnexpectedClientError
+        | SDKValidationError
+      >,
+      { page: number }
+    >,
     APICall,
   ]
 > {
@@ -105,7 +118,7 @@ async function $do(
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return [parsed, { status: "invalid" }];
+    return [haltIterator(parsed), { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
@@ -132,7 +145,7 @@ async function $do(
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "GlobalEventRules_listGlobalEventRules",
-    oAuth2Scopes: [],
+    oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
 
@@ -155,7 +168,7 @@ async function $do(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return [requestRes, { status: "invalid" }];
+    return [haltIterator(requestRes), { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -180,7 +193,7 @@ async function $do(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return [doResult, { status: "request-error", request: req }];
+    return [haltIterator(doResult), { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -188,7 +201,7 @@ async function $do(
     HttpMeta: { Response: response, Request: req },
   };
 
-  const [result] = await M.match<
+  const [result, raw] = await M.match<
     operations.GlobalEventRulesListGlobalEventRulesResponse,
     | errors.BadRequestError
     | errors.UnauthorizedError
@@ -213,6 +226,7 @@ async function $do(
     M.json(
       200,
       operations.GlobalEventRulesListGlobalEventRulesResponse$inboundSchema,
+      { key: "Result" },
     ),
     M.jsonErr(400, errors.BadRequestError$inboundSchema),
     M.jsonErr(401, errors.UnauthorizedError$inboundSchema),
@@ -229,8 +243,74 @@ async function $do(
     M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
-    return [result, { status: "complete", request: req, response }];
+    return [haltIterator(result), {
+      status: "complete",
+      request: req,
+      response,
+    }];
   }
 
-  return [result, { status: "complete", request: req, response }];
+  const nextFunc = (
+    responseData: unknown,
+  ): {
+    next: Paginator<
+      Result<
+        operations.GlobalEventRulesListGlobalEventRulesResponse,
+        | errors.BadRequestError
+        | errors.UnauthorizedError
+        | errors.PaymentRequiredError
+        | errors.ForbiddenError
+        | errors.NotFoundError
+        | errors.ConflictError
+        | errors.UnprocessableEntityError
+        | errors.InternalServerError
+        | errors.BadGatewayError
+        | errors.ServiceUnavailableError
+        | errors.GatewayTimeoutError
+        | SquadcastSDKError
+        | ResponseValidationError
+        | ConnectionError
+        | RequestAbortedError
+        | RequestTimeoutError
+        | InvalidRequestError
+        | UnexpectedClientError
+        | SDKValidationError
+      >
+    >;
+    "~next"?: { page: number };
+  } => {
+    const page = request?.pageNumber ?? 1;
+    const nextPage = page + 1;
+
+    if (!responseData) {
+      return { next: () => null };
+    }
+    const results = dlv(responseData, "data");
+    if (!Array.isArray(results) || !results.length) {
+      return { next: () => null };
+    }
+    const limit = request?.pageSize ?? 0;
+    if (results.length < limit) {
+      return { next: () => null };
+    }
+
+    const nextVal = () =>
+      globalEventRulesList(
+        client,
+        {
+          ...request,
+          pageNumber: nextPage,
+        },
+        options,
+      );
+
+    return { next: nextVal, "~next": { page: nextPage } };
+  };
+
+  const page = { ...result, ...nextFunc(raw) };
+  return [{ ...page, ...createPageIterator(page, (v) => !v.ok) }, {
+    status: "complete",
+    request: req,
+    response,
+  }];
 }

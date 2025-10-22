@@ -16,6 +16,7 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as models from "../models/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 import { WorkflowsActions } from "./workflowsactions.js";
 
 export class Workflows extends ClientSDK {
@@ -33,8 +34,10 @@ export class Workflows extends ClientSDK {
   async list(
     request: operations.WorkflowsListWorkflowsRequest,
     options?: RequestOptions,
-  ): Promise<models.V3WorkflowsListWorkflowAPIResponse> {
-    return unwrapAsync(workflowsList(
+  ): Promise<
+    PageIterator<operations.WorkflowsListWorkflowsResponse, { page: number }>
+  > {
+    return unwrapResultIterator(workflowsList(
       this,
       request,
       options,

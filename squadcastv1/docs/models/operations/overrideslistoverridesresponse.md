@@ -10,9 +10,9 @@ import { OverridesListOverridesResponse } from "@solarwinds/squadcast-sdk-typesc
 let value: OverridesListOverridesResponse = {
   data: [],
   pageInfo: {
-    pageSize: 214802,
-    hasNext: true,
-    hasPrevious: false,
+    pageSize: 808332,
+    hasNext: false,
+    hasPrevious: true,
   },
 };
 ```

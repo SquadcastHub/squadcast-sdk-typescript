@@ -15,5 +15,5 @@ let value: WorkflowsGetWorkflowLogsRequest = {
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `workflowID`       | *string*           | :heavy_check_mark: | N/A                |
-| `pageSize`         | *string*           | :heavy_minus_sign: | N/A                |
-| `pageNumber`       | *string*           | :heavy_minus_sign: | N/A                |
+| `pageSize`         | *number*           | :heavy_minus_sign: | N/A                |
+| `pageNumber`       | *number*           | :heavy_minus_sign: | N/A                |

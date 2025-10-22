@@ -1,57 +1,51 @@
 # EscalationPoliciesGetEscalationPolicyByTeamResponse
 
-The request has succeeded.
-
 ## Example Usage
 
 ```typescript
 import { EscalationPoliciesGetEscalationPolicyByTeamResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: EscalationPoliciesGetEscalationPolicyByTeamResponse = {
-  data: [
-    {
-      id: "<id>",
-      name: "<value>",
-      description:
-        "duh which around collectivization fooey whoa gadzooks extroverted contractor",
-      organizationId: "<id>",
-      repetition: 816171,
-      repeatAfter: 256108,
-      rules: [],
-      slug: "<value>",
-      enableIncidentReminders: false,
-      incidentReminderRules: [
-        {
-          via: [
-            "<value 1>",
-            "<value 2>",
-          ],
-          timeInterval: 836581,
-          till: 503345,
+  result: {
+    data: [
+      {
+        id: "<id>",
+        name: "<value>",
+        description: "story over midst",
+        organizationId: "<id>",
+        repetition: 684294,
+        repeatAfter: 805595,
+        rules: [],
+        slug: "<value>",
+        enableIncidentReminders: false,
+        incidentReminderRules: [],
+        enableIncidentRetrigger: true,
+        retriggerAfter: 613991,
+        entityOwner: {
+          id: "<id>",
+          type: "<value>",
         },
-      ],
-      enableIncidentRetrigger: false,
-      retriggerAfter: 526033,
-      entityOwner: {
-        id: "<id>",
-        type: "<value>",
+        owner: {
+          id: "<id>",
+          type: "team",
+        },
+        accessControl: [
+          {
+            userId: "<id>",
+            abilities: {},
+          },
+        ],
       },
-      owner: {
-        id: "<id>",
-        type: "team",
-      },
-      accessControl: [],
+    ],
+    meta: {
+      totalCount: 82672,
     },
-  ],
-  meta: {
-    totalCount: 732642,
   },
 };
 ```
 
 ## Fields
 
-| Field                                                                                                                                    | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `data`                                                                                                                                   | [models.V3EscalationPoliciesEscalationPolicyResponse](../../models/v3escalationpoliciesescalationpolicyresponse.md)[]                    | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
-| `meta`                                                                                                                                   | [operations.EscalationPoliciesGetEscalationPolicyByTeamMeta](../../models/operations/escalationpoliciesgetescalationpolicybyteammeta.md) | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
+| Field                                                                                                                                                    | Type                                                                                                                                                     | Required                                                                                                                                                 | Description                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `result`                                                                                                                                                 | [operations.EscalationPoliciesGetEscalationPolicyByTeamResponseBody](../../models/operations/escalationpoliciesgetescalationpolicybyteamresponsebody.md) | :heavy_check_mark:                                                                                                                                       | N/A                                                                                                                                                      |

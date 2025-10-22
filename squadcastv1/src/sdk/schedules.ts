@@ -17,6 +17,7 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as models from "../models/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 import { SchedulesActions } from "./schedulesactions.js";
 import { SchedulesExport } from "./schedulesexport.js";
 import { SchedulesOverrides } from "./schedulesoverrides.js";
@@ -49,8 +50,10 @@ export class Schedules extends ClientSDK {
   async list(
     request: operations.SchedulesListSchedulesRequest,
     options?: RequestOptions,
-  ): Promise<operations.SchedulesListSchedulesResponse> {
-    return unwrapAsync(schedulesList(
+  ): Promise<
+    PageIterator<operations.SchedulesListSchedulesResponse, { cursor: string }>
+  > {
+    return unwrapResultIterator(schedulesList(
       this,
       request,
       options,
