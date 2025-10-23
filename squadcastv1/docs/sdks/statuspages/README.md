@@ -59,8 +59,8 @@ const squadcastSDK = new SquadcastSDKCore({
 
 async function run() {
   const res = await statusPagesList(squadcastSDK, {
-    pageSize: 702343,
-    pageNumber: 983346,
+    pageSize: 301790,
+    pageNumber: 172386,
     filtersIsPublic: "<value>",
     teamID: "<id>",
   });
