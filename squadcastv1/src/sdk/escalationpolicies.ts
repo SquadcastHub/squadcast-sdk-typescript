@@ -11,6 +11,7 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as models from "../models/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class EscalationPolicies extends ClientSDK {
   /**
@@ -23,8 +24,13 @@ export class EscalationPolicies extends ClientSDK {
   async listByTeam(
     request: operations.EscalationPoliciesGetEscalationPolicyByTeamRequest,
     options?: RequestOptions,
-  ): Promise<operations.EscalationPoliciesGetEscalationPolicyByTeamResponse> {
-    return unwrapAsync(escalationPoliciesListByTeam(
+  ): Promise<
+    PageIterator<
+      operations.EscalationPoliciesGetEscalationPolicyByTeamResponse,
+      { page: number }
+    >
+  > {
+    return unwrapResultIterator(escalationPoliciesListByTeam(
       this,
       request,
       options,

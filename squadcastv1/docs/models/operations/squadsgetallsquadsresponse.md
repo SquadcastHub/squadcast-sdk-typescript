@@ -10,9 +10,9 @@ import { SquadsGetAllSquadsResponse } from "@solarwinds/squadcast-sdk-typescript
 let value: SquadsGetAllSquadsResponse = {
   data: [],
   pageInfo: {
-    pageSize: 214802,
-    hasNext: true,
-    hasPrevious: false,
+    pageSize: 808332,
+    hasNext: false,
+    hasPrevious: true,
   },
 };
 ```
