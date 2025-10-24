@@ -1126,7 +1126,7 @@ export type BadRequest$Outbound =
 export const BadRequest$outboundSchema: z.ZodType<
   BadRequest$Outbound,
   z.ZodTypeDef,
-  BadRequest
+  unknown
 > = z.union([
   z.lazy(() => ResponseBodyError1$outboundSchema),
   z.lazy(() => ResponseBodyError2$outboundSchema),
