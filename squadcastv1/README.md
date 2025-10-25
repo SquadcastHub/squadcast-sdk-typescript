@@ -30,6 +30,7 @@ Developer-friendly & type-safe Typescript SDK specifically catered to leverage *
   * [Authentication](#authentication)
   * [Available Resources and Operations](#available-resources-and-operations)
   * [Standalone functions](#standalone-functions)
+  * [Pagination](#pagination)
   * [File uploads](#file-uploads)
   * [Retries](#retries)
   * [Error Handling](#error-handling)
@@ -188,9 +189,6 @@ run();
 
 * [refreshIcalLink](docs/sdks/exportschedule/README.md#refreshicallink) - Refresh Schedule ICal Link
 
-### [extensions](docs/sdks/extensions/README.md)
-
-
 #### [extensions.msteams](docs/sdks/extensionsmsteams/README.md)
 
 * [getConfig](docs/sdks/extensionsmsteams/README.md#getconfig) - Get MSTeams Config
@@ -229,9 +227,6 @@ run();
 * [get](docs/sdks/globaloncallreminderrules/README.md#get) - Get Global Oncall Reminder Rules
 * [create](docs/sdks/globaloncallreminderrules/README.md#create) - Create Global Oncall Reminder Rules
 * [update](docs/sdks/globaloncallreminderrules/README.md#update) - Update Global Oncall Reminder Rules
-
-### [incidentActions](docs/sdks/incidentactions/README.md)
-
 
 #### [incidentActions.circleci](docs/sdks/circleci/README.md)
 
@@ -371,9 +366,6 @@ run();
 * [getById](docs/sdks/runbooks/README.md#getbyid) - Get Runbook By ID
 * [update](docs/sdks/runbooks/README.md#update) - Update Runbook
 
-### [schedule](docs/sdks/schedule/README.md)
-
-
 #### [schedule.export](docs/sdks/scheduleexport/README.md)
 
 * [deleteICalLink](docs/sdks/scheduleexport/README.md#deleteicallink) - Delete ICal Link
@@ -476,7 +468,6 @@ run();
 * [remove](docs/sdks/slos/README.md#remove) - Remove SLO
 * [getById](docs/sdks/slos/README.md#getbyid) - Get SLO By ID
 * [markFalsePositive](docs/sdks/slos/README.md#markfalsepositive) - Mark SLO False Positive
-
 
 ### [squads](docs/sdks/squads/README.md)
 
@@ -858,6 +849,40 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->
+
+<!-- Start Pagination [pagination] -->
+## Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you
+make your SDK calls as usual, but the returned response object will also be an
+async iterable that can be consumed using the [`for await...of`][for-await-of]
+syntax.
+
+[for-await-of]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of
+
+Here's an example of one such pagination call:
+
+```typescript
+import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
+
+const squadcastSDK = new SquadcastSDK({
+  bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await squadcastSDK.escalationPolicies.listByTeam({
+    ownerId: "<id>",
+  });
+
+  for await (const page of result) {
+    console.log(page);
+  }
+}
+
+run();
+
+```
+<!-- End Pagination [pagination] -->
 
 <!-- Start File uploads [file-upload] -->
 ## File uploads

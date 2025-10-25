@@ -22,11 +22,11 @@ let value: SchedulesCloneScheduleResponse = {
       {
         key: "<key>",
         value: "<value>",
-        color: "green",
+        color: "white",
       },
     ],
-    createdAt: "1713572370410",
-    updatedAt: "1735643517688",
+    createdAt: "1711163751313",
+    updatedAt: "1735629004552",
   },
 };
 ```

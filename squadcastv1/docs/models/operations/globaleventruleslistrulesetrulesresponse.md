@@ -1,23 +1,22 @@
 # GlobalEventRulesListRulesetRulesResponse
 
-The request has succeeded.
-
 ## Example Usage
 
 ```typescript
 import { GlobalEventRulesListRulesetRulesResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: GlobalEventRulesListRulesetRulesResponse = {
-  data: [],
-  meta: {
-    totalCount: 702699,
+  result: {
+    data: [],
+    meta: {
+      totalCount: 365103,
+    },
   },
 };
 ```
 
 ## Fields
 
-| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `data`                                                                                                             | [models.V3GlobalEventRulesRulesetRuleResponse](../../models/v3globaleventrulesrulesetruleresponse.md)[]            | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
-| `meta`                                                                                                             | [operations.GlobalEventRulesListRulesetRulesMeta](../../models/operations/globaleventruleslistrulesetrulesmeta.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| Field                                                                                                                              | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `result`                                                                                                                           | [operations.GlobalEventRulesListRulesetRulesResponseBody](../../models/operations/globaleventruleslistrulesetrulesresponsebody.md) | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
