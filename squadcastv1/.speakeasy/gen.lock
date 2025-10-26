@@ -5,8 +5,8 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.639.3
   generationVersion: 2.730.5
-  releaseVersion: 0.2.0
-  configChecksum: 8c333194ebc16177c90847915f82d56f
+  releaseVersion: 0.2.1
+  configChecksum: 1afac5d901aee4e580c9b352b7726b70
   repoURL: https://github.com/SquadcastHub/squadcast-sdk-typescript.git
   repoSubDirectory: squadcastv1
   installationURL: https://gitpkg.now.sh/SquadcastHub/squadcast-sdk-typescript/squadcastv1
@@ -7813,8 +7813,8 @@ examples:
     speakeasy-default-status-pages-list-status-pages:
       parameters:
         query:
-          pageSize: null
-          pageNumber: null
+          pageSize: 301790
+          pageNumber: 172386
           filters.isPublic: "<value>"
           teamID: "<id>"
       responses:
@@ -8652,12 +8652,3 @@ examples:
         "504":
           application/json: {"meta": {"status": "<value>", "error_message": "<value>"}}
 examplesVersion: 1.0.2
-releaseNotes: |
-  ## Typescript SDK Changes Detected:
-  * `squadcastsdk.escalationPolicies.listByTeam()`:  `request` **Changed** **Breaking** :warning:
-  * `squadcastsdk.globalEventRules.list()`:  `request` **Changed** **Breaking** :warning:
-  * `squadcastsdk.globalEventRules.rulesets.listRules()`:  `request` **Changed** **Breaking** :warning:
-  * `squadcastsdk.webforms.getAll()`:  `request` **Changed** **Breaking** :warning:
-  * `squadcastsdk.workflows.list()`:  `request` **Changed** **Breaking** :warning:
-  * `squadcastsdk.workflowLogs.get()`:  `request` **Changed** **Breaking** :warning:
-  * `squadcastsdk.statusPages.list()`:  `request` **Changed** **Breaking** :warning:
