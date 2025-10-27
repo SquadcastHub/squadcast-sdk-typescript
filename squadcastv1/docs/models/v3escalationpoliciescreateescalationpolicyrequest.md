@@ -36,13 +36,14 @@ let value: V3EscalationPoliciesCreateEscalationPolicyRequest = {
       via: [
         "<value 1>",
         "<value 2>",
+        "<value 3>",
       ],
-      timeInterval: 836581,
-      till: 503345,
+      timeInterval: 101634,
+      till: 858519,
     },
   ],
   enableIncidentRetrigger: false,
-  retriggerAfter: 101634,
+  retriggerAfter: 436263,
 };
 ```
 

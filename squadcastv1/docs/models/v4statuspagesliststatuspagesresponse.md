@@ -8,8 +8,8 @@ import { V4StatusPagesListStatusPagesResponse } from "@solarwinds/squadcast-sdk-
 let value: V4StatusPagesListStatusPagesResponse = {
   data: [],
   meta: {
-    totalCount: 427899,
-    orgTotalCount: 248194,
+    totalCount: 568914,
+    orgTotalCount: 244335,
   },
 };
 ```

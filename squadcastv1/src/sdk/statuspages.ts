@@ -13,6 +13,7 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as models from "../models/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 import { ComponentGroups } from "./componentgroups.js";
 import { StatusPagesComponents } from "./statuspagescomponents.js";
 import { StatusPagesIssues } from "./statuspagesissues.js";
@@ -45,8 +46,13 @@ export class StatusPages extends ClientSDK {
   async list(
     request: operations.StatusPagesListStatusPagesRequest,
     options?: RequestOptions,
-  ): Promise<models.V4StatusPagesListStatusPagesResponse> {
-    return unwrapAsync(statusPagesList(
+  ): Promise<
+    PageIterator<
+      operations.StatusPagesListStatusPagesResponse,
+      { page: number }
+    >
+  > {
+    return unwrapResultIterator(statusPagesList(
       this,
       request,
       options,
