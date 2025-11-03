@@ -12,6 +12,7 @@ import { globalEventRulesRulesetsUpdateRule } from "../funcs/globalEventRulesRul
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 import { RulesetsRules } from "./rulesetsrules.js";
 
 export class GlobalEventRulesRulesets extends ClientSDK {
@@ -97,8 +98,13 @@ export class GlobalEventRulesRulesets extends ClientSDK {
   async listRules(
     request: operations.GlobalEventRulesListRulesetRulesRequest,
     options?: RequestOptions,
-  ): Promise<operations.GlobalEventRulesListRulesetRulesResponse> {
-    return unwrapAsync(globalEventRulesRulesetsListRules(
+  ): Promise<
+    PageIterator<
+      operations.GlobalEventRulesListRulesetRulesResponse,
+      { page: number }
+    >
+  > {
+    return unwrapResultIterator(globalEventRulesRulesetsListRules(
       this,
       request,
       options,

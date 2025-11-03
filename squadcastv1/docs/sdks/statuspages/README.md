@@ -29,13 +29,15 @@ const squadcastSDK = new SquadcastSDK({
 
 async function run() {
   const result = await squadcastSDK.statusPages.list({
-    pageSize: "<value>",
-    pageNumber: "<value>",
+    pageSize: 301790,
+    pageNumber: 172386,
     filtersIsPublic: "<value>",
     teamID: "<id>",
   });
 
-  console.log(result);
+  for await (const page of result) {
+    console.log(page);
+  }
 }
 
 run();
@@ -57,14 +59,16 @@ const squadcastSDK = new SquadcastSDKCore({
 
 async function run() {
   const res = await statusPagesList(squadcastSDK, {
-    pageSize: "<value>",
-    pageNumber: "<value>",
+    pageSize: 702343,
+    pageNumber: 983346,
     filtersIsPublic: "<value>",
     teamID: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
-    console.log(result);
+    for await (const page of result) {
+    console.log(page);
+  }
   } else {
     console.log("statusPagesList failed:", res.error);
   }
@@ -84,7 +88,7 @@ run();
 
 ### Response
 
-**Promise\<[models.V4StatusPagesListStatusPagesResponse](../../models/v4statuspagesliststatuspagesresponse.md)\>**
+**Promise\<[operations.StatusPagesListStatusPagesResponse](../../models/operations/statuspagesliststatuspagesresponse.md)\>**
 
 ### Errors
 

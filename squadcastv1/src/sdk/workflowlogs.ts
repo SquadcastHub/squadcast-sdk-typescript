@@ -4,9 +4,8 @@
 
 import { workflowLogsGet } from "../funcs/workflowLogsGet.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
-import * as models from "../models/index.js";
 import * as operations from "../models/operations/index.js";
-import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class WorkflowLogs extends ClientSDK {
   /**
@@ -18,8 +17,10 @@ export class WorkflowLogs extends ClientSDK {
   async get(
     request: operations.WorkflowsGetWorkflowLogsRequest,
     options?: RequestOptions,
-  ): Promise<models.V3WorkflowsGetWorkflowLogsResponse> {
-    return unwrapAsync(workflowLogsGet(
+  ): Promise<
+    PageIterator<operations.WorkflowsGetWorkflowLogsResponse, { page: number }>
+  > {
+    return unwrapResultIterator(workflowLogsGet(
       this,
       request,
       options,
