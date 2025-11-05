@@ -15,5 +15,5 @@ let value: WebformsGetAllWebformsRequest = {
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `ownerId`          | *string*           | :heavy_check_mark: | N/A                |
-| `pageNumber`       | *string*           | :heavy_minus_sign: | N/A                |
-| `pageSize`         | *string*           | :heavy_minus_sign: | N/A                |
+| `pageNumber`       | *number*           | :heavy_minus_sign: | N/A                |
+| `pageSize`         | *number*           | :heavy_minus_sign: | N/A                |

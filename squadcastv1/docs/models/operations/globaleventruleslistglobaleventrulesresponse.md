@@ -1,23 +1,22 @@
 # GlobalEventRulesListGlobalEventRulesResponse
 
-The request has succeeded.
-
 ## Example Usage
 
 ```typescript
 import { GlobalEventRulesListGlobalEventRulesResponse } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: GlobalEventRulesListGlobalEventRulesResponse = {
-  data: [],
-  meta: {
-    totalCount: 297097,
+  result: {
+    data: [],
+    meta: {
+      totalCount: 750143,
+    },
   },
 };
 ```
 
 ## Fields
 
-| Field                                                                                                                      | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `data`                                                                                                                     | [models.V3GlobalEventRulesGlobalEventRuleInList](../../models/v3globaleventrulesglobaleventruleinlist.md)[]                | :heavy_check_mark:                                                                                                         | N/A                                                                                                                        |
-| `meta`                                                                                                                     | [operations.GlobalEventRulesListGlobalEventRulesMeta](../../models/operations/globaleventruleslistglobaleventrulesmeta.md) | :heavy_check_mark:                                                                                                         | N/A                                                                                                                        |
+| Field                                                                                                                                      | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `result`                                                                                                                                   | [operations.GlobalEventRulesListGlobalEventRulesResponseBody](../../models/operations/globaleventruleslistglobaleventrulesresponsebody.md) | :heavy_check_mark:                                                                                                                         | N/A                                                                                                                                        |

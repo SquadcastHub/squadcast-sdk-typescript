@@ -16,7 +16,7 @@ let value: V4CreateScheduleRequest = {
     {
       key: "<key>",
       value: "<value>",
-      color: "green",
+      color: "white",
     },
   ],
 };
