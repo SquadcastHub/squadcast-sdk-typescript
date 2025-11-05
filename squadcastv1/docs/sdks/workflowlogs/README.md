@@ -26,7 +26,9 @@ async function run() {
     workflowID: "<id>",
   });
 
-  console.log(result);
+  for await (const page of result) {
+    console.log(page);
+  }
 }
 
 run();
@@ -52,7 +54,9 @@ async function run() {
   });
   if (res.ok) {
     const { value: result } = res;
-    console.log(result);
+    for await (const page of result) {
+    console.log(page);
+  }
   } else {
     console.log("workflowLogsGet failed:", res.error);
   }
@@ -72,7 +76,7 @@ run();
 
 ### Response
 
-**Promise\<[models.V3WorkflowsGetWorkflowLogsResponse](../../models/v3workflowsgetworkflowlogsresponse.md)\>**
+**Promise\<[operations.WorkflowsGetWorkflowLogsResponse](../../models/operations/workflowsgetworkflowlogsresponse.md)\>**
 
 ### Errors
 

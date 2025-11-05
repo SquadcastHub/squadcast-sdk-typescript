@@ -35,7 +35,9 @@ async function run() {
     ownerId: "<id>",
   });
 
-  console.log(result);
+  for await (const page of result) {
+    console.log(page);
+  }
 }
 
 run();
@@ -61,7 +63,9 @@ async function run() {
   });
   if (res.ok) {
     const { value: result } = res;
-    console.log(result);
+    for await (const page of result) {
+    console.log(page);
+  }
   } else {
     console.log("workflowsList failed:", res.error);
   }
@@ -81,7 +85,7 @@ run();
 
 ### Response
 
-**Promise\<[models.V3WorkflowsListWorkflowAPIResponse](../../models/v3workflowslistworkflowapiresponse.md)\>**
+**Promise\<[operations.WorkflowsListWorkflowsResponse](../../models/operations/workflowslistworkflowsresponse.md)\>**
 
 ### Errors
 

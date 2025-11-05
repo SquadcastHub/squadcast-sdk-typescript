@@ -11,6 +11,7 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as models from "../models/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class Webforms extends ClientSDK {
   /**
@@ -23,8 +24,10 @@ export class Webforms extends ClientSDK {
   async getAll(
     request: operations.WebformsGetAllWebformsRequest,
     options?: RequestOptions,
-  ): Promise<operations.WebformsGetAllWebformsResponse> {
-    return unwrapAsync(webformsGetAll(
+  ): Promise<
+    PageIterator<operations.WebformsGetAllWebformsResponse, { page: number }>
+  > {
+    return unwrapResultIterator(webformsGetAll(
       this,
       request,
       options,

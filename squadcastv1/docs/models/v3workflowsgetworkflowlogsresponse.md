@@ -8,7 +8,7 @@ import { V3WorkflowsGetWorkflowLogsResponse } from "@solarwinds/squadcast-sdk-ty
 let value: V3WorkflowsGetWorkflowLogsResponse = {
   data: [],
   meta: {
-    totalCount: 162990,
+    totalCount: 377759,
   },
 };
 ```
