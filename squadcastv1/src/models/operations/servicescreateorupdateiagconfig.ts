@@ -26,21 +26,6 @@ export type ServicesCreateOrUpdateIAGConfigResponse = {
 };
 
 /** @internal */
-export const ServicesCreateOrUpdateIAGConfigRequest$inboundSchema: z.ZodType<
-  ServicesCreateOrUpdateIAGConfigRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  serviceID: z.string(),
-  "V3.Services.IAGConfigRequest":
-    models.V3ServicesIAGConfigRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Services.IAGConfigRequest": "v3ServicesIAGConfigRequest",
-  });
-});
-
-/** @internal */
 export type ServicesCreateOrUpdateIAGConfigRequest$Outbound = {
   serviceID: string;
   "V3.Services.IAGConfigRequest": models.V3ServicesIAGConfigRequest$Outbound;
@@ -60,21 +45,6 @@ export const ServicesCreateOrUpdateIAGConfigRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesCreateOrUpdateIAGConfigRequest$ {
-  /** @deprecated use `ServicesCreateOrUpdateIAGConfigRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ServicesCreateOrUpdateIAGConfigRequest$inboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateIAGConfigRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ServicesCreateOrUpdateIAGConfigRequest$outboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateIAGConfigRequest$Outbound` instead. */
-  export type Outbound = ServicesCreateOrUpdateIAGConfigRequest$Outbound;
-}
-
 export function servicesCreateOrUpdateIAGConfigRequestToJSON(
   servicesCreateOrUpdateIAGConfigRequest:
     ServicesCreateOrUpdateIAGConfigRequest,
@@ -86,17 +56,6 @@ export function servicesCreateOrUpdateIAGConfigRequestToJSON(
   );
 }
 
-export function servicesCreateOrUpdateIAGConfigRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ServicesCreateOrUpdateIAGConfigRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ServicesCreateOrUpdateIAGConfigRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ServicesCreateOrUpdateIAGConfigRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const ServicesCreateOrUpdateIAGConfigData$inboundSchema: z.ZodType<
   ServicesCreateOrUpdateIAGConfigData,
@@ -105,45 +64,6 @@ export const ServicesCreateOrUpdateIAGConfigData$inboundSchema: z.ZodType<
 > = z.object({
   msg: z.string(),
 });
-
-/** @internal */
-export type ServicesCreateOrUpdateIAGConfigData$Outbound = {
-  msg: string;
-};
-
-/** @internal */
-export const ServicesCreateOrUpdateIAGConfigData$outboundSchema: z.ZodType<
-  ServicesCreateOrUpdateIAGConfigData$Outbound,
-  z.ZodTypeDef,
-  ServicesCreateOrUpdateIAGConfigData
-> = z.object({
-  msg: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesCreateOrUpdateIAGConfigData$ {
-  /** @deprecated use `ServicesCreateOrUpdateIAGConfigData$inboundSchema` instead. */
-  export const inboundSchema =
-    ServicesCreateOrUpdateIAGConfigData$inboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateIAGConfigData$outboundSchema` instead. */
-  export const outboundSchema =
-    ServicesCreateOrUpdateIAGConfigData$outboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateIAGConfigData$Outbound` instead. */
-  export type Outbound = ServicesCreateOrUpdateIAGConfigData$Outbound;
-}
-
-export function servicesCreateOrUpdateIAGConfigDataToJSON(
-  servicesCreateOrUpdateIAGConfigData: ServicesCreateOrUpdateIAGConfigData,
-): string {
-  return JSON.stringify(
-    ServicesCreateOrUpdateIAGConfigData$outboundSchema.parse(
-      servicesCreateOrUpdateIAGConfigData,
-    ),
-  );
-}
 
 export function servicesCreateOrUpdateIAGConfigDataFromJSON(
   jsonString: string,
@@ -164,46 +84,6 @@ export const ServicesCreateOrUpdateIAGConfigResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => ServicesCreateOrUpdateIAGConfigData$inboundSchema),
 });
-
-/** @internal */
-export type ServicesCreateOrUpdateIAGConfigResponse$Outbound = {
-  data: ServicesCreateOrUpdateIAGConfigData$Outbound;
-};
-
-/** @internal */
-export const ServicesCreateOrUpdateIAGConfigResponse$outboundSchema: z.ZodType<
-  ServicesCreateOrUpdateIAGConfigResponse$Outbound,
-  z.ZodTypeDef,
-  ServicesCreateOrUpdateIAGConfigResponse
-> = z.object({
-  data: z.lazy(() => ServicesCreateOrUpdateIAGConfigData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesCreateOrUpdateIAGConfigResponse$ {
-  /** @deprecated use `ServicesCreateOrUpdateIAGConfigResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    ServicesCreateOrUpdateIAGConfigResponse$inboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateIAGConfigResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ServicesCreateOrUpdateIAGConfigResponse$outboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateIAGConfigResponse$Outbound` instead. */
-  export type Outbound = ServicesCreateOrUpdateIAGConfigResponse$Outbound;
-}
-
-export function servicesCreateOrUpdateIAGConfigResponseToJSON(
-  servicesCreateOrUpdateIAGConfigResponse:
-    ServicesCreateOrUpdateIAGConfigResponse,
-): string {
-  return JSON.stringify(
-    ServicesCreateOrUpdateIAGConfigResponse$outboundSchema.parse(
-      servicesCreateOrUpdateIAGConfigResponse,
-    ),
-  );
-}
 
 export function servicesCreateOrUpdateIAGConfigResponseFromJSON(
   jsonString: string,

@@ -4,24 +4,18 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ExtensionsMSTeamsConnectedTeams,
-  V3ExtensionsMSTeamsConnectedTeams$inboundSchema,
   V3ExtensionsMSTeamsConnectedTeams$Outbound,
   V3ExtensionsMSTeamsConnectedTeams$outboundSchema,
 } from "./v3extensionsmsteamsconnectedteams.js";
 import {
   V3ExtensionsMSTeamsIncidentActionAlertState,
-  V3ExtensionsMSTeamsIncidentActionAlertState$inboundSchema,
   V3ExtensionsMSTeamsIncidentActionAlertState$Outbound,
   V3ExtensionsMSTeamsIncidentActionAlertState$outboundSchema,
 } from "./v3extensionsmsteamsincidentactionalertstate.js";
 import {
   V3ExtensionsMSTeamsTriggers,
-  V3ExtensionsMSTeamsTriggers$inboundSchema,
   V3ExtensionsMSTeamsTriggers$Outbound,
   V3ExtensionsMSTeamsTriggers$outboundSchema,
 } from "./v3extensionsmsteamstriggers.js";
@@ -83,41 +77,6 @@ export type V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest = {
 };
 
 /** @internal */
-export const V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$inboundSchema:
-  z.ZodType<
-    V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    custom_incident_alert_state:
-      V3ExtensionsMSTeamsIncidentActionAlertState$inboundSchema.optional(),
-    id: z.string().optional(),
-    organization_id: z.string().optional(),
-    default_conversation_name: z.string(),
-    default_conversation_id: z.string(),
-    is_active: z.boolean(),
-    is_default_active: z.boolean(),
-    is_custom_channels_active: z.boolean(),
-    triggers: V3ExtensionsMSTeamsTriggers$inboundSchema,
-    tenant_id: z.string(),
-    from_id: z.string(),
-    connected_teams: z.array(V3ExtensionsMSTeamsConnectedTeams$inboundSchema),
-  }).transform((v) => {
-    return remap$(v, {
-      "custom_incident_alert_state": "customIncidentAlertState",
-      "organization_id": "organizationId",
-      "default_conversation_name": "defaultConversationName",
-      "default_conversation_id": "defaultConversationId",
-      "is_active": "isActive",
-      "is_default_active": "isDefaultActive",
-      "is_custom_channels_active": "isCustomChannelsActive",
-      "tenant_id": "tenantId",
-      "from_id": "fromId",
-      "connected_teams": "connectedTeams",
-    });
-  });
-
-/** @internal */
 export type V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$Outbound = {
   custom_incident_alert_state?:
     | V3ExtensionsMSTeamsIncidentActionAlertState$Outbound
@@ -170,22 +129,6 @@ export const V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$outboundSchem
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$ {
-  /** @deprecated use `V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$inboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$outboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$Outbound` instead. */
-  export type Outbound =
-    V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$Outbound;
-}
-
 export function v3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequestToJSON(
   v3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest:
     V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest,
@@ -194,21 +137,5 @@ export function v3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequestToJSON(
     V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$outboundSchema.parse(
       v3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest,
     ),
-  );
-}
-
-export function v3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3ExtensionsMSTeamsCreateOrUpdateMSTeamsConfigRequest' from JSON`,
   );
 }

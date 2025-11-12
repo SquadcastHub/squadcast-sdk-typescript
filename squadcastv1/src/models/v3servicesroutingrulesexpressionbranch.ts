@@ -45,24 +45,10 @@ export type V3ServicesRoutingRulesExpressionBranch = {
 export const V3ServicesRoutingRulesExpressionBranchOp$inboundSchema:
   z.ZodNativeEnum<typeof V3ServicesRoutingRulesExpressionBranchOp> = z
     .nativeEnum(V3ServicesRoutingRulesExpressionBranchOp);
-
 /** @internal */
 export const V3ServicesRoutingRulesExpressionBranchOp$outboundSchema:
   z.ZodNativeEnum<typeof V3ServicesRoutingRulesExpressionBranchOp> =
     V3ServicesRoutingRulesExpressionBranchOp$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesRoutingRulesExpressionBranchOp$ {
-  /** @deprecated use `V3ServicesRoutingRulesExpressionBranchOp$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesRoutingRulesExpressionBranchOp$inboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesExpressionBranchOp$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesRoutingRulesExpressionBranchOp$outboundSchema;
-}
 
 /** @internal */
 export const V3ServicesRoutingRulesExpressionBranchRhs$inboundSchema: z.ZodType<
@@ -70,7 +56,6 @@ export const V3ServicesRoutingRulesExpressionBranchRhs$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([z.string(), z.boolean(), z.number().int(), z.number()]);
-
 /** @internal */
 export type V3ServicesRoutingRulesExpressionBranchRhs$Outbound =
   | string
@@ -86,21 +71,6 @@ export const V3ServicesRoutingRulesExpressionBranchRhs$outboundSchema:
     V3ServicesRoutingRulesExpressionBranchRhs
   > = z.union([z.string(), z.boolean(), z.number().int(), z.number()]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesRoutingRulesExpressionBranchRhs$ {
-  /** @deprecated use `V3ServicesRoutingRulesExpressionBranchRhs$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesRoutingRulesExpressionBranchRhs$inboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesExpressionBranchRhs$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesRoutingRulesExpressionBranchRhs$outboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesExpressionBranchRhs$Outbound` instead. */
-  export type Outbound = V3ServicesRoutingRulesExpressionBranchRhs$Outbound;
-}
-
 export function v3ServicesRoutingRulesExpressionBranchRhsToJSON(
   v3ServicesRoutingRulesExpressionBranchRhs:
     V3ServicesRoutingRulesExpressionBranchRhs,
@@ -111,7 +81,6 @@ export function v3ServicesRoutingRulesExpressionBranchRhsToJSON(
     ),
   );
 }
-
 export function v3ServicesRoutingRulesExpressionBranchRhsFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -138,7 +107,6 @@ export const V3ServicesRoutingRulesExpressionBranch$inboundSchema: z.ZodType<
   op: V3ServicesRoutingRulesExpressionBranchOp$inboundSchema.optional(),
   rhs: z.union([z.string(), z.boolean(), z.number().int(), z.number()]),
 });
-
 /** @internal */
 export type V3ServicesRoutingRulesExpressionBranch$Outbound = {
   lhs: string;
@@ -157,21 +125,6 @@ export const V3ServicesRoutingRulesExpressionBranch$outboundSchema: z.ZodType<
   rhs: z.union([z.string(), z.boolean(), z.number().int(), z.number()]),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesRoutingRulesExpressionBranch$ {
-  /** @deprecated use `V3ServicesRoutingRulesExpressionBranch$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesRoutingRulesExpressionBranch$inboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesExpressionBranch$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesRoutingRulesExpressionBranch$outboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesExpressionBranch$Outbound` instead. */
-  export type Outbound = V3ServicesRoutingRulesExpressionBranch$Outbound;
-}
-
 export function v3ServicesRoutingRulesExpressionBranchToJSON(
   v3ServicesRoutingRulesExpressionBranch:
     V3ServicesRoutingRulesExpressionBranch,
@@ -182,7 +135,6 @@ export function v3ServicesRoutingRulesExpressionBranchToJSON(
     ),
   );
 }
-
 export function v3ServicesRoutingRulesExpressionBranchFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesRoutingRulesExpressionBranch, SDKValidationError> {

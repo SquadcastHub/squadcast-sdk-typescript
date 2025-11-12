@@ -35,60 +35,6 @@ export const V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$inboundSchem
     endTime: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   });
 
-/** @internal */
-export type V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$Outbound = {
-  id: number;
-  title: string;
-  pageID: number;
-  note: string;
-  components?: Array<number> | undefined;
-  startTime: string;
-  endTime: string;
-};
-
-/** @internal */
-export const V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$outboundSchema:
-  z.ZodType<
-    V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse
-  > = z.object({
-    id: z.number().int(),
-    title: z.string(),
-    pageID: z.number().int(),
-    note: z.string(),
-    components: z.array(z.number().int()).optional(),
-    startTime: z.date().transform(v => v.toISOString()),
-    endTime: z.date().transform(v => v.toISOString()),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$ {
-  /** @deprecated use `V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$Outbound;
-}
-
-export function v4StatusPagesMaintenancesDeleteMaintenanceByIdResponseToJSON(
-  v4StatusPagesMaintenancesDeleteMaintenanceByIdResponse:
-    V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$outboundSchema.parse(
-      v4StatusPagesMaintenancesDeleteMaintenanceByIdResponse,
-    ),
-  );
-}
-
 export function v4StatusPagesMaintenancesDeleteMaintenanceByIdResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

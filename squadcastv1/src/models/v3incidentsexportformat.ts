@@ -20,22 +20,6 @@ export type V3IncidentsExportFormat = ClosedEnum<
 >;
 
 /** @internal */
-export const V3IncidentsExportFormat$inboundSchema: z.ZodNativeEnum<
-  typeof V3IncidentsExportFormat
-> = z.nativeEnum(V3IncidentsExportFormat);
-
-/** @internal */
 export const V3IncidentsExportFormat$outboundSchema: z.ZodNativeEnum<
   typeof V3IncidentsExportFormat
-> = V3IncidentsExportFormat$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsExportFormat$ {
-  /** @deprecated use `V3IncidentsExportFormat$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsExportFormat$inboundSchema;
-  /** @deprecated use `V3IncidentsExportFormat$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsExportFormat$outboundSchema;
-}
+> = z.nativeEnum(V3IncidentsExportFormat);

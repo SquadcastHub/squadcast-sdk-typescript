@@ -37,61 +37,6 @@ export const V3ExtensionsWebhooksWebhookListItem$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3ExtensionsWebhooksWebhookListItem$Outbound = {
-  id: string;
-  name: string;
-  description: string;
-  trigger_type: string;
-  payload_type: string;
-  custom_payload_template_name: string;
-};
-
-/** @internal */
-export const V3ExtensionsWebhooksWebhookListItem$outboundSchema: z.ZodType<
-  V3ExtensionsWebhooksWebhookListItem$Outbound,
-  z.ZodTypeDef,
-  V3ExtensionsWebhooksWebhookListItem
-> = z.object({
-  id: z.string(),
-  name: z.string(),
-  description: z.string(),
-  triggerType: z.string(),
-  payloadType: z.string(),
-  customPayloadTemplateName: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    triggerType: "trigger_type",
-    payloadType: "payload_type",
-    customPayloadTemplateName: "custom_payload_template_name",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksWebhookListItem$ {
-  /** @deprecated use `V3ExtensionsWebhooksWebhookListItem$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsWebhooksWebhookListItem$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookListItem$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsWebhooksWebhookListItem$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookListItem$Outbound` instead. */
-  export type Outbound = V3ExtensionsWebhooksWebhookListItem$Outbound;
-}
-
-export function v3ExtensionsWebhooksWebhookListItemToJSON(
-  v3ExtensionsWebhooksWebhookListItem: V3ExtensionsWebhooksWebhookListItem,
-): string {
-  return JSON.stringify(
-    V3ExtensionsWebhooksWebhookListItem$outboundSchema.parse(
-      v3ExtensionsWebhooksWebhookListItem,
-    ),
-  );
-}
-
 export function v3ExtensionsWebhooksWebhookListItemFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ExtensionsWebhooksWebhookListItem, SDKValidationError> {

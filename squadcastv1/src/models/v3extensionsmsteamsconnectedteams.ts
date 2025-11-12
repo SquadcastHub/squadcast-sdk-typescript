@@ -55,7 +55,6 @@ export const V3ExtensionsMSTeamsConnectedTeams$inboundSchema: z.ZodType<
     "channel_configurations": "channelConfigurations",
   });
 });
-
 /** @internal */
 export type V3ExtensionsMSTeamsConnectedTeams$Outbound = {
   id?: string | undefined;
@@ -86,20 +85,6 @@ export const V3ExtensionsMSTeamsConnectedTeams$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsMSTeamsConnectedTeams$ {
-  /** @deprecated use `V3ExtensionsMSTeamsConnectedTeams$inboundSchema` instead. */
-  export const inboundSchema = V3ExtensionsMSTeamsConnectedTeams$inboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsConnectedTeams$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsMSTeamsConnectedTeams$outboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsConnectedTeams$Outbound` instead. */
-  export type Outbound = V3ExtensionsMSTeamsConnectedTeams$Outbound;
-}
-
 export function v3ExtensionsMSTeamsConnectedTeamsToJSON(
   v3ExtensionsMSTeamsConnectedTeams: V3ExtensionsMSTeamsConnectedTeams,
 ): string {
@@ -109,7 +94,6 @@ export function v3ExtensionsMSTeamsConnectedTeamsToJSON(
     ),
   );
 }
-
 export function v3ExtensionsMSTeamsConnectedTeamsFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ExtensionsMSTeamsConnectedTeams, SDKValidationError> {

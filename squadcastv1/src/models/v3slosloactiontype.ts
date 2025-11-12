@@ -16,19 +16,7 @@ export type V3SLOSLOActionType = ClosedEnum<typeof V3SLOSLOActionType>;
 export const V3SLOSLOActionType$inboundSchema: z.ZodNativeEnum<
   typeof V3SLOSLOActionType
 > = z.nativeEnum(V3SLOSLOActionType);
-
 /** @internal */
 export const V3SLOSLOActionType$outboundSchema: z.ZodNativeEnum<
   typeof V3SLOSLOActionType
 > = V3SLOSLOActionType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3SLOSLOActionType$ {
-  /** @deprecated use `V3SLOSLOActionType$inboundSchema` instead. */
-  export const inboundSchema = V3SLOSLOActionType$inboundSchema;
-  /** @deprecated use `V3SLOSLOActionType$outboundSchema` instead. */
-  export const outboundSchema = V3SLOSLOActionType$outboundSchema;
-}

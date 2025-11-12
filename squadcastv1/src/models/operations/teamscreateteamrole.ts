@@ -22,21 +22,6 @@ export type TeamsCreateTeamRoleResponse = {
 };
 
 /** @internal */
-export const TeamsCreateTeamRoleRequest$inboundSchema: z.ZodType<
-  TeamsCreateTeamRoleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  teamId: z.string(),
-  "V3.Teams.CreateTeamRoleRequest":
-    models.V3TeamsCreateTeamRoleRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Teams.CreateTeamRoleRequest": "v3TeamsCreateTeamRoleRequest",
-  });
-});
-
-/** @internal */
 export type TeamsCreateTeamRoleRequest$Outbound = {
   teamId: string;
   "V3.Teams.CreateTeamRoleRequest":
@@ -58,34 +43,11 @@ export const TeamsCreateTeamRoleRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsCreateTeamRoleRequest$ {
-  /** @deprecated use `TeamsCreateTeamRoleRequest$inboundSchema` instead. */
-  export const inboundSchema = TeamsCreateTeamRoleRequest$inboundSchema;
-  /** @deprecated use `TeamsCreateTeamRoleRequest$outboundSchema` instead. */
-  export const outboundSchema = TeamsCreateTeamRoleRequest$outboundSchema;
-  /** @deprecated use `TeamsCreateTeamRoleRequest$Outbound` instead. */
-  export type Outbound = TeamsCreateTeamRoleRequest$Outbound;
-}
-
 export function teamsCreateTeamRoleRequestToJSON(
   teamsCreateTeamRoleRequest: TeamsCreateTeamRoleRequest,
 ): string {
   return JSON.stringify(
     TeamsCreateTeamRoleRequest$outboundSchema.parse(teamsCreateTeamRoleRequest),
-  );
-}
-
-export function teamsCreateTeamRoleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<TeamsCreateTeamRoleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => TeamsCreateTeamRoleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'TeamsCreateTeamRoleRequest' from JSON`,
   );
 }
 
@@ -97,43 +59,6 @@ export const TeamsCreateTeamRoleResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3TeamsTeamBaseResponse$inboundSchema,
 });
-
-/** @internal */
-export type TeamsCreateTeamRoleResponse$Outbound = {
-  data: models.V3TeamsTeamBaseResponse$Outbound;
-};
-
-/** @internal */
-export const TeamsCreateTeamRoleResponse$outboundSchema: z.ZodType<
-  TeamsCreateTeamRoleResponse$Outbound,
-  z.ZodTypeDef,
-  TeamsCreateTeamRoleResponse
-> = z.object({
-  data: models.V3TeamsTeamBaseResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsCreateTeamRoleResponse$ {
-  /** @deprecated use `TeamsCreateTeamRoleResponse$inboundSchema` instead. */
-  export const inboundSchema = TeamsCreateTeamRoleResponse$inboundSchema;
-  /** @deprecated use `TeamsCreateTeamRoleResponse$outboundSchema` instead. */
-  export const outboundSchema = TeamsCreateTeamRoleResponse$outboundSchema;
-  /** @deprecated use `TeamsCreateTeamRoleResponse$Outbound` instead. */
-  export type Outbound = TeamsCreateTeamRoleResponse$Outbound;
-}
-
-export function teamsCreateTeamRoleResponseToJSON(
-  teamsCreateTeamRoleResponse: TeamsCreateTeamRoleResponse,
-): string {
-  return JSON.stringify(
-    TeamsCreateTeamRoleResponse$outboundSchema.parse(
-      teamsCreateTeamRoleResponse,
-    ),
-  );
-}
 
 export function teamsCreateTeamRoleResponseFromJSON(
   jsonString: string,

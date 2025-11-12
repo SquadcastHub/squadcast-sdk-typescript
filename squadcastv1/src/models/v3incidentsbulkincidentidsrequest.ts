@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 /**
  * Request body for bulk incident operations (acknowledge, resolve).
@@ -14,19 +11,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 export type V3IncidentsBulkIncidentIDsRequest = {
   incidentIds: Array<string>;
 };
-
-/** @internal */
-export const V3IncidentsBulkIncidentIDsRequest$inboundSchema: z.ZodType<
-  V3IncidentsBulkIncidentIDsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  incident_ids: z.array(z.string()),
-}).transform((v) => {
-  return remap$(v, {
-    "incident_ids": "incidentIds",
-  });
-});
 
 /** @internal */
 export type V3IncidentsBulkIncidentIDsRequest$Outbound = {
@@ -46,20 +30,6 @@ export const V3IncidentsBulkIncidentIDsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsBulkIncidentIDsRequest$ {
-  /** @deprecated use `V3IncidentsBulkIncidentIDsRequest$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsBulkIncidentIDsRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsBulkIncidentIDsRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsBulkIncidentIDsRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsBulkIncidentIDsRequest$Outbound` instead. */
-  export type Outbound = V3IncidentsBulkIncidentIDsRequest$Outbound;
-}
-
 export function v3IncidentsBulkIncidentIDsRequestToJSON(
   v3IncidentsBulkIncidentIDsRequest: V3IncidentsBulkIncidentIDsRequest,
 ): string {
@@ -67,15 +37,5 @@ export function v3IncidentsBulkIncidentIDsRequestToJSON(
     V3IncidentsBulkIncidentIDsRequest$outboundSchema.parse(
       v3IncidentsBulkIncidentIDsRequest,
     ),
-  );
-}
-
-export function v3IncidentsBulkIncidentIDsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3IncidentsBulkIncidentIDsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3IncidentsBulkIncidentIDsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsBulkIncidentIDsRequest' from JSON`,
   );
 }

@@ -10,8 +10,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3WorkflowsWorkflowAPIResponse,
   V3WorkflowsWorkflowAPIResponse$inboundSchema,
-  V3WorkflowsWorkflowAPIResponse$Outbound,
-  V3WorkflowsWorkflowAPIResponse$outboundSchema,
 } from "./v3workflowsworkflowapiresponse.js";
 
 export type Acl = {};
@@ -29,30 +27,6 @@ export type V3WorkflowsListWorkflowAPIResponse = {
 /** @internal */
 export const Acl$inboundSchema: z.ZodType<Acl, z.ZodTypeDef, unknown> = z
   .object({});
-
-/** @internal */
-export type Acl$Outbound = {};
-
-/** @internal */
-export const Acl$outboundSchema: z.ZodType<Acl$Outbound, z.ZodTypeDef, Acl> = z
-  .object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Acl$ {
-  /** @deprecated use `Acl$inboundSchema` instead. */
-  export const inboundSchema = Acl$inboundSchema;
-  /** @deprecated use `Acl$outboundSchema` instead. */
-  export const outboundSchema = Acl$outboundSchema;
-  /** @deprecated use `Acl$Outbound` instead. */
-  export type Outbound = Acl$Outbound;
-}
-
-export function aclToJSON(acl: Acl): string {
-  return JSON.stringify(Acl$outboundSchema.parse(acl));
-}
 
 export function aclFromJSON(
   jsonString: string,
@@ -78,52 +52,6 @@ export const V3WorkflowsListWorkflowAPIResponseMeta$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3WorkflowsListWorkflowAPIResponseMeta$Outbound = {
-  total_count: number;
-  acl?: Acl$Outbound | undefined;
-};
-
-/** @internal */
-export const V3WorkflowsListWorkflowAPIResponseMeta$outboundSchema: z.ZodType<
-  V3WorkflowsListWorkflowAPIResponseMeta$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsListWorkflowAPIResponseMeta
-> = z.object({
-  totalCount: z.number().int(),
-  acl: z.lazy(() => Acl$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    totalCount: "total_count",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsListWorkflowAPIResponseMeta$ {
-  /** @deprecated use `V3WorkflowsListWorkflowAPIResponseMeta$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsListWorkflowAPIResponseMeta$inboundSchema;
-  /** @deprecated use `V3WorkflowsListWorkflowAPIResponseMeta$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsListWorkflowAPIResponseMeta$outboundSchema;
-  /** @deprecated use `V3WorkflowsListWorkflowAPIResponseMeta$Outbound` instead. */
-  export type Outbound = V3WorkflowsListWorkflowAPIResponseMeta$Outbound;
-}
-
-export function v3WorkflowsListWorkflowAPIResponseMetaToJSON(
-  v3WorkflowsListWorkflowAPIResponseMeta:
-    V3WorkflowsListWorkflowAPIResponseMeta,
-): string {
-  return JSON.stringify(
-    V3WorkflowsListWorkflowAPIResponseMeta$outboundSchema.parse(
-      v3WorkflowsListWorkflowAPIResponseMeta,
-    ),
-  );
-}
-
 export function v3WorkflowsListWorkflowAPIResponseMetaFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsListWorkflowAPIResponseMeta, SDKValidationError> {
@@ -144,46 +72,6 @@ export const V3WorkflowsListWorkflowAPIResponse$inboundSchema: z.ZodType<
   data: z.array(V3WorkflowsWorkflowAPIResponse$inboundSchema),
   meta: z.lazy(() => V3WorkflowsListWorkflowAPIResponseMeta$inboundSchema),
 });
-
-/** @internal */
-export type V3WorkflowsListWorkflowAPIResponse$Outbound = {
-  data: Array<V3WorkflowsWorkflowAPIResponse$Outbound>;
-  meta: V3WorkflowsListWorkflowAPIResponseMeta$Outbound;
-};
-
-/** @internal */
-export const V3WorkflowsListWorkflowAPIResponse$outboundSchema: z.ZodType<
-  V3WorkflowsListWorkflowAPIResponse$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsListWorkflowAPIResponse
-> = z.object({
-  data: z.array(V3WorkflowsWorkflowAPIResponse$outboundSchema),
-  meta: z.lazy(() => V3WorkflowsListWorkflowAPIResponseMeta$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsListWorkflowAPIResponse$ {
-  /** @deprecated use `V3WorkflowsListWorkflowAPIResponse$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsListWorkflowAPIResponse$inboundSchema;
-  /** @deprecated use `V3WorkflowsListWorkflowAPIResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsListWorkflowAPIResponse$outboundSchema;
-  /** @deprecated use `V3WorkflowsListWorkflowAPIResponse$Outbound` instead. */
-  export type Outbound = V3WorkflowsListWorkflowAPIResponse$Outbound;
-}
-
-export function v3WorkflowsListWorkflowAPIResponseToJSON(
-  v3WorkflowsListWorkflowAPIResponse: V3WorkflowsListWorkflowAPIResponse,
-): string {
-  return JSON.stringify(
-    V3WorkflowsListWorkflowAPIResponse$outboundSchema.parse(
-      v3WorkflowsListWorkflowAPIResponse,
-    ),
-  );
-}
 
 export function v3WorkflowsListWorkflowAPIResponseFromJSON(
   jsonString: string,

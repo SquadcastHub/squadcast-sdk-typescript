@@ -9,86 +9,59 @@ import { Result as SafeParseResult } from "../types/fp.js";
 import {
   CommonV3RBACEntityPermission,
   CommonV3RBACEntityPermission$inboundSchema,
-  CommonV3RBACEntityPermission$Outbound,
-  CommonV3RBACEntityPermission$outboundSchema,
 } from "./commonv3rbacentitypermission.js";
 import {
   CommonV3RBACOwner,
   CommonV3RBACOwner$inboundSchema,
-  CommonV3RBACOwner$Outbound,
-  CommonV3RBACOwner$outboundSchema,
 } from "./commonv3rbacowner.js";
 import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3IncidentsTagsAdditionalResponderDetails,
   V3IncidentsTagsAdditionalResponderDetails$inboundSchema,
-  V3IncidentsTagsAdditionalResponderDetails$Outbound,
-  V3IncidentsTagsAdditionalResponderDetails$outboundSchema,
 } from "./v3incidentstagsadditionalresponderdetails.js";
 import {
   V3IncidentsTagsAnalytics,
   V3IncidentsTagsAnalytics$inboundSchema,
-  V3IncidentsTagsAnalytics$Outbound,
-  V3IncidentsTagsAnalytics$outboundSchema,
 } from "./v3incidentstagsanalytics.js";
 import {
   V3IncidentsTagsAssignedTo,
   V3IncidentsTagsAssignedTo$inboundSchema,
-  V3IncidentsTagsAssignedTo$Outbound,
-  V3IncidentsTagsAssignedTo$outboundSchema,
 } from "./v3incidentstagsassignedto.js";
 import {
   V3IncidentsTagsDedupData,
   V3IncidentsTagsDedupData$inboundSchema,
-  V3IncidentsTagsDedupData$Outbound,
-  V3IncidentsTagsDedupData$outboundSchema,
 } from "./v3incidentstagsdedupdata.js";
 import {
   V3IncidentsTagsIncidentPriority,
   V3IncidentsTagsIncidentPriority$inboundSchema,
-  V3IncidentsTagsIncidentPriority$outboundSchema,
 } from "./v3incidentstagsincidentpriority.js";
 import {
   V3IncidentsTagsLogs,
   V3IncidentsTagsLogs$inboundSchema,
-  V3IncidentsTagsLogs$Outbound,
-  V3IncidentsTagsLogs$outboundSchema,
 } from "./v3incidentstagslogs.js";
 import {
   V3IncidentsTagsMergeIncidentEntityReference,
   V3IncidentsTagsMergeIncidentEntityReference$inboundSchema,
-  V3IncidentsTagsMergeIncidentEntityReference$Outbound,
-  V3IncidentsTagsMergeIncidentEntityReference$outboundSchema,
 } from "./v3incidentstagsmergeincidententityreference.js";
 import {
   V3IncidentsTagsNotificationDelayPolicy,
   V3IncidentsTagsNotificationDelayPolicy$inboundSchema,
-  V3IncidentsTagsNotificationDelayPolicy$Outbound,
-  V3IncidentsTagsNotificationDelayPolicy$outboundSchema,
 } from "./v3incidentstagsnotificationdelaypolicy.js";
 import {
   V3IncidentsTagsPinnedMessage,
   V3IncidentsTagsPinnedMessage$inboundSchema,
-  V3IncidentsTagsPinnedMessage$Outbound,
-  V3IncidentsTagsPinnedMessage$outboundSchema,
 } from "./v3incidentstagspinnedmessage.js";
 import {
   V3IncidentsTagsRelevantPeopleLog,
   V3IncidentsTagsRelevantPeopleLog$inboundSchema,
-  V3IncidentsTagsRelevantPeopleLog$Outbound,
-  V3IncidentsTagsRelevantPeopleLog$outboundSchema,
 } from "./v3incidentstagsrelevantpeoplelog.js";
 import {
   V3IncidentsTagsResponseNote,
   V3IncidentsTagsResponseNote$inboundSchema,
-  V3IncidentsTagsResponseNote$Outbound,
-  V3IncidentsTagsResponseNote$outboundSchema,
 } from "./v3incidentstagsresponsenote.js";
 import {
   V3IncidentsTagsSnoozeDetails,
   V3IncidentsTagsSnoozeDetails$inboundSchema,
-  V3IncidentsTagsSnoozeDetails$Outbound,
-  V3IncidentsTagsSnoozeDetails$outboundSchema,
 } from "./v3incidentstagssnoozedetails.js";
 
 export type V3IncidentsTagsIncidentForTagsResponseTags = {};
@@ -172,43 +145,6 @@ export const V3IncidentsTagsIncidentForTagsResponseTags$inboundSchema:
   z.ZodType<V3IncidentsTagsIncidentForTagsResponseTags, z.ZodTypeDef, unknown> =
     z.object({});
 
-/** @internal */
-export type V3IncidentsTagsIncidentForTagsResponseTags$Outbound = {};
-
-/** @internal */
-export const V3IncidentsTagsIncidentForTagsResponseTags$outboundSchema:
-  z.ZodType<
-    V3IncidentsTagsIncidentForTagsResponseTags$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsTagsIncidentForTagsResponseTags
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsIncidentForTagsResponseTags$ {
-  /** @deprecated use `V3IncidentsTagsIncidentForTagsResponseTags$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsTagsIncidentForTagsResponseTags$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsIncidentForTagsResponseTags$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsTagsIncidentForTagsResponseTags$outboundSchema;
-  /** @deprecated use `V3IncidentsTagsIncidentForTagsResponseTags$Outbound` instead. */
-  export type Outbound = V3IncidentsTagsIncidentForTagsResponseTags$Outbound;
-}
-
-export function v3IncidentsTagsIncidentForTagsResponseTagsToJSON(
-  v3IncidentsTagsIncidentForTagsResponseTags:
-    V3IncidentsTagsIncidentForTagsResponseTags,
-): string {
-  return JSON.stringify(
-    V3IncidentsTagsIncidentForTagsResponseTags$outboundSchema.parse(
-      v3IncidentsTagsIncidentForTagsResponseTags,
-    ),
-  );
-}
-
 export function v3IncidentsTagsIncidentForTagsResponseTagsFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -240,52 +176,6 @@ export const V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$inboundSchema
       new Date(v)
     ).optional(),
   });
-
-/** @internal */
-export type V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$Outbound = {
-  escalationPolicyId: string;
-  retriggerAt?: string | undefined;
-  retriggeredAt?: string | undefined;
-};
-
-/** @internal */
-export const V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$outboundSchema:
-  z.ZodType<
-    V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy
-  > = z.object({
-    escalationPolicyId: z.string(),
-    retriggerAt: z.date().transform(v => v.toISOString()).optional(),
-    retriggeredAt: z.date().transform(v => v.toISOString()).optional(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$ {
-  /** @deprecated use `V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$outboundSchema;
-  /** @deprecated use `V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$Outbound;
-}
-
-export function v3IncidentsTagsIncidentForTagsResponseRetriggerPolicyToJSON(
-  v3IncidentsTagsIncidentForTagsResponseRetriggerPolicy:
-    V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy,
-): string {
-  return JSON.stringify(
-    V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$outboundSchema.parse(
-      v3IncidentsTagsIncidentForTagsResponseRetriggerPolicy,
-    ),
-  );
-}
 
 export function v3IncidentsTagsIncidentForTagsResponseRetriggerPolicyFromJSON(
   jsonString: string,
@@ -411,200 +301,6 @@ export const V3IncidentsTagsIncidentForTagsResponse$inboundSchema: z.ZodType<
     "digest_id": "digestId",
   });
 });
-
-/** @internal */
-export type V3IncidentsTagsIncidentForTagsResponse$Outbound = {
-  id: string;
-  service_id: string;
-  alert_source_id: string;
-  organization_id: string;
-  slo_id?: number | undefined;
-  incidentNumber: number;
-  message: string;
-  assignedTo: Array<V3IncidentsTagsAssignedTo$Outbound>;
-  additional_responders: Array<
-    V3IncidentsTagsAdditionalResponderDetails$Outbound
-  >;
-  description: string;
-  status: string;
-  timeOfCreation: string;
-  updated_at: string;
-  last_acknowledged_at?: string | null | undefined;
-  tags: V3IncidentsTagsIncidentForTagsResponseTags$Outbound;
-  logs: Array<V3IncidentsTagsLogs$Outbound>;
-  analytics: V3IncidentsTagsAnalytics$Outbound;
-  pinned_messages: Array<V3IncidentsTagsPinnedMessage$Outbound> | null;
-  created_by?: string | undefined;
-  sender_email?: string | undefined;
-  deleted: boolean;
-  event_count: number;
-  dedup_data: V3IncidentsTagsDedupData$Outbound;
-  owner: CommonV3RBACOwner$Outbound;
-  access_control: Array<CommonV3RBACEntityPermission$Outbound> | null;
-  relevantUsers: Array<string> | null;
-  relevantEscalationPolicies: Array<string> | null;
-  relevantSquads: Array<string> | null;
-  relevantSchedules: Array<string> | null;
-  relevantPeopleLogs: Array<V3IncidentsTagsRelevantPeopleLog$Outbound> | null;
-  responseNotes: Array<V3IncidentsTagsResponseNote$Outbound> | null;
-  attachments: Array<string> | null;
-  retriggerPolicy?:
-    | V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$Outbound
-    | null
-    | undefined;
-  webform_id?: number | undefined;
-  webform_submission_id?: number | undefined;
-  is_child: boolean;
-  parent?:
-    | V3IncidentsTagsMergeIncidentEntityReference$Outbound
-    | null
-    | undefined;
-  children: Array<V3IncidentsTagsMergeIncidentEntityReference$Outbound>;
-  did_auto_pause: boolean;
-  did_auto_pause_timeout: boolean;
-  auto_pause_ends_at: string;
-  manually_marked_transient_alert_feedback_type: string;
-  classification_id: number;
-  grouped_alert_count: number;
-  priority?: string | undefined;
-  has_priority: boolean;
-  snooze_details: V3IncidentsTagsSnoozeDetails$Outbound;
-  did_notification_delay: boolean;
-  notification_delay_policy: V3IncidentsTagsNotificationDelayPolicy$Outbound;
-  digest_id: string;
-};
-
-/** @internal */
-export const V3IncidentsTagsIncidentForTagsResponse$outboundSchema: z.ZodType<
-  V3IncidentsTagsIncidentForTagsResponse$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsTagsIncidentForTagsResponse
-> = z.object({
-  id: z.string(),
-  serviceId: z.string(),
-  alertSourceId: z.string(),
-  organizationId: z.string(),
-  sloId: z.number().int().optional(),
-  incidentNumber: z.number().int(),
-  message: z.string(),
-  assignedTo: z.array(V3IncidentsTagsAssignedTo$outboundSchema),
-  additionalResponders: z.array(
-    V3IncidentsTagsAdditionalResponderDetails$outboundSchema,
-  ),
-  description: z.string(),
-  status: z.string(),
-  timeOfCreation: z.date().transform(v => v.toISOString()),
-  updatedAt: z.date().transform(v => v.toISOString()),
-  lastAcknowledgedAt: z.nullable(z.date().transform(v => v.toISOString()))
-    .optional(),
-  tags: z.lazy(() => V3IncidentsTagsIncidentForTagsResponseTags$outboundSchema),
-  logs: z.array(V3IncidentsTagsLogs$outboundSchema),
-  analytics: V3IncidentsTagsAnalytics$outboundSchema,
-  pinnedMessages: z.nullable(
-    z.array(V3IncidentsTagsPinnedMessage$outboundSchema),
-  ),
-  createdBy: z.string().optional(),
-  senderEmail: z.string().optional(),
-  deleted: z.boolean(),
-  eventCount: z.number().int(),
-  dedupData: V3IncidentsTagsDedupData$outboundSchema,
-  owner: CommonV3RBACOwner$outboundSchema,
-  accessControl: z.nullable(
-    z.array(CommonV3RBACEntityPermission$outboundSchema),
-  ),
-  relevantUsers: z.nullable(z.array(z.string())),
-  relevantEscalationPolicies: z.nullable(z.array(z.string())),
-  relevantSquads: z.nullable(z.array(z.string())),
-  relevantSchedules: z.nullable(z.array(z.string())),
-  relevantPeopleLogs: z.nullable(
-    z.array(V3IncidentsTagsRelevantPeopleLog$outboundSchema),
-  ),
-  responseNotes: z.nullable(
-    z.array(V3IncidentsTagsResponseNote$outboundSchema),
-  ),
-  attachments: z.nullable(z.array(z.string())),
-  retriggerPolicy: z.nullable(
-    z.lazy(() =>
-      V3IncidentsTagsIncidentForTagsResponseRetriggerPolicy$outboundSchema
-    ),
-  ).optional(),
-  webformId: z.number().int().optional(),
-  webformSubmissionId: z.number().int().optional(),
-  isChild: z.boolean(),
-  parent: z.nullable(V3IncidentsTagsMergeIncidentEntityReference$outboundSchema)
-    .optional(),
-  children: z.array(V3IncidentsTagsMergeIncidentEntityReference$outboundSchema),
-  didAutoPause: z.boolean(),
-  didAutoPauseTimeout: z.boolean(),
-  autoPauseEndsAt: z.date().transform(v => v.toISOString()),
-  manuallyMarkedTransientAlertFeedbackType: z.string(),
-  classificationId: z.number().int(),
-  groupedAlertCount: z.number().int(),
-  priority: V3IncidentsTagsIncidentPriority$outboundSchema.optional(),
-  hasPriority: z.boolean(),
-  snoozeDetails: V3IncidentsTagsSnoozeDetails$outboundSchema,
-  didNotificationDelay: z.boolean(),
-  notificationDelayPolicy:
-    V3IncidentsTagsNotificationDelayPolicy$outboundSchema,
-  digestId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    serviceId: "service_id",
-    alertSourceId: "alert_source_id",
-    organizationId: "organization_id",
-    sloId: "slo_id",
-    additionalResponders: "additional_responders",
-    updatedAt: "updated_at",
-    lastAcknowledgedAt: "last_acknowledged_at",
-    pinnedMessages: "pinned_messages",
-    createdBy: "created_by",
-    senderEmail: "sender_email",
-    eventCount: "event_count",
-    dedupData: "dedup_data",
-    accessControl: "access_control",
-    webformId: "webform_id",
-    webformSubmissionId: "webform_submission_id",
-    isChild: "is_child",
-    didAutoPause: "did_auto_pause",
-    didAutoPauseTimeout: "did_auto_pause_timeout",
-    autoPauseEndsAt: "auto_pause_ends_at",
-    manuallyMarkedTransientAlertFeedbackType:
-      "manually_marked_transient_alert_feedback_type",
-    classificationId: "classification_id",
-    groupedAlertCount: "grouped_alert_count",
-    hasPriority: "has_priority",
-    snoozeDetails: "snooze_details",
-    didNotificationDelay: "did_notification_delay",
-    notificationDelayPolicy: "notification_delay_policy",
-    digestId: "digest_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsIncidentForTagsResponse$ {
-  /** @deprecated use `V3IncidentsTagsIncidentForTagsResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsTagsIncidentForTagsResponse$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsIncidentForTagsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsTagsIncidentForTagsResponse$outboundSchema;
-  /** @deprecated use `V3IncidentsTagsIncidentForTagsResponse$Outbound` instead. */
-  export type Outbound = V3IncidentsTagsIncidentForTagsResponse$Outbound;
-}
-
-export function v3IncidentsTagsIncidentForTagsResponseToJSON(
-  v3IncidentsTagsIncidentForTagsResponse:
-    V3IncidentsTagsIncidentForTagsResponse,
-): string {
-  return JSON.stringify(
-    V3IncidentsTagsIncidentForTagsResponse$outboundSchema.parse(
-      v3IncidentsTagsIncidentForTagsResponse,
-    ),
-  );
-}
 
 export function v3IncidentsTagsIncidentForTagsResponseFromJSON(
   jsonString: string,

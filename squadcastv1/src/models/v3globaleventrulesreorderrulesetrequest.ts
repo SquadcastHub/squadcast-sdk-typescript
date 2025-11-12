@@ -3,22 +3,10 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3GlobalEventRulesReorderRulesetRequest = {
   ordering?: Array<number> | undefined;
 };
-
-/** @internal */
-export const V3GlobalEventRulesReorderRulesetRequest$inboundSchema: z.ZodType<
-  V3GlobalEventRulesReorderRulesetRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  ordering: z.array(z.number().int()).optional(),
-});
 
 /** @internal */
 export type V3GlobalEventRulesReorderRulesetRequest$Outbound = {
@@ -34,21 +22,6 @@ export const V3GlobalEventRulesReorderRulesetRequest$outboundSchema: z.ZodType<
   ordering: z.array(z.number().int()).optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesReorderRulesetRequest$ {
-  /** @deprecated use `V3GlobalEventRulesReorderRulesetRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3GlobalEventRulesReorderRulesetRequest$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesReorderRulesetRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3GlobalEventRulesReorderRulesetRequest$outboundSchema;
-  /** @deprecated use `V3GlobalEventRulesReorderRulesetRequest$Outbound` instead. */
-  export type Outbound = V3GlobalEventRulesReorderRulesetRequest$Outbound;
-}
-
 export function v3GlobalEventRulesReorderRulesetRequestToJSON(
   v3GlobalEventRulesReorderRulesetRequest:
     V3GlobalEventRulesReorderRulesetRequest,
@@ -57,21 +30,5 @@ export function v3GlobalEventRulesReorderRulesetRequestToJSON(
     V3GlobalEventRulesReorderRulesetRequest$outboundSchema.parse(
       v3GlobalEventRulesReorderRulesetRequest,
     ),
-  );
-}
-
-export function v3GlobalEventRulesReorderRulesetRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3GlobalEventRulesReorderRulesetRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3GlobalEventRulesReorderRulesetRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3GlobalEventRulesReorderRulesetRequest' from JSON`,
   );
 }

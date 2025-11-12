@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V4StatusPagesComponentsUpdateComponentByIdRequest = {
   name: string;
@@ -15,21 +12,6 @@ export type V4StatusPagesComponentsUpdateComponentByIdRequest = {
   serviceID?: string | undefined;
   belongsToGroup?: string | undefined;
 };
-
-/** @internal */
-export const V4StatusPagesComponentsUpdateComponentByIdRequest$inboundSchema:
-  z.ZodType<
-    V4StatusPagesComponentsUpdateComponentByIdRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string(),
-    description: z.string().optional(),
-    allowSubscription: z.boolean().optional(),
-    groupID: z.string().optional(),
-    serviceID: z.string().optional(),
-    belongsToGroup: z.string().optional(),
-  });
 
 /** @internal */
 export type V4StatusPagesComponentsUpdateComponentByIdRequest$Outbound = {
@@ -56,22 +38,6 @@ export const V4StatusPagesComponentsUpdateComponentByIdRequest$outboundSchema:
     belongsToGroup: z.string().optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesComponentsUpdateComponentByIdRequest$ {
-  /** @deprecated use `V4StatusPagesComponentsUpdateComponentByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesComponentsUpdateComponentByIdRequest$inboundSchema;
-  /** @deprecated use `V4StatusPagesComponentsUpdateComponentByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesComponentsUpdateComponentByIdRequest$outboundSchema;
-  /** @deprecated use `V4StatusPagesComponentsUpdateComponentByIdRequest$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesComponentsUpdateComponentByIdRequest$Outbound;
-}
-
 export function v4StatusPagesComponentsUpdateComponentByIdRequestToJSON(
   v4StatusPagesComponentsUpdateComponentByIdRequest:
     V4StatusPagesComponentsUpdateComponentByIdRequest,
@@ -80,21 +46,5 @@ export function v4StatusPagesComponentsUpdateComponentByIdRequestToJSON(
     V4StatusPagesComponentsUpdateComponentByIdRequest$outboundSchema.parse(
       v4StatusPagesComponentsUpdateComponentByIdRequest,
     ),
-  );
-}
-
-export function v4StatusPagesComponentsUpdateComponentByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V4StatusPagesComponentsUpdateComponentByIdRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V4StatusPagesComponentsUpdateComponentByIdRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V4StatusPagesComponentsUpdateComponentByIdRequest' from JSON`,
   );
 }

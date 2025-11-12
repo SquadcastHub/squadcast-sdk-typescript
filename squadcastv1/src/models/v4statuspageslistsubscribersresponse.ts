@@ -9,14 +9,10 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4StatusPagesListSubscribersResponseMeta,
   V4StatusPagesListSubscribersResponseMeta$inboundSchema,
-  V4StatusPagesListSubscribersResponseMeta$Outbound,
-  V4StatusPagesListSubscribersResponseMeta$outboundSchema,
 } from "./v4statuspageslistsubscribersresponsemeta.js";
 import {
   V4StatusPagesStatusPageSubscriber,
   V4StatusPagesStatusPageSubscriber$inboundSchema,
-  V4StatusPagesStatusPageSubscriber$Outbound,
-  V4StatusPagesStatusPageSubscriber$outboundSchema,
 } from "./v4statuspagesstatuspagesubscriber.js";
 
 export type V4StatusPagesListSubscribersResponse = {
@@ -33,47 +29,6 @@ export const V4StatusPagesListSubscribersResponse$inboundSchema: z.ZodType<
   data: z.nullable(z.array(V4StatusPagesStatusPageSubscriber$inboundSchema)),
   meta: V4StatusPagesListSubscribersResponseMeta$inboundSchema.optional(),
 });
-
-/** @internal */
-export type V4StatusPagesListSubscribersResponse$Outbound = {
-  data: Array<V4StatusPagesStatusPageSubscriber$Outbound> | null;
-  meta?: V4StatusPagesListSubscribersResponseMeta$Outbound | undefined;
-};
-
-/** @internal */
-export const V4StatusPagesListSubscribersResponse$outboundSchema: z.ZodType<
-  V4StatusPagesListSubscribersResponse$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesListSubscribersResponse
-> = z.object({
-  data: z.nullable(z.array(V4StatusPagesStatusPageSubscriber$outboundSchema)),
-  meta: V4StatusPagesListSubscribersResponseMeta$outboundSchema.optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesListSubscribersResponse$ {
-  /** @deprecated use `V4StatusPagesListSubscribersResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesListSubscribersResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesListSubscribersResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesListSubscribersResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesListSubscribersResponse$Outbound` instead. */
-  export type Outbound = V4StatusPagesListSubscribersResponse$Outbound;
-}
-
-export function v4StatusPagesListSubscribersResponseToJSON(
-  v4StatusPagesListSubscribersResponse: V4StatusPagesListSubscribersResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesListSubscribersResponse$outboundSchema.parse(
-      v4StatusPagesListSubscribersResponse,
-    ),
-  );
-}
 
 export function v4StatusPagesListSubscribersResponseFromJSON(
   jsonString: string,

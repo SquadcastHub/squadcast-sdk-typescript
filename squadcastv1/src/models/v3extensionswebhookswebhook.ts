@@ -4,24 +4,18 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ExtensionsWebhooksWebhookFilter,
-  V3ExtensionsWebhooksWebhookFilter$inboundSchema,
   V3ExtensionsWebhooksWebhookFilter$Outbound,
   V3ExtensionsWebhooksWebhookFilter$outboundSchema,
 } from "./v3extensionswebhookswebhookfilter.js";
 import {
   V3ExtensionsWebhooksWebhookTrigger,
-  V3ExtensionsWebhooksWebhookTrigger$inboundSchema,
   V3ExtensionsWebhooksWebhookTrigger$Outbound,
   V3ExtensionsWebhooksWebhookTrigger$outboundSchema,
 } from "./v3extensionswebhookswebhooktrigger.js";
 import {
   V3ExtensionsWebhooksWebhookUrl,
-  V3ExtensionsWebhooksWebhookUrl$inboundSchema,
   V3ExtensionsWebhooksWebhookUrl$Outbound,
   V3ExtensionsWebhooksWebhookUrl$outboundSchema,
 } from "./v3extensionswebhookswebhookurl.js";
@@ -92,13 +86,6 @@ export type V3ExtensionsWebhooksWebhook = {
 };
 
 /** @internal */
-export const V3ExtensionsWebhooksWebhookHeader$inboundSchema: z.ZodType<
-  V3ExtensionsWebhooksWebhookHeader,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
 export type V3ExtensionsWebhooksWebhookHeader$Outbound = {};
 
 /** @internal */
@@ -107,20 +94,6 @@ export const V3ExtensionsWebhooksWebhookHeader$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V3ExtensionsWebhooksWebhookHeader
 > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksWebhookHeader$ {
-  /** @deprecated use `V3ExtensionsWebhooksWebhookHeader$inboundSchema` instead. */
-  export const inboundSchema = V3ExtensionsWebhooksWebhookHeader$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookHeader$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsWebhooksWebhookHeader$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookHeader$Outbound` instead. */
-  export type Outbound = V3ExtensionsWebhooksWebhookHeader$Outbound;
-}
 
 export function v3ExtensionsWebhooksWebhookHeaderToJSON(
   v3ExtensionsWebhooksWebhookHeader: V3ExtensionsWebhooksWebhookHeader,
@@ -131,52 +104,6 @@ export function v3ExtensionsWebhooksWebhookHeaderToJSON(
     ),
   );
 }
-
-export function v3ExtensionsWebhooksWebhookHeaderFromJSON(
-  jsonString: string,
-): SafeParseResult<V3ExtensionsWebhooksWebhookHeader, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3ExtensionsWebhooksWebhookHeader$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3ExtensionsWebhooksWebhookHeader' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3ExtensionsWebhooksWebhook$inboundSchema: z.ZodType<
-  V3ExtensionsWebhooksWebhook,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  description: z.string().optional(),
-  triggers: z.array(V3ExtensionsWebhooksWebhookTrigger$inboundSchema),
-  urls: z.array(V3ExtensionsWebhooksWebhookUrl$inboundSchema),
-  header: z.nullable(
-    z.lazy(() => V3ExtensionsWebhooksWebhookHeader$inboundSchema),
-  ).optional(),
-  filters: z.nullable(V3ExtensionsWebhooksWebhookFilter$inboundSchema)
-    .optional(),
-  max_retry: z.number().int().optional(),
-  teams: z.nullable(z.array(z.string())).optional(),
-  is_all_teams_configured: z.boolean().optional(),
-  custom_payload_template_slug: z.string().optional(),
-  language: z.string().optional(),
-  mail_ids: z.nullable(z.array(z.string())).optional(),
-  trigger_type: z.string(),
-  custom_payload: z.string().optional(),
-  payload_type: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "max_retry": "maxRetry",
-    "is_all_teams_configured": "isAllTeamsConfigured",
-    "custom_payload_template_slug": "customPayloadTemplateSlug",
-    "mail_ids": "mailIds",
-    "trigger_type": "triggerType",
-    "custom_payload": "customPayload",
-    "payload_type": "payloadType",
-  });
-});
 
 /** @internal */
 export type V3ExtensionsWebhooksWebhook$Outbound = {
@@ -233,19 +160,6 @@ export const V3ExtensionsWebhooksWebhook$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksWebhook$ {
-  /** @deprecated use `V3ExtensionsWebhooksWebhook$inboundSchema` instead. */
-  export const inboundSchema = V3ExtensionsWebhooksWebhook$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhook$outboundSchema` instead. */
-  export const outboundSchema = V3ExtensionsWebhooksWebhook$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhook$Outbound` instead. */
-  export type Outbound = V3ExtensionsWebhooksWebhook$Outbound;
-}
-
 export function v3ExtensionsWebhooksWebhookToJSON(
   v3ExtensionsWebhooksWebhook: V3ExtensionsWebhooksWebhook,
 ): string {
@@ -253,15 +167,5 @@ export function v3ExtensionsWebhooksWebhookToJSON(
     V3ExtensionsWebhooksWebhook$outboundSchema.parse(
       v3ExtensionsWebhooksWebhook,
     ),
-  );
-}
-
-export function v3ExtensionsWebhooksWebhookFromJSON(
-  jsonString: string,
-): SafeParseResult<V3ExtensionsWebhooksWebhook, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3ExtensionsWebhooksWebhook$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3ExtensionsWebhooksWebhook' from JSON`,
   );
 }

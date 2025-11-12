@@ -24,24 +24,6 @@ export type MaintenancesUpdateMaintenanceByIdResponse = {
 };
 
 /** @internal */
-export const MaintenancesUpdateMaintenanceByIdRequest$inboundSchema: z.ZodType<
-  MaintenancesUpdateMaintenanceByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-  maintenance_id: z.string(),
-  "V4.StatusPages.Maintenances.UpdateMaintenanceByIdRequest":
-    models.V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "maintenance_id": "maintenanceId",
-    "V4.StatusPages.Maintenances.UpdateMaintenanceByIdRequest":
-      "v4StatusPagesMaintenancesUpdateMaintenanceByIdRequest",
-  });
-});
-
-/** @internal */
 export type MaintenancesUpdateMaintenanceByIdRequest$Outbound = {
   statuspageID: string;
   maintenance_id: string;
@@ -67,21 +49,6 @@ export const MaintenancesUpdateMaintenanceByIdRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaintenancesUpdateMaintenanceByIdRequest$ {
-  /** @deprecated use `MaintenancesUpdateMaintenanceByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    MaintenancesUpdateMaintenanceByIdRequest$inboundSchema;
-  /** @deprecated use `MaintenancesUpdateMaintenanceByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    MaintenancesUpdateMaintenanceByIdRequest$outboundSchema;
-  /** @deprecated use `MaintenancesUpdateMaintenanceByIdRequest$Outbound` instead. */
-  export type Outbound = MaintenancesUpdateMaintenanceByIdRequest$Outbound;
-}
-
 export function maintenancesUpdateMaintenanceByIdRequestToJSON(
   maintenancesUpdateMaintenanceByIdRequest:
     MaintenancesUpdateMaintenanceByIdRequest,
@@ -90,22 +57,6 @@ export function maintenancesUpdateMaintenanceByIdRequestToJSON(
     MaintenancesUpdateMaintenanceByIdRequest$outboundSchema.parse(
       maintenancesUpdateMaintenanceByIdRequest,
     ),
-  );
-}
-
-export function maintenancesUpdateMaintenanceByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  MaintenancesUpdateMaintenanceByIdRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      MaintenancesUpdateMaintenanceByIdRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'MaintenancesUpdateMaintenanceByIdRequest' from JSON`,
   );
 }
 
@@ -118,49 +69,6 @@ export const MaintenancesUpdateMaintenanceByIdResponse$inboundSchema: z.ZodType<
   data:
     models.V4StatusPagesMaintenancesUpdateMaintenanceByIdResponse$inboundSchema,
 });
-
-/** @internal */
-export type MaintenancesUpdateMaintenanceByIdResponse$Outbound = {
-  data: models.V4StatusPagesMaintenancesUpdateMaintenanceByIdResponse$Outbound;
-};
-
-/** @internal */
-export const MaintenancesUpdateMaintenanceByIdResponse$outboundSchema:
-  z.ZodType<
-    MaintenancesUpdateMaintenanceByIdResponse$Outbound,
-    z.ZodTypeDef,
-    MaintenancesUpdateMaintenanceByIdResponse
-  > = z.object({
-    data:
-      models
-        .V4StatusPagesMaintenancesUpdateMaintenanceByIdResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaintenancesUpdateMaintenanceByIdResponse$ {
-  /** @deprecated use `MaintenancesUpdateMaintenanceByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    MaintenancesUpdateMaintenanceByIdResponse$inboundSchema;
-  /** @deprecated use `MaintenancesUpdateMaintenanceByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    MaintenancesUpdateMaintenanceByIdResponse$outboundSchema;
-  /** @deprecated use `MaintenancesUpdateMaintenanceByIdResponse$Outbound` instead. */
-  export type Outbound = MaintenancesUpdateMaintenanceByIdResponse$Outbound;
-}
-
-export function maintenancesUpdateMaintenanceByIdResponseToJSON(
-  maintenancesUpdateMaintenanceByIdResponse:
-    MaintenancesUpdateMaintenanceByIdResponse,
-): string {
-  return JSON.stringify(
-    MaintenancesUpdateMaintenanceByIdResponse$outboundSchema.parse(
-      maintenancesUpdateMaintenanceByIdResponse,
-    ),
-  );
-}
 
 export function maintenancesUpdateMaintenanceByIdResponseFromJSON(
   jsonString: string,

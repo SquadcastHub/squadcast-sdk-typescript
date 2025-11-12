@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 /**
  * Request body for getting ingestion status.
@@ -14,19 +11,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 export type V3IncidentsIngestionStatusRequest = {
   requestIds: Array<string>;
 };
-
-/** @internal */
-export const V3IncidentsIngestionStatusRequest$inboundSchema: z.ZodType<
-  V3IncidentsIngestionStatusRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  request_ids: z.array(z.string()),
-}).transform((v) => {
-  return remap$(v, {
-    "request_ids": "requestIds",
-  });
-});
 
 /** @internal */
 export type V3IncidentsIngestionStatusRequest$Outbound = {
@@ -46,20 +30,6 @@ export const V3IncidentsIngestionStatusRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIngestionStatusRequest$ {
-  /** @deprecated use `V3IncidentsIngestionStatusRequest$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsIngestionStatusRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsIngestionStatusRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIngestionStatusRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsIngestionStatusRequest$Outbound` instead. */
-  export type Outbound = V3IncidentsIngestionStatusRequest$Outbound;
-}
-
 export function v3IncidentsIngestionStatusRequestToJSON(
   v3IncidentsIngestionStatusRequest: V3IncidentsIngestionStatusRequest,
 ): string {
@@ -67,15 +37,5 @@ export function v3IncidentsIngestionStatusRequestToJSON(
     V3IncidentsIngestionStatusRequest$outboundSchema.parse(
       v3IncidentsIngestionStatusRequest,
     ),
-  );
-}
-
-export function v3IncidentsIngestionStatusRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3IncidentsIngestionStatusRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3IncidentsIngestionStatusRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsIngestionStatusRequest' from JSON`,
   );
 }

@@ -21,7 +21,6 @@ export const V3ExtensionsWebhooksWebhookUrl$inboundSchema: z.ZodType<
   url: z.string().optional(),
   method: z.string().optional(),
 });
-
 /** @internal */
 export type V3ExtensionsWebhooksWebhookUrl$Outbound = {
   url?: string | undefined;
@@ -38,19 +37,6 @@ export const V3ExtensionsWebhooksWebhookUrl$outboundSchema: z.ZodType<
   method: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksWebhookUrl$ {
-  /** @deprecated use `V3ExtensionsWebhooksWebhookUrl$inboundSchema` instead. */
-  export const inboundSchema = V3ExtensionsWebhooksWebhookUrl$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookUrl$outboundSchema` instead. */
-  export const outboundSchema = V3ExtensionsWebhooksWebhookUrl$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookUrl$Outbound` instead. */
-  export type Outbound = V3ExtensionsWebhooksWebhookUrl$Outbound;
-}
-
 export function v3ExtensionsWebhooksWebhookUrlToJSON(
   v3ExtensionsWebhooksWebhookUrl: V3ExtensionsWebhooksWebhookUrl,
 ): string {
@@ -60,7 +46,6 @@ export function v3ExtensionsWebhooksWebhookUrlToJSON(
     ),
   );
 }
-
 export function v3ExtensionsWebhooksWebhookUrlFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ExtensionsWebhooksWebhookUrl, SDKValidationError> {

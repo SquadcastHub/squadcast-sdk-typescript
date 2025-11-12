@@ -20,15 +20,6 @@ export type AptaMarkAsTransientResponse = {
 };
 
 /** @internal */
-export const AptaMarkAsTransientRequest$inboundSchema: z.ZodType<
-  AptaMarkAsTransientRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  incidentID: z.string(),
-});
-
-/** @internal */
 export type AptaMarkAsTransientRequest$Outbound = {
   incidentID: string;
 };
@@ -42,34 +33,11 @@ export const AptaMarkAsTransientRequest$outboundSchema: z.ZodType<
   incidentID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AptaMarkAsTransientRequest$ {
-  /** @deprecated use `AptaMarkAsTransientRequest$inboundSchema` instead. */
-  export const inboundSchema = AptaMarkAsTransientRequest$inboundSchema;
-  /** @deprecated use `AptaMarkAsTransientRequest$outboundSchema` instead. */
-  export const outboundSchema = AptaMarkAsTransientRequest$outboundSchema;
-  /** @deprecated use `AptaMarkAsTransientRequest$Outbound` instead. */
-  export type Outbound = AptaMarkAsTransientRequest$Outbound;
-}
-
 export function aptaMarkAsTransientRequestToJSON(
   aptaMarkAsTransientRequest: AptaMarkAsTransientRequest,
 ): string {
   return JSON.stringify(
     AptaMarkAsTransientRequest$outboundSchema.parse(aptaMarkAsTransientRequest),
-  );
-}
-
-export function aptaMarkAsTransientRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<AptaMarkAsTransientRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AptaMarkAsTransientRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AptaMarkAsTransientRequest' from JSON`,
   );
 }
 
@@ -81,43 +49,6 @@ export const AptaMarkAsTransientResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3IncidentsAptaMessageResponse$inboundSchema,
 });
-
-/** @internal */
-export type AptaMarkAsTransientResponse$Outbound = {
-  data: models.V3IncidentsAptaMessageResponse$Outbound;
-};
-
-/** @internal */
-export const AptaMarkAsTransientResponse$outboundSchema: z.ZodType<
-  AptaMarkAsTransientResponse$Outbound,
-  z.ZodTypeDef,
-  AptaMarkAsTransientResponse
-> = z.object({
-  data: models.V3IncidentsAptaMessageResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AptaMarkAsTransientResponse$ {
-  /** @deprecated use `AptaMarkAsTransientResponse$inboundSchema` instead. */
-  export const inboundSchema = AptaMarkAsTransientResponse$inboundSchema;
-  /** @deprecated use `AptaMarkAsTransientResponse$outboundSchema` instead. */
-  export const outboundSchema = AptaMarkAsTransientResponse$outboundSchema;
-  /** @deprecated use `AptaMarkAsTransientResponse$Outbound` instead. */
-  export type Outbound = AptaMarkAsTransientResponse$Outbound;
-}
-
-export function aptaMarkAsTransientResponseToJSON(
-  aptaMarkAsTransientResponse: AptaMarkAsTransientResponse,
-): string {
-  return JSON.stringify(
-    AptaMarkAsTransientResponse$outboundSchema.parse(
-      aptaMarkAsTransientResponse,
-    ),
-  );
-}
 
 export function aptaMarkAsTransientResponseFromJSON(
   jsonString: string,

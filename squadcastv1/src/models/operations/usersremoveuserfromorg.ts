@@ -20,15 +20,6 @@ export type UsersRemoveUserFromOrgRequest = {
 export type UsersRemoveUserFromOrgResponseBody = {};
 
 /** @internal */
-export const UsersRemoveUserFromOrgRequest$inboundSchema: z.ZodType<
-  UsersRemoveUserFromOrgRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  userID: z.string(),
-});
-
-/** @internal */
 export type UsersRemoveUserFromOrgRequest$Outbound = {
   userID: string;
 };
@@ -42,19 +33,6 @@ export const UsersRemoveUserFromOrgRequest$outboundSchema: z.ZodType<
   userID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersRemoveUserFromOrgRequest$ {
-  /** @deprecated use `UsersRemoveUserFromOrgRequest$inboundSchema` instead. */
-  export const inboundSchema = UsersRemoveUserFromOrgRequest$inboundSchema;
-  /** @deprecated use `UsersRemoveUserFromOrgRequest$outboundSchema` instead. */
-  export const outboundSchema = UsersRemoveUserFromOrgRequest$outboundSchema;
-  /** @deprecated use `UsersRemoveUserFromOrgRequest$Outbound` instead. */
-  export type Outbound = UsersRemoveUserFromOrgRequest$Outbound;
-}
-
 export function usersRemoveUserFromOrgRequestToJSON(
   usersRemoveUserFromOrgRequest: UsersRemoveUserFromOrgRequest,
 ): string {
@@ -65,56 +43,12 @@ export function usersRemoveUserFromOrgRequestToJSON(
   );
 }
 
-export function usersRemoveUserFromOrgRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UsersRemoveUserFromOrgRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UsersRemoveUserFromOrgRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UsersRemoveUserFromOrgRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const UsersRemoveUserFromOrgResponseBody$inboundSchema: z.ZodType<
   UsersRemoveUserFromOrgResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type UsersRemoveUserFromOrgResponseBody$Outbound = {};
-
-/** @internal */
-export const UsersRemoveUserFromOrgResponseBody$outboundSchema: z.ZodType<
-  UsersRemoveUserFromOrgResponseBody$Outbound,
-  z.ZodTypeDef,
-  UsersRemoveUserFromOrgResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersRemoveUserFromOrgResponseBody$ {
-  /** @deprecated use `UsersRemoveUserFromOrgResponseBody$inboundSchema` instead. */
-  export const inboundSchema = UsersRemoveUserFromOrgResponseBody$inboundSchema;
-  /** @deprecated use `UsersRemoveUserFromOrgResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    UsersRemoveUserFromOrgResponseBody$outboundSchema;
-  /** @deprecated use `UsersRemoveUserFromOrgResponseBody$Outbound` instead. */
-  export type Outbound = UsersRemoveUserFromOrgResponseBody$Outbound;
-}
-
-export function usersRemoveUserFromOrgResponseBodyToJSON(
-  usersRemoveUserFromOrgResponseBody: UsersRemoveUserFromOrgResponseBody,
-): string {
-  return JSON.stringify(
-    UsersRemoveUserFromOrgResponseBody$outboundSchema.parse(
-      usersRemoveUserFromOrgResponseBody,
-    ),
-  );
-}
 
 export function usersRemoveUserFromOrgResponseBodyFromJSON(
   jsonString: string,

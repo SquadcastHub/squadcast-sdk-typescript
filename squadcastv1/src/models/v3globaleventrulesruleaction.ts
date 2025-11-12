@@ -27,7 +27,6 @@ export const V3GlobalEventRulesRuleAction$inboundSchema: z.ZodType<
     "route_to": "routeTo",
   });
 });
-
 /** @internal */
 export type V3GlobalEventRulesRuleAction$Outbound = {
   route_to: string;
@@ -46,19 +45,6 @@ export const V3GlobalEventRulesRuleAction$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesRuleAction$ {
-  /** @deprecated use `V3GlobalEventRulesRuleAction$inboundSchema` instead. */
-  export const inboundSchema = V3GlobalEventRulesRuleAction$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesRuleAction$outboundSchema` instead. */
-  export const outboundSchema = V3GlobalEventRulesRuleAction$outboundSchema;
-  /** @deprecated use `V3GlobalEventRulesRuleAction$Outbound` instead. */
-  export type Outbound = V3GlobalEventRulesRuleAction$Outbound;
-}
-
 export function v3GlobalEventRulesRuleActionToJSON(
   v3GlobalEventRulesRuleAction: V3GlobalEventRulesRuleAction,
 ): string {
@@ -68,7 +54,6 @@ export function v3GlobalEventRulesRuleActionToJSON(
     ),
   );
 }
-
 export function v3GlobalEventRulesRuleActionFromJSON(
   jsonString: string,
 ): SafeParseResult<V3GlobalEventRulesRuleAction, SDKValidationError> {

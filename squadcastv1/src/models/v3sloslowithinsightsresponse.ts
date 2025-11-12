@@ -7,12 +7,7 @@ import { remap as remap$ } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { Result as SafeParseResult } from "../types/fp.js";
 import { SDKValidationError } from "./errors/sdkvalidationerror.js";
-import {
-  V3SloSlo,
-  V3SloSlo$inboundSchema,
-  V3SloSlo$Outbound,
-  V3SloSlo$outboundSchema,
-} from "./v3sloslo.js";
+import { V3SloSlo, V3SloSlo$inboundSchema } from "./v3sloslo.js";
 
 export type Insights = {
   errorBudgetConsumptionForPast30days: number;
@@ -37,42 +32,6 @@ export const Insights$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type Insights$Outbound = {
-  error_budget_consumption_for_past_30days: number;
-};
-
-/** @internal */
-export const Insights$outboundSchema: z.ZodType<
-  Insights$Outbound,
-  z.ZodTypeDef,
-  Insights
-> = z.object({
-  errorBudgetConsumptionForPast30days: z.number().int(),
-}).transform((v) => {
-  return remap$(v, {
-    errorBudgetConsumptionForPast30days:
-      "error_budget_consumption_for_past_30days",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Insights$ {
-  /** @deprecated use `Insights$inboundSchema` instead. */
-  export const inboundSchema = Insights$inboundSchema;
-  /** @deprecated use `Insights$outboundSchema` instead. */
-  export const outboundSchema = Insights$outboundSchema;
-  /** @deprecated use `Insights$Outbound` instead. */
-  export type Outbound = Insights$Outbound;
-}
-
-export function insightsToJSON(insights: Insights): string {
-  return JSON.stringify(Insights$outboundSchema.parse(insights));
-}
-
 export function insightsFromJSON(
   jsonString: string,
 ): SafeParseResult<Insights, SDKValidationError> {
@@ -92,45 +51,6 @@ export const V3SLOSLOWithInsightsResponse$inboundSchema: z.ZodType<
   insights: z.lazy(() => Insights$inboundSchema).optional(),
   slo: V3SloSlo$inboundSchema,
 });
-
-/** @internal */
-export type V3SLOSLOWithInsightsResponse$Outbound = {
-  insights?: Insights$Outbound | undefined;
-  slo: V3SloSlo$Outbound;
-};
-
-/** @internal */
-export const V3SLOSLOWithInsightsResponse$outboundSchema: z.ZodType<
-  V3SLOSLOWithInsightsResponse$Outbound,
-  z.ZodTypeDef,
-  V3SLOSLOWithInsightsResponse
-> = z.object({
-  insights: z.lazy(() => Insights$outboundSchema).optional(),
-  slo: V3SloSlo$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3SLOSLOWithInsightsResponse$ {
-  /** @deprecated use `V3SLOSLOWithInsightsResponse$inboundSchema` instead. */
-  export const inboundSchema = V3SLOSLOWithInsightsResponse$inboundSchema;
-  /** @deprecated use `V3SLOSLOWithInsightsResponse$outboundSchema` instead. */
-  export const outboundSchema = V3SLOSLOWithInsightsResponse$outboundSchema;
-  /** @deprecated use `V3SLOSLOWithInsightsResponse$Outbound` instead. */
-  export type Outbound = V3SLOSLOWithInsightsResponse$Outbound;
-}
-
-export function v3SLOSLOWithInsightsResponseToJSON(
-  v3SLOSLOWithInsightsResponse: V3SLOSLOWithInsightsResponse,
-): string {
-  return JSON.stringify(
-    V3SLOSLOWithInsightsResponse$outboundSchema.parse(
-      v3SLOSLOWithInsightsResponse,
-    ),
-  );
-}
 
 export function v3SLOSLOWithInsightsResponseFromJSON(
   jsonString: string,

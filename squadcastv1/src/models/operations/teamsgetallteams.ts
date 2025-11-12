@@ -24,41 +24,6 @@ export const TeamsGetAllTeamsResponse$inboundSchema: z.ZodType<
   data: z.array(models.V3TeamsTeamResponse$inboundSchema),
 });
 
-/** @internal */
-export type TeamsGetAllTeamsResponse$Outbound = {
-  data: Array<models.V3TeamsTeamResponse$Outbound>;
-};
-
-/** @internal */
-export const TeamsGetAllTeamsResponse$outboundSchema: z.ZodType<
-  TeamsGetAllTeamsResponse$Outbound,
-  z.ZodTypeDef,
-  TeamsGetAllTeamsResponse
-> = z.object({
-  data: z.array(models.V3TeamsTeamResponse$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsGetAllTeamsResponse$ {
-  /** @deprecated use `TeamsGetAllTeamsResponse$inboundSchema` instead. */
-  export const inboundSchema = TeamsGetAllTeamsResponse$inboundSchema;
-  /** @deprecated use `TeamsGetAllTeamsResponse$outboundSchema` instead. */
-  export const outboundSchema = TeamsGetAllTeamsResponse$outboundSchema;
-  /** @deprecated use `TeamsGetAllTeamsResponse$Outbound` instead. */
-  export type Outbound = TeamsGetAllTeamsResponse$Outbound;
-}
-
-export function teamsGetAllTeamsResponseToJSON(
-  teamsGetAllTeamsResponse: TeamsGetAllTeamsResponse,
-): string {
-  return JSON.stringify(
-    TeamsGetAllTeamsResponse$outboundSchema.parse(teamsGetAllTeamsResponse),
-  );
-}
-
 export function teamsGetAllTeamsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<TeamsGetAllTeamsResponse, SDKValidationError> {

@@ -3,22 +3,10 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type IssuesListIssuesRequest = {
   statuspageID: string;
 };
-
-/** @internal */
-export const IssuesListIssuesRequest$inboundSchema: z.ZodType<
-  IssuesListIssuesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-});
 
 /** @internal */
 export type IssuesListIssuesRequest$Outbound = {
@@ -34,33 +22,10 @@ export const IssuesListIssuesRequest$outboundSchema: z.ZodType<
   statuspageID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IssuesListIssuesRequest$ {
-  /** @deprecated use `IssuesListIssuesRequest$inboundSchema` instead. */
-  export const inboundSchema = IssuesListIssuesRequest$inboundSchema;
-  /** @deprecated use `IssuesListIssuesRequest$outboundSchema` instead. */
-  export const outboundSchema = IssuesListIssuesRequest$outboundSchema;
-  /** @deprecated use `IssuesListIssuesRequest$Outbound` instead. */
-  export type Outbound = IssuesListIssuesRequest$Outbound;
-}
-
 export function issuesListIssuesRequestToJSON(
   issuesListIssuesRequest: IssuesListIssuesRequest,
 ): string {
   return JSON.stringify(
     IssuesListIssuesRequest$outboundSchema.parse(issuesListIssuesRequest),
-  );
-}
-
-export function issuesListIssuesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<IssuesListIssuesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IssuesListIssuesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IssuesListIssuesRequest' from JSON`,
   );
 }

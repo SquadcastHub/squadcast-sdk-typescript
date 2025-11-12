@@ -24,43 +24,6 @@ export const SchedulesCreateScheduleResponse$inboundSchema: z.ZodType<
   data: models.V4ScheduleResponse$inboundSchema,
 });
 
-/** @internal */
-export type SchedulesCreateScheduleResponse$Outbound = {
-  data: models.V4ScheduleResponse$Outbound;
-};
-
-/** @internal */
-export const SchedulesCreateScheduleResponse$outboundSchema: z.ZodType<
-  SchedulesCreateScheduleResponse$Outbound,
-  z.ZodTypeDef,
-  SchedulesCreateScheduleResponse
-> = z.object({
-  data: models.V4ScheduleResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesCreateScheduleResponse$ {
-  /** @deprecated use `SchedulesCreateScheduleResponse$inboundSchema` instead. */
-  export const inboundSchema = SchedulesCreateScheduleResponse$inboundSchema;
-  /** @deprecated use `SchedulesCreateScheduleResponse$outboundSchema` instead. */
-  export const outboundSchema = SchedulesCreateScheduleResponse$outboundSchema;
-  /** @deprecated use `SchedulesCreateScheduleResponse$Outbound` instead. */
-  export type Outbound = SchedulesCreateScheduleResponse$Outbound;
-}
-
-export function schedulesCreateScheduleResponseToJSON(
-  schedulesCreateScheduleResponse: SchedulesCreateScheduleResponse,
-): string {
-  return JSON.stringify(
-    SchedulesCreateScheduleResponse$outboundSchema.parse(
-      schedulesCreateScheduleResponse,
-    ),
-  );
-}
-
 export function schedulesCreateScheduleResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<SchedulesCreateScheduleResponse, SDKValidationError> {

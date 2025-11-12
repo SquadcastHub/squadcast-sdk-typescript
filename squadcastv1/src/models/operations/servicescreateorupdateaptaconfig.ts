@@ -26,21 +26,6 @@ export type ServicesCreateOrUpdateAPTAConfigResponse = {
 };
 
 /** @internal */
-export const ServicesCreateOrUpdateAPTAConfigRequest$inboundSchema: z.ZodType<
-  ServicesCreateOrUpdateAPTAConfigRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  serviceID: z.string(),
-  "V3.Services.APTAConfigRequest":
-    models.V3ServicesAPTAConfigRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Services.APTAConfigRequest": "v3ServicesAPTAConfigRequest",
-  });
-});
-
-/** @internal */
 export type ServicesCreateOrUpdateAPTAConfigRequest$Outbound = {
   serviceID: string;
   "V3.Services.APTAConfigRequest": models.V3ServicesAPTAConfigRequest$Outbound;
@@ -61,21 +46,6 @@ export const ServicesCreateOrUpdateAPTAConfigRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesCreateOrUpdateAPTAConfigRequest$ {
-  /** @deprecated use `ServicesCreateOrUpdateAPTAConfigRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ServicesCreateOrUpdateAPTAConfigRequest$inboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateAPTAConfigRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ServicesCreateOrUpdateAPTAConfigRequest$outboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateAPTAConfigRequest$Outbound` instead. */
-  export type Outbound = ServicesCreateOrUpdateAPTAConfigRequest$Outbound;
-}
-
 export function servicesCreateOrUpdateAPTAConfigRequestToJSON(
   servicesCreateOrUpdateAPTAConfigRequest:
     ServicesCreateOrUpdateAPTAConfigRequest,
@@ -87,22 +57,6 @@ export function servicesCreateOrUpdateAPTAConfigRequestToJSON(
   );
 }
 
-export function servicesCreateOrUpdateAPTAConfigRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  ServicesCreateOrUpdateAPTAConfigRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ServicesCreateOrUpdateAPTAConfigRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ServicesCreateOrUpdateAPTAConfigRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const ServicesCreateOrUpdateAPTAConfigData$inboundSchema: z.ZodType<
   ServicesCreateOrUpdateAPTAConfigData,
@@ -111,45 +65,6 @@ export const ServicesCreateOrUpdateAPTAConfigData$inboundSchema: z.ZodType<
 > = z.object({
   msg: z.string(),
 });
-
-/** @internal */
-export type ServicesCreateOrUpdateAPTAConfigData$Outbound = {
-  msg: string;
-};
-
-/** @internal */
-export const ServicesCreateOrUpdateAPTAConfigData$outboundSchema: z.ZodType<
-  ServicesCreateOrUpdateAPTAConfigData$Outbound,
-  z.ZodTypeDef,
-  ServicesCreateOrUpdateAPTAConfigData
-> = z.object({
-  msg: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesCreateOrUpdateAPTAConfigData$ {
-  /** @deprecated use `ServicesCreateOrUpdateAPTAConfigData$inboundSchema` instead. */
-  export const inboundSchema =
-    ServicesCreateOrUpdateAPTAConfigData$inboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateAPTAConfigData$outboundSchema` instead. */
-  export const outboundSchema =
-    ServicesCreateOrUpdateAPTAConfigData$outboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateAPTAConfigData$Outbound` instead. */
-  export type Outbound = ServicesCreateOrUpdateAPTAConfigData$Outbound;
-}
-
-export function servicesCreateOrUpdateAPTAConfigDataToJSON(
-  servicesCreateOrUpdateAPTAConfigData: ServicesCreateOrUpdateAPTAConfigData,
-): string {
-  return JSON.stringify(
-    ServicesCreateOrUpdateAPTAConfigData$outboundSchema.parse(
-      servicesCreateOrUpdateAPTAConfigData,
-    ),
-  );
-}
 
 export function servicesCreateOrUpdateAPTAConfigDataFromJSON(
   jsonString: string,
@@ -170,46 +85,6 @@ export const ServicesCreateOrUpdateAPTAConfigResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => ServicesCreateOrUpdateAPTAConfigData$inboundSchema),
 });
-
-/** @internal */
-export type ServicesCreateOrUpdateAPTAConfigResponse$Outbound = {
-  data: ServicesCreateOrUpdateAPTAConfigData$Outbound;
-};
-
-/** @internal */
-export const ServicesCreateOrUpdateAPTAConfigResponse$outboundSchema: z.ZodType<
-  ServicesCreateOrUpdateAPTAConfigResponse$Outbound,
-  z.ZodTypeDef,
-  ServicesCreateOrUpdateAPTAConfigResponse
-> = z.object({
-  data: z.lazy(() => ServicesCreateOrUpdateAPTAConfigData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesCreateOrUpdateAPTAConfigResponse$ {
-  /** @deprecated use `ServicesCreateOrUpdateAPTAConfigResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    ServicesCreateOrUpdateAPTAConfigResponse$inboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateAPTAConfigResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ServicesCreateOrUpdateAPTAConfigResponse$outboundSchema;
-  /** @deprecated use `ServicesCreateOrUpdateAPTAConfigResponse$Outbound` instead. */
-  export type Outbound = ServicesCreateOrUpdateAPTAConfigResponse$Outbound;
-}
-
-export function servicesCreateOrUpdateAPTAConfigResponseToJSON(
-  servicesCreateOrUpdateAPTAConfigResponse:
-    ServicesCreateOrUpdateAPTAConfigResponse,
-): string {
-  return JSON.stringify(
-    ServicesCreateOrUpdateAPTAConfigResponse$outboundSchema.parse(
-      servicesCreateOrUpdateAPTAConfigResponse,
-    ),
-  );
-}
 
 export function servicesCreateOrUpdateAPTAConfigResponseFromJSON(
   jsonString: string,

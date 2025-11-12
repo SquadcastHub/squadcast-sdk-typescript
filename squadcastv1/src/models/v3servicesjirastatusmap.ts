@@ -28,48 +28,6 @@ export const V3ServicesJiraStatusMap$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3ServicesJiraStatusMap$Outbound = {
-  jira_status: string;
-  system_status: string;
-};
-
-/** @internal */
-export const V3ServicesJiraStatusMap$outboundSchema: z.ZodType<
-  V3ServicesJiraStatusMap$Outbound,
-  z.ZodTypeDef,
-  V3ServicesJiraStatusMap
-> = z.object({
-  jiraStatus: z.string(),
-  systemStatus: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    jiraStatus: "jira_status",
-    systemStatus: "system_status",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesJiraStatusMap$ {
-  /** @deprecated use `V3ServicesJiraStatusMap$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesJiraStatusMap$inboundSchema;
-  /** @deprecated use `V3ServicesJiraStatusMap$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesJiraStatusMap$outboundSchema;
-  /** @deprecated use `V3ServicesJiraStatusMap$Outbound` instead. */
-  export type Outbound = V3ServicesJiraStatusMap$Outbound;
-}
-
-export function v3ServicesJiraStatusMapToJSON(
-  v3ServicesJiraStatusMap: V3ServicesJiraStatusMap,
-): string {
-  return JSON.stringify(
-    V3ServicesJiraStatusMap$outboundSchema.parse(v3ServicesJiraStatusMap),
-  );
-}
-
 export function v3ServicesJiraStatusMapFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesJiraStatusMap, SDKValidationError> {

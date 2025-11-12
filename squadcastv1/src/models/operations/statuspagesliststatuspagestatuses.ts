@@ -20,15 +20,6 @@ export type StatusPagesListStatusPageStatusesResponse = {
 };
 
 /** @internal */
-export const StatusPagesListStatusPageStatusesRequest$inboundSchema: z.ZodType<
-  StatusPagesListStatusPageStatusesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-});
-
-/** @internal */
 export type StatusPagesListStatusPageStatusesRequest$Outbound = {
   statuspageID: string;
 };
@@ -42,21 +33,6 @@ export const StatusPagesListStatusPageStatusesRequest$outboundSchema: z.ZodType<
   statuspageID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusPagesListStatusPageStatusesRequest$ {
-  /** @deprecated use `StatusPagesListStatusPageStatusesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    StatusPagesListStatusPageStatusesRequest$inboundSchema;
-  /** @deprecated use `StatusPagesListStatusPageStatusesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    StatusPagesListStatusPageStatusesRequest$outboundSchema;
-  /** @deprecated use `StatusPagesListStatusPageStatusesRequest$Outbound` instead. */
-  export type Outbound = StatusPagesListStatusPageStatusesRequest$Outbound;
-}
-
 export function statusPagesListStatusPageStatusesRequestToJSON(
   statusPagesListStatusPageStatusesRequest:
     StatusPagesListStatusPageStatusesRequest,
@@ -68,22 +44,6 @@ export function statusPagesListStatusPageStatusesRequestToJSON(
   );
 }
 
-export function statusPagesListStatusPageStatusesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  StatusPagesListStatusPageStatusesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      StatusPagesListStatusPageStatusesRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'StatusPagesListStatusPageStatusesRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const StatusPagesListStatusPageStatusesResponse$inboundSchema: z.ZodType<
   StatusPagesListStatusPageStatusesResponse,
@@ -92,49 +52,6 @@ export const StatusPagesListStatusPageStatusesResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.array(models.V4StatusPagesStatusPageStatusesResponse$inboundSchema),
 });
-
-/** @internal */
-export type StatusPagesListStatusPageStatusesResponse$Outbound = {
-  data: Array<models.V4StatusPagesStatusPageStatusesResponse$Outbound>;
-};
-
-/** @internal */
-export const StatusPagesListStatusPageStatusesResponse$outboundSchema:
-  z.ZodType<
-    StatusPagesListStatusPageStatusesResponse$Outbound,
-    z.ZodTypeDef,
-    StatusPagesListStatusPageStatusesResponse
-  > = z.object({
-    data: z.array(
-      models.V4StatusPagesStatusPageStatusesResponse$outboundSchema,
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusPagesListStatusPageStatusesResponse$ {
-  /** @deprecated use `StatusPagesListStatusPageStatusesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    StatusPagesListStatusPageStatusesResponse$inboundSchema;
-  /** @deprecated use `StatusPagesListStatusPageStatusesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    StatusPagesListStatusPageStatusesResponse$outboundSchema;
-  /** @deprecated use `StatusPagesListStatusPageStatusesResponse$Outbound` instead. */
-  export type Outbound = StatusPagesListStatusPageStatusesResponse$Outbound;
-}
-
-export function statusPagesListStatusPageStatusesResponseToJSON(
-  statusPagesListStatusPageStatusesResponse:
-    StatusPagesListStatusPageStatusesResponse,
-): string {
-  return JSON.stringify(
-    StatusPagesListStatusPageStatusesResponse$outboundSchema.parse(
-      statusPagesListStatusPageStatusesResponse,
-    ),
-  );
-}
 
 export function statusPagesListStatusPageStatusesResponseFromJSON(
   jsonString: string,

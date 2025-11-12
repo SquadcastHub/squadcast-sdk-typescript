@@ -4,19 +4,14 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3WorkflowsComponentAndImpact,
-  V3WorkflowsComponentAndImpact$inboundSchema,
   V3WorkflowsComponentAndImpact$Outbound,
   V3WorkflowsComponentAndImpact$outboundSchema,
 } from "./v3workflowscomponentandimpact.js";
 import {
   V3WorkflowsIssueStatusAndMessage,
-  V3WorkflowsIssueStatusAndMessage$inboundSchema,
   V3WorkflowsIssueStatusAndMessage$Outbound,
   V3WorkflowsIssueStatusAndMessage$outboundSchema,
 } from "./v3workflowsissuestatusandmessage.js";
@@ -42,51 +37,9 @@ export type V3WorkflowsSqCreateStatusPageIssueUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsSqCreateStatusPageIssueUpdateName$inboundSchema:
+export const V3WorkflowsSqCreateStatusPageIssueUpdateName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqCreateStatusPageIssueUpdateName> = z
     .nativeEnum(V3WorkflowsSqCreateStatusPageIssueUpdateName);
-
-/** @internal */
-export const V3WorkflowsSqCreateStatusPageIssueUpdateName$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsSqCreateStatusPageIssueUpdateName> =
-    V3WorkflowsSqCreateStatusPageIssueUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqCreateStatusPageIssueUpdateName$ {
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueUpdateName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqCreateStatusPageIssueUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueUpdateName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqCreateStatusPageIssueUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsSqCreateStatusPageIssueUpdateData$inboundSchema:
-  z.ZodType<
-    V3WorkflowsSqCreateStatusPageIssueUpdateData,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    component_and_impact: z.array(V3WorkflowsComponentAndImpact$inboundSchema)
-      .optional(),
-    issue_title: z.string().optional(),
-    page_status_id: z.number().int().optional(),
-    status_and_message: z.array(V3WorkflowsIssueStatusAndMessage$inboundSchema)
-      .optional(),
-    status_page_id: z.number().int().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "component_and_impact": "componentAndImpact",
-      "issue_title": "issueTitle",
-      "page_status_id": "pageStatusId",
-      "status_and_message": "statusAndMessage",
-      "status_page_id": "statusPageId",
-    });
-  });
 
 /** @internal */
 export type V3WorkflowsSqCreateStatusPageIssueUpdateData$Outbound = {
@@ -125,21 +78,6 @@ export const V3WorkflowsSqCreateStatusPageIssueUpdateData$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqCreateStatusPageIssueUpdateData$ {
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueUpdateData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqCreateStatusPageIssueUpdateData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueUpdateData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqCreateStatusPageIssueUpdateData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueUpdateData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqCreateStatusPageIssueUpdateData$Outbound;
-}
-
 export function v3WorkflowsSqCreateStatusPageIssueUpdateDataToJSON(
   v3WorkflowsSqCreateStatusPageIssueUpdateData:
     V3WorkflowsSqCreateStatusPageIssueUpdateData,
@@ -150,33 +88,6 @@ export function v3WorkflowsSqCreateStatusPageIssueUpdateDataToJSON(
     ),
   );
 }
-
-export function v3WorkflowsSqCreateStatusPageIssueUpdateDataFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsSqCreateStatusPageIssueUpdateData,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSqCreateStatusPageIssueUpdateData$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsSqCreateStatusPageIssueUpdateData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsSqCreateStatusPageIssueUpdate$inboundSchema: z.ZodType<
-  V3WorkflowsSqCreateStatusPageIssueUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: V3WorkflowsSqCreateStatusPageIssueUpdateName$inboundSchema,
-  data: z.lazy(() => V3WorkflowsSqCreateStatusPageIssueUpdateData$inboundSchema)
-    .optional(),
-});
 
 /** @internal */
 export type V3WorkflowsSqCreateStatusPageIssueUpdate$Outbound = {
@@ -196,21 +107,6 @@ export const V3WorkflowsSqCreateStatusPageIssueUpdate$outboundSchema: z.ZodType<
   ).optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqCreateStatusPageIssueUpdate$ {
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueUpdate$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqCreateStatusPageIssueUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqCreateStatusPageIssueUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqCreateStatusPageIssueUpdate$Outbound;
-}
-
 export function v3WorkflowsSqCreateStatusPageIssueUpdateToJSON(
   v3WorkflowsSqCreateStatusPageIssueUpdate:
     V3WorkflowsSqCreateStatusPageIssueUpdate,
@@ -219,21 +115,5 @@ export function v3WorkflowsSqCreateStatusPageIssueUpdateToJSON(
     V3WorkflowsSqCreateStatusPageIssueUpdate$outboundSchema.parse(
       v3WorkflowsSqCreateStatusPageIssueUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsSqCreateStatusPageIssueUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsSqCreateStatusPageIssueUpdate,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSqCreateStatusPageIssueUpdate$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsSqCreateStatusPageIssueUpdate' from JSON`,
   );
 }

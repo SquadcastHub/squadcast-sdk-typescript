@@ -27,53 +27,6 @@ export const V3IncidentsIncidentPriorityUpdateResponse$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3IncidentsIncidentPriorityUpdateResponse$Outbound = {
-  incident_id: string;
-  priority: string;
-};
-
-/** @internal */
-export const V3IncidentsIncidentPriorityUpdateResponse$outboundSchema:
-  z.ZodType<
-    V3IncidentsIncidentPriorityUpdateResponse$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsIncidentPriorityUpdateResponse
-  > = z.object({
-    incidentId: z.string(),
-    priority: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      incidentId: "incident_id",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentPriorityUpdateResponse$ {
-  /** @deprecated use `V3IncidentsIncidentPriorityUpdateResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsIncidentPriorityUpdateResponse$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentPriorityUpdateResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIncidentPriorityUpdateResponse$outboundSchema;
-  /** @deprecated use `V3IncidentsIncidentPriorityUpdateResponse$Outbound` instead. */
-  export type Outbound = V3IncidentsIncidentPriorityUpdateResponse$Outbound;
-}
-
-export function v3IncidentsIncidentPriorityUpdateResponseToJSON(
-  v3IncidentsIncidentPriorityUpdateResponse:
-    V3IncidentsIncidentPriorityUpdateResponse,
-): string {
-  return JSON.stringify(
-    V3IncidentsIncidentPriorityUpdateResponse$outboundSchema.parse(
-      v3IncidentsIncidentPriorityUpdateResponse,
-    ),
-  );
-}
-
 export function v3IncidentsIncidentPriorityUpdateResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

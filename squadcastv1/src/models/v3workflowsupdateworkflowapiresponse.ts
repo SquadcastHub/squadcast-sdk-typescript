@@ -10,20 +10,14 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3WorkflowsActionResponse,
   V3WorkflowsActionResponse$inboundSchema,
-  V3WorkflowsActionResponse$Outbound,
-  V3WorkflowsActionResponse$outboundSchema,
 } from "./v3workflowsactionresponse.js";
 import {
   V3WorkflowsTag,
   V3WorkflowsTag$inboundSchema,
-  V3WorkflowsTag$Outbound,
-  V3WorkflowsTag$outboundSchema,
 } from "./v3workflowstag.js";
 import {
   V3WorkflowsWorkflowFilters,
   V3WorkflowsWorkflowFilters$inboundSchema,
-  V3WorkflowsWorkflowFilters$Outbound,
-  V3WorkflowsWorkflowFilters$outboundSchema,
 } from "./v3workflowsworkflowfilters.js";
 
 export type V3WorkflowsUpdateWorkflowAPIResponse = {
@@ -70,77 +64,6 @@ export const V3WorkflowsUpdateWorkflowAPIResponse$inboundSchema: z.ZodType<
     "updated_by": "updatedBy",
   });
 });
-
-/** @internal */
-export type V3WorkflowsUpdateWorkflowAPIResponse$Outbound = {
-  id?: number | undefined;
-  owner_id?: string | undefined;
-  title?: string | undefined;
-  description?: string | undefined;
-  enabled?: boolean | undefined;
-  trigger?: string | undefined;
-  filters?: V3WorkflowsWorkflowFilters$Outbound | undefined;
-  tags?: Array<V3WorkflowsTag$Outbound> | undefined;
-  actions?: Array<V3WorkflowsActionResponse$Outbound> | undefined;
-  created_at?: string | undefined;
-  created_by?: string | undefined;
-  updated_at?: string | undefined;
-  updated_by?: string | undefined;
-};
-
-/** @internal */
-export const V3WorkflowsUpdateWorkflowAPIResponse$outboundSchema: z.ZodType<
-  V3WorkflowsUpdateWorkflowAPIResponse$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsUpdateWorkflowAPIResponse
-> = z.object({
-  id: z.number().int().optional(),
-  ownerId: z.string().optional(),
-  title: z.string().optional(),
-  description: z.string().optional(),
-  enabled: z.boolean().optional(),
-  trigger: z.string().optional(),
-  filters: V3WorkflowsWorkflowFilters$outboundSchema.optional(),
-  tags: z.array(V3WorkflowsTag$outboundSchema).optional(),
-  actions: z.array(V3WorkflowsActionResponse$outboundSchema).optional(),
-  createdAt: z.string().optional(),
-  createdBy: z.string().optional(),
-  updatedAt: z.string().optional(),
-  updatedBy: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    ownerId: "owner_id",
-    createdAt: "created_at",
-    createdBy: "created_by",
-    updatedAt: "updated_at",
-    updatedBy: "updated_by",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsUpdateWorkflowAPIResponse$ {
-  /** @deprecated use `V3WorkflowsUpdateWorkflowAPIResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsUpdateWorkflowAPIResponse$inboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateWorkflowAPIResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsUpdateWorkflowAPIResponse$outboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateWorkflowAPIResponse$Outbound` instead. */
-  export type Outbound = V3WorkflowsUpdateWorkflowAPIResponse$Outbound;
-}
-
-export function v3WorkflowsUpdateWorkflowAPIResponseToJSON(
-  v3WorkflowsUpdateWorkflowAPIResponse: V3WorkflowsUpdateWorkflowAPIResponse,
-): string {
-  return JSON.stringify(
-    V3WorkflowsUpdateWorkflowAPIResponse$outboundSchema.parse(
-      v3WorkflowsUpdateWorkflowAPIResponse,
-    ),
-  );
-}
 
 export function v3WorkflowsUpdateWorkflowAPIResponseFromJSON(
   jsonString: string,

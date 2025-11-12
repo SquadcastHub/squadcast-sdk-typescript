@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 /**
  * Request body for rebuilding a project in CircleCI.
@@ -16,22 +13,6 @@ export type V3IncidentsIncidentActionsRebuildCircleCIProjectRequest = {
   username: string;
   reponame: string;
 };
-
-/** @internal */
-export const V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$inboundSchema:
-  z.ZodType<
-    V3IncidentsIncidentActionsRebuildCircleCIProjectRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    vcs_type: z.string(),
-    username: z.string(),
-    reponame: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      "vcs_type": "vcsType",
-    });
-  });
 
 /** @internal */
 export type V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$Outbound = {
@@ -56,22 +37,6 @@ export const V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$outboundSch
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$ {
-  /** @deprecated use `V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$Outbound;
-}
-
 export function v3IncidentsIncidentActionsRebuildCircleCIProjectRequestToJSON(
   v3IncidentsIncidentActionsRebuildCircleCIProjectRequest:
     V3IncidentsIncidentActionsRebuildCircleCIProjectRequest,
@@ -79,20 +44,5 @@ export function v3IncidentsIncidentActionsRebuildCircleCIProjectRequestToJSON(
   return JSON.stringify(
     V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$outboundSchema
       .parse(v3IncidentsIncidentActionsRebuildCircleCIProjectRequest),
-  );
-}
-
-export function v3IncidentsIncidentActionsRebuildCircleCIProjectRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3IncidentsIncidentActionsRebuildCircleCIProjectRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsIncidentActionsRebuildCircleCIProjectRequest' from JSON`,
   );
 }

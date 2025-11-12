@@ -32,58 +32,6 @@ export const V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$inboundSchema:
     });
   });
 
-/** @internal */
-export type V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$Outbound = {
-  incident_id: string;
-  is_snoozed: boolean;
-  snooze_end_time: string;
-};
-
-/** @internal */
-export const V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$outboundSchema:
-  z.ZodType<
-    V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsSnoozeNotificationsSnoozeIncidentResponse
-  > = z.object({
-    incidentId: z.string(),
-    isSnoozed: z.boolean(),
-    snoozeEndTime: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      incidentId: "incident_id",
-      isSnoozed: "is_snoozed",
-      snoozeEndTime: "snooze_end_time",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$ {
-  /** @deprecated use `V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$inboundSchema;
-  /** @deprecated use `V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$outboundSchema;
-  /** @deprecated use `V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$Outbound;
-}
-
-export function v3IncidentsSnoozeNotificationsSnoozeIncidentResponseToJSON(
-  v3IncidentsSnoozeNotificationsSnoozeIncidentResponse:
-    V3IncidentsSnoozeNotificationsSnoozeIncidentResponse,
-): string {
-  return JSON.stringify(
-    V3IncidentsSnoozeNotificationsSnoozeIncidentResponse$outboundSchema.parse(
-      v3IncidentsSnoozeNotificationsSnoozeIncidentResponse,
-    ),
-  );
-}
-
 export function v3IncidentsSnoozeNotificationsSnoozeIncidentResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

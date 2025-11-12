@@ -3,26 +3,12 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type SquadsRemoveSquadMemberRequest = {
   squadID: string;
   memberID: string;
   replaceWith: string;
 };
-
-/** @internal */
-export const SquadsRemoveSquadMemberRequest$inboundSchema: z.ZodType<
-  SquadsRemoveSquadMemberRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  squadID: z.string(),
-  memberID: z.string(),
-  replaceWith: z.string(),
-});
 
 /** @internal */
 export type SquadsRemoveSquadMemberRequest$Outbound = {
@@ -42,19 +28,6 @@ export const SquadsRemoveSquadMemberRequest$outboundSchema: z.ZodType<
   replaceWith: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SquadsRemoveSquadMemberRequest$ {
-  /** @deprecated use `SquadsRemoveSquadMemberRequest$inboundSchema` instead. */
-  export const inboundSchema = SquadsRemoveSquadMemberRequest$inboundSchema;
-  /** @deprecated use `SquadsRemoveSquadMemberRequest$outboundSchema` instead. */
-  export const outboundSchema = SquadsRemoveSquadMemberRequest$outboundSchema;
-  /** @deprecated use `SquadsRemoveSquadMemberRequest$Outbound` instead. */
-  export type Outbound = SquadsRemoveSquadMemberRequest$Outbound;
-}
-
 export function squadsRemoveSquadMemberRequestToJSON(
   squadsRemoveSquadMemberRequest: SquadsRemoveSquadMemberRequest,
 ): string {
@@ -62,15 +35,5 @@ export function squadsRemoveSquadMemberRequestToJSON(
     SquadsRemoveSquadMemberRequest$outboundSchema.parse(
       squadsRemoveSquadMemberRequest,
     ),
-  );
-}
-
-export function squadsRemoveSquadMemberRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SquadsRemoveSquadMemberRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SquadsRemoveSquadMemberRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SquadsRemoveSquadMemberRequest' from JSON`,
   );
 }

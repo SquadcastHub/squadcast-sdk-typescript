@@ -21,7 +21,6 @@ export const V3ExtensionsWebhooksWebhookFilterCondition$inboundSchema:
       lhs: z.string().optional(),
       rhs: z.string().optional(),
     });
-
 /** @internal */
 export type V3ExtensionsWebhooksWebhookFilterCondition$Outbound = {
   op?: string | undefined;
@@ -41,21 +40,6 @@ export const V3ExtensionsWebhooksWebhookFilterCondition$outboundSchema:
     rhs: z.string().optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksWebhookFilterCondition$ {
-  /** @deprecated use `V3ExtensionsWebhooksWebhookFilterCondition$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsWebhooksWebhookFilterCondition$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookFilterCondition$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsWebhooksWebhookFilterCondition$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookFilterCondition$Outbound` instead. */
-  export type Outbound = V3ExtensionsWebhooksWebhookFilterCondition$Outbound;
-}
-
 export function v3ExtensionsWebhooksWebhookFilterConditionToJSON(
   v3ExtensionsWebhooksWebhookFilterCondition:
     V3ExtensionsWebhooksWebhookFilterCondition,
@@ -66,7 +50,6 @@ export function v3ExtensionsWebhooksWebhookFilterConditionToJSON(
     ),
   );
 }
-
 export function v3ExtensionsWebhooksWebhookFilterConditionFromJSON(
   jsonString: string,
 ): SafeParseResult<

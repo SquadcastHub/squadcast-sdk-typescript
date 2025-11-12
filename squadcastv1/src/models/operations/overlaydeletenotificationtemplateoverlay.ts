@@ -18,17 +18,6 @@ export type OverlayDeleteNotificationTemplateOverlayRequest = {
 export type OverlayDeleteNotificationTemplateOverlayResponseBody = {};
 
 /** @internal */
-export const OverlayDeleteNotificationTemplateOverlayRequest$inboundSchema:
-  z.ZodType<
-    OverlayDeleteNotificationTemplateOverlayRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-    alertSource: z.string(),
-  });
-
-/** @internal */
 export type OverlayDeleteNotificationTemplateOverlayRequest$Outbound = {
   serviceID: string;
   alertSource: string;
@@ -45,22 +34,6 @@ export const OverlayDeleteNotificationTemplateOverlayRequest$outboundSchema:
     alertSource: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayDeleteNotificationTemplateOverlayRequest$ {
-  /** @deprecated use `OverlayDeleteNotificationTemplateOverlayRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayDeleteNotificationTemplateOverlayRequest$inboundSchema;
-  /** @deprecated use `OverlayDeleteNotificationTemplateOverlayRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayDeleteNotificationTemplateOverlayRequest$outboundSchema;
-  /** @deprecated use `OverlayDeleteNotificationTemplateOverlayRequest$Outbound` instead. */
-  export type Outbound =
-    OverlayDeleteNotificationTemplateOverlayRequest$Outbound;
-}
-
 export function overlayDeleteNotificationTemplateOverlayRequestToJSON(
   overlayDeleteNotificationTemplateOverlayRequest:
     OverlayDeleteNotificationTemplateOverlayRequest,
@@ -72,22 +45,6 @@ export function overlayDeleteNotificationTemplateOverlayRequestToJSON(
   );
 }
 
-export function overlayDeleteNotificationTemplateOverlayRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  OverlayDeleteNotificationTemplateOverlayRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverlayDeleteNotificationTemplateOverlayRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'OverlayDeleteNotificationTemplateOverlayRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const OverlayDeleteNotificationTemplateOverlayResponseBody$inboundSchema:
   z.ZodType<
@@ -95,44 +52,6 @@ export const OverlayDeleteNotificationTemplateOverlayResponseBody$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.object({});
-
-/** @internal */
-export type OverlayDeleteNotificationTemplateOverlayResponseBody$Outbound = {};
-
-/** @internal */
-export const OverlayDeleteNotificationTemplateOverlayResponseBody$outboundSchema:
-  z.ZodType<
-    OverlayDeleteNotificationTemplateOverlayResponseBody$Outbound,
-    z.ZodTypeDef,
-    OverlayDeleteNotificationTemplateOverlayResponseBody
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayDeleteNotificationTemplateOverlayResponseBody$ {
-  /** @deprecated use `OverlayDeleteNotificationTemplateOverlayResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayDeleteNotificationTemplateOverlayResponseBody$inboundSchema;
-  /** @deprecated use `OverlayDeleteNotificationTemplateOverlayResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayDeleteNotificationTemplateOverlayResponseBody$outboundSchema;
-  /** @deprecated use `OverlayDeleteNotificationTemplateOverlayResponseBody$Outbound` instead. */
-  export type Outbound =
-    OverlayDeleteNotificationTemplateOverlayResponseBody$Outbound;
-}
-
-export function overlayDeleteNotificationTemplateOverlayResponseBodyToJSON(
-  overlayDeleteNotificationTemplateOverlayResponseBody:
-    OverlayDeleteNotificationTemplateOverlayResponseBody,
-): string {
-  return JSON.stringify(
-    OverlayDeleteNotificationTemplateOverlayResponseBody$outboundSchema.parse(
-      overlayDeleteNotificationTemplateOverlayResponseBody,
-    ),
-  );
-}
 
 export function overlayDeleteNotificationTemplateOverlayResponseBodyFromJSON(
   jsonString: string,

@@ -46,63 +46,6 @@ export const V3IncidentsTagsPinnedMessage$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3IncidentsTagsPinnedMessage$Outbound = {
-  message: string;
-  message_sender_id: string;
-  time: string;
-  time_of_pinning: string;
-  message_id: string;
-  message_pinned_by: string;
-  message_sender_name: string;
-};
-
-/** @internal */
-export const V3IncidentsTagsPinnedMessage$outboundSchema: z.ZodType<
-  V3IncidentsTagsPinnedMessage$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsTagsPinnedMessage
-> = z.object({
-  message: z.string(),
-  messageSenderId: z.string(),
-  time: z.date().transform(v => v.toISOString()),
-  timeOfPinning: z.date().transform(v => v.toISOString()),
-  messageId: z.string(),
-  messagePinnedBy: z.string(),
-  messageSenderName: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    messageSenderId: "message_sender_id",
-    timeOfPinning: "time_of_pinning",
-    messageId: "message_id",
-    messagePinnedBy: "message_pinned_by",
-    messageSenderName: "message_sender_name",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsPinnedMessage$ {
-  /** @deprecated use `V3IncidentsTagsPinnedMessage$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsTagsPinnedMessage$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsPinnedMessage$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsTagsPinnedMessage$outboundSchema;
-  /** @deprecated use `V3IncidentsTagsPinnedMessage$Outbound` instead. */
-  export type Outbound = V3IncidentsTagsPinnedMessage$Outbound;
-}
-
-export function v3IncidentsTagsPinnedMessageToJSON(
-  v3IncidentsTagsPinnedMessage: V3IncidentsTagsPinnedMessage,
-): string {
-  return JSON.stringify(
-    V3IncidentsTagsPinnedMessage$outboundSchema.parse(
-      v3IncidentsTagsPinnedMessage,
-    ),
-  );
-}
-
 export function v3IncidentsTagsPinnedMessageFromJSON(
   jsonString: string,
 ): SafeParseResult<V3IncidentsTagsPinnedMessage, SDKValidationError> {

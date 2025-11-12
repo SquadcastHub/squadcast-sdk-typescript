@@ -25,25 +25,6 @@ export type UsersDeleteUserResponse = {
 };
 
 /** @internal */
-export const UsersDeleteUserRequest$inboundSchema: z.ZodType<
-  UsersDeleteUserRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  user_id: z.string(),
-  swap_user_id: z.string(),
-  suppress_incidents: z.boolean(),
-  reassign_incidents: z.boolean(),
-}).transform((v) => {
-  return remap$(v, {
-    "user_id": "userId",
-    "swap_user_id": "swapUserId",
-    "suppress_incidents": "suppressIncidents",
-    "reassign_incidents": "reassignIncidents",
-  });
-});
-
-/** @internal */
 export type UsersDeleteUserRequest$Outbound = {
   user_id: string;
   swap_user_id: string;
@@ -70,34 +51,11 @@ export const UsersDeleteUserRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersDeleteUserRequest$ {
-  /** @deprecated use `UsersDeleteUserRequest$inboundSchema` instead. */
-  export const inboundSchema = UsersDeleteUserRequest$inboundSchema;
-  /** @deprecated use `UsersDeleteUserRequest$outboundSchema` instead. */
-  export const outboundSchema = UsersDeleteUserRequest$outboundSchema;
-  /** @deprecated use `UsersDeleteUserRequest$Outbound` instead. */
-  export type Outbound = UsersDeleteUserRequest$Outbound;
-}
-
 export function usersDeleteUserRequestToJSON(
   usersDeleteUserRequest: UsersDeleteUserRequest,
 ): string {
   return JSON.stringify(
     UsersDeleteUserRequest$outboundSchema.parse(usersDeleteUserRequest),
-  );
-}
-
-export function usersDeleteUserRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UsersDeleteUserRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UsersDeleteUserRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UsersDeleteUserRequest' from JSON`,
   );
 }
 
@@ -107,37 +65,6 @@ export const UsersDeleteUserData$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type UsersDeleteUserData$Outbound = {};
-
-/** @internal */
-export const UsersDeleteUserData$outboundSchema: z.ZodType<
-  UsersDeleteUserData$Outbound,
-  z.ZodTypeDef,
-  UsersDeleteUserData
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersDeleteUserData$ {
-  /** @deprecated use `UsersDeleteUserData$inboundSchema` instead. */
-  export const inboundSchema = UsersDeleteUserData$inboundSchema;
-  /** @deprecated use `UsersDeleteUserData$outboundSchema` instead. */
-  export const outboundSchema = UsersDeleteUserData$outboundSchema;
-  /** @deprecated use `UsersDeleteUserData$Outbound` instead. */
-  export type Outbound = UsersDeleteUserData$Outbound;
-}
-
-export function usersDeleteUserDataToJSON(
-  usersDeleteUserData: UsersDeleteUserData,
-): string {
-  return JSON.stringify(
-    UsersDeleteUserData$outboundSchema.parse(usersDeleteUserData),
-  );
-}
 
 export function usersDeleteUserDataFromJSON(
   jsonString: string,
@@ -157,41 +84,6 @@ export const UsersDeleteUserResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => UsersDeleteUserData$inboundSchema),
 });
-
-/** @internal */
-export type UsersDeleteUserResponse$Outbound = {
-  data: UsersDeleteUserData$Outbound;
-};
-
-/** @internal */
-export const UsersDeleteUserResponse$outboundSchema: z.ZodType<
-  UsersDeleteUserResponse$Outbound,
-  z.ZodTypeDef,
-  UsersDeleteUserResponse
-> = z.object({
-  data: z.lazy(() => UsersDeleteUserData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersDeleteUserResponse$ {
-  /** @deprecated use `UsersDeleteUserResponse$inboundSchema` instead. */
-  export const inboundSchema = UsersDeleteUserResponse$inboundSchema;
-  /** @deprecated use `UsersDeleteUserResponse$outboundSchema` instead. */
-  export const outboundSchema = UsersDeleteUserResponse$outboundSchema;
-  /** @deprecated use `UsersDeleteUserResponse$Outbound` instead. */
-  export type Outbound = UsersDeleteUserResponse$Outbound;
-}
-
-export function usersDeleteUserResponseToJSON(
-  usersDeleteUserResponse: UsersDeleteUserResponse,
-): string {
-  return JSON.stringify(
-    UsersDeleteUserResponse$outboundSchema.parse(usersDeleteUserResponse),
-  );
-}
 
 export function usersDeleteUserResponseFromJSON(
   jsonString: string,

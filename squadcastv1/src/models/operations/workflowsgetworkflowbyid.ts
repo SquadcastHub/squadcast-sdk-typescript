@@ -3,22 +3,10 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type WorkflowsGetWorkflowByIdRequest = {
   workflowID: string;
 };
-
-/** @internal */
-export const WorkflowsGetWorkflowByIdRequest$inboundSchema: z.ZodType<
-  WorkflowsGetWorkflowByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  workflowID: z.string(),
-});
 
 /** @internal */
 export type WorkflowsGetWorkflowByIdRequest$Outbound = {
@@ -34,19 +22,6 @@ export const WorkflowsGetWorkflowByIdRequest$outboundSchema: z.ZodType<
   workflowID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WorkflowsGetWorkflowByIdRequest$ {
-  /** @deprecated use `WorkflowsGetWorkflowByIdRequest$inboundSchema` instead. */
-  export const inboundSchema = WorkflowsGetWorkflowByIdRequest$inboundSchema;
-  /** @deprecated use `WorkflowsGetWorkflowByIdRequest$outboundSchema` instead. */
-  export const outboundSchema = WorkflowsGetWorkflowByIdRequest$outboundSchema;
-  /** @deprecated use `WorkflowsGetWorkflowByIdRequest$Outbound` instead. */
-  export type Outbound = WorkflowsGetWorkflowByIdRequest$Outbound;
-}
-
 export function workflowsGetWorkflowByIdRequestToJSON(
   workflowsGetWorkflowByIdRequest: WorkflowsGetWorkflowByIdRequest,
 ): string {
@@ -54,15 +29,5 @@ export function workflowsGetWorkflowByIdRequestToJSON(
     WorkflowsGetWorkflowByIdRequest$outboundSchema.parse(
       workflowsGetWorkflowByIdRequest,
     ),
-  );
-}
-
-export function workflowsGetWorkflowByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WorkflowsGetWorkflowByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => WorkflowsGetWorkflowByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WorkflowsGetWorkflowByIdRequest' from JSON`,
   );
 }

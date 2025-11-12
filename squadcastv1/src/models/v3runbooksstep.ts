@@ -25,7 +25,6 @@ export const V3RunbooksStep$inboundSchema: z.ZodType<
 > = z.object({
   content: z.string(),
 });
-
 /** @internal */
 export type V3RunbooksStep$Outbound = {
   content: string;
@@ -40,23 +39,9 @@ export const V3RunbooksStep$outboundSchema: z.ZodType<
   content: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3RunbooksStep$ {
-  /** @deprecated use `V3RunbooksStep$inboundSchema` instead. */
-  export const inboundSchema = V3RunbooksStep$inboundSchema;
-  /** @deprecated use `V3RunbooksStep$outboundSchema` instead. */
-  export const outboundSchema = V3RunbooksStep$outboundSchema;
-  /** @deprecated use `V3RunbooksStep$Outbound` instead. */
-  export type Outbound = V3RunbooksStep$Outbound;
-}
-
 export function v3RunbooksStepToJSON(v3RunbooksStep: V3RunbooksStep): string {
   return JSON.stringify(V3RunbooksStep$outboundSchema.parse(v3RunbooksStep));
 }
-
 export function v3RunbooksStepFromJSON(
   jsonString: string,
 ): SafeParseResult<V3RunbooksStep, SDKValidationError> {

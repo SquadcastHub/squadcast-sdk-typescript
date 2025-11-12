@@ -9,57 +9,39 @@ import { Result as SafeParseResult } from "../types/fp.js";
 import {
   CommonV3RBACOwner,
   CommonV3RBACOwner$inboundSchema,
-  CommonV3RBACOwner$Outbound,
-  CommonV3RBACOwner$outboundSchema,
 } from "./commonv3rbacowner.js";
 import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesAPTAConfig,
   V3ServicesAPTAConfig$inboundSchema,
-  V3ServicesAPTAConfig$Outbound,
-  V3ServicesAPTAConfig$outboundSchema,
 } from "./v3servicesaptaconfig.js";
 import {
   V3ServicesEscalationPolicyBasic,
   V3ServicesEscalationPolicyBasic$inboundSchema,
-  V3ServicesEscalationPolicyBasic$Outbound,
-  V3ServicesEscalationPolicyBasic$outboundSchema,
 } from "./v3servicesescalationpolicybasic.js";
 import {
   V3ServicesIAGConfig,
   V3ServicesIAGConfig$inboundSchema,
-  V3ServicesIAGConfig$Outbound,
-  V3ServicesIAGConfig$outboundSchema,
 } from "./v3servicesiagconfig.js";
 import {
   V3ServicesJiraCloudExtension,
   V3ServicesJiraCloudExtension$inboundSchema,
-  V3ServicesJiraCloudExtension$Outbound,
-  V3ServicesJiraCloudExtension$outboundSchema,
 } from "./v3servicesjiracloudextension.js";
 import {
   V3ServicesNotificationDelayConfig,
   V3ServicesNotificationDelayConfig$inboundSchema,
-  V3ServicesNotificationDelayConfig$Outbound,
-  V3ServicesNotificationDelayConfig$outboundSchema,
 } from "./v3servicesnotificationdelayconfig.js";
 import {
   V3ServicesServiceMaintainer,
   V3ServicesServiceMaintainer$inboundSchema,
-  V3ServicesServiceMaintainer$Outbound,
-  V3ServicesServiceMaintainer$outboundSchema,
 } from "./v3servicesservicemaintainer.js";
 import {
   V3ServicesServiceSlack,
   V3ServicesServiceSlack$inboundSchema,
-  V3ServicesServiceSlack$Outbound,
-  V3ServicesServiceSlack$outboundSchema,
 } from "./v3servicesserviceslack.js";
 import {
   V3ServicesServiceTag,
   V3ServicesServiceTag$inboundSchema,
-  V3ServicesServiceTag$Outbound,
-  V3ServicesServiceTag$outboundSchema,
 } from "./v3servicesservicetag.js";
 
 export type Config = {
@@ -106,41 +88,6 @@ export const Config$inboundSchema: z.ZodType<Config, z.ZodTypeDef, unknown> = z
       "dedup_key_enabled": "dedupKeyEnabled",
     });
   });
-
-/** @internal */
-export type Config$Outbound = {
-  dedup_key_enabled: boolean;
-};
-
-/** @internal */
-export const Config$outboundSchema: z.ZodType<
-  Config$Outbound,
-  z.ZodTypeDef,
-  Config
-> = z.object({
-  dedupKeyEnabled: z.boolean(),
-}).transform((v) => {
-  return remap$(v, {
-    dedupKeyEnabled: "dedup_key_enabled",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Config$ {
-  /** @deprecated use `Config$inboundSchema` instead. */
-  export const inboundSchema = Config$inboundSchema;
-  /** @deprecated use `Config$outboundSchema` instead. */
-  export const outboundSchema = Config$outboundSchema;
-  /** @deprecated use `Config$Outbound` instead. */
-  export type Outbound = Config$Outbound;
-}
-
-export function configToJSON(config: Config): string {
-  return JSON.stringify(Config$outboundSchema.parse(config));
-}
 
 export function configFromJSON(
   jsonString: string,
@@ -195,97 +142,6 @@ export const V3ServicesServiceResponse$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
-/** @internal */
-export type V3ServicesServiceResponse$Outbound = {
-  id: string;
-  name: string;
-  slug: string;
-  email: string;
-  escalation_policy_id: string;
-  organization_id: string;
-  api_key: string;
-  description: string;
-  depends?: Array<string> | null | undefined;
-  owner: CommonV3RBACOwner$Outbound;
-  on_maintenance?: boolean | undefined;
-  slack?: V3ServicesServiceSlack$Outbound | undefined;
-  escalation_policy?: V3ServicesEscalationPolicyBasic$Outbound | undefined;
-  jira_cloud?: V3ServicesJiraCloudExtension$Outbound | undefined;
-  maintainer: V3ServicesServiceMaintainer$Outbound;
-  tags: Array<V3ServicesServiceTag$Outbound>;
-  auto_pause_transient_alerts_config: V3ServicesAPTAConfig$Outbound;
-  intelligent_alerts_grouping_config: V3ServicesIAGConfig$Outbound;
-  delay_notification_config: V3ServicesNotificationDelayConfig$Outbound;
-  config: Config$Outbound;
-  created_at: string;
-  updated_at: string;
-};
-
-/** @internal */
-export const V3ServicesServiceResponse$outboundSchema: z.ZodType<
-  V3ServicesServiceResponse$Outbound,
-  z.ZodTypeDef,
-  V3ServicesServiceResponse
-> = z.object({
-  id: z.string(),
-  name: z.string(),
-  slug: z.string(),
-  email: z.string(),
-  escalationPolicyId: z.string(),
-  organizationId: z.string(),
-  apiKey: z.string(),
-  description: z.string(),
-  depends: z.nullable(z.array(z.string())).optional(),
-  owner: CommonV3RBACOwner$outboundSchema,
-  onMaintenance: z.boolean().optional(),
-  slack: V3ServicesServiceSlack$outboundSchema.optional(),
-  escalationPolicy: V3ServicesEscalationPolicyBasic$outboundSchema.optional(),
-  jiraCloud: V3ServicesJiraCloudExtension$outboundSchema.optional(),
-  maintainer: V3ServicesServiceMaintainer$outboundSchema,
-  tags: z.array(V3ServicesServiceTag$outboundSchema),
-  autoPauseTransientAlertsConfig: V3ServicesAPTAConfig$outboundSchema,
-  intelligentAlertsGroupingConfig: V3ServicesIAGConfig$outboundSchema,
-  delayNotificationConfig: V3ServicesNotificationDelayConfig$outboundSchema,
-  config: z.lazy(() => Config$outboundSchema),
-  createdAt: z.date().transform(v => v.toISOString()),
-  updatedAt: z.date().transform(v => v.toISOString()),
-}).transform((v) => {
-  return remap$(v, {
-    escalationPolicyId: "escalation_policy_id",
-    organizationId: "organization_id",
-    apiKey: "api_key",
-    onMaintenance: "on_maintenance",
-    escalationPolicy: "escalation_policy",
-    jiraCloud: "jira_cloud",
-    autoPauseTransientAlertsConfig: "auto_pause_transient_alerts_config",
-    intelligentAlertsGroupingConfig: "intelligent_alerts_grouping_config",
-    delayNotificationConfig: "delay_notification_config",
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesServiceResponse$ {
-  /** @deprecated use `V3ServicesServiceResponse$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesServiceResponse$inboundSchema;
-  /** @deprecated use `V3ServicesServiceResponse$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesServiceResponse$outboundSchema;
-  /** @deprecated use `V3ServicesServiceResponse$Outbound` instead. */
-  export type Outbound = V3ServicesServiceResponse$Outbound;
-}
-
-export function v3ServicesServiceResponseToJSON(
-  v3ServicesServiceResponse: V3ServicesServiceResponse,
-): string {
-  return JSON.stringify(
-    V3ServicesServiceResponse$outboundSchema.parse(v3ServicesServiceResponse),
-  );
-}
 
 export function v3ServicesServiceResponseFromJSON(
   jsonString: string,

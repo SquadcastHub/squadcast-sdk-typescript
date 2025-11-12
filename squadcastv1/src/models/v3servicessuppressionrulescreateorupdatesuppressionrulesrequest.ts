@@ -3,12 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesSuppressionRulesSuppressionRule,
-  V3ServicesSuppressionRulesSuppressionRule$inboundSchema,
   V3ServicesSuppressionRulesSuppressionRule$Outbound,
   V3ServicesSuppressionRulesSuppressionRule$outboundSchema,
 } from "./v3servicessuppressionrulessuppressionrule.js";
@@ -16,16 +12,6 @@ import {
 export type V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest = {
   rules: Array<V3ServicesSuppressionRulesSuppressionRule>;
 };
-
-/** @internal */
-export const V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$inboundSchema:
-  z.ZodType<
-    V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    rules: z.array(V3ServicesSuppressionRulesSuppressionRule$inboundSchema),
-  });
 
 /** @internal */
 export type V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$Outbound =
@@ -43,22 +29,6 @@ export const V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$out
     rules: z.array(V3ServicesSuppressionRulesSuppressionRule$outboundSchema),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$ {
-  /** @deprecated use `V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$inboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$outboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$Outbound` instead. */
-  export type Outbound =
-    V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$Outbound;
-}
-
 export function v3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequestToJSON(
   v3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest:
     V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest,
@@ -66,20 +36,5 @@ export function v3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequestT
   return JSON.stringify(
     V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$outboundSchema
       .parse(v3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest),
-  );
-}
-
-export function v3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest' from JSON`,
   );
 }

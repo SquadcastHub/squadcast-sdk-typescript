@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 /**
  * Represents an attachment in a postmortem request.
@@ -16,23 +13,6 @@ export type V3IncidentsPostmortemsPostmortemAttachmentRequest = {
   mimeType?: string | undefined;
   fileSize?: string | undefined;
 };
-
-/** @internal */
-export const V3IncidentsPostmortemsPostmortemAttachmentRequest$inboundSchema:
-  z.ZodType<
-    V3IncidentsPostmortemsPostmortemAttachmentRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    key: z.string().optional(),
-    mime_type: z.string().optional(),
-    file_size: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "mime_type": "mimeType",
-      "file_size": "fileSize",
-    });
-  });
 
 /** @internal */
 export type V3IncidentsPostmortemsPostmortemAttachmentRequest$Outbound = {
@@ -58,22 +38,6 @@ export const V3IncidentsPostmortemsPostmortemAttachmentRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsPostmortemsPostmortemAttachmentRequest$ {
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemAttachmentRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsPostmortemsPostmortemAttachmentRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemAttachmentRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsPostmortemsPostmortemAttachmentRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemAttachmentRequest$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsPostmortemsPostmortemAttachmentRequest$Outbound;
-}
-
 export function v3IncidentsPostmortemsPostmortemAttachmentRequestToJSON(
   v3IncidentsPostmortemsPostmortemAttachmentRequest:
     V3IncidentsPostmortemsPostmortemAttachmentRequest,
@@ -82,21 +46,5 @@ export function v3IncidentsPostmortemsPostmortemAttachmentRequestToJSON(
     V3IncidentsPostmortemsPostmortemAttachmentRequest$outboundSchema.parse(
       v3IncidentsPostmortemsPostmortemAttachmentRequest,
     ),
-  );
-}
-
-export function v3IncidentsPostmortemsPostmortemAttachmentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3IncidentsPostmortemsPostmortemAttachmentRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3IncidentsPostmortemsPostmortemAttachmentRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3IncidentsPostmortemsPostmortemAttachmentRequest' from JSON`,
   );
 }

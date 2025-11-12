@@ -18,16 +18,6 @@ export type ExportDeleteIcalLinkRequest = {
 export type ExportDeleteIcalLinkResponseBody = {};
 
 /** @internal */
-export const ExportDeleteIcalLinkRequest$inboundSchema: z.ZodType<
-  ExportDeleteIcalLinkRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  myOnCall: z.boolean(),
-});
-
-/** @internal */
 export type ExportDeleteIcalLinkRequest$Outbound = {
   scheduleID: string;
   myOnCall: boolean;
@@ -43,19 +33,6 @@ export const ExportDeleteIcalLinkRequest$outboundSchema: z.ZodType<
   myOnCall: z.boolean(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ExportDeleteIcalLinkRequest$ {
-  /** @deprecated use `ExportDeleteIcalLinkRequest$inboundSchema` instead. */
-  export const inboundSchema = ExportDeleteIcalLinkRequest$inboundSchema;
-  /** @deprecated use `ExportDeleteIcalLinkRequest$outboundSchema` instead. */
-  export const outboundSchema = ExportDeleteIcalLinkRequest$outboundSchema;
-  /** @deprecated use `ExportDeleteIcalLinkRequest$Outbound` instead. */
-  export type Outbound = ExportDeleteIcalLinkRequest$Outbound;
-}
-
 export function exportDeleteIcalLinkRequestToJSON(
   exportDeleteIcalLinkRequest: ExportDeleteIcalLinkRequest,
 ): string {
@@ -66,55 +43,12 @@ export function exportDeleteIcalLinkRequestToJSON(
   );
 }
 
-export function exportDeleteIcalLinkRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ExportDeleteIcalLinkRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ExportDeleteIcalLinkRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ExportDeleteIcalLinkRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const ExportDeleteIcalLinkResponseBody$inboundSchema: z.ZodType<
   ExportDeleteIcalLinkResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type ExportDeleteIcalLinkResponseBody$Outbound = {};
-
-/** @internal */
-export const ExportDeleteIcalLinkResponseBody$outboundSchema: z.ZodType<
-  ExportDeleteIcalLinkResponseBody$Outbound,
-  z.ZodTypeDef,
-  ExportDeleteIcalLinkResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ExportDeleteIcalLinkResponseBody$ {
-  /** @deprecated use `ExportDeleteIcalLinkResponseBody$inboundSchema` instead. */
-  export const inboundSchema = ExportDeleteIcalLinkResponseBody$inboundSchema;
-  /** @deprecated use `ExportDeleteIcalLinkResponseBody$outboundSchema` instead. */
-  export const outboundSchema = ExportDeleteIcalLinkResponseBody$outboundSchema;
-  /** @deprecated use `ExportDeleteIcalLinkResponseBody$Outbound` instead. */
-  export type Outbound = ExportDeleteIcalLinkResponseBody$Outbound;
-}
-
-export function exportDeleteIcalLinkResponseBodyToJSON(
-  exportDeleteIcalLinkResponseBody: ExportDeleteIcalLinkResponseBody,
-): string {
-  return JSON.stringify(
-    ExportDeleteIcalLinkResponseBody$outboundSchema.parse(
-      exportDeleteIcalLinkResponseBody,
-    ),
-  );
-}
 
 export function exportDeleteIcalLinkResponseBodyFromJSON(
   jsonString: string,

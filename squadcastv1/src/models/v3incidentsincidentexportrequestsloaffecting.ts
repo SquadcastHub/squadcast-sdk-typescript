@@ -15,24 +15,6 @@ export type V3IncidentsIncidentExportRequestSloAffecting = ClosedEnum<
 >;
 
 /** @internal */
-export const V3IncidentsIncidentExportRequestSloAffecting$inboundSchema:
+export const V3IncidentsIncidentExportRequestSloAffecting$outboundSchema:
   z.ZodNativeEnum<typeof V3IncidentsIncidentExportRequestSloAffecting> = z
     .nativeEnum(V3IncidentsIncidentExportRequestSloAffecting);
-
-/** @internal */
-export const V3IncidentsIncidentExportRequestSloAffecting$outboundSchema:
-  z.ZodNativeEnum<typeof V3IncidentsIncidentExportRequestSloAffecting> =
-    V3IncidentsIncidentExportRequestSloAffecting$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentExportRequestSloAffecting$ {
-  /** @deprecated use `V3IncidentsIncidentExportRequestSloAffecting$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsIncidentExportRequestSloAffecting$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentExportRequestSloAffecting$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIncidentExportRequestSloAffecting$outboundSchema;
-}

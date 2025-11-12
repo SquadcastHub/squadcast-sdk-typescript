@@ -21,16 +21,6 @@ export type OverridesGetOverrideByIdResponse = {
 };
 
 /** @internal */
-export const OverridesGetOverrideByIdRequest$inboundSchema: z.ZodType<
-  OverridesGetOverrideByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  overrideID: z.string(),
-});
-
-/** @internal */
 export type OverridesGetOverrideByIdRequest$Outbound = {
   scheduleID: string;
   overrideID: string;
@@ -46,19 +36,6 @@ export const OverridesGetOverrideByIdRequest$outboundSchema: z.ZodType<
   overrideID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverridesGetOverrideByIdRequest$ {
-  /** @deprecated use `OverridesGetOverrideByIdRequest$inboundSchema` instead. */
-  export const inboundSchema = OverridesGetOverrideByIdRequest$inboundSchema;
-  /** @deprecated use `OverridesGetOverrideByIdRequest$outboundSchema` instead. */
-  export const outboundSchema = OverridesGetOverrideByIdRequest$outboundSchema;
-  /** @deprecated use `OverridesGetOverrideByIdRequest$Outbound` instead. */
-  export type Outbound = OverridesGetOverrideByIdRequest$Outbound;
-}
-
 export function overridesGetOverrideByIdRequestToJSON(
   overridesGetOverrideByIdRequest: OverridesGetOverrideByIdRequest,
 ): string {
@@ -66,16 +43,6 @@ export function overridesGetOverrideByIdRequestToJSON(
     OverridesGetOverrideByIdRequest$outboundSchema.parse(
       overridesGetOverrideByIdRequest,
     ),
-  );
-}
-
-export function overridesGetOverrideByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<OverridesGetOverrideByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => OverridesGetOverrideByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'OverridesGetOverrideByIdRequest' from JSON`,
   );
 }
 
@@ -87,43 +54,6 @@ export const OverridesGetOverrideByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4OverrideResponse$inboundSchema,
 });
-
-/** @internal */
-export type OverridesGetOverrideByIdResponse$Outbound = {
-  data: models.V4OverrideResponse$Outbound;
-};
-
-/** @internal */
-export const OverridesGetOverrideByIdResponse$outboundSchema: z.ZodType<
-  OverridesGetOverrideByIdResponse$Outbound,
-  z.ZodTypeDef,
-  OverridesGetOverrideByIdResponse
-> = z.object({
-  data: models.V4OverrideResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverridesGetOverrideByIdResponse$ {
-  /** @deprecated use `OverridesGetOverrideByIdResponse$inboundSchema` instead. */
-  export const inboundSchema = OverridesGetOverrideByIdResponse$inboundSchema;
-  /** @deprecated use `OverridesGetOverrideByIdResponse$outboundSchema` instead. */
-  export const outboundSchema = OverridesGetOverrideByIdResponse$outboundSchema;
-  /** @deprecated use `OverridesGetOverrideByIdResponse$Outbound` instead. */
-  export type Outbound = OverridesGetOverrideByIdResponse$Outbound;
-}
-
-export function overridesGetOverrideByIdResponseToJSON(
-  overridesGetOverrideByIdResponse: OverridesGetOverrideByIdResponse,
-): string {
-  return JSON.stringify(
-    OverridesGetOverrideByIdResponse$outboundSchema.parse(
-      overridesGetOverrideByIdResponse,
-    ),
-  );
-}
 
 export function overridesGetOverrideByIdResponseFromJSON(
   jsonString: string,

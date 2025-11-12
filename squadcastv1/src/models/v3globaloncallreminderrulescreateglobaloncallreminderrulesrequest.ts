@@ -4,12 +4,8 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3GlobalOncallReminderRulesRule,
-  V3GlobalOncallReminderRulesRule$inboundSchema,
   V3GlobalOncallReminderRulesRule$Outbound,
   V3GlobalOncallReminderRulesRule$outboundSchema,
 } from "./v3globaloncallreminderrulesrule.js";
@@ -20,23 +16,6 @@ export type V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest =
     ownerId: string;
     rules: Array<V3GlobalOncallReminderRulesRule>;
   };
-
-/** @internal */
-export const V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$inboundSchema:
-  z.ZodType<
-    V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    is_enabled: z.boolean(),
-    owner_id: z.string(),
-    rules: z.array(V3GlobalOncallReminderRulesRule$inboundSchema),
-  }).transform((v) => {
-    return remap$(v, {
-      "is_enabled": "isEnabled",
-      "owner_id": "ownerId",
-    });
-  });
 
 /** @internal */
 export type V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$Outbound =
@@ -63,22 +42,6 @@ export const V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$o
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$ {
-  /** @deprecated use `V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$inboundSchema;
-  /** @deprecated use `V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$outboundSchema;
-  /** @deprecated use `V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$Outbound` instead. */
-  export type Outbound =
-    V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$Outbound;
-}
-
 export function v3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequestToJSON(
   v3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest:
     V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest,
@@ -86,20 +49,5 @@ export function v3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesReques
   return JSON.stringify(
     V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$outboundSchema
       .parse(v3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest),
-  );
-}
-
-export function v3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3GlobalOncallReminderRulesCreateGlobalOncallReminderRulesRequest' from JSON`,
   );
 }

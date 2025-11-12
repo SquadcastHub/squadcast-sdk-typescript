@@ -25,21 +25,6 @@ export type NotesDeleteNoteRequest = {
 export type NotesDeleteNoteResponseBody = {};
 
 /** @internal */
-export const NotesDeleteNoteRequest$inboundSchema: z.ZodType<
-  NotesDeleteNoteRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  IncidentId: z.string(),
-  NoteId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "IncidentId": "incidentId",
-    "NoteId": "noteId",
-  });
-});
-
-/** @internal */
 export type NotesDeleteNoteRequest$Outbound = {
   IncidentId: string;
   NoteId: string;
@@ -60,34 +45,11 @@ export const NotesDeleteNoteRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NotesDeleteNoteRequest$ {
-  /** @deprecated use `NotesDeleteNoteRequest$inboundSchema` instead. */
-  export const inboundSchema = NotesDeleteNoteRequest$inboundSchema;
-  /** @deprecated use `NotesDeleteNoteRequest$outboundSchema` instead. */
-  export const outboundSchema = NotesDeleteNoteRequest$outboundSchema;
-  /** @deprecated use `NotesDeleteNoteRequest$Outbound` instead. */
-  export type Outbound = NotesDeleteNoteRequest$Outbound;
-}
-
 export function notesDeleteNoteRequestToJSON(
   notesDeleteNoteRequest: NotesDeleteNoteRequest,
 ): string {
   return JSON.stringify(
     NotesDeleteNoteRequest$outboundSchema.parse(notesDeleteNoteRequest),
-  );
-}
-
-export function notesDeleteNoteRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<NotesDeleteNoteRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => NotesDeleteNoteRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'NotesDeleteNoteRequest' from JSON`,
   );
 }
 
@@ -97,39 +59,6 @@ export const NotesDeleteNoteResponseBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type NotesDeleteNoteResponseBody$Outbound = {};
-
-/** @internal */
-export const NotesDeleteNoteResponseBody$outboundSchema: z.ZodType<
-  NotesDeleteNoteResponseBody$Outbound,
-  z.ZodTypeDef,
-  NotesDeleteNoteResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NotesDeleteNoteResponseBody$ {
-  /** @deprecated use `NotesDeleteNoteResponseBody$inboundSchema` instead. */
-  export const inboundSchema = NotesDeleteNoteResponseBody$inboundSchema;
-  /** @deprecated use `NotesDeleteNoteResponseBody$outboundSchema` instead. */
-  export const outboundSchema = NotesDeleteNoteResponseBody$outboundSchema;
-  /** @deprecated use `NotesDeleteNoteResponseBody$Outbound` instead. */
-  export type Outbound = NotesDeleteNoteResponseBody$Outbound;
-}
-
-export function notesDeleteNoteResponseBodyToJSON(
-  notesDeleteNoteResponseBody: NotesDeleteNoteResponseBody,
-): string {
-  return JSON.stringify(
-    NotesDeleteNoteResponseBody$outboundSchema.parse(
-      notesDeleteNoteResponseBody,
-    ),
-  );
-}
 
 export function notesDeleteNoteResponseBodyFromJSON(
   jsonString: string,

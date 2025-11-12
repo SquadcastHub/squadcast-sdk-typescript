@@ -4,13 +4,9 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesRoutingRulesExpressionBranch,
-  V3ServicesRoutingRulesExpressionBranch$inboundSchema,
   V3ServicesRoutingRulesExpressionBranch$Outbound,
   V3ServicesRoutingRulesExpressionBranch$outboundSchema,
 } from "./v3servicesroutingrulesexpressionbranch.js";
@@ -37,42 +33,9 @@ export type V3ServicesRoutingRulesRoutingRule = {
 };
 
 /** @internal */
-export const V3ServicesRoutingRulesRoutingRuleEntityType$inboundSchema:
+export const V3ServicesRoutingRulesRoutingRuleEntityType$outboundSchema:
   z.ZodNativeEnum<typeof V3ServicesRoutingRulesRoutingRuleEntityType> = z
     .nativeEnum(V3ServicesRoutingRulesRoutingRuleEntityType);
-
-/** @internal */
-export const V3ServicesRoutingRulesRoutingRuleEntityType$outboundSchema:
-  z.ZodNativeEnum<typeof V3ServicesRoutingRulesRoutingRuleEntityType> =
-    V3ServicesRoutingRulesRoutingRuleEntityType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesRoutingRulesRoutingRuleEntityType$ {
-  /** @deprecated use `V3ServicesRoutingRulesRoutingRuleEntityType$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesRoutingRulesRoutingRuleEntityType$inboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesRoutingRuleEntityType$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesRoutingRulesRoutingRuleEntityType$outboundSchema;
-}
-
-/** @internal */
-export const V3ServicesRoutingRulesRoutingRuleRouteTo$inboundSchema: z.ZodType<
-  V3ServicesRoutingRulesRoutingRuleRouteTo,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  entity_type: V3ServicesRoutingRulesRoutingRuleEntityType$inboundSchema,
-  entity_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "entity_type": "entityType",
-    "entity_id": "entityId",
-  });
-});
 
 /** @internal */
 export type V3ServicesRoutingRulesRoutingRuleRouteTo$Outbound = {
@@ -95,21 +58,6 @@ export const V3ServicesRoutingRulesRoutingRuleRouteTo$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesRoutingRulesRoutingRuleRouteTo$ {
-  /** @deprecated use `V3ServicesRoutingRulesRoutingRuleRouteTo$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesRoutingRulesRoutingRuleRouteTo$inboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesRoutingRuleRouteTo$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesRoutingRulesRoutingRuleRouteTo$outboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesRoutingRuleRouteTo$Outbound` instead. */
-  export type Outbound = V3ServicesRoutingRulesRoutingRuleRouteTo$Outbound;
-}
-
 export function v3ServicesRoutingRulesRoutingRuleRouteToToJSON(
   v3ServicesRoutingRulesRoutingRuleRouteTo:
     V3ServicesRoutingRulesRoutingRuleRouteTo,
@@ -120,44 +68,6 @@ export function v3ServicesRoutingRulesRoutingRuleRouteToToJSON(
     ),
   );
 }
-
-export function v3ServicesRoutingRulesRoutingRuleRouteToFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesRoutingRulesRoutingRuleRouteTo,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesRoutingRulesRoutingRuleRouteTo$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3ServicesRoutingRulesRoutingRuleRouteTo' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3ServicesRoutingRulesRoutingRule$inboundSchema: z.ZodType<
-  V3ServicesRoutingRulesRoutingRule,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  expression: z.string(),
-  route_to: z.lazy(() =>
-    V3ServicesRoutingRulesRoutingRuleRouteTo$inboundSchema
-  ),
-  is_basic: z.boolean(),
-  basic_expression: z.array(
-    V3ServicesRoutingRulesExpressionBranch$inboundSchema,
-  ).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "route_to": "routeTo",
-    "is_basic": "isBasic",
-    "basic_expression": "basicExpression",
-  });
-});
 
 /** @internal */
 export type V3ServicesRoutingRulesRoutingRule$Outbound = {
@@ -191,20 +101,6 @@ export const V3ServicesRoutingRulesRoutingRule$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesRoutingRulesRoutingRule$ {
-  /** @deprecated use `V3ServicesRoutingRulesRoutingRule$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesRoutingRulesRoutingRule$inboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesRoutingRule$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesRoutingRulesRoutingRule$outboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesRoutingRule$Outbound` instead. */
-  export type Outbound = V3ServicesRoutingRulesRoutingRule$Outbound;
-}
-
 export function v3ServicesRoutingRulesRoutingRuleToJSON(
   v3ServicesRoutingRulesRoutingRule: V3ServicesRoutingRulesRoutingRule,
 ): string {
@@ -212,15 +108,5 @@ export function v3ServicesRoutingRulesRoutingRuleToJSON(
     V3ServicesRoutingRulesRoutingRule$outboundSchema.parse(
       v3ServicesRoutingRulesRoutingRule,
     ),
-  );
-}
-
-export function v3ServicesRoutingRulesRoutingRuleFromJSON(
-  jsonString: string,
-): SafeParseResult<V3ServicesRoutingRulesRoutingRule, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3ServicesRoutingRulesRoutingRule$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesRoutingRulesRoutingRule' from JSON`,
   );
 }

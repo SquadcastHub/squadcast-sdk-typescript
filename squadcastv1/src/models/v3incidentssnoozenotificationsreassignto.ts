@@ -21,7 +21,6 @@ export const V3IncidentsSnoozeNotificationsReassignTo$inboundSchema: z.ZodType<
   id: z.string(),
   type: z.string(),
 });
-
 /** @internal */
 export type V3IncidentsSnoozeNotificationsReassignTo$Outbound = {
   id: string;
@@ -38,21 +37,6 @@ export const V3IncidentsSnoozeNotificationsReassignTo$outboundSchema: z.ZodType<
   type: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsSnoozeNotificationsReassignTo$ {
-  /** @deprecated use `V3IncidentsSnoozeNotificationsReassignTo$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsSnoozeNotificationsReassignTo$inboundSchema;
-  /** @deprecated use `V3IncidentsSnoozeNotificationsReassignTo$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsSnoozeNotificationsReassignTo$outboundSchema;
-  /** @deprecated use `V3IncidentsSnoozeNotificationsReassignTo$Outbound` instead. */
-  export type Outbound = V3IncidentsSnoozeNotificationsReassignTo$Outbound;
-}
-
 export function v3IncidentsSnoozeNotificationsReassignToToJSON(
   v3IncidentsSnoozeNotificationsReassignTo:
     V3IncidentsSnoozeNotificationsReassignTo,
@@ -63,7 +47,6 @@ export function v3IncidentsSnoozeNotificationsReassignToToJSON(
     ),
   );
 }
-
 export function v3IncidentsSnoozeNotificationsReassignToFromJSON(
   jsonString: string,
 ): SafeParseResult<

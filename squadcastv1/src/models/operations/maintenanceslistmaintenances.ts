@@ -3,26 +3,12 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type MaintenancesListMaintenancesRequest = {
   statuspageID: string;
   startTime: string;
   endTime: string;
 };
-
-/** @internal */
-export const MaintenancesListMaintenancesRequest$inboundSchema: z.ZodType<
-  MaintenancesListMaintenancesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-  startTime: z.string(),
-  endTime: z.string(),
-});
 
 /** @internal */
 export type MaintenancesListMaintenancesRequest$Outbound = {
@@ -42,21 +28,6 @@ export const MaintenancesListMaintenancesRequest$outboundSchema: z.ZodType<
   endTime: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaintenancesListMaintenancesRequest$ {
-  /** @deprecated use `MaintenancesListMaintenancesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    MaintenancesListMaintenancesRequest$inboundSchema;
-  /** @deprecated use `MaintenancesListMaintenancesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    MaintenancesListMaintenancesRequest$outboundSchema;
-  /** @deprecated use `MaintenancesListMaintenancesRequest$Outbound` instead. */
-  export type Outbound = MaintenancesListMaintenancesRequest$Outbound;
-}
-
 export function maintenancesListMaintenancesRequestToJSON(
   maintenancesListMaintenancesRequest: MaintenancesListMaintenancesRequest,
 ): string {
@@ -64,16 +35,5 @@ export function maintenancesListMaintenancesRequestToJSON(
     MaintenancesListMaintenancesRequest$outboundSchema.parse(
       maintenancesListMaintenancesRequest,
     ),
-  );
-}
-
-export function maintenancesListMaintenancesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<MaintenancesListMaintenancesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      MaintenancesListMaintenancesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'MaintenancesListMaintenancesRequest' from JSON`,
   );
 }

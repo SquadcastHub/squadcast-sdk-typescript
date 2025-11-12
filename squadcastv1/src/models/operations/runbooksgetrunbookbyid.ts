@@ -20,15 +20,6 @@ export type RunbooksGetRunbookByIdResponse = {
 };
 
 /** @internal */
-export const RunbooksGetRunbookByIdRequest$inboundSchema: z.ZodType<
-  RunbooksGetRunbookByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  runbookID: z.string(),
-});
-
-/** @internal */
 export type RunbooksGetRunbookByIdRequest$Outbound = {
   runbookID: string;
 };
@@ -42,19 +33,6 @@ export const RunbooksGetRunbookByIdRequest$outboundSchema: z.ZodType<
   runbookID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RunbooksGetRunbookByIdRequest$ {
-  /** @deprecated use `RunbooksGetRunbookByIdRequest$inboundSchema` instead. */
-  export const inboundSchema = RunbooksGetRunbookByIdRequest$inboundSchema;
-  /** @deprecated use `RunbooksGetRunbookByIdRequest$outboundSchema` instead. */
-  export const outboundSchema = RunbooksGetRunbookByIdRequest$outboundSchema;
-  /** @deprecated use `RunbooksGetRunbookByIdRequest$Outbound` instead. */
-  export type Outbound = RunbooksGetRunbookByIdRequest$Outbound;
-}
-
 export function runbooksGetRunbookByIdRequestToJSON(
   runbooksGetRunbookByIdRequest: RunbooksGetRunbookByIdRequest,
 ): string {
@@ -62,16 +40,6 @@ export function runbooksGetRunbookByIdRequestToJSON(
     RunbooksGetRunbookByIdRequest$outboundSchema.parse(
       runbooksGetRunbookByIdRequest,
     ),
-  );
-}
-
-export function runbooksGetRunbookByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RunbooksGetRunbookByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RunbooksGetRunbookByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RunbooksGetRunbookByIdRequest' from JSON`,
   );
 }
 
@@ -83,43 +51,6 @@ export const RunbooksGetRunbookByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3RunbooksRunbookResponse$inboundSchema,
 });
-
-/** @internal */
-export type RunbooksGetRunbookByIdResponse$Outbound = {
-  data: models.V3RunbooksRunbookResponse$Outbound;
-};
-
-/** @internal */
-export const RunbooksGetRunbookByIdResponse$outboundSchema: z.ZodType<
-  RunbooksGetRunbookByIdResponse$Outbound,
-  z.ZodTypeDef,
-  RunbooksGetRunbookByIdResponse
-> = z.object({
-  data: models.V3RunbooksRunbookResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RunbooksGetRunbookByIdResponse$ {
-  /** @deprecated use `RunbooksGetRunbookByIdResponse$inboundSchema` instead. */
-  export const inboundSchema = RunbooksGetRunbookByIdResponse$inboundSchema;
-  /** @deprecated use `RunbooksGetRunbookByIdResponse$outboundSchema` instead. */
-  export const outboundSchema = RunbooksGetRunbookByIdResponse$outboundSchema;
-  /** @deprecated use `RunbooksGetRunbookByIdResponse$Outbound` instead. */
-  export type Outbound = RunbooksGetRunbookByIdResponse$Outbound;
-}
-
-export function runbooksGetRunbookByIdResponseToJSON(
-  runbooksGetRunbookByIdResponse: RunbooksGetRunbookByIdResponse,
-): string {
-  return JSON.stringify(
-    RunbooksGetRunbookByIdResponse$outboundSchema.parse(
-      runbooksGetRunbookByIdResponse,
-    ),
-  );
-}
 
 export function runbooksGetRunbookByIdResponseFromJSON(
   jsonString: string,

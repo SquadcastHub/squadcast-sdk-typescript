@@ -14,24 +14,6 @@ export type V3IncidentsIncidentExportRequestIsStarred = ClosedEnum<
 >;
 
 /** @internal */
-export const V3IncidentsIncidentExportRequestIsStarred$inboundSchema:
+export const V3IncidentsIncidentExportRequestIsStarred$outboundSchema:
   z.ZodNativeEnum<typeof V3IncidentsIncidentExportRequestIsStarred> = z
     .nativeEnum(V3IncidentsIncidentExportRequestIsStarred);
-
-/** @internal */
-export const V3IncidentsIncidentExportRequestIsStarred$outboundSchema:
-  z.ZodNativeEnum<typeof V3IncidentsIncidentExportRequestIsStarred> =
-    V3IncidentsIncidentExportRequestIsStarred$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentExportRequestIsStarred$ {
-  /** @deprecated use `V3IncidentsIncidentExportRequestIsStarred$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsIncidentExportRequestIsStarred$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentExportRequestIsStarred$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIncidentExportRequestIsStarred$outboundSchema;
-}

@@ -23,45 +23,6 @@ export const IncidentsBulkResolveIncidentsResponse$inboundSchema: z.ZodType<
   data: z.string(),
 });
 
-/** @internal */
-export type IncidentsBulkResolveIncidentsResponse$Outbound = {
-  data: string;
-};
-
-/** @internal */
-export const IncidentsBulkResolveIncidentsResponse$outboundSchema: z.ZodType<
-  IncidentsBulkResolveIncidentsResponse$Outbound,
-  z.ZodTypeDef,
-  IncidentsBulkResolveIncidentsResponse
-> = z.object({
-  data: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsBulkResolveIncidentsResponse$ {
-  /** @deprecated use `IncidentsBulkResolveIncidentsResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsBulkResolveIncidentsResponse$inboundSchema;
-  /** @deprecated use `IncidentsBulkResolveIncidentsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsBulkResolveIncidentsResponse$outboundSchema;
-  /** @deprecated use `IncidentsBulkResolveIncidentsResponse$Outbound` instead. */
-  export type Outbound = IncidentsBulkResolveIncidentsResponse$Outbound;
-}
-
-export function incidentsBulkResolveIncidentsResponseToJSON(
-  incidentsBulkResolveIncidentsResponse: IncidentsBulkResolveIncidentsResponse,
-): string {
-  return JSON.stringify(
-    IncidentsBulkResolveIncidentsResponse$outboundSchema.parse(
-      incidentsBulkResolveIncidentsResponse,
-    ),
-  );
-}
-
 export function incidentsBulkResolveIncidentsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<IncidentsBulkResolveIncidentsResponse, SDKValidationError> {

@@ -15,19 +15,7 @@ export type V3SLOSLOOwnerType = ClosedEnum<typeof V3SLOSLOOwnerType>;
 export const V3SLOSLOOwnerType$inboundSchema: z.ZodNativeEnum<
   typeof V3SLOSLOOwnerType
 > = z.nativeEnum(V3SLOSLOOwnerType);
-
 /** @internal */
 export const V3SLOSLOOwnerType$outboundSchema: z.ZodNativeEnum<
   typeof V3SLOSLOOwnerType
 > = V3SLOSLOOwnerType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3SLOSLOOwnerType$ {
-  /** @deprecated use `V3SLOSLOOwnerType$inboundSchema` instead. */
-  export const inboundSchema = V3SLOSLOOwnerType$inboundSchema;
-  /** @deprecated use `V3SLOSLOOwnerType$outboundSchema` instead. */
-  export const outboundSchema = V3SLOSLOOwnerType$outboundSchema;
-}

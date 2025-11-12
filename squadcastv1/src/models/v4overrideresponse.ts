@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4OverrideParticipantGroup,
   V4OverrideParticipantGroup$inboundSchema,
-  V4OverrideParticipantGroup$Outbound,
-  V4OverrideParticipantGroup$outboundSchema,
 } from "./v4overrideparticipantgroup.js";
 
 export type V4OverrideResponse = {
@@ -45,61 +43,6 @@ export const V4OverrideResponse$inboundSchema: z.ZodType<
   createdAt: z.string(),
   updatedAt: z.string(),
 });
-
-/** @internal */
-export type V4OverrideResponse$Outbound = {
-  id: number;
-  orgID: string;
-  teamID: string;
-  scheduleID: number;
-  startTime: string;
-  endTime: string;
-  reason: string;
-  overriddenParticipant: V4OverrideParticipantGroup$Outbound;
-  overrideWith: V4OverrideParticipantGroup$Outbound;
-  createdAt: string;
-  updatedAt: string;
-};
-
-/** @internal */
-export const V4OverrideResponse$outboundSchema: z.ZodType<
-  V4OverrideResponse$Outbound,
-  z.ZodTypeDef,
-  V4OverrideResponse
-> = z.object({
-  id: z.number().int(),
-  orgID: z.string(),
-  teamID: z.string(),
-  scheduleID: z.number().int(),
-  startTime: z.string(),
-  endTime: z.string(),
-  reason: z.string(),
-  overriddenParticipant: V4OverrideParticipantGroup$outboundSchema,
-  overrideWith: V4OverrideParticipantGroup$outboundSchema,
-  createdAt: z.string(),
-  updatedAt: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4OverrideResponse$ {
-  /** @deprecated use `V4OverrideResponse$inboundSchema` instead. */
-  export const inboundSchema = V4OverrideResponse$inboundSchema;
-  /** @deprecated use `V4OverrideResponse$outboundSchema` instead. */
-  export const outboundSchema = V4OverrideResponse$outboundSchema;
-  /** @deprecated use `V4OverrideResponse$Outbound` instead. */
-  export type Outbound = V4OverrideResponse$Outbound;
-}
-
-export function v4OverrideResponseToJSON(
-  v4OverrideResponse: V4OverrideResponse,
-): string {
-  return JSON.stringify(
-    V4OverrideResponse$outboundSchema.parse(v4OverrideResponse),
-  );
-}
 
 export function v4OverrideResponseFromJSON(
   jsonString: string,

@@ -4,10 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3WorkflowsJiraCreateTicketUpdateName = {
   JiraCreateTicket: "jira_create_ticket",
@@ -30,45 +27,10 @@ export type V3WorkflowsJiraCreateTicketUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsJiraCreateTicketUpdateName$inboundSchema:
+export const V3WorkflowsJiraCreateTicketUpdateName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsJiraCreateTicketUpdateName> = z.nativeEnum(
     V3WorkflowsJiraCreateTicketUpdateName,
   );
-
-/** @internal */
-export const V3WorkflowsJiraCreateTicketUpdateName$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsJiraCreateTicketUpdateName> =
-    V3WorkflowsJiraCreateTicketUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsJiraCreateTicketUpdateName$ {
-  /** @deprecated use `V3WorkflowsJiraCreateTicketUpdateName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsJiraCreateTicketUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsJiraCreateTicketUpdateName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsJiraCreateTicketUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsJiraCreateTicketUpdateData$inboundSchema: z.ZodType<
-  V3WorkflowsJiraCreateTicketUpdateData,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  account: z.string().optional(),
-  project: z.string().optional(),
-  issue_type: z.string().optional(),
-  title: z.string().optional(),
-  description: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "issue_type": "issueType",
-  });
-});
 
 /** @internal */
 export type V3WorkflowsJiraCreateTicketUpdateData$Outbound = {
@@ -96,21 +58,6 @@ export const V3WorkflowsJiraCreateTicketUpdateData$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsJiraCreateTicketUpdateData$ {
-  /** @deprecated use `V3WorkflowsJiraCreateTicketUpdateData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsJiraCreateTicketUpdateData$inboundSchema;
-  /** @deprecated use `V3WorkflowsJiraCreateTicketUpdateData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsJiraCreateTicketUpdateData$outboundSchema;
-  /** @deprecated use `V3WorkflowsJiraCreateTicketUpdateData$Outbound` instead. */
-  export type Outbound = V3WorkflowsJiraCreateTicketUpdateData$Outbound;
-}
-
 export function v3WorkflowsJiraCreateTicketUpdateDataToJSON(
   v3WorkflowsJiraCreateTicketUpdateData: V3WorkflowsJiraCreateTicketUpdateData,
 ): string {
@@ -120,28 +67,6 @@ export function v3WorkflowsJiraCreateTicketUpdateDataToJSON(
     ),
   );
 }
-
-export function v3WorkflowsJiraCreateTicketUpdateDataFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsJiraCreateTicketUpdateData, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsJiraCreateTicketUpdateData$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsJiraCreateTicketUpdateData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsJiraCreateTicketUpdate$inboundSchema: z.ZodType<
-  V3WorkflowsJiraCreateTicketUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: V3WorkflowsJiraCreateTicketUpdateName$inboundSchema,
-  data: z.lazy(() => V3WorkflowsJiraCreateTicketUpdateData$inboundSchema)
-    .optional(),
-});
 
 /** @internal */
 export type V3WorkflowsJiraCreateTicketUpdate$Outbound = {
@@ -160,20 +85,6 @@ export const V3WorkflowsJiraCreateTicketUpdate$outboundSchema: z.ZodType<
     .optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsJiraCreateTicketUpdate$ {
-  /** @deprecated use `V3WorkflowsJiraCreateTicketUpdate$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsJiraCreateTicketUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsJiraCreateTicketUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsJiraCreateTicketUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsJiraCreateTicketUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsJiraCreateTicketUpdate$Outbound;
-}
-
 export function v3WorkflowsJiraCreateTicketUpdateToJSON(
   v3WorkflowsJiraCreateTicketUpdate: V3WorkflowsJiraCreateTicketUpdate,
 ): string {
@@ -181,15 +92,5 @@ export function v3WorkflowsJiraCreateTicketUpdateToJSON(
     V3WorkflowsJiraCreateTicketUpdate$outboundSchema.parse(
       v3WorkflowsJiraCreateTicketUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsJiraCreateTicketUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsJiraCreateTicketUpdate, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3WorkflowsJiraCreateTicketUpdate$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsJiraCreateTicketUpdate' from JSON`,
   );
 }

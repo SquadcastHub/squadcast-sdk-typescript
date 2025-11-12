@@ -20,44 +20,6 @@ export const V3GlobalEventRulesOrderingResponse$inboundSchema: z.ZodType<
   ordering: z.array(z.number().int()),
 });
 
-/** @internal */
-export type V3GlobalEventRulesOrderingResponse$Outbound = {
-  ordering: Array<number>;
-};
-
-/** @internal */
-export const V3GlobalEventRulesOrderingResponse$outboundSchema: z.ZodType<
-  V3GlobalEventRulesOrderingResponse$Outbound,
-  z.ZodTypeDef,
-  V3GlobalEventRulesOrderingResponse
-> = z.object({
-  ordering: z.array(z.number().int()),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesOrderingResponse$ {
-  /** @deprecated use `V3GlobalEventRulesOrderingResponse$inboundSchema` instead. */
-  export const inboundSchema = V3GlobalEventRulesOrderingResponse$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesOrderingResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3GlobalEventRulesOrderingResponse$outboundSchema;
-  /** @deprecated use `V3GlobalEventRulesOrderingResponse$Outbound` instead. */
-  export type Outbound = V3GlobalEventRulesOrderingResponse$Outbound;
-}
-
-export function v3GlobalEventRulesOrderingResponseToJSON(
-  v3GlobalEventRulesOrderingResponse: V3GlobalEventRulesOrderingResponse,
-): string {
-  return JSON.stringify(
-    V3GlobalEventRulesOrderingResponse$outboundSchema.parse(
-      v3GlobalEventRulesOrderingResponse,
-    ),
-  );
-}
-
 export function v3GlobalEventRulesOrderingResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V3GlobalEventRulesOrderingResponse, SDKValidationError> {

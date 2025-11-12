@@ -52,7 +52,6 @@ export const V3ServicesSuppressionRulesTimeslot$inboundSchema: z.ZodType<
     "ends_on": "endsOn",
   });
 });
-
 /** @internal */
 export type V3ServicesSuppressionRulesTimeslot$Outbound = {
   time_zone: string;
@@ -93,20 +92,6 @@ export const V3ServicesSuppressionRulesTimeslot$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesSuppressionRulesTimeslot$ {
-  /** @deprecated use `V3ServicesSuppressionRulesTimeslot$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesSuppressionRulesTimeslot$inboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesTimeslot$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesSuppressionRulesTimeslot$outboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesTimeslot$Outbound` instead. */
-  export type Outbound = V3ServicesSuppressionRulesTimeslot$Outbound;
-}
-
 export function v3ServicesSuppressionRulesTimeslotToJSON(
   v3ServicesSuppressionRulesTimeslot: V3ServicesSuppressionRulesTimeslot,
 ): string {
@@ -116,7 +101,6 @@ export function v3ServicesSuppressionRulesTimeslotToJSON(
     ),
   );
 }
-
 export function v3ServicesSuppressionRulesTimeslotFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesSuppressionRulesTimeslot, SDKValidationError> {

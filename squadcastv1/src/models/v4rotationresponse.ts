@@ -9,14 +9,10 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4ParticipantGroup,
   V4ParticipantGroup$inboundSchema,
-  V4ParticipantGroup$Outbound,
-  V4ParticipantGroup$outboundSchema,
 } from "./v4participantgroup.js";
 import {
   V4ShiftTimeSlot,
   V4ShiftTimeSlot$inboundSchema,
-  V4ShiftTimeSlot$Outbound,
-  V4ShiftTimeSlot$outboundSchema,
 } from "./v4shifttimeslot.js";
 
 export type V4RotationResponse = {
@@ -61,71 +57,6 @@ export const V4RotationResponse$inboundSchema: z.ZodType<
   createdAt: z.string(),
   updatedAt: z.string(),
 });
-
-/** @internal */
-export type V4RotationResponse$Outbound = {
-  id: number;
-  name: string;
-  scheduleID: number;
-  color: string;
-  startDate: string;
-  period: string;
-  customPeriodFrequency?: number | undefined;
-  customPeriodUnit?: string | undefined;
-  shiftTimeSlots?: Array<V4ShiftTimeSlot$Outbound> | undefined;
-  changeParticipantsFrequency: number;
-  changeParticipantsUnit: string;
-  endDate?: string | undefined;
-  endsAfterIterations?: number | undefined;
-  rotationParticipants?: Array<V4ParticipantGroup$Outbound> | undefined;
-  createdAt: string;
-  updatedAt: string;
-};
-
-/** @internal */
-export const V4RotationResponse$outboundSchema: z.ZodType<
-  V4RotationResponse$Outbound,
-  z.ZodTypeDef,
-  V4RotationResponse
-> = z.object({
-  id: z.number().int(),
-  name: z.string(),
-  scheduleID: z.number().int(),
-  color: z.string(),
-  startDate: z.string(),
-  period: z.string(),
-  customPeriodFrequency: z.number().int().optional(),
-  customPeriodUnit: z.string().optional(),
-  shiftTimeSlots: z.array(V4ShiftTimeSlot$outboundSchema).optional(),
-  changeParticipantsFrequency: z.number().int(),
-  changeParticipantsUnit: z.string(),
-  endDate: z.string().optional(),
-  endsAfterIterations: z.number().int().optional(),
-  rotationParticipants: z.array(V4ParticipantGroup$outboundSchema).optional(),
-  createdAt: z.string(),
-  updatedAt: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4RotationResponse$ {
-  /** @deprecated use `V4RotationResponse$inboundSchema` instead. */
-  export const inboundSchema = V4RotationResponse$inboundSchema;
-  /** @deprecated use `V4RotationResponse$outboundSchema` instead. */
-  export const outboundSchema = V4RotationResponse$outboundSchema;
-  /** @deprecated use `V4RotationResponse$Outbound` instead. */
-  export type Outbound = V4RotationResponse$Outbound;
-}
-
-export function v4RotationResponseToJSON(
-  v4RotationResponse: V4RotationResponse,
-): string {
-  return JSON.stringify(
-    V4RotationResponse$outboundSchema.parse(v4RotationResponse),
-  );
-}
 
 export function v4RotationResponseFromJSON(
   jsonString: string,

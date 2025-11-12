@@ -27,24 +27,6 @@ export type RoutingRulesCreateOrUpdateRoutingRulesResponse = {
 };
 
 /** @internal */
-export const RoutingRulesCreateOrUpdateRoutingRulesRequest$inboundSchema:
-  z.ZodType<
-    RoutingRulesCreateOrUpdateRoutingRulesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-    "V3.Services.RoutingRules.CreateOrUpdateRoutingRulesRequest":
-      models
-        .V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.Services.RoutingRules.CreateOrUpdateRoutingRulesRequest":
-        "v3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest",
-    });
-  });
-
-/** @internal */
 export type RoutingRulesCreateOrUpdateRoutingRulesRequest$Outbound = {
   serviceID: string;
   "V3.Services.RoutingRules.CreateOrUpdateRoutingRulesRequest":
@@ -69,21 +51,6 @@ export const RoutingRulesCreateOrUpdateRoutingRulesRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RoutingRulesCreateOrUpdateRoutingRulesRequest$ {
-  /** @deprecated use `RoutingRulesCreateOrUpdateRoutingRulesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    RoutingRulesCreateOrUpdateRoutingRulesRequest$inboundSchema;
-  /** @deprecated use `RoutingRulesCreateOrUpdateRoutingRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    RoutingRulesCreateOrUpdateRoutingRulesRequest$outboundSchema;
-  /** @deprecated use `RoutingRulesCreateOrUpdateRoutingRulesRequest$Outbound` instead. */
-  export type Outbound = RoutingRulesCreateOrUpdateRoutingRulesRequest$Outbound;
-}
-
 export function routingRulesCreateOrUpdateRoutingRulesRequestToJSON(
   routingRulesCreateOrUpdateRoutingRulesRequest:
     RoutingRulesCreateOrUpdateRoutingRulesRequest,
@@ -95,22 +62,6 @@ export function routingRulesCreateOrUpdateRoutingRulesRequestToJSON(
   );
 }
 
-export function routingRulesCreateOrUpdateRoutingRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  RoutingRulesCreateOrUpdateRoutingRulesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      RoutingRulesCreateOrUpdateRoutingRulesRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'RoutingRulesCreateOrUpdateRoutingRulesRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const RoutingRulesCreateOrUpdateRoutingRulesData$inboundSchema:
   z.ZodType<RoutingRulesCreateOrUpdateRoutingRulesData, z.ZodTypeDef, unknown> =
@@ -119,49 +70,6 @@ export const RoutingRulesCreateOrUpdateRoutingRulesData$inboundSchema:
         models.V3ServicesRoutingRulesRoutingRuleResponse$inboundSchema,
       ),
     });
-
-/** @internal */
-export type RoutingRulesCreateOrUpdateRoutingRulesData$Outbound = {
-  rules: Array<models.V3ServicesRoutingRulesRoutingRuleResponse$Outbound>;
-};
-
-/** @internal */
-export const RoutingRulesCreateOrUpdateRoutingRulesData$outboundSchema:
-  z.ZodType<
-    RoutingRulesCreateOrUpdateRoutingRulesData$Outbound,
-    z.ZodTypeDef,
-    RoutingRulesCreateOrUpdateRoutingRulesData
-  > = z.object({
-    rules: z.array(
-      models.V3ServicesRoutingRulesRoutingRuleResponse$outboundSchema,
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RoutingRulesCreateOrUpdateRoutingRulesData$ {
-  /** @deprecated use `RoutingRulesCreateOrUpdateRoutingRulesData$inboundSchema` instead. */
-  export const inboundSchema =
-    RoutingRulesCreateOrUpdateRoutingRulesData$inboundSchema;
-  /** @deprecated use `RoutingRulesCreateOrUpdateRoutingRulesData$outboundSchema` instead. */
-  export const outboundSchema =
-    RoutingRulesCreateOrUpdateRoutingRulesData$outboundSchema;
-  /** @deprecated use `RoutingRulesCreateOrUpdateRoutingRulesData$Outbound` instead. */
-  export type Outbound = RoutingRulesCreateOrUpdateRoutingRulesData$Outbound;
-}
-
-export function routingRulesCreateOrUpdateRoutingRulesDataToJSON(
-  routingRulesCreateOrUpdateRoutingRulesData:
-    RoutingRulesCreateOrUpdateRoutingRulesData,
-): string {
-  return JSON.stringify(
-    RoutingRulesCreateOrUpdateRoutingRulesData$outboundSchema.parse(
-      routingRulesCreateOrUpdateRoutingRulesData,
-    ),
-  );
-}
 
 export function routingRulesCreateOrUpdateRoutingRulesDataFromJSON(
   jsonString: string,
@@ -190,50 +98,6 @@ export const RoutingRulesCreateOrUpdateRoutingRulesResponse$inboundSchema:
       RoutingRulesCreateOrUpdateRoutingRulesData$inboundSchema
     ),
   });
-
-/** @internal */
-export type RoutingRulesCreateOrUpdateRoutingRulesResponse$Outbound = {
-  data: RoutingRulesCreateOrUpdateRoutingRulesData$Outbound;
-};
-
-/** @internal */
-export const RoutingRulesCreateOrUpdateRoutingRulesResponse$outboundSchema:
-  z.ZodType<
-    RoutingRulesCreateOrUpdateRoutingRulesResponse$Outbound,
-    z.ZodTypeDef,
-    RoutingRulesCreateOrUpdateRoutingRulesResponse
-  > = z.object({
-    data: z.lazy(() =>
-      RoutingRulesCreateOrUpdateRoutingRulesData$outboundSchema
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RoutingRulesCreateOrUpdateRoutingRulesResponse$ {
-  /** @deprecated use `RoutingRulesCreateOrUpdateRoutingRulesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    RoutingRulesCreateOrUpdateRoutingRulesResponse$inboundSchema;
-  /** @deprecated use `RoutingRulesCreateOrUpdateRoutingRulesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    RoutingRulesCreateOrUpdateRoutingRulesResponse$outboundSchema;
-  /** @deprecated use `RoutingRulesCreateOrUpdateRoutingRulesResponse$Outbound` instead. */
-  export type Outbound =
-    RoutingRulesCreateOrUpdateRoutingRulesResponse$Outbound;
-}
-
-export function routingRulesCreateOrUpdateRoutingRulesResponseToJSON(
-  routingRulesCreateOrUpdateRoutingRulesResponse:
-    RoutingRulesCreateOrUpdateRoutingRulesResponse,
-): string {
-  return JSON.stringify(
-    RoutingRulesCreateOrUpdateRoutingRulesResponse$outboundSchema.parse(
-      routingRulesCreateOrUpdateRoutingRulesResponse,
-    ),
-  );
-}
 
 export function routingRulesCreateOrUpdateRoutingRulesResponseFromJSON(
   jsonString: string,

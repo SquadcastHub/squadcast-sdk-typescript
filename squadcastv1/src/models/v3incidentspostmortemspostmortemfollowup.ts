@@ -29,7 +29,6 @@ export const V3IncidentsPostmortemsPostmortemFollowUp$inboundSchema: z.ZodType<
     "is_done": "isDone",
   });
 });
-
 /** @internal */
 export type V3IncidentsPostmortemsPostmortemFollowUp$Outbound = {
   task: string;
@@ -50,21 +49,6 @@ export const V3IncidentsPostmortemsPostmortemFollowUp$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsPostmortemsPostmortemFollowUp$ {
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemFollowUp$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsPostmortemsPostmortemFollowUp$inboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemFollowUp$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsPostmortemsPostmortemFollowUp$outboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemFollowUp$Outbound` instead. */
-  export type Outbound = V3IncidentsPostmortemsPostmortemFollowUp$Outbound;
-}
-
 export function v3IncidentsPostmortemsPostmortemFollowUpToJSON(
   v3IncidentsPostmortemsPostmortemFollowUp:
     V3IncidentsPostmortemsPostmortemFollowUp,
@@ -75,7 +59,6 @@ export function v3IncidentsPostmortemsPostmortemFollowUpToJSON(
     ),
   );
 }
-
 export function v3IncidentsPostmortemsPostmortemFollowUpFromJSON(
   jsonString: string,
 ): SafeParseResult<

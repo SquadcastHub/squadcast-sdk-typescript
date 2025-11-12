@@ -24,24 +24,6 @@ export type ComponentsUpdateComponentByIdResponse = {
 };
 
 /** @internal */
-export const ComponentsUpdateComponentByIdRequest$inboundSchema: z.ZodType<
-  ComponentsUpdateComponentByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-  component_id: z.string(),
-  "V4.StatusPages.Components.UpdateComponentByIdRequest":
-    models.V4StatusPagesComponentsUpdateComponentByIdRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "component_id": "componentId",
-    "V4.StatusPages.Components.UpdateComponentByIdRequest":
-      "v4StatusPagesComponentsUpdateComponentByIdRequest",
-  });
-});
-
-/** @internal */
 export type ComponentsUpdateComponentByIdRequest$Outbound = {
   statuspageID: string;
   component_id: string;
@@ -67,21 +49,6 @@ export const ComponentsUpdateComponentByIdRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentsUpdateComponentByIdRequest$ {
-  /** @deprecated use `ComponentsUpdateComponentByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentsUpdateComponentByIdRequest$inboundSchema;
-  /** @deprecated use `ComponentsUpdateComponentByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentsUpdateComponentByIdRequest$outboundSchema;
-  /** @deprecated use `ComponentsUpdateComponentByIdRequest$Outbound` instead. */
-  export type Outbound = ComponentsUpdateComponentByIdRequest$Outbound;
-}
-
 export function componentsUpdateComponentByIdRequestToJSON(
   componentsUpdateComponentByIdRequest: ComponentsUpdateComponentByIdRequest,
 ): string {
@@ -89,17 +56,6 @@ export function componentsUpdateComponentByIdRequestToJSON(
     ComponentsUpdateComponentByIdRequest$outboundSchema.parse(
       componentsUpdateComponentByIdRequest,
     ),
-  );
-}
-
-export function componentsUpdateComponentByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ComponentsUpdateComponentByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ComponentsUpdateComponentByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComponentsUpdateComponentByIdRequest' from JSON`,
   );
 }
 
@@ -111,46 +67,6 @@ export const ComponentsUpdateComponentByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4StatusPagesComponentsUpdateComponentByIdResponse$inboundSchema,
 });
-
-/** @internal */
-export type ComponentsUpdateComponentByIdResponse$Outbound = {
-  data: models.V4StatusPagesComponentsUpdateComponentByIdResponse$Outbound;
-};
-
-/** @internal */
-export const ComponentsUpdateComponentByIdResponse$outboundSchema: z.ZodType<
-  ComponentsUpdateComponentByIdResponse$Outbound,
-  z.ZodTypeDef,
-  ComponentsUpdateComponentByIdResponse
-> = z.object({
-  data:
-    models.V4StatusPagesComponentsUpdateComponentByIdResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentsUpdateComponentByIdResponse$ {
-  /** @deprecated use `ComponentsUpdateComponentByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentsUpdateComponentByIdResponse$inboundSchema;
-  /** @deprecated use `ComponentsUpdateComponentByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentsUpdateComponentByIdResponse$outboundSchema;
-  /** @deprecated use `ComponentsUpdateComponentByIdResponse$Outbound` instead. */
-  export type Outbound = ComponentsUpdateComponentByIdResponse$Outbound;
-}
-
-export function componentsUpdateComponentByIdResponseToJSON(
-  componentsUpdateComponentByIdResponse: ComponentsUpdateComponentByIdResponse,
-): string {
-  return JSON.stringify(
-    ComponentsUpdateComponentByIdResponse$outboundSchema.parse(
-      componentsUpdateComponentByIdResponse,
-    ),
-  );
-}
 
 export function componentsUpdateComponentByIdResponseFromJSON(
   jsonString: string,

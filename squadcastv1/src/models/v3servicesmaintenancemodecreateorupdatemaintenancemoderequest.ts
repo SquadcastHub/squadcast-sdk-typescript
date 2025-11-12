@@ -3,12 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesMaintenanceModeServiceMaintenance,
-  V3ServicesMaintenanceModeServiceMaintenance$inboundSchema,
   V3ServicesMaintenanceModeServiceMaintenance$Outbound,
   V3ServicesMaintenanceModeServiceMaintenance$outboundSchema,
 } from "./v3servicesmaintenancemodeservicemaintenance.js";
@@ -17,19 +13,6 @@ export type V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest = {
   onMaintenance: boolean;
   serviceMaintenance: Array<V3ServicesMaintenanceModeServiceMaintenance>;
 };
-
-/** @internal */
-export const V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$inboundSchema:
-  z.ZodType<
-    V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    onMaintenance: z.boolean(),
-    serviceMaintenance: z.array(
-      V3ServicesMaintenanceModeServiceMaintenance$inboundSchema,
-    ),
-  });
 
 /** @internal */
 export type V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$Outbound =
@@ -53,22 +36,6 @@ export const V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$outbo
     ),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$ {
-  /** @deprecated use `V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$inboundSchema;
-  /** @deprecated use `V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$outboundSchema;
-  /** @deprecated use `V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$Outbound` instead. */
-  export type Outbound =
-    V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$Outbound;
-}
-
 export function v3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequestToJSON(
   v3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest:
     V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest,
@@ -76,20 +43,5 @@ export function v3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequestToJ
   return JSON.stringify(
     V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$outboundSchema
       .parse(v3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest),
-  );
-}
-
-export function v3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest' from JSON`,
   );
 }

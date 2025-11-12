@@ -25,25 +25,6 @@ export type AnalyticsGetTeamAnalyticsResponse = {
 };
 
 /** @internal */
-export const AnalyticsGetTeamAnalyticsRequest$inboundSchema: z.ZodType<
-  AnalyticsGetTeamAnalyticsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  owner_id: z.string(),
-  from: z.string(),
-  to: z.string(),
-  user_id: z.string().optional(),
-  service_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-    "user_id": "userId",
-    "service_id": "serviceId",
-  });
-});
-
-/** @internal */
 export type AnalyticsGetTeamAnalyticsRequest$Outbound = {
   owner_id: string;
   from: string;
@@ -71,19 +52,6 @@ export const AnalyticsGetTeamAnalyticsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AnalyticsGetTeamAnalyticsRequest$ {
-  /** @deprecated use `AnalyticsGetTeamAnalyticsRequest$inboundSchema` instead. */
-  export const inboundSchema = AnalyticsGetTeamAnalyticsRequest$inboundSchema;
-  /** @deprecated use `AnalyticsGetTeamAnalyticsRequest$outboundSchema` instead. */
-  export const outboundSchema = AnalyticsGetTeamAnalyticsRequest$outboundSchema;
-  /** @deprecated use `AnalyticsGetTeamAnalyticsRequest$Outbound` instead. */
-  export type Outbound = AnalyticsGetTeamAnalyticsRequest$Outbound;
-}
-
 export function analyticsGetTeamAnalyticsRequestToJSON(
   analyticsGetTeamAnalyticsRequest: AnalyticsGetTeamAnalyticsRequest,
 ): string {
@@ -91,16 +59,6 @@ export function analyticsGetTeamAnalyticsRequestToJSON(
     AnalyticsGetTeamAnalyticsRequest$outboundSchema.parse(
       analyticsGetTeamAnalyticsRequest,
     ),
-  );
-}
-
-export function analyticsGetTeamAnalyticsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<AnalyticsGetTeamAnalyticsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AnalyticsGetTeamAnalyticsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AnalyticsGetTeamAnalyticsRequest' from JSON`,
   );
 }
 
@@ -112,44 +70,6 @@ export const AnalyticsGetTeamAnalyticsResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3AnalyticsAnalyticsResponse$inboundSchema,
 });
-
-/** @internal */
-export type AnalyticsGetTeamAnalyticsResponse$Outbound = {
-  data: models.V3AnalyticsAnalyticsResponse$Outbound;
-};
-
-/** @internal */
-export const AnalyticsGetTeamAnalyticsResponse$outboundSchema: z.ZodType<
-  AnalyticsGetTeamAnalyticsResponse$Outbound,
-  z.ZodTypeDef,
-  AnalyticsGetTeamAnalyticsResponse
-> = z.object({
-  data: models.V3AnalyticsAnalyticsResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AnalyticsGetTeamAnalyticsResponse$ {
-  /** @deprecated use `AnalyticsGetTeamAnalyticsResponse$inboundSchema` instead. */
-  export const inboundSchema = AnalyticsGetTeamAnalyticsResponse$inboundSchema;
-  /** @deprecated use `AnalyticsGetTeamAnalyticsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    AnalyticsGetTeamAnalyticsResponse$outboundSchema;
-  /** @deprecated use `AnalyticsGetTeamAnalyticsResponse$Outbound` instead. */
-  export type Outbound = AnalyticsGetTeamAnalyticsResponse$Outbound;
-}
-
-export function analyticsGetTeamAnalyticsResponseToJSON(
-  analyticsGetTeamAnalyticsResponse: AnalyticsGetTeamAnalyticsResponse,
-): string {
-  return JSON.stringify(
-    AnalyticsGetTeamAnalyticsResponse$outboundSchema.parse(
-      analyticsGetTeamAnalyticsResponse,
-    ),
-  );
-}
 
 export function analyticsGetTeamAnalyticsResponseFromJSON(
   jsonString: string,

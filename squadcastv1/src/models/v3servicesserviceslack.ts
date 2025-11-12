@@ -29,49 +29,6 @@ export const V3ServicesServiceSlack$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3ServicesServiceSlack$Outbound = {
-  channel_id: string;
-  name: string;
-  time: number;
-};
-
-/** @internal */
-export const V3ServicesServiceSlack$outboundSchema: z.ZodType<
-  V3ServicesServiceSlack$Outbound,
-  z.ZodTypeDef,
-  V3ServicesServiceSlack
-> = z.object({
-  channelId: z.string(),
-  name: z.string(),
-  time: z.number().int(),
-}).transform((v) => {
-  return remap$(v, {
-    channelId: "channel_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesServiceSlack$ {
-  /** @deprecated use `V3ServicesServiceSlack$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesServiceSlack$inboundSchema;
-  /** @deprecated use `V3ServicesServiceSlack$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesServiceSlack$outboundSchema;
-  /** @deprecated use `V3ServicesServiceSlack$Outbound` instead. */
-  export type Outbound = V3ServicesServiceSlack$Outbound;
-}
-
-export function v3ServicesServiceSlackToJSON(
-  v3ServicesServiceSlack: V3ServicesServiceSlack,
-): string {
-  return JSON.stringify(
-    V3ServicesServiceSlack$outboundSchema.parse(v3ServicesServiceSlack),
-  );
-}
-
 export function v3ServicesServiceSlackFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesServiceSlack, SDKValidationError> {

@@ -23,23 +23,6 @@ export type PostmortemsUpdatePostmortemByIncidentResponse = {
 };
 
 /** @internal */
-export const PostmortemsUpdatePostmortemByIncidentRequest$inboundSchema:
-  z.ZodType<
-    PostmortemsUpdatePostmortemByIncidentRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incidentID: z.string(),
-    "V3.Incidents.Postmortems.UpdatePostmortemRequest":
-      models.V3IncidentsPostmortemsUpdatePostmortemRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.Incidents.Postmortems.UpdatePostmortemRequest":
-        "v3IncidentsPostmortemsUpdatePostmortemRequest",
-    });
-  });
-
-/** @internal */
 export type PostmortemsUpdatePostmortemByIncidentRequest$Outbound = {
   incidentID: string;
   "V3.Incidents.Postmortems.UpdatePostmortemRequest":
@@ -63,21 +46,6 @@ export const PostmortemsUpdatePostmortemByIncidentRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PostmortemsUpdatePostmortemByIncidentRequest$ {
-  /** @deprecated use `PostmortemsUpdatePostmortemByIncidentRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    PostmortemsUpdatePostmortemByIncidentRequest$inboundSchema;
-  /** @deprecated use `PostmortemsUpdatePostmortemByIncidentRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    PostmortemsUpdatePostmortemByIncidentRequest$outboundSchema;
-  /** @deprecated use `PostmortemsUpdatePostmortemByIncidentRequest$Outbound` instead. */
-  export type Outbound = PostmortemsUpdatePostmortemByIncidentRequest$Outbound;
-}
-
 export function postmortemsUpdatePostmortemByIncidentRequestToJSON(
   postmortemsUpdatePostmortemByIncidentRequest:
     PostmortemsUpdatePostmortemByIncidentRequest,
@@ -86,22 +54,6 @@ export function postmortemsUpdatePostmortemByIncidentRequestToJSON(
     PostmortemsUpdatePostmortemByIncidentRequest$outboundSchema.parse(
       postmortemsUpdatePostmortemByIncidentRequest,
     ),
-  );
-}
-
-export function postmortemsUpdatePostmortemByIncidentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  PostmortemsUpdatePostmortemByIncidentRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      PostmortemsUpdatePostmortemByIncidentRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'PostmortemsUpdatePostmortemByIncidentRequest' from JSON`,
   );
 }
 
@@ -114,47 +66,6 @@ export const PostmortemsUpdatePostmortemByIncidentResponse$inboundSchema:
   > = z.object({
     data: models.V3IncidentsPostmortemsPostmortemResponse$inboundSchema,
   });
-
-/** @internal */
-export type PostmortemsUpdatePostmortemByIncidentResponse$Outbound = {
-  data: models.V3IncidentsPostmortemsPostmortemResponse$Outbound;
-};
-
-/** @internal */
-export const PostmortemsUpdatePostmortemByIncidentResponse$outboundSchema:
-  z.ZodType<
-    PostmortemsUpdatePostmortemByIncidentResponse$Outbound,
-    z.ZodTypeDef,
-    PostmortemsUpdatePostmortemByIncidentResponse
-  > = z.object({
-    data: models.V3IncidentsPostmortemsPostmortemResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PostmortemsUpdatePostmortemByIncidentResponse$ {
-  /** @deprecated use `PostmortemsUpdatePostmortemByIncidentResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    PostmortemsUpdatePostmortemByIncidentResponse$inboundSchema;
-  /** @deprecated use `PostmortemsUpdatePostmortemByIncidentResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    PostmortemsUpdatePostmortemByIncidentResponse$outboundSchema;
-  /** @deprecated use `PostmortemsUpdatePostmortemByIncidentResponse$Outbound` instead. */
-  export type Outbound = PostmortemsUpdatePostmortemByIncidentResponse$Outbound;
-}
-
-export function postmortemsUpdatePostmortemByIncidentResponseToJSON(
-  postmortemsUpdatePostmortemByIncidentResponse:
-    PostmortemsUpdatePostmortemByIncidentResponse,
-): string {
-  return JSON.stringify(
-    PostmortemsUpdatePostmortemByIncidentResponse$outboundSchema.parse(
-      postmortemsUpdatePostmortemByIncidentResponse,
-    ),
-  );
-}
 
 export function postmortemsUpdatePostmortemByIncidentResponseFromJSON(
   jsonString: string,

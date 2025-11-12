@@ -24,17 +24,6 @@ export type IncidentActionsTriggerAWebhookManuallyResponse = {
 };
 
 /** @internal */
-export const IncidentActionsTriggerAWebhookManuallyRequest$inboundSchema:
-  z.ZodType<
-    IncidentActionsTriggerAWebhookManuallyRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incidentID: z.string(),
-    eventWebhookID: z.string(),
-  });
-
-/** @internal */
 export type IncidentActionsTriggerAWebhookManuallyRequest$Outbound = {
   incidentID: string;
   eventWebhookID: string;
@@ -51,21 +40,6 @@ export const IncidentActionsTriggerAWebhookManuallyRequest$outboundSchema:
     eventWebhookID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentActionsTriggerAWebhookManuallyRequest$ {
-  /** @deprecated use `IncidentActionsTriggerAWebhookManuallyRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentActionsTriggerAWebhookManuallyRequest$inboundSchema;
-  /** @deprecated use `IncidentActionsTriggerAWebhookManuallyRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentActionsTriggerAWebhookManuallyRequest$outboundSchema;
-  /** @deprecated use `IncidentActionsTriggerAWebhookManuallyRequest$Outbound` instead. */
-  export type Outbound = IncidentActionsTriggerAWebhookManuallyRequest$Outbound;
-}
-
 export function incidentActionsTriggerAWebhookManuallyRequestToJSON(
   incidentActionsTriggerAWebhookManuallyRequest:
     IncidentActionsTriggerAWebhookManuallyRequest,
@@ -74,22 +48,6 @@ export function incidentActionsTriggerAWebhookManuallyRequestToJSON(
     IncidentActionsTriggerAWebhookManuallyRequest$outboundSchema.parse(
       incidentActionsTriggerAWebhookManuallyRequest,
     ),
-  );
-}
-
-export function incidentActionsTriggerAWebhookManuallyRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  IncidentActionsTriggerAWebhookManuallyRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      IncidentActionsTriggerAWebhookManuallyRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'IncidentActionsTriggerAWebhookManuallyRequest' from JSON`,
   );
 }
 
@@ -102,48 +60,6 @@ export const IncidentActionsTriggerAWebhookManuallyResponse$inboundSchema:
   > = z.object({
     data: models.V3IncidentsIncidentActionsWebhookActionResponse$inboundSchema,
   });
-
-/** @internal */
-export type IncidentActionsTriggerAWebhookManuallyResponse$Outbound = {
-  data: models.V3IncidentsIncidentActionsWebhookActionResponse$Outbound;
-};
-
-/** @internal */
-export const IncidentActionsTriggerAWebhookManuallyResponse$outboundSchema:
-  z.ZodType<
-    IncidentActionsTriggerAWebhookManuallyResponse$Outbound,
-    z.ZodTypeDef,
-    IncidentActionsTriggerAWebhookManuallyResponse
-  > = z.object({
-    data: models.V3IncidentsIncidentActionsWebhookActionResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentActionsTriggerAWebhookManuallyResponse$ {
-  /** @deprecated use `IncidentActionsTriggerAWebhookManuallyResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentActionsTriggerAWebhookManuallyResponse$inboundSchema;
-  /** @deprecated use `IncidentActionsTriggerAWebhookManuallyResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentActionsTriggerAWebhookManuallyResponse$outboundSchema;
-  /** @deprecated use `IncidentActionsTriggerAWebhookManuallyResponse$Outbound` instead. */
-  export type Outbound =
-    IncidentActionsTriggerAWebhookManuallyResponse$Outbound;
-}
-
-export function incidentActionsTriggerAWebhookManuallyResponseToJSON(
-  incidentActionsTriggerAWebhookManuallyResponse:
-    IncidentActionsTriggerAWebhookManuallyResponse,
-): string {
-  return JSON.stringify(
-    IncidentActionsTriggerAWebhookManuallyResponse$outboundSchema.parse(
-      incidentActionsTriggerAWebhookManuallyResponse,
-    ),
-  );
-}
 
 export function incidentActionsTriggerAWebhookManuallyResponseFromJSON(
   jsonString: string,

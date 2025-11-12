@@ -4,10 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3WorkflowsSlackMessageChannelUpdateName = {
   SlackMessageChannel: "slack_message_channel",
@@ -28,43 +25,9 @@ export type V3WorkflowsSlackMessageChannelUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsSlackMessageChannelUpdateName$inboundSchema:
+export const V3WorkflowsSlackMessageChannelUpdateName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSlackMessageChannelUpdateName> = z
     .nativeEnum(V3WorkflowsSlackMessageChannelUpdateName);
-
-/** @internal */
-export const V3WorkflowsSlackMessageChannelUpdateName$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsSlackMessageChannelUpdateName> =
-    V3WorkflowsSlackMessageChannelUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackMessageChannelUpdateName$ {
-  /** @deprecated use `V3WorkflowsSlackMessageChannelUpdateName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSlackMessageChannelUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageChannelUpdateName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSlackMessageChannelUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsSlackMessageChannelUpdateData$inboundSchema: z.ZodType<
-  V3WorkflowsSlackMessageChannelUpdateData,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  channel_id: z.string().optional(),
-  channel_name: z.string().optional(),
-  message: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "channel_id": "channelId",
-    "channel_name": "channelName",
-  });
-});
 
 /** @internal */
 export type V3WorkflowsSlackMessageChannelUpdateData$Outbound = {
@@ -89,21 +52,6 @@ export const V3WorkflowsSlackMessageChannelUpdateData$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackMessageChannelUpdateData$ {
-  /** @deprecated use `V3WorkflowsSlackMessageChannelUpdateData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSlackMessageChannelUpdateData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageChannelUpdateData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSlackMessageChannelUpdateData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageChannelUpdateData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSlackMessageChannelUpdateData$Outbound;
-}
-
 export function v3WorkflowsSlackMessageChannelUpdateDataToJSON(
   v3WorkflowsSlackMessageChannelUpdateData:
     V3WorkflowsSlackMessageChannelUpdateData,
@@ -114,33 +62,6 @@ export function v3WorkflowsSlackMessageChannelUpdateDataToJSON(
     ),
   );
 }
-
-export function v3WorkflowsSlackMessageChannelUpdateDataFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsSlackMessageChannelUpdateData,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSlackMessageChannelUpdateData$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsSlackMessageChannelUpdateData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsSlackMessageChannelUpdate$inboundSchema: z.ZodType<
-  V3WorkflowsSlackMessageChannelUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: V3WorkflowsSlackMessageChannelUpdateName$inboundSchema,
-  data: z.lazy(() => V3WorkflowsSlackMessageChannelUpdateData$inboundSchema)
-    .optional(),
-});
 
 /** @internal */
 export type V3WorkflowsSlackMessageChannelUpdate$Outbound = {
@@ -159,21 +80,6 @@ export const V3WorkflowsSlackMessageChannelUpdate$outboundSchema: z.ZodType<
     .optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackMessageChannelUpdate$ {
-  /** @deprecated use `V3WorkflowsSlackMessageChannelUpdate$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSlackMessageChannelUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageChannelUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSlackMessageChannelUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageChannelUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsSlackMessageChannelUpdate$Outbound;
-}
-
 export function v3WorkflowsSlackMessageChannelUpdateToJSON(
   v3WorkflowsSlackMessageChannelUpdate: V3WorkflowsSlackMessageChannelUpdate,
 ): string {
@@ -181,16 +87,5 @@ export function v3WorkflowsSlackMessageChannelUpdateToJSON(
     V3WorkflowsSlackMessageChannelUpdate$outboundSchema.parse(
       v3WorkflowsSlackMessageChannelUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsSlackMessageChannelUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsSlackMessageChannelUpdate, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSlackMessageChannelUpdate$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsSlackMessageChannelUpdate' from JSON`,
   );
 }

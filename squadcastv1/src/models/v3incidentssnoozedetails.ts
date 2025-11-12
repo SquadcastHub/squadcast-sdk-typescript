@@ -41,54 +41,6 @@ export const V3IncidentsSnoozeDetails$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3IncidentsSnoozeDetails$Outbound = {
-  is_snoozed: boolean;
-  start_time: string | null;
-  end_time: string | null;
-  total_time_in_mins: number;
-};
-
-/** @internal */
-export const V3IncidentsSnoozeDetails$outboundSchema: z.ZodType<
-  V3IncidentsSnoozeDetails$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsSnoozeDetails
-> = z.object({
-  isSnoozed: z.boolean(),
-  startTime: z.nullable(z.date().transform(v => v.toISOString())),
-  endTime: z.nullable(z.date().transform(v => v.toISOString())),
-  totalTimeInMins: z.number().int(),
-}).transform((v) => {
-  return remap$(v, {
-    isSnoozed: "is_snoozed",
-    startTime: "start_time",
-    endTime: "end_time",
-    totalTimeInMins: "total_time_in_mins",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsSnoozeDetails$ {
-  /** @deprecated use `V3IncidentsSnoozeDetails$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsSnoozeDetails$inboundSchema;
-  /** @deprecated use `V3IncidentsSnoozeDetails$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsSnoozeDetails$outboundSchema;
-  /** @deprecated use `V3IncidentsSnoozeDetails$Outbound` instead. */
-  export type Outbound = V3IncidentsSnoozeDetails$Outbound;
-}
-
-export function v3IncidentsSnoozeDetailsToJSON(
-  v3IncidentsSnoozeDetails: V3IncidentsSnoozeDetails,
-): string {
-  return JSON.stringify(
-    V3IncidentsSnoozeDetails$outboundSchema.parse(v3IncidentsSnoozeDetails),
-  );
-}
-
 export function v3IncidentsSnoozeDetailsFromJSON(
   jsonString: string,
 ): SafeParseResult<V3IncidentsSnoozeDetails, SDKValidationError> {

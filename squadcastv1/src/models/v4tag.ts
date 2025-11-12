@@ -20,7 +20,6 @@ export const V4Tag$inboundSchema: z.ZodType<V4Tag, z.ZodTypeDef, unknown> = z
     value: z.string(),
     color: z.string(),
   });
-
 /** @internal */
 export type V4Tag$Outbound = {
   key: string;
@@ -39,23 +38,9 @@ export const V4Tag$outboundSchema: z.ZodType<
   color: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4Tag$ {
-  /** @deprecated use `V4Tag$inboundSchema` instead. */
-  export const inboundSchema = V4Tag$inboundSchema;
-  /** @deprecated use `V4Tag$outboundSchema` instead. */
-  export const outboundSchema = V4Tag$outboundSchema;
-  /** @deprecated use `V4Tag$Outbound` instead. */
-  export type Outbound = V4Tag$Outbound;
-}
-
 export function v4TagToJSON(v4Tag: V4Tag): string {
   return JSON.stringify(V4Tag$outboundSchema.parse(v4Tag));
 }
-
 export function v4TagFromJSON(
   jsonString: string,
 ): SafeParseResult<V4Tag, SDKValidationError> {

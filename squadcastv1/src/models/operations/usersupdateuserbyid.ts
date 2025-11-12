@@ -25,20 +25,6 @@ export type UsersUpdateUserByIDResponse = {
 };
 
 /** @internal */
-export const UsersUpdateUserByIDRequest$inboundSchema: z.ZodType<
-  UsersUpdateUserByIDRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  userID: z.string(),
-  "V3.Users.UpdateUserRequest": models.V3UsersUpdateUserRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Users.UpdateUserRequest": "v3UsersUpdateUserRequest",
-  });
-});
-
-/** @internal */
 export type UsersUpdateUserByIDRequest$Outbound = {
   userID: string;
   "V3.Users.UpdateUserRequest": models.V3UsersUpdateUserRequest$Outbound;
@@ -58,34 +44,11 @@ export const UsersUpdateUserByIDRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersUpdateUserByIDRequest$ {
-  /** @deprecated use `UsersUpdateUserByIDRequest$inboundSchema` instead. */
-  export const inboundSchema = UsersUpdateUserByIDRequest$inboundSchema;
-  /** @deprecated use `UsersUpdateUserByIDRequest$outboundSchema` instead. */
-  export const outboundSchema = UsersUpdateUserByIDRequest$outboundSchema;
-  /** @deprecated use `UsersUpdateUserByIDRequest$Outbound` instead. */
-  export type Outbound = UsersUpdateUserByIDRequest$Outbound;
-}
-
 export function usersUpdateUserByIDRequestToJSON(
   usersUpdateUserByIDRequest: UsersUpdateUserByIDRequest,
 ): string {
   return JSON.stringify(
     UsersUpdateUserByIDRequest$outboundSchema.parse(usersUpdateUserByIDRequest),
-  );
-}
-
-export function usersUpdateUserByIDRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UsersUpdateUserByIDRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UsersUpdateUserByIDRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UsersUpdateUserByIDRequest' from JSON`,
   );
 }
 
@@ -97,43 +60,6 @@ export const UsersUpdateUserByIDResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3UsersUserResponse$inboundSchema,
 });
-
-/** @internal */
-export type UsersUpdateUserByIDResponse$Outbound = {
-  data: models.V3UsersUserResponse$Outbound;
-};
-
-/** @internal */
-export const UsersUpdateUserByIDResponse$outboundSchema: z.ZodType<
-  UsersUpdateUserByIDResponse$Outbound,
-  z.ZodTypeDef,
-  UsersUpdateUserByIDResponse
-> = z.object({
-  data: models.V3UsersUserResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersUpdateUserByIDResponse$ {
-  /** @deprecated use `UsersUpdateUserByIDResponse$inboundSchema` instead. */
-  export const inboundSchema = UsersUpdateUserByIDResponse$inboundSchema;
-  /** @deprecated use `UsersUpdateUserByIDResponse$outboundSchema` instead. */
-  export const outboundSchema = UsersUpdateUserByIDResponse$outboundSchema;
-  /** @deprecated use `UsersUpdateUserByIDResponse$Outbound` instead. */
-  export type Outbound = UsersUpdateUserByIDResponse$Outbound;
-}
-
-export function usersUpdateUserByIDResponseToJSON(
-  usersUpdateUserByIDResponse: UsersUpdateUserByIDResponse,
-): string {
-  return JSON.stringify(
-    UsersUpdateUserByIDResponse$outboundSchema.parse(
-      usersUpdateUserByIDResponse,
-    ),
-  );
-}
 
 export function usersUpdateUserByIDResponseFromJSON(
   jsonString: string,

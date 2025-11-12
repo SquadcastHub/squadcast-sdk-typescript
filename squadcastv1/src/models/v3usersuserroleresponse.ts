@@ -26,47 +26,6 @@ export const V3UsersUserRoleResponse$inboundSchema: z.ZodType<
   order: z.number().int(),
 });
 
-/** @internal */
-export type V3UsersUserRoleResponse$Outbound = {
-  id: string;
-  name: string;
-  limit: number;
-  order: number;
-};
-
-/** @internal */
-export const V3UsersUserRoleResponse$outboundSchema: z.ZodType<
-  V3UsersUserRoleResponse$Outbound,
-  z.ZodTypeDef,
-  V3UsersUserRoleResponse
-> = z.object({
-  id: z.string(),
-  name: z.string(),
-  limit: z.number().int(),
-  order: z.number().int(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3UsersUserRoleResponse$ {
-  /** @deprecated use `V3UsersUserRoleResponse$inboundSchema` instead. */
-  export const inboundSchema = V3UsersUserRoleResponse$inboundSchema;
-  /** @deprecated use `V3UsersUserRoleResponse$outboundSchema` instead. */
-  export const outboundSchema = V3UsersUserRoleResponse$outboundSchema;
-  /** @deprecated use `V3UsersUserRoleResponse$Outbound` instead. */
-  export type Outbound = V3UsersUserRoleResponse$Outbound;
-}
-
-export function v3UsersUserRoleResponseToJSON(
-  v3UsersUserRoleResponse: V3UsersUserRoleResponse,
-): string {
-  return JSON.stringify(
-    V3UsersUserRoleResponse$outboundSchema.parse(v3UsersUserRoleResponse),
-  );
-}
-
 export function v3UsersUserRoleResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V3UsersUserRoleResponse, SDKValidationError> {

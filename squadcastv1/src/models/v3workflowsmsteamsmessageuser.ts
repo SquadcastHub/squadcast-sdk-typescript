@@ -30,23 +30,10 @@ export type V3WorkflowsMsTeamsMessageUser = {
 export const V3WorkflowsMsTeamsMessageUserName$inboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsMsTeamsMessageUserName
 > = z.nativeEnum(V3WorkflowsMsTeamsMessageUserName);
-
 /** @internal */
 export const V3WorkflowsMsTeamsMessageUserName$outboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsMsTeamsMessageUserName
 > = V3WorkflowsMsTeamsMessageUserName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsMessageUserName$ {
-  /** @deprecated use `V3WorkflowsMsTeamsMessageUserName$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsMsTeamsMessageUserName$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageUserName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsMsTeamsMessageUserName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsMsTeamsMessageUserData$inboundSchema: z.ZodType<
@@ -61,7 +48,6 @@ export const V3WorkflowsMsTeamsMessageUserData$inboundSchema: z.ZodType<
     "member_id": "memberId",
   });
 });
-
 /** @internal */
 export type V3WorkflowsMsTeamsMessageUserData$Outbound = {
   member_id: string;
@@ -82,20 +68,6 @@ export const V3WorkflowsMsTeamsMessageUserData$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsMessageUserData$ {
-  /** @deprecated use `V3WorkflowsMsTeamsMessageUserData$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsMsTeamsMessageUserData$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageUserData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsMsTeamsMessageUserData$outboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageUserData$Outbound` instead. */
-  export type Outbound = V3WorkflowsMsTeamsMessageUserData$Outbound;
-}
-
 export function v3WorkflowsMsTeamsMessageUserDataToJSON(
   v3WorkflowsMsTeamsMessageUserData: V3WorkflowsMsTeamsMessageUserData,
 ): string {
@@ -105,7 +77,6 @@ export function v3WorkflowsMsTeamsMessageUserDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsMsTeamsMessageUserDataFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsMsTeamsMessageUserData, SDKValidationError> {
@@ -125,7 +96,6 @@ export const V3WorkflowsMsTeamsMessageUser$inboundSchema: z.ZodType<
   name: V3WorkflowsMsTeamsMessageUserName$inboundSchema,
   data: z.lazy(() => V3WorkflowsMsTeamsMessageUserData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsMsTeamsMessageUser$Outbound = {
   name: string;
@@ -142,19 +112,6 @@ export const V3WorkflowsMsTeamsMessageUser$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsMsTeamsMessageUserData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsMessageUser$ {
-  /** @deprecated use `V3WorkflowsMsTeamsMessageUser$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsMsTeamsMessageUser$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageUser$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsMsTeamsMessageUser$outboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageUser$Outbound` instead. */
-  export type Outbound = V3WorkflowsMsTeamsMessageUser$Outbound;
-}
-
 export function v3WorkflowsMsTeamsMessageUserToJSON(
   v3WorkflowsMsTeamsMessageUser: V3WorkflowsMsTeamsMessageUser,
 ): string {
@@ -164,7 +121,6 @@ export function v3WorkflowsMsTeamsMessageUserToJSON(
     ),
   );
 }
-
 export function v3WorkflowsMsTeamsMessageUserFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsMsTeamsMessageUser, SDKValidationError> {

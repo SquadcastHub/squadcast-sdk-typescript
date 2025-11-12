@@ -26,23 +26,10 @@ export type V3GlobalEventRulesEntityOwner = {
 export const V3GlobalEventRulesEntityOwnerType$inboundSchema: z.ZodNativeEnum<
   typeof V3GlobalEventRulesEntityOwnerType
 > = z.nativeEnum(V3GlobalEventRulesEntityOwnerType);
-
 /** @internal */
 export const V3GlobalEventRulesEntityOwnerType$outboundSchema: z.ZodNativeEnum<
   typeof V3GlobalEventRulesEntityOwnerType
 > = V3GlobalEventRulesEntityOwnerType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesEntityOwnerType$ {
-  /** @deprecated use `V3GlobalEventRulesEntityOwnerType$inboundSchema` instead. */
-  export const inboundSchema = V3GlobalEventRulesEntityOwnerType$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesEntityOwnerType$outboundSchema` instead. */
-  export const outboundSchema =
-    V3GlobalEventRulesEntityOwnerType$outboundSchema;
-}
 
 /** @internal */
 export const V3GlobalEventRulesEntityOwner$inboundSchema: z.ZodType<
@@ -53,7 +40,6 @@ export const V3GlobalEventRulesEntityOwner$inboundSchema: z.ZodType<
   id: z.string(),
   type: V3GlobalEventRulesEntityOwnerType$inboundSchema,
 });
-
 /** @internal */
 export type V3GlobalEventRulesEntityOwner$Outbound = {
   id: string;
@@ -70,19 +56,6 @@ export const V3GlobalEventRulesEntityOwner$outboundSchema: z.ZodType<
   type: V3GlobalEventRulesEntityOwnerType$outboundSchema,
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesEntityOwner$ {
-  /** @deprecated use `V3GlobalEventRulesEntityOwner$inboundSchema` instead. */
-  export const inboundSchema = V3GlobalEventRulesEntityOwner$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesEntityOwner$outboundSchema` instead. */
-  export const outboundSchema = V3GlobalEventRulesEntityOwner$outboundSchema;
-  /** @deprecated use `V3GlobalEventRulesEntityOwner$Outbound` instead. */
-  export type Outbound = V3GlobalEventRulesEntityOwner$Outbound;
-}
-
 export function v3GlobalEventRulesEntityOwnerToJSON(
   v3GlobalEventRulesEntityOwner: V3GlobalEventRulesEntityOwner,
 ): string {
@@ -92,7 +65,6 @@ export function v3GlobalEventRulesEntityOwnerToJSON(
     ),
   );
 }
-
 export function v3GlobalEventRulesEntityOwnerFromJSON(
   jsonString: string,
 ): SafeParseResult<V3GlobalEventRulesEntityOwner, SDKValidationError> {

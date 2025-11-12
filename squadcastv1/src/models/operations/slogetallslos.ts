@@ -34,21 +34,6 @@ export type SLOGetAllSLOsResponse = {
 };
 
 /** @internal */
-export const SLOGetAllSLOsRequest$inboundSchema: z.ZodType<
-  SLOGetAllSLOsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  owner_id: z.string(),
-  offset: z.string(),
-  limit: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-  });
-});
-
-/** @internal */
 export type SLOGetAllSLOsRequest$Outbound = {
   owner_id: string;
   offset: string;
@@ -70,34 +55,11 @@ export const SLOGetAllSLOsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOGetAllSLOsRequest$ {
-  /** @deprecated use `SLOGetAllSLOsRequest$inboundSchema` instead. */
-  export const inboundSchema = SLOGetAllSLOsRequest$inboundSchema;
-  /** @deprecated use `SLOGetAllSLOsRequest$outboundSchema` instead. */
-  export const outboundSchema = SLOGetAllSLOsRequest$outboundSchema;
-  /** @deprecated use `SLOGetAllSLOsRequest$Outbound` instead. */
-  export type Outbound = SLOGetAllSLOsRequest$Outbound;
-}
-
 export function sloGetAllSLOsRequestToJSON(
   sloGetAllSLOsRequest: SLOGetAllSLOsRequest,
 ): string {
   return JSON.stringify(
     SLOGetAllSLOsRequest$outboundSchema.parse(sloGetAllSLOsRequest),
-  );
-}
-
-export function sloGetAllSLOsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SLOGetAllSLOsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SLOGetAllSLOsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SLOGetAllSLOsRequest' from JSON`,
   );
 }
 
@@ -111,45 +73,6 @@ export const SLOGetAllSLOsMeta$inboundSchema: z.ZodType<
   offset: z.number().int(),
   limit: z.number().int(),
 });
-
-/** @internal */
-export type SLOGetAllSLOsMeta$Outbound = {
-  total: number;
-  offset: number;
-  limit: number;
-};
-
-/** @internal */
-export const SLOGetAllSLOsMeta$outboundSchema: z.ZodType<
-  SLOGetAllSLOsMeta$Outbound,
-  z.ZodTypeDef,
-  SLOGetAllSLOsMeta
-> = z.object({
-  total: z.number().int(),
-  offset: z.number().int(),
-  limit: z.number().int(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOGetAllSLOsMeta$ {
-  /** @deprecated use `SLOGetAllSLOsMeta$inboundSchema` instead. */
-  export const inboundSchema = SLOGetAllSLOsMeta$inboundSchema;
-  /** @deprecated use `SLOGetAllSLOsMeta$outboundSchema` instead. */
-  export const outboundSchema = SLOGetAllSLOsMeta$outboundSchema;
-  /** @deprecated use `SLOGetAllSLOsMeta$Outbound` instead. */
-  export type Outbound = SLOGetAllSLOsMeta$Outbound;
-}
-
-export function sloGetAllSLOsMetaToJSON(
-  sloGetAllSLOsMeta: SLOGetAllSLOsMeta,
-): string {
-  return JSON.stringify(
-    SLOGetAllSLOsMeta$outboundSchema.parse(sloGetAllSLOsMeta),
-  );
-}
 
 export function sloGetAllSLOsMetaFromJSON(
   jsonString: string,
@@ -171,43 +94,6 @@ export const SLOGetAllSLOsData$inboundSchema: z.ZodType<
   slos: z.array(models.V3SloSlo$inboundSchema),
 });
 
-/** @internal */
-export type SLOGetAllSLOsData$Outbound = {
-  meta: SLOGetAllSLOsMeta$Outbound;
-  slos: Array<models.V3SloSlo$Outbound>;
-};
-
-/** @internal */
-export const SLOGetAllSLOsData$outboundSchema: z.ZodType<
-  SLOGetAllSLOsData$Outbound,
-  z.ZodTypeDef,
-  SLOGetAllSLOsData
-> = z.object({
-  meta: z.lazy(() => SLOGetAllSLOsMeta$outboundSchema),
-  slos: z.array(models.V3SloSlo$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOGetAllSLOsData$ {
-  /** @deprecated use `SLOGetAllSLOsData$inboundSchema` instead. */
-  export const inboundSchema = SLOGetAllSLOsData$inboundSchema;
-  /** @deprecated use `SLOGetAllSLOsData$outboundSchema` instead. */
-  export const outboundSchema = SLOGetAllSLOsData$outboundSchema;
-  /** @deprecated use `SLOGetAllSLOsData$Outbound` instead. */
-  export type Outbound = SLOGetAllSLOsData$Outbound;
-}
-
-export function sloGetAllSLOsDataToJSON(
-  sloGetAllSLOsData: SLOGetAllSLOsData,
-): string {
-  return JSON.stringify(
-    SLOGetAllSLOsData$outboundSchema.parse(sloGetAllSLOsData),
-  );
-}
-
 export function sloGetAllSLOsDataFromJSON(
   jsonString: string,
 ): SafeParseResult<SLOGetAllSLOsData, SDKValidationError> {
@@ -226,41 +112,6 @@ export const SLOGetAllSLOsResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => SLOGetAllSLOsData$inboundSchema),
 });
-
-/** @internal */
-export type SLOGetAllSLOsResponse$Outbound = {
-  data: SLOGetAllSLOsData$Outbound;
-};
-
-/** @internal */
-export const SLOGetAllSLOsResponse$outboundSchema: z.ZodType<
-  SLOGetAllSLOsResponse$Outbound,
-  z.ZodTypeDef,
-  SLOGetAllSLOsResponse
-> = z.object({
-  data: z.lazy(() => SLOGetAllSLOsData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOGetAllSLOsResponse$ {
-  /** @deprecated use `SLOGetAllSLOsResponse$inboundSchema` instead. */
-  export const inboundSchema = SLOGetAllSLOsResponse$inboundSchema;
-  /** @deprecated use `SLOGetAllSLOsResponse$outboundSchema` instead. */
-  export const outboundSchema = SLOGetAllSLOsResponse$outboundSchema;
-  /** @deprecated use `SLOGetAllSLOsResponse$Outbound` instead. */
-  export type Outbound = SLOGetAllSLOsResponse$Outbound;
-}
-
-export function sloGetAllSLOsResponseToJSON(
-  sloGetAllSLOsResponse: SLOGetAllSLOsResponse,
-): string {
-  return JSON.stringify(
-    SLOGetAllSLOsResponse$outboundSchema.parse(sloGetAllSLOsResponse),
-  );
-}
 
 export function sloGetAllSLOsResponseFromJSON(
   jsonString: string,

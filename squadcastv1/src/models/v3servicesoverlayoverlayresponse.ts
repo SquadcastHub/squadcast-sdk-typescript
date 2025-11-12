@@ -11,8 +11,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesOverlayDedupKeyOverlay,
   V3ServicesOverlayDedupKeyOverlay$inboundSchema,
-  V3ServicesOverlayDedupKeyOverlay$Outbound,
-  V3ServicesOverlayDedupKeyOverlay$outboundSchema,
 } from "./v3servicesoverlaydedupkeyoverlay.js";
 
 export const V3ServicesOverlayOverlayResponseOverlayTemplateType = {
@@ -41,24 +39,6 @@ export type V3ServicesOverlayOverlayResponse = {
 export const V3ServicesOverlayOverlayResponseOverlayTemplateType$inboundSchema:
   z.ZodNativeEnum<typeof V3ServicesOverlayOverlayResponseOverlayTemplateType> =
     z.nativeEnum(V3ServicesOverlayOverlayResponseOverlayTemplateType);
-
-/** @internal */
-export const V3ServicesOverlayOverlayResponseOverlayTemplateType$outboundSchema:
-  z.ZodNativeEnum<typeof V3ServicesOverlayOverlayResponseOverlayTemplateType> =
-    V3ServicesOverlayOverlayResponseOverlayTemplateType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesOverlayOverlayResponseOverlayTemplateType$ {
-  /** @deprecated use `V3ServicesOverlayOverlayResponseOverlayTemplateType$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesOverlayOverlayResponseOverlayTemplateType$inboundSchema;
-  /** @deprecated use `V3ServicesOverlayOverlayResponseOverlayTemplateType$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesOverlayOverlayResponseOverlayTemplateType$outboundSchema;
-}
 
 /** @internal */
 export const V3ServicesOverlayOverlayResponse$inboundSchema: z.ZodType<
@@ -96,80 +76,6 @@ export const V3ServicesOverlayOverlayResponse$inboundSchema: z.ZodType<
     "alert_source_type": "alertSourceType",
   });
 });
-
-/** @internal */
-export type V3ServicesOverlayOverlayResponse$Outbound = {
-  created_at: string;
-  updated_at: string;
-  deleted_at: string | null;
-  org_id: string;
-  service_id: string;
-  alert_source_version: string;
-  alert_source_shortname: string;
-  overlay_template_type: string;
-  overlay: V3ServicesOverlayDedupKeyOverlay$Outbound;
-  created_by: string;
-  updated_by: string;
-  alert_source_type: string;
-};
-
-/** @internal */
-export const V3ServicesOverlayOverlayResponse$outboundSchema: z.ZodType<
-  V3ServicesOverlayOverlayResponse$Outbound,
-  z.ZodTypeDef,
-  V3ServicesOverlayOverlayResponse
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()),
-  updatedAt: z.date().transform(v => v.toISOString()),
-  deletedAt: z.nullable(z.date().transform(v => v.toISOString())),
-  orgId: z.string(),
-  serviceId: z.string(),
-  alertSourceVersion: z.string(),
-  alertSourceShortname: z.string(),
-  overlayTemplateType:
-    V3ServicesOverlayOverlayResponseOverlayTemplateType$outboundSchema,
-  overlay: V3ServicesOverlayDedupKeyOverlay$outboundSchema,
-  createdBy: z.string(),
-  updatedBy: z.string(),
-  alertSourceType: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-    deletedAt: "deleted_at",
-    orgId: "org_id",
-    serviceId: "service_id",
-    alertSourceVersion: "alert_source_version",
-    alertSourceShortname: "alert_source_shortname",
-    overlayTemplateType: "overlay_template_type",
-    createdBy: "created_by",
-    updatedBy: "updated_by",
-    alertSourceType: "alert_source_type",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesOverlayOverlayResponse$ {
-  /** @deprecated use `V3ServicesOverlayOverlayResponse$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesOverlayOverlayResponse$inboundSchema;
-  /** @deprecated use `V3ServicesOverlayOverlayResponse$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesOverlayOverlayResponse$outboundSchema;
-  /** @deprecated use `V3ServicesOverlayOverlayResponse$Outbound` instead. */
-  export type Outbound = V3ServicesOverlayOverlayResponse$Outbound;
-}
-
-export function v3ServicesOverlayOverlayResponseToJSON(
-  v3ServicesOverlayOverlayResponse: V3ServicesOverlayOverlayResponse,
-): string {
-  return JSON.stringify(
-    V3ServicesOverlayOverlayResponse$outboundSchema.parse(
-      v3ServicesOverlayOverlayResponse,
-    ),
-  );
-}
 
 export function v3ServicesOverlayOverlayResponseFromJSON(
   jsonString: string,

@@ -24,41 +24,6 @@ export const UsersGetAllTokensResponse$inboundSchema: z.ZodType<
   data: z.array(models.V3UsersApiTokenResponse$inboundSchema),
 });
 
-/** @internal */
-export type UsersGetAllTokensResponse$Outbound = {
-  data: Array<models.V3UsersApiTokenResponse$Outbound>;
-};
-
-/** @internal */
-export const UsersGetAllTokensResponse$outboundSchema: z.ZodType<
-  UsersGetAllTokensResponse$Outbound,
-  z.ZodTypeDef,
-  UsersGetAllTokensResponse
-> = z.object({
-  data: z.array(models.V3UsersApiTokenResponse$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersGetAllTokensResponse$ {
-  /** @deprecated use `UsersGetAllTokensResponse$inboundSchema` instead. */
-  export const inboundSchema = UsersGetAllTokensResponse$inboundSchema;
-  /** @deprecated use `UsersGetAllTokensResponse$outboundSchema` instead. */
-  export const outboundSchema = UsersGetAllTokensResponse$outboundSchema;
-  /** @deprecated use `UsersGetAllTokensResponse$Outbound` instead. */
-  export type Outbound = UsersGetAllTokensResponse$Outbound;
-}
-
-export function usersGetAllTokensResponseToJSON(
-  usersGetAllTokensResponse: UsersGetAllTokensResponse,
-): string {
-  return JSON.stringify(
-    UsersGetAllTokensResponse$outboundSchema.parse(usersGetAllTokensResponse),
-  );
-}
-
 export function usersGetAllTokensResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<UsersGetAllTokensResponse, SDKValidationError> {

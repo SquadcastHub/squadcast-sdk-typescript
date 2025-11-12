@@ -22,21 +22,6 @@ export type WebhooksUpdateWebhookResponse = {
 };
 
 /** @internal */
-export const WebhooksUpdateWebhookRequest$inboundSchema: z.ZodType<
-  WebhooksUpdateWebhookRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  eventWebhookID: z.string(),
-  "V3.Extensions.Webhooks.Webhook":
-    models.V3ExtensionsWebhooksWebhook$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Extensions.Webhooks.Webhook": "v3ExtensionsWebhooksWebhook",
-  });
-});
-
-/** @internal */
 export type WebhooksUpdateWebhookRequest$Outbound = {
   eventWebhookID: string;
   "V3.Extensions.Webhooks.Webhook": models.V3ExtensionsWebhooksWebhook$Outbound;
@@ -57,19 +42,6 @@ export const WebhooksUpdateWebhookRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebhooksUpdateWebhookRequest$ {
-  /** @deprecated use `WebhooksUpdateWebhookRequest$inboundSchema` instead. */
-  export const inboundSchema = WebhooksUpdateWebhookRequest$inboundSchema;
-  /** @deprecated use `WebhooksUpdateWebhookRequest$outboundSchema` instead. */
-  export const outboundSchema = WebhooksUpdateWebhookRequest$outboundSchema;
-  /** @deprecated use `WebhooksUpdateWebhookRequest$Outbound` instead. */
-  export type Outbound = WebhooksUpdateWebhookRequest$Outbound;
-}
-
 export function webhooksUpdateWebhookRequestToJSON(
   webhooksUpdateWebhookRequest: WebhooksUpdateWebhookRequest,
 ): string {
@@ -77,16 +49,6 @@ export function webhooksUpdateWebhookRequestToJSON(
     WebhooksUpdateWebhookRequest$outboundSchema.parse(
       webhooksUpdateWebhookRequest,
     ),
-  );
-}
-
-export function webhooksUpdateWebhookRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WebhooksUpdateWebhookRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => WebhooksUpdateWebhookRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WebhooksUpdateWebhookRequest' from JSON`,
   );
 }
 
@@ -98,43 +60,6 @@ export const WebhooksUpdateWebhookResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3ExtensionsWebhooksWebhookResponse$inboundSchema,
 });
-
-/** @internal */
-export type WebhooksUpdateWebhookResponse$Outbound = {
-  data: models.V3ExtensionsWebhooksWebhookResponse$Outbound;
-};
-
-/** @internal */
-export const WebhooksUpdateWebhookResponse$outboundSchema: z.ZodType<
-  WebhooksUpdateWebhookResponse$Outbound,
-  z.ZodTypeDef,
-  WebhooksUpdateWebhookResponse
-> = z.object({
-  data: models.V3ExtensionsWebhooksWebhookResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebhooksUpdateWebhookResponse$ {
-  /** @deprecated use `WebhooksUpdateWebhookResponse$inboundSchema` instead. */
-  export const inboundSchema = WebhooksUpdateWebhookResponse$inboundSchema;
-  /** @deprecated use `WebhooksUpdateWebhookResponse$outboundSchema` instead. */
-  export const outboundSchema = WebhooksUpdateWebhookResponse$outboundSchema;
-  /** @deprecated use `WebhooksUpdateWebhookResponse$Outbound` instead. */
-  export type Outbound = WebhooksUpdateWebhookResponse$Outbound;
-}
-
-export function webhooksUpdateWebhookResponseToJSON(
-  webhooksUpdateWebhookResponse: WebhooksUpdateWebhookResponse,
-): string {
-  return JSON.stringify(
-    WebhooksUpdateWebhookResponse$outboundSchema.parse(
-      webhooksUpdateWebhookResponse,
-    ),
-  );
-}
 
 export function webhooksUpdateWebhookResponseFromJSON(
   jsonString: string,

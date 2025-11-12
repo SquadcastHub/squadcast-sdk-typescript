@@ -3,12 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4ShiftTimeSlot,
-  V4ShiftTimeSlot$inboundSchema,
   V4ShiftTimeSlot$Outbound,
   V4ShiftTimeSlot$outboundSchema,
 } from "./v4shifttimeslot.js";
@@ -26,25 +22,6 @@ export type V4UpdateRotationRequest = {
   endDate?: string | undefined;
   endsAfterIterations?: number | undefined;
 };
-
-/** @internal */
-export const V4UpdateRotationRequest$inboundSchema: z.ZodType<
-  V4UpdateRotationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  color: z.string().optional(),
-  startDate: z.string(),
-  period: z.string(),
-  customPeriodFrequency: z.number().int().optional(),
-  customPeriodUnit: z.string().optional(),
-  shiftTimeSlots: z.array(V4ShiftTimeSlot$inboundSchema).optional(),
-  changeParticipantsFrequency: z.number().int(),
-  changeParticipantsUnit: z.string(),
-  endDate: z.string().optional(),
-  endsAfterIterations: z.number().int().optional(),
-});
 
 /** @internal */
 export type V4UpdateRotationRequest$Outbound = {
@@ -80,33 +57,10 @@ export const V4UpdateRotationRequest$outboundSchema: z.ZodType<
   endsAfterIterations: z.number().int().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4UpdateRotationRequest$ {
-  /** @deprecated use `V4UpdateRotationRequest$inboundSchema` instead. */
-  export const inboundSchema = V4UpdateRotationRequest$inboundSchema;
-  /** @deprecated use `V4UpdateRotationRequest$outboundSchema` instead. */
-  export const outboundSchema = V4UpdateRotationRequest$outboundSchema;
-  /** @deprecated use `V4UpdateRotationRequest$Outbound` instead. */
-  export type Outbound = V4UpdateRotationRequest$Outbound;
-}
-
 export function v4UpdateRotationRequestToJSON(
   v4UpdateRotationRequest: V4UpdateRotationRequest,
 ): string {
   return JSON.stringify(
     V4UpdateRotationRequest$outboundSchema.parse(v4UpdateRotationRequest),
-  );
-}
-
-export function v4UpdateRotationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V4UpdateRotationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V4UpdateRotationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V4UpdateRotationRequest' from JSON`,
   );
 }

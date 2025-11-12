@@ -3,12 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesRoutingRulesRoutingRule,
-  V3ServicesRoutingRulesRoutingRule$inboundSchema,
   V3ServicesRoutingRulesRoutingRule$Outbound,
   V3ServicesRoutingRulesRoutingRule$outboundSchema,
 } from "./v3servicesroutingrulesroutingrule.js";
@@ -16,16 +12,6 @@ import {
 export type V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest = {
   rules: Array<V3ServicesRoutingRulesRoutingRule>;
 };
-
-/** @internal */
-export const V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$inboundSchema:
-  z.ZodType<
-    V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    rules: z.array(V3ServicesRoutingRulesRoutingRule$inboundSchema),
-  });
 
 /** @internal */
 export type V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$Outbound = {
@@ -42,22 +28,6 @@ export const V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$outboundSch
     rules: z.array(V3ServicesRoutingRulesRoutingRule$outboundSchema),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$ {
-  /** @deprecated use `V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$inboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$outboundSchema;
-  /** @deprecated use `V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$Outbound` instead. */
-  export type Outbound =
-    V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$Outbound;
-}
-
 export function v3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequestToJSON(
   v3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest:
     V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest,
@@ -65,20 +35,5 @@ export function v3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequestToJSON(
   return JSON.stringify(
     V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$outboundSchema
       .parse(v3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest),
-  );
-}
-
-export function v3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesRoutingRulesCreateOrUpdateRoutingRulesRequest' from JSON`,
   );
 }

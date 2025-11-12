@@ -22,19 +22,6 @@ export type SquadsGetAllSquadsResponse = {
 };
 
 /** @internal */
-export const SquadsGetAllSquadsRequest$inboundSchema: z.ZodType<
-  SquadsGetAllSquadsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  owner_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-  });
-});
-
-/** @internal */
 export type SquadsGetAllSquadsRequest$Outbound = {
   owner_id: string;
 };
@@ -52,34 +39,11 @@ export const SquadsGetAllSquadsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SquadsGetAllSquadsRequest$ {
-  /** @deprecated use `SquadsGetAllSquadsRequest$inboundSchema` instead. */
-  export const inboundSchema = SquadsGetAllSquadsRequest$inboundSchema;
-  /** @deprecated use `SquadsGetAllSquadsRequest$outboundSchema` instead. */
-  export const outboundSchema = SquadsGetAllSquadsRequest$outboundSchema;
-  /** @deprecated use `SquadsGetAllSquadsRequest$Outbound` instead. */
-  export type Outbound = SquadsGetAllSquadsRequest$Outbound;
-}
-
 export function squadsGetAllSquadsRequestToJSON(
   squadsGetAllSquadsRequest: SquadsGetAllSquadsRequest,
 ): string {
   return JSON.stringify(
     SquadsGetAllSquadsRequest$outboundSchema.parse(squadsGetAllSquadsRequest),
-  );
-}
-
-export function squadsGetAllSquadsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SquadsGetAllSquadsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SquadsGetAllSquadsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SquadsGetAllSquadsRequest' from JSON`,
   );
 }
 
@@ -92,43 +56,6 @@ export const SquadsGetAllSquadsResponse$inboundSchema: z.ZodType<
   data: z.array(models.V4SquadsSquadResponse$inboundSchema),
   pageInfo: models.CommonV4PageInfo$inboundSchema,
 });
-
-/** @internal */
-export type SquadsGetAllSquadsResponse$Outbound = {
-  data: Array<models.V4SquadsSquadResponse$Outbound>;
-  pageInfo: models.CommonV4PageInfo$Outbound;
-};
-
-/** @internal */
-export const SquadsGetAllSquadsResponse$outboundSchema: z.ZodType<
-  SquadsGetAllSquadsResponse$Outbound,
-  z.ZodTypeDef,
-  SquadsGetAllSquadsResponse
-> = z.object({
-  data: z.array(models.V4SquadsSquadResponse$outboundSchema),
-  pageInfo: models.CommonV4PageInfo$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SquadsGetAllSquadsResponse$ {
-  /** @deprecated use `SquadsGetAllSquadsResponse$inboundSchema` instead. */
-  export const inboundSchema = SquadsGetAllSquadsResponse$inboundSchema;
-  /** @deprecated use `SquadsGetAllSquadsResponse$outboundSchema` instead. */
-  export const outboundSchema = SquadsGetAllSquadsResponse$outboundSchema;
-  /** @deprecated use `SquadsGetAllSquadsResponse$Outbound` instead. */
-  export type Outbound = SquadsGetAllSquadsResponse$Outbound;
-}
-
-export function squadsGetAllSquadsResponseToJSON(
-  squadsGetAllSquadsResponse: SquadsGetAllSquadsResponse,
-): string {
-  return JSON.stringify(
-    SquadsGetAllSquadsResponse$outboundSchema.parse(squadsGetAllSquadsResponse),
-  );
-}
 
 export function squadsGetAllSquadsResponseFromJSON(
   jsonString: string,

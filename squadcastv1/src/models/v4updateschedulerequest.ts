@@ -3,16 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
-import {
-  V4Tag,
-  V4Tag$inboundSchema,
-  V4Tag$Outbound,
-  V4Tag$outboundSchema,
-} from "./v4tag.js";
+import { V4Tag, V4Tag$Outbound, V4Tag$outboundSchema } from "./v4tag.js";
 
 export const V4UpdateScheduleRequestOwnerType = {
   User: "user",
@@ -31,38 +23,9 @@ export type V4UpdateScheduleRequest = {
 };
 
 /** @internal */
-export const V4UpdateScheduleRequestOwnerType$inboundSchema: z.ZodNativeEnum<
-  typeof V4UpdateScheduleRequestOwnerType
-> = z.nativeEnum(V4UpdateScheduleRequestOwnerType);
-
-/** @internal */
 export const V4UpdateScheduleRequestOwnerType$outboundSchema: z.ZodNativeEnum<
   typeof V4UpdateScheduleRequestOwnerType
-> = V4UpdateScheduleRequestOwnerType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4UpdateScheduleRequestOwnerType$ {
-  /** @deprecated use `V4UpdateScheduleRequestOwnerType$inboundSchema` instead. */
-  export const inboundSchema = V4UpdateScheduleRequestOwnerType$inboundSchema;
-  /** @deprecated use `V4UpdateScheduleRequestOwnerType$outboundSchema` instead. */
-  export const outboundSchema = V4UpdateScheduleRequestOwnerType$outboundSchema;
-}
-
-/** @internal */
-export const V4UpdateScheduleRequest$inboundSchema: z.ZodType<
-  V4UpdateScheduleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  description: z.string(),
-  ownerID: z.string(),
-  ownerType: V4UpdateScheduleRequestOwnerType$inboundSchema,
-  tags: z.array(V4Tag$inboundSchema),
-});
+> = z.nativeEnum(V4UpdateScheduleRequestOwnerType);
 
 /** @internal */
 export type V4UpdateScheduleRequest$Outbound = {
@@ -86,33 +49,10 @@ export const V4UpdateScheduleRequest$outboundSchema: z.ZodType<
   tags: z.array(V4Tag$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4UpdateScheduleRequest$ {
-  /** @deprecated use `V4UpdateScheduleRequest$inboundSchema` instead. */
-  export const inboundSchema = V4UpdateScheduleRequest$inboundSchema;
-  /** @deprecated use `V4UpdateScheduleRequest$outboundSchema` instead. */
-  export const outboundSchema = V4UpdateScheduleRequest$outboundSchema;
-  /** @deprecated use `V4UpdateScheduleRequest$Outbound` instead. */
-  export type Outbound = V4UpdateScheduleRequest$Outbound;
-}
-
 export function v4UpdateScheduleRequestToJSON(
   v4UpdateScheduleRequest: V4UpdateScheduleRequest,
 ): string {
   return JSON.stringify(
     V4UpdateScheduleRequest$outboundSchema.parse(v4UpdateScheduleRequest),
-  );
-}
-
-export function v4UpdateScheduleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V4UpdateScheduleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V4UpdateScheduleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V4UpdateScheduleRequest' from JSON`,
   );
 }

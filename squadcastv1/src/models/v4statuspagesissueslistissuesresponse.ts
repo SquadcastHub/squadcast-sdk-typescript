@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4StatusPagesIssuesIssue,
   V4StatusPagesIssuesIssue$inboundSchema,
-  V4StatusPagesIssuesIssue$Outbound,
-  V4StatusPagesIssuesIssue$outboundSchema,
 } from "./v4statuspagesissuesissue.js";
 
 export type V4StatusPagesIssuesListIssuesResponseMeta = {
@@ -30,47 +28,6 @@ export const V4StatusPagesIssuesListIssuesResponseMeta$inboundSchema: z.ZodType<
 > = z.object({
   totalCount: z.number().int(),
 });
-
-/** @internal */
-export type V4StatusPagesIssuesListIssuesResponseMeta$Outbound = {
-  totalCount: number;
-};
-
-/** @internal */
-export const V4StatusPagesIssuesListIssuesResponseMeta$outboundSchema:
-  z.ZodType<
-    V4StatusPagesIssuesListIssuesResponseMeta$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesIssuesListIssuesResponseMeta
-  > = z.object({
-    totalCount: z.number().int(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesIssuesListIssuesResponseMeta$ {
-  /** @deprecated use `V4StatusPagesIssuesListIssuesResponseMeta$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesIssuesListIssuesResponseMeta$inboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesListIssuesResponseMeta$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesIssuesListIssuesResponseMeta$outboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesListIssuesResponseMeta$Outbound` instead. */
-  export type Outbound = V4StatusPagesIssuesListIssuesResponseMeta$Outbound;
-}
-
-export function v4StatusPagesIssuesListIssuesResponseMetaToJSON(
-  v4StatusPagesIssuesListIssuesResponseMeta:
-    V4StatusPagesIssuesListIssuesResponseMeta,
-): string {
-  return JSON.stringify(
-    V4StatusPagesIssuesListIssuesResponseMeta$outboundSchema.parse(
-      v4StatusPagesIssuesListIssuesResponseMeta,
-    ),
-  );
-}
 
 export function v4StatusPagesIssuesListIssuesResponseMetaFromJSON(
   jsonString: string,
@@ -97,47 +54,6 @@ export const V4StatusPagesIssuesListIssuesResponse$inboundSchema: z.ZodType<
   data: z.array(V4StatusPagesIssuesIssue$inboundSchema),
   meta: z.lazy(() => V4StatusPagesIssuesListIssuesResponseMeta$inboundSchema),
 });
-
-/** @internal */
-export type V4StatusPagesIssuesListIssuesResponse$Outbound = {
-  data: Array<V4StatusPagesIssuesIssue$Outbound>;
-  meta: V4StatusPagesIssuesListIssuesResponseMeta$Outbound;
-};
-
-/** @internal */
-export const V4StatusPagesIssuesListIssuesResponse$outboundSchema: z.ZodType<
-  V4StatusPagesIssuesListIssuesResponse$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesIssuesListIssuesResponse
-> = z.object({
-  data: z.array(V4StatusPagesIssuesIssue$outboundSchema),
-  meta: z.lazy(() => V4StatusPagesIssuesListIssuesResponseMeta$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesIssuesListIssuesResponse$ {
-  /** @deprecated use `V4StatusPagesIssuesListIssuesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesIssuesListIssuesResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesListIssuesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesIssuesListIssuesResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesListIssuesResponse$Outbound` instead. */
-  export type Outbound = V4StatusPagesIssuesListIssuesResponse$Outbound;
-}
-
-export function v4StatusPagesIssuesListIssuesResponseToJSON(
-  v4StatusPagesIssuesListIssuesResponse: V4StatusPagesIssuesListIssuesResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesIssuesListIssuesResponse$outboundSchema.parse(
-      v4StatusPagesIssuesListIssuesResponse,
-    ),
-  );
-}
 
 export function v4StatusPagesIssuesListIssuesResponseFromJSON(
   jsonString: string,

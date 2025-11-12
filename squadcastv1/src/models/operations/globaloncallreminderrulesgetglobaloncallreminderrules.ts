@@ -24,20 +24,6 @@ export type GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse = {
 };
 
 /** @internal */
-export const GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$inboundSchema:
-  z.ZodType<
-    GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    owner_id: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      "owner_id": "ownerId",
-    });
-  });
-
-/** @internal */
 export type GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$Outbound =
   {
     owner_id: string;
@@ -57,22 +43,6 @@ export const GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$outbou
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$ {
-  /** @deprecated use `GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$inboundSchema;
-  /** @deprecated use `GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$outboundSchema;
-  /** @deprecated use `GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$Outbound` instead. */
-  export type Outbound =
-    GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$Outbound;
-}
-
 export function globalOncallReminderRulesGetGlobalOncallReminderRulesRequestToJSON(
   globalOncallReminderRulesGetGlobalOncallReminderRulesRequest:
     GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest,
@@ -80,21 +50,6 @@ export function globalOncallReminderRulesGetGlobalOncallReminderRulesRequestToJS
   return JSON.stringify(
     GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$outboundSchema
       .parse(globalOncallReminderRulesGetGlobalOncallReminderRulesRequest),
-  );
-}
-
-export function globalOncallReminderRulesGetGlobalOncallReminderRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'GlobalOncallReminderRulesGetGlobalOncallReminderRulesRequest' from JSON`,
   );
 }
 
@@ -109,51 +64,6 @@ export const GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$inbou
       models
         .V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$inboundSchema,
   });
-
-/** @internal */
-export type GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$Outbound =
-  {
-    data:
-      models.V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$Outbound;
-  };
-
-/** @internal */
-export const GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$outboundSchema:
-  z.ZodType<
-    GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$Outbound,
-    z.ZodTypeDef,
-    GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse
-  > = z.object({
-    data:
-      models
-        .V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$ {
-  /** @deprecated use `GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$inboundSchema;
-  /** @deprecated use `GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$outboundSchema;
-  /** @deprecated use `GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$Outbound` instead. */
-  export type Outbound =
-    GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$Outbound;
-}
-
-export function globalOncallReminderRulesGetGlobalOncallReminderRulesResponseToJSON(
-  globalOncallReminderRulesGetGlobalOncallReminderRulesResponse:
-    GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse,
-): string {
-  return JSON.stringify(
-    GlobalOncallReminderRulesGetGlobalOncallReminderRulesResponse$outboundSchema
-      .parse(globalOncallReminderRulesGetGlobalOncallReminderRulesResponse),
-  );
-}
 
 export function globalOncallReminderRulesGetGlobalOncallReminderRulesResponseFromJSON(
   jsonString: string,

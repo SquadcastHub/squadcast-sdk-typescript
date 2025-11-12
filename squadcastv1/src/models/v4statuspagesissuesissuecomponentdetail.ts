@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4StatusPagesIssuesComponentStatus,
   V4StatusPagesIssuesComponentStatus$inboundSchema,
-  V4StatusPagesIssuesComponentStatus$Outbound,
-  V4StatusPagesIssuesComponentStatus$outboundSchema,
 } from "./v4statuspagesissuescomponentstatus.js";
 
 export type V4StatusPagesIssuesIssueComponentDetail = {
@@ -32,53 +30,6 @@ export const V4StatusPagesIssuesIssueComponentDetail$inboundSchema: z.ZodType<
   statusMaintenance: V4StatusPagesIssuesComponentStatus$inboundSchema
     .optional(),
 });
-
-/** @internal */
-export type V4StatusPagesIssuesIssueComponentDetail$Outbound = {
-  id?: number | undefined;
-  status?: V4StatusPagesIssuesComponentStatus$Outbound | undefined;
-  underMaintenance?: boolean | undefined;
-  statusMaintenance?: V4StatusPagesIssuesComponentStatus$Outbound | undefined;
-};
-
-/** @internal */
-export const V4StatusPagesIssuesIssueComponentDetail$outboundSchema: z.ZodType<
-  V4StatusPagesIssuesIssueComponentDetail$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesIssuesIssueComponentDetail
-> = z.object({
-  id: z.number().int().optional(),
-  status: V4StatusPagesIssuesComponentStatus$outboundSchema.optional(),
-  underMaintenance: z.boolean().optional(),
-  statusMaintenance: V4StatusPagesIssuesComponentStatus$outboundSchema
-    .optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesIssuesIssueComponentDetail$ {
-  /** @deprecated use `V4StatusPagesIssuesIssueComponentDetail$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesIssuesIssueComponentDetail$inboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesIssueComponentDetail$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesIssuesIssueComponentDetail$outboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesIssueComponentDetail$Outbound` instead. */
-  export type Outbound = V4StatusPagesIssuesIssueComponentDetail$Outbound;
-}
-
-export function v4StatusPagesIssuesIssueComponentDetailToJSON(
-  v4StatusPagesIssuesIssueComponentDetail:
-    V4StatusPagesIssuesIssueComponentDetail,
-): string {
-  return JSON.stringify(
-    V4StatusPagesIssuesIssueComponentDetail$outboundSchema.parse(
-      v4StatusPagesIssuesIssueComponentDetail,
-    ),
-  );
-}
 
 export function v4StatusPagesIssuesIssueComponentDetailFromJSON(
   jsonString: string,

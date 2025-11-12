@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig = {
   startTime?: string | undefined;
@@ -35,24 +32,6 @@ export type V3ServicesNotificationDelayConfigRequest = {
 };
 
 /** @internal */
-export const V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$inboundSchema:
-  z.ZodType<
-    V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    start_time: z.string().optional(),
-    end_time: z.string().optional(),
-    repeat_days: z.array(z.number().int()).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "start_time": "startTime",
-      "end_time": "endTime",
-      "repeat_days": "repeatDays",
-    });
-  });
-
-/** @internal */
 export type V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$Outbound =
   {
     start_time?: string | undefined;
@@ -78,22 +57,6 @@ export const V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$outboun
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$ {
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$inboundSchema;
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$outboundSchema;
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$Outbound` instead. */
-  export type Outbound =
-    V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$Outbound;
-}
-
 export function v3ServicesNotificationDelayConfigRequestFixedTimeslotConfigToJSON(
   v3ServicesNotificationDelayConfigRequestFixedTimeslotConfig:
     V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig,
@@ -103,29 +66,6 @@ export function v3ServicesNotificationDelayConfigRequestFixedTimeslotConfigToJSO
       .parse(v3ServicesNotificationDelayConfigRequestFixedTimeslotConfig),
   );
 }
-
-export function v3ServicesNotificationDelayConfigRequestFixedTimeslotConfigFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3ServicesNotificationDelayConfigRequestCustomTimeslots$inboundSchema:
-  z.ZodType<
-    V3ServicesNotificationDelayConfigRequestCustomTimeslots,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({});
 
 /** @internal */
 export type V3ServicesNotificationDelayConfigRequestCustomTimeslots$Outbound =
@@ -139,22 +79,6 @@ export const V3ServicesNotificationDelayConfigRequestCustomTimeslots$outboundSch
     V3ServicesNotificationDelayConfigRequestCustomTimeslots
   > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesNotificationDelayConfigRequestCustomTimeslots$ {
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequestCustomTimeslots$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesNotificationDelayConfigRequestCustomTimeslots$inboundSchema;
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequestCustomTimeslots$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesNotificationDelayConfigRequestCustomTimeslots$outboundSchema;
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequestCustomTimeslots$Outbound` instead. */
-  export type Outbound =
-    V3ServicesNotificationDelayConfigRequestCustomTimeslots$Outbound;
-}
-
 export function v3ServicesNotificationDelayConfigRequestCustomTimeslotsToJSON(
   v3ServicesNotificationDelayConfigRequestCustomTimeslots:
     V3ServicesNotificationDelayConfigRequestCustomTimeslots,
@@ -164,32 +88,6 @@ export function v3ServicesNotificationDelayConfigRequestCustomTimeslotsToJSON(
       .parse(v3ServicesNotificationDelayConfigRequestCustomTimeslots),
   );
 }
-
-export function v3ServicesNotificationDelayConfigRequestCustomTimeslotsFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesNotificationDelayConfigRequestCustomTimeslots,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesNotificationDelayConfigRequestCustomTimeslots$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesNotificationDelayConfigRequestCustomTimeslots' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3ServicesNotificationDelayConfigRequestAssignedTo$inboundSchema:
-  z.ZodType<
-    V3ServicesNotificationDelayConfigRequestAssignedTo,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    id: z.string().optional(),
-    type: z.string().optional(),
-  });
 
 /** @internal */
 export type V3ServicesNotificationDelayConfigRequestAssignedTo$Outbound = {
@@ -208,22 +106,6 @@ export const V3ServicesNotificationDelayConfigRequestAssignedTo$outboundSchema:
     type: z.string().optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesNotificationDelayConfigRequestAssignedTo$ {
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequestAssignedTo$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesNotificationDelayConfigRequestAssignedTo$inboundSchema;
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequestAssignedTo$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesNotificationDelayConfigRequestAssignedTo$outboundSchema;
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequestAssignedTo$Outbound` instead. */
-  export type Outbound =
-    V3ServicesNotificationDelayConfigRequestAssignedTo$Outbound;
-}
-
 export function v3ServicesNotificationDelayConfigRequestAssignedToToJSON(
   v3ServicesNotificationDelayConfigRequestAssignedTo:
     V3ServicesNotificationDelayConfigRequestAssignedTo,
@@ -234,50 +116,6 @@ export function v3ServicesNotificationDelayConfigRequestAssignedToToJSON(
     ),
   );
 }
-
-export function v3ServicesNotificationDelayConfigRequestAssignedToFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesNotificationDelayConfigRequestAssignedTo,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesNotificationDelayConfigRequestAssignedTo$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3ServicesNotificationDelayConfigRequestAssignedTo' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3ServicesNotificationDelayConfigRequest$inboundSchema: z.ZodType<
-  V3ServicesNotificationDelayConfigRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  is_enabled: z.boolean(),
-  timezone: z.string().optional(),
-  fixed_timeslot_config: z.lazy(() =>
-    V3ServicesNotificationDelayConfigRequestFixedTimeslotConfig$inboundSchema
-  ).optional(),
-  custom_timeslots_enabled: z.boolean().optional(),
-  custom_timeslots: z.lazy(() =>
-    V3ServicesNotificationDelayConfigRequestCustomTimeslots$inboundSchema
-  ).optional(),
-  assigned_to: z.lazy(() =>
-    V3ServicesNotificationDelayConfigRequestAssignedTo$inboundSchema
-  ).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_enabled": "isEnabled",
-    "fixed_timeslot_config": "fixedTimeslotConfig",
-    "custom_timeslots_enabled": "customTimeslotsEnabled",
-    "custom_timeslots": "customTimeslots",
-    "assigned_to": "assignedTo",
-  });
-});
 
 /** @internal */
 export type V3ServicesNotificationDelayConfigRequest$Outbound = {
@@ -323,21 +161,6 @@ export const V3ServicesNotificationDelayConfigRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesNotificationDelayConfigRequest$ {
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesNotificationDelayConfigRequest$inboundSchema;
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesNotificationDelayConfigRequest$outboundSchema;
-  /** @deprecated use `V3ServicesNotificationDelayConfigRequest$Outbound` instead. */
-  export type Outbound = V3ServicesNotificationDelayConfigRequest$Outbound;
-}
-
 export function v3ServicesNotificationDelayConfigRequestToJSON(
   v3ServicesNotificationDelayConfigRequest:
     V3ServicesNotificationDelayConfigRequest,
@@ -346,21 +169,5 @@ export function v3ServicesNotificationDelayConfigRequestToJSON(
     V3ServicesNotificationDelayConfigRequest$outboundSchema.parse(
       v3ServicesNotificationDelayConfigRequest,
     ),
-  );
-}
-
-export function v3ServicesNotificationDelayConfigRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesNotificationDelayConfigRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesNotificationDelayConfigRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3ServicesNotificationDelayConfigRequest' from JSON`,
   );
 }

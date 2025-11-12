@@ -25,21 +25,7 @@ export const V3IncidentsPostmortemsPostmortemStatus$inboundSchema:
   z.ZodNativeEnum<typeof V3IncidentsPostmortemsPostmortemStatus> = z.nativeEnum(
     V3IncidentsPostmortemsPostmortemStatus,
   );
-
 /** @internal */
 export const V3IncidentsPostmortemsPostmortemStatus$outboundSchema:
   z.ZodNativeEnum<typeof V3IncidentsPostmortemsPostmortemStatus> =
     V3IncidentsPostmortemsPostmortemStatus$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsPostmortemsPostmortemStatus$ {
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemStatus$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsPostmortemsPostmortemStatus$inboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemStatus$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsPostmortemsPostmortemStatus$outboundSchema;
-}

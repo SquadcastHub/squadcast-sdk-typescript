@@ -54,19 +54,6 @@ export type IncidentsGetIncidentEventsResponse = {
 };
 
 /** @internal */
-export const IncidentsGetIncidentEventsRequest$inboundSchema: z.ZodType<
-  IncidentsGetIncidentEventsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  incidentID: z.string(),
-  offset: z.string(),
-  limit: z.string(),
-  sort: z.string(),
-  deduped: z.string(),
-});
-
-/** @internal */
 export type IncidentsGetIncidentEventsRequest$Outbound = {
   incidentID: string;
   offset: string;
@@ -88,20 +75,6 @@ export const IncidentsGetIncidentEventsRequest$outboundSchema: z.ZodType<
   deduped: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsGetIncidentEventsRequest$ {
-  /** @deprecated use `IncidentsGetIncidentEventsRequest$inboundSchema` instead. */
-  export const inboundSchema = IncidentsGetIncidentEventsRequest$inboundSchema;
-  /** @deprecated use `IncidentsGetIncidentEventsRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsGetIncidentEventsRequest$outboundSchema;
-  /** @deprecated use `IncidentsGetIncidentEventsRequest$Outbound` instead. */
-  export type Outbound = IncidentsGetIncidentEventsRequest$Outbound;
-}
-
 export function incidentsGetIncidentEventsRequestToJSON(
   incidentsGetIncidentEventsRequest: IncidentsGetIncidentEventsRequest,
 ): string {
@@ -109,16 +82,6 @@ export function incidentsGetIncidentEventsRequestToJSON(
     IncidentsGetIncidentEventsRequest$outboundSchema.parse(
       incidentsGetIncidentEventsRequest,
     ),
-  );
-}
-
-export function incidentsGetIncidentEventsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<IncidentsGetIncidentEventsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IncidentsGetIncidentEventsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IncidentsGetIncidentEventsRequest' from JSON`,
   );
 }
 
@@ -130,43 +93,6 @@ export const IncidentsGetIncidentEventsData$inboundSchema: z.ZodType<
 > = z.object({
   events: z.array(models.V3IncidentsIncidentEventResponse$inboundSchema),
 });
-
-/** @internal */
-export type IncidentsGetIncidentEventsData$Outbound = {
-  events: Array<models.V3IncidentsIncidentEventResponse$Outbound>;
-};
-
-/** @internal */
-export const IncidentsGetIncidentEventsData$outboundSchema: z.ZodType<
-  IncidentsGetIncidentEventsData$Outbound,
-  z.ZodTypeDef,
-  IncidentsGetIncidentEventsData
-> = z.object({
-  events: z.array(models.V3IncidentsIncidentEventResponse$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsGetIncidentEventsData$ {
-  /** @deprecated use `IncidentsGetIncidentEventsData$inboundSchema` instead. */
-  export const inboundSchema = IncidentsGetIncidentEventsData$inboundSchema;
-  /** @deprecated use `IncidentsGetIncidentEventsData$outboundSchema` instead. */
-  export const outboundSchema = IncidentsGetIncidentEventsData$outboundSchema;
-  /** @deprecated use `IncidentsGetIncidentEventsData$Outbound` instead. */
-  export type Outbound = IncidentsGetIncidentEventsData$Outbound;
-}
-
-export function incidentsGetIncidentEventsDataToJSON(
-  incidentsGetIncidentEventsData: IncidentsGetIncidentEventsData,
-): string {
-  return JSON.stringify(
-    IncidentsGetIncidentEventsData$outboundSchema.parse(
-      incidentsGetIncidentEventsData,
-    ),
-  );
-}
 
 export function incidentsGetIncidentEventsDataFromJSON(
   jsonString: string,
@@ -190,49 +116,6 @@ export const IncidentsGetIncidentEventsMeta$inboundSchema: z.ZodType<
   next: z.string().optional(),
 });
 
-/** @internal */
-export type IncidentsGetIncidentEventsMeta$Outbound = {
-  total: number;
-  count: number;
-  current: string;
-  next?: string | undefined;
-};
-
-/** @internal */
-export const IncidentsGetIncidentEventsMeta$outboundSchema: z.ZodType<
-  IncidentsGetIncidentEventsMeta$Outbound,
-  z.ZodTypeDef,
-  IncidentsGetIncidentEventsMeta
-> = z.object({
-  total: z.number().int(),
-  count: z.number().int(),
-  current: z.string(),
-  next: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsGetIncidentEventsMeta$ {
-  /** @deprecated use `IncidentsGetIncidentEventsMeta$inboundSchema` instead. */
-  export const inboundSchema = IncidentsGetIncidentEventsMeta$inboundSchema;
-  /** @deprecated use `IncidentsGetIncidentEventsMeta$outboundSchema` instead. */
-  export const outboundSchema = IncidentsGetIncidentEventsMeta$outboundSchema;
-  /** @deprecated use `IncidentsGetIncidentEventsMeta$Outbound` instead. */
-  export type Outbound = IncidentsGetIncidentEventsMeta$Outbound;
-}
-
-export function incidentsGetIncidentEventsMetaToJSON(
-  incidentsGetIncidentEventsMeta: IncidentsGetIncidentEventsMeta,
-): string {
-  return JSON.stringify(
-    IncidentsGetIncidentEventsMeta$outboundSchema.parse(
-      incidentsGetIncidentEventsMeta,
-    ),
-  );
-}
-
 export function incidentsGetIncidentEventsMetaFromJSON(
   jsonString: string,
 ): SafeParseResult<IncidentsGetIncidentEventsMeta, SDKValidationError> {
@@ -252,46 +135,6 @@ export const IncidentsGetIncidentEventsResponse$inboundSchema: z.ZodType<
   data: z.lazy(() => IncidentsGetIncidentEventsData$inboundSchema),
   meta: z.lazy(() => IncidentsGetIncidentEventsMeta$inboundSchema),
 });
-
-/** @internal */
-export type IncidentsGetIncidentEventsResponse$Outbound = {
-  data: IncidentsGetIncidentEventsData$Outbound;
-  meta: IncidentsGetIncidentEventsMeta$Outbound;
-};
-
-/** @internal */
-export const IncidentsGetIncidentEventsResponse$outboundSchema: z.ZodType<
-  IncidentsGetIncidentEventsResponse$Outbound,
-  z.ZodTypeDef,
-  IncidentsGetIncidentEventsResponse
-> = z.object({
-  data: z.lazy(() => IncidentsGetIncidentEventsData$outboundSchema),
-  meta: z.lazy(() => IncidentsGetIncidentEventsMeta$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsGetIncidentEventsResponse$ {
-  /** @deprecated use `IncidentsGetIncidentEventsResponse$inboundSchema` instead. */
-  export const inboundSchema = IncidentsGetIncidentEventsResponse$inboundSchema;
-  /** @deprecated use `IncidentsGetIncidentEventsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsGetIncidentEventsResponse$outboundSchema;
-  /** @deprecated use `IncidentsGetIncidentEventsResponse$Outbound` instead. */
-  export type Outbound = IncidentsGetIncidentEventsResponse$Outbound;
-}
-
-export function incidentsGetIncidentEventsResponseToJSON(
-  incidentsGetIncidentEventsResponse: IncidentsGetIncidentEventsResponse,
-): string {
-  return JSON.stringify(
-    IncidentsGetIncidentEventsResponse$outboundSchema.parse(
-      incidentsGetIncidentEventsResponse,
-    ),
-  );
-}
 
 export function incidentsGetIncidentEventsResponseFromJSON(
   jsonString: string,

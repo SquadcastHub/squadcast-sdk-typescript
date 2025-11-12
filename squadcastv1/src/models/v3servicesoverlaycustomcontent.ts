@@ -22,45 +22,6 @@ export const V3ServicesOverlayCustomContent$inboundSchema: z.ZodType<
   description: z.string(),
 });
 
-/** @internal */
-export type V3ServicesOverlayCustomContent$Outbound = {
-  message: string;
-  description: string;
-};
-
-/** @internal */
-export const V3ServicesOverlayCustomContent$outboundSchema: z.ZodType<
-  V3ServicesOverlayCustomContent$Outbound,
-  z.ZodTypeDef,
-  V3ServicesOverlayCustomContent
-> = z.object({
-  message: z.string(),
-  description: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesOverlayCustomContent$ {
-  /** @deprecated use `V3ServicesOverlayCustomContent$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesOverlayCustomContent$inboundSchema;
-  /** @deprecated use `V3ServicesOverlayCustomContent$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesOverlayCustomContent$outboundSchema;
-  /** @deprecated use `V3ServicesOverlayCustomContent$Outbound` instead. */
-  export type Outbound = V3ServicesOverlayCustomContent$Outbound;
-}
-
-export function v3ServicesOverlayCustomContentToJSON(
-  v3ServicesOverlayCustomContent: V3ServicesOverlayCustomContent,
-): string {
-  return JSON.stringify(
-    V3ServicesOverlayCustomContent$outboundSchema.parse(
-      v3ServicesOverlayCustomContent,
-    ),
-  );
-}
-
 export function v3ServicesOverlayCustomContentFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesOverlayCustomContent, SDKValidationError> {

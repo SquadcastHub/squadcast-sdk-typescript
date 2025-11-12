@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as models from "../index.js";
 
 export type WorkflowsUpdateWorkflowActionRequest = {
@@ -16,22 +13,6 @@ export type WorkflowsUpdateWorkflowActionRequest = {
     | models.V3WorkflowsActionRequestUpdate
     | undefined;
 };
-
-/** @internal */
-export const WorkflowsUpdateWorkflowActionRequest$inboundSchema: z.ZodType<
-  WorkflowsUpdateWorkflowActionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  workflowID: z.string(),
-  actionID: z.string(),
-  "V3.Workflows.ActionRequestUpdate": models
-    .V3WorkflowsActionRequestUpdate$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Workflows.ActionRequestUpdate": "v3WorkflowsActionRequestUpdate",
-  });
-});
 
 /** @internal */
 export type WorkflowsUpdateWorkflowActionRequest$Outbound = {
@@ -58,21 +39,6 @@ export const WorkflowsUpdateWorkflowActionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WorkflowsUpdateWorkflowActionRequest$ {
-  /** @deprecated use `WorkflowsUpdateWorkflowActionRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    WorkflowsUpdateWorkflowActionRequest$inboundSchema;
-  /** @deprecated use `WorkflowsUpdateWorkflowActionRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    WorkflowsUpdateWorkflowActionRequest$outboundSchema;
-  /** @deprecated use `WorkflowsUpdateWorkflowActionRequest$Outbound` instead. */
-  export type Outbound = WorkflowsUpdateWorkflowActionRequest$Outbound;
-}
-
 export function workflowsUpdateWorkflowActionRequestToJSON(
   workflowsUpdateWorkflowActionRequest: WorkflowsUpdateWorkflowActionRequest,
 ): string {
@@ -80,16 +46,5 @@ export function workflowsUpdateWorkflowActionRequestToJSON(
     WorkflowsUpdateWorkflowActionRequest$outboundSchema.parse(
       workflowsUpdateWorkflowActionRequest,
     ),
-  );
-}
-
-export function workflowsUpdateWorkflowActionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WorkflowsUpdateWorkflowActionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      WorkflowsUpdateWorkflowActionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WorkflowsUpdateWorkflowActionRequest' from JSON`,
   );
 }

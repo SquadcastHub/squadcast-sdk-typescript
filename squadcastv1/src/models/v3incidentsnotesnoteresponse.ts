@@ -46,45 +46,6 @@ export const User$inboundSchema: z.ZodType<User, z.ZodTypeDef, unknown> = z
     });
   });
 
-/** @internal */
-export type User$Outbound = {
-  id: string;
-  first_name: string;
-  last_name: string;
-  deleted: boolean;
-};
-
-/** @internal */
-export const User$outboundSchema: z.ZodType<User$Outbound, z.ZodTypeDef, User> =
-  z.object({
-    id: z.string(),
-    firstName: z.string(),
-    lastName: z.string(),
-    deleted: z.boolean(),
-  }).transform((v) => {
-    return remap$(v, {
-      firstName: "first_name",
-      lastName: "last_name",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace User$ {
-  /** @deprecated use `User$inboundSchema` instead. */
-  export const inboundSchema = User$inboundSchema;
-  /** @deprecated use `User$outboundSchema` instead. */
-  export const outboundSchema = User$outboundSchema;
-  /** @deprecated use `User$Outbound` instead. */
-  export type Outbound = User$Outbound;
-}
-
-export function userToJSON(user: User): string {
-  return JSON.stringify(User$outboundSchema.parse(user));
-}
-
 export function userFromJSON(
   jsonString: string,
 ): SafeParseResult<User, SDKValidationError> {
@@ -122,72 +83,6 @@ export const V3IncidentsNotesNoteResponse$inboundSchema: z.ZodType<
     "replaced_message": "replacedMessage",
   });
 });
-
-/** @internal */
-export type V3IncidentsNotesNoteResponse$Outbound = {
-  id: string;
-  created_at: string;
-  updated_at: string;
-  organization_id: string;
-  incident_id: string;
-  user_id: string;
-  message: string;
-  type: string;
-  attachments: Array<string>;
-  user: User$Outbound;
-  replaced_message: string;
-};
-
-/** @internal */
-export const V3IncidentsNotesNoteResponse$outboundSchema: z.ZodType<
-  V3IncidentsNotesNoteResponse$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsNotesNoteResponse
-> = z.object({
-  id: z.string(),
-  createdAt: z.string(),
-  updatedAt: z.string(),
-  organizationId: z.string(),
-  incidentId: z.string(),
-  userId: z.string(),
-  message: z.string(),
-  type: z.string(),
-  attachments: z.array(z.string()),
-  user: z.lazy(() => User$outboundSchema),
-  replacedMessage: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-    organizationId: "organization_id",
-    incidentId: "incident_id",
-    userId: "user_id",
-    replacedMessage: "replaced_message",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsNotesNoteResponse$ {
-  /** @deprecated use `V3IncidentsNotesNoteResponse$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsNotesNoteResponse$inboundSchema;
-  /** @deprecated use `V3IncidentsNotesNoteResponse$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsNotesNoteResponse$outboundSchema;
-  /** @deprecated use `V3IncidentsNotesNoteResponse$Outbound` instead. */
-  export type Outbound = V3IncidentsNotesNoteResponse$Outbound;
-}
-
-export function v3IncidentsNotesNoteResponseToJSON(
-  v3IncidentsNotesNoteResponse: V3IncidentsNotesNoteResponse,
-): string {
-  return JSON.stringify(
-    V3IncidentsNotesNoteResponse$outboundSchema.parse(
-      v3IncidentsNotesNoteResponse,
-    ),
-  );
-}
 
 export function v3IncidentsNotesNoteResponseFromJSON(
   jsonString: string,

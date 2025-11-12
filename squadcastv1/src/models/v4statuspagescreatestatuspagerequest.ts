@@ -3,19 +3,14 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4StatusPagesNewStatusPageComponentList,
-  V4StatusPagesNewStatusPageComponentList$inboundSchema,
   V4StatusPagesNewStatusPageComponentList$Outbound,
   V4StatusPagesNewStatusPageComponentList$outboundSchema,
 } from "./v4statuspagesnewstatuspagecomponentlist.js";
 import {
   V4StatusPagesNewStatusPageThemeColor,
-  V4StatusPagesNewStatusPageThemeColor$inboundSchema,
   V4StatusPagesNewStatusPageThemeColor$Outbound,
   V4StatusPagesNewStatusPageThemeColor$outboundSchema,
 } from "./v4statuspagesnewstatuspagethemecolor.js";
@@ -49,52 +44,9 @@ export type V4StatusPagesCreateStatusPageRequest = {
 };
 
 /** @internal */
-export const V4StatusPagesCreateStatusPageRequestOwnerType$inboundSchema:
+export const V4StatusPagesCreateStatusPageRequestOwnerType$outboundSchema:
   z.ZodNativeEnum<typeof V4StatusPagesCreateStatusPageRequestOwnerType> = z
     .nativeEnum(V4StatusPagesCreateStatusPageRequestOwnerType);
-
-/** @internal */
-export const V4StatusPagesCreateStatusPageRequestOwnerType$outboundSchema:
-  z.ZodNativeEnum<typeof V4StatusPagesCreateStatusPageRequestOwnerType> =
-    V4StatusPagesCreateStatusPageRequestOwnerType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesCreateStatusPageRequestOwnerType$ {
-  /** @deprecated use `V4StatusPagesCreateStatusPageRequestOwnerType$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesCreateStatusPageRequestOwnerType$inboundSchema;
-  /** @deprecated use `V4StatusPagesCreateStatusPageRequestOwnerType$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesCreateStatusPageRequestOwnerType$outboundSchema;
-}
-
-/** @internal */
-export const V4StatusPagesCreateStatusPageRequest$inboundSchema: z.ZodType<
-  V4StatusPagesCreateStatusPageRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  description: z.string().optional(),
-  isPublic: z.boolean().optional(),
-  domainName: z.string(),
-  customDomainName: z.string().optional(),
-  logoUrl: z.string(),
-  timezone: z.string(),
-  teamID: z.string(),
-  themeColor: V4StatusPagesNewStatusPageThemeColor$inboundSchema.optional(),
-  components: z.array(V4StatusPagesNewStatusPageComponentList$inboundSchema)
-    .optional(),
-  contactEmail: z.string(),
-  allowWebhookSubscription: z.boolean().optional(),
-  allowComponentsSubscription: z.boolean().optional(),
-  allowMaintenanceSubscription: z.boolean().optional(),
-  ownerType: V4StatusPagesCreateStatusPageRequestOwnerType$inboundSchema,
-  ownerID: z.string(),
-});
 
 /** @internal */
 export type V4StatusPagesCreateStatusPageRequest$Outbound = {
@@ -143,21 +95,6 @@ export const V4StatusPagesCreateStatusPageRequest$outboundSchema: z.ZodType<
   ownerID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesCreateStatusPageRequest$ {
-  /** @deprecated use `V4StatusPagesCreateStatusPageRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesCreateStatusPageRequest$inboundSchema;
-  /** @deprecated use `V4StatusPagesCreateStatusPageRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesCreateStatusPageRequest$outboundSchema;
-  /** @deprecated use `V4StatusPagesCreateStatusPageRequest$Outbound` instead. */
-  export type Outbound = V4StatusPagesCreateStatusPageRequest$Outbound;
-}
-
 export function v4StatusPagesCreateStatusPageRequestToJSON(
   v4StatusPagesCreateStatusPageRequest: V4StatusPagesCreateStatusPageRequest,
 ): string {
@@ -165,16 +102,5 @@ export function v4StatusPagesCreateStatusPageRequestToJSON(
     V4StatusPagesCreateStatusPageRequest$outboundSchema.parse(
       v4StatusPagesCreateStatusPageRequest,
     ),
-  );
-}
-
-export function v4StatusPagesCreateStatusPageRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V4StatusPagesCreateStatusPageRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V4StatusPagesCreateStatusPageRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V4StatusPagesCreateStatusPageRequest' from JSON`,
   );
 }

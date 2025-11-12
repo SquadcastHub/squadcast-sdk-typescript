@@ -46,61 +46,6 @@ export const V3IncidentsPinnedMessage$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3IncidentsPinnedMessage$Outbound = {
-  message: string;
-  message_sender_id: string;
-  time: string;
-  time_of_pinning: string;
-  message_id: string;
-  message_pinned_by: string;
-  message_sender_name: string;
-};
-
-/** @internal */
-export const V3IncidentsPinnedMessage$outboundSchema: z.ZodType<
-  V3IncidentsPinnedMessage$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsPinnedMessage
-> = z.object({
-  message: z.string(),
-  messageSenderId: z.string(),
-  time: z.date().transform(v => v.toISOString()),
-  timeOfPinning: z.date().transform(v => v.toISOString()),
-  messageId: z.string(),
-  messagePinnedBy: z.string(),
-  messageSenderName: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    messageSenderId: "message_sender_id",
-    timeOfPinning: "time_of_pinning",
-    messageId: "message_id",
-    messagePinnedBy: "message_pinned_by",
-    messageSenderName: "message_sender_name",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsPinnedMessage$ {
-  /** @deprecated use `V3IncidentsPinnedMessage$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsPinnedMessage$inboundSchema;
-  /** @deprecated use `V3IncidentsPinnedMessage$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsPinnedMessage$outboundSchema;
-  /** @deprecated use `V3IncidentsPinnedMessage$Outbound` instead. */
-  export type Outbound = V3IncidentsPinnedMessage$Outbound;
-}
-
-export function v3IncidentsPinnedMessageToJSON(
-  v3IncidentsPinnedMessage: V3IncidentsPinnedMessage,
-): string {
-  return JSON.stringify(
-    V3IncidentsPinnedMessage$outboundSchema.parse(v3IncidentsPinnedMessage),
-  );
-}
-
 export function v3IncidentsPinnedMessageFromJSON(
   jsonString: string,
 ): SafeParseResult<V3IncidentsPinnedMessage, SDKValidationError> {

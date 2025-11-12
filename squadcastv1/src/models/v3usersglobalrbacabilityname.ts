@@ -28,22 +28,6 @@ export type V3UsersGlobalRBACAbilityName = ClosedEnum<
 >;
 
 /** @internal */
-export const V3UsersGlobalRBACAbilityName$inboundSchema: z.ZodNativeEnum<
-  typeof V3UsersGlobalRBACAbilityName
-> = z.nativeEnum(V3UsersGlobalRBACAbilityName);
-
-/** @internal */
 export const V3UsersGlobalRBACAbilityName$outboundSchema: z.ZodNativeEnum<
   typeof V3UsersGlobalRBACAbilityName
-> = V3UsersGlobalRBACAbilityName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3UsersGlobalRBACAbilityName$ {
-  /** @deprecated use `V3UsersGlobalRBACAbilityName$inboundSchema` instead. */
-  export const inboundSchema = V3UsersGlobalRBACAbilityName$inboundSchema;
-  /** @deprecated use `V3UsersGlobalRBACAbilityName$outboundSchema` instead. */
-  export const outboundSchema = V3UsersGlobalRBACAbilityName$outboundSchema;
-}
+> = z.nativeEnum(V3UsersGlobalRBACAbilityName);

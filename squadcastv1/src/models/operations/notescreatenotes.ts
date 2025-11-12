@@ -35,22 +35,6 @@ export type NotesCreateNotesResponse = {
 };
 
 /** @internal */
-export const NotesCreateNotesRequest$inboundSchema: z.ZodType<
-  NotesCreateNotesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  IncidentId: z.string(),
-  "V3.Incidents.Notes.CreateNoteRequest":
-    models.V3IncidentsNotesCreateNoteRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "IncidentId": "incidentId",
-    "V3.Incidents.Notes.CreateNoteRequest": "v3IncidentsNotesCreateNoteRequest",
-  });
-});
-
-/** @internal */
 export type NotesCreateNotesRequest$Outbound = {
   IncidentId: string;
   "V3.Incidents.Notes.CreateNoteRequest":
@@ -73,34 +57,11 @@ export const NotesCreateNotesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NotesCreateNotesRequest$ {
-  /** @deprecated use `NotesCreateNotesRequest$inboundSchema` instead. */
-  export const inboundSchema = NotesCreateNotesRequest$inboundSchema;
-  /** @deprecated use `NotesCreateNotesRequest$outboundSchema` instead. */
-  export const outboundSchema = NotesCreateNotesRequest$outboundSchema;
-  /** @deprecated use `NotesCreateNotesRequest$Outbound` instead. */
-  export type Outbound = NotesCreateNotesRequest$Outbound;
-}
-
 export function notesCreateNotesRequestToJSON(
   notesCreateNotesRequest: NotesCreateNotesRequest,
 ): string {
   return JSON.stringify(
     NotesCreateNotesRequest$outboundSchema.parse(notesCreateNotesRequest),
-  );
-}
-
-export function notesCreateNotesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<NotesCreateNotesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => NotesCreateNotesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'NotesCreateNotesRequest' from JSON`,
   );
 }
 
@@ -112,41 +73,6 @@ export const NotesCreateNotesBody$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3IncidentsNotesNoteResponse$inboundSchema,
 });
-
-/** @internal */
-export type NotesCreateNotesBody$Outbound = {
-  data: models.V3IncidentsNotesNoteResponse$Outbound;
-};
-
-/** @internal */
-export const NotesCreateNotesBody$outboundSchema: z.ZodType<
-  NotesCreateNotesBody$Outbound,
-  z.ZodTypeDef,
-  NotesCreateNotesBody
-> = z.object({
-  data: models.V3IncidentsNotesNoteResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NotesCreateNotesBody$ {
-  /** @deprecated use `NotesCreateNotesBody$inboundSchema` instead. */
-  export const inboundSchema = NotesCreateNotesBody$inboundSchema;
-  /** @deprecated use `NotesCreateNotesBody$outboundSchema` instead. */
-  export const outboundSchema = NotesCreateNotesBody$outboundSchema;
-  /** @deprecated use `NotesCreateNotesBody$Outbound` instead. */
-  export type Outbound = NotesCreateNotesBody$Outbound;
-}
-
-export function notesCreateNotesBodyToJSON(
-  notesCreateNotesBody: NotesCreateNotesBody,
-): string {
-  return JSON.stringify(
-    NotesCreateNotesBody$outboundSchema.parse(notesCreateNotesBody),
-  );
-}
 
 export function notesCreateNotesBodyFromJSON(
   jsonString: string,
@@ -166,41 +92,6 @@ export const NotesCreateNotesResponse$inboundSchema: z.ZodType<
 > = z.object({
   body: z.lazy(() => NotesCreateNotesBody$inboundSchema),
 });
-
-/** @internal */
-export type NotesCreateNotesResponse$Outbound = {
-  body: NotesCreateNotesBody$Outbound;
-};
-
-/** @internal */
-export const NotesCreateNotesResponse$outboundSchema: z.ZodType<
-  NotesCreateNotesResponse$Outbound,
-  z.ZodTypeDef,
-  NotesCreateNotesResponse
-> = z.object({
-  body: z.lazy(() => NotesCreateNotesBody$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NotesCreateNotesResponse$ {
-  /** @deprecated use `NotesCreateNotesResponse$inboundSchema` instead. */
-  export const inboundSchema = NotesCreateNotesResponse$inboundSchema;
-  /** @deprecated use `NotesCreateNotesResponse$outboundSchema` instead. */
-  export const outboundSchema = NotesCreateNotesResponse$outboundSchema;
-  /** @deprecated use `NotesCreateNotesResponse$Outbound` instead. */
-  export type Outbound = NotesCreateNotesResponse$Outbound;
-}
-
-export function notesCreateNotesResponseToJSON(
-  notesCreateNotesResponse: NotesCreateNotesResponse,
-): string {
-  return JSON.stringify(
-    NotesCreateNotesResponse$outboundSchema.parse(notesCreateNotesResponse),
-  );
-}
 
 export function notesCreateNotesResponseFromJSON(
   jsonString: string,

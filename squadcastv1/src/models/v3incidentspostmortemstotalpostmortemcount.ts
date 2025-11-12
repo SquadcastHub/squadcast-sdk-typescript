@@ -21,47 +21,6 @@ export const V3IncidentsPostmortemsTotalPostmortemCount$inboundSchema:
       count: z.number().int(),
     });
 
-/** @internal */
-export type V3IncidentsPostmortemsTotalPostmortemCount$Outbound = {
-  count: number;
-};
-
-/** @internal */
-export const V3IncidentsPostmortemsTotalPostmortemCount$outboundSchema:
-  z.ZodType<
-    V3IncidentsPostmortemsTotalPostmortemCount$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsPostmortemsTotalPostmortemCount
-  > = z.object({
-    count: z.number().int(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsPostmortemsTotalPostmortemCount$ {
-  /** @deprecated use `V3IncidentsPostmortemsTotalPostmortemCount$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsPostmortemsTotalPostmortemCount$inboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsTotalPostmortemCount$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsPostmortemsTotalPostmortemCount$outboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsTotalPostmortemCount$Outbound` instead. */
-  export type Outbound = V3IncidentsPostmortemsTotalPostmortemCount$Outbound;
-}
-
-export function v3IncidentsPostmortemsTotalPostmortemCountToJSON(
-  v3IncidentsPostmortemsTotalPostmortemCount:
-    V3IncidentsPostmortemsTotalPostmortemCount,
-): string {
-  return JSON.stringify(
-    V3IncidentsPostmortemsTotalPostmortemCount$outboundSchema.parse(
-      v3IncidentsPostmortemsTotalPostmortemCount,
-    ),
-  );
-}
-
 export function v3IncidentsPostmortemsTotalPostmortemCountFromJSON(
   jsonString: string,
 ): SafeParseResult<

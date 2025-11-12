@@ -27,24 +27,6 @@ export type TaggingRulesCreateOrUpdateTaggingRulesResponse = {
 };
 
 /** @internal */
-export const TaggingRulesCreateOrUpdateTaggingRulesRequest$inboundSchema:
-  z.ZodType<
-    TaggingRulesCreateOrUpdateTaggingRulesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-    "V3.Services.TaggingRules.CreateOrUpdateTaggingRulesRequest":
-      models
-        .V3ServicesTaggingRulesCreateOrUpdateTaggingRulesRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.Services.TaggingRules.CreateOrUpdateTaggingRulesRequest":
-        "v3ServicesTaggingRulesCreateOrUpdateTaggingRulesRequest",
-    });
-  });
-
-/** @internal */
 export type TaggingRulesCreateOrUpdateTaggingRulesRequest$Outbound = {
   serviceID: string;
   "V3.Services.TaggingRules.CreateOrUpdateTaggingRulesRequest":
@@ -69,21 +51,6 @@ export const TaggingRulesCreateOrUpdateTaggingRulesRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaggingRulesCreateOrUpdateTaggingRulesRequest$ {
-  /** @deprecated use `TaggingRulesCreateOrUpdateTaggingRulesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    TaggingRulesCreateOrUpdateTaggingRulesRequest$inboundSchema;
-  /** @deprecated use `TaggingRulesCreateOrUpdateTaggingRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    TaggingRulesCreateOrUpdateTaggingRulesRequest$outboundSchema;
-  /** @deprecated use `TaggingRulesCreateOrUpdateTaggingRulesRequest$Outbound` instead. */
-  export type Outbound = TaggingRulesCreateOrUpdateTaggingRulesRequest$Outbound;
-}
-
 export function taggingRulesCreateOrUpdateTaggingRulesRequestToJSON(
   taggingRulesCreateOrUpdateTaggingRulesRequest:
     TaggingRulesCreateOrUpdateTaggingRulesRequest,
@@ -95,22 +62,6 @@ export function taggingRulesCreateOrUpdateTaggingRulesRequestToJSON(
   );
 }
 
-export function taggingRulesCreateOrUpdateTaggingRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  TaggingRulesCreateOrUpdateTaggingRulesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      TaggingRulesCreateOrUpdateTaggingRulesRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'TaggingRulesCreateOrUpdateTaggingRulesRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const TaggingRulesCreateOrUpdateTaggingRulesData$inboundSchema:
   z.ZodType<TaggingRulesCreateOrUpdateTaggingRulesData, z.ZodTypeDef, unknown> =
@@ -119,49 +70,6 @@ export const TaggingRulesCreateOrUpdateTaggingRulesData$inboundSchema:
         models.V3ServicesTaggingRulesTaggingRuleResponse$inboundSchema,
       ),
     });
-
-/** @internal */
-export type TaggingRulesCreateOrUpdateTaggingRulesData$Outbound = {
-  rules: Array<models.V3ServicesTaggingRulesTaggingRuleResponse$Outbound>;
-};
-
-/** @internal */
-export const TaggingRulesCreateOrUpdateTaggingRulesData$outboundSchema:
-  z.ZodType<
-    TaggingRulesCreateOrUpdateTaggingRulesData$Outbound,
-    z.ZodTypeDef,
-    TaggingRulesCreateOrUpdateTaggingRulesData
-  > = z.object({
-    rules: z.array(
-      models.V3ServicesTaggingRulesTaggingRuleResponse$outboundSchema,
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaggingRulesCreateOrUpdateTaggingRulesData$ {
-  /** @deprecated use `TaggingRulesCreateOrUpdateTaggingRulesData$inboundSchema` instead. */
-  export const inboundSchema =
-    TaggingRulesCreateOrUpdateTaggingRulesData$inboundSchema;
-  /** @deprecated use `TaggingRulesCreateOrUpdateTaggingRulesData$outboundSchema` instead. */
-  export const outboundSchema =
-    TaggingRulesCreateOrUpdateTaggingRulesData$outboundSchema;
-  /** @deprecated use `TaggingRulesCreateOrUpdateTaggingRulesData$Outbound` instead. */
-  export type Outbound = TaggingRulesCreateOrUpdateTaggingRulesData$Outbound;
-}
-
-export function taggingRulesCreateOrUpdateTaggingRulesDataToJSON(
-  taggingRulesCreateOrUpdateTaggingRulesData:
-    TaggingRulesCreateOrUpdateTaggingRulesData,
-): string {
-  return JSON.stringify(
-    TaggingRulesCreateOrUpdateTaggingRulesData$outboundSchema.parse(
-      taggingRulesCreateOrUpdateTaggingRulesData,
-    ),
-  );
-}
 
 export function taggingRulesCreateOrUpdateTaggingRulesDataFromJSON(
   jsonString: string,
@@ -190,50 +98,6 @@ export const TaggingRulesCreateOrUpdateTaggingRulesResponse$inboundSchema:
       TaggingRulesCreateOrUpdateTaggingRulesData$inboundSchema
     ),
   });
-
-/** @internal */
-export type TaggingRulesCreateOrUpdateTaggingRulesResponse$Outbound = {
-  data: TaggingRulesCreateOrUpdateTaggingRulesData$Outbound;
-};
-
-/** @internal */
-export const TaggingRulesCreateOrUpdateTaggingRulesResponse$outboundSchema:
-  z.ZodType<
-    TaggingRulesCreateOrUpdateTaggingRulesResponse$Outbound,
-    z.ZodTypeDef,
-    TaggingRulesCreateOrUpdateTaggingRulesResponse
-  > = z.object({
-    data: z.lazy(() =>
-      TaggingRulesCreateOrUpdateTaggingRulesData$outboundSchema
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaggingRulesCreateOrUpdateTaggingRulesResponse$ {
-  /** @deprecated use `TaggingRulesCreateOrUpdateTaggingRulesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    TaggingRulesCreateOrUpdateTaggingRulesResponse$inboundSchema;
-  /** @deprecated use `TaggingRulesCreateOrUpdateTaggingRulesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    TaggingRulesCreateOrUpdateTaggingRulesResponse$outboundSchema;
-  /** @deprecated use `TaggingRulesCreateOrUpdateTaggingRulesResponse$Outbound` instead. */
-  export type Outbound =
-    TaggingRulesCreateOrUpdateTaggingRulesResponse$Outbound;
-}
-
-export function taggingRulesCreateOrUpdateTaggingRulesResponseToJSON(
-  taggingRulesCreateOrUpdateTaggingRulesResponse:
-    TaggingRulesCreateOrUpdateTaggingRulesResponse,
-): string {
-  return JSON.stringify(
-    TaggingRulesCreateOrUpdateTaggingRulesResponse$outboundSchema.parse(
-      taggingRulesCreateOrUpdateTaggingRulesResponse,
-    ),
-  );
-}
 
 export function taggingRulesCreateOrUpdateTaggingRulesResponseFromJSON(
   jsonString: string,

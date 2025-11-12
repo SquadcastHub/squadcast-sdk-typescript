@@ -3,22 +3,10 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3WorkflowsEnableDisableWorkflowRequest = {
   enabled?: boolean | undefined;
 };
-
-/** @internal */
-export const V3WorkflowsEnableDisableWorkflowRequest$inboundSchema: z.ZodType<
-  V3WorkflowsEnableDisableWorkflowRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  enabled: z.boolean().optional(),
-});
 
 /** @internal */
 export type V3WorkflowsEnableDisableWorkflowRequest$Outbound = {
@@ -34,21 +22,6 @@ export const V3WorkflowsEnableDisableWorkflowRequest$outboundSchema: z.ZodType<
   enabled: z.boolean().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsEnableDisableWorkflowRequest$ {
-  /** @deprecated use `V3WorkflowsEnableDisableWorkflowRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsEnableDisableWorkflowRequest$inboundSchema;
-  /** @deprecated use `V3WorkflowsEnableDisableWorkflowRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsEnableDisableWorkflowRequest$outboundSchema;
-  /** @deprecated use `V3WorkflowsEnableDisableWorkflowRequest$Outbound` instead. */
-  export type Outbound = V3WorkflowsEnableDisableWorkflowRequest$Outbound;
-}
-
 export function v3WorkflowsEnableDisableWorkflowRequestToJSON(
   v3WorkflowsEnableDisableWorkflowRequest:
     V3WorkflowsEnableDisableWorkflowRequest,
@@ -57,21 +30,5 @@ export function v3WorkflowsEnableDisableWorkflowRequestToJSON(
     V3WorkflowsEnableDisableWorkflowRequest$outboundSchema.parse(
       v3WorkflowsEnableDisableWorkflowRequest,
     ),
-  );
-}
-
-export function v3WorkflowsEnableDisableWorkflowRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsEnableDisableWorkflowRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsEnableDisableWorkflowRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsEnableDisableWorkflowRequest' from JSON`,
   );
 }

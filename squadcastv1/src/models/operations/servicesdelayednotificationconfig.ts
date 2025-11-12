@@ -23,22 +23,6 @@ export type ServicesDelayedNotificationConfigResponse = {
 };
 
 /** @internal */
-export const ServicesDelayedNotificationConfigRequest$inboundSchema: z.ZodType<
-  ServicesDelayedNotificationConfigRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  serviceID: z.string(),
-  "V3.Services.NotificationDelayConfigRequest":
-    models.V3ServicesNotificationDelayConfigRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Services.NotificationDelayConfigRequest":
-      "v3ServicesNotificationDelayConfigRequest",
-  });
-});
-
-/** @internal */
 export type ServicesDelayedNotificationConfigRequest$Outbound = {
   serviceID: string;
   "V3.Services.NotificationDelayConfigRequest":
@@ -61,21 +45,6 @@ export const ServicesDelayedNotificationConfigRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesDelayedNotificationConfigRequest$ {
-  /** @deprecated use `ServicesDelayedNotificationConfigRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ServicesDelayedNotificationConfigRequest$inboundSchema;
-  /** @deprecated use `ServicesDelayedNotificationConfigRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ServicesDelayedNotificationConfigRequest$outboundSchema;
-  /** @deprecated use `ServicesDelayedNotificationConfigRequest$Outbound` instead. */
-  export type Outbound = ServicesDelayedNotificationConfigRequest$Outbound;
-}
-
 export function servicesDelayedNotificationConfigRequestToJSON(
   servicesDelayedNotificationConfigRequest:
     ServicesDelayedNotificationConfigRequest,
@@ -87,22 +56,6 @@ export function servicesDelayedNotificationConfigRequestToJSON(
   );
 }
 
-export function servicesDelayedNotificationConfigRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  ServicesDelayedNotificationConfigRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ServicesDelayedNotificationConfigRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ServicesDelayedNotificationConfigRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const ServicesDelayedNotificationConfigResponse$inboundSchema: z.ZodType<
   ServicesDelayedNotificationConfigResponse,
@@ -111,47 +64,6 @@ export const ServicesDelayedNotificationConfigResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3ServicesServiceResponse$inboundSchema,
 });
-
-/** @internal */
-export type ServicesDelayedNotificationConfigResponse$Outbound = {
-  data: models.V3ServicesServiceResponse$Outbound;
-};
-
-/** @internal */
-export const ServicesDelayedNotificationConfigResponse$outboundSchema:
-  z.ZodType<
-    ServicesDelayedNotificationConfigResponse$Outbound,
-    z.ZodTypeDef,
-    ServicesDelayedNotificationConfigResponse
-  > = z.object({
-    data: models.V3ServicesServiceResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesDelayedNotificationConfigResponse$ {
-  /** @deprecated use `ServicesDelayedNotificationConfigResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    ServicesDelayedNotificationConfigResponse$inboundSchema;
-  /** @deprecated use `ServicesDelayedNotificationConfigResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ServicesDelayedNotificationConfigResponse$outboundSchema;
-  /** @deprecated use `ServicesDelayedNotificationConfigResponse$Outbound` instead. */
-  export type Outbound = ServicesDelayedNotificationConfigResponse$Outbound;
-}
-
-export function servicesDelayedNotificationConfigResponseToJSON(
-  servicesDelayedNotificationConfigResponse:
-    ServicesDelayedNotificationConfigResponse,
-): string {
-  return JSON.stringify(
-    ServicesDelayedNotificationConfigResponse$outboundSchema.parse(
-      servicesDelayedNotificationConfigResponse,
-    ),
-  );
-}
 
 export function servicesDelayedNotificationConfigResponseFromJSON(
   jsonString: string,

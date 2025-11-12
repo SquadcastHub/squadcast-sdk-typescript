@@ -21,20 +21,6 @@ export type WebformsRemoveWebformResponse = {
 };
 
 /** @internal */
-export const WebformsRemoveWebformRequest$inboundSchema: z.ZodType<
-  WebformsRemoveWebformRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  webformId: z.number().int(),
-  owner_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-  });
-});
-
-/** @internal */
 export type WebformsRemoveWebformRequest$Outbound = {
   webformId: number;
   owner_id: string;
@@ -54,19 +40,6 @@ export const WebformsRemoveWebformRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebformsRemoveWebformRequest$ {
-  /** @deprecated use `WebformsRemoveWebformRequest$inboundSchema` instead. */
-  export const inboundSchema = WebformsRemoveWebformRequest$inboundSchema;
-  /** @deprecated use `WebformsRemoveWebformRequest$outboundSchema` instead. */
-  export const outboundSchema = WebformsRemoveWebformRequest$outboundSchema;
-  /** @deprecated use `WebformsRemoveWebformRequest$Outbound` instead. */
-  export type Outbound = WebformsRemoveWebformRequest$Outbound;
-}
-
 export function webformsRemoveWebformRequestToJSON(
   webformsRemoveWebformRequest: WebformsRemoveWebformRequest,
 ): string {
@@ -74,16 +47,6 @@ export function webformsRemoveWebformRequestToJSON(
     WebformsRemoveWebformRequest$outboundSchema.parse(
       webformsRemoveWebformRequest,
     ),
-  );
-}
-
-export function webformsRemoveWebformRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WebformsRemoveWebformRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => WebformsRemoveWebformRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WebformsRemoveWebformRequest' from JSON`,
   );
 }
 
@@ -95,43 +58,6 @@ export const WebformsRemoveWebformResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.string(),
 });
-
-/** @internal */
-export type WebformsRemoveWebformResponse$Outbound = {
-  data: string;
-};
-
-/** @internal */
-export const WebformsRemoveWebformResponse$outboundSchema: z.ZodType<
-  WebformsRemoveWebformResponse$Outbound,
-  z.ZodTypeDef,
-  WebformsRemoveWebformResponse
-> = z.object({
-  data: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebformsRemoveWebformResponse$ {
-  /** @deprecated use `WebformsRemoveWebformResponse$inboundSchema` instead. */
-  export const inboundSchema = WebformsRemoveWebformResponse$inboundSchema;
-  /** @deprecated use `WebformsRemoveWebformResponse$outboundSchema` instead. */
-  export const outboundSchema = WebformsRemoveWebformResponse$outboundSchema;
-  /** @deprecated use `WebformsRemoveWebformResponse$Outbound` instead. */
-  export type Outbound = WebformsRemoveWebformResponse$Outbound;
-}
-
-export function webformsRemoveWebformResponseToJSON(
-  webformsRemoveWebformResponse: WebformsRemoveWebformResponse,
-): string {
-  return JSON.stringify(
-    WebformsRemoveWebformResponse$outboundSchema.parse(
-      webformsRemoveWebformResponse,
-    ),
-  );
-}
 
 export function webformsRemoveWebformResponseFromJSON(
   jsonString: string,

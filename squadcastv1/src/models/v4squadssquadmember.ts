@@ -29,7 +29,6 @@ export const V4SquadsSquadMember$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type V4SquadsSquadMember$Outbound = {
   user_id: string;
@@ -50,19 +49,6 @@ export const V4SquadsSquadMember$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4SquadsSquadMember$ {
-  /** @deprecated use `V4SquadsSquadMember$inboundSchema` instead. */
-  export const inboundSchema = V4SquadsSquadMember$inboundSchema;
-  /** @deprecated use `V4SquadsSquadMember$outboundSchema` instead. */
-  export const outboundSchema = V4SquadsSquadMember$outboundSchema;
-  /** @deprecated use `V4SquadsSquadMember$Outbound` instead. */
-  export type Outbound = V4SquadsSquadMember$Outbound;
-}
-
 export function v4SquadsSquadMemberToJSON(
   v4SquadsSquadMember: V4SquadsSquadMember,
 ): string {
@@ -70,7 +56,6 @@ export function v4SquadsSquadMemberToJSON(
     V4SquadsSquadMember$outboundSchema.parse(v4SquadsSquadMember),
   );
 }
-
 export function v4SquadsSquadMemberFromJSON(
   jsonString: string,
 ): SafeParseResult<V4SquadsSquadMember, SDKValidationError> {

@@ -41,7 +41,6 @@ export const V3ExtensionsMSTeamsTriggers$inboundSchema: z.ZodType<
     "all_active": "allActive",
   });
 });
-
 /** @internal */
 export type V3ExtensionsMSTeamsTriggers$Outbound = {
   all_active: boolean;
@@ -62,19 +61,6 @@ export const V3ExtensionsMSTeamsTriggers$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsMSTeamsTriggers$ {
-  /** @deprecated use `V3ExtensionsMSTeamsTriggers$inboundSchema` instead. */
-  export const inboundSchema = V3ExtensionsMSTeamsTriggers$inboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsTriggers$outboundSchema` instead. */
-  export const outboundSchema = V3ExtensionsMSTeamsTriggers$outboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsTriggers$Outbound` instead. */
-  export type Outbound = V3ExtensionsMSTeamsTriggers$Outbound;
-}
-
 export function v3ExtensionsMSTeamsTriggersToJSON(
   v3ExtensionsMSTeamsTriggers: V3ExtensionsMSTeamsTriggers,
 ): string {
@@ -84,7 +70,6 @@ export function v3ExtensionsMSTeamsTriggersToJSON(
     ),
   );
 }
-
 export function v3ExtensionsMSTeamsTriggersFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ExtensionsMSTeamsTriggers, SDKValidationError> {

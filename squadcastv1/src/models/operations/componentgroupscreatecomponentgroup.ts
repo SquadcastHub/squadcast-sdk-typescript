@@ -23,21 +23,6 @@ export type ComponentGroupsCreateComponentGroupResponse = {
 };
 
 /** @internal */
-export const ComponentGroupsCreateComponentGroupRequest$inboundSchema:
-  z.ZodType<ComponentGroupsCreateComponentGroupRequest, z.ZodTypeDef, unknown> =
-    z.object({
-      statuspageID: z.string(),
-      "V4.StatusPages.ComponentGroups.CreateComponentGroupRequest":
-        models
-          .V4StatusPagesComponentGroupsCreateComponentGroupRequest$inboundSchema,
-    }).transform((v) => {
-      return remap$(v, {
-        "V4.StatusPages.ComponentGroups.CreateComponentGroupRequest":
-          "v4StatusPagesComponentGroupsCreateComponentGroupRequest",
-      });
-    });
-
-/** @internal */
 export type ComponentGroupsCreateComponentGroupRequest$Outbound = {
   statuspageID: string;
   "V4.StatusPages.ComponentGroups.CreateComponentGroupRequest":
@@ -62,21 +47,6 @@ export const ComponentGroupsCreateComponentGroupRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentGroupsCreateComponentGroupRequest$ {
-  /** @deprecated use `ComponentGroupsCreateComponentGroupRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentGroupsCreateComponentGroupRequest$inboundSchema;
-  /** @deprecated use `ComponentGroupsCreateComponentGroupRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentGroupsCreateComponentGroupRequest$outboundSchema;
-  /** @deprecated use `ComponentGroupsCreateComponentGroupRequest$Outbound` instead. */
-  export type Outbound = ComponentGroupsCreateComponentGroupRequest$Outbound;
-}
-
 export function componentGroupsCreateComponentGroupRequestToJSON(
   componentGroupsCreateComponentGroupRequest:
     ComponentGroupsCreateComponentGroupRequest,
@@ -85,22 +55,6 @@ export function componentGroupsCreateComponentGroupRequestToJSON(
     ComponentGroupsCreateComponentGroupRequest$outboundSchema.parse(
       componentGroupsCreateComponentGroupRequest,
     ),
-  );
-}
-
-export function componentGroupsCreateComponentGroupRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  ComponentGroupsCreateComponentGroupRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ComponentGroupsCreateComponentGroupRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComponentGroupsCreateComponentGroupRequest' from JSON`,
   );
 }
 
@@ -115,50 +69,6 @@ export const ComponentGroupsCreateComponentGroupResponse$inboundSchema:
       models
         .V4StatusPagesComponentGroupsCreateComponentGroupResponse$inboundSchema,
   });
-
-/** @internal */
-export type ComponentGroupsCreateComponentGroupResponse$Outbound = {
-  data:
-    models.V4StatusPagesComponentGroupsCreateComponentGroupResponse$Outbound;
-};
-
-/** @internal */
-export const ComponentGroupsCreateComponentGroupResponse$outboundSchema:
-  z.ZodType<
-    ComponentGroupsCreateComponentGroupResponse$Outbound,
-    z.ZodTypeDef,
-    ComponentGroupsCreateComponentGroupResponse
-  > = z.object({
-    data:
-      models
-        .V4StatusPagesComponentGroupsCreateComponentGroupResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentGroupsCreateComponentGroupResponse$ {
-  /** @deprecated use `ComponentGroupsCreateComponentGroupResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentGroupsCreateComponentGroupResponse$inboundSchema;
-  /** @deprecated use `ComponentGroupsCreateComponentGroupResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentGroupsCreateComponentGroupResponse$outboundSchema;
-  /** @deprecated use `ComponentGroupsCreateComponentGroupResponse$Outbound` instead. */
-  export type Outbound = ComponentGroupsCreateComponentGroupResponse$Outbound;
-}
-
-export function componentGroupsCreateComponentGroupResponseToJSON(
-  componentGroupsCreateComponentGroupResponse:
-    ComponentGroupsCreateComponentGroupResponse,
-): string {
-  return JSON.stringify(
-    ComponentGroupsCreateComponentGroupResponse$outboundSchema.parse(
-      componentGroupsCreateComponentGroupResponse,
-    ),
-  );
-}
 
 export function componentGroupsCreateComponentGroupResponseFromJSON(
   jsonString: string,

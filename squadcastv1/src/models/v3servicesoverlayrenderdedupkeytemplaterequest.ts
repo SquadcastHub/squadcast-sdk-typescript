@@ -4,31 +4,12 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3ServicesOverlayRenderDedupKeyTemplateRequest = {
   overlayTemplateType: string;
   template: string;
   payload: string;
 };
-
-/** @internal */
-export const V3ServicesOverlayRenderDedupKeyTemplateRequest$inboundSchema:
-  z.ZodType<
-    V3ServicesOverlayRenderDedupKeyTemplateRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    overlay_template_type: z.string(),
-    template: z.string(),
-    payload: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      "overlay_template_type": "overlayTemplateType",
-    });
-  });
 
 /** @internal */
 export type V3ServicesOverlayRenderDedupKeyTemplateRequest$Outbound = {
@@ -53,22 +34,6 @@ export const V3ServicesOverlayRenderDedupKeyTemplateRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesOverlayRenderDedupKeyTemplateRequest$ {
-  /** @deprecated use `V3ServicesOverlayRenderDedupKeyTemplateRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesOverlayRenderDedupKeyTemplateRequest$inboundSchema;
-  /** @deprecated use `V3ServicesOverlayRenderDedupKeyTemplateRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesOverlayRenderDedupKeyTemplateRequest$outboundSchema;
-  /** @deprecated use `V3ServicesOverlayRenderDedupKeyTemplateRequest$Outbound` instead. */
-  export type Outbound =
-    V3ServicesOverlayRenderDedupKeyTemplateRequest$Outbound;
-}
-
 export function v3ServicesOverlayRenderDedupKeyTemplateRequestToJSON(
   v3ServicesOverlayRenderDedupKeyTemplateRequest:
     V3ServicesOverlayRenderDedupKeyTemplateRequest,
@@ -77,21 +42,5 @@ export function v3ServicesOverlayRenderDedupKeyTemplateRequestToJSON(
     V3ServicesOverlayRenderDedupKeyTemplateRequest$outboundSchema.parse(
       v3ServicesOverlayRenderDedupKeyTemplateRequest,
     ),
-  );
-}
-
-export function v3ServicesOverlayRenderDedupKeyTemplateRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesOverlayRenderDedupKeyTemplateRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesOverlayRenderDedupKeyTemplateRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3ServicesOverlayRenderDedupKeyTemplateRequest' from JSON`,
   );
 }

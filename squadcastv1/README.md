@@ -152,6 +152,14 @@ run();
 * [getOrganization](docs/sdks/analytics/README.md#getorganization) - Get Org level analytics
 * [getTeam](docs/sdks/analytics/README.md#getteam) - Get Team level analytics
 
+### [auditLogs](docs/sdks/auditlogs/README.md)
+
+* [auditLogsListAuditLogs](docs/sdks/auditlogs/README.md#auditlogslistauditlogs) - List all Audit Logs
+* [auditLogsExportAuditLogs](docs/sdks/auditlogs/README.md#auditlogsexportauditlogs) - Initiate an asynchronous export of audit logs based on the provided filters. The export file will be generated and available for download. Use 'Get details of Audit Logs export history by ID' API to retrieve the download URL.
+* [auditLogsListAuditLogsExportHistory](docs/sdks/auditlogs/README.md#auditlogslistauditlogsexporthistory) - List all Audit Logs export history
+* [auditLogsGetAuditLogsExportHistoryById](docs/sdks/auditlogs/README.md#auditlogsgetauditlogsexporthistorybyid) - Get details of Audit Logs export history by ID
+* [auditLogsGetAuditLogById](docs/sdks/auditlogs/README.md#auditlogsgetauditlogbyid) - Get audit log by ID
+
 ### [communicationCards](docs/sdks/communicationcards/README.md)
 
 * [createSlackChannel](docs/sdks/communicationcards/README.md#createslackchannel) - Create Slack Channel in Communication Card
@@ -623,6 +631,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 - [`analyticsGetOrganization`](docs/sdks/analytics/README.md#getorganization) - Get Org level analytics
 - [`analyticsGetTeam`](docs/sdks/analytics/README.md#getteam) - Get Team level analytics
+- [`auditLogsAuditLogsExportAuditLogs`](docs/sdks/auditlogs/README.md#auditlogsexportauditlogs) - Initiate an asynchronous export of audit logs based on the provided filters. The export file will be generated and available for download. Use 'Get details of Audit Logs export history by ID' API to retrieve the download URL.
+- [`auditLogsAuditLogsGetAuditLogById`](docs/sdks/auditlogs/README.md#auditlogsgetauditlogbyid) - Get audit log by ID
+- [`auditLogsAuditLogsGetAuditLogsExportHistoryById`](docs/sdks/auditlogs/README.md#auditlogsgetauditlogsexporthistorybyid) - Get details of Audit Logs export history by ID
+- [`auditLogsAuditLogsListAuditLogs`](docs/sdks/auditlogs/README.md#auditlogslistauditlogs) - List all Audit Logs
+- [`auditLogsAuditLogsListAuditLogsExportHistory`](docs/sdks/auditlogs/README.md#auditlogslistauditlogsexporthistory) - List all Audit Logs export history
 - [`communicationCardsCreateSlackChannel`](docs/sdks/communicationcards/README.md#createslackchannel) - Create Slack Channel in Communication Card
 - [`communicationCardsDelete`](docs/sdks/communicationcards/README.md#delete) - Delete Communication Card
 - [`componentsDeleteById`](docs/sdks/components/README.md#deletebyid) - Delete Component By ID
@@ -864,14 +877,18 @@ Here's an example of one such pagination call:
 
 ```typescript
 import { SquadcastSDK } from "@solarwinds/squadcast-sdk-typescript";
+import { RFCDate } from "@solarwinds/squadcast-sdk-typescript/types";
 
 const squadcastSDK = new SquadcastSDK({
   bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await squadcastSDK.escalationPolicies.listByTeam({
-    ownerId: "<id>",
+  const result = await squadcastSDK.auditLogs.auditLogsListAuditLogs({
+    pageSize: 832442,
+    pageNumber: 555332,
+    startDate: new RFCDate("2023-03-04"),
+    endDate: new RFCDate("2024-08-07"),
   });
 
   for await (const page of result) {
@@ -1070,9 +1087,9 @@ run();
 
 
 **Inherit from [`SquadcastSDKError`](./src/models/errors/squadcastsdkerror.ts)**:
-* [`CommonV4Error`](./src/models/errors/commonv4error.ts): The server could not understand the request due to invalid syntax. Applicable to 32 of 225 methods.*
-* [`ResponseBodyError1`](./src/models/errors/responsebodyerror1.ts): Represents a CircleCI error response for a 400 status code. Status code `400`. Applicable to 1 of 225 methods.*
-* [`ResponseBodyError2`](./src/models/errors/responsebodyerror2.ts): Represents a CircleCI error response for a 400 status code. Status code `400`. Applicable to 1 of 225 methods.*
+* [`CommonV4Error`](./src/models/errors/commonv4error.ts): The server could not understand the request due to invalid syntax. Applicable to 32 of 230 methods.*
+* [`ResponseBodyError1`](./src/models/errors/responsebodyerror1.ts): Represents a CircleCI error response for a 400 status code. Status code `400`. Applicable to 1 of 230 methods.*
+* [`ResponseBodyError2`](./src/models/errors/responsebodyerror2.ts): Represents a CircleCI error response for a 400 status code. Status code `400`. Applicable to 1 of 230 methods.*
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>

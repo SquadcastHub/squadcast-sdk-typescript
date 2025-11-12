@@ -4,24 +4,18 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3WebformsRecaptchaSecrets,
-  V3WebformsRecaptchaSecrets$inboundSchema,
   V3WebformsRecaptchaSecrets$Outbound,
   V3WebformsRecaptchaSecrets$outboundSchema,
 } from "./v3webformsrecaptchasecrets.js";
 import {
   V3WebformsWFInputField,
-  V3WebformsWFInputField$inboundSchema,
   V3WebformsWFInputField$Outbound,
   V3WebformsWFInputField$outboundSchema,
 } from "./v3webformswfinputfield.js";
 import {
   V3WebformsWFService,
-  V3WebformsWFService$inboundSchema,
   V3WebformsWFService$Outbound,
   V3WebformsWFService$outboundSchema,
 } from "./v3webformswfservice.js";
@@ -110,11 +104,6 @@ export type V3WebformsCreateOrUpdateWebformRequest = {
 };
 
 /** @internal */
-export const V3WebformsCreateOrUpdateWebformRequestTags$inboundSchema:
-  z.ZodType<V3WebformsCreateOrUpdateWebformRequestTags, z.ZodTypeDef, unknown> =
-    z.object({});
-
-/** @internal */
 export type V3WebformsCreateOrUpdateWebformRequestTags$Outbound = {};
 
 /** @internal */
@@ -124,21 +113,6 @@ export const V3WebformsCreateOrUpdateWebformRequestTags$outboundSchema:
     z.ZodTypeDef,
     V3WebformsCreateOrUpdateWebformRequestTags
   > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WebformsCreateOrUpdateWebformRequestTags$ {
-  /** @deprecated use `V3WebformsCreateOrUpdateWebformRequestTags$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WebformsCreateOrUpdateWebformRequestTags$inboundSchema;
-  /** @deprecated use `V3WebformsCreateOrUpdateWebformRequestTags$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WebformsCreateOrUpdateWebformRequestTags$outboundSchema;
-  /** @deprecated use `V3WebformsCreateOrUpdateWebformRequestTags$Outbound` instead. */
-  export type Outbound = V3WebformsCreateOrUpdateWebformRequestTags$Outbound;
-}
 
 export function v3WebformsCreateOrUpdateWebformRequestTagsToJSON(
   v3WebformsCreateOrUpdateWebformRequestTags:
@@ -150,64 +124,6 @@ export function v3WebformsCreateOrUpdateWebformRequestTagsToJSON(
     ),
   );
 }
-
-export function v3WebformsCreateOrUpdateWebformRequestTagsFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WebformsCreateOrUpdateWebformRequestTags,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WebformsCreateOrUpdateWebformRequestTags$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WebformsCreateOrUpdateWebformRequestTags' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WebformsCreateOrUpdateWebformRequest$inboundSchema: z.ZodType<
-  V3WebformsCreateOrUpdateWebformRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  owner_id: z.string(),
-  name: z.string(),
-  is_cname: z.boolean(),
-  host_name: z.string().optional(),
-  tags: z.lazy(() => V3WebformsCreateOrUpdateWebformRequestTags$inboundSchema)
-    .optional(),
-  is_captcha_enabled: z.boolean(),
-  captcha_secret: V3WebformsRecaptchaSecrets$inboundSchema,
-  form_owner_type: z.string(),
-  form_owner_id: z.string(),
-  services: z.array(V3WebformsWFService$inboundSchema),
-  input_field: z.array(V3WebformsWFInputField$inboundSchema).optional(),
-  header: z.string(),
-  title: z.string(),
-  logo_url: z.string().optional(),
-  footer_text: z.string(),
-  footer_link: z.string(),
-  email_on: z.array(z.string()).optional(),
-  description: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-    "is_cname": "isCname",
-    "host_name": "hostName",
-    "is_captcha_enabled": "isCaptchaEnabled",
-    "captcha_secret": "captchaSecret",
-    "form_owner_type": "formOwnerType",
-    "form_owner_id": "formOwnerId",
-    "input_field": "inputField",
-    "logo_url": "logoUrl",
-    "footer_text": "footerText",
-    "footer_link": "footerLink",
-    "email_on": "emailOn",
-  });
-});
 
 /** @internal */
 export type V3WebformsCreateOrUpdateWebformRequest$Outbound = {
@@ -273,21 +189,6 @@ export const V3WebformsCreateOrUpdateWebformRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WebformsCreateOrUpdateWebformRequest$ {
-  /** @deprecated use `V3WebformsCreateOrUpdateWebformRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WebformsCreateOrUpdateWebformRequest$inboundSchema;
-  /** @deprecated use `V3WebformsCreateOrUpdateWebformRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WebformsCreateOrUpdateWebformRequest$outboundSchema;
-  /** @deprecated use `V3WebformsCreateOrUpdateWebformRequest$Outbound` instead. */
-  export type Outbound = V3WebformsCreateOrUpdateWebformRequest$Outbound;
-}
-
 export function v3WebformsCreateOrUpdateWebformRequestToJSON(
   v3WebformsCreateOrUpdateWebformRequest:
     V3WebformsCreateOrUpdateWebformRequest,
@@ -296,16 +197,5 @@ export function v3WebformsCreateOrUpdateWebformRequestToJSON(
     V3WebformsCreateOrUpdateWebformRequest$outboundSchema.parse(
       v3WebformsCreateOrUpdateWebformRequest,
     ),
-  );
-}
-
-export function v3WebformsCreateOrUpdateWebformRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WebformsCreateOrUpdateWebformRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WebformsCreateOrUpdateWebformRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WebformsCreateOrUpdateWebformRequest' from JSON`,
   );
 }

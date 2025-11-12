@@ -20,43 +20,6 @@ export const V3IncidentsAptaMessageResponse$inboundSchema: z.ZodType<
   message: z.string(),
 });
 
-/** @internal */
-export type V3IncidentsAptaMessageResponse$Outbound = {
-  message: string;
-};
-
-/** @internal */
-export const V3IncidentsAptaMessageResponse$outboundSchema: z.ZodType<
-  V3IncidentsAptaMessageResponse$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsAptaMessageResponse
-> = z.object({
-  message: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsAptaMessageResponse$ {
-  /** @deprecated use `V3IncidentsAptaMessageResponse$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsAptaMessageResponse$inboundSchema;
-  /** @deprecated use `V3IncidentsAptaMessageResponse$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsAptaMessageResponse$outboundSchema;
-  /** @deprecated use `V3IncidentsAptaMessageResponse$Outbound` instead. */
-  export type Outbound = V3IncidentsAptaMessageResponse$Outbound;
-}
-
-export function v3IncidentsAptaMessageResponseToJSON(
-  v3IncidentsAptaMessageResponse: V3IncidentsAptaMessageResponse,
-): string {
-  return JSON.stringify(
-    V3IncidentsAptaMessageResponse$outboundSchema.parse(
-      v3IncidentsAptaMessageResponse,
-    ),
-  );
-}
-
 export function v3IncidentsAptaMessageResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V3IncidentsAptaMessageResponse, SDKValidationError> {

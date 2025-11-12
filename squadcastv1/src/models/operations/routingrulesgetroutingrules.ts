@@ -24,15 +24,6 @@ export type RoutingRulesGetRoutingRulesResponse = {
 };
 
 /** @internal */
-export const RoutingRulesGetRoutingRulesRequest$inboundSchema: z.ZodType<
-  RoutingRulesGetRoutingRulesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  serviceID: z.string(),
-});
-
-/** @internal */
 export type RoutingRulesGetRoutingRulesRequest$Outbound = {
   serviceID: string;
 };
@@ -46,20 +37,6 @@ export const RoutingRulesGetRoutingRulesRequest$outboundSchema: z.ZodType<
   serviceID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RoutingRulesGetRoutingRulesRequest$ {
-  /** @deprecated use `RoutingRulesGetRoutingRulesRequest$inboundSchema` instead. */
-  export const inboundSchema = RoutingRulesGetRoutingRulesRequest$inboundSchema;
-  /** @deprecated use `RoutingRulesGetRoutingRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    RoutingRulesGetRoutingRulesRequest$outboundSchema;
-  /** @deprecated use `RoutingRulesGetRoutingRulesRequest$Outbound` instead. */
-  export type Outbound = RoutingRulesGetRoutingRulesRequest$Outbound;
-}
-
 export function routingRulesGetRoutingRulesRequestToJSON(
   routingRulesGetRoutingRulesRequest: RoutingRulesGetRoutingRulesRequest,
 ): string {
@@ -67,17 +44,6 @@ export function routingRulesGetRoutingRulesRequestToJSON(
     RoutingRulesGetRoutingRulesRequest$outboundSchema.parse(
       routingRulesGetRoutingRulesRequest,
     ),
-  );
-}
-
-export function routingRulesGetRoutingRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RoutingRulesGetRoutingRulesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      RoutingRulesGetRoutingRulesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RoutingRulesGetRoutingRulesRequest' from JSON`,
   );
 }
 
@@ -91,45 +57,6 @@ export const RoutingRulesGetRoutingRulesData$inboundSchema: z.ZodType<
     models.V3ServicesRoutingRulesRoutingRuleResponse$inboundSchema,
   ),
 });
-
-/** @internal */
-export type RoutingRulesGetRoutingRulesData$Outbound = {
-  rules: Array<models.V3ServicesRoutingRulesRoutingRuleResponse$Outbound>;
-};
-
-/** @internal */
-export const RoutingRulesGetRoutingRulesData$outboundSchema: z.ZodType<
-  RoutingRulesGetRoutingRulesData$Outbound,
-  z.ZodTypeDef,
-  RoutingRulesGetRoutingRulesData
-> = z.object({
-  rules: z.array(
-    models.V3ServicesRoutingRulesRoutingRuleResponse$outboundSchema,
-  ),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RoutingRulesGetRoutingRulesData$ {
-  /** @deprecated use `RoutingRulesGetRoutingRulesData$inboundSchema` instead. */
-  export const inboundSchema = RoutingRulesGetRoutingRulesData$inboundSchema;
-  /** @deprecated use `RoutingRulesGetRoutingRulesData$outboundSchema` instead. */
-  export const outboundSchema = RoutingRulesGetRoutingRulesData$outboundSchema;
-  /** @deprecated use `RoutingRulesGetRoutingRulesData$Outbound` instead. */
-  export type Outbound = RoutingRulesGetRoutingRulesData$Outbound;
-}
-
-export function routingRulesGetRoutingRulesDataToJSON(
-  routingRulesGetRoutingRulesData: RoutingRulesGetRoutingRulesData,
-): string {
-  return JSON.stringify(
-    RoutingRulesGetRoutingRulesData$outboundSchema.parse(
-      routingRulesGetRoutingRulesData,
-    ),
-  );
-}
 
 export function routingRulesGetRoutingRulesDataFromJSON(
   jsonString: string,
@@ -149,45 +76,6 @@ export const RoutingRulesGetRoutingRulesResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => RoutingRulesGetRoutingRulesData$inboundSchema),
 });
-
-/** @internal */
-export type RoutingRulesGetRoutingRulesResponse$Outbound = {
-  data: RoutingRulesGetRoutingRulesData$Outbound;
-};
-
-/** @internal */
-export const RoutingRulesGetRoutingRulesResponse$outboundSchema: z.ZodType<
-  RoutingRulesGetRoutingRulesResponse$Outbound,
-  z.ZodTypeDef,
-  RoutingRulesGetRoutingRulesResponse
-> = z.object({
-  data: z.lazy(() => RoutingRulesGetRoutingRulesData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RoutingRulesGetRoutingRulesResponse$ {
-  /** @deprecated use `RoutingRulesGetRoutingRulesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    RoutingRulesGetRoutingRulesResponse$inboundSchema;
-  /** @deprecated use `RoutingRulesGetRoutingRulesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    RoutingRulesGetRoutingRulesResponse$outboundSchema;
-  /** @deprecated use `RoutingRulesGetRoutingRulesResponse$Outbound` instead. */
-  export type Outbound = RoutingRulesGetRoutingRulesResponse$Outbound;
-}
-
-export function routingRulesGetRoutingRulesResponseToJSON(
-  routingRulesGetRoutingRulesResponse: RoutingRulesGetRoutingRulesResponse,
-): string {
-  return JSON.stringify(
-    RoutingRulesGetRoutingRulesResponse$outboundSchema.parse(
-      routingRulesGetRoutingRulesResponse,
-    ),
-  );
-}
 
 export function routingRulesGetRoutingRulesResponseFromJSON(
   jsonString: string,

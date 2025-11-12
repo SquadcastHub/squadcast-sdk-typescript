@@ -34,24 +34,10 @@ export type V4StatusPagesNewStatusPageComponentList = {
 export const V4StatusPagesNewStatusPageComponentListType$inboundSchema:
   z.ZodNativeEnum<typeof V4StatusPagesNewStatusPageComponentListType> = z
     .nativeEnum(V4StatusPagesNewStatusPageComponentListType);
-
 /** @internal */
 export const V4StatusPagesNewStatusPageComponentListType$outboundSchema:
   z.ZodNativeEnum<typeof V4StatusPagesNewStatusPageComponentListType> =
     V4StatusPagesNewStatusPageComponentListType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesNewStatusPageComponentListType$ {
-  /** @deprecated use `V4StatusPagesNewStatusPageComponentListType$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesNewStatusPageComponentListType$inboundSchema;
-  /** @deprecated use `V4StatusPagesNewStatusPageComponentListType$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesNewStatusPageComponentListType$outboundSchema;
-}
 
 /** @internal */
 export const V4StatusPagesNewStatusPageComponentList$inboundSchema: z.ZodType<
@@ -66,7 +52,6 @@ export const V4StatusPagesNewStatusPageComponentList$inboundSchema: z.ZodType<
   components: z.array(V4StatusPagesNewStatusPageComponent$inboundSchema)
     .optional(),
 });
-
 /** @internal */
 export type V4StatusPagesNewStatusPageComponentList$Outbound = {
   type: string;
@@ -90,21 +75,6 @@ export const V4StatusPagesNewStatusPageComponentList$outboundSchema: z.ZodType<
     .optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesNewStatusPageComponentList$ {
-  /** @deprecated use `V4StatusPagesNewStatusPageComponentList$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesNewStatusPageComponentList$inboundSchema;
-  /** @deprecated use `V4StatusPagesNewStatusPageComponentList$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesNewStatusPageComponentList$outboundSchema;
-  /** @deprecated use `V4StatusPagesNewStatusPageComponentList$Outbound` instead. */
-  export type Outbound = V4StatusPagesNewStatusPageComponentList$Outbound;
-}
-
 export function v4StatusPagesNewStatusPageComponentListToJSON(
   v4StatusPagesNewStatusPageComponentList:
     V4StatusPagesNewStatusPageComponentList,
@@ -115,7 +85,6 @@ export function v4StatusPagesNewStatusPageComponentListToJSON(
     ),
   );
 }
-
 export function v4StatusPagesNewStatusPageComponentListFromJSON(
   jsonString: string,
 ): SafeParseResult<

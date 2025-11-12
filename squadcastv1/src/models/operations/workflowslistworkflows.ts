@@ -28,33 +28,6 @@ export type WorkflowsListWorkflowsResponse = {
 };
 
 /** @internal */
-export const WorkflowsListWorkflowsRequest$inboundSchema: z.ZodType<
-  WorkflowsListWorkflowsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  owner_id: z.string(),
-  page_size: z.number().int().optional(),
-  page_number: z.number().int().optional(),
-  search: z.string().optional(),
-  event: z.array(z.string()).optional(),
-  actions: z.array(z.string()).optional(),
-  tags: z.array(z.string()).optional(),
-  owner: z.array(z.string()).optional(),
-  created_by: z.array(z.string()).optional(),
-  updated_by: z.array(z.string()).optional(),
-  enabled: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-    "page_size": "pageSize",
-    "page_number": "pageNumber",
-    "created_by": "createdBy",
-    "updated_by": "updatedBy",
-  });
-});
-
-/** @internal */
 export type WorkflowsListWorkflowsRequest$Outbound = {
   owner_id: string;
   page_size?: number | undefined;
@@ -96,19 +69,6 @@ export const WorkflowsListWorkflowsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WorkflowsListWorkflowsRequest$ {
-  /** @deprecated use `WorkflowsListWorkflowsRequest$inboundSchema` instead. */
-  export const inboundSchema = WorkflowsListWorkflowsRequest$inboundSchema;
-  /** @deprecated use `WorkflowsListWorkflowsRequest$outboundSchema` instead. */
-  export const outboundSchema = WorkflowsListWorkflowsRequest$outboundSchema;
-  /** @deprecated use `WorkflowsListWorkflowsRequest$Outbound` instead. */
-  export type Outbound = WorkflowsListWorkflowsRequest$Outbound;
-}
-
 export function workflowsListWorkflowsRequestToJSON(
   workflowsListWorkflowsRequest: WorkflowsListWorkflowsRequest,
 ): string {
@@ -116,16 +76,6 @@ export function workflowsListWorkflowsRequestToJSON(
     WorkflowsListWorkflowsRequest$outboundSchema.parse(
       workflowsListWorkflowsRequest,
     ),
-  );
-}
-
-export function workflowsListWorkflowsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WorkflowsListWorkflowsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => WorkflowsListWorkflowsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WorkflowsListWorkflowsRequest' from JSON`,
   );
 }
 
@@ -141,47 +91,6 @@ export const WorkflowsListWorkflowsResponse$inboundSchema: z.ZodType<
     "Result": "result",
   });
 });
-
-/** @internal */
-export type WorkflowsListWorkflowsResponse$Outbound = {
-  Result: models.V3WorkflowsListWorkflowAPIResponse$Outbound;
-};
-
-/** @internal */
-export const WorkflowsListWorkflowsResponse$outboundSchema: z.ZodType<
-  WorkflowsListWorkflowsResponse$Outbound,
-  z.ZodTypeDef,
-  WorkflowsListWorkflowsResponse
-> = z.object({
-  result: models.V3WorkflowsListWorkflowAPIResponse$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    result: "Result",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WorkflowsListWorkflowsResponse$ {
-  /** @deprecated use `WorkflowsListWorkflowsResponse$inboundSchema` instead. */
-  export const inboundSchema = WorkflowsListWorkflowsResponse$inboundSchema;
-  /** @deprecated use `WorkflowsListWorkflowsResponse$outboundSchema` instead. */
-  export const outboundSchema = WorkflowsListWorkflowsResponse$outboundSchema;
-  /** @deprecated use `WorkflowsListWorkflowsResponse$Outbound` instead. */
-  export type Outbound = WorkflowsListWorkflowsResponse$Outbound;
-}
-
-export function workflowsListWorkflowsResponseToJSON(
-  workflowsListWorkflowsResponse: WorkflowsListWorkflowsResponse,
-): string {
-  return JSON.stringify(
-    WorkflowsListWorkflowsResponse$outboundSchema.parse(
-      workflowsListWorkflowsResponse,
-    ),
-  );
-}
 
 export function workflowsListWorkflowsResponseFromJSON(
   jsonString: string,

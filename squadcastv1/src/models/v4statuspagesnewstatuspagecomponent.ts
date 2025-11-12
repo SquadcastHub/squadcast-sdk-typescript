@@ -28,24 +28,10 @@ export type V4StatusPagesNewStatusPageComponent = {
 export const V4StatusPagesNewStatusPageComponentType$inboundSchema:
   z.ZodNativeEnum<typeof V4StatusPagesNewStatusPageComponentType> = z
     .nativeEnum(V4StatusPagesNewStatusPageComponentType);
-
 /** @internal */
 export const V4StatusPagesNewStatusPageComponentType$outboundSchema:
   z.ZodNativeEnum<typeof V4StatusPagesNewStatusPageComponentType> =
     V4StatusPagesNewStatusPageComponentType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesNewStatusPageComponentType$ {
-  /** @deprecated use `V4StatusPagesNewStatusPageComponentType$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesNewStatusPageComponentType$inboundSchema;
-  /** @deprecated use `V4StatusPagesNewStatusPageComponentType$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesNewStatusPageComponentType$outboundSchema;
-}
 
 /** @internal */
 export const V4StatusPagesNewStatusPageComponent$inboundSchema: z.ZodType<
@@ -59,7 +45,6 @@ export const V4StatusPagesNewStatusPageComponent$inboundSchema: z.ZodType<
   description: z.string().optional(),
   serviceID: z.string().optional(),
 });
-
 /** @internal */
 export type V4StatusPagesNewStatusPageComponent$Outbound = {
   type: string;
@@ -82,21 +67,6 @@ export const V4StatusPagesNewStatusPageComponent$outboundSchema: z.ZodType<
   serviceID: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesNewStatusPageComponent$ {
-  /** @deprecated use `V4StatusPagesNewStatusPageComponent$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesNewStatusPageComponent$inboundSchema;
-  /** @deprecated use `V4StatusPagesNewStatusPageComponent$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesNewStatusPageComponent$outboundSchema;
-  /** @deprecated use `V4StatusPagesNewStatusPageComponent$Outbound` instead. */
-  export type Outbound = V4StatusPagesNewStatusPageComponent$Outbound;
-}
-
 export function v4StatusPagesNewStatusPageComponentToJSON(
   v4StatusPagesNewStatusPageComponent: V4StatusPagesNewStatusPageComponent,
 ): string {
@@ -106,7 +76,6 @@ export function v4StatusPagesNewStatusPageComponentToJSON(
     ),
   );
 }
-
 export function v4StatusPagesNewStatusPageComponentFromJSON(
   jsonString: string,
 ): SafeParseResult<V4StatusPagesNewStatusPageComponent, SDKValidationError> {

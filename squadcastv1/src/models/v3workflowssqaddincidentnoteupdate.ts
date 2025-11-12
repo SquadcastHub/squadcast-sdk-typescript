@@ -3,10 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3WorkflowsSqAddIncidentNoteUpdateName = {
   SqAddIncidentNote: "sq_add_incident_note",
@@ -25,37 +22,10 @@ export type V3WorkflowsSqAddIncidentNoteUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsSqAddIncidentNoteUpdateName$inboundSchema:
+export const V3WorkflowsSqAddIncidentNoteUpdateName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqAddIncidentNoteUpdateName> = z.nativeEnum(
     V3WorkflowsSqAddIncidentNoteUpdateName,
   );
-
-/** @internal */
-export const V3WorkflowsSqAddIncidentNoteUpdateName$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsSqAddIncidentNoteUpdateName> =
-    V3WorkflowsSqAddIncidentNoteUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqAddIncidentNoteUpdateName$ {
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteUpdateName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqAddIncidentNoteUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteUpdateName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqAddIncidentNoteUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsSqAddIncidentNoteUpdateData$inboundSchema: z.ZodType<
-  V3WorkflowsSqAddIncidentNoteUpdateData,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  note: z.string().optional(),
-});
 
 /** @internal */
 export type V3WorkflowsSqAddIncidentNoteUpdateData$Outbound = {
@@ -71,21 +41,6 @@ export const V3WorkflowsSqAddIncidentNoteUpdateData$outboundSchema: z.ZodType<
   note: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqAddIncidentNoteUpdateData$ {
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteUpdateData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqAddIncidentNoteUpdateData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteUpdateData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqAddIncidentNoteUpdateData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteUpdateData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqAddIncidentNoteUpdateData$Outbound;
-}
-
 export function v3WorkflowsSqAddIncidentNoteUpdateDataToJSON(
   v3WorkflowsSqAddIncidentNoteUpdateData:
     V3WorkflowsSqAddIncidentNoteUpdateData,
@@ -96,28 +51,6 @@ export function v3WorkflowsSqAddIncidentNoteUpdateDataToJSON(
     ),
   );
 }
-
-export function v3WorkflowsSqAddIncidentNoteUpdateDataFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsSqAddIncidentNoteUpdateData, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSqAddIncidentNoteUpdateData$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsSqAddIncidentNoteUpdateData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsSqAddIncidentNoteUpdate$inboundSchema: z.ZodType<
-  V3WorkflowsSqAddIncidentNoteUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: V3WorkflowsSqAddIncidentNoteUpdateName$inboundSchema,
-  data: z.lazy(() => V3WorkflowsSqAddIncidentNoteUpdateData$inboundSchema)
-    .optional(),
-});
 
 /** @internal */
 export type V3WorkflowsSqAddIncidentNoteUpdate$Outbound = {
@@ -136,20 +69,6 @@ export const V3WorkflowsSqAddIncidentNoteUpdate$outboundSchema: z.ZodType<
     .optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqAddIncidentNoteUpdate$ {
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteUpdate$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqAddIncidentNoteUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqAddIncidentNoteUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqAddIncidentNoteUpdate$Outbound;
-}
-
 export function v3WorkflowsSqAddIncidentNoteUpdateToJSON(
   v3WorkflowsSqAddIncidentNoteUpdate: V3WorkflowsSqAddIncidentNoteUpdate,
 ): string {
@@ -157,16 +76,5 @@ export function v3WorkflowsSqAddIncidentNoteUpdateToJSON(
     V3WorkflowsSqAddIncidentNoteUpdate$outboundSchema.parse(
       v3WorkflowsSqAddIncidentNoteUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsSqAddIncidentNoteUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsSqAddIncidentNoteUpdate, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSqAddIncidentNoteUpdate$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsSqAddIncidentNoteUpdate' from JSON`,
   );
 }

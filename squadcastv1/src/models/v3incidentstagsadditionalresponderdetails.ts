@@ -42,61 +42,6 @@ export const V3IncidentsTagsAdditionalResponderDetails$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3IncidentsTagsAdditionalResponderDetails$Outbound = {
-  id: string;
-  type: string;
-  timeOfAssignment: string;
-  reason: string;
-  name: string;
-  last_notified_at: string;
-};
-
-/** @internal */
-export const V3IncidentsTagsAdditionalResponderDetails$outboundSchema:
-  z.ZodType<
-    V3IncidentsTagsAdditionalResponderDetails$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsTagsAdditionalResponderDetails
-  > = z.object({
-    id: z.string(),
-    type: z.string(),
-    timeOfAssignment: z.date().transform(v => v.toISOString()),
-    reason: z.string(),
-    name: z.string(),
-    lastNotifiedAt: z.date().transform(v => v.toISOString()),
-  }).transform((v) => {
-    return remap$(v, {
-      lastNotifiedAt: "last_notified_at",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsAdditionalResponderDetails$ {
-  /** @deprecated use `V3IncidentsTagsAdditionalResponderDetails$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsTagsAdditionalResponderDetails$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsAdditionalResponderDetails$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsTagsAdditionalResponderDetails$outboundSchema;
-  /** @deprecated use `V3IncidentsTagsAdditionalResponderDetails$Outbound` instead. */
-  export type Outbound = V3IncidentsTagsAdditionalResponderDetails$Outbound;
-}
-
-export function v3IncidentsTagsAdditionalResponderDetailsToJSON(
-  v3IncidentsTagsAdditionalResponderDetails:
-    V3IncidentsTagsAdditionalResponderDetails,
-): string {
-  return JSON.stringify(
-    V3IncidentsTagsAdditionalResponderDetails$outboundSchema.parse(
-      v3IncidentsTagsAdditionalResponderDetails,
-    ),
-  );
-}
-
 export function v3IncidentsTagsAdditionalResponderDetailsFromJSON(
   jsonString: string,
 ): SafeParseResult<

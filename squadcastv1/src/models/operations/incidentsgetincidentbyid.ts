@@ -20,15 +20,6 @@ export type IncidentsGetIncidentByIdResponse = {
 };
 
 /** @internal */
-export const IncidentsGetIncidentByIdRequest$inboundSchema: z.ZodType<
-  IncidentsGetIncidentByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  incidentID: z.string(),
-});
-
-/** @internal */
 export type IncidentsGetIncidentByIdRequest$Outbound = {
   incidentID: string;
 };
@@ -42,19 +33,6 @@ export const IncidentsGetIncidentByIdRequest$outboundSchema: z.ZodType<
   incidentID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsGetIncidentByIdRequest$ {
-  /** @deprecated use `IncidentsGetIncidentByIdRequest$inboundSchema` instead. */
-  export const inboundSchema = IncidentsGetIncidentByIdRequest$inboundSchema;
-  /** @deprecated use `IncidentsGetIncidentByIdRequest$outboundSchema` instead. */
-  export const outboundSchema = IncidentsGetIncidentByIdRequest$outboundSchema;
-  /** @deprecated use `IncidentsGetIncidentByIdRequest$Outbound` instead. */
-  export type Outbound = IncidentsGetIncidentByIdRequest$Outbound;
-}
-
 export function incidentsGetIncidentByIdRequestToJSON(
   incidentsGetIncidentByIdRequest: IncidentsGetIncidentByIdRequest,
 ): string {
@@ -62,16 +40,6 @@ export function incidentsGetIncidentByIdRequestToJSON(
     IncidentsGetIncidentByIdRequest$outboundSchema.parse(
       incidentsGetIncidentByIdRequest,
     ),
-  );
-}
-
-export function incidentsGetIncidentByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<IncidentsGetIncidentByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IncidentsGetIncidentByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IncidentsGetIncidentByIdRequest' from JSON`,
   );
 }
 
@@ -83,43 +51,6 @@ export const IncidentsGetIncidentByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3IncidentsIncidentResponse$inboundSchema,
 });
-
-/** @internal */
-export type IncidentsGetIncidentByIdResponse$Outbound = {
-  data: models.V3IncidentsIncidentResponse$Outbound;
-};
-
-/** @internal */
-export const IncidentsGetIncidentByIdResponse$outboundSchema: z.ZodType<
-  IncidentsGetIncidentByIdResponse$Outbound,
-  z.ZodTypeDef,
-  IncidentsGetIncidentByIdResponse
-> = z.object({
-  data: models.V3IncidentsIncidentResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsGetIncidentByIdResponse$ {
-  /** @deprecated use `IncidentsGetIncidentByIdResponse$inboundSchema` instead. */
-  export const inboundSchema = IncidentsGetIncidentByIdResponse$inboundSchema;
-  /** @deprecated use `IncidentsGetIncidentByIdResponse$outboundSchema` instead. */
-  export const outboundSchema = IncidentsGetIncidentByIdResponse$outboundSchema;
-  /** @deprecated use `IncidentsGetIncidentByIdResponse$Outbound` instead. */
-  export type Outbound = IncidentsGetIncidentByIdResponse$Outbound;
-}
-
-export function incidentsGetIncidentByIdResponseToJSON(
-  incidentsGetIncidentByIdResponse: IncidentsGetIncidentByIdResponse,
-): string {
-  return JSON.stringify(
-    IncidentsGetIncidentByIdResponse$outboundSchema.parse(
-      incidentsGetIncidentByIdResponse,
-    ),
-  );
-}
 
 export function incidentsGetIncidentByIdResponseFromJSON(
   jsonString: string,

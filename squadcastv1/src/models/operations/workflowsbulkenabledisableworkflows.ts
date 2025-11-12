@@ -20,44 +20,6 @@ export const WorkflowsBulkEnabledisableWorkflowsResponseBody$inboundSchema:
     unknown
   > = z.object({});
 
-/** @internal */
-export type WorkflowsBulkEnabledisableWorkflowsResponseBody$Outbound = {};
-
-/** @internal */
-export const WorkflowsBulkEnabledisableWorkflowsResponseBody$outboundSchema:
-  z.ZodType<
-    WorkflowsBulkEnabledisableWorkflowsResponseBody$Outbound,
-    z.ZodTypeDef,
-    WorkflowsBulkEnabledisableWorkflowsResponseBody
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WorkflowsBulkEnabledisableWorkflowsResponseBody$ {
-  /** @deprecated use `WorkflowsBulkEnabledisableWorkflowsResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    WorkflowsBulkEnabledisableWorkflowsResponseBody$inboundSchema;
-  /** @deprecated use `WorkflowsBulkEnabledisableWorkflowsResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    WorkflowsBulkEnabledisableWorkflowsResponseBody$outboundSchema;
-  /** @deprecated use `WorkflowsBulkEnabledisableWorkflowsResponseBody$Outbound` instead. */
-  export type Outbound =
-    WorkflowsBulkEnabledisableWorkflowsResponseBody$Outbound;
-}
-
-export function workflowsBulkEnabledisableWorkflowsResponseBodyToJSON(
-  workflowsBulkEnabledisableWorkflowsResponseBody:
-    WorkflowsBulkEnabledisableWorkflowsResponseBody,
-): string {
-  return JSON.stringify(
-    WorkflowsBulkEnabledisableWorkflowsResponseBody$outboundSchema.parse(
-      workflowsBulkEnabledisableWorkflowsResponseBody,
-    ),
-  );
-}
-
 export function workflowsBulkEnabledisableWorkflowsResponseBodyFromJSON(
   jsonString: string,
 ): SafeParseResult<

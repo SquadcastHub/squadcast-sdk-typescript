@@ -27,21 +27,6 @@ export const Condition$inboundSchema: z.ZodNativeEnum<typeof Condition> = z
   .nativeEnum(Condition);
 
 /** @internal */
-export const Condition$outboundSchema: z.ZodNativeEnum<typeof Condition> =
-  Condition$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Condition$ {
-  /** @deprecated use `Condition$inboundSchema` instead. */
-  export const inboundSchema = Condition$inboundSchema;
-  /** @deprecated use `Condition$outboundSchema` instead. */
-  export const outboundSchema = Condition$outboundSchema;
-}
-
-/** @internal */
 export const V3WorkflowsWorkflowFilters$inboundSchema: z.ZodType<
   V3WorkflowsWorkflowFilters,
   z.ZodTypeDef,
@@ -54,50 +39,6 @@ export const V3WorkflowsWorkflowFilters$inboundSchema: z.ZodType<
   filters: z.array(z.lazy(() => V3WorkflowsWorkflowFilters$inboundSchema))
     .optional(),
 });
-
-/** @internal */
-export type V3WorkflowsWorkflowFilters$Outbound = {
-  type?: string | undefined;
-  key?: string | undefined;
-  value?: string | undefined;
-  condition?: string | undefined;
-  filters?: Array<V3WorkflowsWorkflowFilters$Outbound> | undefined;
-};
-
-/** @internal */
-export const V3WorkflowsWorkflowFilters$outboundSchema: z.ZodType<
-  V3WorkflowsWorkflowFilters$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsWorkflowFilters
-> = z.object({
-  type: z.string().optional(),
-  key: z.string().optional(),
-  value: z.string().optional(),
-  condition: Condition$outboundSchema.optional(),
-  filters: z.array(z.lazy(() => V3WorkflowsWorkflowFilters$outboundSchema))
-    .optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsWorkflowFilters$ {
-  /** @deprecated use `V3WorkflowsWorkflowFilters$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsWorkflowFilters$inboundSchema;
-  /** @deprecated use `V3WorkflowsWorkflowFilters$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsWorkflowFilters$outboundSchema;
-  /** @deprecated use `V3WorkflowsWorkflowFilters$Outbound` instead. */
-  export type Outbound = V3WorkflowsWorkflowFilters$Outbound;
-}
-
-export function v3WorkflowsWorkflowFiltersToJSON(
-  v3WorkflowsWorkflowFilters: V3WorkflowsWorkflowFilters,
-): string {
-  return JSON.stringify(
-    V3WorkflowsWorkflowFilters$outboundSchema.parse(v3WorkflowsWorkflowFilters),
-  );
-}
 
 export function v3WorkflowsWorkflowFiltersFromJSON(
   jsonString: string,

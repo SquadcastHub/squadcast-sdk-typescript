@@ -22,20 +22,6 @@ export type ComponentsDeleteComponentByIdResponse = {
 };
 
 /** @internal */
-export const ComponentsDeleteComponentByIdRequest$inboundSchema: z.ZodType<
-  ComponentsDeleteComponentByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-  component_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "component_id": "componentId",
-  });
-});
-
-/** @internal */
 export type ComponentsDeleteComponentByIdRequest$Outbound = {
   statuspageID: string;
   component_id: string;
@@ -55,21 +41,6 @@ export const ComponentsDeleteComponentByIdRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentsDeleteComponentByIdRequest$ {
-  /** @deprecated use `ComponentsDeleteComponentByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentsDeleteComponentByIdRequest$inboundSchema;
-  /** @deprecated use `ComponentsDeleteComponentByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentsDeleteComponentByIdRequest$outboundSchema;
-  /** @deprecated use `ComponentsDeleteComponentByIdRequest$Outbound` instead. */
-  export type Outbound = ComponentsDeleteComponentByIdRequest$Outbound;
-}
-
 export function componentsDeleteComponentByIdRequestToJSON(
   componentsDeleteComponentByIdRequest: ComponentsDeleteComponentByIdRequest,
 ): string {
@@ -77,17 +48,6 @@ export function componentsDeleteComponentByIdRequestToJSON(
     ComponentsDeleteComponentByIdRequest$outboundSchema.parse(
       componentsDeleteComponentByIdRequest,
     ),
-  );
-}
-
-export function componentsDeleteComponentByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ComponentsDeleteComponentByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ComponentsDeleteComponentByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComponentsDeleteComponentByIdRequest' from JSON`,
   );
 }
 
@@ -99,46 +59,6 @@ export const ComponentsDeleteComponentByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4StatusPagesComponentsDeleteComponentByIdResponse$inboundSchema,
 });
-
-/** @internal */
-export type ComponentsDeleteComponentByIdResponse$Outbound = {
-  data: models.V4StatusPagesComponentsDeleteComponentByIdResponse$Outbound;
-};
-
-/** @internal */
-export const ComponentsDeleteComponentByIdResponse$outboundSchema: z.ZodType<
-  ComponentsDeleteComponentByIdResponse$Outbound,
-  z.ZodTypeDef,
-  ComponentsDeleteComponentByIdResponse
-> = z.object({
-  data:
-    models.V4StatusPagesComponentsDeleteComponentByIdResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentsDeleteComponentByIdResponse$ {
-  /** @deprecated use `ComponentsDeleteComponentByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentsDeleteComponentByIdResponse$inboundSchema;
-  /** @deprecated use `ComponentsDeleteComponentByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentsDeleteComponentByIdResponse$outboundSchema;
-  /** @deprecated use `ComponentsDeleteComponentByIdResponse$Outbound` instead. */
-  export type Outbound = ComponentsDeleteComponentByIdResponse$Outbound;
-}
-
-export function componentsDeleteComponentByIdResponseToJSON(
-  componentsDeleteComponentByIdResponse: ComponentsDeleteComponentByIdResponse,
-): string {
-  return JSON.stringify(
-    ComponentsDeleteComponentByIdResponse$outboundSchema.parse(
-      componentsDeleteComponentByIdResponse,
-    ),
-  );
-}
 
 export function componentsDeleteComponentByIdResponseFromJSON(
   jsonString: string,

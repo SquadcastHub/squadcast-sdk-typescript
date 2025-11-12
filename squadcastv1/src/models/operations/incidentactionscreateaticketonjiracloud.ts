@@ -19,16 +19,6 @@ export type IncidentActionsCreateATicketOnJiraCloudResponse = {
 };
 
 /** @internal */
-export const IncidentActionsCreateATicketOnJiraCloudRequest$inboundSchema:
-  z.ZodType<
-    IncidentActionsCreateATicketOnJiraCloudRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incidentID: z.string(),
-  });
-
-/** @internal */
 export type IncidentActionsCreateATicketOnJiraCloudRequest$Outbound = {
   incidentID: string;
 };
@@ -43,22 +33,6 @@ export const IncidentActionsCreateATicketOnJiraCloudRequest$outboundSchema:
     incidentID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentActionsCreateATicketOnJiraCloudRequest$ {
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraCloudRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentActionsCreateATicketOnJiraCloudRequest$inboundSchema;
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraCloudRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentActionsCreateATicketOnJiraCloudRequest$outboundSchema;
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraCloudRequest$Outbound` instead. */
-  export type Outbound =
-    IncidentActionsCreateATicketOnJiraCloudRequest$Outbound;
-}
-
 export function incidentActionsCreateATicketOnJiraCloudRequestToJSON(
   incidentActionsCreateATicketOnJiraCloudRequest:
     IncidentActionsCreateATicketOnJiraCloudRequest,
@@ -67,22 +41,6 @@ export function incidentActionsCreateATicketOnJiraCloudRequestToJSON(
     IncidentActionsCreateATicketOnJiraCloudRequest$outboundSchema.parse(
       incidentActionsCreateATicketOnJiraCloudRequest,
     ),
-  );
-}
-
-export function incidentActionsCreateATicketOnJiraCloudRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  IncidentActionsCreateATicketOnJiraCloudRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      IncidentActionsCreateATicketOnJiraCloudRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'IncidentActionsCreateATicketOnJiraCloudRequest' from JSON`,
   );
 }
 
@@ -95,48 +53,6 @@ export const IncidentActionsCreateATicketOnJiraCloudResponse$inboundSchema:
   > = z.object({
     data: z.string(),
   });
-
-/** @internal */
-export type IncidentActionsCreateATicketOnJiraCloudResponse$Outbound = {
-  data: string;
-};
-
-/** @internal */
-export const IncidentActionsCreateATicketOnJiraCloudResponse$outboundSchema:
-  z.ZodType<
-    IncidentActionsCreateATicketOnJiraCloudResponse$Outbound,
-    z.ZodTypeDef,
-    IncidentActionsCreateATicketOnJiraCloudResponse
-  > = z.object({
-    data: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentActionsCreateATicketOnJiraCloudResponse$ {
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraCloudResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentActionsCreateATicketOnJiraCloudResponse$inboundSchema;
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraCloudResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentActionsCreateATicketOnJiraCloudResponse$outboundSchema;
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraCloudResponse$Outbound` instead. */
-  export type Outbound =
-    IncidentActionsCreateATicketOnJiraCloudResponse$Outbound;
-}
-
-export function incidentActionsCreateATicketOnJiraCloudResponseToJSON(
-  incidentActionsCreateATicketOnJiraCloudResponse:
-    IncidentActionsCreateATicketOnJiraCloudResponse,
-): string {
-  return JSON.stringify(
-    IncidentActionsCreateATicketOnJiraCloudResponse$outboundSchema.parse(
-      incidentActionsCreateATicketOnJiraCloudResponse,
-    ),
-  );
-}
 
 export function incidentActionsCreateATicketOnJiraCloudResponseFromJSON(
   jsonString: string,

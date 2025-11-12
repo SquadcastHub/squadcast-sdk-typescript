@@ -22,51 +22,6 @@ export const V4StatusPagesIssuesDeleteIssueByIdResponse$inboundSchema:
       title: z.string(),
     });
 
-/** @internal */
-export type V4StatusPagesIssuesDeleteIssueByIdResponse$Outbound = {
-  id: number;
-  componentIDs: Array<number> | null;
-  title: string;
-};
-
-/** @internal */
-export const V4StatusPagesIssuesDeleteIssueByIdResponse$outboundSchema:
-  z.ZodType<
-    V4StatusPagesIssuesDeleteIssueByIdResponse$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesIssuesDeleteIssueByIdResponse
-  > = z.object({
-    id: z.number().int(),
-    componentIDs: z.nullable(z.array(z.number().int())),
-    title: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesIssuesDeleteIssueByIdResponse$ {
-  /** @deprecated use `V4StatusPagesIssuesDeleteIssueByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesIssuesDeleteIssueByIdResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesDeleteIssueByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesIssuesDeleteIssueByIdResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesDeleteIssueByIdResponse$Outbound` instead. */
-  export type Outbound = V4StatusPagesIssuesDeleteIssueByIdResponse$Outbound;
-}
-
-export function v4StatusPagesIssuesDeleteIssueByIdResponseToJSON(
-  v4StatusPagesIssuesDeleteIssueByIdResponse:
-    V4StatusPagesIssuesDeleteIssueByIdResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesIssuesDeleteIssueByIdResponse$outboundSchema.parse(
-      v4StatusPagesIssuesDeleteIssueByIdResponse,
-    ),
-  );
-}
-
 export function v4StatusPagesIssuesDeleteIssueByIdResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

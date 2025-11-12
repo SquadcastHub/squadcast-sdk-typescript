@@ -27,7 +27,6 @@ export const V3WorkflowsComponentAndImpact$inboundSchema: z.ZodType<
     "impact_status_id": "impactStatusId",
   });
 });
-
 /** @internal */
 export type V3WorkflowsComponentAndImpact$Outbound = {
   component_id: number;
@@ -49,19 +48,6 @@ export const V3WorkflowsComponentAndImpact$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsComponentAndImpact$ {
-  /** @deprecated use `V3WorkflowsComponentAndImpact$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsComponentAndImpact$inboundSchema;
-  /** @deprecated use `V3WorkflowsComponentAndImpact$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsComponentAndImpact$outboundSchema;
-  /** @deprecated use `V3WorkflowsComponentAndImpact$Outbound` instead. */
-  export type Outbound = V3WorkflowsComponentAndImpact$Outbound;
-}
-
 export function v3WorkflowsComponentAndImpactToJSON(
   v3WorkflowsComponentAndImpact: V3WorkflowsComponentAndImpact,
 ): string {
@@ -71,7 +57,6 @@ export function v3WorkflowsComponentAndImpactToJSON(
     ),
   );
 }
-
 export function v3WorkflowsComponentAndImpactFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsComponentAndImpact, SDKValidationError> {

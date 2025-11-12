@@ -33,22 +33,10 @@ export type V3WorkflowsJiraCreateTicket = {
 export const V3WorkflowsJiraCreateTicketName$inboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsJiraCreateTicketName
 > = z.nativeEnum(V3WorkflowsJiraCreateTicketName);
-
 /** @internal */
 export const V3WorkflowsJiraCreateTicketName$outboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsJiraCreateTicketName
 > = V3WorkflowsJiraCreateTicketName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsJiraCreateTicketName$ {
-  /** @deprecated use `V3WorkflowsJiraCreateTicketName$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsJiraCreateTicketName$inboundSchema;
-  /** @deprecated use `V3WorkflowsJiraCreateTicketName$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsJiraCreateTicketName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsJiraCreateTicketData$inboundSchema: z.ZodType<
@@ -66,7 +54,6 @@ export const V3WorkflowsJiraCreateTicketData$inboundSchema: z.ZodType<
     "issue_type": "issueType",
   });
 });
-
 /** @internal */
 export type V3WorkflowsJiraCreateTicketData$Outbound = {
   account: string;
@@ -93,19 +80,6 @@ export const V3WorkflowsJiraCreateTicketData$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsJiraCreateTicketData$ {
-  /** @deprecated use `V3WorkflowsJiraCreateTicketData$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsJiraCreateTicketData$inboundSchema;
-  /** @deprecated use `V3WorkflowsJiraCreateTicketData$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsJiraCreateTicketData$outboundSchema;
-  /** @deprecated use `V3WorkflowsJiraCreateTicketData$Outbound` instead. */
-  export type Outbound = V3WorkflowsJiraCreateTicketData$Outbound;
-}
-
 export function v3WorkflowsJiraCreateTicketDataToJSON(
   v3WorkflowsJiraCreateTicketData: V3WorkflowsJiraCreateTicketData,
 ): string {
@@ -115,7 +89,6 @@ export function v3WorkflowsJiraCreateTicketDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsJiraCreateTicketDataFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsJiraCreateTicketData, SDKValidationError> {
@@ -135,7 +108,6 @@ export const V3WorkflowsJiraCreateTicket$inboundSchema: z.ZodType<
   name: V3WorkflowsJiraCreateTicketName$inboundSchema,
   data: z.lazy(() => V3WorkflowsJiraCreateTicketData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsJiraCreateTicket$Outbound = {
   name: string;
@@ -152,19 +124,6 @@ export const V3WorkflowsJiraCreateTicket$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsJiraCreateTicketData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsJiraCreateTicket$ {
-  /** @deprecated use `V3WorkflowsJiraCreateTicket$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsJiraCreateTicket$inboundSchema;
-  /** @deprecated use `V3WorkflowsJiraCreateTicket$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsJiraCreateTicket$outboundSchema;
-  /** @deprecated use `V3WorkflowsJiraCreateTicket$Outbound` instead. */
-  export type Outbound = V3WorkflowsJiraCreateTicket$Outbound;
-}
-
 export function v3WorkflowsJiraCreateTicketToJSON(
   v3WorkflowsJiraCreateTicket: V3WorkflowsJiraCreateTicket,
 ): string {
@@ -174,7 +133,6 @@ export function v3WorkflowsJiraCreateTicketToJSON(
     ),
   );
 }
-
 export function v3WorkflowsJiraCreateTicketFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsJiraCreateTicket, SDKValidationError> {

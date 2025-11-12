@@ -18,17 +18,6 @@ export type IncidentsMarkIncidentSloFalsePositiveRequest = {
 export type IncidentsMarkIncidentSloFalsePositiveResponse = {};
 
 /** @internal */
-export const IncidentsMarkIncidentSloFalsePositiveRequest$inboundSchema:
-  z.ZodType<
-    IncidentsMarkIncidentSloFalsePositiveRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incidentID: z.string(),
-    value: z.string(),
-  });
-
-/** @internal */
 export type IncidentsMarkIncidentSloFalsePositiveRequest$Outbound = {
   incidentID: string;
   value: string;
@@ -45,21 +34,6 @@ export const IncidentsMarkIncidentSloFalsePositiveRequest$outboundSchema:
     value: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsMarkIncidentSloFalsePositiveRequest$ {
-  /** @deprecated use `IncidentsMarkIncidentSloFalsePositiveRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsMarkIncidentSloFalsePositiveRequest$inboundSchema;
-  /** @deprecated use `IncidentsMarkIncidentSloFalsePositiveRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsMarkIncidentSloFalsePositiveRequest$outboundSchema;
-  /** @deprecated use `IncidentsMarkIncidentSloFalsePositiveRequest$Outbound` instead. */
-  export type Outbound = IncidentsMarkIncidentSloFalsePositiveRequest$Outbound;
-}
-
 export function incidentsMarkIncidentSloFalsePositiveRequestToJSON(
   incidentsMarkIncidentSloFalsePositiveRequest:
     IncidentsMarkIncidentSloFalsePositiveRequest,
@@ -71,22 +45,6 @@ export function incidentsMarkIncidentSloFalsePositiveRequestToJSON(
   );
 }
 
-export function incidentsMarkIncidentSloFalsePositiveRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  IncidentsMarkIncidentSloFalsePositiveRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      IncidentsMarkIncidentSloFalsePositiveRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'IncidentsMarkIncidentSloFalsePositiveRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const IncidentsMarkIncidentSloFalsePositiveResponse$inboundSchema:
   z.ZodType<
@@ -94,43 +52,6 @@ export const IncidentsMarkIncidentSloFalsePositiveResponse$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.object({});
-
-/** @internal */
-export type IncidentsMarkIncidentSloFalsePositiveResponse$Outbound = {};
-
-/** @internal */
-export const IncidentsMarkIncidentSloFalsePositiveResponse$outboundSchema:
-  z.ZodType<
-    IncidentsMarkIncidentSloFalsePositiveResponse$Outbound,
-    z.ZodTypeDef,
-    IncidentsMarkIncidentSloFalsePositiveResponse
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsMarkIncidentSloFalsePositiveResponse$ {
-  /** @deprecated use `IncidentsMarkIncidentSloFalsePositiveResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsMarkIncidentSloFalsePositiveResponse$inboundSchema;
-  /** @deprecated use `IncidentsMarkIncidentSloFalsePositiveResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsMarkIncidentSloFalsePositiveResponse$outboundSchema;
-  /** @deprecated use `IncidentsMarkIncidentSloFalsePositiveResponse$Outbound` instead. */
-  export type Outbound = IncidentsMarkIncidentSloFalsePositiveResponse$Outbound;
-}
-
-export function incidentsMarkIncidentSloFalsePositiveResponseToJSON(
-  incidentsMarkIncidentSloFalsePositiveResponse:
-    IncidentsMarkIncidentSloFalsePositiveResponse,
-): string {
-  return JSON.stringify(
-    IncidentsMarkIncidentSloFalsePositiveResponse$outboundSchema.parse(
-      incidentsMarkIncidentSloFalsePositiveResponse,
-    ),
-  );
-}
 
 export function incidentsMarkIncidentSloFalsePositiveResponseFromJSON(
   jsonString: string,

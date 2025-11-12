@@ -3,10 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3WorkflowsSqTriggerManualWebhookUpdateName = {
   SqTriggerManualWebhook: "sq_trigger_manual_webhook",
@@ -25,37 +22,9 @@ export type V3WorkflowsSqTriggerManualWebhookUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsSqTriggerManualWebhookUpdateName$inboundSchema:
+export const V3WorkflowsSqTriggerManualWebhookUpdateName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqTriggerManualWebhookUpdateName> = z
     .nativeEnum(V3WorkflowsSqTriggerManualWebhookUpdateName);
-
-/** @internal */
-export const V3WorkflowsSqTriggerManualWebhookUpdateName$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsSqTriggerManualWebhookUpdateName> =
-    V3WorkflowsSqTriggerManualWebhookUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqTriggerManualWebhookUpdateName$ {
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookUpdateName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqTriggerManualWebhookUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookUpdateName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqTriggerManualWebhookUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsSqTriggerManualWebhookUpdateData$inboundSchema:
-  z.ZodType<
-    V3WorkflowsSqTriggerManualWebhookUpdateData,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    id: z.string().optional(),
-  });
 
 /** @internal */
 export type V3WorkflowsSqTriggerManualWebhookUpdateData$Outbound = {
@@ -72,21 +41,6 @@ export const V3WorkflowsSqTriggerManualWebhookUpdateData$outboundSchema:
     id: z.string().optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqTriggerManualWebhookUpdateData$ {
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookUpdateData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqTriggerManualWebhookUpdateData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookUpdateData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqTriggerManualWebhookUpdateData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookUpdateData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqTriggerManualWebhookUpdateData$Outbound;
-}
-
 export function v3WorkflowsSqTriggerManualWebhookUpdateDataToJSON(
   v3WorkflowsSqTriggerManualWebhookUpdateData:
     V3WorkflowsSqTriggerManualWebhookUpdateData,
@@ -97,33 +51,6 @@ export function v3WorkflowsSqTriggerManualWebhookUpdateDataToJSON(
     ),
   );
 }
-
-export function v3WorkflowsSqTriggerManualWebhookUpdateDataFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsSqTriggerManualWebhookUpdateData,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSqTriggerManualWebhookUpdateData$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsSqTriggerManualWebhookUpdateData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsSqTriggerManualWebhookUpdate$inboundSchema: z.ZodType<
-  V3WorkflowsSqTriggerManualWebhookUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: V3WorkflowsSqTriggerManualWebhookUpdateName$inboundSchema,
-  data: z.lazy(() => V3WorkflowsSqTriggerManualWebhookUpdateData$inboundSchema)
-    .optional(),
-});
 
 /** @internal */
 export type V3WorkflowsSqTriggerManualWebhookUpdate$Outbound = {
@@ -142,21 +69,6 @@ export const V3WorkflowsSqTriggerManualWebhookUpdate$outboundSchema: z.ZodType<
     .optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqTriggerManualWebhookUpdate$ {
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookUpdate$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqTriggerManualWebhookUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqTriggerManualWebhookUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqTriggerManualWebhookUpdate$Outbound;
-}
-
 export function v3WorkflowsSqTriggerManualWebhookUpdateToJSON(
   v3WorkflowsSqTriggerManualWebhookUpdate:
     V3WorkflowsSqTriggerManualWebhookUpdate,
@@ -165,21 +77,5 @@ export function v3WorkflowsSqTriggerManualWebhookUpdateToJSON(
     V3WorkflowsSqTriggerManualWebhookUpdate$outboundSchema.parse(
       v3WorkflowsSqTriggerManualWebhookUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsSqTriggerManualWebhookUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsSqTriggerManualWebhookUpdate,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSqTriggerManualWebhookUpdate$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsSqTriggerManualWebhookUpdate' from JSON`,
   );
 }

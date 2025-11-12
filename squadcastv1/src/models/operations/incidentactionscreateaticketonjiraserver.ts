@@ -19,16 +19,6 @@ export type IncidentActionsCreateATicketOnJiraServerResponse = {
 };
 
 /** @internal */
-export const IncidentActionsCreateATicketOnJiraServerRequest$inboundSchema:
-  z.ZodType<
-    IncidentActionsCreateATicketOnJiraServerRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incidentID: z.string(),
-  });
-
-/** @internal */
 export type IncidentActionsCreateATicketOnJiraServerRequest$Outbound = {
   incidentID: string;
 };
@@ -43,22 +33,6 @@ export const IncidentActionsCreateATicketOnJiraServerRequest$outboundSchema:
     incidentID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentActionsCreateATicketOnJiraServerRequest$ {
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraServerRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentActionsCreateATicketOnJiraServerRequest$inboundSchema;
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraServerRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentActionsCreateATicketOnJiraServerRequest$outboundSchema;
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraServerRequest$Outbound` instead. */
-  export type Outbound =
-    IncidentActionsCreateATicketOnJiraServerRequest$Outbound;
-}
-
 export function incidentActionsCreateATicketOnJiraServerRequestToJSON(
   incidentActionsCreateATicketOnJiraServerRequest:
     IncidentActionsCreateATicketOnJiraServerRequest,
@@ -67,22 +41,6 @@ export function incidentActionsCreateATicketOnJiraServerRequestToJSON(
     IncidentActionsCreateATicketOnJiraServerRequest$outboundSchema.parse(
       incidentActionsCreateATicketOnJiraServerRequest,
     ),
-  );
-}
-
-export function incidentActionsCreateATicketOnJiraServerRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  IncidentActionsCreateATicketOnJiraServerRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      IncidentActionsCreateATicketOnJiraServerRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'IncidentActionsCreateATicketOnJiraServerRequest' from JSON`,
   );
 }
 
@@ -95,48 +53,6 @@ export const IncidentActionsCreateATicketOnJiraServerResponse$inboundSchema:
   > = z.object({
     data: z.string(),
   });
-
-/** @internal */
-export type IncidentActionsCreateATicketOnJiraServerResponse$Outbound = {
-  data: string;
-};
-
-/** @internal */
-export const IncidentActionsCreateATicketOnJiraServerResponse$outboundSchema:
-  z.ZodType<
-    IncidentActionsCreateATicketOnJiraServerResponse$Outbound,
-    z.ZodTypeDef,
-    IncidentActionsCreateATicketOnJiraServerResponse
-  > = z.object({
-    data: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentActionsCreateATicketOnJiraServerResponse$ {
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraServerResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentActionsCreateATicketOnJiraServerResponse$inboundSchema;
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraServerResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentActionsCreateATicketOnJiraServerResponse$outboundSchema;
-  /** @deprecated use `IncidentActionsCreateATicketOnJiraServerResponse$Outbound` instead. */
-  export type Outbound =
-    IncidentActionsCreateATicketOnJiraServerResponse$Outbound;
-}
-
-export function incidentActionsCreateATicketOnJiraServerResponseToJSON(
-  incidentActionsCreateATicketOnJiraServerResponse:
-    IncidentActionsCreateATicketOnJiraServerResponse,
-): string {
-  return JSON.stringify(
-    IncidentActionsCreateATicketOnJiraServerResponse$outboundSchema.parse(
-      incidentActionsCreateATicketOnJiraServerResponse,
-    ),
-  );
-}
 
 export function incidentActionsCreateATicketOnJiraServerResponseFromJSON(
   jsonString: string,

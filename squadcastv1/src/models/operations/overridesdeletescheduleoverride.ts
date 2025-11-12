@@ -18,16 +18,6 @@ export type OverridesDeleteScheduleOverrideRequest = {
 export type OverridesDeleteScheduleOverrideResponseBody = {};
 
 /** @internal */
-export const OverridesDeleteScheduleOverrideRequest$inboundSchema: z.ZodType<
-  OverridesDeleteScheduleOverrideRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  overrideID: z.string(),
-});
-
-/** @internal */
 export type OverridesDeleteScheduleOverrideRequest$Outbound = {
   scheduleID: string;
   overrideID: string;
@@ -43,21 +33,6 @@ export const OverridesDeleteScheduleOverrideRequest$outboundSchema: z.ZodType<
   overrideID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverridesDeleteScheduleOverrideRequest$ {
-  /** @deprecated use `OverridesDeleteScheduleOverrideRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverridesDeleteScheduleOverrideRequest$inboundSchema;
-  /** @deprecated use `OverridesDeleteScheduleOverrideRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverridesDeleteScheduleOverrideRequest$outboundSchema;
-  /** @deprecated use `OverridesDeleteScheduleOverrideRequest$Outbound` instead. */
-  export type Outbound = OverridesDeleteScheduleOverrideRequest$Outbound;
-}
-
 export function overridesDeleteScheduleOverrideRequestToJSON(
   overridesDeleteScheduleOverrideRequest:
     OverridesDeleteScheduleOverrideRequest,
@@ -69,17 +44,6 @@ export function overridesDeleteScheduleOverrideRequestToJSON(
   );
 }
 
-export function overridesDeleteScheduleOverrideRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<OverridesDeleteScheduleOverrideRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverridesDeleteScheduleOverrideRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'OverridesDeleteScheduleOverrideRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const OverridesDeleteScheduleOverrideResponseBody$inboundSchema:
   z.ZodType<
@@ -87,43 +51,6 @@ export const OverridesDeleteScheduleOverrideResponseBody$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.object({});
-
-/** @internal */
-export type OverridesDeleteScheduleOverrideResponseBody$Outbound = {};
-
-/** @internal */
-export const OverridesDeleteScheduleOverrideResponseBody$outboundSchema:
-  z.ZodType<
-    OverridesDeleteScheduleOverrideResponseBody$Outbound,
-    z.ZodTypeDef,
-    OverridesDeleteScheduleOverrideResponseBody
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverridesDeleteScheduleOverrideResponseBody$ {
-  /** @deprecated use `OverridesDeleteScheduleOverrideResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    OverridesDeleteScheduleOverrideResponseBody$inboundSchema;
-  /** @deprecated use `OverridesDeleteScheduleOverrideResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    OverridesDeleteScheduleOverrideResponseBody$outboundSchema;
-  /** @deprecated use `OverridesDeleteScheduleOverrideResponseBody$Outbound` instead. */
-  export type Outbound = OverridesDeleteScheduleOverrideResponseBody$Outbound;
-}
-
-export function overridesDeleteScheduleOverrideResponseBodyToJSON(
-  overridesDeleteScheduleOverrideResponseBody:
-    OverridesDeleteScheduleOverrideResponseBody,
-): string {
-  return JSON.stringify(
-    OverridesDeleteScheduleOverrideResponseBody$outboundSchema.parse(
-      overridesDeleteScheduleOverrideResponseBody,
-    ),
-  );
-}
 
 export function overridesDeleteScheduleOverrideResponseBodyFromJSON(
   jsonString: string,

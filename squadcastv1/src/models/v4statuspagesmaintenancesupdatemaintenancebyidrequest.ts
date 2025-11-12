@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest = {
   title: string;
@@ -14,22 +11,6 @@ export type V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest = {
   startTime: Date;
   endTime: Date;
 };
-
-/** @internal */
-export const V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$inboundSchema:
-  z.ZodType<
-    V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    title: z.string(),
-    note: z.string(),
-    components: z.array(z.number().int()).optional(),
-    startTime: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ),
-    endTime: z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  });
 
 /** @internal */
 export type V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$Outbound = {
@@ -54,22 +35,6 @@ export const V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$outboundSchem
     endTime: z.date().transform(v => v.toISOString()),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$ {
-  /** @deprecated use `V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$inboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$outboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$Outbound;
-}
-
 export function v4StatusPagesMaintenancesUpdateMaintenanceByIdRequestToJSON(
   v4StatusPagesMaintenancesUpdateMaintenanceByIdRequest:
     V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest,
@@ -78,21 +43,5 @@ export function v4StatusPagesMaintenancesUpdateMaintenanceByIdRequestToJSON(
     V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$outboundSchema.parse(
       v4StatusPagesMaintenancesUpdateMaintenanceByIdRequest,
     ),
-  );
-}
-
-export function v4StatusPagesMaintenancesUpdateMaintenanceByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest' from JSON`,
   );
 }

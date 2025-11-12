@@ -9,14 +9,10 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4StatusPagesIssuesIssueComponent,
   V4StatusPagesIssuesIssueComponent$inboundSchema,
-  V4StatusPagesIssuesIssueComponent$Outbound,
-  V4StatusPagesIssuesIssueComponent$outboundSchema,
 } from "./v4statuspagesissuesissuecomponent.js";
 import {
   V4StatusPagesIssuesIssueState,
   V4StatusPagesIssuesIssueState$inboundSchema,
-  V4StatusPagesIssuesIssueState$Outbound,
-  V4StatusPagesIssuesIssueState$outboundSchema,
 } from "./v4statuspagesissuesissuestate.js";
 
 export type V4StatusPagesIssuesIssue = {
@@ -41,50 +37,6 @@ export const V4StatusPagesIssuesIssue$inboundSchema: z.ZodType<
   createdAt: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 });
-
-/** @internal */
-export type V4StatusPagesIssuesIssue$Outbound = {
-  id?: number | undefined;
-  title?: string | undefined;
-  components?: Array<V4StatusPagesIssuesIssueComponent$Outbound> | undefined;
-  currentState?: V4StatusPagesIssuesIssueState$Outbound | undefined;
-  createdAt?: string | undefined;
-};
-
-/** @internal */
-export const V4StatusPagesIssuesIssue$outboundSchema: z.ZodType<
-  V4StatusPagesIssuesIssue$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesIssuesIssue
-> = z.object({
-  id: z.number().int().optional(),
-  title: z.string().optional(),
-  components: z.array(V4StatusPagesIssuesIssueComponent$outboundSchema)
-    .optional(),
-  currentState: V4StatusPagesIssuesIssueState$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesIssuesIssue$ {
-  /** @deprecated use `V4StatusPagesIssuesIssue$inboundSchema` instead. */
-  export const inboundSchema = V4StatusPagesIssuesIssue$inboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesIssue$outboundSchema` instead. */
-  export const outboundSchema = V4StatusPagesIssuesIssue$outboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesIssue$Outbound` instead. */
-  export type Outbound = V4StatusPagesIssuesIssue$Outbound;
-}
-
-export function v4StatusPagesIssuesIssueToJSON(
-  v4StatusPagesIssuesIssue: V4StatusPagesIssuesIssue,
-): string {
-  return JSON.stringify(
-    V4StatusPagesIssuesIssue$outboundSchema.parse(v4StatusPagesIssuesIssue),
-  );
-}
 
 export function v4StatusPagesIssuesIssueFromJSON(
   jsonString: string,

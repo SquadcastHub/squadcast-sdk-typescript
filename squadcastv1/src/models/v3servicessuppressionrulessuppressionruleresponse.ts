@@ -10,14 +10,10 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesSuppressionRulesBasicExpression,
   V3ServicesSuppressionRulesBasicExpression$inboundSchema,
-  V3ServicesSuppressionRulesBasicExpression$Outbound,
-  V3ServicesSuppressionRulesBasicExpression$outboundSchema,
 } from "./v3servicessuppressionrulesbasicexpression.js";
 import {
   V3ServicesSuppressionRulesTimeslot,
   V3ServicesSuppressionRulesTimeslot$inboundSchema,
-  V3ServicesSuppressionRulesTimeslot$Outbound,
-  V3ServicesSuppressionRulesTimeslot$outboundSchema,
 } from "./v3servicessuppressionrulestimeslot.js";
 
 export type V3ServicesSuppressionRulesSuppressionRuleResponse = {
@@ -72,83 +68,6 @@ export const V3ServicesSuppressionRulesSuppressionRuleResponse$inboundSchema:
       "basic_expression": "basicExpression",
     });
   });
-
-/** @internal */
-export type V3ServicesSuppressionRulesSuppressionRuleResponse$Outbound = {
-  rule_id: string;
-  created_at: string;
-  updated_at: string;
-  created_by: string;
-  updated_by: string;
-  description: string;
-  expression: string;
-  is_basic: boolean;
-  is_timebased: boolean;
-  timeslots: Array<V3ServicesSuppressionRulesTimeslot$Outbound> | null;
-  basic_expression: Array<V3ServicesSuppressionRulesBasicExpression$Outbound>;
-};
-
-/** @internal */
-export const V3ServicesSuppressionRulesSuppressionRuleResponse$outboundSchema:
-  z.ZodType<
-    V3ServicesSuppressionRulesSuppressionRuleResponse$Outbound,
-    z.ZodTypeDef,
-    V3ServicesSuppressionRulesSuppressionRuleResponse
-  > = z.object({
-    ruleId: z.string(),
-    createdAt: z.date().transform(v => v.toISOString()),
-    updatedAt: z.date().transform(v => v.toISOString()),
-    createdBy: z.string(),
-    updatedBy: z.string(),
-    description: z.string(),
-    expression: z.string(),
-    isBasic: z.boolean(),
-    isTimebased: z.boolean(),
-    timeslots: z.nullable(
-      z.array(V3ServicesSuppressionRulesTimeslot$outboundSchema),
-    ),
-    basicExpression: z.array(
-      V3ServicesSuppressionRulesBasicExpression$outboundSchema,
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      ruleId: "rule_id",
-      createdAt: "created_at",
-      updatedAt: "updated_at",
-      createdBy: "created_by",
-      updatedBy: "updated_by",
-      isBasic: "is_basic",
-      isTimebased: "is_timebased",
-      basicExpression: "basic_expression",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesSuppressionRulesSuppressionRuleResponse$ {
-  /** @deprecated use `V3ServicesSuppressionRulesSuppressionRuleResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesSuppressionRulesSuppressionRuleResponse$inboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesSuppressionRuleResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesSuppressionRulesSuppressionRuleResponse$outboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesSuppressionRuleResponse$Outbound` instead. */
-  export type Outbound =
-    V3ServicesSuppressionRulesSuppressionRuleResponse$Outbound;
-}
-
-export function v3ServicesSuppressionRulesSuppressionRuleResponseToJSON(
-  v3ServicesSuppressionRulesSuppressionRuleResponse:
-    V3ServicesSuppressionRulesSuppressionRuleResponse,
-): string {
-  return JSON.stringify(
-    V3ServicesSuppressionRulesSuppressionRuleResponse$outboundSchema.parse(
-      v3ServicesSuppressionRulesSuppressionRuleResponse,
-    ),
-  );
-}
 
 export function v3ServicesSuppressionRulesSuppressionRuleResponseFromJSON(
   jsonString: string,

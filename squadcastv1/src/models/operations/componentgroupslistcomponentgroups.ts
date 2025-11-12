@@ -20,15 +20,6 @@ export type ComponentGroupsListComponentGroupsResponse = {
 };
 
 /** @internal */
-export const ComponentGroupsListComponentGroupsRequest$inboundSchema: z.ZodType<
-  ComponentGroupsListComponentGroupsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-});
-
-/** @internal */
 export type ComponentGroupsListComponentGroupsRequest$Outbound = {
   statuspageID: string;
 };
@@ -43,21 +34,6 @@ export const ComponentGroupsListComponentGroupsRequest$outboundSchema:
     statuspageID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentGroupsListComponentGroupsRequest$ {
-  /** @deprecated use `ComponentGroupsListComponentGroupsRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentGroupsListComponentGroupsRequest$inboundSchema;
-  /** @deprecated use `ComponentGroupsListComponentGroupsRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentGroupsListComponentGroupsRequest$outboundSchema;
-  /** @deprecated use `ComponentGroupsListComponentGroupsRequest$Outbound` instead. */
-  export type Outbound = ComponentGroupsListComponentGroupsRequest$Outbound;
-}
-
 export function componentGroupsListComponentGroupsRequestToJSON(
   componentGroupsListComponentGroupsRequest:
     ComponentGroupsListComponentGroupsRequest,
@@ -69,22 +45,6 @@ export function componentGroupsListComponentGroupsRequestToJSON(
   );
 }
 
-export function componentGroupsListComponentGroupsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  ComponentGroupsListComponentGroupsRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ComponentGroupsListComponentGroupsRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComponentGroupsListComponentGroupsRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const ComponentGroupsListComponentGroupsResponse$inboundSchema:
   z.ZodType<ComponentGroupsListComponentGroupsResponse, z.ZodTypeDef, unknown> =
@@ -93,51 +53,6 @@ export const ComponentGroupsListComponentGroupsResponse$inboundSchema:
         models.V4StatusPagesComponentGroupsComponentGroupResponse$inboundSchema,
       ),
     });
-
-/** @internal */
-export type ComponentGroupsListComponentGroupsResponse$Outbound = {
-  data: Array<
-    models.V4StatusPagesComponentGroupsComponentGroupResponse$Outbound
-  >;
-};
-
-/** @internal */
-export const ComponentGroupsListComponentGroupsResponse$outboundSchema:
-  z.ZodType<
-    ComponentGroupsListComponentGroupsResponse$Outbound,
-    z.ZodTypeDef,
-    ComponentGroupsListComponentGroupsResponse
-  > = z.object({
-    data: z.array(
-      models.V4StatusPagesComponentGroupsComponentGroupResponse$outboundSchema,
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentGroupsListComponentGroupsResponse$ {
-  /** @deprecated use `ComponentGroupsListComponentGroupsResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentGroupsListComponentGroupsResponse$inboundSchema;
-  /** @deprecated use `ComponentGroupsListComponentGroupsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentGroupsListComponentGroupsResponse$outboundSchema;
-  /** @deprecated use `ComponentGroupsListComponentGroupsResponse$Outbound` instead. */
-  export type Outbound = ComponentGroupsListComponentGroupsResponse$Outbound;
-}
-
-export function componentGroupsListComponentGroupsResponseToJSON(
-  componentGroupsListComponentGroupsResponse:
-    ComponentGroupsListComponentGroupsResponse,
-): string {
-  return JSON.stringify(
-    ComponentGroupsListComponentGroupsResponse$outboundSchema.parse(
-      componentGroupsListComponentGroupsResponse,
-    ),
-  );
-}
 
 export function componentGroupsListComponentGroupsResponseFromJSON(
   jsonString: string,

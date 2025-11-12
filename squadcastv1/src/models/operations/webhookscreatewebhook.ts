@@ -34,41 +34,6 @@ export const WebhooksCreateWebhookBody$inboundSchema: z.ZodType<
   data: models.V3ExtensionsWebhooksWebhookResponse$inboundSchema,
 });
 
-/** @internal */
-export type WebhooksCreateWebhookBody$Outbound = {
-  data: models.V3ExtensionsWebhooksWebhookResponse$Outbound;
-};
-
-/** @internal */
-export const WebhooksCreateWebhookBody$outboundSchema: z.ZodType<
-  WebhooksCreateWebhookBody$Outbound,
-  z.ZodTypeDef,
-  WebhooksCreateWebhookBody
-> = z.object({
-  data: models.V3ExtensionsWebhooksWebhookResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebhooksCreateWebhookBody$ {
-  /** @deprecated use `WebhooksCreateWebhookBody$inboundSchema` instead. */
-  export const inboundSchema = WebhooksCreateWebhookBody$inboundSchema;
-  /** @deprecated use `WebhooksCreateWebhookBody$outboundSchema` instead. */
-  export const outboundSchema = WebhooksCreateWebhookBody$outboundSchema;
-  /** @deprecated use `WebhooksCreateWebhookBody$Outbound` instead. */
-  export type Outbound = WebhooksCreateWebhookBody$Outbound;
-}
-
-export function webhooksCreateWebhookBodyToJSON(
-  webhooksCreateWebhookBody: WebhooksCreateWebhookBody,
-): string {
-  return JSON.stringify(
-    WebhooksCreateWebhookBody$outboundSchema.parse(webhooksCreateWebhookBody),
-  );
-}
-
 export function webhooksCreateWebhookBodyFromJSON(
   jsonString: string,
 ): SafeParseResult<WebhooksCreateWebhookBody, SDKValidationError> {
@@ -87,43 +52,6 @@ export const WebhooksCreateWebhookResponse$inboundSchema: z.ZodType<
 > = z.object({
   body: z.lazy(() => WebhooksCreateWebhookBody$inboundSchema),
 });
-
-/** @internal */
-export type WebhooksCreateWebhookResponse$Outbound = {
-  body: WebhooksCreateWebhookBody$Outbound;
-};
-
-/** @internal */
-export const WebhooksCreateWebhookResponse$outboundSchema: z.ZodType<
-  WebhooksCreateWebhookResponse$Outbound,
-  z.ZodTypeDef,
-  WebhooksCreateWebhookResponse
-> = z.object({
-  body: z.lazy(() => WebhooksCreateWebhookBody$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebhooksCreateWebhookResponse$ {
-  /** @deprecated use `WebhooksCreateWebhookResponse$inboundSchema` instead. */
-  export const inboundSchema = WebhooksCreateWebhookResponse$inboundSchema;
-  /** @deprecated use `WebhooksCreateWebhookResponse$outboundSchema` instead. */
-  export const outboundSchema = WebhooksCreateWebhookResponse$outboundSchema;
-  /** @deprecated use `WebhooksCreateWebhookResponse$Outbound` instead. */
-  export type Outbound = WebhooksCreateWebhookResponse$Outbound;
-}
-
-export function webhooksCreateWebhookResponseToJSON(
-  webhooksCreateWebhookResponse: WebhooksCreateWebhookResponse,
-): string {
-  return JSON.stringify(
-    WebhooksCreateWebhookResponse$outboundSchema.parse(
-      webhooksCreateWebhookResponse,
-    ),
-  );
-}
 
 export function webhooksCreateWebhookResponseFromJSON(
   jsonString: string,

@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V4StatusPagesMaintenancesCreateMaintenanceRequest = {
   title: string;
@@ -14,22 +11,6 @@ export type V4StatusPagesMaintenancesCreateMaintenanceRequest = {
   startTime: Date;
   endTime: Date;
 };
-
-/** @internal */
-export const V4StatusPagesMaintenancesCreateMaintenanceRequest$inboundSchema:
-  z.ZodType<
-    V4StatusPagesMaintenancesCreateMaintenanceRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    title: z.string(),
-    note: z.string(),
-    components: z.array(z.number().int()),
-    startTime: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ),
-    endTime: z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  });
 
 /** @internal */
 export type V4StatusPagesMaintenancesCreateMaintenanceRequest$Outbound = {
@@ -54,22 +35,6 @@ export const V4StatusPagesMaintenancesCreateMaintenanceRequest$outboundSchema:
     endTime: z.date().transform(v => v.toISOString()),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesMaintenancesCreateMaintenanceRequest$ {
-  /** @deprecated use `V4StatusPagesMaintenancesCreateMaintenanceRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesMaintenancesCreateMaintenanceRequest$inboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesCreateMaintenanceRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesMaintenancesCreateMaintenanceRequest$outboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesCreateMaintenanceRequest$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesMaintenancesCreateMaintenanceRequest$Outbound;
-}
-
 export function v4StatusPagesMaintenancesCreateMaintenanceRequestToJSON(
   v4StatusPagesMaintenancesCreateMaintenanceRequest:
     V4StatusPagesMaintenancesCreateMaintenanceRequest,
@@ -78,21 +43,5 @@ export function v4StatusPagesMaintenancesCreateMaintenanceRequestToJSON(
     V4StatusPagesMaintenancesCreateMaintenanceRequest$outboundSchema.parse(
       v4StatusPagesMaintenancesCreateMaintenanceRequest,
     ),
-  );
-}
-
-export function v4StatusPagesMaintenancesCreateMaintenanceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V4StatusPagesMaintenancesCreateMaintenanceRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V4StatusPagesMaintenancesCreateMaintenanceRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V4StatusPagesMaintenancesCreateMaintenanceRequest' from JSON`,
   );
 }

@@ -24,45 +24,6 @@ export const StatusPagesCreateStatusPageResponse$inboundSchema: z.ZodType<
   data: models.V4StatusPagesCreateStatusPageResponse$inboundSchema,
 });
 
-/** @internal */
-export type StatusPagesCreateStatusPageResponse$Outbound = {
-  data: models.V4StatusPagesCreateStatusPageResponse$Outbound;
-};
-
-/** @internal */
-export const StatusPagesCreateStatusPageResponse$outboundSchema: z.ZodType<
-  StatusPagesCreateStatusPageResponse$Outbound,
-  z.ZodTypeDef,
-  StatusPagesCreateStatusPageResponse
-> = z.object({
-  data: models.V4StatusPagesCreateStatusPageResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusPagesCreateStatusPageResponse$ {
-  /** @deprecated use `StatusPagesCreateStatusPageResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    StatusPagesCreateStatusPageResponse$inboundSchema;
-  /** @deprecated use `StatusPagesCreateStatusPageResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    StatusPagesCreateStatusPageResponse$outboundSchema;
-  /** @deprecated use `StatusPagesCreateStatusPageResponse$Outbound` instead. */
-  export type Outbound = StatusPagesCreateStatusPageResponse$Outbound;
-}
-
-export function statusPagesCreateStatusPageResponseToJSON(
-  statusPagesCreateStatusPageResponse: StatusPagesCreateStatusPageResponse,
-): string {
-  return JSON.stringify(
-    StatusPagesCreateStatusPageResponse$outboundSchema.parse(
-      statusPagesCreateStatusPageResponse,
-    ),
-  );
-}
-
 export function statusPagesCreateStatusPageResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<StatusPagesCreateStatusPageResponse, SDKValidationError> {

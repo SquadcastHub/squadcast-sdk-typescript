@@ -30,7 +30,6 @@ export const V3WebformsWFInputField$inboundSchema: z.ZodType<
   label: z.string(),
   options: z.array(z.string()),
 });
-
 /** @internal */
 export type V3WebformsWFInputField$Outbound = {
   label: string;
@@ -47,19 +46,6 @@ export const V3WebformsWFInputField$outboundSchema: z.ZodType<
   options: z.array(z.string()),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WebformsWFInputField$ {
-  /** @deprecated use `V3WebformsWFInputField$inboundSchema` instead. */
-  export const inboundSchema = V3WebformsWFInputField$inboundSchema;
-  /** @deprecated use `V3WebformsWFInputField$outboundSchema` instead. */
-  export const outboundSchema = V3WebformsWFInputField$outboundSchema;
-  /** @deprecated use `V3WebformsWFInputField$Outbound` instead. */
-  export type Outbound = V3WebformsWFInputField$Outbound;
-}
-
 export function v3WebformsWFInputFieldToJSON(
   v3WebformsWFInputField: V3WebformsWFInputField,
 ): string {
@@ -67,7 +53,6 @@ export function v3WebformsWFInputFieldToJSON(
     V3WebformsWFInputField$outboundSchema.parse(v3WebformsWFInputField),
   );
 }
-
 export function v3WebformsWFInputFieldFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WebformsWFInputField, SDKValidationError> {

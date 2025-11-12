@@ -27,24 +27,6 @@ export type DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse = {
 };
 
 /** @internal */
-export const DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$inboundSchema:
-  z.ZodType<
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-    "V3.Services.DeduplicationRules.CreateDeduplicationRulesRequest":
-      models
-        .V3ServicesDeduplicationRulesCreateDeduplicationRulesRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.Services.DeduplicationRules.CreateDeduplicationRulesRequest":
-        "v3ServicesDeduplicationRulesCreateDeduplicationRulesRequest",
-    });
-  });
-
-/** @internal */
 export type DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$Outbound =
   {
     serviceID: string;
@@ -70,22 +52,6 @@ export const DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$outboundS
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$ {
-  /** @deprecated use `DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$inboundSchema;
-  /** @deprecated use `DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$outboundSchema;
-  /** @deprecated use `DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$Outbound` instead. */
-  export type Outbound =
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$Outbound;
-}
-
 export function deduplicationRulesCreateOrUpdateDeduplicationRulesRequestToJSON(
   deduplicationRulesCreateOrUpdateDeduplicationRulesRequest:
     DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest,
@@ -93,21 +59,6 @@ export function deduplicationRulesCreateOrUpdateDeduplicationRulesRequestToJSON(
   return JSON.stringify(
     DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$outboundSchema
       .parse(deduplicationRulesCreateOrUpdateDeduplicationRulesRequest),
-  );
-}
-
-export function deduplicationRulesCreateOrUpdateDeduplicationRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'DeduplicationRulesCreateOrUpdateDeduplicationRulesRequest' from JSON`,
   );
 }
 
@@ -123,53 +74,6 @@ export const DeduplicationRulesCreateOrUpdateDeduplicationRulesData$inboundSchem
         .V3ServicesDeduplicationRulesDeduplicationRuleResponse$inboundSchema,
     ),
   });
-
-/** @internal */
-export type DeduplicationRulesCreateOrUpdateDeduplicationRulesData$Outbound = {
-  rules: Array<
-    models.V3ServicesDeduplicationRulesDeduplicationRuleResponse$Outbound
-  >;
-};
-
-/** @internal */
-export const DeduplicationRulesCreateOrUpdateDeduplicationRulesData$outboundSchema:
-  z.ZodType<
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesData$Outbound,
-    z.ZodTypeDef,
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesData
-  > = z.object({
-    rules: z.array(
-      models
-        .V3ServicesDeduplicationRulesDeduplicationRuleResponse$outboundSchema,
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeduplicationRulesCreateOrUpdateDeduplicationRulesData$ {
-  /** @deprecated use `DeduplicationRulesCreateOrUpdateDeduplicationRulesData$inboundSchema` instead. */
-  export const inboundSchema =
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesData$inboundSchema;
-  /** @deprecated use `DeduplicationRulesCreateOrUpdateDeduplicationRulesData$outboundSchema` instead. */
-  export const outboundSchema =
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesData$outboundSchema;
-  /** @deprecated use `DeduplicationRulesCreateOrUpdateDeduplicationRulesData$Outbound` instead. */
-  export type Outbound =
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesData$Outbound;
-}
-
-export function deduplicationRulesCreateOrUpdateDeduplicationRulesDataToJSON(
-  deduplicationRulesCreateOrUpdateDeduplicationRulesData:
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesData,
-): string {
-  return JSON.stringify(
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesData$outboundSchema.parse(
-      deduplicationRulesCreateOrUpdateDeduplicationRulesData,
-    ),
-  );
-}
 
 export function deduplicationRulesCreateOrUpdateDeduplicationRulesDataFromJSON(
   jsonString: string,
@@ -197,50 +101,6 @@ export const DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$inboundS
       DeduplicationRulesCreateOrUpdateDeduplicationRulesData$inboundSchema
     ),
   });
-
-/** @internal */
-export type DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$Outbound =
-  {
-    data: DeduplicationRulesCreateOrUpdateDeduplicationRulesData$Outbound;
-  };
-
-/** @internal */
-export const DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$outboundSchema:
-  z.ZodType<
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$Outbound,
-    z.ZodTypeDef,
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse
-  > = z.object({
-    data: z.lazy(() =>
-      DeduplicationRulesCreateOrUpdateDeduplicationRulesData$outboundSchema
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$ {
-  /** @deprecated use `DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$inboundSchema;
-  /** @deprecated use `DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$outboundSchema;
-  /** @deprecated use `DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$Outbound` instead. */
-  export type Outbound =
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$Outbound;
-}
-
-export function deduplicationRulesCreateOrUpdateDeduplicationRulesResponseToJSON(
-  deduplicationRulesCreateOrUpdateDeduplicationRulesResponse:
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse,
-): string {
-  return JSON.stringify(
-    DeduplicationRulesCreateOrUpdateDeduplicationRulesResponse$outboundSchema
-      .parse(deduplicationRulesCreateOrUpdateDeduplicationRulesResponse),
-  );
-}
 
 export function deduplicationRulesCreateOrUpdateDeduplicationRulesResponseFromJSON(
   jsonString: string,

@@ -27,54 +27,6 @@ export const V4StatusPagesComponentsDeleteComponentByIdResponse$inboundSchema:
     allowSubscription: z.boolean(),
   });
 
-/** @internal */
-export type V4StatusPagesComponentsDeleteComponentByIdResponse$Outbound = {
-  id: number;
-  name: string;
-  description: string;
-  allowSubscription: boolean;
-};
-
-/** @internal */
-export const V4StatusPagesComponentsDeleteComponentByIdResponse$outboundSchema:
-  z.ZodType<
-    V4StatusPagesComponentsDeleteComponentByIdResponse$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesComponentsDeleteComponentByIdResponse
-  > = z.object({
-    id: z.number().int(),
-    name: z.string(),
-    description: z.string(),
-    allowSubscription: z.boolean(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesComponentsDeleteComponentByIdResponse$ {
-  /** @deprecated use `V4StatusPagesComponentsDeleteComponentByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesComponentsDeleteComponentByIdResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesComponentsDeleteComponentByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesComponentsDeleteComponentByIdResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesComponentsDeleteComponentByIdResponse$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesComponentsDeleteComponentByIdResponse$Outbound;
-}
-
-export function v4StatusPagesComponentsDeleteComponentByIdResponseToJSON(
-  v4StatusPagesComponentsDeleteComponentByIdResponse:
-    V4StatusPagesComponentsDeleteComponentByIdResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesComponentsDeleteComponentByIdResponse$outboundSchema.parse(
-      v4StatusPagesComponentsDeleteComponentByIdResponse,
-    ),
-  );
-}
-
 export function v4StatusPagesComponentsDeleteComponentByIdResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

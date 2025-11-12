@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3TeamsAddTeamMemberRequest = {
   userId: string;
@@ -19,22 +16,6 @@ export type V3TeamsAddTeamMemberRequest = {
    */
   role?: string | undefined;
 };
-
-/** @internal */
-export const V3TeamsAddTeamMemberRequest$inboundSchema: z.ZodType<
-  V3TeamsAddTeamMemberRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  user_id: z.string(),
-  role_ids: z.array(z.string()),
-  role: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "user_id": "userId",
-    "role_ids": "roleIds",
-  });
-});
 
 /** @internal */
 export type V3TeamsAddTeamMemberRequest$Outbound = {
@@ -59,19 +40,6 @@ export const V3TeamsAddTeamMemberRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsAddTeamMemberRequest$ {
-  /** @deprecated use `V3TeamsAddTeamMemberRequest$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsAddTeamMemberRequest$inboundSchema;
-  /** @deprecated use `V3TeamsAddTeamMemberRequest$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsAddTeamMemberRequest$outboundSchema;
-  /** @deprecated use `V3TeamsAddTeamMemberRequest$Outbound` instead. */
-  export type Outbound = V3TeamsAddTeamMemberRequest$Outbound;
-}
-
 export function v3TeamsAddTeamMemberRequestToJSON(
   v3TeamsAddTeamMemberRequest: V3TeamsAddTeamMemberRequest,
 ): string {
@@ -79,15 +47,5 @@ export function v3TeamsAddTeamMemberRequestToJSON(
     V3TeamsAddTeamMemberRequest$outboundSchema.parse(
       v3TeamsAddTeamMemberRequest,
     ),
-  );
-}
-
-export function v3TeamsAddTeamMemberRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3TeamsAddTeamMemberRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3TeamsAddTeamMemberRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3TeamsAddTeamMemberRequest' from JSON`,
   );
 }

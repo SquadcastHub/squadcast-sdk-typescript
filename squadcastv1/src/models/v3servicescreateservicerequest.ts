@@ -4,42 +4,33 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesAPTAConfig,
-  V3ServicesAPTAConfig$inboundSchema,
   V3ServicesAPTAConfig$Outbound,
   V3ServicesAPTAConfig$outboundSchema,
 } from "./v3servicesaptaconfig.js";
 import {
   V3ServicesDedupInitConfig,
-  V3ServicesDedupInitConfig$inboundSchema,
   V3ServicesDedupInitConfig$Outbound,
   V3ServicesDedupInitConfig$outboundSchema,
 } from "./v3servicesdedupinitconfig.js";
 import {
   V3ServicesIAGConfig,
-  V3ServicesIAGConfig$inboundSchema,
   V3ServicesIAGConfig$Outbound,
   V3ServicesIAGConfig$outboundSchema,
 } from "./v3servicesiagconfig.js";
 import {
   V3ServicesNotificationDelayConfigRequest,
-  V3ServicesNotificationDelayConfigRequest$inboundSchema,
   V3ServicesNotificationDelayConfigRequest$Outbound,
   V3ServicesNotificationDelayConfigRequest$outboundSchema,
 } from "./v3servicesnotificationdelayconfigrequest.js";
 import {
   V3ServicesServiceMaintainer,
-  V3ServicesServiceMaintainer$inboundSchema,
   V3ServicesServiceMaintainer$Outbound,
   V3ServicesServiceMaintainer$outboundSchema,
 } from "./v3servicesservicemaintainer.js";
 import {
   V3ServicesServiceTag,
-  V3ServicesServiceTag$inboundSchema,
   V3ServicesServiceTag$Outbound,
   V3ServicesServiceTag$outboundSchema,
 } from "./v3servicesservicetag.js";
@@ -58,36 +49,6 @@ export type V3ServicesCreateServiceRequest = {
     | undefined;
   dedupInitConfig?: V3ServicesDedupInitConfig | undefined;
 };
-
-/** @internal */
-export const V3ServicesCreateServiceRequest$inboundSchema: z.ZodType<
-  V3ServicesCreateServiceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  escalation_policy_id: z.string(),
-  description: z.string().optional(),
-  email_prefix: z.string().optional(),
-  maintainer: V3ServicesServiceMaintainer$inboundSchema.optional(),
-  tags: z.array(V3ServicesServiceTag$inboundSchema).optional(),
-  auto_pause_transient_alerts_config: V3ServicesAPTAConfig$inboundSchema
-    .optional(),
-  intelligent_alerts_grouping_config: V3ServicesIAGConfig$inboundSchema
-    .optional(),
-  delay_notification_config:
-    V3ServicesNotificationDelayConfigRequest$inboundSchema.optional(),
-  dedup_init_config: V3ServicesDedupInitConfig$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "escalation_policy_id": "escalationPolicyId",
-    "email_prefix": "emailPrefix",
-    "auto_pause_transient_alerts_config": "autoPauseTransientAlertsConfig",
-    "intelligent_alerts_grouping_config": "intelligentAlertsGroupingConfig",
-    "delay_notification_config": "delayNotificationConfig",
-    "dedup_init_config": "dedupInitConfig",
-  });
-});
 
 /** @internal */
 export type V3ServicesCreateServiceRequest$Outbound = {
@@ -137,19 +98,6 @@ export const V3ServicesCreateServiceRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesCreateServiceRequest$ {
-  /** @deprecated use `V3ServicesCreateServiceRequest$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesCreateServiceRequest$inboundSchema;
-  /** @deprecated use `V3ServicesCreateServiceRequest$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesCreateServiceRequest$outboundSchema;
-  /** @deprecated use `V3ServicesCreateServiceRequest$Outbound` instead. */
-  export type Outbound = V3ServicesCreateServiceRequest$Outbound;
-}
-
 export function v3ServicesCreateServiceRequestToJSON(
   v3ServicesCreateServiceRequest: V3ServicesCreateServiceRequest,
 ): string {
@@ -157,15 +105,5 @@ export function v3ServicesCreateServiceRequestToJSON(
     V3ServicesCreateServiceRequest$outboundSchema.parse(
       v3ServicesCreateServiceRequest,
     ),
-  );
-}
-
-export function v3ServicesCreateServiceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3ServicesCreateServiceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3ServicesCreateServiceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesCreateServiceRequest' from JSON`,
   );
 }

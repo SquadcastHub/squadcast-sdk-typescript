@@ -3,10 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3WorkflowsMsTeamsCreateMeetingLinkUpdateName = {
   MsteamsCreateMeetingLink: "msteams_create_meeting_link",
@@ -20,36 +17,9 @@ export type V3WorkflowsMsTeamsCreateMeetingLinkUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsMsTeamsCreateMeetingLinkUpdateName$inboundSchema:
+export const V3WorkflowsMsTeamsCreateMeetingLinkUpdateName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsMsTeamsCreateMeetingLinkUpdateName> = z
     .nativeEnum(V3WorkflowsMsTeamsCreateMeetingLinkUpdateName);
-
-/** @internal */
-export const V3WorkflowsMsTeamsCreateMeetingLinkUpdateName$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsMsTeamsCreateMeetingLinkUpdateName> =
-    V3WorkflowsMsTeamsCreateMeetingLinkUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsCreateMeetingLinkUpdateName$ {
-  /** @deprecated use `V3WorkflowsMsTeamsCreateMeetingLinkUpdateName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsMsTeamsCreateMeetingLinkUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsCreateMeetingLinkUpdateName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsMsTeamsCreateMeetingLinkUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsMsTeamsCreateMeetingLinkUpdate$inboundSchema: z.ZodType<
-  V3WorkflowsMsTeamsCreateMeetingLinkUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: V3WorkflowsMsTeamsCreateMeetingLinkUpdateName$inboundSchema,
-});
 
 /** @internal */
 export type V3WorkflowsMsTeamsCreateMeetingLinkUpdate$Outbound = {
@@ -66,21 +36,6 @@ export const V3WorkflowsMsTeamsCreateMeetingLinkUpdate$outboundSchema:
     name: V3WorkflowsMsTeamsCreateMeetingLinkUpdateName$outboundSchema,
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsCreateMeetingLinkUpdate$ {
-  /** @deprecated use `V3WorkflowsMsTeamsCreateMeetingLinkUpdate$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsMsTeamsCreateMeetingLinkUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsCreateMeetingLinkUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsMsTeamsCreateMeetingLinkUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsCreateMeetingLinkUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsMsTeamsCreateMeetingLinkUpdate$Outbound;
-}
-
 export function v3WorkflowsMsTeamsCreateMeetingLinkUpdateToJSON(
   v3WorkflowsMsTeamsCreateMeetingLinkUpdate:
     V3WorkflowsMsTeamsCreateMeetingLinkUpdate,
@@ -89,21 +44,5 @@ export function v3WorkflowsMsTeamsCreateMeetingLinkUpdateToJSON(
     V3WorkflowsMsTeamsCreateMeetingLinkUpdate$outboundSchema.parse(
       v3WorkflowsMsTeamsCreateMeetingLinkUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsMsTeamsCreateMeetingLinkUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsMsTeamsCreateMeetingLinkUpdate,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsMsTeamsCreateMeetingLinkUpdate$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsMsTeamsCreateMeetingLinkUpdate' from JSON`,
   );
 }

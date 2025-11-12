@@ -24,41 +24,6 @@ export const SquadsCreateSquadResponse$inboundSchema: z.ZodType<
   data: models.V4SquadsCreateSquadResponse$inboundSchema,
 });
 
-/** @internal */
-export type SquadsCreateSquadResponse$Outbound = {
-  data: models.V4SquadsCreateSquadResponse$Outbound;
-};
-
-/** @internal */
-export const SquadsCreateSquadResponse$outboundSchema: z.ZodType<
-  SquadsCreateSquadResponse$Outbound,
-  z.ZodTypeDef,
-  SquadsCreateSquadResponse
-> = z.object({
-  data: models.V4SquadsCreateSquadResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SquadsCreateSquadResponse$ {
-  /** @deprecated use `SquadsCreateSquadResponse$inboundSchema` instead. */
-  export const inboundSchema = SquadsCreateSquadResponse$inboundSchema;
-  /** @deprecated use `SquadsCreateSquadResponse$outboundSchema` instead. */
-  export const outboundSchema = SquadsCreateSquadResponse$outboundSchema;
-  /** @deprecated use `SquadsCreateSquadResponse$Outbound` instead. */
-  export type Outbound = SquadsCreateSquadResponse$Outbound;
-}
-
-export function squadsCreateSquadResponseToJSON(
-  squadsCreateSquadResponse: SquadsCreateSquadResponse,
-): string {
-  return JSON.stringify(
-    SquadsCreateSquadResponse$outboundSchema.parse(squadsCreateSquadResponse),
-  );
-}
-
 export function squadsCreateSquadResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<SquadsCreateSquadResponse, SDKValidationError> {

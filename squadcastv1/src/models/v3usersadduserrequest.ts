@@ -4,10 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3UsersAddUserRequestRole = {
   AccountOwner: "account_owner",
@@ -26,42 +23,9 @@ export type V3UsersAddUserRequest = {
 };
 
 /** @internal */
-export const V3UsersAddUserRequestRole$inboundSchema: z.ZodNativeEnum<
-  typeof V3UsersAddUserRequestRole
-> = z.nativeEnum(V3UsersAddUserRequestRole);
-
-/** @internal */
 export const V3UsersAddUserRequestRole$outboundSchema: z.ZodNativeEnum<
   typeof V3UsersAddUserRequestRole
-> = V3UsersAddUserRequestRole$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3UsersAddUserRequestRole$ {
-  /** @deprecated use `V3UsersAddUserRequestRole$inboundSchema` instead. */
-  export const inboundSchema = V3UsersAddUserRequestRole$inboundSchema;
-  /** @deprecated use `V3UsersAddUserRequestRole$outboundSchema` instead. */
-  export const outboundSchema = V3UsersAddUserRequestRole$outboundSchema;
-}
-
-/** @internal */
-export const V3UsersAddUserRequest$inboundSchema: z.ZodType<
-  V3UsersAddUserRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  email: z.string(),
-  role: V3UsersAddUserRequestRole$inboundSchema,
-  first_name: z.string(),
-  last_name: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "first_name": "firstName",
-    "last_name": "lastName",
-  });
-});
+> = z.nativeEnum(V3UsersAddUserRequestRole);
 
 /** @internal */
 export type V3UsersAddUserRequest$Outbound = {
@@ -88,33 +52,10 @@ export const V3UsersAddUserRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3UsersAddUserRequest$ {
-  /** @deprecated use `V3UsersAddUserRequest$inboundSchema` instead. */
-  export const inboundSchema = V3UsersAddUserRequest$inboundSchema;
-  /** @deprecated use `V3UsersAddUserRequest$outboundSchema` instead. */
-  export const outboundSchema = V3UsersAddUserRequest$outboundSchema;
-  /** @deprecated use `V3UsersAddUserRequest$Outbound` instead. */
-  export type Outbound = V3UsersAddUserRequest$Outbound;
-}
-
 export function v3UsersAddUserRequestToJSON(
   v3UsersAddUserRequest: V3UsersAddUserRequest,
 ): string {
   return JSON.stringify(
     V3UsersAddUserRequest$outboundSchema.parse(v3UsersAddUserRequest),
-  );
-}
-
-export function v3UsersAddUserRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3UsersAddUserRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3UsersAddUserRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3UsersAddUserRequest' from JSON`,
   );
 }

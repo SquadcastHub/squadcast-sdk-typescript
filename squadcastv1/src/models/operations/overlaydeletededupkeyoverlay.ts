@@ -18,16 +18,6 @@ export type OverlayDeleteDedupKeyOverlayRequest = {
 export type OverlayDeleteDedupKeyOverlayResponseBody = {};
 
 /** @internal */
-export const OverlayDeleteDedupKeyOverlayRequest$inboundSchema: z.ZodType<
-  OverlayDeleteDedupKeyOverlayRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  serviceID: z.string(),
-  alertSource: z.string(),
-});
-
-/** @internal */
 export type OverlayDeleteDedupKeyOverlayRequest$Outbound = {
   serviceID: string;
   alertSource: string;
@@ -43,21 +33,6 @@ export const OverlayDeleteDedupKeyOverlayRequest$outboundSchema: z.ZodType<
   alertSource: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayDeleteDedupKeyOverlayRequest$ {
-  /** @deprecated use `OverlayDeleteDedupKeyOverlayRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayDeleteDedupKeyOverlayRequest$inboundSchema;
-  /** @deprecated use `OverlayDeleteDedupKeyOverlayRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayDeleteDedupKeyOverlayRequest$outboundSchema;
-  /** @deprecated use `OverlayDeleteDedupKeyOverlayRequest$Outbound` instead. */
-  export type Outbound = OverlayDeleteDedupKeyOverlayRequest$Outbound;
-}
-
 export function overlayDeleteDedupKeyOverlayRequestToJSON(
   overlayDeleteDedupKeyOverlayRequest: OverlayDeleteDedupKeyOverlayRequest,
 ): string {
@@ -68,59 +43,12 @@ export function overlayDeleteDedupKeyOverlayRequestToJSON(
   );
 }
 
-export function overlayDeleteDedupKeyOverlayRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<OverlayDeleteDedupKeyOverlayRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverlayDeleteDedupKeyOverlayRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'OverlayDeleteDedupKeyOverlayRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const OverlayDeleteDedupKeyOverlayResponseBody$inboundSchema: z.ZodType<
   OverlayDeleteDedupKeyOverlayResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type OverlayDeleteDedupKeyOverlayResponseBody$Outbound = {};
-
-/** @internal */
-export const OverlayDeleteDedupKeyOverlayResponseBody$outboundSchema: z.ZodType<
-  OverlayDeleteDedupKeyOverlayResponseBody$Outbound,
-  z.ZodTypeDef,
-  OverlayDeleteDedupKeyOverlayResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayDeleteDedupKeyOverlayResponseBody$ {
-  /** @deprecated use `OverlayDeleteDedupKeyOverlayResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayDeleteDedupKeyOverlayResponseBody$inboundSchema;
-  /** @deprecated use `OverlayDeleteDedupKeyOverlayResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayDeleteDedupKeyOverlayResponseBody$outboundSchema;
-  /** @deprecated use `OverlayDeleteDedupKeyOverlayResponseBody$Outbound` instead. */
-  export type Outbound = OverlayDeleteDedupKeyOverlayResponseBody$Outbound;
-}
-
-export function overlayDeleteDedupKeyOverlayResponseBodyToJSON(
-  overlayDeleteDedupKeyOverlayResponseBody:
-    OverlayDeleteDedupKeyOverlayResponseBody,
-): string {
-  return JSON.stringify(
-    OverlayDeleteDedupKeyOverlayResponseBody$outboundSchema.parse(
-      overlayDeleteDedupKeyOverlayResponseBody,
-    ),
-  );
-}
 
 export function overlayDeleteDedupKeyOverlayResponseBodyFromJSON(
   jsonString: string,

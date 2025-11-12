@@ -4,24 +4,18 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
 import {
   CommonV3EntityOwner,
-  CommonV3EntityOwner$inboundSchema,
   CommonV3EntityOwner$Outbound,
   CommonV3EntityOwner$outboundSchema,
 } from "./commonv3entityowner.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3EscalationPoliciesEscalationPolicyRule,
-  V3EscalationPoliciesEscalationPolicyRule$inboundSchema,
   V3EscalationPoliciesEscalationPolicyRule$Outbound,
   V3EscalationPoliciesEscalationPolicyRule$outboundSchema,
 } from "./v3escalationpoliciesescalationpolicyrule.js";
 import {
   V3EscalationPoliciesIncidentReminderRule,
-  V3EscalationPoliciesIncidentReminderRule$inboundSchema,
   V3EscalationPoliciesIncidentReminderRule$Outbound,
   V3EscalationPoliciesIncidentReminderRule$outboundSchema,
 } from "./v3escalationpoliciesincidentreminderrule.js";
@@ -74,38 +68,6 @@ export type V3EscalationPoliciesCreateEscalationPolicyRequest = {
 };
 
 /** @internal */
-export const V3EscalationPoliciesCreateEscalationPolicyRequest$inboundSchema:
-  z.ZodType<
-    V3EscalationPoliciesCreateEscalationPolicyRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    owner_id: z.string(),
-    name: z.string(),
-    description: z.string(),
-    repetition: z.number().int(),
-    repeat_after: z.number().int(),
-    rules: z.array(V3EscalationPoliciesEscalationPolicyRule$inboundSchema),
-    enable_incident_reminders: z.boolean(),
-    incident_reminder_rules: z.array(
-      V3EscalationPoliciesIncidentReminderRule$inboundSchema,
-    ),
-    enable_incident_retrigger: z.boolean(),
-    retrigger_after: z.number().int(),
-    entity_owner: CommonV3EntityOwner$inboundSchema.optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "owner_id": "ownerId",
-      "repeat_after": "repeatAfter",
-      "enable_incident_reminders": "enableIncidentReminders",
-      "incident_reminder_rules": "incidentReminderRules",
-      "enable_incident_retrigger": "enableIncidentRetrigger",
-      "retrigger_after": "retriggerAfter",
-      "entity_owner": "entityOwner",
-    });
-  });
-
-/** @internal */
 export type V3EscalationPoliciesCreateEscalationPolicyRequest$Outbound = {
   owner_id: string;
   name: string;
@@ -154,22 +116,6 @@ export const V3EscalationPoliciesCreateEscalationPolicyRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3EscalationPoliciesCreateEscalationPolicyRequest$ {
-  /** @deprecated use `V3EscalationPoliciesCreateEscalationPolicyRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3EscalationPoliciesCreateEscalationPolicyRequest$inboundSchema;
-  /** @deprecated use `V3EscalationPoliciesCreateEscalationPolicyRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3EscalationPoliciesCreateEscalationPolicyRequest$outboundSchema;
-  /** @deprecated use `V3EscalationPoliciesCreateEscalationPolicyRequest$Outbound` instead. */
-  export type Outbound =
-    V3EscalationPoliciesCreateEscalationPolicyRequest$Outbound;
-}
-
 export function v3EscalationPoliciesCreateEscalationPolicyRequestToJSON(
   v3EscalationPoliciesCreateEscalationPolicyRequest:
     V3EscalationPoliciesCreateEscalationPolicyRequest,
@@ -178,21 +124,5 @@ export function v3EscalationPoliciesCreateEscalationPolicyRequestToJSON(
     V3EscalationPoliciesCreateEscalationPolicyRequest$outboundSchema.parse(
       v3EscalationPoliciesCreateEscalationPolicyRequest,
     ),
-  );
-}
-
-export function v3EscalationPoliciesCreateEscalationPolicyRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3EscalationPoliciesCreateEscalationPolicyRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3EscalationPoliciesCreateEscalationPolicyRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3EscalationPoliciesCreateEscalationPolicyRequest' from JSON`,
   );
 }

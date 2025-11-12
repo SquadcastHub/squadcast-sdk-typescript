@@ -3,22 +3,10 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type StatusPagesListSubscribersRequest = {
   statuspageID: string;
 };
-
-/** @internal */
-export const StatusPagesListSubscribersRequest$inboundSchema: z.ZodType<
-  StatusPagesListSubscribersRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-});
 
 /** @internal */
 export type StatusPagesListSubscribersRequest$Outbound = {
@@ -34,20 +22,6 @@ export const StatusPagesListSubscribersRequest$outboundSchema: z.ZodType<
   statuspageID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusPagesListSubscribersRequest$ {
-  /** @deprecated use `StatusPagesListSubscribersRequest$inboundSchema` instead. */
-  export const inboundSchema = StatusPagesListSubscribersRequest$inboundSchema;
-  /** @deprecated use `StatusPagesListSubscribersRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    StatusPagesListSubscribersRequest$outboundSchema;
-  /** @deprecated use `StatusPagesListSubscribersRequest$Outbound` instead. */
-  export type Outbound = StatusPagesListSubscribersRequest$Outbound;
-}
-
 export function statusPagesListSubscribersRequestToJSON(
   statusPagesListSubscribersRequest: StatusPagesListSubscribersRequest,
 ): string {
@@ -55,15 +29,5 @@ export function statusPagesListSubscribersRequestToJSON(
     StatusPagesListSubscribersRequest$outboundSchema.parse(
       statusPagesListSubscribersRequest,
     ),
-  );
-}
-
-export function statusPagesListSubscribersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<StatusPagesListSubscribersRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => StatusPagesListSubscribersRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'StatusPagesListSubscribersRequest' from JSON`,
   );
 }

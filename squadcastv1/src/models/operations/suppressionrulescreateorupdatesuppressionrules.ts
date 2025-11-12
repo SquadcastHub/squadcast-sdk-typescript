@@ -23,24 +23,6 @@ export type SuppressionRulesCreateOrUpdateSuppressionRulesResponse = {
 };
 
 /** @internal */
-export const SuppressionRulesCreateOrUpdateSuppressionRulesRequest$inboundSchema:
-  z.ZodType<
-    SuppressionRulesCreateOrUpdateSuppressionRulesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-    "V3.Services.SuppressionRules.CreateOrUpdateSuppressionRulesRequest":
-      models
-        .V3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.Services.SuppressionRules.CreateOrUpdateSuppressionRulesRequest":
-        "v3ServicesSuppressionRulesCreateOrUpdateSuppressionRulesRequest",
-    });
-  });
-
-/** @internal */
 export type SuppressionRulesCreateOrUpdateSuppressionRulesRequest$Outbound = {
   serviceID: string;
   "V3.Services.SuppressionRules.CreateOrUpdateSuppressionRulesRequest":
@@ -65,22 +47,6 @@ export const SuppressionRulesCreateOrUpdateSuppressionRulesRequest$outboundSchem
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SuppressionRulesCreateOrUpdateSuppressionRulesRequest$ {
-  /** @deprecated use `SuppressionRulesCreateOrUpdateSuppressionRulesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    SuppressionRulesCreateOrUpdateSuppressionRulesRequest$inboundSchema;
-  /** @deprecated use `SuppressionRulesCreateOrUpdateSuppressionRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    SuppressionRulesCreateOrUpdateSuppressionRulesRequest$outboundSchema;
-  /** @deprecated use `SuppressionRulesCreateOrUpdateSuppressionRulesRequest$Outbound` instead. */
-  export type Outbound =
-    SuppressionRulesCreateOrUpdateSuppressionRulesRequest$Outbound;
-}
-
 export function suppressionRulesCreateOrUpdateSuppressionRulesRequestToJSON(
   suppressionRulesCreateOrUpdateSuppressionRulesRequest:
     SuppressionRulesCreateOrUpdateSuppressionRulesRequest,
@@ -89,22 +55,6 @@ export function suppressionRulesCreateOrUpdateSuppressionRulesRequestToJSON(
     SuppressionRulesCreateOrUpdateSuppressionRulesRequest$outboundSchema.parse(
       suppressionRulesCreateOrUpdateSuppressionRulesRequest,
     ),
-  );
-}
-
-export function suppressionRulesCreateOrUpdateSuppressionRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  SuppressionRulesCreateOrUpdateSuppressionRulesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      SuppressionRulesCreateOrUpdateSuppressionRulesRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'SuppressionRulesCreateOrUpdateSuppressionRulesRequest' from JSON`,
   );
 }
 
@@ -119,51 +69,6 @@ export const SuppressionRulesCreateOrUpdateSuppressionRulesResponse$inboundSchem
       models
         .V3ServicesSuppressionRulesSuppressionRulesContainerResponse$inboundSchema,
   });
-
-/** @internal */
-export type SuppressionRulesCreateOrUpdateSuppressionRulesResponse$Outbound = {
-  data:
-    models.V3ServicesSuppressionRulesSuppressionRulesContainerResponse$Outbound;
-};
-
-/** @internal */
-export const SuppressionRulesCreateOrUpdateSuppressionRulesResponse$outboundSchema:
-  z.ZodType<
-    SuppressionRulesCreateOrUpdateSuppressionRulesResponse$Outbound,
-    z.ZodTypeDef,
-    SuppressionRulesCreateOrUpdateSuppressionRulesResponse
-  > = z.object({
-    data:
-      models
-        .V3ServicesSuppressionRulesSuppressionRulesContainerResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SuppressionRulesCreateOrUpdateSuppressionRulesResponse$ {
-  /** @deprecated use `SuppressionRulesCreateOrUpdateSuppressionRulesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    SuppressionRulesCreateOrUpdateSuppressionRulesResponse$inboundSchema;
-  /** @deprecated use `SuppressionRulesCreateOrUpdateSuppressionRulesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    SuppressionRulesCreateOrUpdateSuppressionRulesResponse$outboundSchema;
-  /** @deprecated use `SuppressionRulesCreateOrUpdateSuppressionRulesResponse$Outbound` instead. */
-  export type Outbound =
-    SuppressionRulesCreateOrUpdateSuppressionRulesResponse$Outbound;
-}
-
-export function suppressionRulesCreateOrUpdateSuppressionRulesResponseToJSON(
-  suppressionRulesCreateOrUpdateSuppressionRulesResponse:
-    SuppressionRulesCreateOrUpdateSuppressionRulesResponse,
-): string {
-  return JSON.stringify(
-    SuppressionRulesCreateOrUpdateSuppressionRulesResponse$outboundSchema.parse(
-      suppressionRulesCreateOrUpdateSuppressionRulesResponse,
-    ),
-  );
-}
 
 export function suppressionRulesCreateOrUpdateSuppressionRulesResponseFromJSON(
   jsonString: string,

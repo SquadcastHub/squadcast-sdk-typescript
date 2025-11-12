@@ -21,20 +21,6 @@ export type CommunicationCardsGetAllCommunicationCardResponse = {
 };
 
 /** @internal */
-export const CommunicationCardsGetAllCommunicationCardRequest$inboundSchema:
-  z.ZodType<
-    CommunicationCardsGetAllCommunicationCardRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    IncidentId: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      "IncidentId": "incidentId",
-    });
-  });
-
-/** @internal */
 export type CommunicationCardsGetAllCommunicationCardRequest$Outbound = {
   IncidentId: string;
 };
@@ -53,22 +39,6 @@ export const CommunicationCardsGetAllCommunicationCardRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommunicationCardsGetAllCommunicationCardRequest$ {
-  /** @deprecated use `CommunicationCardsGetAllCommunicationCardRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    CommunicationCardsGetAllCommunicationCardRequest$inboundSchema;
-  /** @deprecated use `CommunicationCardsGetAllCommunicationCardRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    CommunicationCardsGetAllCommunicationCardRequest$outboundSchema;
-  /** @deprecated use `CommunicationCardsGetAllCommunicationCardRequest$Outbound` instead. */
-  export type Outbound =
-    CommunicationCardsGetAllCommunicationCardRequest$Outbound;
-}
-
 export function communicationCardsGetAllCommunicationCardRequestToJSON(
   communicationCardsGetAllCommunicationCardRequest:
     CommunicationCardsGetAllCommunicationCardRequest,
@@ -77,22 +47,6 @@ export function communicationCardsGetAllCommunicationCardRequestToJSON(
     CommunicationCardsGetAllCommunicationCardRequest$outboundSchema.parse(
       communicationCardsGetAllCommunicationCardRequest,
     ),
-  );
-}
-
-export function communicationCardsGetAllCommunicationCardRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  CommunicationCardsGetAllCommunicationCardRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      CommunicationCardsGetAllCommunicationCardRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'CommunicationCardsGetAllCommunicationCardRequest' from JSON`,
   );
 }
 
@@ -108,53 +62,6 @@ export const CommunicationCardsGetAllCommunicationCardResponse$inboundSchema:
         .V3IncidentsCommunicationCardsCommunicationCardResponse$inboundSchema,
     ),
   });
-
-/** @internal */
-export type CommunicationCardsGetAllCommunicationCardResponse$Outbound = {
-  data: Array<
-    models.V3IncidentsCommunicationCardsCommunicationCardResponse$Outbound
-  >;
-};
-
-/** @internal */
-export const CommunicationCardsGetAllCommunicationCardResponse$outboundSchema:
-  z.ZodType<
-    CommunicationCardsGetAllCommunicationCardResponse$Outbound,
-    z.ZodTypeDef,
-    CommunicationCardsGetAllCommunicationCardResponse
-  > = z.object({
-    data: z.array(
-      models
-        .V3IncidentsCommunicationCardsCommunicationCardResponse$outboundSchema,
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommunicationCardsGetAllCommunicationCardResponse$ {
-  /** @deprecated use `CommunicationCardsGetAllCommunicationCardResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    CommunicationCardsGetAllCommunicationCardResponse$inboundSchema;
-  /** @deprecated use `CommunicationCardsGetAllCommunicationCardResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    CommunicationCardsGetAllCommunicationCardResponse$outboundSchema;
-  /** @deprecated use `CommunicationCardsGetAllCommunicationCardResponse$Outbound` instead. */
-  export type Outbound =
-    CommunicationCardsGetAllCommunicationCardResponse$Outbound;
-}
-
-export function communicationCardsGetAllCommunicationCardResponseToJSON(
-  communicationCardsGetAllCommunicationCardResponse:
-    CommunicationCardsGetAllCommunicationCardResponse,
-): string {
-  return JSON.stringify(
-    CommunicationCardsGetAllCommunicationCardResponse$outboundSchema.parse(
-      communicationCardsGetAllCommunicationCardResponse,
-    ),
-  );
-}
 
 export function communicationCardsGetAllCommunicationCardResponseFromJSON(
   jsonString: string,

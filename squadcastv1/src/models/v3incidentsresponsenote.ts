@@ -27,45 +27,6 @@ export const V3IncidentsResponseNote$inboundSchema: z.ZodType<
   userId: z.string(),
 });
 
-/** @internal */
-export type V3IncidentsResponseNote$Outbound = {
-  timeOfNote: string;
-  note: string;
-  userId: string;
-};
-
-/** @internal */
-export const V3IncidentsResponseNote$outboundSchema: z.ZodType<
-  V3IncidentsResponseNote$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsResponseNote
-> = z.object({
-  timeOfNote: z.date().transform(v => v.toISOString()),
-  note: z.string(),
-  userId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsResponseNote$ {
-  /** @deprecated use `V3IncidentsResponseNote$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsResponseNote$inboundSchema;
-  /** @deprecated use `V3IncidentsResponseNote$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsResponseNote$outboundSchema;
-  /** @deprecated use `V3IncidentsResponseNote$Outbound` instead. */
-  export type Outbound = V3IncidentsResponseNote$Outbound;
-}
-
-export function v3IncidentsResponseNoteToJSON(
-  v3IncidentsResponseNote: V3IncidentsResponseNote,
-): string {
-  return JSON.stringify(
-    V3IncidentsResponseNote$outboundSchema.parse(v3IncidentsResponseNote),
-  );
-}
-
 export function v3IncidentsResponseNoteFromJSON(
   jsonString: string,
 ): SafeParseResult<V3IncidentsResponseNote, SDKValidationError> {

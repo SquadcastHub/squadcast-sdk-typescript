@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3ServicesMaintenanceModeServiceMaintenance = {
   maintenanceStartDate: string;
@@ -18,24 +15,6 @@ export type V3ServicesMaintenanceModeServiceMaintenance = {
   deleted: boolean;
   repeatTill: string;
 };
-
-/** @internal */
-export const V3ServicesMaintenanceModeServiceMaintenance$inboundSchema:
-  z.ZodType<
-    V3ServicesMaintenanceModeServiceMaintenance,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    maintenanceStartDate: z.string(),
-    maintenanceEndDate: z.string().optional(),
-    daily: z.boolean(),
-    weekly: z.boolean(),
-    twoWeekly: z.boolean(),
-    threeWeekly: z.boolean(),
-    monthly: z.boolean(),
-    deleted: z.boolean(),
-    repeatTill: z.string(),
-  });
 
 /** @internal */
 export type V3ServicesMaintenanceModeServiceMaintenance$Outbound = {
@@ -68,21 +47,6 @@ export const V3ServicesMaintenanceModeServiceMaintenance$outboundSchema:
     repeatTill: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesMaintenanceModeServiceMaintenance$ {
-  /** @deprecated use `V3ServicesMaintenanceModeServiceMaintenance$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesMaintenanceModeServiceMaintenance$inboundSchema;
-  /** @deprecated use `V3ServicesMaintenanceModeServiceMaintenance$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesMaintenanceModeServiceMaintenance$outboundSchema;
-  /** @deprecated use `V3ServicesMaintenanceModeServiceMaintenance$Outbound` instead. */
-  export type Outbound = V3ServicesMaintenanceModeServiceMaintenance$Outbound;
-}
-
 export function v3ServicesMaintenanceModeServiceMaintenanceToJSON(
   v3ServicesMaintenanceModeServiceMaintenance:
     V3ServicesMaintenanceModeServiceMaintenance,
@@ -91,21 +55,5 @@ export function v3ServicesMaintenanceModeServiceMaintenanceToJSON(
     V3ServicesMaintenanceModeServiceMaintenance$outboundSchema.parse(
       v3ServicesMaintenanceModeServiceMaintenance,
     ),
-  );
-}
-
-export function v3ServicesMaintenanceModeServiceMaintenanceFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesMaintenanceModeServiceMaintenance,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesMaintenanceModeServiceMaintenance$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3ServicesMaintenanceModeServiceMaintenance' from JSON`,
   );
 }

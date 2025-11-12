@@ -3,10 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3WorkflowsSqMarkIncidentSLOAffectingUpdateName = {
   SqMarkIncidentSloAffecting: "sq_mark_incident_slo_affecting",
@@ -26,38 +23,9 @@ export type V3WorkflowsSqMarkIncidentSLOAffectingUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsSqMarkIncidentSLOAffectingUpdateName$inboundSchema:
+export const V3WorkflowsSqMarkIncidentSLOAffectingUpdateName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqMarkIncidentSLOAffectingUpdateName> = z
     .nativeEnum(V3WorkflowsSqMarkIncidentSLOAffectingUpdateName);
-
-/** @internal */
-export const V3WorkflowsSqMarkIncidentSLOAffectingUpdateName$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsSqMarkIncidentSLOAffectingUpdateName> =
-    V3WorkflowsSqMarkIncidentSLOAffectingUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMarkIncidentSLOAffectingUpdateName$ {
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingUpdateName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffectingUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingUpdateName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffectingUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$inboundSchema:
-  z.ZodType<
-    V3WorkflowsSqMarkIncidentSLOAffectingUpdateData,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    slis: z.array(z.string()).optional(),
-    slo: z.number().int().optional(),
-  });
 
 /** @internal */
 export type V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$Outbound = {
@@ -76,22 +44,6 @@ export const V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$outboundSchema:
     slo: z.number().int().optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$ {
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$Outbound` instead. */
-  export type Outbound =
-    V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$Outbound;
-}
-
 export function v3WorkflowsSqMarkIncidentSLOAffectingUpdateDataToJSON(
   v3WorkflowsSqMarkIncidentSLOAffectingUpdateData:
     V3WorkflowsSqMarkIncidentSLOAffectingUpdateData,
@@ -102,35 +54,6 @@ export function v3WorkflowsSqMarkIncidentSLOAffectingUpdateDataToJSON(
     ),
   );
 }
-
-export function v3WorkflowsSqMarkIncidentSLOAffectingUpdateDataFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsSqMarkIncidentSLOAffectingUpdateData,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsSqMarkIncidentSLOAffectingUpdateData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsSqMarkIncidentSLOAffectingUpdate$inboundSchema:
-  z.ZodType<
-    V3WorkflowsSqMarkIncidentSLOAffectingUpdate,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: V3WorkflowsSqMarkIncidentSLOAffectingUpdateName$inboundSchema,
-    data: z.lazy(() =>
-      V3WorkflowsSqMarkIncidentSLOAffectingUpdateData$inboundSchema
-    ).optional(),
-  });
 
 /** @internal */
 export type V3WorkflowsSqMarkIncidentSLOAffectingUpdate$Outbound = {
@@ -151,21 +74,6 @@ export const V3WorkflowsSqMarkIncidentSLOAffectingUpdate$outboundSchema:
     ).optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMarkIncidentSLOAffectingUpdate$ {
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingUpdate$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffectingUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffectingUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqMarkIncidentSLOAffectingUpdate$Outbound;
-}
-
 export function v3WorkflowsSqMarkIncidentSLOAffectingUpdateToJSON(
   v3WorkflowsSqMarkIncidentSLOAffectingUpdate:
     V3WorkflowsSqMarkIncidentSLOAffectingUpdate,
@@ -174,21 +82,5 @@ export function v3WorkflowsSqMarkIncidentSLOAffectingUpdateToJSON(
     V3WorkflowsSqMarkIncidentSLOAffectingUpdate$outboundSchema.parse(
       v3WorkflowsSqMarkIncidentSLOAffectingUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsSqMarkIncidentSLOAffectingUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsSqMarkIncidentSLOAffectingUpdate,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSqMarkIncidentSLOAffectingUpdate$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsSqMarkIncidentSLOAffectingUpdate' from JSON`,
   );
 }

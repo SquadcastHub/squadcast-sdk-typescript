@@ -24,45 +24,6 @@ export const RunbooksGetAllRunbooksByTeamResponse$inboundSchema: z.ZodType<
   data: z.array(models.V3RunbooksRunbookResponse$inboundSchema),
 });
 
-/** @internal */
-export type RunbooksGetAllRunbooksByTeamResponse$Outbound = {
-  data: Array<models.V3RunbooksRunbookResponse$Outbound>;
-};
-
-/** @internal */
-export const RunbooksGetAllRunbooksByTeamResponse$outboundSchema: z.ZodType<
-  RunbooksGetAllRunbooksByTeamResponse$Outbound,
-  z.ZodTypeDef,
-  RunbooksGetAllRunbooksByTeamResponse
-> = z.object({
-  data: z.array(models.V3RunbooksRunbookResponse$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RunbooksGetAllRunbooksByTeamResponse$ {
-  /** @deprecated use `RunbooksGetAllRunbooksByTeamResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    RunbooksGetAllRunbooksByTeamResponse$inboundSchema;
-  /** @deprecated use `RunbooksGetAllRunbooksByTeamResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    RunbooksGetAllRunbooksByTeamResponse$outboundSchema;
-  /** @deprecated use `RunbooksGetAllRunbooksByTeamResponse$Outbound` instead. */
-  export type Outbound = RunbooksGetAllRunbooksByTeamResponse$Outbound;
-}
-
-export function runbooksGetAllRunbooksByTeamResponseToJSON(
-  runbooksGetAllRunbooksByTeamResponse: RunbooksGetAllRunbooksByTeamResponse,
-): string {
-  return JSON.stringify(
-    RunbooksGetAllRunbooksByTeamResponse$outboundSchema.parse(
-      runbooksGetAllRunbooksByTeamResponse,
-    ),
-  );
-}
-
 export function runbooksGetAllRunbooksByTeamResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<RunbooksGetAllRunbooksByTeamResponse, SDKValidationError> {

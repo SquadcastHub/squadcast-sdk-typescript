@@ -24,21 +24,6 @@ export type CommunicationCardsDeleteCommunicationCardResponse = {
 };
 
 /** @internal */
-export const CommunicationCardsDeleteCommunicationCardRequest$inboundSchema:
-  z.ZodType<
-    CommunicationCardsDeleteCommunicationCardRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    IncidentId: z.string(),
-    communicationCardId: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      "IncidentId": "incidentId",
-    });
-  });
-
-/** @internal */
 export type CommunicationCardsDeleteCommunicationCardRequest$Outbound = {
   IncidentId: string;
   communicationCardId: string;
@@ -59,22 +44,6 @@ export const CommunicationCardsDeleteCommunicationCardRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommunicationCardsDeleteCommunicationCardRequest$ {
-  /** @deprecated use `CommunicationCardsDeleteCommunicationCardRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    CommunicationCardsDeleteCommunicationCardRequest$inboundSchema;
-  /** @deprecated use `CommunicationCardsDeleteCommunicationCardRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    CommunicationCardsDeleteCommunicationCardRequest$outboundSchema;
-  /** @deprecated use `CommunicationCardsDeleteCommunicationCardRequest$Outbound` instead. */
-  export type Outbound =
-    CommunicationCardsDeleteCommunicationCardRequest$Outbound;
-}
-
 export function communicationCardsDeleteCommunicationCardRequestToJSON(
   communicationCardsDeleteCommunicationCardRequest:
     CommunicationCardsDeleteCommunicationCardRequest,
@@ -83,22 +52,6 @@ export function communicationCardsDeleteCommunicationCardRequestToJSON(
     CommunicationCardsDeleteCommunicationCardRequest$outboundSchema.parse(
       communicationCardsDeleteCommunicationCardRequest,
     ),
-  );
-}
-
-export function communicationCardsDeleteCommunicationCardRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  CommunicationCardsDeleteCommunicationCardRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      CommunicationCardsDeleteCommunicationCardRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'CommunicationCardsDeleteCommunicationCardRequest' from JSON`,
   );
 }
 
@@ -111,48 +64,6 @@ export const CommunicationCardsDeleteCommunicationCardResponse$inboundSchema:
   > = z.object({
     data: z.string(),
   });
-
-/** @internal */
-export type CommunicationCardsDeleteCommunicationCardResponse$Outbound = {
-  data: string;
-};
-
-/** @internal */
-export const CommunicationCardsDeleteCommunicationCardResponse$outboundSchema:
-  z.ZodType<
-    CommunicationCardsDeleteCommunicationCardResponse$Outbound,
-    z.ZodTypeDef,
-    CommunicationCardsDeleteCommunicationCardResponse
-  > = z.object({
-    data: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommunicationCardsDeleteCommunicationCardResponse$ {
-  /** @deprecated use `CommunicationCardsDeleteCommunicationCardResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    CommunicationCardsDeleteCommunicationCardResponse$inboundSchema;
-  /** @deprecated use `CommunicationCardsDeleteCommunicationCardResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    CommunicationCardsDeleteCommunicationCardResponse$outboundSchema;
-  /** @deprecated use `CommunicationCardsDeleteCommunicationCardResponse$Outbound` instead. */
-  export type Outbound =
-    CommunicationCardsDeleteCommunicationCardResponse$Outbound;
-}
-
-export function communicationCardsDeleteCommunicationCardResponseToJSON(
-  communicationCardsDeleteCommunicationCardResponse:
-    CommunicationCardsDeleteCommunicationCardResponse,
-): string {
-  return JSON.stringify(
-    CommunicationCardsDeleteCommunicationCardResponse$outboundSchema.parse(
-      communicationCardsDeleteCommunicationCardResponse,
-    ),
-  );
-}
 
 export function communicationCardsDeleteCommunicationCardResponseFromJSON(
   jsonString: string,

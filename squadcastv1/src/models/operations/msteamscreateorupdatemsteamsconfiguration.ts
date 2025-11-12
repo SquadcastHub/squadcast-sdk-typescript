@@ -28,48 +28,6 @@ export const MSTeamsCreateOrUpdateMsteamsConfigurationResponse$inboundSchema:
     data: models.V3ExtensionsMSTeamsMSTeamsConfigResponse$inboundSchema,
   });
 
-/** @internal */
-export type MSTeamsCreateOrUpdateMsteamsConfigurationResponse$Outbound = {
-  data: models.V3ExtensionsMSTeamsMSTeamsConfigResponse$Outbound;
-};
-
-/** @internal */
-export const MSTeamsCreateOrUpdateMsteamsConfigurationResponse$outboundSchema:
-  z.ZodType<
-    MSTeamsCreateOrUpdateMsteamsConfigurationResponse$Outbound,
-    z.ZodTypeDef,
-    MSTeamsCreateOrUpdateMsteamsConfigurationResponse
-  > = z.object({
-    data: models.V3ExtensionsMSTeamsMSTeamsConfigResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MSTeamsCreateOrUpdateMsteamsConfigurationResponse$ {
-  /** @deprecated use `MSTeamsCreateOrUpdateMsteamsConfigurationResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    MSTeamsCreateOrUpdateMsteamsConfigurationResponse$inboundSchema;
-  /** @deprecated use `MSTeamsCreateOrUpdateMsteamsConfigurationResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    MSTeamsCreateOrUpdateMsteamsConfigurationResponse$outboundSchema;
-  /** @deprecated use `MSTeamsCreateOrUpdateMsteamsConfigurationResponse$Outbound` instead. */
-  export type Outbound =
-    MSTeamsCreateOrUpdateMsteamsConfigurationResponse$Outbound;
-}
-
-export function msTeamsCreateOrUpdateMsteamsConfigurationResponseToJSON(
-  msTeamsCreateOrUpdateMsteamsConfigurationResponse:
-    MSTeamsCreateOrUpdateMsteamsConfigurationResponse,
-): string {
-  return JSON.stringify(
-    MSTeamsCreateOrUpdateMsteamsConfigurationResponse$outboundSchema.parse(
-      msTeamsCreateOrUpdateMsteamsConfigurationResponse,
-    ),
-  );
-}
-
 export function msTeamsCreateOrUpdateMsteamsConfigurationResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

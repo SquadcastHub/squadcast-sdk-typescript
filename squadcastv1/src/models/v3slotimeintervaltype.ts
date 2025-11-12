@@ -15,19 +15,7 @@ export type V3SLOTimeIntervalType = ClosedEnum<typeof V3SLOTimeIntervalType>;
 export const V3SLOTimeIntervalType$inboundSchema: z.ZodNativeEnum<
   typeof V3SLOTimeIntervalType
 > = z.nativeEnum(V3SLOTimeIntervalType);
-
 /** @internal */
 export const V3SLOTimeIntervalType$outboundSchema: z.ZodNativeEnum<
   typeof V3SLOTimeIntervalType
 > = V3SLOTimeIntervalType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3SLOTimeIntervalType$ {
-  /** @deprecated use `V3SLOTimeIntervalType$inboundSchema` instead. */
-  export const inboundSchema = V3SLOTimeIntervalType$inboundSchema;
-  /** @deprecated use `V3SLOTimeIntervalType$outboundSchema` instead. */
-  export const outboundSchema = V3SLOTimeIntervalType$outboundSchema;
-}

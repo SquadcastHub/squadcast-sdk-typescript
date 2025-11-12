@@ -28,49 +28,6 @@ export const CommonV4PageInfo$inboundSchema: z.ZodType<
   previousCursor: z.string().optional(),
 });
 
-/** @internal */
-export type CommonV4PageInfo$Outbound = {
-  pageSize: number;
-  hasNext: boolean;
-  hasPrevious: boolean;
-  nextCursor?: string | undefined;
-  previousCursor?: string | undefined;
-};
-
-/** @internal */
-export const CommonV4PageInfo$outboundSchema: z.ZodType<
-  CommonV4PageInfo$Outbound,
-  z.ZodTypeDef,
-  CommonV4PageInfo
-> = z.object({
-  pageSize: z.number().int(),
-  hasNext: z.boolean(),
-  hasPrevious: z.boolean(),
-  nextCursor: z.string().optional(),
-  previousCursor: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommonV4PageInfo$ {
-  /** @deprecated use `CommonV4PageInfo$inboundSchema` instead. */
-  export const inboundSchema = CommonV4PageInfo$inboundSchema;
-  /** @deprecated use `CommonV4PageInfo$outboundSchema` instead. */
-  export const outboundSchema = CommonV4PageInfo$outboundSchema;
-  /** @deprecated use `CommonV4PageInfo$Outbound` instead. */
-  export type Outbound = CommonV4PageInfo$Outbound;
-}
-
-export function commonV4PageInfoToJSON(
-  commonV4PageInfo: CommonV4PageInfo,
-): string {
-  return JSON.stringify(
-    CommonV4PageInfo$outboundSchema.parse(commonV4PageInfo),
-  );
-}
-
 export function commonV4PageInfoFromJSON(
   jsonString: string,
 ): SafeParseResult<CommonV4PageInfo, SDKValidationError> {

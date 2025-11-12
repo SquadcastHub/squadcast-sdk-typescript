@@ -23,47 +23,6 @@ export const IncidentsBulkAcknowledgeIncidentsResponse$inboundSchema: z.ZodType<
   data: z.string(),
 });
 
-/** @internal */
-export type IncidentsBulkAcknowledgeIncidentsResponse$Outbound = {
-  data: string;
-};
-
-/** @internal */
-export const IncidentsBulkAcknowledgeIncidentsResponse$outboundSchema:
-  z.ZodType<
-    IncidentsBulkAcknowledgeIncidentsResponse$Outbound,
-    z.ZodTypeDef,
-    IncidentsBulkAcknowledgeIncidentsResponse
-  > = z.object({
-    data: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsBulkAcknowledgeIncidentsResponse$ {
-  /** @deprecated use `IncidentsBulkAcknowledgeIncidentsResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsBulkAcknowledgeIncidentsResponse$inboundSchema;
-  /** @deprecated use `IncidentsBulkAcknowledgeIncidentsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsBulkAcknowledgeIncidentsResponse$outboundSchema;
-  /** @deprecated use `IncidentsBulkAcknowledgeIncidentsResponse$Outbound` instead. */
-  export type Outbound = IncidentsBulkAcknowledgeIncidentsResponse$Outbound;
-}
-
-export function incidentsBulkAcknowledgeIncidentsResponseToJSON(
-  incidentsBulkAcknowledgeIncidentsResponse:
-    IncidentsBulkAcknowledgeIncidentsResponse,
-): string {
-  return JSON.stringify(
-    IncidentsBulkAcknowledgeIncidentsResponse$outboundSchema.parse(
-      incidentsBulkAcknowledgeIncidentsResponse,
-    ),
-  );
-}
-
 export function incidentsBulkAcknowledgeIncidentsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

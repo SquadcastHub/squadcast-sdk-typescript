@@ -26,19 +26,3 @@ export type V3IncidentsTagsIncidentPriority = ClosedEnum<
 export const V3IncidentsTagsIncidentPriority$inboundSchema: z.ZodNativeEnum<
   typeof V3IncidentsTagsIncidentPriority
 > = z.nativeEnum(V3IncidentsTagsIncidentPriority);
-
-/** @internal */
-export const V3IncidentsTagsIncidentPriority$outboundSchema: z.ZodNativeEnum<
-  typeof V3IncidentsTagsIncidentPriority
-> = V3IncidentsTagsIncidentPriority$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsIncidentPriority$ {
-  /** @deprecated use `V3IncidentsTagsIncidentPriority$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsTagsIncidentPriority$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsIncidentPriority$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsTagsIncidentPriority$outboundSchema;
-}

@@ -146,7 +146,6 @@ export const EscalationPolicies$inboundSchema: z.ZodType<
     "delete-escalation-policies": "deleteEscalationPolicies",
   });
 });
-
 /** @internal */
 export type EscalationPolicies$Outbound = {
   "create-escalation-policies"?: boolean | undefined;
@@ -174,19 +173,6 @@ export const EscalationPolicies$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EscalationPolicies$ {
-  /** @deprecated use `EscalationPolicies$inboundSchema` instead. */
-  export const inboundSchema = EscalationPolicies$inboundSchema;
-  /** @deprecated use `EscalationPolicies$outboundSchema` instead. */
-  export const outboundSchema = EscalationPolicies$outboundSchema;
-  /** @deprecated use `EscalationPolicies$Outbound` instead. */
-  export type Outbound = EscalationPolicies$Outbound;
-}
-
 export function escalationPoliciesToJSON(
   escalationPolicies: EscalationPolicies,
 ): string {
@@ -194,7 +180,6 @@ export function escalationPoliciesToJSON(
     EscalationPolicies$outboundSchema.parse(escalationPolicies),
   );
 }
-
 export function escalationPoliciesFromJSON(
   jsonString: string,
 ): SafeParseResult<EscalationPolicies, SDKValidationError> {
@@ -223,7 +208,6 @@ export const Schedules$inboundSchema: z.ZodType<
     "delete-schedules": "deleteSchedules",
   });
 });
-
 /** @internal */
 export type Schedules$Outbound = {
   "create-schedules"?: boolean | undefined;
@@ -251,23 +235,9 @@ export const Schedules$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Schedules$ {
-  /** @deprecated use `Schedules$inboundSchema` instead. */
-  export const inboundSchema = Schedules$inboundSchema;
-  /** @deprecated use `Schedules$outboundSchema` instead. */
-  export const outboundSchema = Schedules$outboundSchema;
-  /** @deprecated use `Schedules$Outbound` instead. */
-  export type Outbound = Schedules$Outbound;
-}
-
 export function schedulesToJSON(schedules: Schedules): string {
   return JSON.stringify(Schedules$outboundSchema.parse(schedules));
 }
-
 export function schedulesFromJSON(
   jsonString: string,
 ): SafeParseResult<Schedules, SDKValidationError> {
@@ -296,7 +266,6 @@ export const Services$inboundSchema: z.ZodType<
     "delete-services": "deleteServices",
   });
 });
-
 /** @internal */
 export type Services$Outbound = {
   "create-services"?: boolean | undefined;
@@ -324,23 +293,9 @@ export const Services$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Services$ {
-  /** @deprecated use `Services$inboundSchema` instead. */
-  export const inboundSchema = Services$inboundSchema;
-  /** @deprecated use `Services$outboundSchema` instead. */
-  export const outboundSchema = Services$outboundSchema;
-  /** @deprecated use `Services$Outbound` instead. */
-  export type Outbound = Services$Outbound;
-}
-
 export function servicesToJSON(services: Services): string {
   return JSON.stringify(Services$outboundSchema.parse(services));
 }
-
 export function servicesFromJSON(
   jsonString: string,
 ): SafeParseResult<Services, SDKValidationError> {
@@ -366,7 +321,6 @@ export const Squads$inboundSchema: z.ZodType<Squads, z.ZodTypeDef, unknown> = z
       "delete-squads": "deleteSquads",
     });
   });
-
 /** @internal */
 export type Squads$Outbound = {
   "create-squads"?: boolean | undefined;
@@ -394,23 +348,9 @@ export const Squads$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Squads$ {
-  /** @deprecated use `Squads$inboundSchema` instead. */
-  export const inboundSchema = Squads$inboundSchema;
-  /** @deprecated use `Squads$outboundSchema` instead. */
-  export const outboundSchema = Squads$outboundSchema;
-  /** @deprecated use `Squads$Outbound` instead. */
-  export type Outbound = Squads$Outbound;
-}
-
 export function squadsToJSON(squads: Squads): string {
   return JSON.stringify(Squads$outboundSchema.parse(squads));
 }
-
 export function squadsFromJSON(
   jsonString: string,
 ): SafeParseResult<Squads, SDKValidationError> {
@@ -439,7 +379,6 @@ export const StakeholderGroups$inboundSchema: z.ZodType<
     "delete-stakeholder-groups": "deleteStakeholderGroups",
   });
 });
-
 /** @internal */
 export type StakeholderGroups$Outbound = {
   "create-stakeholder-groups"?: boolean | undefined;
@@ -467,19 +406,6 @@ export const StakeholderGroups$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StakeholderGroups$ {
-  /** @deprecated use `StakeholderGroups$inboundSchema` instead. */
-  export const inboundSchema = StakeholderGroups$inboundSchema;
-  /** @deprecated use `StakeholderGroups$outboundSchema` instead. */
-  export const outboundSchema = StakeholderGroups$outboundSchema;
-  /** @deprecated use `StakeholderGroups$Outbound` instead. */
-  export type Outbound = StakeholderGroups$Outbound;
-}
-
 export function stakeholderGroupsToJSON(
   stakeholderGroups: StakeholderGroups,
 ): string {
@@ -487,7 +413,6 @@ export function stakeholderGroupsToJSON(
     StakeholderGroups$outboundSchema.parse(stakeholderGroups),
   );
 }
-
 export function stakeholderGroupsFromJSON(
   jsonString: string,
 ): SafeParseResult<StakeholderGroups, SDKValidationError> {
@@ -516,7 +441,6 @@ export const Runbooks$inboundSchema: z.ZodType<
     "delete-runbooks": "deleteRunbooks",
   });
 });
-
 /** @internal */
 export type Runbooks$Outbound = {
   "create-runbooks"?: boolean | undefined;
@@ -544,23 +468,9 @@ export const Runbooks$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Runbooks$ {
-  /** @deprecated use `Runbooks$inboundSchema` instead. */
-  export const inboundSchema = Runbooks$inboundSchema;
-  /** @deprecated use `Runbooks$outboundSchema` instead. */
-  export const outboundSchema = Runbooks$outboundSchema;
-  /** @deprecated use `Runbooks$Outbound` instead. */
-  export type Outbound = Runbooks$Outbound;
-}
-
 export function runbooksToJSON(runbooks: Runbooks): string {
   return JSON.stringify(Runbooks$outboundSchema.parse(runbooks));
 }
-
 export function runbooksFromJSON(
   jsonString: string,
 ): SafeParseResult<Runbooks, SDKValidationError> {
@@ -589,7 +499,6 @@ export const Postmortems$inboundSchema: z.ZodType<
     "delete-postmortems": "deletePostmortems",
   });
 });
-
 /** @internal */
 export type Postmortems$Outbound = {
   "create-postmortems"?: boolean | undefined;
@@ -617,23 +526,9 @@ export const Postmortems$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Postmortems$ {
-  /** @deprecated use `Postmortems$inboundSchema` instead. */
-  export const inboundSchema = Postmortems$inboundSchema;
-  /** @deprecated use `Postmortems$outboundSchema` instead. */
-  export const outboundSchema = Postmortems$outboundSchema;
-  /** @deprecated use `Postmortems$Outbound` instead. */
-  export type Outbound = Postmortems$Outbound;
-}
-
 export function postmortemsToJSON(postmortems: Postmortems): string {
   return JSON.stringify(Postmortems$outboundSchema.parse(postmortems));
 }
-
 export function postmortemsFromJSON(
   jsonString: string,
 ): SafeParseResult<Postmortems, SDKValidationError> {
@@ -662,7 +557,6 @@ export const StatusPages$inboundSchema: z.ZodType<
     "delete-status-pages": "deleteStatusPages",
   });
 });
-
 /** @internal */
 export type StatusPages$Outbound = {
   "create-status-pages"?: boolean | undefined;
@@ -690,23 +584,9 @@ export const StatusPages$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusPages$ {
-  /** @deprecated use `StatusPages$inboundSchema` instead. */
-  export const inboundSchema = StatusPages$inboundSchema;
-  /** @deprecated use `StatusPages$outboundSchema` instead. */
-  export const outboundSchema = StatusPages$outboundSchema;
-  /** @deprecated use `StatusPages$Outbound` instead. */
-  export type Outbound = StatusPages$Outbound;
-}
-
 export function statusPagesToJSON(statusPages: StatusPages): string {
   return JSON.stringify(StatusPages$outboundSchema.parse(statusPages));
 }
-
 export function statusPagesFromJSON(
   jsonString: string,
 ): SafeParseResult<StatusPages, SDKValidationError> {
@@ -729,7 +609,6 @@ export const TeamAnalytics$inboundSchema: z.ZodType<
     "read-team-analytics": "readTeamAnalytics",
   });
 });
-
 /** @internal */
 export type TeamAnalytics$Outbound = {
   "read-team-analytics"?: boolean | undefined;
@@ -748,23 +627,9 @@ export const TeamAnalytics$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamAnalytics$ {
-  /** @deprecated use `TeamAnalytics$inboundSchema` instead. */
-  export const inboundSchema = TeamAnalytics$inboundSchema;
-  /** @deprecated use `TeamAnalytics$outboundSchema` instead. */
-  export const outboundSchema = TeamAnalytics$outboundSchema;
-  /** @deprecated use `TeamAnalytics$Outbound` instead. */
-  export type Outbound = TeamAnalytics$Outbound;
-}
-
 export function teamAnalyticsToJSON(teamAnalytics: TeamAnalytics): string {
   return JSON.stringify(TeamAnalytics$outboundSchema.parse(teamAnalytics));
 }
-
 export function teamAnalyticsFromJSON(
   jsonString: string,
 ): SafeParseResult<TeamAnalytics, SDKValidationError> {
@@ -790,7 +655,6 @@ export const Slos$inboundSchema: z.ZodType<Slos, z.ZodTypeDef, unknown> = z
       "delete-slos": "deleteSlos",
     });
   });
-
 /** @internal */
 export type Slos$Outbound = {
   "create-slos"?: boolean | undefined;
@@ -815,23 +679,9 @@ export const Slos$outboundSchema: z.ZodType<Slos$Outbound, z.ZodTypeDef, Slos> =
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Slos$ {
-  /** @deprecated use `Slos$inboundSchema` instead. */
-  export const inboundSchema = Slos$inboundSchema;
-  /** @deprecated use `Slos$outboundSchema` instead. */
-  export const outboundSchema = Slos$outboundSchema;
-  /** @deprecated use `Slos$Outbound` instead. */
-  export type Outbound = Slos$Outbound;
-}
-
 export function slosToJSON(slos: Slos): string {
   return JSON.stringify(Slos$outboundSchema.parse(slos));
 }
-
 export function slosFromJSON(
   jsonString: string,
 ): SafeParseResult<Slos, SDKValidationError> {
@@ -860,7 +710,6 @@ export const Webforms$inboundSchema: z.ZodType<
     "delete-webforms": "deleteWebforms",
   });
 });
-
 /** @internal */
 export type Webforms$Outbound = {
   "create-webforms"?: boolean | undefined;
@@ -888,23 +737,9 @@ export const Webforms$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Webforms$ {
-  /** @deprecated use `Webforms$inboundSchema` instead. */
-  export const inboundSchema = Webforms$inboundSchema;
-  /** @deprecated use `Webforms$outboundSchema` instead. */
-  export const outboundSchema = Webforms$outboundSchema;
-  /** @deprecated use `Webforms$Outbound` instead. */
-  export type Outbound = Webforms$Outbound;
-}
-
 export function webformsToJSON(webforms: Webforms): string {
   return JSON.stringify(Webforms$outboundSchema.parse(webforms));
 }
-
 export function webformsFromJSON(
   jsonString: string,
 ): SafeParseResult<Webforms, SDKValidationError> {
@@ -933,7 +768,6 @@ export const Workflows$inboundSchema: z.ZodType<
     "delete-workflows": "deleteWorkflows",
   });
 });
-
 /** @internal */
 export type Workflows$Outbound = {
   "create-workflows"?: boolean | undefined;
@@ -961,23 +795,9 @@ export const Workflows$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Workflows$ {
-  /** @deprecated use `Workflows$inboundSchema` instead. */
-  export const inboundSchema = Workflows$inboundSchema;
-  /** @deprecated use `Workflows$outboundSchema` instead. */
-  export const outboundSchema = Workflows$outboundSchema;
-  /** @deprecated use `Workflows$Outbound` instead. */
-  export type Outbound = Workflows$Outbound;
-}
-
 export function workflowsToJSON(workflows: Workflows): string {
   return JSON.stringify(Workflows$outboundSchema.parse(workflows));
 }
-
 export function workflowsFromJSON(
   jsonString: string,
 ): SafeParseResult<Workflows, SDKValidationError> {
@@ -1003,7 +823,6 @@ export const Ger$inboundSchema: z.ZodType<Ger, z.ZodTypeDef, unknown> = z
       "delete-ger": "deleteGer",
     });
   });
-
 /** @internal */
 export type Ger$Outbound = {
   "create-ger"?: boolean | undefined;
@@ -1028,23 +847,9 @@ export const Ger$outboundSchema: z.ZodType<Ger$Outbound, z.ZodTypeDef, Ger> = z
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Ger$ {
-  /** @deprecated use `Ger$inboundSchema` instead. */
-  export const inboundSchema = Ger$inboundSchema;
-  /** @deprecated use `Ger$outboundSchema` instead. */
-  export const outboundSchema = Ger$outboundSchema;
-  /** @deprecated use `Ger$Outbound` instead. */
-  export type Outbound = Ger$Outbound;
-}
-
 export function gerToJSON(ger: Ger): string {
   return JSON.stringify(Ger$outboundSchema.parse(ger));
 }
-
 export function gerFromJSON(
   jsonString: string,
 ): SafeParseResult<Ger, SDKValidationError> {
@@ -1073,7 +878,6 @@ export const RoutingNumbers$inboundSchema: z.ZodType<
     "delete-routing-numbers": "deleteRoutingNumbers",
   });
 });
-
 /** @internal */
 export type RoutingNumbers$Outbound = {
   "create-routing-numbers"?: boolean | undefined;
@@ -1101,23 +905,9 @@ export const RoutingNumbers$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RoutingNumbers$ {
-  /** @deprecated use `RoutingNumbers$inboundSchema` instead. */
-  export const inboundSchema = RoutingNumbers$inboundSchema;
-  /** @deprecated use `RoutingNumbers$outboundSchema` instead. */
-  export const outboundSchema = RoutingNumbers$outboundSchema;
-  /** @deprecated use `RoutingNumbers$Outbound` instead. */
-  export type Outbound = RoutingNumbers$Outbound;
-}
-
 export function routingNumbersToJSON(routingNumbers: RoutingNumbers): string {
   return JSON.stringify(RoutingNumbers$outboundSchema.parse(routingNumbers));
 }
-
 export function routingNumbersFromJSON(
   jsonString: string,
 ): SafeParseResult<RoutingNumbers, SDKValidationError> {
@@ -1146,7 +936,6 @@ export const GlobalOncallReminderRules$inboundSchema: z.ZodType<
     "delete-global-oncall-reminder-rules": "deleteGlobalOncallReminderRules",
   });
 });
-
 /** @internal */
 export type GlobalOncallReminderRules$Outbound = {
   "create-global-oncall-reminder-rules"?: boolean | undefined;
@@ -1174,19 +963,6 @@ export const GlobalOncallReminderRules$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalOncallReminderRules$ {
-  /** @deprecated use `GlobalOncallReminderRules$inboundSchema` instead. */
-  export const inboundSchema = GlobalOncallReminderRules$inboundSchema;
-  /** @deprecated use `GlobalOncallReminderRules$outboundSchema` instead. */
-  export const outboundSchema = GlobalOncallReminderRules$outboundSchema;
-  /** @deprecated use `GlobalOncallReminderRules$Outbound` instead. */
-  export type Outbound = GlobalOncallReminderRules$Outbound;
-}
-
 export function globalOncallReminderRulesToJSON(
   globalOncallReminderRules: GlobalOncallReminderRules,
 ): string {
@@ -1194,7 +970,6 @@ export function globalOncallReminderRulesToJSON(
     GlobalOncallReminderRules$outboundSchema.parse(globalOncallReminderRules),
   );
 }
-
 export function globalOncallReminderRulesFromJSON(
   jsonString: string,
 ): SafeParseResult<GlobalOncallReminderRules, SDKValidationError> {
@@ -1239,7 +1014,6 @@ export const V3TeamsAbilities$inboundSchema: z.ZodType<
     "global_oncall_reminder_rules": "globalOncallReminderRules",
   });
 });
-
 /** @internal */
 export type V3TeamsAbilities$Outbound = {
   escalation_policies?: EscalationPolicies$Outbound | undefined;
@@ -1294,19 +1068,6 @@ export const V3TeamsAbilities$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsAbilities$ {
-  /** @deprecated use `V3TeamsAbilities$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsAbilities$inboundSchema;
-  /** @deprecated use `V3TeamsAbilities$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsAbilities$outboundSchema;
-  /** @deprecated use `V3TeamsAbilities$Outbound` instead. */
-  export type Outbound = V3TeamsAbilities$Outbound;
-}
-
 export function v3TeamsAbilitiesToJSON(
   v3TeamsAbilities: V3TeamsAbilities,
 ): string {
@@ -1314,7 +1075,6 @@ export function v3TeamsAbilitiesToJSON(
     V3TeamsAbilities$outboundSchema.parse(v3TeamsAbilities),
   );
 }
-
 export function v3TeamsAbilitiesFromJSON(
   jsonString: string,
 ): SafeParseResult<V3TeamsAbilities, SDKValidationError> {

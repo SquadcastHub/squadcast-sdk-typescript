@@ -22,45 +22,6 @@ export const V4SquadsUpdateSquadNameResponse$inboundSchema: z.ZodType<
   name: z.string(),
 });
 
-/** @internal */
-export type V4SquadsUpdateSquadNameResponse$Outbound = {
-  id: string;
-  name: string;
-};
-
-/** @internal */
-export const V4SquadsUpdateSquadNameResponse$outboundSchema: z.ZodType<
-  V4SquadsUpdateSquadNameResponse$Outbound,
-  z.ZodTypeDef,
-  V4SquadsUpdateSquadNameResponse
-> = z.object({
-  id: z.string(),
-  name: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4SquadsUpdateSquadNameResponse$ {
-  /** @deprecated use `V4SquadsUpdateSquadNameResponse$inboundSchema` instead. */
-  export const inboundSchema = V4SquadsUpdateSquadNameResponse$inboundSchema;
-  /** @deprecated use `V4SquadsUpdateSquadNameResponse$outboundSchema` instead. */
-  export const outboundSchema = V4SquadsUpdateSquadNameResponse$outboundSchema;
-  /** @deprecated use `V4SquadsUpdateSquadNameResponse$Outbound` instead. */
-  export type Outbound = V4SquadsUpdateSquadNameResponse$Outbound;
-}
-
-export function v4SquadsUpdateSquadNameResponseToJSON(
-  v4SquadsUpdateSquadNameResponse: V4SquadsUpdateSquadNameResponse,
-): string {
-  return JSON.stringify(
-    V4SquadsUpdateSquadNameResponse$outboundSchema.parse(
-      v4SquadsUpdateSquadNameResponse,
-    ),
-  );
-}
-
 export function v4SquadsUpdateSquadNameResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V4SquadsUpdateSquadNameResponse, SDKValidationError> {

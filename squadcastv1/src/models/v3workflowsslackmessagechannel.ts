@@ -31,23 +31,10 @@ export type V3WorkflowsSlackMessageChannel = {
 export const V3WorkflowsSlackMessageChannelName$inboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSlackMessageChannelName
 > = z.nativeEnum(V3WorkflowsSlackMessageChannelName);
-
 /** @internal */
 export const V3WorkflowsSlackMessageChannelName$outboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSlackMessageChannelName
 > = V3WorkflowsSlackMessageChannelName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackMessageChannelName$ {
-  /** @deprecated use `V3WorkflowsSlackMessageChannelName$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSlackMessageChannelName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageChannelName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSlackMessageChannelName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsSlackMessageChannelData$inboundSchema: z.ZodType<
@@ -64,7 +51,6 @@ export const V3WorkflowsSlackMessageChannelData$inboundSchema: z.ZodType<
     "channel_name": "channelName",
   });
 });
-
 /** @internal */
 export type V3WorkflowsSlackMessageChannelData$Outbound = {
   channel_id: string;
@@ -88,20 +74,6 @@ export const V3WorkflowsSlackMessageChannelData$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackMessageChannelData$ {
-  /** @deprecated use `V3WorkflowsSlackMessageChannelData$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSlackMessageChannelData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageChannelData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSlackMessageChannelData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageChannelData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSlackMessageChannelData$Outbound;
-}
-
 export function v3WorkflowsSlackMessageChannelDataToJSON(
   v3WorkflowsSlackMessageChannelData: V3WorkflowsSlackMessageChannelData,
 ): string {
@@ -111,7 +83,6 @@ export function v3WorkflowsSlackMessageChannelDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSlackMessageChannelDataFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSlackMessageChannelData, SDKValidationError> {
@@ -132,7 +103,6 @@ export const V3WorkflowsSlackMessageChannel$inboundSchema: z.ZodType<
   name: V3WorkflowsSlackMessageChannelName$inboundSchema,
   data: z.lazy(() => V3WorkflowsSlackMessageChannelData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsSlackMessageChannel$Outbound = {
   name: string;
@@ -149,19 +119,6 @@ export const V3WorkflowsSlackMessageChannel$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsSlackMessageChannelData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackMessageChannel$ {
-  /** @deprecated use `V3WorkflowsSlackMessageChannel$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSlackMessageChannel$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageChannel$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSlackMessageChannel$outboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageChannel$Outbound` instead. */
-  export type Outbound = V3WorkflowsSlackMessageChannel$Outbound;
-}
-
 export function v3WorkflowsSlackMessageChannelToJSON(
   v3WorkflowsSlackMessageChannel: V3WorkflowsSlackMessageChannel,
 ): string {
@@ -171,7 +128,6 @@ export function v3WorkflowsSlackMessageChannelToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSlackMessageChannelFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSlackMessageChannel, SDKValidationError> {

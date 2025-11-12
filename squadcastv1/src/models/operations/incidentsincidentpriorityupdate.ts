@@ -23,22 +23,6 @@ export type IncidentsIncidentPriorityUpdateResponse = {
 };
 
 /** @internal */
-export const IncidentsIncidentPriorityUpdateRequest$inboundSchema: z.ZodType<
-  IncidentsIncidentPriorityUpdateRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  incidentID: z.string(),
-  "V3.Incidents.IncidentPriorityUpdateRequest":
-    models.V3IncidentsIncidentPriorityUpdateRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Incidents.IncidentPriorityUpdateRequest":
-      "v3IncidentsIncidentPriorityUpdateRequest",
-  });
-});
-
-/** @internal */
 export type IncidentsIncidentPriorityUpdateRequest$Outbound = {
   incidentID: string;
   "V3.Incidents.IncidentPriorityUpdateRequest":
@@ -61,21 +45,6 @@ export const IncidentsIncidentPriorityUpdateRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsIncidentPriorityUpdateRequest$ {
-  /** @deprecated use `IncidentsIncidentPriorityUpdateRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsIncidentPriorityUpdateRequest$inboundSchema;
-  /** @deprecated use `IncidentsIncidentPriorityUpdateRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsIncidentPriorityUpdateRequest$outboundSchema;
-  /** @deprecated use `IncidentsIncidentPriorityUpdateRequest$Outbound` instead. */
-  export type Outbound = IncidentsIncidentPriorityUpdateRequest$Outbound;
-}
-
 export function incidentsIncidentPriorityUpdateRequestToJSON(
   incidentsIncidentPriorityUpdateRequest:
     IncidentsIncidentPriorityUpdateRequest,
@@ -87,17 +56,6 @@ export function incidentsIncidentPriorityUpdateRequestToJSON(
   );
 }
 
-export function incidentsIncidentPriorityUpdateRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<IncidentsIncidentPriorityUpdateRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      IncidentsIncidentPriorityUpdateRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IncidentsIncidentPriorityUpdateRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const IncidentsIncidentPriorityUpdateResponse$inboundSchema: z.ZodType<
   IncidentsIncidentPriorityUpdateResponse,
@@ -106,46 +64,6 @@ export const IncidentsIncidentPriorityUpdateResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3IncidentsIncidentPriorityUpdateResponse$inboundSchema,
 });
-
-/** @internal */
-export type IncidentsIncidentPriorityUpdateResponse$Outbound = {
-  data: models.V3IncidentsIncidentPriorityUpdateResponse$Outbound;
-};
-
-/** @internal */
-export const IncidentsIncidentPriorityUpdateResponse$outboundSchema: z.ZodType<
-  IncidentsIncidentPriorityUpdateResponse$Outbound,
-  z.ZodTypeDef,
-  IncidentsIncidentPriorityUpdateResponse
-> = z.object({
-  data: models.V3IncidentsIncidentPriorityUpdateResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsIncidentPriorityUpdateResponse$ {
-  /** @deprecated use `IncidentsIncidentPriorityUpdateResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsIncidentPriorityUpdateResponse$inboundSchema;
-  /** @deprecated use `IncidentsIncidentPriorityUpdateResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsIncidentPriorityUpdateResponse$outboundSchema;
-  /** @deprecated use `IncidentsIncidentPriorityUpdateResponse$Outbound` instead. */
-  export type Outbound = IncidentsIncidentPriorityUpdateResponse$Outbound;
-}
-
-export function incidentsIncidentPriorityUpdateResponseToJSON(
-  incidentsIncidentPriorityUpdateResponse:
-    IncidentsIncidentPriorityUpdateResponse,
-): string {
-  return JSON.stringify(
-    IncidentsIncidentPriorityUpdateResponse$outboundSchema.parse(
-      incidentsIncidentPriorityUpdateResponse,
-    ),
-  );
-}
 
 export function incidentsIncidentPriorityUpdateResponseFromJSON(
   jsonString: string,

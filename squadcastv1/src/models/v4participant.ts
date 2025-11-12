@@ -21,7 +21,6 @@ export const V4Participant$inboundSchema: z.ZodType<
   id: z.string(),
   type: z.string(),
 });
-
 /** @internal */
 export type V4Participant$Outbound = {
   id: string;
@@ -38,23 +37,9 @@ export const V4Participant$outboundSchema: z.ZodType<
   type: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4Participant$ {
-  /** @deprecated use `V4Participant$inboundSchema` instead. */
-  export const inboundSchema = V4Participant$inboundSchema;
-  /** @deprecated use `V4Participant$outboundSchema` instead. */
-  export const outboundSchema = V4Participant$outboundSchema;
-  /** @deprecated use `V4Participant$Outbound` instead. */
-  export type Outbound = V4Participant$Outbound;
-}
-
 export function v4ParticipantToJSON(v4Participant: V4Participant): string {
   return JSON.stringify(V4Participant$outboundSchema.parse(v4Participant));
 }
-
 export function v4ParticipantFromJSON(
   jsonString: string,
 ): SafeParseResult<V4Participant, SDKValidationError> {

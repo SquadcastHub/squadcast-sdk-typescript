@@ -24,25 +24,6 @@ export type OverlayCreateOrUpdateNotificationTemplateOverlayResponse = {
 };
 
 /** @internal */
-export const OverlayCreateOrUpdateNotificationTemplateOverlayRequest$inboundSchema:
-  z.ZodType<
-    OverlayCreateOrUpdateNotificationTemplateOverlayRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-    alertSource: z.string(),
-    "V3.Services.Overlay.UpdateCustomContentTemplateOverlayRequest":
-      models
-        .V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.Services.Overlay.UpdateCustomContentTemplateOverlayRequest":
-        "v3ServicesOverlayUpdateCustomContentTemplateOverlayRequest",
-    });
-  });
-
-/** @internal */
 export type OverlayCreateOrUpdateNotificationTemplateOverlayRequest$Outbound = {
   serviceID: string;
   alertSource: string;
@@ -69,22 +50,6 @@ export const OverlayCreateOrUpdateNotificationTemplateOverlayRequest$outboundSch
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayCreateOrUpdateNotificationTemplateOverlayRequest$ {
-  /** @deprecated use `OverlayCreateOrUpdateNotificationTemplateOverlayRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayCreateOrUpdateNotificationTemplateOverlayRequest$inboundSchema;
-  /** @deprecated use `OverlayCreateOrUpdateNotificationTemplateOverlayRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayCreateOrUpdateNotificationTemplateOverlayRequest$outboundSchema;
-  /** @deprecated use `OverlayCreateOrUpdateNotificationTemplateOverlayRequest$Outbound` instead. */
-  export type Outbound =
-    OverlayCreateOrUpdateNotificationTemplateOverlayRequest$Outbound;
-}
-
 export function overlayCreateOrUpdateNotificationTemplateOverlayRequestToJSON(
   overlayCreateOrUpdateNotificationTemplateOverlayRequest:
     OverlayCreateOrUpdateNotificationTemplateOverlayRequest,
@@ -92,21 +57,6 @@ export function overlayCreateOrUpdateNotificationTemplateOverlayRequestToJSON(
   return JSON.stringify(
     OverlayCreateOrUpdateNotificationTemplateOverlayRequest$outboundSchema
       .parse(overlayCreateOrUpdateNotificationTemplateOverlayRequest),
-  );
-}
-
-export function overlayCreateOrUpdateNotificationTemplateOverlayRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  OverlayCreateOrUpdateNotificationTemplateOverlayRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverlayCreateOrUpdateNotificationTemplateOverlayRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'OverlayCreateOrUpdateNotificationTemplateOverlayRequest' from JSON`,
   );
 }
 
@@ -119,48 +69,6 @@ export const OverlayCreateOrUpdateNotificationTemplateOverlayResponse$inboundSch
   > = z.object({
     data: models.V3ServicesOverlayCustomContentOverlayResponse$inboundSchema,
   });
-
-/** @internal */
-export type OverlayCreateOrUpdateNotificationTemplateOverlayResponse$Outbound =
-  {
-    data: models.V3ServicesOverlayCustomContentOverlayResponse$Outbound;
-  };
-
-/** @internal */
-export const OverlayCreateOrUpdateNotificationTemplateOverlayResponse$outboundSchema:
-  z.ZodType<
-    OverlayCreateOrUpdateNotificationTemplateOverlayResponse$Outbound,
-    z.ZodTypeDef,
-    OverlayCreateOrUpdateNotificationTemplateOverlayResponse
-  > = z.object({
-    data: models.V3ServicesOverlayCustomContentOverlayResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayCreateOrUpdateNotificationTemplateOverlayResponse$ {
-  /** @deprecated use `OverlayCreateOrUpdateNotificationTemplateOverlayResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayCreateOrUpdateNotificationTemplateOverlayResponse$inboundSchema;
-  /** @deprecated use `OverlayCreateOrUpdateNotificationTemplateOverlayResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayCreateOrUpdateNotificationTemplateOverlayResponse$outboundSchema;
-  /** @deprecated use `OverlayCreateOrUpdateNotificationTemplateOverlayResponse$Outbound` instead. */
-  export type Outbound =
-    OverlayCreateOrUpdateNotificationTemplateOverlayResponse$Outbound;
-}
-
-export function overlayCreateOrUpdateNotificationTemplateOverlayResponseToJSON(
-  overlayCreateOrUpdateNotificationTemplateOverlayResponse:
-    OverlayCreateOrUpdateNotificationTemplateOverlayResponse,
-): string {
-  return JSON.stringify(
-    OverlayCreateOrUpdateNotificationTemplateOverlayResponse$outboundSchema
-      .parse(overlayCreateOrUpdateNotificationTemplateOverlayResponse),
-  );
-}
 
 export function overlayCreateOrUpdateNotificationTemplateOverlayResponseFromJSON(
   jsonString: string,

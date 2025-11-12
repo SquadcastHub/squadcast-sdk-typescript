@@ -30,22 +30,10 @@ export type V3WorkflowsSqSendEmail = {
 export const V3WorkflowsSqSendEmailName$inboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSqSendEmailName
 > = z.nativeEnum(V3WorkflowsSqSendEmailName);
-
 /** @internal */
 export const V3WorkflowsSqSendEmailName$outboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSqSendEmailName
 > = V3WorkflowsSqSendEmailName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqSendEmailName$ {
-  /** @deprecated use `V3WorkflowsSqSendEmailName$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqSendEmailName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqSendEmailName$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqSendEmailName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsSqSendEmailData$inboundSchema: z.ZodType<
@@ -57,7 +45,6 @@ export const V3WorkflowsSqSendEmailData$inboundSchema: z.ZodType<
   subject: z.string(),
   body: z.string(),
 });
-
 /** @internal */
 export type V3WorkflowsSqSendEmailData$Outbound = {
   to: Array<string>;
@@ -76,19 +63,6 @@ export const V3WorkflowsSqSendEmailData$outboundSchema: z.ZodType<
   body: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqSendEmailData$ {
-  /** @deprecated use `V3WorkflowsSqSendEmailData$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqSendEmailData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqSendEmailData$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqSendEmailData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqSendEmailData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqSendEmailData$Outbound;
-}
-
 export function v3WorkflowsSqSendEmailDataToJSON(
   v3WorkflowsSqSendEmailData: V3WorkflowsSqSendEmailData,
 ): string {
@@ -96,7 +70,6 @@ export function v3WorkflowsSqSendEmailDataToJSON(
     V3WorkflowsSqSendEmailData$outboundSchema.parse(v3WorkflowsSqSendEmailData),
   );
 }
-
 export function v3WorkflowsSqSendEmailDataFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqSendEmailData, SDKValidationError> {
@@ -116,7 +89,6 @@ export const V3WorkflowsSqSendEmail$inboundSchema: z.ZodType<
   name: V3WorkflowsSqSendEmailName$inboundSchema,
   data: z.lazy(() => V3WorkflowsSqSendEmailData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsSqSendEmail$Outbound = {
   name: string;
@@ -133,19 +105,6 @@ export const V3WorkflowsSqSendEmail$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsSqSendEmailData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqSendEmail$ {
-  /** @deprecated use `V3WorkflowsSqSendEmail$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqSendEmail$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqSendEmail$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqSendEmail$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqSendEmail$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqSendEmail$Outbound;
-}
-
 export function v3WorkflowsSqSendEmailToJSON(
   v3WorkflowsSqSendEmail: V3WorkflowsSqSendEmail,
 ): string {
@@ -153,7 +112,6 @@ export function v3WorkflowsSqSendEmailToJSON(
     V3WorkflowsSqSendEmail$outboundSchema.parse(v3WorkflowsSqSendEmail),
   );
 }
-
 export function v3WorkflowsSqSendEmailFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqSendEmail, SDKValidationError> {

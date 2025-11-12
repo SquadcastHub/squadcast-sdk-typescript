@@ -23,46 +23,6 @@ export const UsersUpdateOrgLevelPermissionsResponse$inboundSchema: z.ZodType<
   data: z.string(),
 });
 
-/** @internal */
-export type UsersUpdateOrgLevelPermissionsResponse$Outbound = {
-  data: string;
-};
-
-/** @internal */
-export const UsersUpdateOrgLevelPermissionsResponse$outboundSchema: z.ZodType<
-  UsersUpdateOrgLevelPermissionsResponse$Outbound,
-  z.ZodTypeDef,
-  UsersUpdateOrgLevelPermissionsResponse
-> = z.object({
-  data: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersUpdateOrgLevelPermissionsResponse$ {
-  /** @deprecated use `UsersUpdateOrgLevelPermissionsResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    UsersUpdateOrgLevelPermissionsResponse$inboundSchema;
-  /** @deprecated use `UsersUpdateOrgLevelPermissionsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    UsersUpdateOrgLevelPermissionsResponse$outboundSchema;
-  /** @deprecated use `UsersUpdateOrgLevelPermissionsResponse$Outbound` instead. */
-  export type Outbound = UsersUpdateOrgLevelPermissionsResponse$Outbound;
-}
-
-export function usersUpdateOrgLevelPermissionsResponseToJSON(
-  usersUpdateOrgLevelPermissionsResponse:
-    UsersUpdateOrgLevelPermissionsResponse,
-): string {
-  return JSON.stringify(
-    UsersUpdateOrgLevelPermissionsResponse$outboundSchema.parse(
-      usersUpdateOrgLevelPermissionsResponse,
-    ),
-  );
-}
-
 export function usersUpdateOrgLevelPermissionsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<UsersUpdateOrgLevelPermissionsResponse, SDKValidationError> {

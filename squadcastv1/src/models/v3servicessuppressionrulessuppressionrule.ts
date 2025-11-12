@@ -67,7 +67,6 @@ export const V3ServicesSuppressionRulesSuppressionRule$inboundSchema: z.ZodType<
     "basic_expression": "basicExpression",
   });
 });
-
 /** @internal */
 export type V3ServicesSuppressionRulesSuppressionRule$Outbound = {
   rule_id: string;
@@ -118,21 +117,6 @@ export const V3ServicesSuppressionRulesSuppressionRule$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesSuppressionRulesSuppressionRule$ {
-  /** @deprecated use `V3ServicesSuppressionRulesSuppressionRule$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesSuppressionRulesSuppressionRule$inboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesSuppressionRule$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesSuppressionRulesSuppressionRule$outboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesSuppressionRule$Outbound` instead. */
-  export type Outbound = V3ServicesSuppressionRulesSuppressionRule$Outbound;
-}
-
 export function v3ServicesSuppressionRulesSuppressionRuleToJSON(
   v3ServicesSuppressionRulesSuppressionRule:
     V3ServicesSuppressionRulesSuppressionRule,
@@ -143,7 +127,6 @@ export function v3ServicesSuppressionRulesSuppressionRuleToJSON(
     ),
   );
 }
-
 export function v3ServicesSuppressionRulesSuppressionRuleFromJSON(
   jsonString: string,
 ): SafeParseResult<

@@ -26,29 +26,6 @@ export type GlobalEventRulesUpdateRuleByIdResponse = {
 };
 
 /** @internal */
-export const GlobalEventRulesUpdateRuleByIdRequest$inboundSchema: z.ZodType<
-  GlobalEventRulesUpdateRuleByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  ger_id: z.number().int(),
-  alert_source_version: z.string(),
-  alert_source_shortname: z.string(),
-  rule_id: z.string(),
-  "V3.GlobalEventRules.UpdateRuleRequest":
-    models.V3GlobalEventRulesUpdateRuleRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "ger_id": "gerId",
-    "alert_source_version": "alertSourceVersion",
-    "alert_source_shortname": "alertSourceShortname",
-    "rule_id": "ruleId",
-    "V3.GlobalEventRules.UpdateRuleRequest":
-      "v3GlobalEventRulesUpdateRuleRequest",
-  });
-});
-
-/** @internal */
 export type GlobalEventRulesUpdateRuleByIdRequest$Outbound = {
   ger_id: number;
   alert_source_version: string;
@@ -81,21 +58,6 @@ export const GlobalEventRulesUpdateRuleByIdRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesUpdateRuleByIdRequest$ {
-  /** @deprecated use `GlobalEventRulesUpdateRuleByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesUpdateRuleByIdRequest$inboundSchema;
-  /** @deprecated use `GlobalEventRulesUpdateRuleByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesUpdateRuleByIdRequest$outboundSchema;
-  /** @deprecated use `GlobalEventRulesUpdateRuleByIdRequest$Outbound` instead. */
-  export type Outbound = GlobalEventRulesUpdateRuleByIdRequest$Outbound;
-}
-
 export function globalEventRulesUpdateRuleByIdRequestToJSON(
   globalEventRulesUpdateRuleByIdRequest: GlobalEventRulesUpdateRuleByIdRequest,
 ): string {
@@ -103,17 +65,6 @@ export function globalEventRulesUpdateRuleByIdRequestToJSON(
     GlobalEventRulesUpdateRuleByIdRequest$outboundSchema.parse(
       globalEventRulesUpdateRuleByIdRequest,
     ),
-  );
-}
-
-export function globalEventRulesUpdateRuleByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GlobalEventRulesUpdateRuleByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      GlobalEventRulesUpdateRuleByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GlobalEventRulesUpdateRuleByIdRequest' from JSON`,
   );
 }
 
@@ -125,46 +76,6 @@ export const GlobalEventRulesUpdateRuleByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3GlobalEventRulesRulesetRuleResponse$inboundSchema,
 });
-
-/** @internal */
-export type GlobalEventRulesUpdateRuleByIdResponse$Outbound = {
-  data: models.V3GlobalEventRulesRulesetRuleResponse$Outbound;
-};
-
-/** @internal */
-export const GlobalEventRulesUpdateRuleByIdResponse$outboundSchema: z.ZodType<
-  GlobalEventRulesUpdateRuleByIdResponse$Outbound,
-  z.ZodTypeDef,
-  GlobalEventRulesUpdateRuleByIdResponse
-> = z.object({
-  data: models.V3GlobalEventRulesRulesetRuleResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesUpdateRuleByIdResponse$ {
-  /** @deprecated use `GlobalEventRulesUpdateRuleByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesUpdateRuleByIdResponse$inboundSchema;
-  /** @deprecated use `GlobalEventRulesUpdateRuleByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesUpdateRuleByIdResponse$outboundSchema;
-  /** @deprecated use `GlobalEventRulesUpdateRuleByIdResponse$Outbound` instead. */
-  export type Outbound = GlobalEventRulesUpdateRuleByIdResponse$Outbound;
-}
-
-export function globalEventRulesUpdateRuleByIdResponseToJSON(
-  globalEventRulesUpdateRuleByIdResponse:
-    GlobalEventRulesUpdateRuleByIdResponse,
-): string {
-  return JSON.stringify(
-    GlobalEventRulesUpdateRuleByIdResponse$outboundSchema.parse(
-      globalEventRulesUpdateRuleByIdResponse,
-    ),
-  );
-}
 
 export function globalEventRulesUpdateRuleByIdResponseFromJSON(
   jsonString: string,

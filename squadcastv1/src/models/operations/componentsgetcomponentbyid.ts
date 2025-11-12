@@ -22,20 +22,6 @@ export type ComponentsGetComponentByIdResponse = {
 };
 
 /** @internal */
-export const ComponentsGetComponentByIdRequest$inboundSchema: z.ZodType<
-  ComponentsGetComponentByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-  component_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "component_id": "componentId",
-  });
-});
-
-/** @internal */
 export type ComponentsGetComponentByIdRequest$Outbound = {
   statuspageID: string;
   component_id: string;
@@ -55,20 +41,6 @@ export const ComponentsGetComponentByIdRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentsGetComponentByIdRequest$ {
-  /** @deprecated use `ComponentsGetComponentByIdRequest$inboundSchema` instead. */
-  export const inboundSchema = ComponentsGetComponentByIdRequest$inboundSchema;
-  /** @deprecated use `ComponentsGetComponentByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentsGetComponentByIdRequest$outboundSchema;
-  /** @deprecated use `ComponentsGetComponentByIdRequest$Outbound` instead. */
-  export type Outbound = ComponentsGetComponentByIdRequest$Outbound;
-}
-
 export function componentsGetComponentByIdRequestToJSON(
   componentsGetComponentByIdRequest: ComponentsGetComponentByIdRequest,
 ): string {
@@ -76,16 +48,6 @@ export function componentsGetComponentByIdRequestToJSON(
     ComponentsGetComponentByIdRequest$outboundSchema.parse(
       componentsGetComponentByIdRequest,
     ),
-  );
-}
-
-export function componentsGetComponentByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ComponentsGetComponentByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ComponentsGetComponentByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComponentsGetComponentByIdRequest' from JSON`,
   );
 }
 
@@ -97,44 +59,6 @@ export const ComponentsGetComponentByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4StatusPagesComponentsGetComponentByIdResponse$inboundSchema,
 });
-
-/** @internal */
-export type ComponentsGetComponentByIdResponse$Outbound = {
-  data: models.V4StatusPagesComponentsGetComponentByIdResponse$Outbound;
-};
-
-/** @internal */
-export const ComponentsGetComponentByIdResponse$outboundSchema: z.ZodType<
-  ComponentsGetComponentByIdResponse$Outbound,
-  z.ZodTypeDef,
-  ComponentsGetComponentByIdResponse
-> = z.object({
-  data: models.V4StatusPagesComponentsGetComponentByIdResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentsGetComponentByIdResponse$ {
-  /** @deprecated use `ComponentsGetComponentByIdResponse$inboundSchema` instead. */
-  export const inboundSchema = ComponentsGetComponentByIdResponse$inboundSchema;
-  /** @deprecated use `ComponentsGetComponentByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentsGetComponentByIdResponse$outboundSchema;
-  /** @deprecated use `ComponentsGetComponentByIdResponse$Outbound` instead. */
-  export type Outbound = ComponentsGetComponentByIdResponse$Outbound;
-}
-
-export function componentsGetComponentByIdResponseToJSON(
-  componentsGetComponentByIdResponse: ComponentsGetComponentByIdResponse,
-): string {
-  return JSON.stringify(
-    ComponentsGetComponentByIdResponse$outboundSchema.parse(
-      componentsGetComponentByIdResponse,
-    ),
-  );
-}
 
 export function componentsGetComponentByIdResponseFromJSON(
   jsonString: string,

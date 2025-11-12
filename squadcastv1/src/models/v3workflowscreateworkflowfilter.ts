@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type Entity = {};
 
@@ -21,10 +18,6 @@ export type V3WorkflowsCreateWorkflowFilter = {
 };
 
 /** @internal */
-export const Entity$inboundSchema: z.ZodType<Entity, z.ZodTypeDef, unknown> = z
-  .object({});
-
-/** @internal */
 export type Entity$Outbound = {};
 
 /** @internal */
@@ -34,50 +27,9 @@ export const Entity$outboundSchema: z.ZodType<
   Entity
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Entity$ {
-  /** @deprecated use `Entity$inboundSchema` instead. */
-  export const inboundSchema = Entity$inboundSchema;
-  /** @deprecated use `Entity$outboundSchema` instead. */
-  export const outboundSchema = Entity$outboundSchema;
-  /** @deprecated use `Entity$Outbound` instead. */
-  export type Outbound = Entity$Outbound;
-}
-
 export function entityToJSON(entity: Entity): string {
   return JSON.stringify(Entity$outboundSchema.parse(entity));
 }
-
-export function entityFromJSON(
-  jsonString: string,
-): SafeParseResult<Entity, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Entity$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Entity' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsCreateWorkflowFilter$inboundSchema: z.ZodType<
-  V3WorkflowsCreateWorkflowFilter,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  type: z.string().optional(),
-  key: z.string().optional(),
-  value: z.any().optional(),
-  fields: z.lazy(() => V3WorkflowsCreateWorkflowFilter$inboundSchema)
-    .optional(),
-  children: z.array(z.lazy(() => V3WorkflowsCreateWorkflowFilter$inboundSchema))
-    .optional(),
-  label: z.string().optional(),
-  entity: z.lazy(() => Entity$inboundSchema).optional(),
-  filterType: z.string().optional(),
-});
 
 /** @internal */
 export type V3WorkflowsCreateWorkflowFilter$Outbound = {
@@ -110,19 +62,6 @@ export const V3WorkflowsCreateWorkflowFilter$outboundSchema: z.ZodType<
   filterType: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsCreateWorkflowFilter$ {
-  /** @deprecated use `V3WorkflowsCreateWorkflowFilter$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsCreateWorkflowFilter$inboundSchema;
-  /** @deprecated use `V3WorkflowsCreateWorkflowFilter$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsCreateWorkflowFilter$outboundSchema;
-  /** @deprecated use `V3WorkflowsCreateWorkflowFilter$Outbound` instead. */
-  export type Outbound = V3WorkflowsCreateWorkflowFilter$Outbound;
-}
-
 export function v3WorkflowsCreateWorkflowFilterToJSON(
   v3WorkflowsCreateWorkflowFilter: V3WorkflowsCreateWorkflowFilter,
 ): string {
@@ -130,15 +69,5 @@ export function v3WorkflowsCreateWorkflowFilterToJSON(
     V3WorkflowsCreateWorkflowFilter$outboundSchema.parse(
       v3WorkflowsCreateWorkflowFilter,
     ),
-  );
-}
-
-export function v3WorkflowsCreateWorkflowFilterFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsCreateWorkflowFilter, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3WorkflowsCreateWorkflowFilter$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsCreateWorkflowFilter' from JSON`,
   );
 }

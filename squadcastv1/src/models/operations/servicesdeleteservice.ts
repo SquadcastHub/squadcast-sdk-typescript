@@ -17,15 +17,6 @@ export type ServicesDeleteServiceRequest = {
 export type ServicesDeleteServiceResponseBody = {};
 
 /** @internal */
-export const ServicesDeleteServiceRequest$inboundSchema: z.ZodType<
-  ServicesDeleteServiceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  serviceID: z.string(),
-});
-
-/** @internal */
 export type ServicesDeleteServiceRequest$Outbound = {
   serviceID: string;
 };
@@ -39,19 +30,6 @@ export const ServicesDeleteServiceRequest$outboundSchema: z.ZodType<
   serviceID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesDeleteServiceRequest$ {
-  /** @deprecated use `ServicesDeleteServiceRequest$inboundSchema` instead. */
-  export const inboundSchema = ServicesDeleteServiceRequest$inboundSchema;
-  /** @deprecated use `ServicesDeleteServiceRequest$outboundSchema` instead. */
-  export const outboundSchema = ServicesDeleteServiceRequest$outboundSchema;
-  /** @deprecated use `ServicesDeleteServiceRequest$Outbound` instead. */
-  export type Outbound = ServicesDeleteServiceRequest$Outbound;
-}
-
 export function servicesDeleteServiceRequestToJSON(
   servicesDeleteServiceRequest: ServicesDeleteServiceRequest,
 ): string {
@@ -62,56 +40,12 @@ export function servicesDeleteServiceRequestToJSON(
   );
 }
 
-export function servicesDeleteServiceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ServicesDeleteServiceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ServicesDeleteServiceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ServicesDeleteServiceRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const ServicesDeleteServiceResponseBody$inboundSchema: z.ZodType<
   ServicesDeleteServiceResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type ServicesDeleteServiceResponseBody$Outbound = {};
-
-/** @internal */
-export const ServicesDeleteServiceResponseBody$outboundSchema: z.ZodType<
-  ServicesDeleteServiceResponseBody$Outbound,
-  z.ZodTypeDef,
-  ServicesDeleteServiceResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesDeleteServiceResponseBody$ {
-  /** @deprecated use `ServicesDeleteServiceResponseBody$inboundSchema` instead. */
-  export const inboundSchema = ServicesDeleteServiceResponseBody$inboundSchema;
-  /** @deprecated use `ServicesDeleteServiceResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ServicesDeleteServiceResponseBody$outboundSchema;
-  /** @deprecated use `ServicesDeleteServiceResponseBody$Outbound` instead. */
-  export type Outbound = ServicesDeleteServiceResponseBody$Outbound;
-}
-
-export function servicesDeleteServiceResponseBodyToJSON(
-  servicesDeleteServiceResponseBody: ServicesDeleteServiceResponseBody,
-): string {
-  return JSON.stringify(
-    ServicesDeleteServiceResponseBody$outboundSchema.parse(
-      servicesDeleteServiceResponseBody,
-    ),
-  );
-}
 
 export function servicesDeleteServiceResponseBodyFromJSON(
   jsonString: string,

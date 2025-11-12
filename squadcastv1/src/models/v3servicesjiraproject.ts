@@ -24,45 +24,6 @@ export const V3ServicesJiraProject$inboundSchema: z.ZodType<
   name: z.string(),
 });
 
-/** @internal */
-export type V3ServicesJiraProject$Outbound = {
-  id: string;
-  key: string;
-  name: string;
-};
-
-/** @internal */
-export const V3ServicesJiraProject$outboundSchema: z.ZodType<
-  V3ServicesJiraProject$Outbound,
-  z.ZodTypeDef,
-  V3ServicesJiraProject
-> = z.object({
-  id: z.string(),
-  key: z.string(),
-  name: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesJiraProject$ {
-  /** @deprecated use `V3ServicesJiraProject$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesJiraProject$inboundSchema;
-  /** @deprecated use `V3ServicesJiraProject$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesJiraProject$outboundSchema;
-  /** @deprecated use `V3ServicesJiraProject$Outbound` instead. */
-  export type Outbound = V3ServicesJiraProject$Outbound;
-}
-
-export function v3ServicesJiraProjectToJSON(
-  v3ServicesJiraProject: V3ServicesJiraProject,
-): string {
-  return JSON.stringify(
-    V3ServicesJiraProject$outboundSchema.parse(v3ServicesJiraProject),
-  );
-}
-
 export function v3ServicesJiraProjectFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesJiraProject, SDKValidationError> {

@@ -3,22 +3,10 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V4SquadsUpdateSquadNameRequest = {
   name: string;
 };
-
-/** @internal */
-export const V4SquadsUpdateSquadNameRequest$inboundSchema: z.ZodType<
-  V4SquadsUpdateSquadNameRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-});
 
 /** @internal */
 export type V4SquadsUpdateSquadNameRequest$Outbound = {
@@ -34,19 +22,6 @@ export const V4SquadsUpdateSquadNameRequest$outboundSchema: z.ZodType<
   name: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4SquadsUpdateSquadNameRequest$ {
-  /** @deprecated use `V4SquadsUpdateSquadNameRequest$inboundSchema` instead. */
-  export const inboundSchema = V4SquadsUpdateSquadNameRequest$inboundSchema;
-  /** @deprecated use `V4SquadsUpdateSquadNameRequest$outboundSchema` instead. */
-  export const outboundSchema = V4SquadsUpdateSquadNameRequest$outboundSchema;
-  /** @deprecated use `V4SquadsUpdateSquadNameRequest$Outbound` instead. */
-  export type Outbound = V4SquadsUpdateSquadNameRequest$Outbound;
-}
-
 export function v4SquadsUpdateSquadNameRequestToJSON(
   v4SquadsUpdateSquadNameRequest: V4SquadsUpdateSquadNameRequest,
 ): string {
@@ -54,15 +29,5 @@ export function v4SquadsUpdateSquadNameRequestToJSON(
     V4SquadsUpdateSquadNameRequest$outboundSchema.parse(
       v4SquadsUpdateSquadNameRequest,
     ),
-  );
-}
-
-export function v4SquadsUpdateSquadNameRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V4SquadsUpdateSquadNameRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V4SquadsUpdateSquadNameRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V4SquadsUpdateSquadNameRequest' from JSON`,
   );
 }

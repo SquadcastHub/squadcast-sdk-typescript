@@ -24,13 +24,6 @@ export type SchedulesCloneScheduleResponse = {
 };
 
 /** @internal */
-export const SchedulesCloneScheduleRequestBody$inboundSchema: z.ZodType<
-  SchedulesCloneScheduleRequestBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
 export type SchedulesCloneScheduleRequestBody$Outbound = {};
 
 /** @internal */
@@ -39,20 +32,6 @@ export const SchedulesCloneScheduleRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   SchedulesCloneScheduleRequestBody
 > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesCloneScheduleRequestBody$ {
-  /** @deprecated use `SchedulesCloneScheduleRequestBody$inboundSchema` instead. */
-  export const inboundSchema = SchedulesCloneScheduleRequestBody$inboundSchema;
-  /** @deprecated use `SchedulesCloneScheduleRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    SchedulesCloneScheduleRequestBody$outboundSchema;
-  /** @deprecated use `SchedulesCloneScheduleRequestBody$Outbound` instead. */
-  export type Outbound = SchedulesCloneScheduleRequestBody$Outbound;
-}
 
 export function schedulesCloneScheduleRequestBodyToJSON(
   schedulesCloneScheduleRequestBody: SchedulesCloneScheduleRequestBody,
@@ -63,30 +42,6 @@ export function schedulesCloneScheduleRequestBodyToJSON(
     ),
   );
 }
-
-export function schedulesCloneScheduleRequestBodyFromJSON(
-  jsonString: string,
-): SafeParseResult<SchedulesCloneScheduleRequestBody, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SchedulesCloneScheduleRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SchedulesCloneScheduleRequestBody' from JSON`,
-  );
-}
-
-/** @internal */
-export const SchedulesCloneScheduleRequest$inboundSchema: z.ZodType<
-  SchedulesCloneScheduleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  RequestBody: z.lazy(() => SchedulesCloneScheduleRequestBody$inboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    "RequestBody": "requestBody",
-  });
-});
 
 /** @internal */
 export type SchedulesCloneScheduleRequest$Outbound = {
@@ -108,19 +63,6 @@ export const SchedulesCloneScheduleRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesCloneScheduleRequest$ {
-  /** @deprecated use `SchedulesCloneScheduleRequest$inboundSchema` instead. */
-  export const inboundSchema = SchedulesCloneScheduleRequest$inboundSchema;
-  /** @deprecated use `SchedulesCloneScheduleRequest$outboundSchema` instead. */
-  export const outboundSchema = SchedulesCloneScheduleRequest$outboundSchema;
-  /** @deprecated use `SchedulesCloneScheduleRequest$Outbound` instead. */
-  export type Outbound = SchedulesCloneScheduleRequest$Outbound;
-}
-
 export function schedulesCloneScheduleRequestToJSON(
   schedulesCloneScheduleRequest: SchedulesCloneScheduleRequest,
 ): string {
@@ -128,16 +70,6 @@ export function schedulesCloneScheduleRequestToJSON(
     SchedulesCloneScheduleRequest$outboundSchema.parse(
       schedulesCloneScheduleRequest,
     ),
-  );
-}
-
-export function schedulesCloneScheduleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SchedulesCloneScheduleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SchedulesCloneScheduleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SchedulesCloneScheduleRequest' from JSON`,
   );
 }
 
@@ -149,43 +81,6 @@ export const SchedulesCloneScheduleResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4ScheduleResponse$inboundSchema,
 });
-
-/** @internal */
-export type SchedulesCloneScheduleResponse$Outbound = {
-  data: models.V4ScheduleResponse$Outbound;
-};
-
-/** @internal */
-export const SchedulesCloneScheduleResponse$outboundSchema: z.ZodType<
-  SchedulesCloneScheduleResponse$Outbound,
-  z.ZodTypeDef,
-  SchedulesCloneScheduleResponse
-> = z.object({
-  data: models.V4ScheduleResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesCloneScheduleResponse$ {
-  /** @deprecated use `SchedulesCloneScheduleResponse$inboundSchema` instead. */
-  export const inboundSchema = SchedulesCloneScheduleResponse$inboundSchema;
-  /** @deprecated use `SchedulesCloneScheduleResponse$outboundSchema` instead. */
-  export const outboundSchema = SchedulesCloneScheduleResponse$outboundSchema;
-  /** @deprecated use `SchedulesCloneScheduleResponse$Outbound` instead. */
-  export type Outbound = SchedulesCloneScheduleResponse$Outbound;
-}
-
-export function schedulesCloneScheduleResponseToJSON(
-  schedulesCloneScheduleResponse: SchedulesCloneScheduleResponse,
-): string {
-  return JSON.stringify(
-    SchedulesCloneScheduleResponse$outboundSchema.parse(
-      schedulesCloneScheduleResponse,
-    ),
-  );
-}
 
 export function schedulesCloneScheduleResponseFromJSON(
   jsonString: string,

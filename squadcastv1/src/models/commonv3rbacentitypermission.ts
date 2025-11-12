@@ -34,33 +34,6 @@ export const Abilities$inboundSchema: z.ZodType<
   unknown
 > = z.object({});
 
-/** @internal */
-export type Abilities$Outbound = {};
-
-/** @internal */
-export const Abilities$outboundSchema: z.ZodType<
-  Abilities$Outbound,
-  z.ZodTypeDef,
-  Abilities
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Abilities$ {
-  /** @deprecated use `Abilities$inboundSchema` instead. */
-  export const inboundSchema = Abilities$inboundSchema;
-  /** @deprecated use `Abilities$outboundSchema` instead. */
-  export const outboundSchema = Abilities$outboundSchema;
-  /** @deprecated use `Abilities$Outbound` instead. */
-  export type Outbound = Abilities$Outbound;
-}
-
-export function abilitiesToJSON(abilities: Abilities): string {
-  return JSON.stringify(Abilities$outboundSchema.parse(abilities));
-}
-
 export function abilitiesFromJSON(
   jsonString: string,
 ): SafeParseResult<Abilities, SDKValidationError> {
@@ -84,49 +57,6 @@ export const CommonV3RBACEntityPermission$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
-/** @internal */
-export type CommonV3RBACEntityPermission$Outbound = {
-  user_id: string;
-  abilities: Abilities$Outbound;
-};
-
-/** @internal */
-export const CommonV3RBACEntityPermission$outboundSchema: z.ZodType<
-  CommonV3RBACEntityPermission$Outbound,
-  z.ZodTypeDef,
-  CommonV3RBACEntityPermission
-> = z.object({
-  userId: z.string(),
-  abilities: z.lazy(() => Abilities$outboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    userId: "user_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommonV3RBACEntityPermission$ {
-  /** @deprecated use `CommonV3RBACEntityPermission$inboundSchema` instead. */
-  export const inboundSchema = CommonV3RBACEntityPermission$inboundSchema;
-  /** @deprecated use `CommonV3RBACEntityPermission$outboundSchema` instead. */
-  export const outboundSchema = CommonV3RBACEntityPermission$outboundSchema;
-  /** @deprecated use `CommonV3RBACEntityPermission$Outbound` instead. */
-  export type Outbound = CommonV3RBACEntityPermission$Outbound;
-}
-
-export function commonV3RBACEntityPermissionToJSON(
-  commonV3RBACEntityPermission: CommonV3RBACEntityPermission,
-): string {
-  return JSON.stringify(
-    CommonV3RBACEntityPermission$outboundSchema.parse(
-      commonV3RBACEntityPermission,
-    ),
-  );
-}
 
 export function commonV3RBACEntityPermissionFromJSON(
   jsonString: string,

@@ -35,58 +35,6 @@ export const V3IncidentsAdditionalRespondersAdditionalResponder$inboundSchema:
     });
   });
 
-/** @internal */
-export type V3IncidentsAdditionalRespondersAdditionalResponder$Outbound = {
-  id: string;
-  type: string;
-  name?: string | undefined;
-  time_of_assignment?: string | undefined;
-};
-
-/** @internal */
-export const V3IncidentsAdditionalRespondersAdditionalResponder$outboundSchema:
-  z.ZodType<
-    V3IncidentsAdditionalRespondersAdditionalResponder$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsAdditionalRespondersAdditionalResponder
-  > = z.object({
-    id: z.string(),
-    type: z.string(),
-    name: z.string().optional(),
-    timeOfAssignment: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      timeOfAssignment: "time_of_assignment",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsAdditionalRespondersAdditionalResponder$ {
-  /** @deprecated use `V3IncidentsAdditionalRespondersAdditionalResponder$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsAdditionalRespondersAdditionalResponder$inboundSchema;
-  /** @deprecated use `V3IncidentsAdditionalRespondersAdditionalResponder$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsAdditionalRespondersAdditionalResponder$outboundSchema;
-  /** @deprecated use `V3IncidentsAdditionalRespondersAdditionalResponder$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsAdditionalRespondersAdditionalResponder$Outbound;
-}
-
-export function v3IncidentsAdditionalRespondersAdditionalResponderToJSON(
-  v3IncidentsAdditionalRespondersAdditionalResponder:
-    V3IncidentsAdditionalRespondersAdditionalResponder,
-): string {
-  return JSON.stringify(
-    V3IncidentsAdditionalRespondersAdditionalResponder$outboundSchema.parse(
-      v3IncidentsAdditionalRespondersAdditionalResponder,
-    ),
-  );
-}
-
 export function v3IncidentsAdditionalRespondersAdditionalResponderFromJSON(
   jsonString: string,
 ): SafeParseResult<

@@ -27,52 +27,6 @@ export const V3IncidentsIncidentExportAsyncResponse$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3IncidentsIncidentExportAsyncResponse$Outbound = {
-  message: string;
-  request_id: string;
-};
-
-/** @internal */
-export const V3IncidentsIncidentExportAsyncResponse$outboundSchema: z.ZodType<
-  V3IncidentsIncidentExportAsyncResponse$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsIncidentExportAsyncResponse
-> = z.object({
-  message: z.string(),
-  requestId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    requestId: "request_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentExportAsyncResponse$ {
-  /** @deprecated use `V3IncidentsIncidentExportAsyncResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsIncidentExportAsyncResponse$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentExportAsyncResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIncidentExportAsyncResponse$outboundSchema;
-  /** @deprecated use `V3IncidentsIncidentExportAsyncResponse$Outbound` instead. */
-  export type Outbound = V3IncidentsIncidentExportAsyncResponse$Outbound;
-}
-
-export function v3IncidentsIncidentExportAsyncResponseToJSON(
-  v3IncidentsIncidentExportAsyncResponse:
-    V3IncidentsIncidentExportAsyncResponse,
-): string {
-  return JSON.stringify(
-    V3IncidentsIncidentExportAsyncResponse$outboundSchema.parse(
-      v3IncidentsIncidentExportAsyncResponse,
-    ),
-  );
-}
-
 export function v3IncidentsIncidentExportAsyncResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V3IncidentsIncidentExportAsyncResponse, SDKValidationError> {

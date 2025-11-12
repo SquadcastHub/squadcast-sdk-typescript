@@ -18,16 +18,6 @@ export type RotationsDeleteRotationRequest = {
 export type RotationsDeleteRotationResponseBody = {};
 
 /** @internal */
-export const RotationsDeleteRotationRequest$inboundSchema: z.ZodType<
-  RotationsDeleteRotationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  rotationID: z.string(),
-});
-
-/** @internal */
 export type RotationsDeleteRotationRequest$Outbound = {
   scheduleID: string;
   rotationID: string;
@@ -43,19 +33,6 @@ export const RotationsDeleteRotationRequest$outboundSchema: z.ZodType<
   rotationID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RotationsDeleteRotationRequest$ {
-  /** @deprecated use `RotationsDeleteRotationRequest$inboundSchema` instead. */
-  export const inboundSchema = RotationsDeleteRotationRequest$inboundSchema;
-  /** @deprecated use `RotationsDeleteRotationRequest$outboundSchema` instead. */
-  export const outboundSchema = RotationsDeleteRotationRequest$outboundSchema;
-  /** @deprecated use `RotationsDeleteRotationRequest$Outbound` instead. */
-  export type Outbound = RotationsDeleteRotationRequest$Outbound;
-}
-
 export function rotationsDeleteRotationRequestToJSON(
   rotationsDeleteRotationRequest: RotationsDeleteRotationRequest,
 ): string {
@@ -66,57 +43,12 @@ export function rotationsDeleteRotationRequestToJSON(
   );
 }
 
-export function rotationsDeleteRotationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RotationsDeleteRotationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RotationsDeleteRotationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RotationsDeleteRotationRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const RotationsDeleteRotationResponseBody$inboundSchema: z.ZodType<
   RotationsDeleteRotationResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type RotationsDeleteRotationResponseBody$Outbound = {};
-
-/** @internal */
-export const RotationsDeleteRotationResponseBody$outboundSchema: z.ZodType<
-  RotationsDeleteRotationResponseBody$Outbound,
-  z.ZodTypeDef,
-  RotationsDeleteRotationResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RotationsDeleteRotationResponseBody$ {
-  /** @deprecated use `RotationsDeleteRotationResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    RotationsDeleteRotationResponseBody$inboundSchema;
-  /** @deprecated use `RotationsDeleteRotationResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    RotationsDeleteRotationResponseBody$outboundSchema;
-  /** @deprecated use `RotationsDeleteRotationResponseBody$Outbound` instead. */
-  export type Outbound = RotationsDeleteRotationResponseBody$Outbound;
-}
-
-export function rotationsDeleteRotationResponseBodyToJSON(
-  rotationsDeleteRotationResponseBody: RotationsDeleteRotationResponseBody,
-): string {
-  return JSON.stringify(
-    RotationsDeleteRotationResponseBody$outboundSchema.parse(
-      rotationsDeleteRotationResponseBody,
-    ),
-  );
-}
 
 export function rotationsDeleteRotationResponseBodyFromJSON(
   jsonString: string,

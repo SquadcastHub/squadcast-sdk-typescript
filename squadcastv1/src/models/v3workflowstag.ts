@@ -23,7 +23,6 @@ export const V3WorkflowsTag$inboundSchema: z.ZodType<
   key: z.string().optional(),
   value: z.string().optional(),
 });
-
 /** @internal */
 export type V3WorkflowsTag$Outbound = {
   color?: string | undefined;
@@ -42,23 +41,9 @@ export const V3WorkflowsTag$outboundSchema: z.ZodType<
   value: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsTag$ {
-  /** @deprecated use `V3WorkflowsTag$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsTag$inboundSchema;
-  /** @deprecated use `V3WorkflowsTag$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsTag$outboundSchema;
-  /** @deprecated use `V3WorkflowsTag$Outbound` instead. */
-  export type Outbound = V3WorkflowsTag$Outbound;
-}
-
 export function v3WorkflowsTagToJSON(v3WorkflowsTag: V3WorkflowsTag): string {
   return JSON.stringify(V3WorkflowsTag$outboundSchema.parse(v3WorkflowsTag));
 }
-
 export function v3WorkflowsTagFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsTag, SDKValidationError> {

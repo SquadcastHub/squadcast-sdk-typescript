@@ -32,22 +32,6 @@ export type ServicesCreateServiceResponse = {
 };
 
 /** @internal */
-export const ServicesCreateServiceRequest$inboundSchema: z.ZodType<
-  ServicesCreateServiceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  owner_id: z.string(),
-  "V3.Services.CreateServiceRequest":
-    models.V3ServicesCreateServiceRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-    "V3.Services.CreateServiceRequest": "v3ServicesCreateServiceRequest",
-  });
-});
-
-/** @internal */
 export type ServicesCreateServiceRequest$Outbound = {
   owner_id: string;
   "V3.Services.CreateServiceRequest":
@@ -70,19 +54,6 @@ export const ServicesCreateServiceRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesCreateServiceRequest$ {
-  /** @deprecated use `ServicesCreateServiceRequest$inboundSchema` instead. */
-  export const inboundSchema = ServicesCreateServiceRequest$inboundSchema;
-  /** @deprecated use `ServicesCreateServiceRequest$outboundSchema` instead. */
-  export const outboundSchema = ServicesCreateServiceRequest$outboundSchema;
-  /** @deprecated use `ServicesCreateServiceRequest$Outbound` instead. */
-  export type Outbound = ServicesCreateServiceRequest$Outbound;
-}
-
 export function servicesCreateServiceRequestToJSON(
   servicesCreateServiceRequest: ServicesCreateServiceRequest,
 ): string {
@@ -90,16 +61,6 @@ export function servicesCreateServiceRequestToJSON(
     ServicesCreateServiceRequest$outboundSchema.parse(
       servicesCreateServiceRequest,
     ),
-  );
-}
-
-export function servicesCreateServiceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ServicesCreateServiceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ServicesCreateServiceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ServicesCreateServiceRequest' from JSON`,
   );
 }
 
@@ -111,41 +72,6 @@ export const ServicesCreateServiceBody$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3ServicesServiceResponse$inboundSchema,
 });
-
-/** @internal */
-export type ServicesCreateServiceBody$Outbound = {
-  data: models.V3ServicesServiceResponse$Outbound;
-};
-
-/** @internal */
-export const ServicesCreateServiceBody$outboundSchema: z.ZodType<
-  ServicesCreateServiceBody$Outbound,
-  z.ZodTypeDef,
-  ServicesCreateServiceBody
-> = z.object({
-  data: models.V3ServicesServiceResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesCreateServiceBody$ {
-  /** @deprecated use `ServicesCreateServiceBody$inboundSchema` instead. */
-  export const inboundSchema = ServicesCreateServiceBody$inboundSchema;
-  /** @deprecated use `ServicesCreateServiceBody$outboundSchema` instead. */
-  export const outboundSchema = ServicesCreateServiceBody$outboundSchema;
-  /** @deprecated use `ServicesCreateServiceBody$Outbound` instead. */
-  export type Outbound = ServicesCreateServiceBody$Outbound;
-}
-
-export function servicesCreateServiceBodyToJSON(
-  servicesCreateServiceBody: ServicesCreateServiceBody,
-): string {
-  return JSON.stringify(
-    ServicesCreateServiceBody$outboundSchema.parse(servicesCreateServiceBody),
-  );
-}
 
 export function servicesCreateServiceBodyFromJSON(
   jsonString: string,
@@ -165,43 +91,6 @@ export const ServicesCreateServiceResponse$inboundSchema: z.ZodType<
 > = z.object({
   body: z.lazy(() => ServicesCreateServiceBody$inboundSchema),
 });
-
-/** @internal */
-export type ServicesCreateServiceResponse$Outbound = {
-  body: ServicesCreateServiceBody$Outbound;
-};
-
-/** @internal */
-export const ServicesCreateServiceResponse$outboundSchema: z.ZodType<
-  ServicesCreateServiceResponse$Outbound,
-  z.ZodTypeDef,
-  ServicesCreateServiceResponse
-> = z.object({
-  body: z.lazy(() => ServicesCreateServiceBody$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesCreateServiceResponse$ {
-  /** @deprecated use `ServicesCreateServiceResponse$inboundSchema` instead. */
-  export const inboundSchema = ServicesCreateServiceResponse$inboundSchema;
-  /** @deprecated use `ServicesCreateServiceResponse$outboundSchema` instead. */
-  export const outboundSchema = ServicesCreateServiceResponse$outboundSchema;
-  /** @deprecated use `ServicesCreateServiceResponse$Outbound` instead. */
-  export type Outbound = ServicesCreateServiceResponse$Outbound;
-}
-
-export function servicesCreateServiceResponseToJSON(
-  servicesCreateServiceResponse: ServicesCreateServiceResponse,
-): string {
-  return JSON.stringify(
-    ServicesCreateServiceResponse$outboundSchema.parse(
-      servicesCreateServiceResponse,
-    ),
-  );
-}
 
 export function servicesCreateServiceResponseFromJSON(
   jsonString: string,

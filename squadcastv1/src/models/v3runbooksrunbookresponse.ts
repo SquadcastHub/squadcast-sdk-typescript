@@ -9,27 +9,19 @@ import { Result as SafeParseResult } from "../types/fp.js";
 import {
   CommonV3EntityOwner,
   CommonV3EntityOwner$inboundSchema,
-  CommonV3EntityOwner$Outbound,
-  CommonV3EntityOwner$outboundSchema,
 } from "./commonv3entityowner.js";
 import {
   CommonV3RBACOwner,
   CommonV3RBACOwner$inboundSchema,
-  CommonV3RBACOwner$Outbound,
-  CommonV3RBACOwner$outboundSchema,
 } from "./commonv3rbacowner.js";
 import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3RunbooksStep,
   V3RunbooksStep$inboundSchema,
-  V3RunbooksStep$Outbound,
-  V3RunbooksStep$outboundSchema,
 } from "./v3runbooksstep.js";
 import {
   V3RunbooksUpdationInfo,
   V3RunbooksUpdationInfo$inboundSchema,
-  V3RunbooksUpdationInfo$Outbound,
-  V3RunbooksUpdationInfo$outboundSchema,
 } from "./v3runbooksupdationinfo.js";
 
 /**
@@ -96,63 +88,6 @@ export const V3RunbooksRunbookResponse$inboundSchema: z.ZodType<
     "organization_id": "organizationId",
   });
 });
-
-/** @internal */
-export type V3RunbooksRunbookResponse$Outbound = {
-  id: string;
-  name: string;
-  created: V3RunbooksUpdationInfo$Outbound;
-  updated: V3RunbooksUpdationInfo$Outbound;
-  used_count: number;
-  steps: Array<V3RunbooksStep$Outbound>;
-  entity_owner: CommonV3EntityOwner$Outbound;
-  organization_id: string;
-  owner: CommonV3RBACOwner$Outbound;
-};
-
-/** @internal */
-export const V3RunbooksRunbookResponse$outboundSchema: z.ZodType<
-  V3RunbooksRunbookResponse$Outbound,
-  z.ZodTypeDef,
-  V3RunbooksRunbookResponse
-> = z.object({
-  id: z.string(),
-  name: z.string(),
-  created: V3RunbooksUpdationInfo$outboundSchema,
-  updated: V3RunbooksUpdationInfo$outboundSchema,
-  usedCount: z.number().int(),
-  steps: z.array(V3RunbooksStep$outboundSchema),
-  entityOwner: CommonV3EntityOwner$outboundSchema,
-  organizationId: z.string(),
-  owner: CommonV3RBACOwner$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    usedCount: "used_count",
-    entityOwner: "entity_owner",
-    organizationId: "organization_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3RunbooksRunbookResponse$ {
-  /** @deprecated use `V3RunbooksRunbookResponse$inboundSchema` instead. */
-  export const inboundSchema = V3RunbooksRunbookResponse$inboundSchema;
-  /** @deprecated use `V3RunbooksRunbookResponse$outboundSchema` instead. */
-  export const outboundSchema = V3RunbooksRunbookResponse$outboundSchema;
-  /** @deprecated use `V3RunbooksRunbookResponse$Outbound` instead. */
-  export type Outbound = V3RunbooksRunbookResponse$Outbound;
-}
-
-export function v3RunbooksRunbookResponseToJSON(
-  v3RunbooksRunbookResponse: V3RunbooksRunbookResponse,
-): string {
-  return JSON.stringify(
-    V3RunbooksRunbookResponse$outboundSchema.parse(v3RunbooksRunbookResponse),
-  );
-}
 
 export function v3RunbooksRunbookResponseFromJSON(
   jsonString: string,

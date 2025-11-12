@@ -22,43 +22,6 @@ export const V3ServicesJiraStatus$inboundSchema: z.ZodType<
   name: z.string(),
 });
 
-/** @internal */
-export type V3ServicesJiraStatus$Outbound = {
-  id: string;
-  name: string;
-};
-
-/** @internal */
-export const V3ServicesJiraStatus$outboundSchema: z.ZodType<
-  V3ServicesJiraStatus$Outbound,
-  z.ZodTypeDef,
-  V3ServicesJiraStatus
-> = z.object({
-  id: z.string(),
-  name: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesJiraStatus$ {
-  /** @deprecated use `V3ServicesJiraStatus$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesJiraStatus$inboundSchema;
-  /** @deprecated use `V3ServicesJiraStatus$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesJiraStatus$outboundSchema;
-  /** @deprecated use `V3ServicesJiraStatus$Outbound` instead. */
-  export type Outbound = V3ServicesJiraStatus$Outbound;
-}
-
-export function v3ServicesJiraStatusToJSON(
-  v3ServicesJiraStatus: V3ServicesJiraStatus,
-): string {
-  return JSON.stringify(
-    V3ServicesJiraStatus$outboundSchema.parse(v3ServicesJiraStatus),
-  );
-}
-
 export function v3ServicesJiraStatusFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesJiraStatus, SDKValidationError> {

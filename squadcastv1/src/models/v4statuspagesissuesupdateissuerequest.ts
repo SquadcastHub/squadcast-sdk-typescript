@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V4StatusPagesIssuesUpdateIssueRequestComponent = {
   id?: number | undefined;
@@ -32,17 +29,6 @@ export type V4StatusPagesIssuesUpdateIssueRequest = {
 };
 
 /** @internal */
-export const V4StatusPagesIssuesUpdateIssueRequestComponent$inboundSchema:
-  z.ZodType<
-    V4StatusPagesIssuesUpdateIssueRequestComponent,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    id: z.number().int().optional(),
-    statusID: z.number().int().optional(),
-  });
-
-/** @internal */
 export type V4StatusPagesIssuesUpdateIssueRequestComponent$Outbound = {
   id?: number | undefined;
   statusID?: number | undefined;
@@ -59,22 +45,6 @@ export const V4StatusPagesIssuesUpdateIssueRequestComponent$outboundSchema:
     statusID: z.number().int().optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesIssuesUpdateIssueRequestComponent$ {
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequestComponent$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesIssuesUpdateIssueRequestComponent$inboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequestComponent$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesIssuesUpdateIssueRequestComponent$outboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequestComponent$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesIssuesUpdateIssueRequestComponent$Outbound;
-}
-
 export function v4StatusPagesIssuesUpdateIssueRequestComponentToJSON(
   v4StatusPagesIssuesUpdateIssueRequestComponent:
     V4StatusPagesIssuesUpdateIssueRequestComponent,
@@ -85,34 +55,6 @@ export function v4StatusPagesIssuesUpdateIssueRequestComponentToJSON(
     ),
   );
 }
-
-export function v4StatusPagesIssuesUpdateIssueRequestComponentFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V4StatusPagesIssuesUpdateIssueRequestComponent,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V4StatusPagesIssuesUpdateIssueRequestComponent$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V4StatusPagesIssuesUpdateIssueRequestComponent' from JSON`,
-  );
-}
-
-/** @internal */
-export const V4StatusPagesIssuesUpdateIssueRequestStateMessage$inboundSchema:
-  z.ZodType<
-    V4StatusPagesIssuesUpdateIssueRequestStateMessage,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    text: z.string().optional(),
-    timestamp: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
-  });
 
 /** @internal */
 export type V4StatusPagesIssuesUpdateIssueRequestStateMessage$Outbound = {
@@ -131,22 +73,6 @@ export const V4StatusPagesIssuesUpdateIssueRequestStateMessage$outboundSchema:
     timestamp: z.date().transform(v => v.toISOString()).optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesIssuesUpdateIssueRequestStateMessage$ {
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequestStateMessage$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesIssuesUpdateIssueRequestStateMessage$inboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequestStateMessage$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesIssuesUpdateIssueRequestStateMessage$outboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequestStateMessage$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesIssuesUpdateIssueRequestStateMessage$Outbound;
-}
-
 export function v4StatusPagesIssuesUpdateIssueRequestStateMessageToJSON(
   v4StatusPagesIssuesUpdateIssueRequestStateMessage:
     V4StatusPagesIssuesUpdateIssueRequestStateMessage,
@@ -157,34 +83,6 @@ export function v4StatusPagesIssuesUpdateIssueRequestStateMessageToJSON(
     ),
   );
 }
-
-export function v4StatusPagesIssuesUpdateIssueRequestStateMessageFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V4StatusPagesIssuesUpdateIssueRequestStateMessage,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V4StatusPagesIssuesUpdateIssueRequestStateMessage$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V4StatusPagesIssuesUpdateIssueRequestStateMessage' from JSON`,
-  );
-}
-
-/** @internal */
-export const V4StatusPagesIssuesUpdateIssueRequestIssue$inboundSchema:
-  z.ZodType<V4StatusPagesIssuesUpdateIssueRequestIssue, z.ZodTypeDef, unknown> =
-    z.object({
-      stateID: z.number().int().optional(),
-      stateMessages: z.array(
-        z.lazy(() =>
-          V4StatusPagesIssuesUpdateIssueRequestStateMessage$inboundSchema
-        ),
-      ).optional(),
-    });
 
 /** @internal */
 export type V4StatusPagesIssuesUpdateIssueRequestIssue$Outbound = {
@@ -209,21 +107,6 @@ export const V4StatusPagesIssuesUpdateIssueRequestIssue$outboundSchema:
     ).optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesIssuesUpdateIssueRequestIssue$ {
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequestIssue$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesIssuesUpdateIssueRequestIssue$inboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequestIssue$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesIssuesUpdateIssueRequestIssue$outboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequestIssue$Outbound` instead. */
-  export type Outbound = V4StatusPagesIssuesUpdateIssueRequestIssue$Outbound;
-}
-
 export function v4StatusPagesIssuesUpdateIssueRequestIssueToJSON(
   v4StatusPagesIssuesUpdateIssueRequestIssue:
     V4StatusPagesIssuesUpdateIssueRequestIssue,
@@ -234,38 +117,6 @@ export function v4StatusPagesIssuesUpdateIssueRequestIssueToJSON(
     ),
   );
 }
-
-export function v4StatusPagesIssuesUpdateIssueRequestIssueFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V4StatusPagesIssuesUpdateIssueRequestIssue,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V4StatusPagesIssuesUpdateIssueRequestIssue$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V4StatusPagesIssuesUpdateIssueRequestIssue' from JSON`,
-  );
-}
-
-/** @internal */
-export const V4StatusPagesIssuesUpdateIssueRequest$inboundSchema: z.ZodType<
-  V4StatusPagesIssuesUpdateIssueRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  title: z.string(),
-  statusID: z.number().int().optional(),
-  components: z.array(
-    z.lazy(() => V4StatusPagesIssuesUpdateIssueRequestComponent$inboundSchema),
-  ),
-  issues: z.array(
-    z.lazy(() => V4StatusPagesIssuesUpdateIssueRequestIssue$inboundSchema),
-  ),
-});
 
 /** @internal */
 export type V4StatusPagesIssuesUpdateIssueRequest$Outbound = {
@@ -291,21 +142,6 @@ export const V4StatusPagesIssuesUpdateIssueRequest$outboundSchema: z.ZodType<
   ),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesIssuesUpdateIssueRequest$ {
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesIssuesUpdateIssueRequest$inboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesIssuesUpdateIssueRequest$outboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesUpdateIssueRequest$Outbound` instead. */
-  export type Outbound = V4StatusPagesIssuesUpdateIssueRequest$Outbound;
-}
-
 export function v4StatusPagesIssuesUpdateIssueRequestToJSON(
   v4StatusPagesIssuesUpdateIssueRequest: V4StatusPagesIssuesUpdateIssueRequest,
 ): string {
@@ -313,16 +149,5 @@ export function v4StatusPagesIssuesUpdateIssueRequestToJSON(
     V4StatusPagesIssuesUpdateIssueRequest$outboundSchema.parse(
       v4StatusPagesIssuesUpdateIssueRequest,
     ),
-  );
-}
-
-export function v4StatusPagesIssuesUpdateIssueRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V4StatusPagesIssuesUpdateIssueRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V4StatusPagesIssuesUpdateIssueRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V4StatusPagesIssuesUpdateIssueRequest' from JSON`,
   );
 }

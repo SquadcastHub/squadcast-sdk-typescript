@@ -46,24 +46,10 @@ export type V3EscalationPoliciesEscalationEntity = {
 export const V3EscalationPoliciesEscalationEntityType$inboundSchema:
   z.ZodNativeEnum<typeof V3EscalationPoliciesEscalationEntityType> = z
     .nativeEnum(V3EscalationPoliciesEscalationEntityType);
-
 /** @internal */
 export const V3EscalationPoliciesEscalationEntityType$outboundSchema:
   z.ZodNativeEnum<typeof V3EscalationPoliciesEscalationEntityType> =
     V3EscalationPoliciesEscalationEntityType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3EscalationPoliciesEscalationEntityType$ {
-  /** @deprecated use `V3EscalationPoliciesEscalationEntityType$inboundSchema` instead. */
-  export const inboundSchema =
-    V3EscalationPoliciesEscalationEntityType$inboundSchema;
-  /** @deprecated use `V3EscalationPoliciesEscalationEntityType$outboundSchema` instead. */
-  export const outboundSchema =
-    V3EscalationPoliciesEscalationEntityType$outboundSchema;
-}
 
 /** @internal */
 export const V3EscalationPoliciesEscalationEntity$inboundSchema: z.ZodType<
@@ -75,7 +61,6 @@ export const V3EscalationPoliciesEscalationEntity$inboundSchema: z.ZodType<
   pid: z.number().int().optional(),
   type: V3EscalationPoliciesEscalationEntityType$inboundSchema,
 });
-
 /** @internal */
 export type V3EscalationPoliciesEscalationEntity$Outbound = {
   id?: string | undefined;
@@ -94,21 +79,6 @@ export const V3EscalationPoliciesEscalationEntity$outboundSchema: z.ZodType<
   type: V3EscalationPoliciesEscalationEntityType$outboundSchema,
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3EscalationPoliciesEscalationEntity$ {
-  /** @deprecated use `V3EscalationPoliciesEscalationEntity$inboundSchema` instead. */
-  export const inboundSchema =
-    V3EscalationPoliciesEscalationEntity$inboundSchema;
-  /** @deprecated use `V3EscalationPoliciesEscalationEntity$outboundSchema` instead. */
-  export const outboundSchema =
-    V3EscalationPoliciesEscalationEntity$outboundSchema;
-  /** @deprecated use `V3EscalationPoliciesEscalationEntity$Outbound` instead. */
-  export type Outbound = V3EscalationPoliciesEscalationEntity$Outbound;
-}
-
 export function v3EscalationPoliciesEscalationEntityToJSON(
   v3EscalationPoliciesEscalationEntity: V3EscalationPoliciesEscalationEntity,
 ): string {
@@ -118,7 +88,6 @@ export function v3EscalationPoliciesEscalationEntityToJSON(
     ),
   );
 }
-
 export function v3EscalationPoliciesEscalationEntityFromJSON(
   jsonString: string,
 ): SafeParseResult<V3EscalationPoliciesEscalationEntity, SDKValidationError> {

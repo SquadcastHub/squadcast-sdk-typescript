@@ -23,46 +23,6 @@ export const V3IncidentsMergeIncidentEntityReference$inboundSchema: z.ZodType<
   id: z.string(),
 });
 
-/** @internal */
-export type V3IncidentsMergeIncidentEntityReference$Outbound = {
-  id: string;
-};
-
-/** @internal */
-export const V3IncidentsMergeIncidentEntityReference$outboundSchema: z.ZodType<
-  V3IncidentsMergeIncidentEntityReference$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsMergeIncidentEntityReference
-> = z.object({
-  id: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsMergeIncidentEntityReference$ {
-  /** @deprecated use `V3IncidentsMergeIncidentEntityReference$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsMergeIncidentEntityReference$inboundSchema;
-  /** @deprecated use `V3IncidentsMergeIncidentEntityReference$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsMergeIncidentEntityReference$outboundSchema;
-  /** @deprecated use `V3IncidentsMergeIncidentEntityReference$Outbound` instead. */
-  export type Outbound = V3IncidentsMergeIncidentEntityReference$Outbound;
-}
-
-export function v3IncidentsMergeIncidentEntityReferenceToJSON(
-  v3IncidentsMergeIncidentEntityReference:
-    V3IncidentsMergeIncidentEntityReference,
-): string {
-  return JSON.stringify(
-    V3IncidentsMergeIncidentEntityReference$outboundSchema.parse(
-      v3IncidentsMergeIncidentEntityReference,
-    ),
-  );
-}
-
 export function v3IncidentsMergeIncidentEntityReferenceFromJSON(
   jsonString: string,
 ): SafeParseResult<

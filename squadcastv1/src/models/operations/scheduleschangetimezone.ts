@@ -26,15 +26,6 @@ export type SchedulesChangeTimezoneResponse = {
 };
 
 /** @internal */
-export const SchedulesChangeTimezoneRequestBody$inboundSchema: z.ZodType<
-  SchedulesChangeTimezoneRequestBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  timeZone: z.string().optional(),
-});
-
-/** @internal */
 export type SchedulesChangeTimezoneRequestBody$Outbound = {
   timeZone?: string | undefined;
 };
@@ -48,20 +39,6 @@ export const SchedulesChangeTimezoneRequestBody$outboundSchema: z.ZodType<
   timeZone: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesChangeTimezoneRequestBody$ {
-  /** @deprecated use `SchedulesChangeTimezoneRequestBody$inboundSchema` instead. */
-  export const inboundSchema = SchedulesChangeTimezoneRequestBody$inboundSchema;
-  /** @deprecated use `SchedulesChangeTimezoneRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    SchedulesChangeTimezoneRequestBody$outboundSchema;
-  /** @deprecated use `SchedulesChangeTimezoneRequestBody$Outbound` instead. */
-  export type Outbound = SchedulesChangeTimezoneRequestBody$Outbound;
-}
-
 export function schedulesChangeTimezoneRequestBodyToJSON(
   schedulesChangeTimezoneRequestBody: SchedulesChangeTimezoneRequestBody,
 ): string {
@@ -71,31 +48,6 @@ export function schedulesChangeTimezoneRequestBodyToJSON(
     ),
   );
 }
-
-export function schedulesChangeTimezoneRequestBodyFromJSON(
-  jsonString: string,
-): SafeParseResult<SchedulesChangeTimezoneRequestBody, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      SchedulesChangeTimezoneRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SchedulesChangeTimezoneRequestBody' from JSON`,
-  );
-}
-
-/** @internal */
-export const SchedulesChangeTimezoneRequest$inboundSchema: z.ZodType<
-  SchedulesChangeTimezoneRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  RequestBody: z.lazy(() => SchedulesChangeTimezoneRequestBody$inboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    "RequestBody": "requestBody",
-  });
-});
 
 /** @internal */
 export type SchedulesChangeTimezoneRequest$Outbound = {
@@ -117,19 +69,6 @@ export const SchedulesChangeTimezoneRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesChangeTimezoneRequest$ {
-  /** @deprecated use `SchedulesChangeTimezoneRequest$inboundSchema` instead. */
-  export const inboundSchema = SchedulesChangeTimezoneRequest$inboundSchema;
-  /** @deprecated use `SchedulesChangeTimezoneRequest$outboundSchema` instead. */
-  export const outboundSchema = SchedulesChangeTimezoneRequest$outboundSchema;
-  /** @deprecated use `SchedulesChangeTimezoneRequest$Outbound` instead. */
-  export type Outbound = SchedulesChangeTimezoneRequest$Outbound;
-}
-
 export function schedulesChangeTimezoneRequestToJSON(
   schedulesChangeTimezoneRequest: SchedulesChangeTimezoneRequest,
 ): string {
@@ -137,16 +76,6 @@ export function schedulesChangeTimezoneRequestToJSON(
     SchedulesChangeTimezoneRequest$outboundSchema.parse(
       schedulesChangeTimezoneRequest,
     ),
-  );
-}
-
-export function schedulesChangeTimezoneRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SchedulesChangeTimezoneRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SchedulesChangeTimezoneRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SchedulesChangeTimezoneRequest' from JSON`,
   );
 }
 
@@ -158,43 +87,6 @@ export const SchedulesChangeTimezoneResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4ChangeTimezoneResponse$inboundSchema,
 });
-
-/** @internal */
-export type SchedulesChangeTimezoneResponse$Outbound = {
-  data: models.V4ChangeTimezoneResponse$Outbound;
-};
-
-/** @internal */
-export const SchedulesChangeTimezoneResponse$outboundSchema: z.ZodType<
-  SchedulesChangeTimezoneResponse$Outbound,
-  z.ZodTypeDef,
-  SchedulesChangeTimezoneResponse
-> = z.object({
-  data: models.V4ChangeTimezoneResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesChangeTimezoneResponse$ {
-  /** @deprecated use `SchedulesChangeTimezoneResponse$inboundSchema` instead. */
-  export const inboundSchema = SchedulesChangeTimezoneResponse$inboundSchema;
-  /** @deprecated use `SchedulesChangeTimezoneResponse$outboundSchema` instead. */
-  export const outboundSchema = SchedulesChangeTimezoneResponse$outboundSchema;
-  /** @deprecated use `SchedulesChangeTimezoneResponse$Outbound` instead. */
-  export type Outbound = SchedulesChangeTimezoneResponse$Outbound;
-}
-
-export function schedulesChangeTimezoneResponseToJSON(
-  schedulesChangeTimezoneResponse: SchedulesChangeTimezoneResponse,
-): string {
-  return JSON.stringify(
-    SchedulesChangeTimezoneResponse$outboundSchema.parse(
-      schedulesChangeTimezoneResponse,
-    ),
-  );
-}
 
 export function schedulesChangeTimezoneResponseFromJSON(
   jsonString: string,

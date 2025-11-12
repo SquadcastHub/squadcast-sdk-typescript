@@ -4,27 +4,10 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3IncidentsSnoozeNotificationsSnoozeIncidentRequest = {
   snoozeDurationInMins: number;
 };
-
-/** @internal */
-export const V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$inboundSchema:
-  z.ZodType<
-    V3IncidentsSnoozeNotificationsSnoozeIncidentRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    snooze_duration_in_mins: z.number().int(),
-  }).transform((v) => {
-    return remap$(v, {
-      "snooze_duration_in_mins": "snoozeDurationInMins",
-    });
-  });
 
 /** @internal */
 export type V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$Outbound = {
@@ -45,22 +28,6 @@ export const V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$ {
-  /** @deprecated use `V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$Outbound;
-}
-
 export function v3IncidentsSnoozeNotificationsSnoozeIncidentRequestToJSON(
   v3IncidentsSnoozeNotificationsSnoozeIncidentRequest:
     V3IncidentsSnoozeNotificationsSnoozeIncidentRequest,
@@ -69,21 +36,5 @@ export function v3IncidentsSnoozeNotificationsSnoozeIncidentRequestToJSON(
     V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$outboundSchema.parse(
       v3IncidentsSnoozeNotificationsSnoozeIncidentRequest,
     ),
-  );
-}
-
-export function v3IncidentsSnoozeNotificationsSnoozeIncidentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3IncidentsSnoozeNotificationsSnoozeIncidentRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3IncidentsSnoozeNotificationsSnoozeIncidentRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3IncidentsSnoozeNotificationsSnoozeIncidentRequest' from JSON`,
   );
 }

@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4StatusPagesStatusPageSubscriberComponent,
   V4StatusPagesStatusPageSubscriberComponent$inboundSchema,
-  V4StatusPagesStatusPageSubscriberComponent$Outbound,
-  V4StatusPagesStatusPageSubscriberComponent$outboundSchema,
 } from "./v4statuspagesstatuspagesubscribercomponent.js";
 
 export type V4StatusPagesStatusPageSubscriber = {
@@ -41,60 +39,6 @@ export const V4StatusPagesStatusPageSubscriber$inboundSchema: z.ZodType<
     new Date(v)
   ),
 });
-
-/** @internal */
-export type V4StatusPagesStatusPageSubscriber$Outbound = {
-  id: number;
-  type: string;
-  emailID: string;
-  webhookURL: string;
-  status: string;
-  componentList?:
-    | Array<V4StatusPagesStatusPageSubscriberComponent$Outbound>
-    | undefined;
-  subscribedOn: string;
-};
-
-/** @internal */
-export const V4StatusPagesStatusPageSubscriber$outboundSchema: z.ZodType<
-  V4StatusPagesStatusPageSubscriber$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesStatusPageSubscriber
-> = z.object({
-  id: z.number().int(),
-  type: z.string(),
-  emailID: z.string(),
-  webhookURL: z.string(),
-  status: z.string(),
-  componentList: z.array(
-    V4StatusPagesStatusPageSubscriberComponent$outboundSchema,
-  ).optional(),
-  subscribedOn: z.date().transform(v => v.toISOString()),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesStatusPageSubscriber$ {
-  /** @deprecated use `V4StatusPagesStatusPageSubscriber$inboundSchema` instead. */
-  export const inboundSchema = V4StatusPagesStatusPageSubscriber$inboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPageSubscriber$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesStatusPageSubscriber$outboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPageSubscriber$Outbound` instead. */
-  export type Outbound = V4StatusPagesStatusPageSubscriber$Outbound;
-}
-
-export function v4StatusPagesStatusPageSubscriberToJSON(
-  v4StatusPagesStatusPageSubscriber: V4StatusPagesStatusPageSubscriber,
-): string {
-  return JSON.stringify(
-    V4StatusPagesStatusPageSubscriber$outboundSchema.parse(
-      v4StatusPagesStatusPageSubscriber,
-    ),
-  );
-}
 
 export function v4StatusPagesStatusPageSubscriberFromJSON(
   jsonString: string,

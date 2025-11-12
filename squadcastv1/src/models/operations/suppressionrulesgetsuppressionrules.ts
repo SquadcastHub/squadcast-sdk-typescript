@@ -24,13 +24,6 @@ export type SuppressionRulesGetSuppressionRulesResponse = {
 };
 
 /** @internal */
-export const SuppressionRulesGetSuppressionRulesRequest$inboundSchema:
-  z.ZodType<SuppressionRulesGetSuppressionRulesRequest, z.ZodTypeDef, unknown> =
-    z.object({
-      serviceID: z.string(),
-    });
-
-/** @internal */
 export type SuppressionRulesGetSuppressionRulesRequest$Outbound = {
   serviceID: string;
 };
@@ -45,21 +38,6 @@ export const SuppressionRulesGetSuppressionRulesRequest$outboundSchema:
     serviceID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SuppressionRulesGetSuppressionRulesRequest$ {
-  /** @deprecated use `SuppressionRulesGetSuppressionRulesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    SuppressionRulesGetSuppressionRulesRequest$inboundSchema;
-  /** @deprecated use `SuppressionRulesGetSuppressionRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    SuppressionRulesGetSuppressionRulesRequest$outboundSchema;
-  /** @deprecated use `SuppressionRulesGetSuppressionRulesRequest$Outbound` instead. */
-  export type Outbound = SuppressionRulesGetSuppressionRulesRequest$Outbound;
-}
-
 export function suppressionRulesGetSuppressionRulesRequestToJSON(
   suppressionRulesGetSuppressionRulesRequest:
     SuppressionRulesGetSuppressionRulesRequest,
@@ -68,22 +46,6 @@ export function suppressionRulesGetSuppressionRulesRequestToJSON(
     SuppressionRulesGetSuppressionRulesRequest$outboundSchema.parse(
       suppressionRulesGetSuppressionRulesRequest,
     ),
-  );
-}
-
-export function suppressionRulesGetSuppressionRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  SuppressionRulesGetSuppressionRulesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      SuppressionRulesGetSuppressionRulesRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'SuppressionRulesGetSuppressionRulesRequest' from JSON`,
   );
 }
 
@@ -97,50 +59,6 @@ export const SuppressionRulesGetSuppressionRulesData$inboundSchema: z.ZodType<
     models.V3ServicesSuppressionRulesSuppressionRuleResponse$inboundSchema,
   ),
 });
-
-/** @internal */
-export type SuppressionRulesGetSuppressionRulesData$Outbound = {
-  rules: Array<
-    models.V3ServicesSuppressionRulesSuppressionRuleResponse$Outbound
-  >;
-};
-
-/** @internal */
-export const SuppressionRulesGetSuppressionRulesData$outboundSchema: z.ZodType<
-  SuppressionRulesGetSuppressionRulesData$Outbound,
-  z.ZodTypeDef,
-  SuppressionRulesGetSuppressionRulesData
-> = z.object({
-  rules: z.array(
-    models.V3ServicesSuppressionRulesSuppressionRuleResponse$outboundSchema,
-  ),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SuppressionRulesGetSuppressionRulesData$ {
-  /** @deprecated use `SuppressionRulesGetSuppressionRulesData$inboundSchema` instead. */
-  export const inboundSchema =
-    SuppressionRulesGetSuppressionRulesData$inboundSchema;
-  /** @deprecated use `SuppressionRulesGetSuppressionRulesData$outboundSchema` instead. */
-  export const outboundSchema =
-    SuppressionRulesGetSuppressionRulesData$outboundSchema;
-  /** @deprecated use `SuppressionRulesGetSuppressionRulesData$Outbound` instead. */
-  export type Outbound = SuppressionRulesGetSuppressionRulesData$Outbound;
-}
-
-export function suppressionRulesGetSuppressionRulesDataToJSON(
-  suppressionRulesGetSuppressionRulesData:
-    SuppressionRulesGetSuppressionRulesData,
-): string {
-  return JSON.stringify(
-    SuppressionRulesGetSuppressionRulesData$outboundSchema.parse(
-      suppressionRulesGetSuppressionRulesData,
-    ),
-  );
-}
 
 export function suppressionRulesGetSuppressionRulesDataFromJSON(
   jsonString: string,
@@ -167,47 +85,6 @@ export const SuppressionRulesGetSuppressionRulesResponse$inboundSchema:
   > = z.object({
     data: z.lazy(() => SuppressionRulesGetSuppressionRulesData$inboundSchema),
   });
-
-/** @internal */
-export type SuppressionRulesGetSuppressionRulesResponse$Outbound = {
-  data: SuppressionRulesGetSuppressionRulesData$Outbound;
-};
-
-/** @internal */
-export const SuppressionRulesGetSuppressionRulesResponse$outboundSchema:
-  z.ZodType<
-    SuppressionRulesGetSuppressionRulesResponse$Outbound,
-    z.ZodTypeDef,
-    SuppressionRulesGetSuppressionRulesResponse
-  > = z.object({
-    data: z.lazy(() => SuppressionRulesGetSuppressionRulesData$outboundSchema),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SuppressionRulesGetSuppressionRulesResponse$ {
-  /** @deprecated use `SuppressionRulesGetSuppressionRulesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    SuppressionRulesGetSuppressionRulesResponse$inboundSchema;
-  /** @deprecated use `SuppressionRulesGetSuppressionRulesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    SuppressionRulesGetSuppressionRulesResponse$outboundSchema;
-  /** @deprecated use `SuppressionRulesGetSuppressionRulesResponse$Outbound` instead. */
-  export type Outbound = SuppressionRulesGetSuppressionRulesResponse$Outbound;
-}
-
-export function suppressionRulesGetSuppressionRulesResponseToJSON(
-  suppressionRulesGetSuppressionRulesResponse:
-    SuppressionRulesGetSuppressionRulesResponse,
-): string {
-  return JSON.stringify(
-    SuppressionRulesGetSuppressionRulesResponse$outboundSchema.parse(
-      suppressionRulesGetSuppressionRulesResponse,
-    ),
-  );
-}
 
 export function suppressionRulesGetSuppressionRulesResponseFromJSON(
   jsonString: string,

@@ -22,20 +22,6 @@ export type MaintenancesDeleteMaintenanceByIdResponse = {
 };
 
 /** @internal */
-export const MaintenancesDeleteMaintenanceByIdRequest$inboundSchema: z.ZodType<
-  MaintenancesDeleteMaintenanceByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-  maintenance_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "maintenance_id": "maintenanceId",
-  });
-});
-
-/** @internal */
 export type MaintenancesDeleteMaintenanceByIdRequest$Outbound = {
   statuspageID: string;
   maintenance_id: string;
@@ -55,21 +41,6 @@ export const MaintenancesDeleteMaintenanceByIdRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaintenancesDeleteMaintenanceByIdRequest$ {
-  /** @deprecated use `MaintenancesDeleteMaintenanceByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    MaintenancesDeleteMaintenanceByIdRequest$inboundSchema;
-  /** @deprecated use `MaintenancesDeleteMaintenanceByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    MaintenancesDeleteMaintenanceByIdRequest$outboundSchema;
-  /** @deprecated use `MaintenancesDeleteMaintenanceByIdRequest$Outbound` instead. */
-  export type Outbound = MaintenancesDeleteMaintenanceByIdRequest$Outbound;
-}
-
 export function maintenancesDeleteMaintenanceByIdRequestToJSON(
   maintenancesDeleteMaintenanceByIdRequest:
     MaintenancesDeleteMaintenanceByIdRequest,
@@ -78,22 +49,6 @@ export function maintenancesDeleteMaintenanceByIdRequestToJSON(
     MaintenancesDeleteMaintenanceByIdRequest$outboundSchema.parse(
       maintenancesDeleteMaintenanceByIdRequest,
     ),
-  );
-}
-
-export function maintenancesDeleteMaintenanceByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  MaintenancesDeleteMaintenanceByIdRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      MaintenancesDeleteMaintenanceByIdRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'MaintenancesDeleteMaintenanceByIdRequest' from JSON`,
   );
 }
 
@@ -106,49 +61,6 @@ export const MaintenancesDeleteMaintenanceByIdResponse$inboundSchema: z.ZodType<
   data:
     models.V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$inboundSchema,
 });
-
-/** @internal */
-export type MaintenancesDeleteMaintenanceByIdResponse$Outbound = {
-  data: models.V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$Outbound;
-};
-
-/** @internal */
-export const MaintenancesDeleteMaintenanceByIdResponse$outboundSchema:
-  z.ZodType<
-    MaintenancesDeleteMaintenanceByIdResponse$Outbound,
-    z.ZodTypeDef,
-    MaintenancesDeleteMaintenanceByIdResponse
-  > = z.object({
-    data:
-      models
-        .V4StatusPagesMaintenancesDeleteMaintenanceByIdResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaintenancesDeleteMaintenanceByIdResponse$ {
-  /** @deprecated use `MaintenancesDeleteMaintenanceByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    MaintenancesDeleteMaintenanceByIdResponse$inboundSchema;
-  /** @deprecated use `MaintenancesDeleteMaintenanceByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    MaintenancesDeleteMaintenanceByIdResponse$outboundSchema;
-  /** @deprecated use `MaintenancesDeleteMaintenanceByIdResponse$Outbound` instead. */
-  export type Outbound = MaintenancesDeleteMaintenanceByIdResponse$Outbound;
-}
-
-export function maintenancesDeleteMaintenanceByIdResponseToJSON(
-  maintenancesDeleteMaintenanceByIdResponse:
-    MaintenancesDeleteMaintenanceByIdResponse,
-): string {
-  return JSON.stringify(
-    MaintenancesDeleteMaintenanceByIdResponse$outboundSchema.parse(
-      maintenancesDeleteMaintenanceByIdResponse,
-    ),
-  );
-}
 
 export function maintenancesDeleteMaintenanceByIdResponseFromJSON(
   jsonString: string,

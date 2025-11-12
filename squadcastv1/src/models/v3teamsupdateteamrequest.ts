@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3TeamsUpdateTeamRequestMember = {
   userId: string;
@@ -25,22 +22,6 @@ export type V3TeamsUpdateTeamRequest = {
   description?: string | undefined;
   members: Array<V3TeamsUpdateTeamRequestMember>;
 };
-
-/** @internal */
-export const V3TeamsUpdateTeamRequestMember$inboundSchema: z.ZodType<
-  V3TeamsUpdateTeamRequestMember,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  user_id: z.string(),
-  role: z.string().optional(),
-  role_ids: z.array(z.string()),
-}).transform((v) => {
-  return remap$(v, {
-    "user_id": "userId",
-    "role_ids": "roleIds",
-  });
-});
 
 /** @internal */
 export type V3TeamsUpdateTeamRequestMember$Outbound = {
@@ -65,19 +46,6 @@ export const V3TeamsUpdateTeamRequestMember$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsUpdateTeamRequestMember$ {
-  /** @deprecated use `V3TeamsUpdateTeamRequestMember$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsUpdateTeamRequestMember$inboundSchema;
-  /** @deprecated use `V3TeamsUpdateTeamRequestMember$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsUpdateTeamRequestMember$outboundSchema;
-  /** @deprecated use `V3TeamsUpdateTeamRequestMember$Outbound` instead. */
-  export type Outbound = V3TeamsUpdateTeamRequestMember$Outbound;
-}
-
 export function v3TeamsUpdateTeamRequestMemberToJSON(
   v3TeamsUpdateTeamRequestMember: V3TeamsUpdateTeamRequestMember,
 ): string {
@@ -87,27 +55,6 @@ export function v3TeamsUpdateTeamRequestMemberToJSON(
     ),
   );
 }
-
-export function v3TeamsUpdateTeamRequestMemberFromJSON(
-  jsonString: string,
-): SafeParseResult<V3TeamsUpdateTeamRequestMember, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3TeamsUpdateTeamRequestMember$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3TeamsUpdateTeamRequestMember' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3TeamsUpdateTeamRequest$inboundSchema: z.ZodType<
-  V3TeamsUpdateTeamRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string().optional(),
-  description: z.string().optional(),
-  members: z.array(z.lazy(() => V3TeamsUpdateTeamRequestMember$inboundSchema)),
-});
 
 /** @internal */
 export type V3TeamsUpdateTeamRequest$Outbound = {
@@ -127,33 +74,10 @@ export const V3TeamsUpdateTeamRequest$outboundSchema: z.ZodType<
   members: z.array(z.lazy(() => V3TeamsUpdateTeamRequestMember$outboundSchema)),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsUpdateTeamRequest$ {
-  /** @deprecated use `V3TeamsUpdateTeamRequest$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsUpdateTeamRequest$inboundSchema;
-  /** @deprecated use `V3TeamsUpdateTeamRequest$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsUpdateTeamRequest$outboundSchema;
-  /** @deprecated use `V3TeamsUpdateTeamRequest$Outbound` instead. */
-  export type Outbound = V3TeamsUpdateTeamRequest$Outbound;
-}
-
 export function v3TeamsUpdateTeamRequestToJSON(
   v3TeamsUpdateTeamRequest: V3TeamsUpdateTeamRequest,
 ): string {
   return JSON.stringify(
     V3TeamsUpdateTeamRequest$outboundSchema.parse(v3TeamsUpdateTeamRequest),
-  );
-}
-
-export function v3TeamsUpdateTeamRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3TeamsUpdateTeamRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3TeamsUpdateTeamRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3TeamsUpdateTeamRequest' from JSON`,
   );
 }

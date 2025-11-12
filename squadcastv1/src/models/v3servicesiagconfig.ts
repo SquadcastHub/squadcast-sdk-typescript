@@ -27,7 +27,6 @@ export const V3ServicesIAGConfig$inboundSchema: z.ZodType<
     "rolling_window_in_mins": "rollingWindowInMins",
   });
 });
-
 /** @internal */
 export type V3ServicesIAGConfig$Outbound = {
   is_enabled: boolean;
@@ -49,19 +48,6 @@ export const V3ServicesIAGConfig$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesIAGConfig$ {
-  /** @deprecated use `V3ServicesIAGConfig$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesIAGConfig$inboundSchema;
-  /** @deprecated use `V3ServicesIAGConfig$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesIAGConfig$outboundSchema;
-  /** @deprecated use `V3ServicesIAGConfig$Outbound` instead. */
-  export type Outbound = V3ServicesIAGConfig$Outbound;
-}
-
 export function v3ServicesIAGConfigToJSON(
   v3ServicesIAGConfig: V3ServicesIAGConfig,
 ): string {
@@ -69,7 +55,6 @@ export function v3ServicesIAGConfigToJSON(
     V3ServicesIAGConfig$outboundSchema.parse(v3ServicesIAGConfig),
   );
 }
-
 export function v3ServicesIAGConfigFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesIAGConfig, SDKValidationError> {

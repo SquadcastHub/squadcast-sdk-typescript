@@ -4,29 +4,22 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3SLOSLOAction,
-  V3SLOSLOAction$inboundSchema,
   V3SLOSLOAction$Outbound,
   V3SLOSLOAction$outboundSchema,
 } from "./v3slosloaction.js";
 import {
   V3SLOSLOMonitoringCheck,
-  V3SLOSLOMonitoringCheck$inboundSchema,
   V3SLOSLOMonitoringCheck$Outbound,
   V3SLOSLOMonitoringCheck$outboundSchema,
 } from "./v3sloslomonitoringcheck.js";
 import {
   V3SLOSLOOwnerType,
-  V3SLOSLOOwnerType$inboundSchema,
   V3SLOSLOOwnerType$outboundSchema,
 } from "./v3slosloownertype.js";
 import {
   V3SLOTimeIntervalType,
-  V3SLOTimeIntervalType$inboundSchema,
   V3SLOTimeIntervalType$outboundSchema,
 } from "./v3slotimeintervaltype.js";
 
@@ -52,13 +45,6 @@ export type V3SLOCreateSLORequest = {
 };
 
 /** @internal */
-export const V3SLOCreateSLORequestTags$inboundSchema: z.ZodType<
-  V3SLOCreateSLORequestTags,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
 export type V3SLOCreateSLORequestTags$Outbound = {};
 
 /** @internal */
@@ -68,19 +54,6 @@ export const V3SLOCreateSLORequestTags$outboundSchema: z.ZodType<
   V3SLOCreateSLORequestTags
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3SLOCreateSLORequestTags$ {
-  /** @deprecated use `V3SLOCreateSLORequestTags$inboundSchema` instead. */
-  export const inboundSchema = V3SLOCreateSLORequestTags$inboundSchema;
-  /** @deprecated use `V3SLOCreateSLORequestTags$outboundSchema` instead. */
-  export const outboundSchema = V3SLOCreateSLORequestTags$outboundSchema;
-  /** @deprecated use `V3SLOCreateSLORequestTags$Outbound` instead. */
-  export type Outbound = V3SLOCreateSLORequestTags$Outbound;
-}
-
 export function v3SLOCreateSLORequestTagsToJSON(
   v3SLOCreateSLORequestTags: V3SLOCreateSLORequestTags,
 ): string {
@@ -88,56 +61,6 @@ export function v3SLOCreateSLORequestTagsToJSON(
     V3SLOCreateSLORequestTags$outboundSchema.parse(v3SLOCreateSLORequestTags),
   );
 }
-
-export function v3SLOCreateSLORequestTagsFromJSON(
-  jsonString: string,
-): SafeParseResult<V3SLOCreateSLORequestTags, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3SLOCreateSLORequestTags$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3SLOCreateSLORequestTags' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3SLOCreateSLORequest$inboundSchema: z.ZodType<
-  V3SLOCreateSLORequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  description: z.string().optional(),
-  time_interval_type: V3SLOTimeIntervalType$inboundSchema,
-  service_ids: z.array(z.string()),
-  slis: z.array(z.string()),
-  target_slo: z.number(),
-  start_time: z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  end_time: z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  duration_in_days: z.number().int(),
-  tags: z.lazy(() => V3SLOCreateSLORequestTags$inboundSchema).optional(),
-  slo_monitoring_checks: z.array(V3SLOSLOMonitoringCheck$inboundSchema)
-    .optional(),
-  slo_actions: z.array(V3SLOSLOAction$inboundSchema).optional(),
-  owner_type: z.string(),
-  owner_id: z.string(),
-  slo_owner_id: z.string(),
-  slo_owner_type: V3SLOSLOOwnerType$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "time_interval_type": "timeIntervalType",
-    "service_ids": "serviceIds",
-    "target_slo": "targetSlo",
-    "start_time": "startTime",
-    "end_time": "endTime",
-    "duration_in_days": "durationInDays",
-    "slo_monitoring_checks": "sloMonitoringChecks",
-    "slo_actions": "sloActions",
-    "owner_type": "ownerType",
-    "owner_id": "ownerId",
-    "slo_owner_id": "sloOwnerId",
-    "slo_owner_type": "sloOwnerType",
-  });
-});
 
 /** @internal */
 export type V3SLOCreateSLORequest$Outbound = {
@@ -199,33 +122,10 @@ export const V3SLOCreateSLORequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3SLOCreateSLORequest$ {
-  /** @deprecated use `V3SLOCreateSLORequest$inboundSchema` instead. */
-  export const inboundSchema = V3SLOCreateSLORequest$inboundSchema;
-  /** @deprecated use `V3SLOCreateSLORequest$outboundSchema` instead. */
-  export const outboundSchema = V3SLOCreateSLORequest$outboundSchema;
-  /** @deprecated use `V3SLOCreateSLORequest$Outbound` instead. */
-  export type Outbound = V3SLOCreateSLORequest$Outbound;
-}
-
 export function v3SLOCreateSLORequestToJSON(
   v3SLOCreateSLORequest: V3SLOCreateSLORequest,
 ): string {
   return JSON.stringify(
     V3SLOCreateSLORequest$outboundSchema.parse(v3SLOCreateSLORequest),
-  );
-}
-
-export function v3SLOCreateSLORequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3SLOCreateSLORequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3SLOCreateSLORequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3SLOCreateSLORequest' from JSON`,
   );
 }

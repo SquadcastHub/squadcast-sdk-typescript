@@ -55,7 +55,6 @@ export const V3SLOSLOMonitoringCheck$inboundSchema: z.ZodType<
     "deleted_at": "deletedAt",
   });
 });
-
 /** @internal */
 export type V3SLOSLOMonitoringCheck$Outbound = {
   id?: number | undefined;
@@ -101,19 +100,6 @@ export const V3SLOSLOMonitoringCheck$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3SLOSLOMonitoringCheck$ {
-  /** @deprecated use `V3SLOSLOMonitoringCheck$inboundSchema` instead. */
-  export const inboundSchema = V3SLOSLOMonitoringCheck$inboundSchema;
-  /** @deprecated use `V3SLOSLOMonitoringCheck$outboundSchema` instead. */
-  export const outboundSchema = V3SLOSLOMonitoringCheck$outboundSchema;
-  /** @deprecated use `V3SLOSLOMonitoringCheck$Outbound` instead. */
-  export type Outbound = V3SLOSLOMonitoringCheck$Outbound;
-}
-
 export function v3SLOSLOMonitoringCheckToJSON(
   v3SLOSLOMonitoringCheck: V3SLOSLOMonitoringCheck,
 ): string {
@@ -121,7 +107,6 @@ export function v3SLOSLOMonitoringCheckToJSON(
     V3SLOSLOMonitoringCheck$outboundSchema.parse(v3SLOSLOMonitoringCheck),
   );
 }
-
 export function v3SLOSLOMonitoringCheckFromJSON(
   jsonString: string,
 ): SafeParseResult<V3SLOSLOMonitoringCheck, SDKValidationError> {

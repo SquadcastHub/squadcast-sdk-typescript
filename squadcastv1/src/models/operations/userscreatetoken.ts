@@ -21,19 +21,6 @@ export type UsersCreateTokenResponse = {
 };
 
 /** @internal */
-export const UsersCreateTokenRequest$inboundSchema: z.ZodType<
-  UsersCreateTokenRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  user_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "user_id": "userId",
-  });
-});
-
-/** @internal */
 export type UsersCreateTokenRequest$Outbound = {
   user_id: string;
 };
@@ -51,34 +38,11 @@ export const UsersCreateTokenRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersCreateTokenRequest$ {
-  /** @deprecated use `UsersCreateTokenRequest$inboundSchema` instead. */
-  export const inboundSchema = UsersCreateTokenRequest$inboundSchema;
-  /** @deprecated use `UsersCreateTokenRequest$outboundSchema` instead. */
-  export const outboundSchema = UsersCreateTokenRequest$outboundSchema;
-  /** @deprecated use `UsersCreateTokenRequest$Outbound` instead. */
-  export type Outbound = UsersCreateTokenRequest$Outbound;
-}
-
 export function usersCreateTokenRequestToJSON(
   usersCreateTokenRequest: UsersCreateTokenRequest,
 ): string {
   return JSON.stringify(
     UsersCreateTokenRequest$outboundSchema.parse(usersCreateTokenRequest),
-  );
-}
-
-export function usersCreateTokenRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UsersCreateTokenRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UsersCreateTokenRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UsersCreateTokenRequest' from JSON`,
   );
 }
 
@@ -90,41 +54,6 @@ export const UsersCreateTokenResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3UsersApiTokenResponse$inboundSchema,
 });
-
-/** @internal */
-export type UsersCreateTokenResponse$Outbound = {
-  data: models.V3UsersApiTokenResponse$Outbound;
-};
-
-/** @internal */
-export const UsersCreateTokenResponse$outboundSchema: z.ZodType<
-  UsersCreateTokenResponse$Outbound,
-  z.ZodTypeDef,
-  UsersCreateTokenResponse
-> = z.object({
-  data: models.V3UsersApiTokenResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersCreateTokenResponse$ {
-  /** @deprecated use `UsersCreateTokenResponse$inboundSchema` instead. */
-  export const inboundSchema = UsersCreateTokenResponse$inboundSchema;
-  /** @deprecated use `UsersCreateTokenResponse$outboundSchema` instead. */
-  export const outboundSchema = UsersCreateTokenResponse$outboundSchema;
-  /** @deprecated use `UsersCreateTokenResponse$Outbound` instead. */
-  export type Outbound = UsersCreateTokenResponse$Outbound;
-}
-
-export function usersCreateTokenResponseToJSON(
-  usersCreateTokenResponse: UsersCreateTokenResponse,
-): string {
-  return JSON.stringify(
-    UsersCreateTokenResponse$outboundSchema.parse(usersCreateTokenResponse),
-  );
-}
 
 export function usersCreateTokenResponseFromJSON(
   jsonString: string,

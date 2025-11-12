@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 /**
  * Request body for updating a communication card.
@@ -15,18 +12,6 @@ export type V3IncidentsCommunicationCardsUpdateCommunicationCardRequest = {
   type: string;
   url: string;
 };
-
-/** @internal */
-export const V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$inboundSchema:
-  z.ZodType<
-    V3IncidentsCommunicationCardsUpdateCommunicationCardRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    title: z.string(),
-    type: z.string(),
-    url: z.string(),
-  });
 
 /** @internal */
 export type V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$Outbound =
@@ -48,22 +33,6 @@ export const V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$outboun
     url: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$ {
-  /** @deprecated use `V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$Outbound;
-}
-
 export function v3IncidentsCommunicationCardsUpdateCommunicationCardRequestToJSON(
   v3IncidentsCommunicationCardsUpdateCommunicationCardRequest:
     V3IncidentsCommunicationCardsUpdateCommunicationCardRequest,
@@ -71,20 +40,5 @@ export function v3IncidentsCommunicationCardsUpdateCommunicationCardRequestToJSO
   return JSON.stringify(
     V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$outboundSchema
       .parse(v3IncidentsCommunicationCardsUpdateCommunicationCardRequest),
-  );
-}
-
-export function v3IncidentsCommunicationCardsUpdateCommunicationCardRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3IncidentsCommunicationCardsUpdateCommunicationCardRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3IncidentsCommunicationCardsUpdateCommunicationCardRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsCommunicationCardsUpdateCommunicationCardRequest' from JSON`,
   );
 }

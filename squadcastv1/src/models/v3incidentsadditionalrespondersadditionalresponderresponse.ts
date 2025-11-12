@@ -10,8 +10,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3IncidentsAdditionalRespondersAdditionalResponder,
   V3IncidentsAdditionalRespondersAdditionalResponder$inboundSchema,
-  V3IncidentsAdditionalRespondersAdditionalResponder$Outbound,
-  V3IncidentsAdditionalRespondersAdditionalResponder$outboundSchema,
 } from "./v3incidentsadditionalrespondersadditionalresponder.js";
 
 export type V3IncidentsAdditionalRespondersAdditionalResponderResponse = {
@@ -35,56 +33,6 @@ export const V3IncidentsAdditionalRespondersAdditionalResponderResponse$inboundS
       "additional_responders": "additionalResponders",
     });
   });
-
-/** @internal */
-export type V3IncidentsAdditionalRespondersAdditionalResponderResponse$Outbound =
-  {
-    additional_responders: Array<
-      V3IncidentsAdditionalRespondersAdditionalResponder$Outbound
-    >;
-  };
-
-/** @internal */
-export const V3IncidentsAdditionalRespondersAdditionalResponderResponse$outboundSchema:
-  z.ZodType<
-    V3IncidentsAdditionalRespondersAdditionalResponderResponse$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsAdditionalRespondersAdditionalResponderResponse
-  > = z.object({
-    additionalResponders: z.array(
-      V3IncidentsAdditionalRespondersAdditionalResponder$outboundSchema,
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      additionalResponders: "additional_responders",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsAdditionalRespondersAdditionalResponderResponse$ {
-  /** @deprecated use `V3IncidentsAdditionalRespondersAdditionalResponderResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsAdditionalRespondersAdditionalResponderResponse$inboundSchema;
-  /** @deprecated use `V3IncidentsAdditionalRespondersAdditionalResponderResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsAdditionalRespondersAdditionalResponderResponse$outboundSchema;
-  /** @deprecated use `V3IncidentsAdditionalRespondersAdditionalResponderResponse$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsAdditionalRespondersAdditionalResponderResponse$Outbound;
-}
-
-export function v3IncidentsAdditionalRespondersAdditionalResponderResponseToJSON(
-  v3IncidentsAdditionalRespondersAdditionalResponderResponse:
-    V3IncidentsAdditionalRespondersAdditionalResponderResponse,
-): string {
-  return JSON.stringify(
-    V3IncidentsAdditionalRespondersAdditionalResponderResponse$outboundSchema
-      .parse(v3IncidentsAdditionalRespondersAdditionalResponderResponse),
-  );
-}
 
 export function v3IncidentsAdditionalRespondersAdditionalResponderResponseFromJSON(
   jsonString: string,

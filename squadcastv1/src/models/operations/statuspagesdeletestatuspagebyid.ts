@@ -20,15 +20,6 @@ export type StatusPagesDeleteStatusPageByIdResponse = {
 };
 
 /** @internal */
-export const StatusPagesDeleteStatusPageByIdRequest$inboundSchema: z.ZodType<
-  StatusPagesDeleteStatusPageByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-});
-
-/** @internal */
 export type StatusPagesDeleteStatusPageByIdRequest$Outbound = {
   statuspageID: string;
 };
@@ -42,21 +33,6 @@ export const StatusPagesDeleteStatusPageByIdRequest$outboundSchema: z.ZodType<
   statuspageID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusPagesDeleteStatusPageByIdRequest$ {
-  /** @deprecated use `StatusPagesDeleteStatusPageByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    StatusPagesDeleteStatusPageByIdRequest$inboundSchema;
-  /** @deprecated use `StatusPagesDeleteStatusPageByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    StatusPagesDeleteStatusPageByIdRequest$outboundSchema;
-  /** @deprecated use `StatusPagesDeleteStatusPageByIdRequest$Outbound` instead. */
-  export type Outbound = StatusPagesDeleteStatusPageByIdRequest$Outbound;
-}
-
 export function statusPagesDeleteStatusPageByIdRequestToJSON(
   statusPagesDeleteStatusPageByIdRequest:
     StatusPagesDeleteStatusPageByIdRequest,
@@ -68,17 +44,6 @@ export function statusPagesDeleteStatusPageByIdRequestToJSON(
   );
 }
 
-export function statusPagesDeleteStatusPageByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<StatusPagesDeleteStatusPageByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      StatusPagesDeleteStatusPageByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'StatusPagesDeleteStatusPageByIdRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const StatusPagesDeleteStatusPageByIdResponse$inboundSchema: z.ZodType<
   StatusPagesDeleteStatusPageByIdResponse,
@@ -87,46 +52,6 @@ export const StatusPagesDeleteStatusPageByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4StatusPagesDeleteStatusPageByIdResponse$inboundSchema,
 });
-
-/** @internal */
-export type StatusPagesDeleteStatusPageByIdResponse$Outbound = {
-  data: models.V4StatusPagesDeleteStatusPageByIdResponse$Outbound;
-};
-
-/** @internal */
-export const StatusPagesDeleteStatusPageByIdResponse$outboundSchema: z.ZodType<
-  StatusPagesDeleteStatusPageByIdResponse$Outbound,
-  z.ZodTypeDef,
-  StatusPagesDeleteStatusPageByIdResponse
-> = z.object({
-  data: models.V4StatusPagesDeleteStatusPageByIdResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusPagesDeleteStatusPageByIdResponse$ {
-  /** @deprecated use `StatusPagesDeleteStatusPageByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    StatusPagesDeleteStatusPageByIdResponse$inboundSchema;
-  /** @deprecated use `StatusPagesDeleteStatusPageByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    StatusPagesDeleteStatusPageByIdResponse$outboundSchema;
-  /** @deprecated use `StatusPagesDeleteStatusPageByIdResponse$Outbound` instead. */
-  export type Outbound = StatusPagesDeleteStatusPageByIdResponse$Outbound;
-}
-
-export function statusPagesDeleteStatusPageByIdResponseToJSON(
-  statusPagesDeleteStatusPageByIdResponse:
-    StatusPagesDeleteStatusPageByIdResponse,
-): string {
-  return JSON.stringify(
-    StatusPagesDeleteStatusPageByIdResponse$outboundSchema.parse(
-      statusPagesDeleteStatusPageByIdResponse,
-    ),
-  );
-}
 
 export function statusPagesDeleteStatusPageByIdResponseFromJSON(
   jsonString: string,

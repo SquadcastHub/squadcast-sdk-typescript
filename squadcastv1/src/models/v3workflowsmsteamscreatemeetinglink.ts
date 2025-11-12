@@ -23,24 +23,10 @@ export type V3WorkflowsMsTeamsCreateMeetingLink = {
 export const V3WorkflowsMsTeamsCreateMeetingLinkName$inboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsMsTeamsCreateMeetingLinkName> = z
     .nativeEnum(V3WorkflowsMsTeamsCreateMeetingLinkName);
-
 /** @internal */
 export const V3WorkflowsMsTeamsCreateMeetingLinkName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsMsTeamsCreateMeetingLinkName> =
     V3WorkflowsMsTeamsCreateMeetingLinkName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsCreateMeetingLinkName$ {
-  /** @deprecated use `V3WorkflowsMsTeamsCreateMeetingLinkName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsMsTeamsCreateMeetingLinkName$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsCreateMeetingLinkName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsMsTeamsCreateMeetingLinkName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsMsTeamsCreateMeetingLink$inboundSchema: z.ZodType<
@@ -50,7 +36,6 @@ export const V3WorkflowsMsTeamsCreateMeetingLink$inboundSchema: z.ZodType<
 > = z.object({
   name: V3WorkflowsMsTeamsCreateMeetingLinkName$inboundSchema,
 });
-
 /** @internal */
 export type V3WorkflowsMsTeamsCreateMeetingLink$Outbound = {
   name: string;
@@ -65,21 +50,6 @@ export const V3WorkflowsMsTeamsCreateMeetingLink$outboundSchema: z.ZodType<
   name: V3WorkflowsMsTeamsCreateMeetingLinkName$outboundSchema,
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsCreateMeetingLink$ {
-  /** @deprecated use `V3WorkflowsMsTeamsCreateMeetingLink$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsMsTeamsCreateMeetingLink$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsCreateMeetingLink$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsMsTeamsCreateMeetingLink$outboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsCreateMeetingLink$Outbound` instead. */
-  export type Outbound = V3WorkflowsMsTeamsCreateMeetingLink$Outbound;
-}
-
 export function v3WorkflowsMsTeamsCreateMeetingLinkToJSON(
   v3WorkflowsMsTeamsCreateMeetingLink: V3WorkflowsMsTeamsCreateMeetingLink,
 ): string {
@@ -89,7 +59,6 @@ export function v3WorkflowsMsTeamsCreateMeetingLinkToJSON(
     ),
   );
 }
-
 export function v3WorkflowsMsTeamsCreateMeetingLinkFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsMsTeamsCreateMeetingLink, SDKValidationError> {

@@ -41,21 +41,6 @@ export const StatusEnum$inboundSchema: z.ZodNativeEnum<typeof StatusEnum> = z
   .nativeEnum(StatusEnum);
 
 /** @internal */
-export const StatusEnum$outboundSchema: z.ZodNativeEnum<typeof StatusEnum> =
-  StatusEnum$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusEnum$ {
-  /** @deprecated use `StatusEnum$inboundSchema` instead. */
-  export const inboundSchema = StatusEnum$inboundSchema;
-  /** @deprecated use `StatusEnum$outboundSchema` instead. */
-  export const outboundSchema = StatusEnum$outboundSchema;
-}
-
-/** @internal */
 export const V3WorkflowsGetWorkflowLogsResponseData$inboundSchema: z.ZodType<
   V3WorkflowsGetWorkflowLogsResponseData,
   z.ZodTypeDef,
@@ -74,62 +59,6 @@ export const V3WorkflowsGetWorkflowLogsResponseData$inboundSchema: z.ZodType<
     "executed_at": "executedAt",
   });
 });
-
-/** @internal */
-export type V3WorkflowsGetWorkflowLogsResponseData$Outbound = {
-  id: string;
-  status: string;
-  incident_id: string;
-  action_execution: string;
-  message: string;
-  executed_at: string;
-};
-
-/** @internal */
-export const V3WorkflowsGetWorkflowLogsResponseData$outboundSchema: z.ZodType<
-  V3WorkflowsGetWorkflowLogsResponseData$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsGetWorkflowLogsResponseData
-> = z.object({
-  id: z.string(),
-  status: StatusEnum$outboundSchema,
-  incidentId: z.string(),
-  actionExecution: z.string(),
-  message: z.string(),
-  executedAt: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    incidentId: "incident_id",
-    actionExecution: "action_execution",
-    executedAt: "executed_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsGetWorkflowLogsResponseData$ {
-  /** @deprecated use `V3WorkflowsGetWorkflowLogsResponseData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsGetWorkflowLogsResponseData$inboundSchema;
-  /** @deprecated use `V3WorkflowsGetWorkflowLogsResponseData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsGetWorkflowLogsResponseData$outboundSchema;
-  /** @deprecated use `V3WorkflowsGetWorkflowLogsResponseData$Outbound` instead. */
-  export type Outbound = V3WorkflowsGetWorkflowLogsResponseData$Outbound;
-}
-
-export function v3WorkflowsGetWorkflowLogsResponseDataToJSON(
-  v3WorkflowsGetWorkflowLogsResponseData:
-    V3WorkflowsGetWorkflowLogsResponseData,
-): string {
-  return JSON.stringify(
-    V3WorkflowsGetWorkflowLogsResponseData$outboundSchema.parse(
-      v3WorkflowsGetWorkflowLogsResponseData,
-    ),
-  );
-}
 
 export function v3WorkflowsGetWorkflowLogsResponseDataFromJSON(
   jsonString: string,
@@ -155,50 +84,6 @@ export const V3WorkflowsGetWorkflowLogsResponseMeta$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3WorkflowsGetWorkflowLogsResponseMeta$Outbound = {
-  total_count: number;
-};
-
-/** @internal */
-export const V3WorkflowsGetWorkflowLogsResponseMeta$outboundSchema: z.ZodType<
-  V3WorkflowsGetWorkflowLogsResponseMeta$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsGetWorkflowLogsResponseMeta
-> = z.object({
-  totalCount: z.number().int(),
-}).transform((v) => {
-  return remap$(v, {
-    totalCount: "total_count",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsGetWorkflowLogsResponseMeta$ {
-  /** @deprecated use `V3WorkflowsGetWorkflowLogsResponseMeta$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsGetWorkflowLogsResponseMeta$inboundSchema;
-  /** @deprecated use `V3WorkflowsGetWorkflowLogsResponseMeta$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsGetWorkflowLogsResponseMeta$outboundSchema;
-  /** @deprecated use `V3WorkflowsGetWorkflowLogsResponseMeta$Outbound` instead. */
-  export type Outbound = V3WorkflowsGetWorkflowLogsResponseMeta$Outbound;
-}
-
-export function v3WorkflowsGetWorkflowLogsResponseMetaToJSON(
-  v3WorkflowsGetWorkflowLogsResponseMeta:
-    V3WorkflowsGetWorkflowLogsResponseMeta,
-): string {
-  return JSON.stringify(
-    V3WorkflowsGetWorkflowLogsResponseMeta$outboundSchema.parse(
-      v3WorkflowsGetWorkflowLogsResponseMeta,
-    ),
-  );
-}
-
 export function v3WorkflowsGetWorkflowLogsResponseMetaFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsGetWorkflowLogsResponseMeta, SDKValidationError> {
@@ -221,48 +106,6 @@ export const V3WorkflowsGetWorkflowLogsResponse$inboundSchema: z.ZodType<
   ),
   meta: z.lazy(() => V3WorkflowsGetWorkflowLogsResponseMeta$inboundSchema),
 });
-
-/** @internal */
-export type V3WorkflowsGetWorkflowLogsResponse$Outbound = {
-  data: Array<V3WorkflowsGetWorkflowLogsResponseData$Outbound>;
-  meta: V3WorkflowsGetWorkflowLogsResponseMeta$Outbound;
-};
-
-/** @internal */
-export const V3WorkflowsGetWorkflowLogsResponse$outboundSchema: z.ZodType<
-  V3WorkflowsGetWorkflowLogsResponse$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsGetWorkflowLogsResponse
-> = z.object({
-  data: z.array(
-    z.lazy(() => V3WorkflowsGetWorkflowLogsResponseData$outboundSchema),
-  ),
-  meta: z.lazy(() => V3WorkflowsGetWorkflowLogsResponseMeta$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsGetWorkflowLogsResponse$ {
-  /** @deprecated use `V3WorkflowsGetWorkflowLogsResponse$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsGetWorkflowLogsResponse$inboundSchema;
-  /** @deprecated use `V3WorkflowsGetWorkflowLogsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsGetWorkflowLogsResponse$outboundSchema;
-  /** @deprecated use `V3WorkflowsGetWorkflowLogsResponse$Outbound` instead. */
-  export type Outbound = V3WorkflowsGetWorkflowLogsResponse$Outbound;
-}
-
-export function v3WorkflowsGetWorkflowLogsResponseToJSON(
-  v3WorkflowsGetWorkflowLogsResponse: V3WorkflowsGetWorkflowLogsResponse,
-): string {
-  return JSON.stringify(
-    V3WorkflowsGetWorkflowLogsResponse$outboundSchema.parse(
-      v3WorkflowsGetWorkflowLogsResponse,
-    ),
-  );
-}
 
 export function v3WorkflowsGetWorkflowLogsResponseFromJSON(
   jsonString: string,

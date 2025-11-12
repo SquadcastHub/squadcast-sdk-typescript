@@ -35,7 +35,6 @@ export const V3WebformsRecaptchaSecrets$inboundSchema: z.ZodType<
     "site_key": "siteKey",
   });
 });
-
 /** @internal */
 export type V3WebformsRecaptchaSecrets$Outbound = {
   site_key: string;
@@ -56,19 +55,6 @@ export const V3WebformsRecaptchaSecrets$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WebformsRecaptchaSecrets$ {
-  /** @deprecated use `V3WebformsRecaptchaSecrets$inboundSchema` instead. */
-  export const inboundSchema = V3WebformsRecaptchaSecrets$inboundSchema;
-  /** @deprecated use `V3WebformsRecaptchaSecrets$outboundSchema` instead. */
-  export const outboundSchema = V3WebformsRecaptchaSecrets$outboundSchema;
-  /** @deprecated use `V3WebformsRecaptchaSecrets$Outbound` instead. */
-  export type Outbound = V3WebformsRecaptchaSecrets$Outbound;
-}
-
 export function v3WebformsRecaptchaSecretsToJSON(
   v3WebformsRecaptchaSecrets: V3WebformsRecaptchaSecrets,
 ): string {
@@ -76,7 +62,6 @@ export function v3WebformsRecaptchaSecretsToJSON(
     V3WebformsRecaptchaSecrets$outboundSchema.parse(v3WebformsRecaptchaSecrets),
   );
 }
-
 export function v3WebformsRecaptchaSecretsFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WebformsRecaptchaSecrets, SDKValidationError> {

@@ -28,22 +28,10 @@ export type V3WorkflowsSqAddIncidentNote = {
 export const V3WorkflowsSqAddIncidentNoteName$inboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSqAddIncidentNoteName
 > = z.nativeEnum(V3WorkflowsSqAddIncidentNoteName);
-
 /** @internal */
 export const V3WorkflowsSqAddIncidentNoteName$outboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSqAddIncidentNoteName
 > = V3WorkflowsSqAddIncidentNoteName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqAddIncidentNoteName$ {
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteName$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqAddIncidentNoteName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteName$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqAddIncidentNoteName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsSqAddIncidentNoteData$inboundSchema: z.ZodType<
@@ -53,7 +41,6 @@ export const V3WorkflowsSqAddIncidentNoteData$inboundSchema: z.ZodType<
 > = z.object({
   note: z.string(),
 });
-
 /** @internal */
 export type V3WorkflowsSqAddIncidentNoteData$Outbound = {
   note: string;
@@ -68,19 +55,6 @@ export const V3WorkflowsSqAddIncidentNoteData$outboundSchema: z.ZodType<
   note: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqAddIncidentNoteData$ {
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteData$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqAddIncidentNoteData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteData$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqAddIncidentNoteData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddIncidentNoteData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqAddIncidentNoteData$Outbound;
-}
-
 export function v3WorkflowsSqAddIncidentNoteDataToJSON(
   v3WorkflowsSqAddIncidentNoteData: V3WorkflowsSqAddIncidentNoteData,
 ): string {
@@ -90,7 +64,6 @@ export function v3WorkflowsSqAddIncidentNoteDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqAddIncidentNoteDataFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqAddIncidentNoteData, SDKValidationError> {
@@ -110,7 +83,6 @@ export const V3WorkflowsSqAddIncidentNote$inboundSchema: z.ZodType<
   name: V3WorkflowsSqAddIncidentNoteName$inboundSchema,
   data: z.lazy(() => V3WorkflowsSqAddIncidentNoteData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsSqAddIncidentNote$Outbound = {
   name: string;
@@ -127,19 +99,6 @@ export const V3WorkflowsSqAddIncidentNote$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsSqAddIncidentNoteData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqAddIncidentNote$ {
-  /** @deprecated use `V3WorkflowsSqAddIncidentNote$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqAddIncidentNote$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddIncidentNote$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqAddIncidentNote$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddIncidentNote$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqAddIncidentNote$Outbound;
-}
-
 export function v3WorkflowsSqAddIncidentNoteToJSON(
   v3WorkflowsSqAddIncidentNote: V3WorkflowsSqAddIncidentNote,
 ): string {
@@ -149,7 +108,6 @@ export function v3WorkflowsSqAddIncidentNoteToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqAddIncidentNoteFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqAddIncidentNote, SDKValidationError> {

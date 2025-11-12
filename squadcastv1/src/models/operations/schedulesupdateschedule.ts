@@ -22,20 +22,6 @@ export type SchedulesUpdateScheduleResponse = {
 };
 
 /** @internal */
-export const SchedulesUpdateScheduleRequest$inboundSchema: z.ZodType<
-  SchedulesUpdateScheduleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  "V4.UpdateScheduleRequest": models.V4UpdateScheduleRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V4.UpdateScheduleRequest": "v4UpdateScheduleRequest",
-  });
-});
-
-/** @internal */
 export type SchedulesUpdateScheduleRequest$Outbound = {
   scheduleID: string;
   "V4.UpdateScheduleRequest": models.V4UpdateScheduleRequest$Outbound;
@@ -55,19 +41,6 @@ export const SchedulesUpdateScheduleRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesUpdateScheduleRequest$ {
-  /** @deprecated use `SchedulesUpdateScheduleRequest$inboundSchema` instead. */
-  export const inboundSchema = SchedulesUpdateScheduleRequest$inboundSchema;
-  /** @deprecated use `SchedulesUpdateScheduleRequest$outboundSchema` instead. */
-  export const outboundSchema = SchedulesUpdateScheduleRequest$outboundSchema;
-  /** @deprecated use `SchedulesUpdateScheduleRequest$Outbound` instead. */
-  export type Outbound = SchedulesUpdateScheduleRequest$Outbound;
-}
-
 export function schedulesUpdateScheduleRequestToJSON(
   schedulesUpdateScheduleRequest: SchedulesUpdateScheduleRequest,
 ): string {
@@ -75,16 +48,6 @@ export function schedulesUpdateScheduleRequestToJSON(
     SchedulesUpdateScheduleRequest$outboundSchema.parse(
       schedulesUpdateScheduleRequest,
     ),
-  );
-}
-
-export function schedulesUpdateScheduleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SchedulesUpdateScheduleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SchedulesUpdateScheduleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SchedulesUpdateScheduleRequest' from JSON`,
   );
 }
 
@@ -96,43 +59,6 @@ export const SchedulesUpdateScheduleResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4ScheduleResponse$inboundSchema,
 });
-
-/** @internal */
-export type SchedulesUpdateScheduleResponse$Outbound = {
-  data: models.V4ScheduleResponse$Outbound;
-};
-
-/** @internal */
-export const SchedulesUpdateScheduleResponse$outboundSchema: z.ZodType<
-  SchedulesUpdateScheduleResponse$Outbound,
-  z.ZodTypeDef,
-  SchedulesUpdateScheduleResponse
-> = z.object({
-  data: models.V4ScheduleResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesUpdateScheduleResponse$ {
-  /** @deprecated use `SchedulesUpdateScheduleResponse$inboundSchema` instead. */
-  export const inboundSchema = SchedulesUpdateScheduleResponse$inboundSchema;
-  /** @deprecated use `SchedulesUpdateScheduleResponse$outboundSchema` instead. */
-  export const outboundSchema = SchedulesUpdateScheduleResponse$outboundSchema;
-  /** @deprecated use `SchedulesUpdateScheduleResponse$Outbound` instead. */
-  export type Outbound = SchedulesUpdateScheduleResponse$Outbound;
-}
-
-export function schedulesUpdateScheduleResponseToJSON(
-  schedulesUpdateScheduleResponse: SchedulesUpdateScheduleResponse,
-): string {
-  return JSON.stringify(
-    SchedulesUpdateScheduleResponse$outboundSchema.parse(
-      schedulesUpdateScheduleResponse,
-    ),
-  );
-}
 
 export function schedulesUpdateScheduleResponseFromJSON(
   jsonString: string,

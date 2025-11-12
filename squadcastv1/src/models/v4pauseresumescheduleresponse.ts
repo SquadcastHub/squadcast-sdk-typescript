@@ -22,45 +22,6 @@ export const V4PauseResumeScheduleResponse$inboundSchema: z.ZodType<
   success: z.boolean(),
 });
 
-/** @internal */
-export type V4PauseResumeScheduleResponse$Outbound = {
-  action: string;
-  success: boolean;
-};
-
-/** @internal */
-export const V4PauseResumeScheduleResponse$outboundSchema: z.ZodType<
-  V4PauseResumeScheduleResponse$Outbound,
-  z.ZodTypeDef,
-  V4PauseResumeScheduleResponse
-> = z.object({
-  action: z.string(),
-  success: z.boolean(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4PauseResumeScheduleResponse$ {
-  /** @deprecated use `V4PauseResumeScheduleResponse$inboundSchema` instead. */
-  export const inboundSchema = V4PauseResumeScheduleResponse$inboundSchema;
-  /** @deprecated use `V4PauseResumeScheduleResponse$outboundSchema` instead. */
-  export const outboundSchema = V4PauseResumeScheduleResponse$outboundSchema;
-  /** @deprecated use `V4PauseResumeScheduleResponse$Outbound` instead. */
-  export type Outbound = V4PauseResumeScheduleResponse$Outbound;
-}
-
-export function v4PauseResumeScheduleResponseToJSON(
-  v4PauseResumeScheduleResponse: V4PauseResumeScheduleResponse,
-): string {
-  return JSON.stringify(
-    V4PauseResumeScheduleResponse$outboundSchema.parse(
-      v4PauseResumeScheduleResponse,
-    ),
-  );
-}
-
 export function v4PauseResumeScheduleResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V4PauseResumeScheduleResponse, SDKValidationError> {

@@ -27,7 +27,6 @@ export const V3ExtensionsWebhooksWebhookTrigger$inboundSchema: z.ZodType<
     "event_type": "eventType",
   });
 });
-
 /** @internal */
 export type V3ExtensionsWebhooksWebhookTrigger$Outbound = {
   event_class: string;
@@ -49,20 +48,6 @@ export const V3ExtensionsWebhooksWebhookTrigger$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksWebhookTrigger$ {
-  /** @deprecated use `V3ExtensionsWebhooksWebhookTrigger$inboundSchema` instead. */
-  export const inboundSchema = V3ExtensionsWebhooksWebhookTrigger$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookTrigger$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsWebhooksWebhookTrigger$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookTrigger$Outbound` instead. */
-  export type Outbound = V3ExtensionsWebhooksWebhookTrigger$Outbound;
-}
-
 export function v3ExtensionsWebhooksWebhookTriggerToJSON(
   v3ExtensionsWebhooksWebhookTrigger: V3ExtensionsWebhooksWebhookTrigger,
 ): string {
@@ -72,7 +57,6 @@ export function v3ExtensionsWebhooksWebhookTriggerToJSON(
     ),
   );
 }
-
 export function v3ExtensionsWebhooksWebhookTriggerFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ExtensionsWebhooksWebhookTrigger, SDKValidationError> {

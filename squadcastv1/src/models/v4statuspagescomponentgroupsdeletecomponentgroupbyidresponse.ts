@@ -27,54 +27,6 @@ export const V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$inboun
     allowSubscription: z.boolean(),
   });
 
-/** @internal */
-export type V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$Outbound =
-  {
-    id: number;
-    name: string;
-    description: string | null;
-    allowSubscription: boolean;
-  };
-
-/** @internal */
-export const V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$outboundSchema:
-  z.ZodType<
-    V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse
-  > = z.object({
-    id: z.number().int(),
-    name: z.string(),
-    description: z.nullable(z.string()),
-    allowSubscription: z.boolean(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$ {
-  /** @deprecated use `V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$Outbound;
-}
-
-export function v4StatusPagesComponentGroupsDeleteComponentGroupByIdResponseToJSON(
-  v4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse:
-    V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$outboundSchema
-      .parse(v4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse),
-  );
-}
-
 export function v4StatusPagesComponentGroupsDeleteComponentGroupByIdResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

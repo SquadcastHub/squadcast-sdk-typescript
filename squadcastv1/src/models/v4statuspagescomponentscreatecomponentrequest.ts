@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V4StatusPagesComponentsCreateComponentRequest = {
   name: string;
@@ -14,20 +11,6 @@ export type V4StatusPagesComponentsCreateComponentRequest = {
   groupID?: string | undefined;
   serviceID?: string | undefined;
 };
-
-/** @internal */
-export const V4StatusPagesComponentsCreateComponentRequest$inboundSchema:
-  z.ZodType<
-    V4StatusPagesComponentsCreateComponentRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string(),
-    description: z.string().optional(),
-    allowSubscription: z.boolean().optional(),
-    groupID: z.string().optional(),
-    serviceID: z.string().optional(),
-  });
 
 /** @internal */
 export type V4StatusPagesComponentsCreateComponentRequest$Outbound = {
@@ -52,21 +35,6 @@ export const V4StatusPagesComponentsCreateComponentRequest$outboundSchema:
     serviceID: z.string().optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesComponentsCreateComponentRequest$ {
-  /** @deprecated use `V4StatusPagesComponentsCreateComponentRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesComponentsCreateComponentRequest$inboundSchema;
-  /** @deprecated use `V4StatusPagesComponentsCreateComponentRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesComponentsCreateComponentRequest$outboundSchema;
-  /** @deprecated use `V4StatusPagesComponentsCreateComponentRequest$Outbound` instead. */
-  export type Outbound = V4StatusPagesComponentsCreateComponentRequest$Outbound;
-}
-
 export function v4StatusPagesComponentsCreateComponentRequestToJSON(
   v4StatusPagesComponentsCreateComponentRequest:
     V4StatusPagesComponentsCreateComponentRequest,
@@ -75,21 +43,5 @@ export function v4StatusPagesComponentsCreateComponentRequestToJSON(
     V4StatusPagesComponentsCreateComponentRequest$outboundSchema.parse(
       v4StatusPagesComponentsCreateComponentRequest,
     ),
-  );
-}
-
-export function v4StatusPagesComponentsCreateComponentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V4StatusPagesComponentsCreateComponentRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V4StatusPagesComponentsCreateComponentRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V4StatusPagesComponentsCreateComponentRequest' from JSON`,
   );
 }

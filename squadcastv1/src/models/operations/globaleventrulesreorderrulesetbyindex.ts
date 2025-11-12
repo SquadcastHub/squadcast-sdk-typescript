@@ -26,30 +26,6 @@ export type GlobalEventRulesReorderRulesetByIndexResponse = {
 };
 
 /** @internal */
-export const GlobalEventRulesReorderRulesetByIndexRequest$inboundSchema:
-  z.ZodType<
-    GlobalEventRulesReorderRulesetByIndexRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    ger_id: z.number().int(),
-    alert_source_version: z.string(),
-    alert_source_shortname: z.string(),
-    rule_id: z.string(),
-    "V3.GlobalEventRules.ReorderRuleRequest":
-      models.V3GlobalEventRulesReorderRuleRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "ger_id": "gerId",
-      "alert_source_version": "alertSourceVersion",
-      "alert_source_shortname": "alertSourceShortname",
-      "rule_id": "ruleId",
-      "V3.GlobalEventRules.ReorderRuleRequest":
-        "v3GlobalEventRulesReorderRuleRequest",
-    });
-  });
-
-/** @internal */
 export type GlobalEventRulesReorderRulesetByIndexRequest$Outbound = {
   ger_id: number;
   alert_source_version: string;
@@ -83,21 +59,6 @@ export const GlobalEventRulesReorderRulesetByIndexRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesReorderRulesetByIndexRequest$ {
-  /** @deprecated use `GlobalEventRulesReorderRulesetByIndexRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesReorderRulesetByIndexRequest$inboundSchema;
-  /** @deprecated use `GlobalEventRulesReorderRulesetByIndexRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesReorderRulesetByIndexRequest$outboundSchema;
-  /** @deprecated use `GlobalEventRulesReorderRulesetByIndexRequest$Outbound` instead. */
-  export type Outbound = GlobalEventRulesReorderRulesetByIndexRequest$Outbound;
-}
-
 export function globalEventRulesReorderRulesetByIndexRequestToJSON(
   globalEventRulesReorderRulesetByIndexRequest:
     GlobalEventRulesReorderRulesetByIndexRequest,
@@ -106,22 +67,6 @@ export function globalEventRulesReorderRulesetByIndexRequestToJSON(
     GlobalEventRulesReorderRulesetByIndexRequest$outboundSchema.parse(
       globalEventRulesReorderRulesetByIndexRequest,
     ),
-  );
-}
-
-export function globalEventRulesReorderRulesetByIndexRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  GlobalEventRulesReorderRulesetByIndexRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      GlobalEventRulesReorderRulesetByIndexRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'GlobalEventRulesReorderRulesetByIndexRequest' from JSON`,
   );
 }
 
@@ -134,47 +79,6 @@ export const GlobalEventRulesReorderRulesetByIndexResponse$inboundSchema:
   > = z.object({
     data: models.V3GlobalEventRulesOrderingResponse$inboundSchema,
   });
-
-/** @internal */
-export type GlobalEventRulesReorderRulesetByIndexResponse$Outbound = {
-  data: models.V3GlobalEventRulesOrderingResponse$Outbound;
-};
-
-/** @internal */
-export const GlobalEventRulesReorderRulesetByIndexResponse$outboundSchema:
-  z.ZodType<
-    GlobalEventRulesReorderRulesetByIndexResponse$Outbound,
-    z.ZodTypeDef,
-    GlobalEventRulesReorderRulesetByIndexResponse
-  > = z.object({
-    data: models.V3GlobalEventRulesOrderingResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesReorderRulesetByIndexResponse$ {
-  /** @deprecated use `GlobalEventRulesReorderRulesetByIndexResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesReorderRulesetByIndexResponse$inboundSchema;
-  /** @deprecated use `GlobalEventRulesReorderRulesetByIndexResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesReorderRulesetByIndexResponse$outboundSchema;
-  /** @deprecated use `GlobalEventRulesReorderRulesetByIndexResponse$Outbound` instead. */
-  export type Outbound = GlobalEventRulesReorderRulesetByIndexResponse$Outbound;
-}
-
-export function globalEventRulesReorderRulesetByIndexResponseToJSON(
-  globalEventRulesReorderRulesetByIndexResponse:
-    GlobalEventRulesReorderRulesetByIndexResponse,
-): string {
-  return JSON.stringify(
-    GlobalEventRulesReorderRulesetByIndexResponse$outboundSchema.parse(
-      globalEventRulesReorderRulesetByIndexResponse,
-    ),
-  );
-}
 
 export function globalEventRulesReorderRulesetByIndexResponseFromJSON(
   jsonString: string,

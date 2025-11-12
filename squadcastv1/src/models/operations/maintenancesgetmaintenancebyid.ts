@@ -22,20 +22,6 @@ export type MaintenancesGetMaintenanceByIdResponse = {
 };
 
 /** @internal */
-export const MaintenancesGetMaintenanceByIdRequest$inboundSchema: z.ZodType<
-  MaintenancesGetMaintenanceByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-  maintenance_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "maintenance_id": "maintenanceId",
-  });
-});
-
-/** @internal */
 export type MaintenancesGetMaintenanceByIdRequest$Outbound = {
   statuspageID: string;
   maintenance_id: string;
@@ -55,21 +41,6 @@ export const MaintenancesGetMaintenanceByIdRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaintenancesGetMaintenanceByIdRequest$ {
-  /** @deprecated use `MaintenancesGetMaintenanceByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    MaintenancesGetMaintenanceByIdRequest$inboundSchema;
-  /** @deprecated use `MaintenancesGetMaintenanceByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    MaintenancesGetMaintenanceByIdRequest$outboundSchema;
-  /** @deprecated use `MaintenancesGetMaintenanceByIdRequest$Outbound` instead. */
-  export type Outbound = MaintenancesGetMaintenanceByIdRequest$Outbound;
-}
-
 export function maintenancesGetMaintenanceByIdRequestToJSON(
   maintenancesGetMaintenanceByIdRequest: MaintenancesGetMaintenanceByIdRequest,
 ): string {
@@ -77,17 +48,6 @@ export function maintenancesGetMaintenanceByIdRequestToJSON(
     MaintenancesGetMaintenanceByIdRequest$outboundSchema.parse(
       maintenancesGetMaintenanceByIdRequest,
     ),
-  );
-}
-
-export function maintenancesGetMaintenanceByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<MaintenancesGetMaintenanceByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      MaintenancesGetMaintenanceByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'MaintenancesGetMaintenanceByIdRequest' from JSON`,
   );
 }
 
@@ -100,47 +60,6 @@ export const MaintenancesGetMaintenanceByIdResponse$inboundSchema: z.ZodType<
   data:
     models.V4StatusPagesMaintenancesGetMaintenanceByIdResponse$inboundSchema,
 });
-
-/** @internal */
-export type MaintenancesGetMaintenanceByIdResponse$Outbound = {
-  data: models.V4StatusPagesMaintenancesGetMaintenanceByIdResponse$Outbound;
-};
-
-/** @internal */
-export const MaintenancesGetMaintenanceByIdResponse$outboundSchema: z.ZodType<
-  MaintenancesGetMaintenanceByIdResponse$Outbound,
-  z.ZodTypeDef,
-  MaintenancesGetMaintenanceByIdResponse
-> = z.object({
-  data:
-    models.V4StatusPagesMaintenancesGetMaintenanceByIdResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaintenancesGetMaintenanceByIdResponse$ {
-  /** @deprecated use `MaintenancesGetMaintenanceByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    MaintenancesGetMaintenanceByIdResponse$inboundSchema;
-  /** @deprecated use `MaintenancesGetMaintenanceByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    MaintenancesGetMaintenanceByIdResponse$outboundSchema;
-  /** @deprecated use `MaintenancesGetMaintenanceByIdResponse$Outbound` instead. */
-  export type Outbound = MaintenancesGetMaintenanceByIdResponse$Outbound;
-}
-
-export function maintenancesGetMaintenanceByIdResponseToJSON(
-  maintenancesGetMaintenanceByIdResponse:
-    MaintenancesGetMaintenanceByIdResponse,
-): string {
-  return JSON.stringify(
-    MaintenancesGetMaintenanceByIdResponse$outboundSchema.parse(
-      maintenancesGetMaintenanceByIdResponse,
-    ),
-  );
-}
 
 export function maintenancesGetMaintenanceByIdResponseFromJSON(
   jsonString: string,

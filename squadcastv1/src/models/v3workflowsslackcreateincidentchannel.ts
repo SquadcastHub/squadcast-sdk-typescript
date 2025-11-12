@@ -30,24 +30,10 @@ export type V3WorkflowsSlackCreateIncidentChannel = {
 export const V3WorkflowsSlackCreateIncidentChannelName$inboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSlackCreateIncidentChannelName> = z
     .nativeEnum(V3WorkflowsSlackCreateIncidentChannelName);
-
 /** @internal */
 export const V3WorkflowsSlackCreateIncidentChannelName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSlackCreateIncidentChannelName> =
     V3WorkflowsSlackCreateIncidentChannelName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackCreateIncidentChannelName$ {
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSlackCreateIncidentChannelName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSlackCreateIncidentChannelName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsSlackCreateIncidentChannelData$inboundSchema: z.ZodType<
@@ -63,7 +49,6 @@ export const V3WorkflowsSlackCreateIncidentChannelData$inboundSchema: z.ZodType<
     "channel_name": "channelName",
   });
 });
-
 /** @internal */
 export type V3WorkflowsSlackCreateIncidentChannelData$Outbound = {
   auto_name: boolean;
@@ -86,21 +71,6 @@ export const V3WorkflowsSlackCreateIncidentChannelData$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackCreateIncidentChannelData$ {
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSlackCreateIncidentChannelData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSlackCreateIncidentChannelData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSlackCreateIncidentChannelData$Outbound;
-}
-
 export function v3WorkflowsSlackCreateIncidentChannelDataToJSON(
   v3WorkflowsSlackCreateIncidentChannelData:
     V3WorkflowsSlackCreateIncidentChannelData,
@@ -111,7 +81,6 @@ export function v3WorkflowsSlackCreateIncidentChannelDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSlackCreateIncidentChannelDataFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -137,7 +106,6 @@ export const V3WorkflowsSlackCreateIncidentChannel$inboundSchema: z.ZodType<
   name: V3WorkflowsSlackCreateIncidentChannelName$inboundSchema,
   data: z.lazy(() => V3WorkflowsSlackCreateIncidentChannelData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsSlackCreateIncidentChannel$Outbound = {
   name: string;
@@ -154,21 +122,6 @@ export const V3WorkflowsSlackCreateIncidentChannel$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsSlackCreateIncidentChannelData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackCreateIncidentChannel$ {
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannel$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSlackCreateIncidentChannel$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannel$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSlackCreateIncidentChannel$outboundSchema;
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannel$Outbound` instead. */
-  export type Outbound = V3WorkflowsSlackCreateIncidentChannel$Outbound;
-}
-
 export function v3WorkflowsSlackCreateIncidentChannelToJSON(
   v3WorkflowsSlackCreateIncidentChannel: V3WorkflowsSlackCreateIncidentChannel,
 ): string {
@@ -178,7 +131,6 @@ export function v3WorkflowsSlackCreateIncidentChannelToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSlackCreateIncidentChannelFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSlackCreateIncidentChannel, SDKValidationError> {

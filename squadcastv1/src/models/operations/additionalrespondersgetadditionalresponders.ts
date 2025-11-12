@@ -20,16 +20,6 @@ export type AdditionalRespondersGetAdditionalRespondersResponse = {
 };
 
 /** @internal */
-export const AdditionalRespondersGetAdditionalRespondersRequest$inboundSchema:
-  z.ZodType<
-    AdditionalRespondersGetAdditionalRespondersRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incidentID: z.string(),
-  });
-
-/** @internal */
 export type AdditionalRespondersGetAdditionalRespondersRequest$Outbound = {
   incidentID: string;
 };
@@ -44,22 +34,6 @@ export const AdditionalRespondersGetAdditionalRespondersRequest$outboundSchema:
     incidentID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AdditionalRespondersGetAdditionalRespondersRequest$ {
-  /** @deprecated use `AdditionalRespondersGetAdditionalRespondersRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    AdditionalRespondersGetAdditionalRespondersRequest$inboundSchema;
-  /** @deprecated use `AdditionalRespondersGetAdditionalRespondersRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    AdditionalRespondersGetAdditionalRespondersRequest$outboundSchema;
-  /** @deprecated use `AdditionalRespondersGetAdditionalRespondersRequest$Outbound` instead. */
-  export type Outbound =
-    AdditionalRespondersGetAdditionalRespondersRequest$Outbound;
-}
-
 export function additionalRespondersGetAdditionalRespondersRequestToJSON(
   additionalRespondersGetAdditionalRespondersRequest:
     AdditionalRespondersGetAdditionalRespondersRequest,
@@ -68,22 +42,6 @@ export function additionalRespondersGetAdditionalRespondersRequestToJSON(
     AdditionalRespondersGetAdditionalRespondersRequest$outboundSchema.parse(
       additionalRespondersGetAdditionalRespondersRequest,
     ),
-  );
-}
-
-export function additionalRespondersGetAdditionalRespondersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  AdditionalRespondersGetAdditionalRespondersRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      AdditionalRespondersGetAdditionalRespondersRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'AdditionalRespondersGetAdditionalRespondersRequest' from JSON`,
   );
 }
 
@@ -98,51 +56,6 @@ export const AdditionalRespondersGetAdditionalRespondersResponse$inboundSchema:
       models
         .V3IncidentsAdditionalRespondersAdditionalResponderResponse$inboundSchema,
   });
-
-/** @internal */
-export type AdditionalRespondersGetAdditionalRespondersResponse$Outbound = {
-  data:
-    models.V3IncidentsAdditionalRespondersAdditionalResponderResponse$Outbound;
-};
-
-/** @internal */
-export const AdditionalRespondersGetAdditionalRespondersResponse$outboundSchema:
-  z.ZodType<
-    AdditionalRespondersGetAdditionalRespondersResponse$Outbound,
-    z.ZodTypeDef,
-    AdditionalRespondersGetAdditionalRespondersResponse
-  > = z.object({
-    data:
-      models
-        .V3IncidentsAdditionalRespondersAdditionalResponderResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AdditionalRespondersGetAdditionalRespondersResponse$ {
-  /** @deprecated use `AdditionalRespondersGetAdditionalRespondersResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    AdditionalRespondersGetAdditionalRespondersResponse$inboundSchema;
-  /** @deprecated use `AdditionalRespondersGetAdditionalRespondersResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    AdditionalRespondersGetAdditionalRespondersResponse$outboundSchema;
-  /** @deprecated use `AdditionalRespondersGetAdditionalRespondersResponse$Outbound` instead. */
-  export type Outbound =
-    AdditionalRespondersGetAdditionalRespondersResponse$Outbound;
-}
-
-export function additionalRespondersGetAdditionalRespondersResponseToJSON(
-  additionalRespondersGetAdditionalRespondersResponse:
-    AdditionalRespondersGetAdditionalRespondersResponse,
-): string {
-  return JSON.stringify(
-    AdditionalRespondersGetAdditionalRespondersResponse$outboundSchema.parse(
-      additionalRespondersGetAdditionalRespondersResponse,
-    ),
-  );
-}
 
 export function additionalRespondersGetAdditionalRespondersResponseFromJSON(
   jsonString: string,

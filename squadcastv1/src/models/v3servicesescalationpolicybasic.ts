@@ -41,49 +41,6 @@ export const V3ServicesEscalationPolicyBasic$inboundSchema: z.ZodType<
   slug: z.string(),
 });
 
-/** @internal */
-export type V3ServicesEscalationPolicyBasic$Outbound = {
-  id: string;
-  name: string;
-  description: string;
-  slug: string;
-};
-
-/** @internal */
-export const V3ServicesEscalationPolicyBasic$outboundSchema: z.ZodType<
-  V3ServicesEscalationPolicyBasic$Outbound,
-  z.ZodTypeDef,
-  V3ServicesEscalationPolicyBasic
-> = z.object({
-  id: z.string(),
-  name: z.string(),
-  description: z.string(),
-  slug: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesEscalationPolicyBasic$ {
-  /** @deprecated use `V3ServicesEscalationPolicyBasic$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesEscalationPolicyBasic$inboundSchema;
-  /** @deprecated use `V3ServicesEscalationPolicyBasic$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesEscalationPolicyBasic$outboundSchema;
-  /** @deprecated use `V3ServicesEscalationPolicyBasic$Outbound` instead. */
-  export type Outbound = V3ServicesEscalationPolicyBasic$Outbound;
-}
-
-export function v3ServicesEscalationPolicyBasicToJSON(
-  v3ServicesEscalationPolicyBasic: V3ServicesEscalationPolicyBasic,
-): string {
-  return JSON.stringify(
-    V3ServicesEscalationPolicyBasic$outboundSchema.parse(
-      v3ServicesEscalationPolicyBasic,
-    ),
-  );
-}
-
 export function v3ServicesEscalationPolicyBasicFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesEscalationPolicyBasic, SDKValidationError> {

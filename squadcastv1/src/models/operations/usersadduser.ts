@@ -24,41 +24,6 @@ export const UsersAddUserResponse$inboundSchema: z.ZodType<
   data: models.V3UsersUserResponse$inboundSchema,
 });
 
-/** @internal */
-export type UsersAddUserResponse$Outbound = {
-  data: models.V3UsersUserResponse$Outbound;
-};
-
-/** @internal */
-export const UsersAddUserResponse$outboundSchema: z.ZodType<
-  UsersAddUserResponse$Outbound,
-  z.ZodTypeDef,
-  UsersAddUserResponse
-> = z.object({
-  data: models.V3UsersUserResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersAddUserResponse$ {
-  /** @deprecated use `UsersAddUserResponse$inboundSchema` instead. */
-  export const inboundSchema = UsersAddUserResponse$inboundSchema;
-  /** @deprecated use `UsersAddUserResponse$outboundSchema` instead. */
-  export const outboundSchema = UsersAddUserResponse$outboundSchema;
-  /** @deprecated use `UsersAddUserResponse$Outbound` instead. */
-  export type Outbound = UsersAddUserResponse$Outbound;
-}
-
-export function usersAddUserResponseToJSON(
-  usersAddUserResponse: UsersAddUserResponse,
-): string {
-  return JSON.stringify(
-    UsersAddUserResponse$outboundSchema.parse(usersAddUserResponse),
-  );
-}
-
 export function usersAddUserResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<UsersAddUserResponse, SDKValidationError> {

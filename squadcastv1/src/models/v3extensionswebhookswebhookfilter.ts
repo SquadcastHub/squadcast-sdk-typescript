@@ -27,7 +27,6 @@ export const V3ExtensionsWebhooksWebhookFilter$inboundSchema: z.ZodType<
   op: z.string(),
   conditions: z.array(V3ExtensionsWebhooksWebhookFilterCondition$inboundSchema),
 });
-
 /** @internal */
 export type V3ExtensionsWebhooksWebhookFilter$Outbound = {
   op: string;
@@ -46,20 +45,6 @@ export const V3ExtensionsWebhooksWebhookFilter$outboundSchema: z.ZodType<
   ),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksWebhookFilter$ {
-  /** @deprecated use `V3ExtensionsWebhooksWebhookFilter$inboundSchema` instead. */
-  export const inboundSchema = V3ExtensionsWebhooksWebhookFilter$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookFilter$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsWebhooksWebhookFilter$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookFilter$Outbound` instead. */
-  export type Outbound = V3ExtensionsWebhooksWebhookFilter$Outbound;
-}
-
 export function v3ExtensionsWebhooksWebhookFilterToJSON(
   v3ExtensionsWebhooksWebhookFilter: V3ExtensionsWebhooksWebhookFilter,
 ): string {
@@ -69,7 +54,6 @@ export function v3ExtensionsWebhooksWebhookFilterToJSON(
     ),
   );
 }
-
 export function v3ExtensionsWebhooksWebhookFilterFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ExtensionsWebhooksWebhookFilter, SDKValidationError> {

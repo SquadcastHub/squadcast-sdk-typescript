@@ -32,23 +32,6 @@ export type OverlayUpdateDedupKeyOverlayResponse =
   | ResponseBody2;
 
 /** @internal */
-export const OverlayUpdateDedupKeyOverlayRequest$inboundSchema: z.ZodType<
-  OverlayUpdateDedupKeyOverlayRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  serviceID: z.string(),
-  alertSource: z.string(),
-  "V3.Services.Overlay.UpdateDedupKeyOverlayRequest":
-    models.V3ServicesOverlayUpdateDedupKeyOverlayRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Services.Overlay.UpdateDedupKeyOverlayRequest":
-      "v3ServicesOverlayUpdateDedupKeyOverlayRequest",
-  });
-});
-
-/** @internal */
 export type OverlayUpdateDedupKeyOverlayRequest$Outbound = {
   serviceID: string;
   alertSource: string;
@@ -73,21 +56,6 @@ export const OverlayUpdateDedupKeyOverlayRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayUpdateDedupKeyOverlayRequest$ {
-  /** @deprecated use `OverlayUpdateDedupKeyOverlayRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayUpdateDedupKeyOverlayRequest$inboundSchema;
-  /** @deprecated use `OverlayUpdateDedupKeyOverlayRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayUpdateDedupKeyOverlayRequest$outboundSchema;
-  /** @deprecated use `OverlayUpdateDedupKeyOverlayRequest$Outbound` instead. */
-  export type Outbound = OverlayUpdateDedupKeyOverlayRequest$Outbound;
-}
-
 export function overlayUpdateDedupKeyOverlayRequestToJSON(
   overlayUpdateDedupKeyOverlayRequest: OverlayUpdateDedupKeyOverlayRequest,
 ): string {
@@ -95,17 +63,6 @@ export function overlayUpdateDedupKeyOverlayRequestToJSON(
     OverlayUpdateDedupKeyOverlayRequest$outboundSchema.parse(
       overlayUpdateDedupKeyOverlayRequest,
     ),
-  );
-}
-
-export function overlayUpdateDedupKeyOverlayRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<OverlayUpdateDedupKeyOverlayRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverlayUpdateDedupKeyOverlayRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'OverlayUpdateDedupKeyOverlayRequest' from JSON`,
   );
 }
 
@@ -117,37 +74,6 @@ export const ResponseBody2$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3ServicesOverlayOverlayResponse$inboundSchema,
 });
-
-/** @internal */
-export type ResponseBody2$Outbound = {
-  data: models.V3ServicesOverlayOverlayResponse$Outbound;
-};
-
-/** @internal */
-export const ResponseBody2$outboundSchema: z.ZodType<
-  ResponseBody2$Outbound,
-  z.ZodTypeDef,
-  ResponseBody2
-> = z.object({
-  data: models.V3ServicesOverlayOverlayResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBody2$ {
-  /** @deprecated use `ResponseBody2$inboundSchema` instead. */
-  export const inboundSchema = ResponseBody2$inboundSchema;
-  /** @deprecated use `ResponseBody2$outboundSchema` instead. */
-  export const outboundSchema = ResponseBody2$outboundSchema;
-  /** @deprecated use `ResponseBody2$Outbound` instead. */
-  export type Outbound = ResponseBody2$Outbound;
-}
-
-export function responseBody2ToJSON(responseBody2: ResponseBody2): string {
-  return JSON.stringify(ResponseBody2$outboundSchema.parse(responseBody2));
-}
 
 export function responseBody2FromJSON(
   jsonString: string,
@@ -168,37 +94,6 @@ export const ResponseBody1$inboundSchema: z.ZodType<
   data: models.V3ServicesOverlayOverlayResponse$inboundSchema,
 });
 
-/** @internal */
-export type ResponseBody1$Outbound = {
-  data: models.V3ServicesOverlayOverlayResponse$Outbound;
-};
-
-/** @internal */
-export const ResponseBody1$outboundSchema: z.ZodType<
-  ResponseBody1$Outbound,
-  z.ZodTypeDef,
-  ResponseBody1
-> = z.object({
-  data: models.V3ServicesOverlayOverlayResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBody1$ {
-  /** @deprecated use `ResponseBody1$inboundSchema` instead. */
-  export const inboundSchema = ResponseBody1$inboundSchema;
-  /** @deprecated use `ResponseBody1$outboundSchema` instead. */
-  export const outboundSchema = ResponseBody1$outboundSchema;
-  /** @deprecated use `ResponseBody1$Outbound` instead. */
-  export type Outbound = ResponseBody1$Outbound;
-}
-
-export function responseBody1ToJSON(responseBody1: ResponseBody1): string {
-  return JSON.stringify(ResponseBody1$outboundSchema.parse(responseBody1));
-}
-
 export function responseBody1FromJSON(
   jsonString: string,
 ): SafeParseResult<ResponseBody1, SDKValidationError> {
@@ -218,46 +113,6 @@ export const OverlayUpdateDedupKeyOverlayResponse$inboundSchema: z.ZodType<
   z.lazy(() => ResponseBody1$inboundSchema),
   z.lazy(() => ResponseBody2$inboundSchema),
 ]);
-
-/** @internal */
-export type OverlayUpdateDedupKeyOverlayResponse$Outbound =
-  | ResponseBody1$Outbound
-  | ResponseBody2$Outbound;
-
-/** @internal */
-export const OverlayUpdateDedupKeyOverlayResponse$outboundSchema: z.ZodType<
-  OverlayUpdateDedupKeyOverlayResponse$Outbound,
-  z.ZodTypeDef,
-  OverlayUpdateDedupKeyOverlayResponse
-> = z.union([
-  z.lazy(() => ResponseBody1$outboundSchema),
-  z.lazy(() => ResponseBody2$outboundSchema),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayUpdateDedupKeyOverlayResponse$ {
-  /** @deprecated use `OverlayUpdateDedupKeyOverlayResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayUpdateDedupKeyOverlayResponse$inboundSchema;
-  /** @deprecated use `OverlayUpdateDedupKeyOverlayResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayUpdateDedupKeyOverlayResponse$outboundSchema;
-  /** @deprecated use `OverlayUpdateDedupKeyOverlayResponse$Outbound` instead. */
-  export type Outbound = OverlayUpdateDedupKeyOverlayResponse$Outbound;
-}
-
-export function overlayUpdateDedupKeyOverlayResponseToJSON(
-  overlayUpdateDedupKeyOverlayResponse: OverlayUpdateDedupKeyOverlayResponse,
-): string {
-  return JSON.stringify(
-    OverlayUpdateDedupKeyOverlayResponse$outboundSchema.parse(
-      overlayUpdateDedupKeyOverlayResponse,
-    ),
-  );
-}
 
 export function overlayUpdateDedupKeyOverlayResponseFromJSON(
   jsonString: string,

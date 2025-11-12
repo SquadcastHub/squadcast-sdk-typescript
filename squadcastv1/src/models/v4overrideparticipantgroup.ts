@@ -25,7 +25,6 @@ export const V4OverrideParticipantGroup$inboundSchema: z.ZodType<
 > = z.object({
   group: z.array(V4Participant$inboundSchema),
 });
-
 /** @internal */
 export type V4OverrideParticipantGroup$Outbound = {
   group: Array<V4Participant$Outbound>;
@@ -40,19 +39,6 @@ export const V4OverrideParticipantGroup$outboundSchema: z.ZodType<
   group: z.array(V4Participant$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4OverrideParticipantGroup$ {
-  /** @deprecated use `V4OverrideParticipantGroup$inboundSchema` instead. */
-  export const inboundSchema = V4OverrideParticipantGroup$inboundSchema;
-  /** @deprecated use `V4OverrideParticipantGroup$outboundSchema` instead. */
-  export const outboundSchema = V4OverrideParticipantGroup$outboundSchema;
-  /** @deprecated use `V4OverrideParticipantGroup$Outbound` instead. */
-  export type Outbound = V4OverrideParticipantGroup$Outbound;
-}
-
 export function v4OverrideParticipantGroupToJSON(
   v4OverrideParticipantGroup: V4OverrideParticipantGroup,
 ): string {
@@ -60,7 +46,6 @@ export function v4OverrideParticipantGroupToJSON(
     V4OverrideParticipantGroup$outboundSchema.parse(v4OverrideParticipantGroup),
   );
 }
-
 export function v4OverrideParticipantGroupFromJSON(
   jsonString: string,
 ): SafeParseResult<V4OverrideParticipantGroup, SDKValidationError> {

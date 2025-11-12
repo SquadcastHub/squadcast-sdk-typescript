@@ -74,7 +74,6 @@ export const V3EscalationPoliciesEscalationPolicyRule$inboundSchema: z.ZodType<
     "repeat_after": "repeatAfter",
   });
 });
-
 /** @internal */
 export type V3EscalationPoliciesEscalationPolicyRule$Outbound = {
   escalationTime: number;
@@ -110,21 +109,6 @@ export const V3EscalationPoliciesEscalationPolicyRule$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3EscalationPoliciesEscalationPolicyRule$ {
-  /** @deprecated use `V3EscalationPoliciesEscalationPolicyRule$inboundSchema` instead. */
-  export const inboundSchema =
-    V3EscalationPoliciesEscalationPolicyRule$inboundSchema;
-  /** @deprecated use `V3EscalationPoliciesEscalationPolicyRule$outboundSchema` instead. */
-  export const outboundSchema =
-    V3EscalationPoliciesEscalationPolicyRule$outboundSchema;
-  /** @deprecated use `V3EscalationPoliciesEscalationPolicyRule$Outbound` instead. */
-  export type Outbound = V3EscalationPoliciesEscalationPolicyRule$Outbound;
-}
-
 export function v3EscalationPoliciesEscalationPolicyRuleToJSON(
   v3EscalationPoliciesEscalationPolicyRule:
     V3EscalationPoliciesEscalationPolicyRule,
@@ -135,7 +119,6 @@ export function v3EscalationPoliciesEscalationPolicyRuleToJSON(
     ),
   );
 }
-
 export function v3EscalationPoliciesEscalationPolicyRuleFromJSON(
   jsonString: string,
 ): SafeParseResult<

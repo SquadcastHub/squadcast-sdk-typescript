@@ -26,25 +26,6 @@ export type CommunicationCardsCreateCommunicationCardResponse = {
 };
 
 /** @internal */
-export const CommunicationCardsCreateCommunicationCardRequest$inboundSchema:
-  z.ZodType<
-    CommunicationCardsCreateCommunicationCardRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    IncidentId: z.string(),
-    "V3.Incidents.CommunicationCards.CreateCommunicationCardRequest":
-      models
-        .V3IncidentsCommunicationCardsCreateCommunicationCardRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "IncidentId": "incidentId",
-      "V3.Incidents.CommunicationCards.CreateCommunicationCardRequest":
-        "v3IncidentsCommunicationCardsCreateCommunicationCardRequest",
-    });
-  });
-
-/** @internal */
 export type CommunicationCardsCreateCommunicationCardRequest$Outbound = {
   IncidentId: string;
   "V3.Incidents.CommunicationCards.CreateCommunicationCardRequest":
@@ -70,22 +51,6 @@ export const CommunicationCardsCreateCommunicationCardRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommunicationCardsCreateCommunicationCardRequest$ {
-  /** @deprecated use `CommunicationCardsCreateCommunicationCardRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    CommunicationCardsCreateCommunicationCardRequest$inboundSchema;
-  /** @deprecated use `CommunicationCardsCreateCommunicationCardRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    CommunicationCardsCreateCommunicationCardRequest$outboundSchema;
-  /** @deprecated use `CommunicationCardsCreateCommunicationCardRequest$Outbound` instead. */
-  export type Outbound =
-    CommunicationCardsCreateCommunicationCardRequest$Outbound;
-}
-
 export function communicationCardsCreateCommunicationCardRequestToJSON(
   communicationCardsCreateCommunicationCardRequest:
     CommunicationCardsCreateCommunicationCardRequest,
@@ -94,22 +59,6 @@ export function communicationCardsCreateCommunicationCardRequestToJSON(
     CommunicationCardsCreateCommunicationCardRequest$outboundSchema.parse(
       communicationCardsCreateCommunicationCardRequest,
     ),
-  );
-}
-
-export function communicationCardsCreateCommunicationCardRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  CommunicationCardsCreateCommunicationCardRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      CommunicationCardsCreateCommunicationCardRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'CommunicationCardsCreateCommunicationCardRequest' from JSON`,
   );
 }
 
@@ -124,50 +73,6 @@ export const CommunicationCardsCreateCommunicationCardResponse$inboundSchema:
       models
         .V3IncidentsCommunicationCardsCommunicationCardResponse$inboundSchema,
   });
-
-/** @internal */
-export type CommunicationCardsCreateCommunicationCardResponse$Outbound = {
-  data: models.V3IncidentsCommunicationCardsCommunicationCardResponse$Outbound;
-};
-
-/** @internal */
-export const CommunicationCardsCreateCommunicationCardResponse$outboundSchema:
-  z.ZodType<
-    CommunicationCardsCreateCommunicationCardResponse$Outbound,
-    z.ZodTypeDef,
-    CommunicationCardsCreateCommunicationCardResponse
-  > = z.object({
-    data:
-      models
-        .V3IncidentsCommunicationCardsCommunicationCardResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommunicationCardsCreateCommunicationCardResponse$ {
-  /** @deprecated use `CommunicationCardsCreateCommunicationCardResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    CommunicationCardsCreateCommunicationCardResponse$inboundSchema;
-  /** @deprecated use `CommunicationCardsCreateCommunicationCardResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    CommunicationCardsCreateCommunicationCardResponse$outboundSchema;
-  /** @deprecated use `CommunicationCardsCreateCommunicationCardResponse$Outbound` instead. */
-  export type Outbound =
-    CommunicationCardsCreateCommunicationCardResponse$Outbound;
-}
-
-export function communicationCardsCreateCommunicationCardResponseToJSON(
-  communicationCardsCreateCommunicationCardResponse:
-    CommunicationCardsCreateCommunicationCardResponse,
-): string {
-  return JSON.stringify(
-    CommunicationCardsCreateCommunicationCardResponse$outboundSchema.parse(
-      communicationCardsCreateCommunicationCardResponse,
-    ),
-  );
-}
 
 export function communicationCardsCreateCommunicationCardResponseFromJSON(
   jsonString: string,

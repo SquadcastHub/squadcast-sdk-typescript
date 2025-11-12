@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3TeamsAddBulkTeamMemberRequestMember = {
   userId: string;
@@ -23,22 +20,6 @@ export type V3TeamsAddBulkTeamMemberRequestMember = {
 export type V3TeamsAddBulkTeamMemberRequest = {
   members: Array<V3TeamsAddBulkTeamMemberRequestMember>;
 };
-
-/** @internal */
-export const V3TeamsAddBulkTeamMemberRequestMember$inboundSchema: z.ZodType<
-  V3TeamsAddBulkTeamMemberRequestMember,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  user_id: z.string(),
-  role: z.string().optional(),
-  role_ids: z.array(z.string()),
-}).transform((v) => {
-  return remap$(v, {
-    "user_id": "userId",
-    "role_ids": "roleIds",
-  });
-});
 
 /** @internal */
 export type V3TeamsAddBulkTeamMemberRequestMember$Outbound = {
@@ -63,21 +44,6 @@ export const V3TeamsAddBulkTeamMemberRequestMember$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsAddBulkTeamMemberRequestMember$ {
-  /** @deprecated use `V3TeamsAddBulkTeamMemberRequestMember$inboundSchema` instead. */
-  export const inboundSchema =
-    V3TeamsAddBulkTeamMemberRequestMember$inboundSchema;
-  /** @deprecated use `V3TeamsAddBulkTeamMemberRequestMember$outboundSchema` instead. */
-  export const outboundSchema =
-    V3TeamsAddBulkTeamMemberRequestMember$outboundSchema;
-  /** @deprecated use `V3TeamsAddBulkTeamMemberRequestMember$Outbound` instead. */
-  export type Outbound = V3TeamsAddBulkTeamMemberRequestMember$Outbound;
-}
-
 export function v3TeamsAddBulkTeamMemberRequestMemberToJSON(
   v3TeamsAddBulkTeamMemberRequestMember: V3TeamsAddBulkTeamMemberRequestMember,
 ): string {
@@ -87,28 +53,6 @@ export function v3TeamsAddBulkTeamMemberRequestMemberToJSON(
     ),
   );
 }
-
-export function v3TeamsAddBulkTeamMemberRequestMemberFromJSON(
-  jsonString: string,
-): SafeParseResult<V3TeamsAddBulkTeamMemberRequestMember, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3TeamsAddBulkTeamMemberRequestMember$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3TeamsAddBulkTeamMemberRequestMember' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3TeamsAddBulkTeamMemberRequest$inboundSchema: z.ZodType<
-  V3TeamsAddBulkTeamMemberRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  members: z.array(
-    z.lazy(() => V3TeamsAddBulkTeamMemberRequestMember$inboundSchema),
-  ),
-});
 
 /** @internal */
 export type V3TeamsAddBulkTeamMemberRequest$Outbound = {
@@ -126,19 +70,6 @@ export const V3TeamsAddBulkTeamMemberRequest$outboundSchema: z.ZodType<
   ),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsAddBulkTeamMemberRequest$ {
-  /** @deprecated use `V3TeamsAddBulkTeamMemberRequest$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsAddBulkTeamMemberRequest$inboundSchema;
-  /** @deprecated use `V3TeamsAddBulkTeamMemberRequest$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsAddBulkTeamMemberRequest$outboundSchema;
-  /** @deprecated use `V3TeamsAddBulkTeamMemberRequest$Outbound` instead. */
-  export type Outbound = V3TeamsAddBulkTeamMemberRequest$Outbound;
-}
-
 export function v3TeamsAddBulkTeamMemberRequestToJSON(
   v3TeamsAddBulkTeamMemberRequest: V3TeamsAddBulkTeamMemberRequest,
 ): string {
@@ -146,15 +77,5 @@ export function v3TeamsAddBulkTeamMemberRequestToJSON(
     V3TeamsAddBulkTeamMemberRequest$outboundSchema.parse(
       v3TeamsAddBulkTeamMemberRequest,
     ),
-  );
-}
-
-export function v3TeamsAddBulkTeamMemberRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3TeamsAddBulkTeamMemberRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3TeamsAddBulkTeamMemberRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3TeamsAddBulkTeamMemberRequest' from JSON`,
   );
 }

@@ -23,22 +23,6 @@ export type MaintenancesCreateMaintenanceResponse = {
 };
 
 /** @internal */
-export const MaintenancesCreateMaintenanceRequest$inboundSchema: z.ZodType<
-  MaintenancesCreateMaintenanceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-  "V4.StatusPages.Maintenances.CreateMaintenanceRequest":
-    models.V4StatusPagesMaintenancesCreateMaintenanceRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V4.StatusPages.Maintenances.CreateMaintenanceRequest":
-      "v4StatusPagesMaintenancesCreateMaintenanceRequest",
-  });
-});
-
-/** @internal */
 export type MaintenancesCreateMaintenanceRequest$Outbound = {
   statuspageID: string;
   "V4.StatusPages.Maintenances.CreateMaintenanceRequest":
@@ -61,21 +45,6 @@ export const MaintenancesCreateMaintenanceRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaintenancesCreateMaintenanceRequest$ {
-  /** @deprecated use `MaintenancesCreateMaintenanceRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    MaintenancesCreateMaintenanceRequest$inboundSchema;
-  /** @deprecated use `MaintenancesCreateMaintenanceRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    MaintenancesCreateMaintenanceRequest$outboundSchema;
-  /** @deprecated use `MaintenancesCreateMaintenanceRequest$Outbound` instead. */
-  export type Outbound = MaintenancesCreateMaintenanceRequest$Outbound;
-}
-
 export function maintenancesCreateMaintenanceRequestToJSON(
   maintenancesCreateMaintenanceRequest: MaintenancesCreateMaintenanceRequest,
 ): string {
@@ -83,17 +52,6 @@ export function maintenancesCreateMaintenanceRequestToJSON(
     MaintenancesCreateMaintenanceRequest$outboundSchema.parse(
       maintenancesCreateMaintenanceRequest,
     ),
-  );
-}
-
-export function maintenancesCreateMaintenanceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<MaintenancesCreateMaintenanceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      MaintenancesCreateMaintenanceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'MaintenancesCreateMaintenanceRequest' from JSON`,
   );
 }
 
@@ -105,46 +63,6 @@ export const MaintenancesCreateMaintenanceResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4StatusPagesMaintenancesCreateMaintenanceResponse$inboundSchema,
 });
-
-/** @internal */
-export type MaintenancesCreateMaintenanceResponse$Outbound = {
-  data: models.V4StatusPagesMaintenancesCreateMaintenanceResponse$Outbound;
-};
-
-/** @internal */
-export const MaintenancesCreateMaintenanceResponse$outboundSchema: z.ZodType<
-  MaintenancesCreateMaintenanceResponse$Outbound,
-  z.ZodTypeDef,
-  MaintenancesCreateMaintenanceResponse
-> = z.object({
-  data:
-    models.V4StatusPagesMaintenancesCreateMaintenanceResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaintenancesCreateMaintenanceResponse$ {
-  /** @deprecated use `MaintenancesCreateMaintenanceResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    MaintenancesCreateMaintenanceResponse$inboundSchema;
-  /** @deprecated use `MaintenancesCreateMaintenanceResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    MaintenancesCreateMaintenanceResponse$outboundSchema;
-  /** @deprecated use `MaintenancesCreateMaintenanceResponse$Outbound` instead. */
-  export type Outbound = MaintenancesCreateMaintenanceResponse$Outbound;
-}
-
-export function maintenancesCreateMaintenanceResponseToJSON(
-  maintenancesCreateMaintenanceResponse: MaintenancesCreateMaintenanceResponse,
-): string {
-  return JSON.stringify(
-    MaintenancesCreateMaintenanceResponse$outboundSchema.parse(
-      maintenancesCreateMaintenanceResponse,
-    ),
-  );
-}
 
 export function maintenancesCreateMaintenanceResponseFromJSON(
   jsonString: string,

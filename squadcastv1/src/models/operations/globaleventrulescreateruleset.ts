@@ -23,23 +23,6 @@ export type GlobalEventRulesCreateRulesetResponse = {
 };
 
 /** @internal */
-export const GlobalEventRulesCreateRulesetRequest$inboundSchema: z.ZodType<
-  GlobalEventRulesCreateRulesetRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  ger_id: z.number().int(),
-  "V3.GlobalEventRules.CreateRulesetRequest":
-    models.V3GlobalEventRulesCreateRulesetRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "ger_id": "gerId",
-    "V3.GlobalEventRules.CreateRulesetRequest":
-      "v3GlobalEventRulesCreateRulesetRequest",
-  });
-});
-
-/** @internal */
 export type GlobalEventRulesCreateRulesetRequest$Outbound = {
   ger_id: number;
   "V3.GlobalEventRules.CreateRulesetRequest":
@@ -63,21 +46,6 @@ export const GlobalEventRulesCreateRulesetRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesCreateRulesetRequest$ {
-  /** @deprecated use `GlobalEventRulesCreateRulesetRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesCreateRulesetRequest$inboundSchema;
-  /** @deprecated use `GlobalEventRulesCreateRulesetRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesCreateRulesetRequest$outboundSchema;
-  /** @deprecated use `GlobalEventRulesCreateRulesetRequest$Outbound` instead. */
-  export type Outbound = GlobalEventRulesCreateRulesetRequest$Outbound;
-}
-
 export function globalEventRulesCreateRulesetRequestToJSON(
   globalEventRulesCreateRulesetRequest: GlobalEventRulesCreateRulesetRequest,
 ): string {
@@ -85,17 +53,6 @@ export function globalEventRulesCreateRulesetRequestToJSON(
     GlobalEventRulesCreateRulesetRequest$outboundSchema.parse(
       globalEventRulesCreateRulesetRequest,
     ),
-  );
-}
-
-export function globalEventRulesCreateRulesetRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GlobalEventRulesCreateRulesetRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      GlobalEventRulesCreateRulesetRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GlobalEventRulesCreateRulesetRequest' from JSON`,
   );
 }
 
@@ -107,45 +64,6 @@ export const GlobalEventRulesCreateRulesetResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3GlobalEventRulesRulesetResponse$inboundSchema,
 });
-
-/** @internal */
-export type GlobalEventRulesCreateRulesetResponse$Outbound = {
-  data: models.V3GlobalEventRulesRulesetResponse$Outbound;
-};
-
-/** @internal */
-export const GlobalEventRulesCreateRulesetResponse$outboundSchema: z.ZodType<
-  GlobalEventRulesCreateRulesetResponse$Outbound,
-  z.ZodTypeDef,
-  GlobalEventRulesCreateRulesetResponse
-> = z.object({
-  data: models.V3GlobalEventRulesRulesetResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesCreateRulesetResponse$ {
-  /** @deprecated use `GlobalEventRulesCreateRulesetResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesCreateRulesetResponse$inboundSchema;
-  /** @deprecated use `GlobalEventRulesCreateRulesetResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesCreateRulesetResponse$outboundSchema;
-  /** @deprecated use `GlobalEventRulesCreateRulesetResponse$Outbound` instead. */
-  export type Outbound = GlobalEventRulesCreateRulesetResponse$Outbound;
-}
-
-export function globalEventRulesCreateRulesetResponseToJSON(
-  globalEventRulesCreateRulesetResponse: GlobalEventRulesCreateRulesetResponse,
-): string {
-  return JSON.stringify(
-    GlobalEventRulesCreateRulesetResponse$outboundSchema.parse(
-      globalEventRulesCreateRulesetResponse,
-    ),
-  );
-}
 
 export function globalEventRulesCreateRulesetResponseFromJSON(
   jsonString: string,

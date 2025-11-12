@@ -23,22 +23,6 @@ export type OverlayRenderDedupKeyTemplateResponse = {
 };
 
 /** @internal */
-export const OverlayRenderDedupKeyTemplateRequest$inboundSchema: z.ZodType<
-  OverlayRenderDedupKeyTemplateRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  serviceID: z.string(),
-  "V3.Services.Overlay.RenderDedupKeyTemplateRequest":
-    models.V3ServicesOverlayRenderDedupKeyTemplateRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Services.Overlay.RenderDedupKeyTemplateRequest":
-      "v3ServicesOverlayRenderDedupKeyTemplateRequest",
-  });
-});
-
-/** @internal */
 export type OverlayRenderDedupKeyTemplateRequest$Outbound = {
   serviceID: string;
   "V3.Services.Overlay.RenderDedupKeyTemplateRequest":
@@ -61,21 +45,6 @@ export const OverlayRenderDedupKeyTemplateRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayRenderDedupKeyTemplateRequest$ {
-  /** @deprecated use `OverlayRenderDedupKeyTemplateRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayRenderDedupKeyTemplateRequest$inboundSchema;
-  /** @deprecated use `OverlayRenderDedupKeyTemplateRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayRenderDedupKeyTemplateRequest$outboundSchema;
-  /** @deprecated use `OverlayRenderDedupKeyTemplateRequest$Outbound` instead. */
-  export type Outbound = OverlayRenderDedupKeyTemplateRequest$Outbound;
-}
-
 export function overlayRenderDedupKeyTemplateRequestToJSON(
   overlayRenderDedupKeyTemplateRequest: OverlayRenderDedupKeyTemplateRequest,
 ): string {
@@ -83,17 +52,6 @@ export function overlayRenderDedupKeyTemplateRequestToJSON(
     OverlayRenderDedupKeyTemplateRequest$outboundSchema.parse(
       overlayRenderDedupKeyTemplateRequest,
     ),
-  );
-}
-
-export function overlayRenderDedupKeyTemplateRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<OverlayRenderDedupKeyTemplateRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverlayRenderDedupKeyTemplateRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'OverlayRenderDedupKeyTemplateRequest' from JSON`,
   );
 }
 
@@ -105,45 +63,6 @@ export const OverlayRenderDedupKeyTemplateResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.string(),
 });
-
-/** @internal */
-export type OverlayRenderDedupKeyTemplateResponse$Outbound = {
-  data: string;
-};
-
-/** @internal */
-export const OverlayRenderDedupKeyTemplateResponse$outboundSchema: z.ZodType<
-  OverlayRenderDedupKeyTemplateResponse$Outbound,
-  z.ZodTypeDef,
-  OverlayRenderDedupKeyTemplateResponse
-> = z.object({
-  data: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayRenderDedupKeyTemplateResponse$ {
-  /** @deprecated use `OverlayRenderDedupKeyTemplateResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayRenderDedupKeyTemplateResponse$inboundSchema;
-  /** @deprecated use `OverlayRenderDedupKeyTemplateResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayRenderDedupKeyTemplateResponse$outboundSchema;
-  /** @deprecated use `OverlayRenderDedupKeyTemplateResponse$Outbound` instead. */
-  export type Outbound = OverlayRenderDedupKeyTemplateResponse$Outbound;
-}
-
-export function overlayRenderDedupKeyTemplateResponseToJSON(
-  overlayRenderDedupKeyTemplateResponse: OverlayRenderDedupKeyTemplateResponse,
-): string {
-  return JSON.stringify(
-    OverlayRenderDedupKeyTemplateResponse$outboundSchema.parse(
-      overlayRenderDedupKeyTemplateResponse,
-    ),
-  );
-}
 
 export function overlayRenderDedupKeyTemplateResponseFromJSON(
   jsonString: string,

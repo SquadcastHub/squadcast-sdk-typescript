@@ -36,23 +36,10 @@ export type V3ExtensionsMSTeamsEventClass =
 export const V3ExtensionsMSTeamsEventClassEnum$inboundSchema: z.ZodNativeEnum<
   typeof V3ExtensionsMSTeamsEventClassEnum
 > = z.nativeEnum(V3ExtensionsMSTeamsEventClassEnum);
-
 /** @internal */
 export const V3ExtensionsMSTeamsEventClassEnum$outboundSchema: z.ZodNativeEnum<
   typeof V3ExtensionsMSTeamsEventClassEnum
 > = V3ExtensionsMSTeamsEventClassEnum$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsMSTeamsEventClassEnum$ {
-  /** @deprecated use `V3ExtensionsMSTeamsEventClassEnum$inboundSchema` instead. */
-  export const inboundSchema = V3ExtensionsMSTeamsEventClassEnum$inboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsEventClassEnum$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsMSTeamsEventClassEnum$outboundSchema;
-}
 
 /** @internal */
 export const V3ExtensionsMSTeamsEventClass$inboundSchema: z.ZodType<
@@ -60,7 +47,6 @@ export const V3ExtensionsMSTeamsEventClass$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([z.string(), V3ExtensionsMSTeamsEventClassEnum$inboundSchema]);
-
 /** @internal */
 export type V3ExtensionsMSTeamsEventClass$Outbound = string | string;
 
@@ -71,19 +57,6 @@ export const V3ExtensionsMSTeamsEventClass$outboundSchema: z.ZodType<
   V3ExtensionsMSTeamsEventClass
 > = z.union([z.string(), V3ExtensionsMSTeamsEventClassEnum$outboundSchema]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsMSTeamsEventClass$ {
-  /** @deprecated use `V3ExtensionsMSTeamsEventClass$inboundSchema` instead. */
-  export const inboundSchema = V3ExtensionsMSTeamsEventClass$inboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsEventClass$outboundSchema` instead. */
-  export const outboundSchema = V3ExtensionsMSTeamsEventClass$outboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsEventClass$Outbound` instead. */
-  export type Outbound = V3ExtensionsMSTeamsEventClass$Outbound;
-}
-
 export function v3ExtensionsMSTeamsEventClassToJSON(
   v3ExtensionsMSTeamsEventClass: V3ExtensionsMSTeamsEventClass,
 ): string {
@@ -93,7 +66,6 @@ export function v3ExtensionsMSTeamsEventClassToJSON(
     ),
   );
 }
-
 export function v3ExtensionsMSTeamsEventClassFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ExtensionsMSTeamsEventClass, SDKValidationError> {

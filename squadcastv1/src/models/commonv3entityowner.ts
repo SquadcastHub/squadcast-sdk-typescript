@@ -30,7 +30,6 @@ export const CommonV3EntityOwner$inboundSchema: z.ZodType<
   id: z.string(),
   type: z.string(),
 });
-
 /** @internal */
 export type CommonV3EntityOwner$Outbound = {
   id: string;
@@ -47,19 +46,6 @@ export const CommonV3EntityOwner$outboundSchema: z.ZodType<
   type: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommonV3EntityOwner$ {
-  /** @deprecated use `CommonV3EntityOwner$inboundSchema` instead. */
-  export const inboundSchema = CommonV3EntityOwner$inboundSchema;
-  /** @deprecated use `CommonV3EntityOwner$outboundSchema` instead. */
-  export const outboundSchema = CommonV3EntityOwner$outboundSchema;
-  /** @deprecated use `CommonV3EntityOwner$Outbound` instead. */
-  export type Outbound = CommonV3EntityOwner$Outbound;
-}
-
 export function commonV3EntityOwnerToJSON(
   commonV3EntityOwner: CommonV3EntityOwner,
 ): string {
@@ -67,7 +53,6 @@ export function commonV3EntityOwnerToJSON(
     CommonV3EntityOwner$outboundSchema.parse(commonV3EntityOwner),
   );
 }
-
 export function commonV3EntityOwnerFromJSON(
   jsonString: string,
 ): SafeParseResult<CommonV3EntityOwner, SDKValidationError> {

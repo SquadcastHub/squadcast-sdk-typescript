@@ -30,22 +30,10 @@ export type V3WorkflowsSlackMessageUser = {
 export const V3WorkflowsSlackMessageUserName$inboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSlackMessageUserName
 > = z.nativeEnum(V3WorkflowsSlackMessageUserName);
-
 /** @internal */
 export const V3WorkflowsSlackMessageUserName$outboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSlackMessageUserName
 > = V3WorkflowsSlackMessageUserName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackMessageUserName$ {
-  /** @deprecated use `V3WorkflowsSlackMessageUserName$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSlackMessageUserName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageUserName$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSlackMessageUserName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsSlackMessageUserData$inboundSchema: z.ZodType<
@@ -60,7 +48,6 @@ export const V3WorkflowsSlackMessageUserData$inboundSchema: z.ZodType<
     "member_id": "memberId",
   });
 });
-
 /** @internal */
 export type V3WorkflowsSlackMessageUserData$Outbound = {
   member_id: string;
@@ -81,19 +68,6 @@ export const V3WorkflowsSlackMessageUserData$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackMessageUserData$ {
-  /** @deprecated use `V3WorkflowsSlackMessageUserData$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSlackMessageUserData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageUserData$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSlackMessageUserData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageUserData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSlackMessageUserData$Outbound;
-}
-
 export function v3WorkflowsSlackMessageUserDataToJSON(
   v3WorkflowsSlackMessageUserData: V3WorkflowsSlackMessageUserData,
 ): string {
@@ -103,7 +77,6 @@ export function v3WorkflowsSlackMessageUserDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSlackMessageUserDataFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSlackMessageUserData, SDKValidationError> {
@@ -123,7 +96,6 @@ export const V3WorkflowsSlackMessageUser$inboundSchema: z.ZodType<
   name: V3WorkflowsSlackMessageUserName$inboundSchema,
   data: z.lazy(() => V3WorkflowsSlackMessageUserData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsSlackMessageUser$Outbound = {
   name: string;
@@ -140,19 +112,6 @@ export const V3WorkflowsSlackMessageUser$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsSlackMessageUserData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackMessageUser$ {
-  /** @deprecated use `V3WorkflowsSlackMessageUser$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSlackMessageUser$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageUser$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSlackMessageUser$outboundSchema;
-  /** @deprecated use `V3WorkflowsSlackMessageUser$Outbound` instead. */
-  export type Outbound = V3WorkflowsSlackMessageUser$Outbound;
-}
-
 export function v3WorkflowsSlackMessageUserToJSON(
   v3WorkflowsSlackMessageUser: V3WorkflowsSlackMessageUser,
 ): string {
@@ -162,7 +121,6 @@ export function v3WorkflowsSlackMessageUserToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSlackMessageUserFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSlackMessageUser, SDKValidationError> {
