@@ -1,4 +1,4 @@
-# openapi
+# Squadcast SDK for TypeScript
 
 Developer-friendly & type-safe Typescript SDK specifically catered to leverage *openapi* API.
 
@@ -8,15 +8,6 @@ Developer-friendly & type-safe Typescript SDK specifically catered to leverage *
         <img src="https://img.shields.io/badge/License-MIT-blue.svg" style="width: 100px; height: 28px;" />
     </a>
 </div>
-
-
-<br /><br />
-> [!IMPORTANT]
-> This SDK is not yet ready for production use. To complete setup please follow the steps outlined in your [workspace](https://app.speakeasy.com/org/swo/incident-response). Delete this section before > publishing to a package manager.
-
-<!-- Start Summary [summary] -->
-## Summary
-
 
 <!-- End Summary [summary] -->
 
@@ -154,11 +145,14 @@ run();
 
 ### [auditLogs](docs/sdks/auditlogs/README.md)
 
-* [auditLogsListAuditLogs](docs/sdks/auditlogs/README.md#auditlogslistauditlogs) - List all Audit Logs
-* [auditLogsExportAuditLogs](docs/sdks/auditlogs/README.md#auditlogsexportauditlogs) - Initiate an asynchronous export of audit logs based on the provided filters. The export file will be generated and available for download. Use 'Get details of Audit Logs export history by ID' API to retrieve the download URL.
-* [auditLogsListAuditLogsExportHistory](docs/sdks/auditlogs/README.md#auditlogslistauditlogsexporthistory) - List all Audit Logs export history
-* [auditLogsGetAuditLogsExportHistoryById](docs/sdks/auditlogs/README.md#auditlogsgetauditlogsexporthistorybyid) - Get details of Audit Logs export history by ID
-* [auditLogsGetAuditLogById](docs/sdks/auditlogs/README.md#auditlogsgetauditlogbyid) - Get audit log by ID
+* [list](docs/sdks/auditlogs/README.md#list) - List all Audit Logs
+* [export](docs/sdks/auditlogs/README.md#export) - Initiate an asynchronous export of audit logs based on the provided filters. The export file will be generated and available for download. Use 'Get details of Audit Logs export history by ID' API to retrieve the download URL.
+* [listExportHistory](docs/sdks/auditlogs/README.md#listexporthistory) - List all Audit Logs export history
+* [getById](docs/sdks/auditlogs/README.md#getbyid) - Get audit log by ID
+
+#### [auditLogs.exportHistory](docs/sdks/exporthistory/README.md)
+
+* [get](docs/sdks/exporthistory/README.md#get) - Get details of Audit Logs export history by ID
 
 ### [communicationCards](docs/sdks/communicationcards/README.md)
 
@@ -631,11 +625,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 - [`analyticsGetOrganization`](docs/sdks/analytics/README.md#getorganization) - Get Org level analytics
 - [`analyticsGetTeam`](docs/sdks/analytics/README.md#getteam) - Get Team level analytics
-- [`auditLogsAuditLogsExportAuditLogs`](docs/sdks/auditlogs/README.md#auditlogsexportauditlogs) - Initiate an asynchronous export of audit logs based on the provided filters. The export file will be generated and available for download. Use 'Get details of Audit Logs export history by ID' API to retrieve the download URL.
-- [`auditLogsAuditLogsGetAuditLogById`](docs/sdks/auditlogs/README.md#auditlogsgetauditlogbyid) - Get audit log by ID
-- [`auditLogsAuditLogsGetAuditLogsExportHistoryById`](docs/sdks/auditlogs/README.md#auditlogsgetauditlogsexporthistorybyid) - Get details of Audit Logs export history by ID
-- [`auditLogsAuditLogsListAuditLogs`](docs/sdks/auditlogs/README.md#auditlogslistauditlogs) - List all Audit Logs
-- [`auditLogsAuditLogsListAuditLogsExportHistory`](docs/sdks/auditlogs/README.md#auditlogslistauditlogsexporthistory) - List all Audit Logs export history
+- [`auditLogsExport`](docs/sdks/auditlogs/README.md#export) - Initiate an asynchronous export of audit logs based on the provided filters. The export file will be generated and available for download. Use 'Get details of Audit Logs export history by ID' API to retrieve the download URL.
+- [`auditLogsExportHistoryGet`](docs/sdks/exporthistory/README.md#get) - Get details of Audit Logs export history by ID
+- [`auditLogsGetById`](docs/sdks/auditlogs/README.md#getbyid) - Get audit log by ID
+- [`auditLogsList`](docs/sdks/auditlogs/README.md#list) - List all Audit Logs
+- [`auditLogsListExportHistory`](docs/sdks/auditlogs/README.md#listexporthistory) - List all Audit Logs export history
 - [`communicationCardsCreateSlackChannel`](docs/sdks/communicationcards/README.md#createslackchannel) - Create Slack Channel in Communication Card
 - [`communicationCardsDelete`](docs/sdks/communicationcards/README.md#delete) - Delete Communication Card
 - [`componentsDeleteById`](docs/sdks/components/README.md#deletebyid) - Delete Component By ID
@@ -884,7 +878,7 @@ const squadcastSDK = new SquadcastSDK({
 });
 
 async function run() {
-  const result = await squadcastSDK.auditLogs.auditLogsListAuditLogs({
+  const result = await squadcastSDK.auditLogs.list({
     pageSize: 832442,
     pageNumber: 555332,
     startDate: new RFCDate("2023-03-04"),

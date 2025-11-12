@@ -3,8 +3,7 @@
  */
 
 import { SquadcastSDKCore } from "../core.js";
-import { dlv } from "../lib/dlv.js";
-import { encodeFormQuery } from "../lib/encodings.js";
+import { encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
@@ -22,31 +21,61 @@ import * as errors from "../models/errors/index.js";
 import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import { SquadcastSDKError } from "../models/errors/squadcastsdkerror.js";
+import * as models from "../models/index.js";
 import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
-import {
-  createPageIterator,
-  haltIterator,
-  PageIterator,
-  Paginator,
-} from "../types/operations.js";
 
 /**
- * List all Audit Logs export history
+ * Get details of Audit Logs export history by ID
  *
  * @remarks
- * List all Audit Logs export history
- * Returns array of audit logs export history
+ * Get details of Audit Logs export history by ID
+ * Returns audit log export history details for the specified ID
  */
-export function auditLogsAuditLogsListAuditLogsExportHistory(
+export function auditLogsExportHistoryGet(
   client: SquadcastSDKCore,
-  request: operations.AuditLogsListAuditLogsExportHistoryRequest,
+  request: operations.AuditLogsGetAuditLogsExportHistoryByIdRequest,
   options?: RequestOptions,
 ): APIPromise<
-  PageIterator<
+  Result<
+    models.V3AuditLogsGetAuditLogExportHistoryByIDResponse,
+    | errors.BadRequestError
+    | errors.UnauthorizedError
+    | errors.PaymentRequiredError
+    | errors.ForbiddenError
+    | errors.NotFoundError
+    | errors.ConflictError
+    | errors.UnprocessableEntityError
+    | errors.InternalServerError
+    | errors.BadGatewayError
+    | errors.ServiceUnavailableError
+    | errors.GatewayTimeoutError
+    | SquadcastSDKError
+    | ResponseValidationError
+    | ConnectionError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
+  >
+> {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: SquadcastSDKCore,
+  request: operations.AuditLogsGetAuditLogsExportHistoryByIdRequest,
+  options?: RequestOptions,
+): Promise<
+  [
     Result<
-      operations.AuditLogsListAuditLogsExportHistoryResponse,
+      models.V3AuditLogsGetAuditLogExportHistoryByIDResponse,
       | errors.BadRequestError
       | errors.UnauthorizedError
       | errors.PaymentRequiredError
@@ -67,69 +96,30 @@ export function auditLogsAuditLogsListAuditLogsExportHistory(
       | UnexpectedClientError
       | SDKValidationError
     >,
-    { page: number }
-  >
-> {
-  return new APIPromise($do(
-    client,
-    request,
-    options,
-  ));
-}
-
-async function $do(
-  client: SquadcastSDKCore,
-  request: operations.AuditLogsListAuditLogsExportHistoryRequest,
-  options?: RequestOptions,
-): Promise<
-  [
-    PageIterator<
-      Result<
-        operations.AuditLogsListAuditLogsExportHistoryResponse,
-        | errors.BadRequestError
-        | errors.UnauthorizedError
-        | errors.PaymentRequiredError
-        | errors.ForbiddenError
-        | errors.NotFoundError
-        | errors.ConflictError
-        | errors.UnprocessableEntityError
-        | errors.InternalServerError
-        | errors.BadGatewayError
-        | errors.ServiceUnavailableError
-        | errors.GatewayTimeoutError
-        | SquadcastSDKError
-        | ResponseValidationError
-        | ConnectionError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | InvalidRequestError
-        | UnexpectedClientError
-        | SDKValidationError
-      >,
-      { page: number }
-    >,
     APICall,
   ]
 > {
   const parsed = safeParse(
     request,
     (value) =>
-      operations.AuditLogsListAuditLogsExportHistoryRequest$outboundSchema
+      operations.AuditLogsGetAuditLogsExportHistoryByIdRequest$outboundSchema
         .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return [haltIterator(parsed), { status: "invalid" }];
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
 
-  const path = pathToFunc("/v3/audit-logs/export/history")();
+  const pathParams = {
+    id: encodeSimple("id", payload.id, {
+      explode: false,
+      charEncoding: "percent",
+    }),
+  };
 
-  const query = encodeFormQuery({
-    "pageNumber": payload.pageNumber,
-    "pageSize": payload.pageSize,
-  }, { explode: false });
+  const path = pathToFunc("/v3/audit-logs/export/history/{id}")(pathParams);
 
   const headers = new Headers(compactMap({
     Accept: "application/json",
@@ -142,7 +132,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "AuditLogs_listAuditLogsExportHistory",
+    operationID: "AuditLogs_getAuditLogsExportHistoryById",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -160,13 +150,12 @@ async function $do(
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
-    query: query,
     body: body,
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return [haltIterator(requestRes), { status: "invalid" }];
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -191,7 +180,7 @@ async function $do(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return [haltIterator(doResult), { status: "request-error", request: req }];
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -199,8 +188,8 @@ async function $do(
     HttpMeta: { Response: response, Request: req },
   };
 
-  const [result, raw] = await M.match<
-    operations.AuditLogsListAuditLogsExportHistoryResponse,
+  const [result] = await M.match<
+    models.V3AuditLogsGetAuditLogExportHistoryByIDResponse,
     | errors.BadRequestError
     | errors.UnauthorizedError
     | errors.PaymentRequiredError
@@ -223,8 +212,7 @@ async function $do(
   >(
     M.json(
       200,
-      operations.AuditLogsListAuditLogsExportHistoryResponse$inboundSchema,
-      { key: "Result" },
+      models.V3AuditLogsGetAuditLogExportHistoryByIDResponse$inboundSchema,
     ),
     M.jsonErr(400, errors.BadRequestError$inboundSchema),
     M.jsonErr(401, errors.UnauthorizedError$inboundSchema),
@@ -241,74 +229,8 @@ async function $do(
     M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
-    return [haltIterator(result), {
-      status: "complete",
-      request: req,
-      response,
-    }];
+    return [result, { status: "complete", request: req, response }];
   }
 
-  const nextFunc = (
-    responseData: unknown,
-  ): {
-    next: Paginator<
-      Result<
-        operations.AuditLogsListAuditLogsExportHistoryResponse,
-        | errors.BadRequestError
-        | errors.UnauthorizedError
-        | errors.PaymentRequiredError
-        | errors.ForbiddenError
-        | errors.NotFoundError
-        | errors.ConflictError
-        | errors.UnprocessableEntityError
-        | errors.InternalServerError
-        | errors.BadGatewayError
-        | errors.ServiceUnavailableError
-        | errors.GatewayTimeoutError
-        | SquadcastSDKError
-        | ResponseValidationError
-        | ConnectionError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | InvalidRequestError
-        | UnexpectedClientError
-        | SDKValidationError
-      >
-    >;
-    "~next"?: { page: number };
-  } => {
-    const page = request?.pageNumber ?? 1;
-    const nextPage = page + 1;
-
-    if (!responseData) {
-      return { next: () => null };
-    }
-    const results = dlv(responseData, "data");
-    if (!Array.isArray(results) || !results.length) {
-      return { next: () => null };
-    }
-    const limit = request?.pageSize ?? 0;
-    if (results.length < limit) {
-      return { next: () => null };
-    }
-
-    const nextVal = () =>
-      auditLogsAuditLogsListAuditLogsExportHistory(
-        client,
-        {
-          ...request,
-          pageNumber: nextPage,
-        },
-        options,
-      );
-
-    return { next: nextVal, "~next": { page: nextPage } };
-  };
-
-  const page = { ...result, ...nextFunc(raw) };
-  return [{ ...page, ...createPageIterator(page, (v) => !v.ok) }, {
-    status: "complete",
-    request: req,
-    response,
-  }];
+  return [result, { status: "complete", request: req, response }];
 }

@@ -33,7 +33,7 @@ import { Result } from "../types/fp.js";
  * Get audit log by ID
  * Returns audit log details for the specified ID
  */
-export function auditLogsAuditLogsGetAuditLogById(
+export function auditLogsGetById(
   client: SquadcastSDKCore,
   request: operations.AuditLogsGetAuditLogByIdRequest,
   options?: RequestOptions,

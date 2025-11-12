@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0ccdf4ca-5cfc-406b-b8fa-dec00364bec0
 management:
-  docChecksum: 0c3b200d89492a950f263d7d539808a4
+  docChecksum: 5ee650b4fc0e86f13d7c951dec335a49
   docVersion: 1.0.0
-  speakeasyVersion: 1.653.2
-  generationVersion: 2.748.4
-  releaseVersion: 0.2.1
-  configChecksum: f77f5823bbd1837a16e7b04303140da2
+  speakeasyVersion: 1.654.0
+  generationVersion: 2.750.0
+  releaseVersion: 1.0.0
+  configChecksum: 7891fa083bb47b0a0f59deddff876391
   repoURL: https://github.com/SquadcastHub/squadcast-sdk-typescript.git
   repoSubDirectory: squadcastv1
   installationURL: https://gitpkg.now.sh/SquadcastHub/squadcast-sdk-typescript/squadcastv1
@@ -14,7 +14,7 @@ management:
 features:
   typescript:
     additionalDependencies: 0.1.0
-    core: 3.26.4
+    core: 3.26.5
     defaultEnabledRetries: 0.1.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
@@ -1134,6 +1134,7 @@ generatedFiles:
   - docs/sdks/dependencies/README.md
   - docs/sdks/escalationpolicies/README.md
   - docs/sdks/events/README.md
+  - docs/sdks/exporthistory/README.md
   - docs/sdks/exports/README.md
   - docs/sdks/exportschedule/README.md
   - docs/sdks/extensionsmsteams/README.md
@@ -1207,11 +1208,11 @@ generatedFiles:
   - src/core.ts
   - src/funcs/analyticsGetOrganization.ts
   - src/funcs/analyticsGetTeam.ts
-  - src/funcs/auditLogsAuditLogsExportAuditLogs.ts
-  - src/funcs/auditLogsAuditLogsGetAuditLogById.ts
-  - src/funcs/auditLogsAuditLogsGetAuditLogsExportHistoryById.ts
-  - src/funcs/auditLogsAuditLogsListAuditLogs.ts
-  - src/funcs/auditLogsAuditLogsListAuditLogsExportHistory.ts
+  - src/funcs/auditLogsExport.ts
+  - src/funcs/auditLogsExportHistoryGet.ts
+  - src/funcs/auditLogsGetById.ts
+  - src/funcs/auditLogsList.ts
+  - src/funcs/auditLogsListExportHistory.ts
   - src/funcs/communicationCardsCreateSlackChannel.ts
   - src/funcs/communicationCardsDelete.ts
   - src/funcs/componentsDeleteById.ts
@@ -2098,6 +2099,7 @@ generatedFiles:
   - src/sdk/dependencies.ts
   - src/sdk/escalationpolicies.ts
   - src/sdk/events.ts
+  - src/sdk/exporthistory.ts
   - src/sdk/exports.ts
   - src/sdk/exportschedule.ts
   - src/sdk/extensions.ts
@@ -8854,10 +8856,3 @@ examples:
         "504":
           application/json: {"meta": {"status": "<value>", "error_message": "<value>"}}
 examplesVersion: 1.0.2
-releaseNotes: |
-  ## Typescript SDK Changes Detected:
-  * `squadcastsdk.auditLogs.auditLogsListAuditLogs()`: **Added**
-  * `squadcastsdk.auditLogs.auditLogsExportAuditLogs()`: **Added**
-  * `squadcastsdk.auditLogs.auditLogsListAuditLogsExportHistory()`: **Added**
-  * `squadcastsdk.auditLogs.auditLogsGetAuditLogsExportHistoryById()`: **Added**
-  * `squadcastsdk.auditLogs.auditLogsGetAuditLogById()`: **Added**

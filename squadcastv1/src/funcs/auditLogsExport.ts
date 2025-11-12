@@ -3,8 +3,7 @@
  */
 
 import { SquadcastSDKCore } from "../core.js";
-import { dlv } from "../lib/dlv.js";
-import { encodeFormQuery } from "../lib/encodings.js";
+import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
@@ -22,31 +21,60 @@ import * as errors from "../models/errors/index.js";
 import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import { SquadcastSDKError } from "../models/errors/squadcastsdkerror.js";
-import * as operations from "../models/operations/index.js";
+import * as models from "../models/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
-import {
-  createPageIterator,
-  haltIterator,
-  PageIterator,
-  Paginator,
-} from "../types/operations.js";
 
 /**
- * List all Audit Logs
+ * Initiate an asynchronous export of audit logs based on the provided filters. The export file will be generated and available for download. Use 'Get details of Audit Logs export history by ID' API to retrieve the download URL.
  *
  * @remarks
- * List all Audit Logs
- * Returns array of audit logs for given team and filters
+ * Export Audit logs
+ * Initiates export of audit logs based on provided filters
  */
-export function auditLogsAuditLogsListAuditLogs(
+export function auditLogsExport(
   client: SquadcastSDKCore,
-  request: operations.AuditLogsListAuditLogsRequest,
+  request: models.V3AuditLogsExportAuditLogsRequest,
   options?: RequestOptions,
 ): APIPromise<
-  PageIterator<
+  Result<
+    models.V3AuditLogsExportAuditLogsResponse,
+    | errors.BadRequestError
+    | errors.UnauthorizedError
+    | errors.PaymentRequiredError
+    | errors.ForbiddenError
+    | errors.NotFoundError
+    | errors.ConflictError
+    | errors.UnprocessableEntityError
+    | errors.InternalServerError
+    | errors.BadGatewayError
+    | errors.ServiceUnavailableError
+    | errors.GatewayTimeoutError
+    | SquadcastSDKError
+    | ResponseValidationError
+    | ConnectionError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
+  >
+> {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: SquadcastSDKCore,
+  request: models.V3AuditLogsExportAuditLogsRequest,
+  options?: RequestOptions,
+): Promise<
+  [
     Result<
-      operations.AuditLogsListAuditLogsResponse,
+      models.V3AuditLogsExportAuditLogsResponse,
       | errors.BadRequestError
       | errors.UnauthorizedError
       | errors.PaymentRequiredError
@@ -67,77 +95,25 @@ export function auditLogsAuditLogsListAuditLogs(
       | UnexpectedClientError
       | SDKValidationError
     >,
-    { page: number }
-  >
-> {
-  return new APIPromise($do(
-    client,
-    request,
-    options,
-  ));
-}
-
-async function $do(
-  client: SquadcastSDKCore,
-  request: operations.AuditLogsListAuditLogsRequest,
-  options?: RequestOptions,
-): Promise<
-  [
-    PageIterator<
-      Result<
-        operations.AuditLogsListAuditLogsResponse,
-        | errors.BadRequestError
-        | errors.UnauthorizedError
-        | errors.PaymentRequiredError
-        | errors.ForbiddenError
-        | errors.NotFoundError
-        | errors.ConflictError
-        | errors.UnprocessableEntityError
-        | errors.InternalServerError
-        | errors.BadGatewayError
-        | errors.ServiceUnavailableError
-        | errors.GatewayTimeoutError
-        | SquadcastSDKError
-        | ResponseValidationError
-        | ConnectionError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | InvalidRequestError
-        | UnexpectedClientError
-        | SDKValidationError
-      >,
-      { page: number }
-    >,
     APICall,
   ]
 > {
   const parsed = safeParse(
     request,
     (value) =>
-      operations.AuditLogsListAuditLogsRequest$outboundSchema.parse(value),
+      models.V3AuditLogsExportAuditLogsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return [haltIterator(parsed), { status: "invalid" }];
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = null;
+  const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v3/audit-logs")();
-
-  const query = encodeFormQuery({
-    "action[]": payload["action[]"],
-    "actor[]": payload["actor[]"],
-    "client[]": payload["client[]"],
-    "endDate": payload.endDate,
-    "pageNumber": payload.pageNumber,
-    "pageSize": payload.pageSize,
-    "resource[]": payload["resource[]"],
-    "startDate": payload.startDate,
-    "team[]": payload["team[]"],
-  }, { explode: false });
+  const path = pathToFunc("/v3/audit-logs/export")();
 
   const headers = new Headers(compactMap({
+    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -148,7 +124,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "AuditLogs_listAuditLogs",
+    operationID: "AuditLogs_exportAuditLogs",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -162,17 +138,16 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "GET",
+    method: "POST",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
-    query: query,
     body: body,
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return [haltIterator(requestRes), { status: "invalid" }];
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -197,7 +172,7 @@ async function $do(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return [haltIterator(doResult), { status: "request-error", request: req }];
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -205,8 +180,8 @@ async function $do(
     HttpMeta: { Response: response, Request: req },
   };
 
-  const [result, raw] = await M.match<
-    operations.AuditLogsListAuditLogsResponse,
+  const [result] = await M.match<
+    models.V3AuditLogsExportAuditLogsResponse,
     | errors.BadRequestError
     | errors.UnauthorizedError
     | errors.PaymentRequiredError
@@ -227,9 +202,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.AuditLogsListAuditLogsResponse$inboundSchema, {
-      key: "Result",
-    }),
+    M.json(200, models.V3AuditLogsExportAuditLogsResponse$inboundSchema),
     M.jsonErr(400, errors.BadRequestError$inboundSchema),
     M.jsonErr(401, errors.UnauthorizedError$inboundSchema),
     M.jsonErr(402, errors.PaymentRequiredError$inboundSchema),
@@ -245,74 +218,8 @@ async function $do(
     M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
-    return [haltIterator(result), {
-      status: "complete",
-      request: req,
-      response,
-    }];
+    return [result, { status: "complete", request: req, response }];
   }
 
-  const nextFunc = (
-    responseData: unknown,
-  ): {
-    next: Paginator<
-      Result<
-        operations.AuditLogsListAuditLogsResponse,
-        | errors.BadRequestError
-        | errors.UnauthorizedError
-        | errors.PaymentRequiredError
-        | errors.ForbiddenError
-        | errors.NotFoundError
-        | errors.ConflictError
-        | errors.UnprocessableEntityError
-        | errors.InternalServerError
-        | errors.BadGatewayError
-        | errors.ServiceUnavailableError
-        | errors.GatewayTimeoutError
-        | SquadcastSDKError
-        | ResponseValidationError
-        | ConnectionError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | InvalidRequestError
-        | UnexpectedClientError
-        | SDKValidationError
-      >
-    >;
-    "~next"?: { page: number };
-  } => {
-    const page = request?.pageNumber ?? 1;
-    const nextPage = page + 1;
-
-    if (!responseData) {
-      return { next: () => null };
-    }
-    const results = dlv(responseData, "data");
-    if (!Array.isArray(results) || !results.length) {
-      return { next: () => null };
-    }
-    const limit = request?.pageSize ?? 0;
-    if (results.length < limit) {
-      return { next: () => null };
-    }
-
-    const nextVal = () =>
-      auditLogsAuditLogsListAuditLogs(
-        client,
-        {
-          ...request,
-          pageNumber: nextPage,
-        },
-        options,
-      );
-
-    return { next: nextVal, "~next": { page: nextPage } };
-  };
-
-  const page = { ...result, ...nextFunc(raw) };
-  return [{ ...page, ...createPageIterator(page, (v) => !v.ok) }, {
-    status: "complete",
-    request: req,
-    response,
-  }];
+  return [result, { status: "complete", request: req, response }];
 }

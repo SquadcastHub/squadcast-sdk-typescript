@@ -1,6 +1,6 @@
 {
   "name": "@solarwinds/squadcast-sdk-typescript",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "author": "Speakeasy",
   "type": "module",
   "tshy": {
