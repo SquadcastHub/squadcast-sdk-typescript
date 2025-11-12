@@ -70,7 +70,6 @@ export const V3ExtensionsMSTeamsChannelConfiguration$inboundSchema: z.ZodType<
     "msteams_channel_name": "msteamsChannelName",
   });
 });
-
 /** @internal */
 export type V3ExtensionsMSTeamsChannelConfiguration$Outbound = {
   id?: string | undefined;
@@ -105,21 +104,6 @@ export const V3ExtensionsMSTeamsChannelConfiguration$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsMSTeamsChannelConfiguration$ {
-  /** @deprecated use `V3ExtensionsMSTeamsChannelConfiguration$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsMSTeamsChannelConfiguration$inboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsChannelConfiguration$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsMSTeamsChannelConfiguration$outboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsChannelConfiguration$Outbound` instead. */
-  export type Outbound = V3ExtensionsMSTeamsChannelConfiguration$Outbound;
-}
-
 export function v3ExtensionsMSTeamsChannelConfigurationToJSON(
   v3ExtensionsMSTeamsChannelConfiguration:
     V3ExtensionsMSTeamsChannelConfiguration,
@@ -130,7 +114,6 @@ export function v3ExtensionsMSTeamsChannelConfigurationToJSON(
     ),
   );
 }
-
 export function v3ExtensionsMSTeamsChannelConfigurationFromJSON(
   jsonString: string,
 ): SafeParseResult<

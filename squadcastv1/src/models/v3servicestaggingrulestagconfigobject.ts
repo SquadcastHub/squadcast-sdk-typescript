@@ -21,7 +21,6 @@ export const V3ServicesTaggingRulesTagConfigObject$inboundSchema: z.ZodType<
   value: z.string(),
   color: z.string(),
 });
-
 /** @internal */
 export type V3ServicesTaggingRulesTagConfigObject$Outbound = {
   value: string;
@@ -38,21 +37,6 @@ export const V3ServicesTaggingRulesTagConfigObject$outboundSchema: z.ZodType<
   color: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesTaggingRulesTagConfigObject$ {
-  /** @deprecated use `V3ServicesTaggingRulesTagConfigObject$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesTaggingRulesTagConfigObject$inboundSchema;
-  /** @deprecated use `V3ServicesTaggingRulesTagConfigObject$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesTaggingRulesTagConfigObject$outboundSchema;
-  /** @deprecated use `V3ServicesTaggingRulesTagConfigObject$Outbound` instead. */
-  export type Outbound = V3ServicesTaggingRulesTagConfigObject$Outbound;
-}
-
 export function v3ServicesTaggingRulesTagConfigObjectToJSON(
   v3ServicesTaggingRulesTagConfigObject: V3ServicesTaggingRulesTagConfigObject,
 ): string {
@@ -62,7 +46,6 @@ export function v3ServicesTaggingRulesTagConfigObjectToJSON(
     ),
   );
 }
-
 export function v3ServicesTaggingRulesTagConfigObjectFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesTaggingRulesTagConfigObject, SDKValidationError> {

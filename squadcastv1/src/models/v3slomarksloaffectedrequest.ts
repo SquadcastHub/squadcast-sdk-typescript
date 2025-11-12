@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3SLOMarkSLOAffectedRequest = {
   incidentId: string;
@@ -16,28 +13,6 @@ export type V3SLOMarkSLOAffectedRequest = {
   ownerId: string;
   orgId: string;
 };
-
-/** @internal */
-export const V3SLOMarkSLOAffectedRequest$inboundSchema: z.ZodType<
-  V3SLOMarkSLOAffectedRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  incident_id: z.string(),
-  slis: z.array(z.string()),
-  error_budget_spent: z.number(),
-  owner_type: z.string(),
-  owner_id: z.string(),
-  org_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "incident_id": "incidentId",
-    "error_budget_spent": "errorBudgetSpent",
-    "owner_type": "ownerType",
-    "owner_id": "ownerId",
-    "org_id": "orgId",
-  });
-});
 
 /** @internal */
 export type V3SLOMarkSLOAffectedRequest$Outbound = {
@@ -71,19 +46,6 @@ export const V3SLOMarkSLOAffectedRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3SLOMarkSLOAffectedRequest$ {
-  /** @deprecated use `V3SLOMarkSLOAffectedRequest$inboundSchema` instead. */
-  export const inboundSchema = V3SLOMarkSLOAffectedRequest$inboundSchema;
-  /** @deprecated use `V3SLOMarkSLOAffectedRequest$outboundSchema` instead. */
-  export const outboundSchema = V3SLOMarkSLOAffectedRequest$outboundSchema;
-  /** @deprecated use `V3SLOMarkSLOAffectedRequest$Outbound` instead. */
-  export type Outbound = V3SLOMarkSLOAffectedRequest$Outbound;
-}
-
 export function v3SLOMarkSLOAffectedRequestToJSON(
   v3SLOMarkSLOAffectedRequest: V3SLOMarkSLOAffectedRequest,
 ): string {
@@ -91,15 +53,5 @@ export function v3SLOMarkSLOAffectedRequestToJSON(
     V3SLOMarkSLOAffectedRequest$outboundSchema.parse(
       v3SLOMarkSLOAffectedRequest,
     ),
-  );
-}
-
-export function v3SLOMarkSLOAffectedRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3SLOMarkSLOAffectedRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3SLOMarkSLOAffectedRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3SLOMarkSLOAffectedRequest' from JSON`,
   );
 }

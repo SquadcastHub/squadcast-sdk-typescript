@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type ReassignTo = {
   id: string;
@@ -18,16 +15,6 @@ export type ReassignTo = {
 export type V3IncidentsReassignIncidentRequest = {
   reassignTo: ReassignTo;
 };
-
-/** @internal */
-export const ReassignTo$inboundSchema: z.ZodType<
-  ReassignTo,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string(),
-  type: z.string(),
-});
 
 /** @internal */
 export type ReassignTo$Outbound = {
@@ -45,41 +32,9 @@ export const ReassignTo$outboundSchema: z.ZodType<
   type: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ReassignTo$ {
-  /** @deprecated use `ReassignTo$inboundSchema` instead. */
-  export const inboundSchema = ReassignTo$inboundSchema;
-  /** @deprecated use `ReassignTo$outboundSchema` instead. */
-  export const outboundSchema = ReassignTo$outboundSchema;
-  /** @deprecated use `ReassignTo$Outbound` instead. */
-  export type Outbound = ReassignTo$Outbound;
-}
-
 export function reassignToToJSON(reassignTo: ReassignTo): string {
   return JSON.stringify(ReassignTo$outboundSchema.parse(reassignTo));
 }
-
-export function reassignToFromJSON(
-  jsonString: string,
-): SafeParseResult<ReassignTo, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ReassignTo$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ReassignTo' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3IncidentsReassignIncidentRequest$inboundSchema: z.ZodType<
-  V3IncidentsReassignIncidentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  reassignTo: z.lazy(() => ReassignTo$inboundSchema),
-});
 
 /** @internal */
 export type V3IncidentsReassignIncidentRequest$Outbound = {
@@ -95,20 +50,6 @@ export const V3IncidentsReassignIncidentRequest$outboundSchema: z.ZodType<
   reassignTo: z.lazy(() => ReassignTo$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsReassignIncidentRequest$ {
-  /** @deprecated use `V3IncidentsReassignIncidentRequest$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsReassignIncidentRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsReassignIncidentRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsReassignIncidentRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsReassignIncidentRequest$Outbound` instead. */
-  export type Outbound = V3IncidentsReassignIncidentRequest$Outbound;
-}
-
 export function v3IncidentsReassignIncidentRequestToJSON(
   v3IncidentsReassignIncidentRequest: V3IncidentsReassignIncidentRequest,
 ): string {
@@ -116,16 +57,5 @@ export function v3IncidentsReassignIncidentRequestToJSON(
     V3IncidentsReassignIncidentRequest$outboundSchema.parse(
       v3IncidentsReassignIncidentRequest,
     ),
-  );
-}
-
-export function v3IncidentsReassignIncidentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3IncidentsReassignIncidentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3IncidentsReassignIncidentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsReassignIncidentRequest' from JSON`,
   );
 }

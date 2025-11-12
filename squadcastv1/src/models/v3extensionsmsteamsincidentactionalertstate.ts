@@ -49,7 +49,6 @@ export const V3ExtensionsMSTeamsIncidentActionAlertState$inboundSchema:
       "is_priority_updated_active": "isPriorityUpdatedActive",
     });
   });
-
 /** @internal */
 export type V3ExtensionsMSTeamsIncidentActionAlertState$Outbound = {
   is_trigger_active: boolean;
@@ -90,21 +89,6 @@ export const V3ExtensionsMSTeamsIncidentActionAlertState$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsMSTeamsIncidentActionAlertState$ {
-  /** @deprecated use `V3ExtensionsMSTeamsIncidentActionAlertState$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsMSTeamsIncidentActionAlertState$inboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsIncidentActionAlertState$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsMSTeamsIncidentActionAlertState$outboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsIncidentActionAlertState$Outbound` instead. */
-  export type Outbound = V3ExtensionsMSTeamsIncidentActionAlertState$Outbound;
-}
-
 export function v3ExtensionsMSTeamsIncidentActionAlertStateToJSON(
   v3ExtensionsMSTeamsIncidentActionAlertState:
     V3ExtensionsMSTeamsIncidentActionAlertState,
@@ -115,7 +99,6 @@ export function v3ExtensionsMSTeamsIncidentActionAlertStateToJSON(
     ),
   );
 }
-
 export function v3ExtensionsMSTeamsIncidentActionAlertStateFromJSON(
   jsonString: string,
 ): SafeParseResult<

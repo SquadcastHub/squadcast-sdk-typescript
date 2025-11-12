@@ -20,16 +20,6 @@ export type OverlayGetAllDedupKeyOverlayByServiceResponse = {
 };
 
 /** @internal */
-export const OverlayGetAllDedupKeyOverlayByServiceRequest$inboundSchema:
-  z.ZodType<
-    OverlayGetAllDedupKeyOverlayByServiceRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-  });
-
-/** @internal */
 export type OverlayGetAllDedupKeyOverlayByServiceRequest$Outbound = {
   serviceID: string;
 };
@@ -44,21 +34,6 @@ export const OverlayGetAllDedupKeyOverlayByServiceRequest$outboundSchema:
     serviceID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayGetAllDedupKeyOverlayByServiceRequest$ {
-  /** @deprecated use `OverlayGetAllDedupKeyOverlayByServiceRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayGetAllDedupKeyOverlayByServiceRequest$inboundSchema;
-  /** @deprecated use `OverlayGetAllDedupKeyOverlayByServiceRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayGetAllDedupKeyOverlayByServiceRequest$outboundSchema;
-  /** @deprecated use `OverlayGetAllDedupKeyOverlayByServiceRequest$Outbound` instead. */
-  export type Outbound = OverlayGetAllDedupKeyOverlayByServiceRequest$Outbound;
-}
-
 export function overlayGetAllDedupKeyOverlayByServiceRequestToJSON(
   overlayGetAllDedupKeyOverlayByServiceRequest:
     OverlayGetAllDedupKeyOverlayByServiceRequest,
@@ -67,22 +42,6 @@ export function overlayGetAllDedupKeyOverlayByServiceRequestToJSON(
     OverlayGetAllDedupKeyOverlayByServiceRequest$outboundSchema.parse(
       overlayGetAllDedupKeyOverlayByServiceRequest,
     ),
-  );
-}
-
-export function overlayGetAllDedupKeyOverlayByServiceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  OverlayGetAllDedupKeyOverlayByServiceRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverlayGetAllDedupKeyOverlayByServiceRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'OverlayGetAllDedupKeyOverlayByServiceRequest' from JSON`,
   );
 }
 
@@ -95,47 +54,6 @@ export const OverlayGetAllDedupKeyOverlayByServiceResponse$inboundSchema:
   > = z.object({
     data: z.array(models.V3ServicesOverlayOverlayResponse$inboundSchema),
   });
-
-/** @internal */
-export type OverlayGetAllDedupKeyOverlayByServiceResponse$Outbound = {
-  data: Array<models.V3ServicesOverlayOverlayResponse$Outbound>;
-};
-
-/** @internal */
-export const OverlayGetAllDedupKeyOverlayByServiceResponse$outboundSchema:
-  z.ZodType<
-    OverlayGetAllDedupKeyOverlayByServiceResponse$Outbound,
-    z.ZodTypeDef,
-    OverlayGetAllDedupKeyOverlayByServiceResponse
-  > = z.object({
-    data: z.array(models.V3ServicesOverlayOverlayResponse$outboundSchema),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayGetAllDedupKeyOverlayByServiceResponse$ {
-  /** @deprecated use `OverlayGetAllDedupKeyOverlayByServiceResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayGetAllDedupKeyOverlayByServiceResponse$inboundSchema;
-  /** @deprecated use `OverlayGetAllDedupKeyOverlayByServiceResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayGetAllDedupKeyOverlayByServiceResponse$outboundSchema;
-  /** @deprecated use `OverlayGetAllDedupKeyOverlayByServiceResponse$Outbound` instead. */
-  export type Outbound = OverlayGetAllDedupKeyOverlayByServiceResponse$Outbound;
-}
-
-export function overlayGetAllDedupKeyOverlayByServiceResponseToJSON(
-  overlayGetAllDedupKeyOverlayByServiceResponse:
-    OverlayGetAllDedupKeyOverlayByServiceResponse,
-): string {
-  return JSON.stringify(
-    OverlayGetAllDedupKeyOverlayByServiceResponse$outboundSchema.parse(
-      overlayGetAllDedupKeyOverlayByServiceResponse,
-    ),
-  );
-}
 
 export function overlayGetAllDedupKeyOverlayByServiceResponseFromJSON(
   jsonString: string,

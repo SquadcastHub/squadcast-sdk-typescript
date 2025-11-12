@@ -4,29 +4,11 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3ServicesIAGConfigRequest = {
   isEnabled: boolean;
   rollingWindowInMins: number;
 };
-
-/** @internal */
-export const V3ServicesIAGConfigRequest$inboundSchema: z.ZodType<
-  V3ServicesIAGConfigRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  is_enabled: z.boolean(),
-  rolling_window_in_mins: z.number().int(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_enabled": "isEnabled",
-    "rolling_window_in_mins": "rollingWindowInMins",
-  });
-});
 
 /** @internal */
 export type V3ServicesIAGConfigRequest$Outbound = {
@@ -49,33 +31,10 @@ export const V3ServicesIAGConfigRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesIAGConfigRequest$ {
-  /** @deprecated use `V3ServicesIAGConfigRequest$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesIAGConfigRequest$inboundSchema;
-  /** @deprecated use `V3ServicesIAGConfigRequest$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesIAGConfigRequest$outboundSchema;
-  /** @deprecated use `V3ServicesIAGConfigRequest$Outbound` instead. */
-  export type Outbound = V3ServicesIAGConfigRequest$Outbound;
-}
-
 export function v3ServicesIAGConfigRequestToJSON(
   v3ServicesIAGConfigRequest: V3ServicesIAGConfigRequest,
 ): string {
   return JSON.stringify(
     V3ServicesIAGConfigRequest$outboundSchema.parse(v3ServicesIAGConfigRequest),
-  );
-}
-
-export function v3ServicesIAGConfigRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3ServicesIAGConfigRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3ServicesIAGConfigRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesIAGConfigRequest' from JSON`,
   );
 }

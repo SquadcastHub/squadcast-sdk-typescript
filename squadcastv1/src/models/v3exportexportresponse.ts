@@ -39,59 +39,6 @@ export const V3ExportExportResponse$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3ExportExportResponse$Outbound = {
-  id: string;
-  type: string;
-  status: string;
-  download_url?: string | undefined;
-  download_url_expires_at?: string | undefined;
-  format: string;
-  error_message?: string | undefined;
-};
-
-/** @internal */
-export const V3ExportExportResponse$outboundSchema: z.ZodType<
-  V3ExportExportResponse$Outbound,
-  z.ZodTypeDef,
-  V3ExportExportResponse
-> = z.object({
-  id: z.string(),
-  type: z.string(),
-  status: z.string(),
-  downloadUrl: z.string().optional(),
-  downloadUrlExpiresAt: z.string().optional(),
-  format: z.string(),
-  errorMessage: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    downloadUrl: "download_url",
-    downloadUrlExpiresAt: "download_url_expires_at",
-    errorMessage: "error_message",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExportExportResponse$ {
-  /** @deprecated use `V3ExportExportResponse$inboundSchema` instead. */
-  export const inboundSchema = V3ExportExportResponse$inboundSchema;
-  /** @deprecated use `V3ExportExportResponse$outboundSchema` instead. */
-  export const outboundSchema = V3ExportExportResponse$outboundSchema;
-  /** @deprecated use `V3ExportExportResponse$Outbound` instead. */
-  export type Outbound = V3ExportExportResponse$Outbound;
-}
-
-export function v3ExportExportResponseToJSON(
-  v3ExportExportResponse: V3ExportExportResponse,
-): string {
-  return JSON.stringify(
-    V3ExportExportResponse$outboundSchema.parse(v3ExportExportResponse),
-  );
-}
-
 export function v3ExportExportResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ExportExportResponse, SDKValidationError> {

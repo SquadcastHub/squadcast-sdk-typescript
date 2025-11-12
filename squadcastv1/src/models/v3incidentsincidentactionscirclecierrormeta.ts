@@ -32,54 +32,6 @@ export const V3IncidentsIncidentActionsCircleCIErrorMeta$inboundSchema:
     });
   });
 
-/** @internal */
-export type V3IncidentsIncidentActionsCircleCIErrorMeta$Outbound = {
-  status_code: number;
-  error_message: string;
-};
-
-/** @internal */
-export const V3IncidentsIncidentActionsCircleCIErrorMeta$outboundSchema:
-  z.ZodType<
-    V3IncidentsIncidentActionsCircleCIErrorMeta$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsIncidentActionsCircleCIErrorMeta
-  > = z.object({
-    statusCode: z.number().int(),
-    errorMessage: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      statusCode: "status_code",
-      errorMessage: "error_message",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentActionsCircleCIErrorMeta$ {
-  /** @deprecated use `V3IncidentsIncidentActionsCircleCIErrorMeta$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsIncidentActionsCircleCIErrorMeta$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentActionsCircleCIErrorMeta$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIncidentActionsCircleCIErrorMeta$outboundSchema;
-  /** @deprecated use `V3IncidentsIncidentActionsCircleCIErrorMeta$Outbound` instead. */
-  export type Outbound = V3IncidentsIncidentActionsCircleCIErrorMeta$Outbound;
-}
-
-export function v3IncidentsIncidentActionsCircleCIErrorMetaToJSON(
-  v3IncidentsIncidentActionsCircleCIErrorMeta:
-    V3IncidentsIncidentActionsCircleCIErrorMeta,
-): string {
-  return JSON.stringify(
-    V3IncidentsIncidentActionsCircleCIErrorMeta$outboundSchema.parse(
-      v3IncidentsIncidentActionsCircleCIErrorMeta,
-    ),
-  );
-}
-
 export function v3IncidentsIncidentActionsCircleCIErrorMetaFromJSON(
   jsonString: string,
 ): SafeParseResult<

@@ -22,43 +22,6 @@ export const V4ICalLinkResponse$inboundSchema: z.ZodType<
   iCalLinkForMyOnCalls: z.string().optional(),
 });
 
-/** @internal */
-export type V4ICalLinkResponse$Outbound = {
-  iCalLink?: string | undefined;
-  iCalLinkForMyOnCalls?: string | undefined;
-};
-
-/** @internal */
-export const V4ICalLinkResponse$outboundSchema: z.ZodType<
-  V4ICalLinkResponse$Outbound,
-  z.ZodTypeDef,
-  V4ICalLinkResponse
-> = z.object({
-  iCalLink: z.string().optional(),
-  iCalLinkForMyOnCalls: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4ICalLinkResponse$ {
-  /** @deprecated use `V4ICalLinkResponse$inboundSchema` instead. */
-  export const inboundSchema = V4ICalLinkResponse$inboundSchema;
-  /** @deprecated use `V4ICalLinkResponse$outboundSchema` instead. */
-  export const outboundSchema = V4ICalLinkResponse$outboundSchema;
-  /** @deprecated use `V4ICalLinkResponse$Outbound` instead. */
-  export type Outbound = V4ICalLinkResponse$Outbound;
-}
-
-export function v4ICalLinkResponseToJSON(
-  v4ICalLinkResponse: V4ICalLinkResponse,
-): string {
-  return JSON.stringify(
-    V4ICalLinkResponse$outboundSchema.parse(v4ICalLinkResponse),
-  );
-}
-
 export function v4ICalLinkResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V4ICalLinkResponse, SDKValidationError> {

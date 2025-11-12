@@ -20,23 +20,6 @@ export type GlobalEventRulesDeleteGerRulesetRequest = {
 export type GlobalEventRulesDeleteGerRulesetResponseBody = {};
 
 /** @internal */
-export const GlobalEventRulesDeleteGerRulesetRequest$inboundSchema: z.ZodType<
-  GlobalEventRulesDeleteGerRulesetRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  ger_id: z.number().int(),
-  alert_source_version: z.string(),
-  alert_source_shortname: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "ger_id": "gerId",
-    "alert_source_version": "alertSourceVersion",
-    "alert_source_shortname": "alertSourceShortname",
-  });
-});
-
-/** @internal */
 export type GlobalEventRulesDeleteGerRulesetRequest$Outbound = {
   ger_id: number;
   alert_source_version: string;
@@ -60,21 +43,6 @@ export const GlobalEventRulesDeleteGerRulesetRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesDeleteGerRulesetRequest$ {
-  /** @deprecated use `GlobalEventRulesDeleteGerRulesetRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesDeleteGerRulesetRequest$inboundSchema;
-  /** @deprecated use `GlobalEventRulesDeleteGerRulesetRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesDeleteGerRulesetRequest$outboundSchema;
-  /** @deprecated use `GlobalEventRulesDeleteGerRulesetRequest$Outbound` instead. */
-  export type Outbound = GlobalEventRulesDeleteGerRulesetRequest$Outbound;
-}
-
 export function globalEventRulesDeleteGerRulesetRequestToJSON(
   globalEventRulesDeleteGerRulesetRequest:
     GlobalEventRulesDeleteGerRulesetRequest,
@@ -86,22 +54,6 @@ export function globalEventRulesDeleteGerRulesetRequestToJSON(
   );
 }
 
-export function globalEventRulesDeleteGerRulesetRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  GlobalEventRulesDeleteGerRulesetRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      GlobalEventRulesDeleteGerRulesetRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'GlobalEventRulesDeleteGerRulesetRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const GlobalEventRulesDeleteGerRulesetResponseBody$inboundSchema:
   z.ZodType<
@@ -109,43 +61,6 @@ export const GlobalEventRulesDeleteGerRulesetResponseBody$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.object({});
-
-/** @internal */
-export type GlobalEventRulesDeleteGerRulesetResponseBody$Outbound = {};
-
-/** @internal */
-export const GlobalEventRulesDeleteGerRulesetResponseBody$outboundSchema:
-  z.ZodType<
-    GlobalEventRulesDeleteGerRulesetResponseBody$Outbound,
-    z.ZodTypeDef,
-    GlobalEventRulesDeleteGerRulesetResponseBody
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesDeleteGerRulesetResponseBody$ {
-  /** @deprecated use `GlobalEventRulesDeleteGerRulesetResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesDeleteGerRulesetResponseBody$inboundSchema;
-  /** @deprecated use `GlobalEventRulesDeleteGerRulesetResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesDeleteGerRulesetResponseBody$outboundSchema;
-  /** @deprecated use `GlobalEventRulesDeleteGerRulesetResponseBody$Outbound` instead. */
-  export type Outbound = GlobalEventRulesDeleteGerRulesetResponseBody$Outbound;
-}
-
-export function globalEventRulesDeleteGerRulesetResponseBodyToJSON(
-  globalEventRulesDeleteGerRulesetResponseBody:
-    GlobalEventRulesDeleteGerRulesetResponseBody,
-): string {
-  return JSON.stringify(
-    GlobalEventRulesDeleteGerRulesetResponseBody$outboundSchema.parse(
-      globalEventRulesDeleteGerRulesetResponseBody,
-    ),
-  );
-}
 
 export function globalEventRulesDeleteGerRulesetResponseBodyFromJSON(
   jsonString: string,

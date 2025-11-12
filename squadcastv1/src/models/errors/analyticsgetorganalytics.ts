@@ -503,35 +503,6 @@ export const GatewayTimeoutError$inboundSchema: z.ZodType<
   });
 
 /** @internal */
-export type GatewayTimeoutError$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const GatewayTimeoutError$outboundSchema: z.ZodType<
-  GatewayTimeoutError$Outbound,
-  z.ZodTypeDef,
-  GatewayTimeoutError
-> = z.instanceof(GatewayTimeoutError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GatewayTimeoutError$ {
-  /** @deprecated use `GatewayTimeoutError$inboundSchema` instead. */
-  export const inboundSchema = GatewayTimeoutError$inboundSchema;
-  /** @deprecated use `GatewayTimeoutError$outboundSchema` instead. */
-  export const outboundSchema = GatewayTimeoutError$outboundSchema;
-  /** @deprecated use `GatewayTimeoutError$Outbound` instead. */
-  export type Outbound = GatewayTimeoutError$Outbound;
-}
-
-/** @internal */
 export const ServiceUnavailableError$inboundSchema: z.ZodType<
   ServiceUnavailableError,
   z.ZodTypeDef,
@@ -549,35 +520,6 @@ export const ServiceUnavailableError$inboundSchema: z.ZodType<
       body: v.body$,
     });
   });
-
-/** @internal */
-export type ServiceUnavailableError$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const ServiceUnavailableError$outboundSchema: z.ZodType<
-  ServiceUnavailableError$Outbound,
-  z.ZodTypeDef,
-  ServiceUnavailableError
-> = z.instanceof(ServiceUnavailableError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServiceUnavailableError$ {
-  /** @deprecated use `ServiceUnavailableError$inboundSchema` instead. */
-  export const inboundSchema = ServiceUnavailableError$inboundSchema;
-  /** @deprecated use `ServiceUnavailableError$outboundSchema` instead. */
-  export const outboundSchema = ServiceUnavailableError$outboundSchema;
-  /** @deprecated use `ServiceUnavailableError$Outbound` instead. */
-  export type Outbound = ServiceUnavailableError$Outbound;
-}
 
 /** @internal */
 export const BadGatewayError$inboundSchema: z.ZodType<
@@ -599,35 +541,6 @@ export const BadGatewayError$inboundSchema: z.ZodType<
   });
 
 /** @internal */
-export type BadGatewayError$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const BadGatewayError$outboundSchema: z.ZodType<
-  BadGatewayError$Outbound,
-  z.ZodTypeDef,
-  BadGatewayError
-> = z.instanceof(BadGatewayError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace BadGatewayError$ {
-  /** @deprecated use `BadGatewayError$inboundSchema` instead. */
-  export const inboundSchema = BadGatewayError$inboundSchema;
-  /** @deprecated use `BadGatewayError$outboundSchema` instead. */
-  export const outboundSchema = BadGatewayError$outboundSchema;
-  /** @deprecated use `BadGatewayError$Outbound` instead. */
-  export type Outbound = BadGatewayError$Outbound;
-}
-
-/** @internal */
 export const InternalServerError$inboundSchema: z.ZodType<
   InternalServerError,
   z.ZodTypeDef,
@@ -645,35 +558,6 @@ export const InternalServerError$inboundSchema: z.ZodType<
       body: v.body$,
     });
   });
-
-/** @internal */
-export type InternalServerError$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const InternalServerError$outboundSchema: z.ZodType<
-  InternalServerError$Outbound,
-  z.ZodTypeDef,
-  InternalServerError
-> = z.instanceof(InternalServerError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace InternalServerError$ {
-  /** @deprecated use `InternalServerError$inboundSchema` instead. */
-  export const inboundSchema = InternalServerError$inboundSchema;
-  /** @deprecated use `InternalServerError$outboundSchema` instead. */
-  export const outboundSchema = InternalServerError$outboundSchema;
-  /** @deprecated use `InternalServerError$Outbound` instead. */
-  export type Outbound = InternalServerError$Outbound;
-}
 
 /** @internal */
 export const UnprocessableEntityError$inboundSchema: z.ZodType<
@@ -695,35 +579,6 @@ export const UnprocessableEntityError$inboundSchema: z.ZodType<
   });
 
 /** @internal */
-export type UnprocessableEntityError$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const UnprocessableEntityError$outboundSchema: z.ZodType<
-  UnprocessableEntityError$Outbound,
-  z.ZodTypeDef,
-  UnprocessableEntityError
-> = z.instanceof(UnprocessableEntityError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UnprocessableEntityError$ {
-  /** @deprecated use `UnprocessableEntityError$inboundSchema` instead. */
-  export const inboundSchema = UnprocessableEntityError$inboundSchema;
-  /** @deprecated use `UnprocessableEntityError$outboundSchema` instead. */
-  export const outboundSchema = UnprocessableEntityError$outboundSchema;
-  /** @deprecated use `UnprocessableEntityError$Outbound` instead. */
-  export type Outbound = UnprocessableEntityError$Outbound;
-}
-
-/** @internal */
 export const ConflictError$inboundSchema: z.ZodType<
   ConflictError,
   z.ZodTypeDef,
@@ -741,35 +596,6 @@ export const ConflictError$inboundSchema: z.ZodType<
       body: v.body$,
     });
   });
-
-/** @internal */
-export type ConflictError$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const ConflictError$outboundSchema: z.ZodType<
-  ConflictError$Outbound,
-  z.ZodTypeDef,
-  ConflictError
-> = z.instanceof(ConflictError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ConflictError$ {
-  /** @deprecated use `ConflictError$inboundSchema` instead. */
-  export const inboundSchema = ConflictError$inboundSchema;
-  /** @deprecated use `ConflictError$outboundSchema` instead. */
-  export const outboundSchema = ConflictError$outboundSchema;
-  /** @deprecated use `ConflictError$Outbound` instead. */
-  export type Outbound = ConflictError$Outbound;
-}
 
 /** @internal */
 export const NotFoundError$inboundSchema: z.ZodType<
@@ -791,35 +617,6 @@ export const NotFoundError$inboundSchema: z.ZodType<
   });
 
 /** @internal */
-export type NotFoundError$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const NotFoundError$outboundSchema: z.ZodType<
-  NotFoundError$Outbound,
-  z.ZodTypeDef,
-  NotFoundError
-> = z.instanceof(NotFoundError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NotFoundError$ {
-  /** @deprecated use `NotFoundError$inboundSchema` instead. */
-  export const inboundSchema = NotFoundError$inboundSchema;
-  /** @deprecated use `NotFoundError$outboundSchema` instead. */
-  export const outboundSchema = NotFoundError$outboundSchema;
-  /** @deprecated use `NotFoundError$Outbound` instead. */
-  export type Outbound = NotFoundError$Outbound;
-}
-
-/** @internal */
 export const ForbiddenError$inboundSchema: z.ZodType<
   ForbiddenError,
   z.ZodTypeDef,
@@ -837,35 +634,6 @@ export const ForbiddenError$inboundSchema: z.ZodType<
       body: v.body$,
     });
   });
-
-/** @internal */
-export type ForbiddenError$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const ForbiddenError$outboundSchema: z.ZodType<
-  ForbiddenError$Outbound,
-  z.ZodTypeDef,
-  ForbiddenError
-> = z.instanceof(ForbiddenError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ForbiddenError$ {
-  /** @deprecated use `ForbiddenError$inboundSchema` instead. */
-  export const inboundSchema = ForbiddenError$inboundSchema;
-  /** @deprecated use `ForbiddenError$outboundSchema` instead. */
-  export const outboundSchema = ForbiddenError$outboundSchema;
-  /** @deprecated use `ForbiddenError$Outbound` instead. */
-  export type Outbound = ForbiddenError$Outbound;
-}
 
 /** @internal */
 export const PaymentRequiredError$inboundSchema: z.ZodType<
@@ -887,35 +655,6 @@ export const PaymentRequiredError$inboundSchema: z.ZodType<
   });
 
 /** @internal */
-export type PaymentRequiredError$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const PaymentRequiredError$outboundSchema: z.ZodType<
-  PaymentRequiredError$Outbound,
-  z.ZodTypeDef,
-  PaymentRequiredError
-> = z.instanceof(PaymentRequiredError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PaymentRequiredError$ {
-  /** @deprecated use `PaymentRequiredError$inboundSchema` instead. */
-  export const inboundSchema = PaymentRequiredError$inboundSchema;
-  /** @deprecated use `PaymentRequiredError$outboundSchema` instead. */
-  export const outboundSchema = PaymentRequiredError$outboundSchema;
-  /** @deprecated use `PaymentRequiredError$Outbound` instead. */
-  export type Outbound = PaymentRequiredError$Outbound;
-}
-
-/** @internal */
 export const UnauthorizedError$inboundSchema: z.ZodType<
   UnauthorizedError,
   z.ZodTypeDef,
@@ -933,35 +672,6 @@ export const UnauthorizedError$inboundSchema: z.ZodType<
       body: v.body$,
     });
   });
-
-/** @internal */
-export type UnauthorizedError$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const UnauthorizedError$outboundSchema: z.ZodType<
-  UnauthorizedError$Outbound,
-  z.ZodTypeDef,
-  UnauthorizedError
-> = z.instanceof(UnauthorizedError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UnauthorizedError$ {
-  /** @deprecated use `UnauthorizedError$inboundSchema` instead. */
-  export const inboundSchema = UnauthorizedError$inboundSchema;
-  /** @deprecated use `UnauthorizedError$outboundSchema` instead. */
-  export const outboundSchema = UnauthorizedError$outboundSchema;
-  /** @deprecated use `UnauthorizedError$Outbound` instead. */
-  export type Outbound = UnauthorizedError$Outbound;
-}
 
 /** @internal */
 export const BadRequestError$inboundSchema: z.ZodType<
@@ -983,35 +693,6 @@ export const BadRequestError$inboundSchema: z.ZodType<
   });
 
 /** @internal */
-export type BadRequestError$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const BadRequestError$outboundSchema: z.ZodType<
-  BadRequestError$Outbound,
-  z.ZodTypeDef,
-  BadRequestError
-> = z.instanceof(BadRequestError)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace BadRequestError$ {
-  /** @deprecated use `BadRequestError$inboundSchema` instead. */
-  export const inboundSchema = BadRequestError$inboundSchema;
-  /** @deprecated use `BadRequestError$outboundSchema` instead. */
-  export const outboundSchema = BadRequestError$outboundSchema;
-  /** @deprecated use `BadRequestError$Outbound` instead. */
-  export type Outbound = BadRequestError$Outbound;
-}
-
-/** @internal */
 export const ResponseBodyError2$inboundSchema: z.ZodType<
   ResponseBodyError2,
   z.ZodTypeDef,
@@ -1029,35 +710,6 @@ export const ResponseBodyError2$inboundSchema: z.ZodType<
       body: v.body$,
     });
   });
-
-/** @internal */
-export type ResponseBodyError2$Outbound = {
-  meta: models.CommonV3ErrorMeta$Outbound;
-};
-
-/** @internal */
-export const ResponseBodyError2$outboundSchema: z.ZodType<
-  ResponseBodyError2$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyError2
-> = z.instanceof(ResponseBodyError2)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.CommonV3ErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyError2$ {
-  /** @deprecated use `ResponseBodyError2$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyError2$inboundSchema;
-  /** @deprecated use `ResponseBodyError2$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyError2$outboundSchema;
-  /** @deprecated use `ResponseBodyError2$Outbound` instead. */
-  export type Outbound = ResponseBodyError2$Outbound;
-}
 
 /** @internal */
 export const ResponseBodyError1$inboundSchema: z.ZodType<
@@ -1079,35 +731,6 @@ export const ResponseBodyError1$inboundSchema: z.ZodType<
   });
 
 /** @internal */
-export type ResponseBodyError1$Outbound = {
-  meta: models.V3IncidentsIncidentActionsCircleCIErrorMeta$Outbound;
-};
-
-/** @internal */
-export const ResponseBodyError1$outboundSchema: z.ZodType<
-  ResponseBodyError1$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyError1
-> = z.instanceof(ResponseBodyError1)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    meta: models.V3IncidentsIncidentActionsCircleCIErrorMeta$outboundSchema,
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyError1$ {
-  /** @deprecated use `ResponseBodyError1$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyError1$inboundSchema;
-  /** @deprecated use `ResponseBodyError1$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyError1$outboundSchema;
-  /** @deprecated use `ResponseBodyError1$Outbound` instead. */
-  export type Outbound = ResponseBodyError1$Outbound;
-}
-
-/** @internal */
 export const BadRequest$inboundSchema: z.ZodType<
   BadRequest,
   z.ZodTypeDef,
@@ -1116,38 +739,6 @@ export const BadRequest$inboundSchema: z.ZodType<
   z.lazy(() => ResponseBodyError1$inboundSchema),
   z.lazy(() => ResponseBodyError2$inboundSchema),
 ]);
-
-/** @internal */
-export type BadRequest$Outbound =
-  | ResponseBodyError1$Outbound
-  | ResponseBodyError2$Outbound;
-
-/** @internal */
-export const BadRequest$outboundSchema: z.ZodType<
-  BadRequest$Outbound,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => ResponseBodyError1$outboundSchema),
-  z.lazy(() => ResponseBodyError2$outboundSchema),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace BadRequest$ {
-  /** @deprecated use `BadRequest$inboundSchema` instead. */
-  export const inboundSchema = BadRequest$inboundSchema;
-  /** @deprecated use `BadRequest$outboundSchema` instead. */
-  export const outboundSchema = BadRequest$outboundSchema;
-  /** @deprecated use `BadRequest$Outbound` instead. */
-  export type Outbound = BadRequest$Outbound;
-}
-
-export function badRequestToJSON(badRequest: BadRequest): string {
-  return JSON.stringify(BadRequest$outboundSchema.parse(badRequest));
-}
 
 export function badRequestFromJSON(
   jsonString: string,

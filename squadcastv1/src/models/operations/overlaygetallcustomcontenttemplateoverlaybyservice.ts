@@ -20,16 +20,6 @@ export type OverlayGetAllCustomContentTemplateOverlayByServiceResponse = {
 };
 
 /** @internal */
-export const OverlayGetAllCustomContentTemplateOverlayByServiceRequest$inboundSchema:
-  z.ZodType<
-    OverlayGetAllCustomContentTemplateOverlayByServiceRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-  });
-
-/** @internal */
 export type OverlayGetAllCustomContentTemplateOverlayByServiceRequest$Outbound =
   {
     serviceID: string;
@@ -45,22 +35,6 @@ export const OverlayGetAllCustomContentTemplateOverlayByServiceRequest$outboundS
     serviceID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayGetAllCustomContentTemplateOverlayByServiceRequest$ {
-  /** @deprecated use `OverlayGetAllCustomContentTemplateOverlayByServiceRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayGetAllCustomContentTemplateOverlayByServiceRequest$inboundSchema;
-  /** @deprecated use `OverlayGetAllCustomContentTemplateOverlayByServiceRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayGetAllCustomContentTemplateOverlayByServiceRequest$outboundSchema;
-  /** @deprecated use `OverlayGetAllCustomContentTemplateOverlayByServiceRequest$Outbound` instead. */
-  export type Outbound =
-    OverlayGetAllCustomContentTemplateOverlayByServiceRequest$Outbound;
-}
-
 export function overlayGetAllCustomContentTemplateOverlayByServiceRequestToJSON(
   overlayGetAllCustomContentTemplateOverlayByServiceRequest:
     OverlayGetAllCustomContentTemplateOverlayByServiceRequest,
@@ -68,21 +42,6 @@ export function overlayGetAllCustomContentTemplateOverlayByServiceRequestToJSON(
   return JSON.stringify(
     OverlayGetAllCustomContentTemplateOverlayByServiceRequest$outboundSchema
       .parse(overlayGetAllCustomContentTemplateOverlayByServiceRequest),
-  );
-}
-
-export function overlayGetAllCustomContentTemplateOverlayByServiceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  OverlayGetAllCustomContentTemplateOverlayByServiceRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverlayGetAllCustomContentTemplateOverlayByServiceRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'OverlayGetAllCustomContentTemplateOverlayByServiceRequest' from JSON`,
   );
 }
 
@@ -97,50 +56,6 @@ export const OverlayGetAllCustomContentTemplateOverlayByServiceResponse$inboundS
       models.V3ServicesOverlayCustomContentOverlayResponse$inboundSchema,
     ),
   });
-
-/** @internal */
-export type OverlayGetAllCustomContentTemplateOverlayByServiceResponse$Outbound =
-  {
-    data: Array<models.V3ServicesOverlayCustomContentOverlayResponse$Outbound>;
-  };
-
-/** @internal */
-export const OverlayGetAllCustomContentTemplateOverlayByServiceResponse$outboundSchema:
-  z.ZodType<
-    OverlayGetAllCustomContentTemplateOverlayByServiceResponse$Outbound,
-    z.ZodTypeDef,
-    OverlayGetAllCustomContentTemplateOverlayByServiceResponse
-  > = z.object({
-    data: z.array(
-      models.V3ServicesOverlayCustomContentOverlayResponse$outboundSchema,
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayGetAllCustomContentTemplateOverlayByServiceResponse$ {
-  /** @deprecated use `OverlayGetAllCustomContentTemplateOverlayByServiceResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayGetAllCustomContentTemplateOverlayByServiceResponse$inboundSchema;
-  /** @deprecated use `OverlayGetAllCustomContentTemplateOverlayByServiceResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayGetAllCustomContentTemplateOverlayByServiceResponse$outboundSchema;
-  /** @deprecated use `OverlayGetAllCustomContentTemplateOverlayByServiceResponse$Outbound` instead. */
-  export type Outbound =
-    OverlayGetAllCustomContentTemplateOverlayByServiceResponse$Outbound;
-}
-
-export function overlayGetAllCustomContentTemplateOverlayByServiceResponseToJSON(
-  overlayGetAllCustomContentTemplateOverlayByServiceResponse:
-    OverlayGetAllCustomContentTemplateOverlayByServiceResponse,
-): string {
-  return JSON.stringify(
-    OverlayGetAllCustomContentTemplateOverlayByServiceResponse$outboundSchema
-      .parse(overlayGetAllCustomContentTemplateOverlayByServiceResponse),
-  );
-}
 
 export function overlayGetAllCustomContentTemplateOverlayByServiceResponseFromJSON(
   jsonString: string,

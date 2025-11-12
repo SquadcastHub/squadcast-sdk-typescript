@@ -40,7 +40,6 @@ export const V3EscalationPoliciesIncidentReminderRule$inboundSchema: z.ZodType<
     "time_interval": "timeInterval",
   });
 });
-
 /** @internal */
 export type V3EscalationPoliciesIncidentReminderRule$Outbound = {
   via: Array<string>;
@@ -63,21 +62,6 @@ export const V3EscalationPoliciesIncidentReminderRule$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3EscalationPoliciesIncidentReminderRule$ {
-  /** @deprecated use `V3EscalationPoliciesIncidentReminderRule$inboundSchema` instead. */
-  export const inboundSchema =
-    V3EscalationPoliciesIncidentReminderRule$inboundSchema;
-  /** @deprecated use `V3EscalationPoliciesIncidentReminderRule$outboundSchema` instead. */
-  export const outboundSchema =
-    V3EscalationPoliciesIncidentReminderRule$outboundSchema;
-  /** @deprecated use `V3EscalationPoliciesIncidentReminderRule$Outbound` instead. */
-  export type Outbound = V3EscalationPoliciesIncidentReminderRule$Outbound;
-}
-
 export function v3EscalationPoliciesIncidentReminderRuleToJSON(
   v3EscalationPoliciesIncidentReminderRule:
     V3EscalationPoliciesIncidentReminderRule,
@@ -88,7 +72,6 @@ export function v3EscalationPoliciesIncidentReminderRuleToJSON(
     ),
   );
 }
-
 export function v3EscalationPoliciesIncidentReminderRuleFromJSON(
   jsonString: string,
 ): SafeParseResult<

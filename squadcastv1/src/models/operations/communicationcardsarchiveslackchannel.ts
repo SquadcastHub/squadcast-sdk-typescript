@@ -27,49 +27,6 @@ export const CommunicationCardsArchiveSlackChannelResponse$inboundSchema:
         .V3IncidentsCommunicationCardsCommunicationCardResponse$inboundSchema,
   });
 
-/** @internal */
-export type CommunicationCardsArchiveSlackChannelResponse$Outbound = {
-  data: models.V3IncidentsCommunicationCardsCommunicationCardResponse$Outbound;
-};
-
-/** @internal */
-export const CommunicationCardsArchiveSlackChannelResponse$outboundSchema:
-  z.ZodType<
-    CommunicationCardsArchiveSlackChannelResponse$Outbound,
-    z.ZodTypeDef,
-    CommunicationCardsArchiveSlackChannelResponse
-  > = z.object({
-    data:
-      models
-        .V3IncidentsCommunicationCardsCommunicationCardResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommunicationCardsArchiveSlackChannelResponse$ {
-  /** @deprecated use `CommunicationCardsArchiveSlackChannelResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    CommunicationCardsArchiveSlackChannelResponse$inboundSchema;
-  /** @deprecated use `CommunicationCardsArchiveSlackChannelResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    CommunicationCardsArchiveSlackChannelResponse$outboundSchema;
-  /** @deprecated use `CommunicationCardsArchiveSlackChannelResponse$Outbound` instead. */
-  export type Outbound = CommunicationCardsArchiveSlackChannelResponse$Outbound;
-}
-
-export function communicationCardsArchiveSlackChannelResponseToJSON(
-  communicationCardsArchiveSlackChannelResponse:
-    CommunicationCardsArchiveSlackChannelResponse,
-): string {
-  return JSON.stringify(
-    CommunicationCardsArchiveSlackChannelResponse$outboundSchema.parse(
-      communicationCardsArchiveSlackChannelResponse,
-    ),
-  );
-}
-
 export function communicationCardsArchiveSlackChannelResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

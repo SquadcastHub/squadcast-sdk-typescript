@@ -35,24 +35,6 @@ export type EscalationPoliciesGetEscalationPolicyByTeamResponse = {
 };
 
 /** @internal */
-export const EscalationPoliciesGetEscalationPolicyByTeamRequest$inboundSchema:
-  z.ZodType<
-    EscalationPoliciesGetEscalationPolicyByTeamRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    owner_id: z.string(),
-    page_number: z.number().int().optional(),
-    page_size: z.number().int().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "owner_id": "ownerId",
-      "page_number": "pageNumber",
-      "page_size": "pageSize",
-    });
-  });
-
-/** @internal */
 export type EscalationPoliciesGetEscalationPolicyByTeamRequest$Outbound = {
   owner_id: string;
   page_number?: number | undefined;
@@ -77,22 +59,6 @@ export const EscalationPoliciesGetEscalationPolicyByTeamRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EscalationPoliciesGetEscalationPolicyByTeamRequest$ {
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    EscalationPoliciesGetEscalationPolicyByTeamRequest$inboundSchema;
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    EscalationPoliciesGetEscalationPolicyByTeamRequest$outboundSchema;
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamRequest$Outbound` instead. */
-  export type Outbound =
-    EscalationPoliciesGetEscalationPolicyByTeamRequest$Outbound;
-}
-
 export function escalationPoliciesGetEscalationPolicyByTeamRequestToJSON(
   escalationPoliciesGetEscalationPolicyByTeamRequest:
     EscalationPoliciesGetEscalationPolicyByTeamRequest,
@@ -101,22 +67,6 @@ export function escalationPoliciesGetEscalationPolicyByTeamRequestToJSON(
     EscalationPoliciesGetEscalationPolicyByTeamRequest$outboundSchema.parse(
       escalationPoliciesGetEscalationPolicyByTeamRequest,
     ),
-  );
-}
-
-export function escalationPoliciesGetEscalationPolicyByTeamRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  EscalationPoliciesGetEscalationPolicyByTeamRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      EscalationPoliciesGetEscalationPolicyByTeamRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'EscalationPoliciesGetEscalationPolicyByTeamRequest' from JSON`,
   );
 }
 
@@ -133,52 +83,6 @@ export const EscalationPoliciesGetEscalationPolicyByTeamMeta$inboundSchema:
       "total_count": "totalCount",
     });
   });
-
-/** @internal */
-export type EscalationPoliciesGetEscalationPolicyByTeamMeta$Outbound = {
-  total_count: number;
-};
-
-/** @internal */
-export const EscalationPoliciesGetEscalationPolicyByTeamMeta$outboundSchema:
-  z.ZodType<
-    EscalationPoliciesGetEscalationPolicyByTeamMeta$Outbound,
-    z.ZodTypeDef,
-    EscalationPoliciesGetEscalationPolicyByTeamMeta
-  > = z.object({
-    totalCount: z.number().int(),
-  }).transform((v) => {
-    return remap$(v, {
-      totalCount: "total_count",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EscalationPoliciesGetEscalationPolicyByTeamMeta$ {
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamMeta$inboundSchema` instead. */
-  export const inboundSchema =
-    EscalationPoliciesGetEscalationPolicyByTeamMeta$inboundSchema;
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamMeta$outboundSchema` instead. */
-  export const outboundSchema =
-    EscalationPoliciesGetEscalationPolicyByTeamMeta$outboundSchema;
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamMeta$Outbound` instead. */
-  export type Outbound =
-    EscalationPoliciesGetEscalationPolicyByTeamMeta$Outbound;
-}
-
-export function escalationPoliciesGetEscalationPolicyByTeamMetaToJSON(
-  escalationPoliciesGetEscalationPolicyByTeamMeta:
-    EscalationPoliciesGetEscalationPolicyByTeamMeta,
-): string {
-  return JSON.stringify(
-    EscalationPoliciesGetEscalationPolicyByTeamMeta$outboundSchema.parse(
-      escalationPoliciesGetEscalationPolicyByTeamMeta,
-    ),
-  );
-}
 
 export function escalationPoliciesGetEscalationPolicyByTeamMetaFromJSON(
   jsonString: string,
@@ -211,53 +115,6 @@ export const EscalationPoliciesGetEscalationPolicyByTeamResponseBody$inboundSche
     ),
   });
 
-/** @internal */
-export type EscalationPoliciesGetEscalationPolicyByTeamResponseBody$Outbound = {
-  data: Array<models.V3EscalationPoliciesEscalationPolicyResponse$Outbound>;
-  meta: EscalationPoliciesGetEscalationPolicyByTeamMeta$Outbound;
-};
-
-/** @internal */
-export const EscalationPoliciesGetEscalationPolicyByTeamResponseBody$outboundSchema:
-  z.ZodType<
-    EscalationPoliciesGetEscalationPolicyByTeamResponseBody$Outbound,
-    z.ZodTypeDef,
-    EscalationPoliciesGetEscalationPolicyByTeamResponseBody
-  > = z.object({
-    data: z.array(
-      models.V3EscalationPoliciesEscalationPolicyResponse$outboundSchema,
-    ),
-    meta: z.lazy(() =>
-      EscalationPoliciesGetEscalationPolicyByTeamMeta$outboundSchema
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EscalationPoliciesGetEscalationPolicyByTeamResponseBody$ {
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    EscalationPoliciesGetEscalationPolicyByTeamResponseBody$inboundSchema;
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    EscalationPoliciesGetEscalationPolicyByTeamResponseBody$outboundSchema;
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamResponseBody$Outbound` instead. */
-  export type Outbound =
-    EscalationPoliciesGetEscalationPolicyByTeamResponseBody$Outbound;
-}
-
-export function escalationPoliciesGetEscalationPolicyByTeamResponseBodyToJSON(
-  escalationPoliciesGetEscalationPolicyByTeamResponseBody:
-    EscalationPoliciesGetEscalationPolicyByTeamResponseBody,
-): string {
-  return JSON.stringify(
-    EscalationPoliciesGetEscalationPolicyByTeamResponseBody$outboundSchema
-      .parse(escalationPoliciesGetEscalationPolicyByTeamResponseBody),
-  );
-}
-
 export function escalationPoliciesGetEscalationPolicyByTeamResponseBodyFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -288,54 +145,6 @@ export const EscalationPoliciesGetEscalationPolicyByTeamResponse$inboundSchema:
       "Result": "result",
     });
   });
-
-/** @internal */
-export type EscalationPoliciesGetEscalationPolicyByTeamResponse$Outbound = {
-  Result: EscalationPoliciesGetEscalationPolicyByTeamResponseBody$Outbound;
-};
-
-/** @internal */
-export const EscalationPoliciesGetEscalationPolicyByTeamResponse$outboundSchema:
-  z.ZodType<
-    EscalationPoliciesGetEscalationPolicyByTeamResponse$Outbound,
-    z.ZodTypeDef,
-    EscalationPoliciesGetEscalationPolicyByTeamResponse
-  > = z.object({
-    result: z.lazy(() =>
-      EscalationPoliciesGetEscalationPolicyByTeamResponseBody$outboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      result: "Result",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EscalationPoliciesGetEscalationPolicyByTeamResponse$ {
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    EscalationPoliciesGetEscalationPolicyByTeamResponse$inboundSchema;
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    EscalationPoliciesGetEscalationPolicyByTeamResponse$outboundSchema;
-  /** @deprecated use `EscalationPoliciesGetEscalationPolicyByTeamResponse$Outbound` instead. */
-  export type Outbound =
-    EscalationPoliciesGetEscalationPolicyByTeamResponse$Outbound;
-}
-
-export function escalationPoliciesGetEscalationPolicyByTeamResponseToJSON(
-  escalationPoliciesGetEscalationPolicyByTeamResponse:
-    EscalationPoliciesGetEscalationPolicyByTeamResponse,
-): string {
-  return JSON.stringify(
-    EscalationPoliciesGetEscalationPolicyByTeamResponse$outboundSchema.parse(
-      escalationPoliciesGetEscalationPolicyByTeamResponse,
-    ),
-  );
-}
 
 export function escalationPoliciesGetEscalationPolicyByTeamResponseFromJSON(
   jsonString: string,

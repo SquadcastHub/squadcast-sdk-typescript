@@ -22,20 +22,6 @@ export type IssuesGetIssueByIdResponse = {
 };
 
 /** @internal */
-export const IssuesGetIssueByIdRequest$inboundSchema: z.ZodType<
-  IssuesGetIssueByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-  issue_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "issue_id": "issueId",
-  });
-});
-
-/** @internal */
 export type IssuesGetIssueByIdRequest$Outbound = {
   statuspageID: string;
   issue_id: string;
@@ -55,34 +41,11 @@ export const IssuesGetIssueByIdRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IssuesGetIssueByIdRequest$ {
-  /** @deprecated use `IssuesGetIssueByIdRequest$inboundSchema` instead. */
-  export const inboundSchema = IssuesGetIssueByIdRequest$inboundSchema;
-  /** @deprecated use `IssuesGetIssueByIdRequest$outboundSchema` instead. */
-  export const outboundSchema = IssuesGetIssueByIdRequest$outboundSchema;
-  /** @deprecated use `IssuesGetIssueByIdRequest$Outbound` instead. */
-  export type Outbound = IssuesGetIssueByIdRequest$Outbound;
-}
-
 export function issuesGetIssueByIdRequestToJSON(
   issuesGetIssueByIdRequest: IssuesGetIssueByIdRequest,
 ): string {
   return JSON.stringify(
     IssuesGetIssueByIdRequest$outboundSchema.parse(issuesGetIssueByIdRequest),
-  );
-}
-
-export function issuesGetIssueByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<IssuesGetIssueByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IssuesGetIssueByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IssuesGetIssueByIdRequest' from JSON`,
   );
 }
 
@@ -94,41 +57,6 @@ export const IssuesGetIssueByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4StatusPagesIssuesGetIssueByIdResponse$inboundSchema,
 });
-
-/** @internal */
-export type IssuesGetIssueByIdResponse$Outbound = {
-  data: models.V4StatusPagesIssuesGetIssueByIdResponse$Outbound;
-};
-
-/** @internal */
-export const IssuesGetIssueByIdResponse$outboundSchema: z.ZodType<
-  IssuesGetIssueByIdResponse$Outbound,
-  z.ZodTypeDef,
-  IssuesGetIssueByIdResponse
-> = z.object({
-  data: models.V4StatusPagesIssuesGetIssueByIdResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IssuesGetIssueByIdResponse$ {
-  /** @deprecated use `IssuesGetIssueByIdResponse$inboundSchema` instead. */
-  export const inboundSchema = IssuesGetIssueByIdResponse$inboundSchema;
-  /** @deprecated use `IssuesGetIssueByIdResponse$outboundSchema` instead. */
-  export const outboundSchema = IssuesGetIssueByIdResponse$outboundSchema;
-  /** @deprecated use `IssuesGetIssueByIdResponse$Outbound` instead. */
-  export type Outbound = IssuesGetIssueByIdResponse$Outbound;
-}
-
-export function issuesGetIssueByIdResponseToJSON(
-  issuesGetIssueByIdResponse: IssuesGetIssueByIdResponse,
-): string {
-  return JSON.stringify(
-    IssuesGetIssueByIdResponse$outboundSchema.parse(issuesGetIssueByIdResponse),
-  );
-}
 
 export function issuesGetIssueByIdResponseFromJSON(
   jsonString: string,

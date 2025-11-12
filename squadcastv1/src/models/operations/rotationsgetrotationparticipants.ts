@@ -21,16 +21,6 @@ export type RotationsGetRotationParticipantsResponse = {
 };
 
 /** @internal */
-export const RotationsGetRotationParticipantsRequest$inboundSchema: z.ZodType<
-  RotationsGetRotationParticipantsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  rotationID: z.string(),
-});
-
-/** @internal */
 export type RotationsGetRotationParticipantsRequest$Outbound = {
   scheduleID: string;
   rotationID: string;
@@ -46,21 +36,6 @@ export const RotationsGetRotationParticipantsRequest$outboundSchema: z.ZodType<
   rotationID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RotationsGetRotationParticipantsRequest$ {
-  /** @deprecated use `RotationsGetRotationParticipantsRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    RotationsGetRotationParticipantsRequest$inboundSchema;
-  /** @deprecated use `RotationsGetRotationParticipantsRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    RotationsGetRotationParticipantsRequest$outboundSchema;
-  /** @deprecated use `RotationsGetRotationParticipantsRequest$Outbound` instead. */
-  export type Outbound = RotationsGetRotationParticipantsRequest$Outbound;
-}
-
 export function rotationsGetRotationParticipantsRequestToJSON(
   rotationsGetRotationParticipantsRequest:
     RotationsGetRotationParticipantsRequest,
@@ -72,22 +47,6 @@ export function rotationsGetRotationParticipantsRequestToJSON(
   );
 }
 
-export function rotationsGetRotationParticipantsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  RotationsGetRotationParticipantsRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      RotationsGetRotationParticipantsRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'RotationsGetRotationParticipantsRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const RotationsGetRotationParticipantsResponse$inboundSchema: z.ZodType<
   RotationsGetRotationParticipantsResponse,
@@ -96,46 +55,6 @@ export const RotationsGetRotationParticipantsResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4GetRotationParticipantsResponse$inboundSchema,
 });
-
-/** @internal */
-export type RotationsGetRotationParticipantsResponse$Outbound = {
-  data: models.V4GetRotationParticipantsResponse$Outbound;
-};
-
-/** @internal */
-export const RotationsGetRotationParticipantsResponse$outboundSchema: z.ZodType<
-  RotationsGetRotationParticipantsResponse$Outbound,
-  z.ZodTypeDef,
-  RotationsGetRotationParticipantsResponse
-> = z.object({
-  data: models.V4GetRotationParticipantsResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RotationsGetRotationParticipantsResponse$ {
-  /** @deprecated use `RotationsGetRotationParticipantsResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    RotationsGetRotationParticipantsResponse$inboundSchema;
-  /** @deprecated use `RotationsGetRotationParticipantsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    RotationsGetRotationParticipantsResponse$outboundSchema;
-  /** @deprecated use `RotationsGetRotationParticipantsResponse$Outbound` instead. */
-  export type Outbound = RotationsGetRotationParticipantsResponse$Outbound;
-}
-
-export function rotationsGetRotationParticipantsResponseToJSON(
-  rotationsGetRotationParticipantsResponse:
-    RotationsGetRotationParticipantsResponse,
-): string {
-  return JSON.stringify(
-    RotationsGetRotationParticipantsResponse$outboundSchema.parse(
-      rotationsGetRotationParticipantsResponse,
-    ),
-  );
-}
 
 export function rotationsGetRotationParticipantsResponseFromJSON(
   jsonString: string,

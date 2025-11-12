@@ -36,40 +36,6 @@ export const V3IncidentsTagsLogsAdditionalInfo$inboundSchema: z.ZodType<
   unknown
 > = z.object({});
 
-/** @internal */
-export type V3IncidentsTagsLogsAdditionalInfo$Outbound = {};
-
-/** @internal */
-export const V3IncidentsTagsLogsAdditionalInfo$outboundSchema: z.ZodType<
-  V3IncidentsTagsLogsAdditionalInfo$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsTagsLogsAdditionalInfo
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsLogsAdditionalInfo$ {
-  /** @deprecated use `V3IncidentsTagsLogsAdditionalInfo$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsTagsLogsAdditionalInfo$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsLogsAdditionalInfo$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsTagsLogsAdditionalInfo$outboundSchema;
-  /** @deprecated use `V3IncidentsTagsLogsAdditionalInfo$Outbound` instead. */
-  export type Outbound = V3IncidentsTagsLogsAdditionalInfo$Outbound;
-}
-
-export function v3IncidentsTagsLogsAdditionalInfoToJSON(
-  v3IncidentsTagsLogsAdditionalInfo: V3IncidentsTagsLogsAdditionalInfo,
-): string {
-  return JSON.stringify(
-    V3IncidentsTagsLogsAdditionalInfo$outboundSchema.parse(
-      v3IncidentsTagsLogsAdditionalInfo,
-    ),
-  );
-}
-
 export function v3IncidentsTagsLogsAdditionalInfoFromJSON(
   jsonString: string,
 ): SafeParseResult<V3IncidentsTagsLogsAdditionalInfo, SDKValidationError> {
@@ -110,78 +76,6 @@ export const V3IncidentsTagsLogs$inboundSchema: z.ZodType<
     "should_show_in_postmortem": "shouldShowInPostmortem",
   });
 });
-
-/** @internal */
-export type V3IncidentsTagsLogs$Outbound = {
-  action: string;
-  is_manually_created?: boolean | undefined;
-  created_by?: string | undefined;
-  updated_by?: string | undefined;
-  assignedTo?: string | undefined;
-  assignedBy?: string | undefined;
-  id?: string | undefined;
-  workflow_id?: number | undefined;
-  time: string;
-  reason: string;
-  additionalInfo?:
-    | V3IncidentsTagsLogsAdditionalInfo$Outbound
-    | null
-    | undefined;
-  type?: string | undefined;
-  should_show_in_postmortem?: boolean | undefined;
-};
-
-/** @internal */
-export const V3IncidentsTagsLogs$outboundSchema: z.ZodType<
-  V3IncidentsTagsLogs$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsTagsLogs
-> = z.object({
-  action: z.string(),
-  isManuallyCreated: z.boolean().optional(),
-  createdBy: z.string().optional(),
-  updatedBy: z.string().optional(),
-  assignedTo: z.string().optional(),
-  assignedBy: z.string().optional(),
-  id: z.string().optional(),
-  workflowId: z.number().int().optional(),
-  time: z.date().transform(v => v.toISOString()),
-  reason: z.string(),
-  additionalInfo: z.nullable(
-    z.lazy(() => V3IncidentsTagsLogsAdditionalInfo$outboundSchema),
-  ).optional(),
-  type: z.string().optional(),
-  shouldShowInPostmortem: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isManuallyCreated: "is_manually_created",
-    createdBy: "created_by",
-    updatedBy: "updated_by",
-    workflowId: "workflow_id",
-    shouldShowInPostmortem: "should_show_in_postmortem",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsLogs$ {
-  /** @deprecated use `V3IncidentsTagsLogs$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsTagsLogs$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsLogs$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsTagsLogs$outboundSchema;
-  /** @deprecated use `V3IncidentsTagsLogs$Outbound` instead. */
-  export type Outbound = V3IncidentsTagsLogs$Outbound;
-}
-
-export function v3IncidentsTagsLogsToJSON(
-  v3IncidentsTagsLogs: V3IncidentsTagsLogs,
-): string {
-  return JSON.stringify(
-    V3IncidentsTagsLogs$outboundSchema.parse(v3IncidentsTagsLogs),
-  );
-}
 
 export function v3IncidentsTagsLogsFromJSON(
   jsonString: string,

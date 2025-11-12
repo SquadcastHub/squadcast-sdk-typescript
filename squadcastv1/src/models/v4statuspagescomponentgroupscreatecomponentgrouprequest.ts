@@ -3,27 +3,12 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V4StatusPagesComponentGroupsCreateComponentGroupRequest = {
   name: string;
   description?: string | undefined;
   allowSubscription?: boolean | undefined;
 };
-
-/** @internal */
-export const V4StatusPagesComponentGroupsCreateComponentGroupRequest$inboundSchema:
-  z.ZodType<
-    V4StatusPagesComponentGroupsCreateComponentGroupRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string(),
-    description: z.string().optional(),
-    allowSubscription: z.boolean().optional(),
-  });
 
 /** @internal */
 export type V4StatusPagesComponentGroupsCreateComponentGroupRequest$Outbound = {
@@ -44,22 +29,6 @@ export const V4StatusPagesComponentGroupsCreateComponentGroupRequest$outboundSch
     allowSubscription: z.boolean().optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesComponentGroupsCreateComponentGroupRequest$ {
-  /** @deprecated use `V4StatusPagesComponentGroupsCreateComponentGroupRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesComponentGroupsCreateComponentGroupRequest$inboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsCreateComponentGroupRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesComponentGroupsCreateComponentGroupRequest$outboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsCreateComponentGroupRequest$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesComponentGroupsCreateComponentGroupRequest$Outbound;
-}
-
 export function v4StatusPagesComponentGroupsCreateComponentGroupRequestToJSON(
   v4StatusPagesComponentGroupsCreateComponentGroupRequest:
     V4StatusPagesComponentGroupsCreateComponentGroupRequest,
@@ -67,20 +36,5 @@ export function v4StatusPagesComponentGroupsCreateComponentGroupRequestToJSON(
   return JSON.stringify(
     V4StatusPagesComponentGroupsCreateComponentGroupRequest$outboundSchema
       .parse(v4StatusPagesComponentGroupsCreateComponentGroupRequest),
-  );
-}
-
-export function v4StatusPagesComponentGroupsCreateComponentGroupRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V4StatusPagesComponentGroupsCreateComponentGroupRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V4StatusPagesComponentGroupsCreateComponentGroupRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V4StatusPagesComponentGroupsCreateComponentGroupRequest' from JSON`,
   );
 }

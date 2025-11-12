@@ -42,50 +42,6 @@ export const V4StatusPagesGetStatusPageByIdResponseThemeColor$inboundSchema:
     secondary: z.string(),
   });
 
-/** @internal */
-export type V4StatusPagesGetStatusPageByIdResponseThemeColor$Outbound = {
-  primary: string;
-  secondary: string;
-};
-
-/** @internal */
-export const V4StatusPagesGetStatusPageByIdResponseThemeColor$outboundSchema:
-  z.ZodType<
-    V4StatusPagesGetStatusPageByIdResponseThemeColor$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesGetStatusPageByIdResponseThemeColor
-  > = z.object({
-    primary: z.string(),
-    secondary: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesGetStatusPageByIdResponseThemeColor$ {
-  /** @deprecated use `V4StatusPagesGetStatusPageByIdResponseThemeColor$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesGetStatusPageByIdResponseThemeColor$inboundSchema;
-  /** @deprecated use `V4StatusPagesGetStatusPageByIdResponseThemeColor$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesGetStatusPageByIdResponseThemeColor$outboundSchema;
-  /** @deprecated use `V4StatusPagesGetStatusPageByIdResponseThemeColor$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesGetStatusPageByIdResponseThemeColor$Outbound;
-}
-
-export function v4StatusPagesGetStatusPageByIdResponseThemeColorToJSON(
-  v4StatusPagesGetStatusPageByIdResponseThemeColor:
-    V4StatusPagesGetStatusPageByIdResponseThemeColor,
-): string {
-  return JSON.stringify(
-    V4StatusPagesGetStatusPageByIdResponseThemeColor$outboundSchema.parse(
-      v4StatusPagesGetStatusPageByIdResponseThemeColor,
-    ),
-  );
-}
-
 export function v4StatusPagesGetStatusPageByIdResponseThemeColorFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -127,78 +83,6 @@ export const V4StatusPagesGetStatusPageByIdResponse$inboundSchema: z.ZodType<
   ownerID: z.string(),
   teamID: z.string(),
 });
-
-/** @internal */
-export type V4StatusPagesGetStatusPageByIdResponse$Outbound = {
-  id: number;
-  organizationID: string;
-  name: string;
-  isPublic: boolean;
-  timezone: string;
-  description?: string | undefined;
-  domainName: string;
-  customDomainName: string;
-  contactEmail: string;
-  themeColor: V4StatusPagesGetStatusPageByIdResponseThemeColor$Outbound;
-  allowComponentsSubscription: boolean;
-  allowMaintenanceSubscription: boolean;
-  allowWebhookSubscription: boolean;
-  ownerType: string;
-  ownerID: string;
-  teamID: string;
-};
-
-/** @internal */
-export const V4StatusPagesGetStatusPageByIdResponse$outboundSchema: z.ZodType<
-  V4StatusPagesGetStatusPageByIdResponse$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesGetStatusPageByIdResponse
-> = z.object({
-  id: z.number().int(),
-  organizationID: z.string(),
-  name: z.string(),
-  isPublic: z.boolean(),
-  timezone: z.string(),
-  description: z.string().optional(),
-  domainName: z.string(),
-  customDomainName: z.string(),
-  contactEmail: z.string(),
-  themeColor: z.lazy(() =>
-    V4StatusPagesGetStatusPageByIdResponseThemeColor$outboundSchema
-  ),
-  allowComponentsSubscription: z.boolean(),
-  allowMaintenanceSubscription: z.boolean(),
-  allowWebhookSubscription: z.boolean(),
-  ownerType: z.string(),
-  ownerID: z.string(),
-  teamID: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesGetStatusPageByIdResponse$ {
-  /** @deprecated use `V4StatusPagesGetStatusPageByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesGetStatusPageByIdResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesGetStatusPageByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesGetStatusPageByIdResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesGetStatusPageByIdResponse$Outbound` instead. */
-  export type Outbound = V4StatusPagesGetStatusPageByIdResponse$Outbound;
-}
-
-export function v4StatusPagesGetStatusPageByIdResponseToJSON(
-  v4StatusPagesGetStatusPageByIdResponse:
-    V4StatusPagesGetStatusPageByIdResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesGetStatusPageByIdResponse$outboundSchema.parse(
-      v4StatusPagesGetStatusPageByIdResponse,
-    ),
-  );
-}
 
 export function v4StatusPagesGetStatusPageByIdResponseFromJSON(
   jsonString: string,

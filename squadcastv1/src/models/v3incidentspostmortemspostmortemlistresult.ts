@@ -9,26 +9,19 @@ import { Result as SafeParseResult } from "../types/fp.js";
 import {
   CommonV3RBACEntityPermission,
   CommonV3RBACEntityPermission$inboundSchema,
-  CommonV3RBACEntityPermission$Outbound,
-  CommonV3RBACEntityPermission$outboundSchema,
 } from "./commonv3rbacentitypermission.js";
 import {
   CommonV3RBACOwner,
   CommonV3RBACOwner$inboundSchema,
-  CommonV3RBACOwner$Outbound,
-  CommonV3RBACOwner$outboundSchema,
 } from "./commonv3rbacowner.js";
 import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3IncidentsPostmortemsPostmortemFollowUp,
   V3IncidentsPostmortemsPostmortemFollowUp$inboundSchema,
-  V3IncidentsPostmortemsPostmortemFollowUp$Outbound,
-  V3IncidentsPostmortemsPostmortemFollowUp$outboundSchema,
 } from "./v3incidentspostmortemspostmortemfollowup.js";
 import {
   V3IncidentsPostmortemsPostmortemStatus,
   V3IncidentsPostmortemsPostmortemStatus$inboundSchema,
-  V3IncidentsPostmortemsPostmortemStatus$outboundSchema,
 } from "./v3incidentspostmortemspostmortemstatus.js";
 
 export type V3IncidentsPostmortemsPostmortemListResultIncident = {
@@ -80,54 +73,6 @@ export const V3IncidentsPostmortemsPostmortemListResultIncident$inboundSchema:
       "time_of_creation": "timeOfCreation",
     });
   });
-
-/** @internal */
-export type V3IncidentsPostmortemsPostmortemListResultIncident$Outbound = {
-  message: string;
-  time_of_creation: string;
-};
-
-/** @internal */
-export const V3IncidentsPostmortemsPostmortemListResultIncident$outboundSchema:
-  z.ZodType<
-    V3IncidentsPostmortemsPostmortemListResultIncident$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsPostmortemsPostmortemListResultIncident
-  > = z.object({
-    message: z.string(),
-    timeOfCreation: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      timeOfCreation: "time_of_creation",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsPostmortemsPostmortemListResultIncident$ {
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemListResultIncident$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsPostmortemsPostmortemListResultIncident$inboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemListResultIncident$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsPostmortemsPostmortemListResultIncident$outboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemListResultIncident$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsPostmortemsPostmortemListResultIncident$Outbound;
-}
-
-export function v3IncidentsPostmortemsPostmortemListResultIncidentToJSON(
-  v3IncidentsPostmortemsPostmortemListResultIncident:
-    V3IncidentsPostmortemsPostmortemListResultIncident,
-): string {
-  return JSON.stringify(
-    V3IncidentsPostmortemsPostmortemListResultIncident$outboundSchema.parse(
-      v3IncidentsPostmortemsPostmortemListResultIncident,
-    ),
-  );
-}
 
 export function v3IncidentsPostmortemsPostmortemListResultIncidentFromJSON(
   jsonString: string,
@@ -186,101 +131,6 @@ export const V3IncidentsPostmortemsPostmortemListResult$inboundSchema:
         "active_follow_ups_count": "activeFollowUpsCount",
       });
     });
-
-/** @internal */
-export type V3IncidentsPostmortemsPostmortemListResult$Outbound = {
-  id: string;
-  organization_id: string;
-  incident_id: string;
-  postmortem: string;
-  follow_ups: Array<V3IncidentsPostmortemsPostmortemFollowUp$Outbound> | null;
-  created_at: string;
-  title: string;
-  status: string;
-  owner: CommonV3RBACOwner$Outbound;
-  access_control: Array<CommonV3RBACEntityPermission$Outbound>;
-  attachments?: Array<string> | null | undefined;
-  incident?:
-    | V3IncidentsPostmortemsPostmortemListResultIncident$Outbound
-    | undefined;
-  incident_message: string;
-  incident_time_of_creation: string;
-  service_name: string;
-  service_id: string;
-  alert_source: string;
-  active_follow_ups_count: number;
-};
-
-/** @internal */
-export const V3IncidentsPostmortemsPostmortemListResult$outboundSchema:
-  z.ZodType<
-    V3IncidentsPostmortemsPostmortemListResult$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsPostmortemsPostmortemListResult
-  > = z.object({
-    id: z.string(),
-    organizationId: z.string(),
-    incidentId: z.string(),
-    postmortem: z.string(),
-    followUps: z.nullable(
-      z.array(V3IncidentsPostmortemsPostmortemFollowUp$outboundSchema),
-    ),
-    createdAt: z.string(),
-    title: z.string(),
-    status: V3IncidentsPostmortemsPostmortemStatus$outboundSchema,
-    owner: CommonV3RBACOwner$outboundSchema,
-    accessControl: z.array(CommonV3RBACEntityPermission$outboundSchema),
-    attachments: z.nullable(z.array(z.string())).optional(),
-    incident: z.lazy(() =>
-      V3IncidentsPostmortemsPostmortemListResultIncident$outboundSchema
-    ).optional(),
-    incidentMessage: z.string(),
-    incidentTimeOfCreation: z.string(),
-    serviceName: z.string(),
-    serviceId: z.string(),
-    alertSource: z.string(),
-    activeFollowUpsCount: z.number().int(),
-  }).transform((v) => {
-    return remap$(v, {
-      organizationId: "organization_id",
-      incidentId: "incident_id",
-      followUps: "follow_ups",
-      createdAt: "created_at",
-      accessControl: "access_control",
-      incidentMessage: "incident_message",
-      incidentTimeOfCreation: "incident_time_of_creation",
-      serviceName: "service_name",
-      serviceId: "service_id",
-      alertSource: "alert_source",
-      activeFollowUpsCount: "active_follow_ups_count",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsPostmortemsPostmortemListResult$ {
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemListResult$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsPostmortemsPostmortemListResult$inboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemListResult$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsPostmortemsPostmortemListResult$outboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsPostmortemListResult$Outbound` instead. */
-  export type Outbound = V3IncidentsPostmortemsPostmortemListResult$Outbound;
-}
-
-export function v3IncidentsPostmortemsPostmortemListResultToJSON(
-  v3IncidentsPostmortemsPostmortemListResult:
-    V3IncidentsPostmortemsPostmortemListResult,
-): string {
-  return JSON.stringify(
-    V3IncidentsPostmortemsPostmortemListResult$outboundSchema.parse(
-      v3IncidentsPostmortemsPostmortemListResult,
-    ),
-  );
-}
 
 export function v3IncidentsPostmortemsPostmortemListResultFromJSON(
   jsonString: string,

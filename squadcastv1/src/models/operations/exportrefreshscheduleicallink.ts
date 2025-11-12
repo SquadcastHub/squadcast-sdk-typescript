@@ -25,13 +25,6 @@ export type ExportRefreshScheduleIcalLinkResponse = {
 };
 
 /** @internal */
-export const ExportRefreshScheduleIcalLinkRequestBody$inboundSchema: z.ZodType<
-  ExportRefreshScheduleIcalLinkRequestBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
 export type ExportRefreshScheduleIcalLinkRequestBody$Outbound = {};
 
 /** @internal */
@@ -40,21 +33,6 @@ export const ExportRefreshScheduleIcalLinkRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ExportRefreshScheduleIcalLinkRequestBody
 > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ExportRefreshScheduleIcalLinkRequestBody$ {
-  /** @deprecated use `ExportRefreshScheduleIcalLinkRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ExportRefreshScheduleIcalLinkRequestBody$inboundSchema;
-  /** @deprecated use `ExportRefreshScheduleIcalLinkRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ExportRefreshScheduleIcalLinkRequestBody$outboundSchema;
-  /** @deprecated use `ExportRefreshScheduleIcalLinkRequestBody$Outbound` instead. */
-  export type Outbound = ExportRefreshScheduleIcalLinkRequestBody$Outbound;
-}
 
 export function exportRefreshScheduleIcalLinkRequestBodyToJSON(
   exportRefreshScheduleIcalLinkRequestBody:
@@ -66,39 +44,6 @@ export function exportRefreshScheduleIcalLinkRequestBodyToJSON(
     ),
   );
 }
-
-export function exportRefreshScheduleIcalLinkRequestBodyFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  ExportRefreshScheduleIcalLinkRequestBody,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ExportRefreshScheduleIcalLinkRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ExportRefreshScheduleIcalLinkRequestBody' from JSON`,
-  );
-}
-
-/** @internal */
-export const ExportRefreshScheduleIcalLinkRequest$inboundSchema: z.ZodType<
-  ExportRefreshScheduleIcalLinkRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  myOnCall: z.boolean(),
-  RequestBody: z.lazy(() =>
-    ExportRefreshScheduleIcalLinkRequestBody$inboundSchema
-  ),
-}).transform((v) => {
-  return remap$(v, {
-    "RequestBody": "requestBody",
-  });
-});
 
 /** @internal */
 export type ExportRefreshScheduleIcalLinkRequest$Outbound = {
@@ -124,21 +69,6 @@ export const ExportRefreshScheduleIcalLinkRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ExportRefreshScheduleIcalLinkRequest$ {
-  /** @deprecated use `ExportRefreshScheduleIcalLinkRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ExportRefreshScheduleIcalLinkRequest$inboundSchema;
-  /** @deprecated use `ExportRefreshScheduleIcalLinkRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ExportRefreshScheduleIcalLinkRequest$outboundSchema;
-  /** @deprecated use `ExportRefreshScheduleIcalLinkRequest$Outbound` instead. */
-  export type Outbound = ExportRefreshScheduleIcalLinkRequest$Outbound;
-}
-
 export function exportRefreshScheduleIcalLinkRequestToJSON(
   exportRefreshScheduleIcalLinkRequest: ExportRefreshScheduleIcalLinkRequest,
 ): string {
@@ -146,17 +76,6 @@ export function exportRefreshScheduleIcalLinkRequestToJSON(
     ExportRefreshScheduleIcalLinkRequest$outboundSchema.parse(
       exportRefreshScheduleIcalLinkRequest,
     ),
-  );
-}
-
-export function exportRefreshScheduleIcalLinkRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ExportRefreshScheduleIcalLinkRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ExportRefreshScheduleIcalLinkRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ExportRefreshScheduleIcalLinkRequest' from JSON`,
   );
 }
 
@@ -168,45 +87,6 @@ export const ExportRefreshScheduleIcalLinkResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4ICalLinkResponse$inboundSchema,
 });
-
-/** @internal */
-export type ExportRefreshScheduleIcalLinkResponse$Outbound = {
-  data: models.V4ICalLinkResponse$Outbound;
-};
-
-/** @internal */
-export const ExportRefreshScheduleIcalLinkResponse$outboundSchema: z.ZodType<
-  ExportRefreshScheduleIcalLinkResponse$Outbound,
-  z.ZodTypeDef,
-  ExportRefreshScheduleIcalLinkResponse
-> = z.object({
-  data: models.V4ICalLinkResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ExportRefreshScheduleIcalLinkResponse$ {
-  /** @deprecated use `ExportRefreshScheduleIcalLinkResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    ExportRefreshScheduleIcalLinkResponse$inboundSchema;
-  /** @deprecated use `ExportRefreshScheduleIcalLinkResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ExportRefreshScheduleIcalLinkResponse$outboundSchema;
-  /** @deprecated use `ExportRefreshScheduleIcalLinkResponse$Outbound` instead. */
-  export type Outbound = ExportRefreshScheduleIcalLinkResponse$Outbound;
-}
-
-export function exportRefreshScheduleIcalLinkResponseToJSON(
-  exportRefreshScheduleIcalLinkResponse: ExportRefreshScheduleIcalLinkResponse,
-): string {
-  return JSON.stringify(
-    ExportRefreshScheduleIcalLinkResponse$outboundSchema.parse(
-      exportRefreshScheduleIcalLinkResponse,
-    ),
-  );
-}
 
 export function exportRefreshScheduleIcalLinkResponseFromJSON(
   jsonString: string,

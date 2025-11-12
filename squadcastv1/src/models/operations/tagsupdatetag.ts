@@ -22,22 +22,6 @@ export type TagsUpdateTagResponse = {
 };
 
 /** @internal */
-export const TagsUpdateTagRequest$inboundSchema: z.ZodType<
-  TagsUpdateTagRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  IncidentId: z.string(),
-  "V3.Incidents.Tags.UpdateTagRequest":
-    models.V3IncidentsTagsUpdateTagRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "IncidentId": "incidentId",
-    "V3.Incidents.Tags.UpdateTagRequest": "v3IncidentsTagsUpdateTagRequest",
-  });
-});
-
-/** @internal */
 export type TagsUpdateTagRequest$Outbound = {
   IncidentId: string;
   "V3.Incidents.Tags.UpdateTagRequest":
@@ -60,34 +44,11 @@ export const TagsUpdateTagRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TagsUpdateTagRequest$ {
-  /** @deprecated use `TagsUpdateTagRequest$inboundSchema` instead. */
-  export const inboundSchema = TagsUpdateTagRequest$inboundSchema;
-  /** @deprecated use `TagsUpdateTagRequest$outboundSchema` instead. */
-  export const outboundSchema = TagsUpdateTagRequest$outboundSchema;
-  /** @deprecated use `TagsUpdateTagRequest$Outbound` instead. */
-  export type Outbound = TagsUpdateTagRequest$Outbound;
-}
-
 export function tagsUpdateTagRequestToJSON(
   tagsUpdateTagRequest: TagsUpdateTagRequest,
 ): string {
   return JSON.stringify(
     TagsUpdateTagRequest$outboundSchema.parse(tagsUpdateTagRequest),
-  );
-}
-
-export function tagsUpdateTagRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<TagsUpdateTagRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => TagsUpdateTagRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'TagsUpdateTagRequest' from JSON`,
   );
 }
 
@@ -99,41 +60,6 @@ export const TagsUpdateTagResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3IncidentsTagsIncidentForTagsResponse$inboundSchema,
 });
-
-/** @internal */
-export type TagsUpdateTagResponse$Outbound = {
-  data: models.V3IncidentsTagsIncidentForTagsResponse$Outbound;
-};
-
-/** @internal */
-export const TagsUpdateTagResponse$outboundSchema: z.ZodType<
-  TagsUpdateTagResponse$Outbound,
-  z.ZodTypeDef,
-  TagsUpdateTagResponse
-> = z.object({
-  data: models.V3IncidentsTagsIncidentForTagsResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TagsUpdateTagResponse$ {
-  /** @deprecated use `TagsUpdateTagResponse$inboundSchema` instead. */
-  export const inboundSchema = TagsUpdateTagResponse$inboundSchema;
-  /** @deprecated use `TagsUpdateTagResponse$outboundSchema` instead. */
-  export const outboundSchema = TagsUpdateTagResponse$outboundSchema;
-  /** @deprecated use `TagsUpdateTagResponse$Outbound` instead. */
-  export type Outbound = TagsUpdateTagResponse$Outbound;
-}
-
-export function tagsUpdateTagResponseToJSON(
-  tagsUpdateTagResponse: TagsUpdateTagResponse,
-): string {
-  return JSON.stringify(
-    TagsUpdateTagResponse$outboundSchema.parse(tagsUpdateTagResponse),
-  );
-}
 
 export function tagsUpdateTagResponseFromJSON(
   jsonString: string,

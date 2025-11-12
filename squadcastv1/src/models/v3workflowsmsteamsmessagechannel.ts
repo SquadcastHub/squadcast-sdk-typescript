@@ -31,24 +31,10 @@ export const V3WorkflowsMsTeamsMessageChannelName$inboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsMsTeamsMessageChannelName> = z.nativeEnum(
     V3WorkflowsMsTeamsMessageChannelName,
   );
-
 /** @internal */
 export const V3WorkflowsMsTeamsMessageChannelName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsMsTeamsMessageChannelName> =
     V3WorkflowsMsTeamsMessageChannelName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsMessageChannelName$ {
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsMsTeamsMessageChannelName$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsMsTeamsMessageChannelName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsMsTeamsMessageChannelData$inboundSchema: z.ZodType<
@@ -63,7 +49,6 @@ export const V3WorkflowsMsTeamsMessageChannelData$inboundSchema: z.ZodType<
     "channel_id": "channelId",
   });
 });
-
 /** @internal */
 export type V3WorkflowsMsTeamsMessageChannelData$Outbound = {
   channel_id: string;
@@ -84,21 +69,6 @@ export const V3WorkflowsMsTeamsMessageChannelData$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsMessageChannelData$ {
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsMsTeamsMessageChannelData$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsMsTeamsMessageChannelData$outboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelData$Outbound` instead. */
-  export type Outbound = V3WorkflowsMsTeamsMessageChannelData$Outbound;
-}
-
 export function v3WorkflowsMsTeamsMessageChannelDataToJSON(
   v3WorkflowsMsTeamsMessageChannelData: V3WorkflowsMsTeamsMessageChannelData,
 ): string {
@@ -108,7 +78,6 @@ export function v3WorkflowsMsTeamsMessageChannelDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsMsTeamsMessageChannelDataFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsMsTeamsMessageChannelData, SDKValidationError> {
@@ -129,7 +98,6 @@ export const V3WorkflowsMsTeamsMessageChannel$inboundSchema: z.ZodType<
   name: V3WorkflowsMsTeamsMessageChannelName$inboundSchema,
   data: z.lazy(() => V3WorkflowsMsTeamsMessageChannelData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsMsTeamsMessageChannel$Outbound = {
   name: string;
@@ -146,19 +114,6 @@ export const V3WorkflowsMsTeamsMessageChannel$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsMsTeamsMessageChannelData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsMessageChannel$ {
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannel$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsMsTeamsMessageChannel$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannel$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsMsTeamsMessageChannel$outboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannel$Outbound` instead. */
-  export type Outbound = V3WorkflowsMsTeamsMessageChannel$Outbound;
-}
-
 export function v3WorkflowsMsTeamsMessageChannelToJSON(
   v3WorkflowsMsTeamsMessageChannel: V3WorkflowsMsTeamsMessageChannel,
 ): string {
@@ -168,7 +123,6 @@ export function v3WorkflowsMsTeamsMessageChannelToJSON(
     ),
   );
 }
-
 export function v3WorkflowsMsTeamsMessageChannelFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsMsTeamsMessageChannel, SDKValidationError> {

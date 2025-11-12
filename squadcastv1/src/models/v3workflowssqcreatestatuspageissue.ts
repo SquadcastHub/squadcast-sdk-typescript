@@ -46,24 +46,10 @@ export const V3WorkflowsSqCreateStatusPageIssueName$inboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqCreateStatusPageIssueName> = z.nativeEnum(
     V3WorkflowsSqCreateStatusPageIssueName,
   );
-
 /** @internal */
 export const V3WorkflowsSqCreateStatusPageIssueName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqCreateStatusPageIssueName> =
     V3WorkflowsSqCreateStatusPageIssueName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqCreateStatusPageIssueName$ {
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqCreateStatusPageIssueName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqCreateStatusPageIssueName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsSqCreateStatusPageIssueData$inboundSchema: z.ZodType<
@@ -85,7 +71,6 @@ export const V3WorkflowsSqCreateStatusPageIssueData$inboundSchema: z.ZodType<
     "status_page_id": "statusPageId",
   });
 });
-
 /** @internal */
 export type V3WorkflowsSqCreateStatusPageIssueData$Outbound = {
   component_and_impact: Array<V3WorkflowsComponentAndImpact$Outbound>;
@@ -116,21 +101,6 @@ export const V3WorkflowsSqCreateStatusPageIssueData$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqCreateStatusPageIssueData$ {
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqCreateStatusPageIssueData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqCreateStatusPageIssueData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssueData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqCreateStatusPageIssueData$Outbound;
-}
-
 export function v3WorkflowsSqCreateStatusPageIssueDataToJSON(
   v3WorkflowsSqCreateStatusPageIssueData:
     V3WorkflowsSqCreateStatusPageIssueData,
@@ -141,7 +111,6 @@ export function v3WorkflowsSqCreateStatusPageIssueDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqCreateStatusPageIssueDataFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqCreateStatusPageIssueData, SDKValidationError> {
@@ -162,7 +131,6 @@ export const V3WorkflowsSqCreateStatusPageIssue$inboundSchema: z.ZodType<
   name: V3WorkflowsSqCreateStatusPageIssueName$inboundSchema,
   data: z.lazy(() => V3WorkflowsSqCreateStatusPageIssueData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsSqCreateStatusPageIssue$Outbound = {
   name: string;
@@ -179,20 +147,6 @@ export const V3WorkflowsSqCreateStatusPageIssue$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsSqCreateStatusPageIssueData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqCreateStatusPageIssue$ {
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssue$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqCreateStatusPageIssue$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssue$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqCreateStatusPageIssue$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqCreateStatusPageIssue$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqCreateStatusPageIssue$Outbound;
-}
-
 export function v3WorkflowsSqCreateStatusPageIssueToJSON(
   v3WorkflowsSqCreateStatusPageIssue: V3WorkflowsSqCreateStatusPageIssue,
 ): string {
@@ -202,7 +156,6 @@ export function v3WorkflowsSqCreateStatusPageIssueToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqCreateStatusPageIssueFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqCreateStatusPageIssue, SDKValidationError> {

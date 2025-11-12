@@ -25,22 +25,10 @@ export type V3ServicesServiceMaintainer = {
 export const V3ServicesServiceMaintainerType$inboundSchema: z.ZodNativeEnum<
   typeof V3ServicesServiceMaintainerType
 > = z.nativeEnum(V3ServicesServiceMaintainerType);
-
 /** @internal */
 export const V3ServicesServiceMaintainerType$outboundSchema: z.ZodNativeEnum<
   typeof V3ServicesServiceMaintainerType
 > = V3ServicesServiceMaintainerType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesServiceMaintainerType$ {
-  /** @deprecated use `V3ServicesServiceMaintainerType$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesServiceMaintainerType$inboundSchema;
-  /** @deprecated use `V3ServicesServiceMaintainerType$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesServiceMaintainerType$outboundSchema;
-}
 
 /** @internal */
 export const V3ServicesServiceMaintainer$inboundSchema: z.ZodType<
@@ -51,7 +39,6 @@ export const V3ServicesServiceMaintainer$inboundSchema: z.ZodType<
   id: z.string(),
   type: V3ServicesServiceMaintainerType$inboundSchema,
 });
-
 /** @internal */
 export type V3ServicesServiceMaintainer$Outbound = {
   id: string;
@@ -68,19 +55,6 @@ export const V3ServicesServiceMaintainer$outboundSchema: z.ZodType<
   type: V3ServicesServiceMaintainerType$outboundSchema,
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesServiceMaintainer$ {
-  /** @deprecated use `V3ServicesServiceMaintainer$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesServiceMaintainer$inboundSchema;
-  /** @deprecated use `V3ServicesServiceMaintainer$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesServiceMaintainer$outboundSchema;
-  /** @deprecated use `V3ServicesServiceMaintainer$Outbound` instead. */
-  export type Outbound = V3ServicesServiceMaintainer$Outbound;
-}
-
 export function v3ServicesServiceMaintainerToJSON(
   v3ServicesServiceMaintainer: V3ServicesServiceMaintainer,
 ): string {
@@ -90,7 +64,6 @@ export function v3ServicesServiceMaintainerToJSON(
     ),
   );
 }
-
 export function v3ServicesServiceMaintainerFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesServiceMaintainer, SDKValidationError> {

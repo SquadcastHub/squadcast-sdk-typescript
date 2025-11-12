@@ -27,23 +27,6 @@ export type SLOMarkSLOAffectedResponse = {
 };
 
 /** @internal */
-export const SLOMarkSLOAffectedRequest$inboundSchema: z.ZodType<
-  SLOMarkSLOAffectedRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  sloID: z.number().int(),
-  owner_id: z.string(),
-  "V3.SLO.MarkSLOAffectedRequest":
-    models.V3SLOMarkSLOAffectedRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-    "V3.SLO.MarkSLOAffectedRequest": "v3SLOMarkSLOAffectedRequest",
-  });
-});
-
-/** @internal */
 export type SLOMarkSLOAffectedRequest$Outbound = {
   sloID: number;
   owner_id: string;
@@ -67,34 +50,11 @@ export const SLOMarkSLOAffectedRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOMarkSLOAffectedRequest$ {
-  /** @deprecated use `SLOMarkSLOAffectedRequest$inboundSchema` instead. */
-  export const inboundSchema = SLOMarkSLOAffectedRequest$inboundSchema;
-  /** @deprecated use `SLOMarkSLOAffectedRequest$outboundSchema` instead. */
-  export const outboundSchema = SLOMarkSLOAffectedRequest$outboundSchema;
-  /** @deprecated use `SLOMarkSLOAffectedRequest$Outbound` instead. */
-  export type Outbound = SLOMarkSLOAffectedRequest$Outbound;
-}
-
 export function sloMarkSLOAffectedRequestToJSON(
   sloMarkSLOAffectedRequest: SLOMarkSLOAffectedRequest,
 ): string {
   return JSON.stringify(
     SLOMarkSLOAffectedRequest$outboundSchema.parse(sloMarkSLOAffectedRequest),
-  );
-}
-
-export function sloMarkSLOAffectedRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SLOMarkSLOAffectedRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SLOMarkSLOAffectedRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SLOMarkSLOAffectedRequest' from JSON`,
   );
 }
 
@@ -111,45 +71,6 @@ export const SLOMarkSLOAffectedData$inboundSchema: z.ZodType<
     "slo_violating_incident": "sloViolatingIncident",
   });
 });
-
-/** @internal */
-export type SLOMarkSLOAffectedData$Outbound = {
-  slo_violating_incident: models.V3SLOSLOViolatingIncidentResponse$Outbound;
-};
-
-/** @internal */
-export const SLOMarkSLOAffectedData$outboundSchema: z.ZodType<
-  SLOMarkSLOAffectedData$Outbound,
-  z.ZodTypeDef,
-  SLOMarkSLOAffectedData
-> = z.object({
-  sloViolatingIncident: models.V3SLOSLOViolatingIncidentResponse$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    sloViolatingIncident: "slo_violating_incident",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOMarkSLOAffectedData$ {
-  /** @deprecated use `SLOMarkSLOAffectedData$inboundSchema` instead. */
-  export const inboundSchema = SLOMarkSLOAffectedData$inboundSchema;
-  /** @deprecated use `SLOMarkSLOAffectedData$outboundSchema` instead. */
-  export const outboundSchema = SLOMarkSLOAffectedData$outboundSchema;
-  /** @deprecated use `SLOMarkSLOAffectedData$Outbound` instead. */
-  export type Outbound = SLOMarkSLOAffectedData$Outbound;
-}
-
-export function sloMarkSLOAffectedDataToJSON(
-  sloMarkSLOAffectedData: SLOMarkSLOAffectedData,
-): string {
-  return JSON.stringify(
-    SLOMarkSLOAffectedData$outboundSchema.parse(sloMarkSLOAffectedData),
-  );
-}
 
 export function sloMarkSLOAffectedDataFromJSON(
   jsonString: string,
@@ -169,41 +90,6 @@ export const SLOMarkSLOAffectedResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => SLOMarkSLOAffectedData$inboundSchema),
 });
-
-/** @internal */
-export type SLOMarkSLOAffectedResponse$Outbound = {
-  data: SLOMarkSLOAffectedData$Outbound;
-};
-
-/** @internal */
-export const SLOMarkSLOAffectedResponse$outboundSchema: z.ZodType<
-  SLOMarkSLOAffectedResponse$Outbound,
-  z.ZodTypeDef,
-  SLOMarkSLOAffectedResponse
-> = z.object({
-  data: z.lazy(() => SLOMarkSLOAffectedData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOMarkSLOAffectedResponse$ {
-  /** @deprecated use `SLOMarkSLOAffectedResponse$inboundSchema` instead. */
-  export const inboundSchema = SLOMarkSLOAffectedResponse$inboundSchema;
-  /** @deprecated use `SLOMarkSLOAffectedResponse$outboundSchema` instead. */
-  export const outboundSchema = SLOMarkSLOAffectedResponse$outboundSchema;
-  /** @deprecated use `SLOMarkSLOAffectedResponse$Outbound` instead. */
-  export type Outbound = SLOMarkSLOAffectedResponse$Outbound;
-}
-
-export function sloMarkSLOAffectedResponseToJSON(
-  sloMarkSLOAffectedResponse: SLOMarkSLOAffectedResponse,
-): string {
-  return JSON.stringify(
-    SLOMarkSLOAffectedResponse$outboundSchema.parse(sloMarkSLOAffectedResponse),
-  );
-}
 
 export function sloMarkSLOAffectedResponseFromJSON(
   jsonString: string,

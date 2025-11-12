@@ -18,16 +18,6 @@ export type TeamsRemoveTeamRoleRequest = {
 export type TeamsRemoveTeamRoleResponseBody = {};
 
 /** @internal */
-export const TeamsRemoveTeamRoleRequest$inboundSchema: z.ZodType<
-  TeamsRemoveTeamRoleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  teamId: z.string(),
-  roleId: z.string(),
-});
-
-/** @internal */
 export type TeamsRemoveTeamRoleRequest$Outbound = {
   teamId: string;
   roleId: string;
@@ -43,34 +33,11 @@ export const TeamsRemoveTeamRoleRequest$outboundSchema: z.ZodType<
   roleId: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsRemoveTeamRoleRequest$ {
-  /** @deprecated use `TeamsRemoveTeamRoleRequest$inboundSchema` instead. */
-  export const inboundSchema = TeamsRemoveTeamRoleRequest$inboundSchema;
-  /** @deprecated use `TeamsRemoveTeamRoleRequest$outboundSchema` instead. */
-  export const outboundSchema = TeamsRemoveTeamRoleRequest$outboundSchema;
-  /** @deprecated use `TeamsRemoveTeamRoleRequest$Outbound` instead. */
-  export type Outbound = TeamsRemoveTeamRoleRequest$Outbound;
-}
-
 export function teamsRemoveTeamRoleRequestToJSON(
   teamsRemoveTeamRoleRequest: TeamsRemoveTeamRoleRequest,
 ): string {
   return JSON.stringify(
     TeamsRemoveTeamRoleRequest$outboundSchema.parse(teamsRemoveTeamRoleRequest),
-  );
-}
-
-export function teamsRemoveTeamRoleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<TeamsRemoveTeamRoleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => TeamsRemoveTeamRoleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'TeamsRemoveTeamRoleRequest' from JSON`,
   );
 }
 
@@ -80,39 +47,6 @@ export const TeamsRemoveTeamRoleResponseBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type TeamsRemoveTeamRoleResponseBody$Outbound = {};
-
-/** @internal */
-export const TeamsRemoveTeamRoleResponseBody$outboundSchema: z.ZodType<
-  TeamsRemoveTeamRoleResponseBody$Outbound,
-  z.ZodTypeDef,
-  TeamsRemoveTeamRoleResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsRemoveTeamRoleResponseBody$ {
-  /** @deprecated use `TeamsRemoveTeamRoleResponseBody$inboundSchema` instead. */
-  export const inboundSchema = TeamsRemoveTeamRoleResponseBody$inboundSchema;
-  /** @deprecated use `TeamsRemoveTeamRoleResponseBody$outboundSchema` instead. */
-  export const outboundSchema = TeamsRemoveTeamRoleResponseBody$outboundSchema;
-  /** @deprecated use `TeamsRemoveTeamRoleResponseBody$Outbound` instead. */
-  export type Outbound = TeamsRemoveTeamRoleResponseBody$Outbound;
-}
-
-export function teamsRemoveTeamRoleResponseBodyToJSON(
-  teamsRemoveTeamRoleResponseBody: TeamsRemoveTeamRoleResponseBody,
-): string {
-  return JSON.stringify(
-    TeamsRemoveTeamRoleResponseBody$outboundSchema.parse(
-      teamsRemoveTeamRoleResponseBody,
-    ),
-  );
-}
 
 export function teamsRemoveTeamRoleResponseBodyFromJSON(
   jsonString: string,

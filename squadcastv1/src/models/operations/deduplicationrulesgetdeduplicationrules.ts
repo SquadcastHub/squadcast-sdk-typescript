@@ -24,16 +24,6 @@ export type DeduplicationRulesGetDeduplicationRulesResponse = {
 };
 
 /** @internal */
-export const DeduplicationRulesGetDeduplicationRulesRequest$inboundSchema:
-  z.ZodType<
-    DeduplicationRulesGetDeduplicationRulesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-  });
-
-/** @internal */
 export type DeduplicationRulesGetDeduplicationRulesRequest$Outbound = {
   serviceID: string;
 };
@@ -48,22 +38,6 @@ export const DeduplicationRulesGetDeduplicationRulesRequest$outboundSchema:
     serviceID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeduplicationRulesGetDeduplicationRulesRequest$ {
-  /** @deprecated use `DeduplicationRulesGetDeduplicationRulesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    DeduplicationRulesGetDeduplicationRulesRequest$inboundSchema;
-  /** @deprecated use `DeduplicationRulesGetDeduplicationRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    DeduplicationRulesGetDeduplicationRulesRequest$outboundSchema;
-  /** @deprecated use `DeduplicationRulesGetDeduplicationRulesRequest$Outbound` instead. */
-  export type Outbound =
-    DeduplicationRulesGetDeduplicationRulesRequest$Outbound;
-}
-
 export function deduplicationRulesGetDeduplicationRulesRequestToJSON(
   deduplicationRulesGetDeduplicationRulesRequest:
     DeduplicationRulesGetDeduplicationRulesRequest,
@@ -72,22 +46,6 @@ export function deduplicationRulesGetDeduplicationRulesRequestToJSON(
     DeduplicationRulesGetDeduplicationRulesRequest$outboundSchema.parse(
       deduplicationRulesGetDeduplicationRulesRequest,
     ),
-  );
-}
-
-export function deduplicationRulesGetDeduplicationRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  DeduplicationRulesGetDeduplicationRulesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      DeduplicationRulesGetDeduplicationRulesRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'DeduplicationRulesGetDeduplicationRulesRequest' from JSON`,
   );
 }
 
@@ -103,52 +61,6 @@ export const DeduplicationRulesGetDeduplicationRulesData$inboundSchema:
         .V3ServicesDeduplicationRulesDeduplicationRuleResponse$inboundSchema,
     ),
   });
-
-/** @internal */
-export type DeduplicationRulesGetDeduplicationRulesData$Outbound = {
-  rules: Array<
-    models.V3ServicesDeduplicationRulesDeduplicationRuleResponse$Outbound
-  >;
-};
-
-/** @internal */
-export const DeduplicationRulesGetDeduplicationRulesData$outboundSchema:
-  z.ZodType<
-    DeduplicationRulesGetDeduplicationRulesData$Outbound,
-    z.ZodTypeDef,
-    DeduplicationRulesGetDeduplicationRulesData
-  > = z.object({
-    rules: z.array(
-      models
-        .V3ServicesDeduplicationRulesDeduplicationRuleResponse$outboundSchema,
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeduplicationRulesGetDeduplicationRulesData$ {
-  /** @deprecated use `DeduplicationRulesGetDeduplicationRulesData$inboundSchema` instead. */
-  export const inboundSchema =
-    DeduplicationRulesGetDeduplicationRulesData$inboundSchema;
-  /** @deprecated use `DeduplicationRulesGetDeduplicationRulesData$outboundSchema` instead. */
-  export const outboundSchema =
-    DeduplicationRulesGetDeduplicationRulesData$outboundSchema;
-  /** @deprecated use `DeduplicationRulesGetDeduplicationRulesData$Outbound` instead. */
-  export type Outbound = DeduplicationRulesGetDeduplicationRulesData$Outbound;
-}
-
-export function deduplicationRulesGetDeduplicationRulesDataToJSON(
-  deduplicationRulesGetDeduplicationRulesData:
-    DeduplicationRulesGetDeduplicationRulesData,
-): string {
-  return JSON.stringify(
-    DeduplicationRulesGetDeduplicationRulesData$outboundSchema.parse(
-      deduplicationRulesGetDeduplicationRulesData,
-    ),
-  );
-}
 
 export function deduplicationRulesGetDeduplicationRulesDataFromJSON(
   jsonString: string,
@@ -177,50 +89,6 @@ export const DeduplicationRulesGetDeduplicationRulesResponse$inboundSchema:
       DeduplicationRulesGetDeduplicationRulesData$inboundSchema
     ),
   });
-
-/** @internal */
-export type DeduplicationRulesGetDeduplicationRulesResponse$Outbound = {
-  data: DeduplicationRulesGetDeduplicationRulesData$Outbound;
-};
-
-/** @internal */
-export const DeduplicationRulesGetDeduplicationRulesResponse$outboundSchema:
-  z.ZodType<
-    DeduplicationRulesGetDeduplicationRulesResponse$Outbound,
-    z.ZodTypeDef,
-    DeduplicationRulesGetDeduplicationRulesResponse
-  > = z.object({
-    data: z.lazy(() =>
-      DeduplicationRulesGetDeduplicationRulesData$outboundSchema
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeduplicationRulesGetDeduplicationRulesResponse$ {
-  /** @deprecated use `DeduplicationRulesGetDeduplicationRulesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    DeduplicationRulesGetDeduplicationRulesResponse$inboundSchema;
-  /** @deprecated use `DeduplicationRulesGetDeduplicationRulesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    DeduplicationRulesGetDeduplicationRulesResponse$outboundSchema;
-  /** @deprecated use `DeduplicationRulesGetDeduplicationRulesResponse$Outbound` instead. */
-  export type Outbound =
-    DeduplicationRulesGetDeduplicationRulesResponse$Outbound;
-}
-
-export function deduplicationRulesGetDeduplicationRulesResponseToJSON(
-  deduplicationRulesGetDeduplicationRulesResponse:
-    DeduplicationRulesGetDeduplicationRulesResponse,
-): string {
-  return JSON.stringify(
-    DeduplicationRulesGetDeduplicationRulesResponse$outboundSchema.parse(
-      deduplicationRulesGetDeduplicationRulesResponse,
-    ),
-  );
-}
 
 export function deduplicationRulesGetDeduplicationRulesResponseFromJSON(
   jsonString: string,

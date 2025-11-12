@@ -22,21 +22,6 @@ export type SquadsUpdateSquadNameResponse = {
 };
 
 /** @internal */
-export const SquadsUpdateSquadNameRequest$inboundSchema: z.ZodType<
-  SquadsUpdateSquadNameRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  squadID: z.string(),
-  "V4.Squads.UpdateSquadNameRequest":
-    models.V4SquadsUpdateSquadNameRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V4.Squads.UpdateSquadNameRequest": "v4SquadsUpdateSquadNameRequest",
-  });
-});
-
-/** @internal */
 export type SquadsUpdateSquadNameRequest$Outbound = {
   squadID: string;
   "V4.Squads.UpdateSquadNameRequest":
@@ -58,19 +43,6 @@ export const SquadsUpdateSquadNameRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SquadsUpdateSquadNameRequest$ {
-  /** @deprecated use `SquadsUpdateSquadNameRequest$inboundSchema` instead. */
-  export const inboundSchema = SquadsUpdateSquadNameRequest$inboundSchema;
-  /** @deprecated use `SquadsUpdateSquadNameRequest$outboundSchema` instead. */
-  export const outboundSchema = SquadsUpdateSquadNameRequest$outboundSchema;
-  /** @deprecated use `SquadsUpdateSquadNameRequest$Outbound` instead. */
-  export type Outbound = SquadsUpdateSquadNameRequest$Outbound;
-}
-
 export function squadsUpdateSquadNameRequestToJSON(
   squadsUpdateSquadNameRequest: SquadsUpdateSquadNameRequest,
 ): string {
@@ -78,16 +50,6 @@ export function squadsUpdateSquadNameRequestToJSON(
     SquadsUpdateSquadNameRequest$outboundSchema.parse(
       squadsUpdateSquadNameRequest,
     ),
-  );
-}
-
-export function squadsUpdateSquadNameRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SquadsUpdateSquadNameRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SquadsUpdateSquadNameRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SquadsUpdateSquadNameRequest' from JSON`,
   );
 }
 
@@ -99,43 +61,6 @@ export const SquadsUpdateSquadNameResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4SquadsUpdateSquadNameResponse$inboundSchema,
 });
-
-/** @internal */
-export type SquadsUpdateSquadNameResponse$Outbound = {
-  data: models.V4SquadsUpdateSquadNameResponse$Outbound;
-};
-
-/** @internal */
-export const SquadsUpdateSquadNameResponse$outboundSchema: z.ZodType<
-  SquadsUpdateSquadNameResponse$Outbound,
-  z.ZodTypeDef,
-  SquadsUpdateSquadNameResponse
-> = z.object({
-  data: models.V4SquadsUpdateSquadNameResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SquadsUpdateSquadNameResponse$ {
-  /** @deprecated use `SquadsUpdateSquadNameResponse$inboundSchema` instead. */
-  export const inboundSchema = SquadsUpdateSquadNameResponse$inboundSchema;
-  /** @deprecated use `SquadsUpdateSquadNameResponse$outboundSchema` instead. */
-  export const outboundSchema = SquadsUpdateSquadNameResponse$outboundSchema;
-  /** @deprecated use `SquadsUpdateSquadNameResponse$Outbound` instead. */
-  export type Outbound = SquadsUpdateSquadNameResponse$Outbound;
-}
-
-export function squadsUpdateSquadNameResponseToJSON(
-  squadsUpdateSquadNameResponse: SquadsUpdateSquadNameResponse,
-): string {
-  return JSON.stringify(
-    SquadsUpdateSquadNameResponse$outboundSchema.parse(
-      squadsUpdateSquadNameResponse,
-    ),
-  );
-}
 
 export function squadsUpdateSquadNameResponseFromJSON(
   jsonString: string,

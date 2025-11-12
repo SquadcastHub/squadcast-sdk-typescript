@@ -1,7 +1,7 @@
 overlay: 1.0.0
 info:
   title: Speakeasy Suggestions - Squadcast
-  version: 0.0.3
+  version: 0.0.5
 actions:
   - target: $["paths"]["/v3/extensions/slack_v2/channel/archive"]["post"]
     update:
@@ -2243,4 +2243,55 @@ actions:
       after: sdk.squads.delete()
       before: sdk.Squads.Squads_deleteSquad()
       created_at: 1758939347625
+      reviewed_at: 1762929815499
+      type: method-name
+  - target: $["paths"]["/v3/audit-logs/{id}"]["get"]
+    update:
+      x-speakeasy-group: auditLogs
+      x-speakeasy-name-override: getById
+    x-speakeasy-metadata:
+      after: sdk.auditLogs.getById()
+      before: sdk.Audit Logs.AuditLogs_getAuditLogById()
+      created_at: 1762929745951
+      reviewed_at: 1762929815499
+      type: method-name
+  - target: $["paths"]["/v3/audit-logs"]["get"]
+    update:
+      x-speakeasy-group: auditLogs
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.auditLogs.list()
+      before: sdk.Audit Logs.AuditLogs_listAuditLogs()
+      created_at: 1762929745951
+      reviewed_at: 1762929815499
+      type: method-name
+  - target: $["paths"]["/v3/audit-logs/export/history"]["get"]
+    update:
+      x-speakeasy-group: auditLogs
+      x-speakeasy-name-override: listExportHistory
+    x-speakeasy-metadata:
+      after: sdk.auditLogs.listExportHistory()
+      before: sdk.Audit Logs.AuditLogs_listAuditLogsExportHistory()
+      created_at: 1762929745951
+      reviewed_at: 1762929815499
+      type: method-name
+  - target: $["paths"]["/v3/audit-logs/export/history/{id}"]["get"]
+    update:
+      x-speakeasy-group: auditLogs.exportHistory
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.auditLogs.exportHistory.get()
+      before: sdk.Audit Logs.AuditLogs_getAuditLogsExportHistoryById()
+      created_at: 1762929745951
+      reviewed_at: 1762929815499
+      type: method-name
+  - target: $["paths"]["/v3/audit-logs/export"]["post"]
+    update:
+      x-speakeasy-group: auditLogs
+      x-speakeasy-name-override: export
+    x-speakeasy-metadata:
+      after: sdk.auditLogs.export()
+      before: sdk.Audit Logs.AuditLogs_exportAuditLogs()
+      created_at: 1762929745952
+      reviewed_at: 1762929815499
       type: method-name

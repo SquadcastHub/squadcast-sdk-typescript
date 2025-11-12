@@ -4,12 +4,8 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3UsersGlobalRBACAbilityName,
-  V3UsersGlobalRBACAbilityName$inboundSchema,
   V3UsersGlobalRBACAbilityName$outboundSchema,
 } from "./v3usersglobalrbacabilityname.js";
 
@@ -21,20 +17,6 @@ export type V3UsersUpdateUserAbilitiesRequestData = {
 export type V3UsersUpdateUserAbilitiesRequest = {
   data: Array<V3UsersUpdateUserAbilitiesRequestData>;
 };
-
-/** @internal */
-export const V3UsersUpdateUserAbilitiesRequestData$inboundSchema: z.ZodType<
-  V3UsersUpdateUserAbilitiesRequestData,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  user_id: z.string(),
-  abilities: z.array(V3UsersGlobalRBACAbilityName$inboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    "user_id": "userId",
-  });
-});
 
 /** @internal */
 export type V3UsersUpdateUserAbilitiesRequestData$Outbound = {
@@ -56,21 +38,6 @@ export const V3UsersUpdateUserAbilitiesRequestData$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3UsersUpdateUserAbilitiesRequestData$ {
-  /** @deprecated use `V3UsersUpdateUserAbilitiesRequestData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3UsersUpdateUserAbilitiesRequestData$inboundSchema;
-  /** @deprecated use `V3UsersUpdateUserAbilitiesRequestData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3UsersUpdateUserAbilitiesRequestData$outboundSchema;
-  /** @deprecated use `V3UsersUpdateUserAbilitiesRequestData$Outbound` instead. */
-  export type Outbound = V3UsersUpdateUserAbilitiesRequestData$Outbound;
-}
-
 export function v3UsersUpdateUserAbilitiesRequestDataToJSON(
   v3UsersUpdateUserAbilitiesRequestData: V3UsersUpdateUserAbilitiesRequestData,
 ): string {
@@ -80,28 +47,6 @@ export function v3UsersUpdateUserAbilitiesRequestDataToJSON(
     ),
   );
 }
-
-export function v3UsersUpdateUserAbilitiesRequestDataFromJSON(
-  jsonString: string,
-): SafeParseResult<V3UsersUpdateUserAbilitiesRequestData, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3UsersUpdateUserAbilitiesRequestData$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3UsersUpdateUserAbilitiesRequestData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3UsersUpdateUserAbilitiesRequest$inboundSchema: z.ZodType<
-  V3UsersUpdateUserAbilitiesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  data: z.array(
-    z.lazy(() => V3UsersUpdateUserAbilitiesRequestData$inboundSchema),
-  ),
-});
 
 /** @internal */
 export type V3UsersUpdateUserAbilitiesRequest$Outbound = {
@@ -119,20 +64,6 @@ export const V3UsersUpdateUserAbilitiesRequest$outboundSchema: z.ZodType<
   ),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3UsersUpdateUserAbilitiesRequest$ {
-  /** @deprecated use `V3UsersUpdateUserAbilitiesRequest$inboundSchema` instead. */
-  export const inboundSchema = V3UsersUpdateUserAbilitiesRequest$inboundSchema;
-  /** @deprecated use `V3UsersUpdateUserAbilitiesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3UsersUpdateUserAbilitiesRequest$outboundSchema;
-  /** @deprecated use `V3UsersUpdateUserAbilitiesRequest$Outbound` instead. */
-  export type Outbound = V3UsersUpdateUserAbilitiesRequest$Outbound;
-}
-
 export function v3UsersUpdateUserAbilitiesRequestToJSON(
   v3UsersUpdateUserAbilitiesRequest: V3UsersUpdateUserAbilitiesRequest,
 ): string {
@@ -140,15 +71,5 @@ export function v3UsersUpdateUserAbilitiesRequestToJSON(
     V3UsersUpdateUserAbilitiesRequest$outboundSchema.parse(
       v3UsersUpdateUserAbilitiesRequest,
     ),
-  );
-}
-
-export function v3UsersUpdateUserAbilitiesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3UsersUpdateUserAbilitiesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3UsersUpdateUserAbilitiesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3UsersUpdateUserAbilitiesRequest' from JSON`,
   );
 }

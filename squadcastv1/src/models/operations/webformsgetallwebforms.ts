@@ -32,23 +32,6 @@ export type WebformsGetAllWebformsResponse = {
 };
 
 /** @internal */
-export const WebformsGetAllWebformsRequest$inboundSchema: z.ZodType<
-  WebformsGetAllWebformsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  owner_id: z.string(),
-  page_number: z.number().int().optional(),
-  page_size: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-    "page_number": "pageNumber",
-    "page_size": "pageSize",
-  });
-});
-
-/** @internal */
 export type WebformsGetAllWebformsRequest$Outbound = {
   owner_id: string;
   page_number?: number | undefined;
@@ -72,19 +55,6 @@ export const WebformsGetAllWebformsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebformsGetAllWebformsRequest$ {
-  /** @deprecated use `WebformsGetAllWebformsRequest$inboundSchema` instead. */
-  export const inboundSchema = WebformsGetAllWebformsRequest$inboundSchema;
-  /** @deprecated use `WebformsGetAllWebformsRequest$outboundSchema` instead. */
-  export const outboundSchema = WebformsGetAllWebformsRequest$outboundSchema;
-  /** @deprecated use `WebformsGetAllWebformsRequest$Outbound` instead. */
-  export type Outbound = WebformsGetAllWebformsRequest$Outbound;
-}
-
 export function webformsGetAllWebformsRequestToJSON(
   webformsGetAllWebformsRequest: WebformsGetAllWebformsRequest,
 ): string {
@@ -92,16 +62,6 @@ export function webformsGetAllWebformsRequestToJSON(
     WebformsGetAllWebformsRequest$outboundSchema.parse(
       webformsGetAllWebformsRequest,
     ),
-  );
-}
-
-export function webformsGetAllWebformsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WebformsGetAllWebformsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => WebformsGetAllWebformsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WebformsGetAllWebformsRequest' from JSON`,
   );
 }
 
@@ -117,45 +77,6 @@ export const WebformsGetAllWebformsMeta$inboundSchema: z.ZodType<
     "total_count": "totalCount",
   });
 });
-
-/** @internal */
-export type WebformsGetAllWebformsMeta$Outbound = {
-  total_count: number;
-};
-
-/** @internal */
-export const WebformsGetAllWebformsMeta$outboundSchema: z.ZodType<
-  WebformsGetAllWebformsMeta$Outbound,
-  z.ZodTypeDef,
-  WebformsGetAllWebformsMeta
-> = z.object({
-  totalCount: z.number().int(),
-}).transform((v) => {
-  return remap$(v, {
-    totalCount: "total_count",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebformsGetAllWebformsMeta$ {
-  /** @deprecated use `WebformsGetAllWebformsMeta$inboundSchema` instead. */
-  export const inboundSchema = WebformsGetAllWebformsMeta$inboundSchema;
-  /** @deprecated use `WebformsGetAllWebformsMeta$outboundSchema` instead. */
-  export const outboundSchema = WebformsGetAllWebformsMeta$outboundSchema;
-  /** @deprecated use `WebformsGetAllWebformsMeta$Outbound` instead. */
-  export type Outbound = WebformsGetAllWebformsMeta$Outbound;
-}
-
-export function webformsGetAllWebformsMetaToJSON(
-  webformsGetAllWebformsMeta: WebformsGetAllWebformsMeta,
-): string {
-  return JSON.stringify(
-    WebformsGetAllWebformsMeta$outboundSchema.parse(webformsGetAllWebformsMeta),
-  );
-}
 
 export function webformsGetAllWebformsMetaFromJSON(
   jsonString: string,
@@ -176,46 +97,6 @@ export const WebformsGetAllWebformsResponseBody$inboundSchema: z.ZodType<
   data: z.array(models.V3WebformsWebformResponse$inboundSchema),
   meta: z.lazy(() => WebformsGetAllWebformsMeta$inboundSchema),
 });
-
-/** @internal */
-export type WebformsGetAllWebformsResponseBody$Outbound = {
-  data: Array<models.V3WebformsWebformResponse$Outbound>;
-  meta: WebformsGetAllWebformsMeta$Outbound;
-};
-
-/** @internal */
-export const WebformsGetAllWebformsResponseBody$outboundSchema: z.ZodType<
-  WebformsGetAllWebformsResponseBody$Outbound,
-  z.ZodTypeDef,
-  WebformsGetAllWebformsResponseBody
-> = z.object({
-  data: z.array(models.V3WebformsWebformResponse$outboundSchema),
-  meta: z.lazy(() => WebformsGetAllWebformsMeta$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebformsGetAllWebformsResponseBody$ {
-  /** @deprecated use `WebformsGetAllWebformsResponseBody$inboundSchema` instead. */
-  export const inboundSchema = WebformsGetAllWebformsResponseBody$inboundSchema;
-  /** @deprecated use `WebformsGetAllWebformsResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    WebformsGetAllWebformsResponseBody$outboundSchema;
-  /** @deprecated use `WebformsGetAllWebformsResponseBody$Outbound` instead. */
-  export type Outbound = WebformsGetAllWebformsResponseBody$Outbound;
-}
-
-export function webformsGetAllWebformsResponseBodyToJSON(
-  webformsGetAllWebformsResponseBody: WebformsGetAllWebformsResponseBody,
-): string {
-  return JSON.stringify(
-    WebformsGetAllWebformsResponseBody$outboundSchema.parse(
-      webformsGetAllWebformsResponseBody,
-    ),
-  );
-}
 
 export function webformsGetAllWebformsResponseBodyFromJSON(
   jsonString: string,
@@ -240,47 +121,6 @@ export const WebformsGetAllWebformsResponse$inboundSchema: z.ZodType<
     "Result": "result",
   });
 });
-
-/** @internal */
-export type WebformsGetAllWebformsResponse$Outbound = {
-  Result: WebformsGetAllWebformsResponseBody$Outbound;
-};
-
-/** @internal */
-export const WebformsGetAllWebformsResponse$outboundSchema: z.ZodType<
-  WebformsGetAllWebformsResponse$Outbound,
-  z.ZodTypeDef,
-  WebformsGetAllWebformsResponse
-> = z.object({
-  result: z.lazy(() => WebformsGetAllWebformsResponseBody$outboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    result: "Result",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebformsGetAllWebformsResponse$ {
-  /** @deprecated use `WebformsGetAllWebformsResponse$inboundSchema` instead. */
-  export const inboundSchema = WebformsGetAllWebformsResponse$inboundSchema;
-  /** @deprecated use `WebformsGetAllWebformsResponse$outboundSchema` instead. */
-  export const outboundSchema = WebformsGetAllWebformsResponse$outboundSchema;
-  /** @deprecated use `WebformsGetAllWebformsResponse$Outbound` instead. */
-  export type Outbound = WebformsGetAllWebformsResponse$Outbound;
-}
-
-export function webformsGetAllWebformsResponseToJSON(
-  webformsGetAllWebformsResponse: WebformsGetAllWebformsResponse,
-): string {
-  return JSON.stringify(
-    WebformsGetAllWebformsResponse$outboundSchema.parse(
-      webformsGetAllWebformsResponse,
-    ),
-  );
-}
 
 export function webformsGetAllWebformsResponseFromJSON(
   jsonString: string,

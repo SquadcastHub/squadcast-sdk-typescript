@@ -10,20 +10,14 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ExtensionsMSTeamsConnectedTeams,
   V3ExtensionsMSTeamsConnectedTeams$inboundSchema,
-  V3ExtensionsMSTeamsConnectedTeams$Outbound,
-  V3ExtensionsMSTeamsConnectedTeams$outboundSchema,
 } from "./v3extensionsmsteamsconnectedteams.js";
 import {
   V3ExtensionsMSTeamsIncidentActionAlertState,
   V3ExtensionsMSTeamsIncidentActionAlertState$inboundSchema,
-  V3ExtensionsMSTeamsIncidentActionAlertState$Outbound,
-  V3ExtensionsMSTeamsIncidentActionAlertState$outboundSchema,
 } from "./v3extensionsmsteamsincidentactionalertstate.js";
 import {
   V3ExtensionsMSTeamsTriggers,
   V3ExtensionsMSTeamsTriggers$inboundSchema,
-  V3ExtensionsMSTeamsTriggers$Outbound,
-  V3ExtensionsMSTeamsTriggers$outboundSchema,
 } from "./v3extensionsmsteamstriggers.js";
 
 /**
@@ -115,84 +109,6 @@ export const V3ExtensionsMSTeamsMSTeamsConfigResponse$inboundSchema: z.ZodType<
     "connected_teams": "connectedTeams",
   });
 });
-
-/** @internal */
-export type V3ExtensionsMSTeamsMSTeamsConfigResponse$Outbound = {
-  custom_incident_alert_state?:
-    | V3ExtensionsMSTeamsIncidentActionAlertState$Outbound
-    | undefined;
-  id?: string | undefined;
-  organization_id?: string | undefined;
-  default_conversation_name: string;
-  default_conversation_id: string;
-  is_active: boolean;
-  is_default_active: boolean;
-  is_custom_channels_active: boolean;
-  triggers: V3ExtensionsMSTeamsTriggers$Outbound;
-  tenant_id: string;
-  from_id: string;
-  connected_teams: Array<V3ExtensionsMSTeamsConnectedTeams$Outbound>;
-};
-
-/** @internal */
-export const V3ExtensionsMSTeamsMSTeamsConfigResponse$outboundSchema: z.ZodType<
-  V3ExtensionsMSTeamsMSTeamsConfigResponse$Outbound,
-  z.ZodTypeDef,
-  V3ExtensionsMSTeamsMSTeamsConfigResponse
-> = z.object({
-  customIncidentAlertState:
-    V3ExtensionsMSTeamsIncidentActionAlertState$outboundSchema.optional(),
-  id: z.string().optional(),
-  organizationId: z.string().optional(),
-  defaultConversationName: z.string(),
-  defaultConversationId: z.string(),
-  isActive: z.boolean(),
-  isDefaultActive: z.boolean(),
-  isCustomChannelsActive: z.boolean(),
-  triggers: V3ExtensionsMSTeamsTriggers$outboundSchema,
-  tenantId: z.string(),
-  fromId: z.string(),
-  connectedTeams: z.array(V3ExtensionsMSTeamsConnectedTeams$outboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    customIncidentAlertState: "custom_incident_alert_state",
-    organizationId: "organization_id",
-    defaultConversationName: "default_conversation_name",
-    defaultConversationId: "default_conversation_id",
-    isActive: "is_active",
-    isDefaultActive: "is_default_active",
-    isCustomChannelsActive: "is_custom_channels_active",
-    tenantId: "tenant_id",
-    fromId: "from_id",
-    connectedTeams: "connected_teams",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsMSTeamsMSTeamsConfigResponse$ {
-  /** @deprecated use `V3ExtensionsMSTeamsMSTeamsConfigResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsMSTeamsMSTeamsConfigResponse$inboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsMSTeamsConfigResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsMSTeamsMSTeamsConfigResponse$outboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsMSTeamsConfigResponse$Outbound` instead. */
-  export type Outbound = V3ExtensionsMSTeamsMSTeamsConfigResponse$Outbound;
-}
-
-export function v3ExtensionsMSTeamsMSTeamsConfigResponseToJSON(
-  v3ExtensionsMSTeamsMSTeamsConfigResponse:
-    V3ExtensionsMSTeamsMSTeamsConfigResponse,
-): string {
-  return JSON.stringify(
-    V3ExtensionsMSTeamsMSTeamsConfigResponse$outboundSchema.parse(
-      v3ExtensionsMSTeamsMSTeamsConfigResponse,
-    ),
-  );
-}
 
 export function v3ExtensionsMSTeamsMSTeamsConfigResponseFromJSON(
   jsonString: string,

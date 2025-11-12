@@ -36,64 +36,6 @@ export const V3ServicesExtensionsSlackExtensionResponse$inboundSchema:
       });
     });
 
-/** @internal */
-export type V3ServicesExtensionsSlackExtensionResponse$Outbound = {
-  id: number;
-  service_id: string;
-  organization_id: string;
-  channel_id: string;
-  created_at: string;
-  name: string;
-};
-
-/** @internal */
-export const V3ServicesExtensionsSlackExtensionResponse$outboundSchema:
-  z.ZodType<
-    V3ServicesExtensionsSlackExtensionResponse$Outbound,
-    z.ZodTypeDef,
-    V3ServicesExtensionsSlackExtensionResponse
-  > = z.object({
-    id: z.number().int(),
-    serviceId: z.string(),
-    organizationId: z.string(),
-    channelId: z.string(),
-    createdAt: z.string(),
-    name: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      serviceId: "service_id",
-      organizationId: "organization_id",
-      channelId: "channel_id",
-      createdAt: "created_at",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesExtensionsSlackExtensionResponse$ {
-  /** @deprecated use `V3ServicesExtensionsSlackExtensionResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesExtensionsSlackExtensionResponse$inboundSchema;
-  /** @deprecated use `V3ServicesExtensionsSlackExtensionResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesExtensionsSlackExtensionResponse$outboundSchema;
-  /** @deprecated use `V3ServicesExtensionsSlackExtensionResponse$Outbound` instead. */
-  export type Outbound = V3ServicesExtensionsSlackExtensionResponse$Outbound;
-}
-
-export function v3ServicesExtensionsSlackExtensionResponseToJSON(
-  v3ServicesExtensionsSlackExtensionResponse:
-    V3ServicesExtensionsSlackExtensionResponse,
-): string {
-  return JSON.stringify(
-    V3ServicesExtensionsSlackExtensionResponse$outboundSchema.parse(
-      v3ServicesExtensionsSlackExtensionResponse,
-    ),
-  );
-}
-
 export function v3ServicesExtensionsSlackExtensionResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4ParticipantGroup,
   V4ParticipantGroup$inboundSchema,
-  V4ParticipantGroup$Outbound,
-  V4ParticipantGroup$outboundSchema,
 } from "./v4participantgroup.js";
 
 export type V4RotationParticipantsResponse = {
@@ -27,45 +25,6 @@ export const V4RotationParticipantsResponse$inboundSchema: z.ZodType<
   rotationID: z.number().int(),
   participantGroups: z.array(V4ParticipantGroup$inboundSchema),
 });
-
-/** @internal */
-export type V4RotationParticipantsResponse$Outbound = {
-  rotationID: number;
-  participantGroups: Array<V4ParticipantGroup$Outbound>;
-};
-
-/** @internal */
-export const V4RotationParticipantsResponse$outboundSchema: z.ZodType<
-  V4RotationParticipantsResponse$Outbound,
-  z.ZodTypeDef,
-  V4RotationParticipantsResponse
-> = z.object({
-  rotationID: z.number().int(),
-  participantGroups: z.array(V4ParticipantGroup$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4RotationParticipantsResponse$ {
-  /** @deprecated use `V4RotationParticipantsResponse$inboundSchema` instead. */
-  export const inboundSchema = V4RotationParticipantsResponse$inboundSchema;
-  /** @deprecated use `V4RotationParticipantsResponse$outboundSchema` instead. */
-  export const outboundSchema = V4RotationParticipantsResponse$outboundSchema;
-  /** @deprecated use `V4RotationParticipantsResponse$Outbound` instead. */
-  export type Outbound = V4RotationParticipantsResponse$Outbound;
-}
-
-export function v4RotationParticipantsResponseToJSON(
-  v4RotationParticipantsResponse: V4RotationParticipantsResponse,
-): string {
-  return JSON.stringify(
-    V4RotationParticipantsResponse$outboundSchema.parse(
-      v4RotationParticipantsResponse,
-    ),
-  );
-}
 
 export function v4RotationParticipantsResponseFromJSON(
   jsonString: string,

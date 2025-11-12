@@ -3,10 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3WorkflowsSqSendEmailUpdateName = {
   SqSendEmail: "sq_send_email",
@@ -27,36 +24,9 @@ export type V3WorkflowsSqSendEmailUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsSqSendEmailUpdateName$inboundSchema: z.ZodNativeEnum<
-  typeof V3WorkflowsSqSendEmailUpdateName
-> = z.nativeEnum(V3WorkflowsSqSendEmailUpdateName);
-
-/** @internal */
 export const V3WorkflowsSqSendEmailUpdateName$outboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSqSendEmailUpdateName
-> = V3WorkflowsSqSendEmailUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqSendEmailUpdateName$ {
-  /** @deprecated use `V3WorkflowsSqSendEmailUpdateName$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqSendEmailUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqSendEmailUpdateName$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqSendEmailUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsSqSendEmailUpdateData$inboundSchema: z.ZodType<
-  V3WorkflowsSqSendEmailUpdateData,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  to: z.array(z.string()).optional(),
-  subject: z.string().optional(),
-  body: z.string().optional(),
-});
+> = z.nativeEnum(V3WorkflowsSqSendEmailUpdateName);
 
 /** @internal */
 export type V3WorkflowsSqSendEmailUpdateData$Outbound = {
@@ -76,19 +46,6 @@ export const V3WorkflowsSqSendEmailUpdateData$outboundSchema: z.ZodType<
   body: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqSendEmailUpdateData$ {
-  /** @deprecated use `V3WorkflowsSqSendEmailUpdateData$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqSendEmailUpdateData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqSendEmailUpdateData$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqSendEmailUpdateData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqSendEmailUpdateData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqSendEmailUpdateData$Outbound;
-}
-
 export function v3WorkflowsSqSendEmailUpdateDataToJSON(
   v3WorkflowsSqSendEmailUpdateData: V3WorkflowsSqSendEmailUpdateData,
 ): string {
@@ -98,26 +55,6 @@ export function v3WorkflowsSqSendEmailUpdateDataToJSON(
     ),
   );
 }
-
-export function v3WorkflowsSqSendEmailUpdateDataFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsSqSendEmailUpdateData, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3WorkflowsSqSendEmailUpdateData$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsSqSendEmailUpdateData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsSqSendEmailUpdate$inboundSchema: z.ZodType<
-  V3WorkflowsSqSendEmailUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: V3WorkflowsSqSendEmailUpdateName$inboundSchema,
-  data: z.lazy(() => V3WorkflowsSqSendEmailUpdateData$inboundSchema).optional(),
-});
 
 /** @internal */
 export type V3WorkflowsSqSendEmailUpdate$Outbound = {
@@ -136,19 +73,6 @@ export const V3WorkflowsSqSendEmailUpdate$outboundSchema: z.ZodType<
     .optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqSendEmailUpdate$ {
-  /** @deprecated use `V3WorkflowsSqSendEmailUpdate$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqSendEmailUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqSendEmailUpdate$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqSendEmailUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqSendEmailUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqSendEmailUpdate$Outbound;
-}
-
 export function v3WorkflowsSqSendEmailUpdateToJSON(
   v3WorkflowsSqSendEmailUpdate: V3WorkflowsSqSendEmailUpdate,
 ): string {
@@ -156,15 +80,5 @@ export function v3WorkflowsSqSendEmailUpdateToJSON(
     V3WorkflowsSqSendEmailUpdate$outboundSchema.parse(
       v3WorkflowsSqSendEmailUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsSqSendEmailUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsSqSendEmailUpdate, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3WorkflowsSqSendEmailUpdate$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsSqSendEmailUpdate' from JSON`,
   );
 }

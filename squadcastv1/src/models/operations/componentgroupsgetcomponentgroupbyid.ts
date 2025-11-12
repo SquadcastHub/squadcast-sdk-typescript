@@ -22,21 +22,6 @@ export type ComponentGroupsGetComponentGroupByIdResponse = {
 };
 
 /** @internal */
-export const ComponentGroupsGetComponentGroupByIdRequest$inboundSchema:
-  z.ZodType<
-    ComponentGroupsGetComponentGroupByIdRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    statuspageID: z.string(),
-    group_id: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      "group_id": "groupId",
-    });
-  });
-
-/** @internal */
 export type ComponentGroupsGetComponentGroupByIdRequest$Outbound = {
   statuspageID: string;
   group_id: string;
@@ -57,21 +42,6 @@ export const ComponentGroupsGetComponentGroupByIdRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentGroupsGetComponentGroupByIdRequest$ {
-  /** @deprecated use `ComponentGroupsGetComponentGroupByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentGroupsGetComponentGroupByIdRequest$inboundSchema;
-  /** @deprecated use `ComponentGroupsGetComponentGroupByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentGroupsGetComponentGroupByIdRequest$outboundSchema;
-  /** @deprecated use `ComponentGroupsGetComponentGroupByIdRequest$Outbound` instead. */
-  export type Outbound = ComponentGroupsGetComponentGroupByIdRequest$Outbound;
-}
-
 export function componentGroupsGetComponentGroupByIdRequestToJSON(
   componentGroupsGetComponentGroupByIdRequest:
     ComponentGroupsGetComponentGroupByIdRequest,
@@ -80,22 +50,6 @@ export function componentGroupsGetComponentGroupByIdRequestToJSON(
     ComponentGroupsGetComponentGroupByIdRequest$outboundSchema.parse(
       componentGroupsGetComponentGroupByIdRequest,
     ),
-  );
-}
-
-export function componentGroupsGetComponentGroupByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  ComponentGroupsGetComponentGroupByIdRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ComponentGroupsGetComponentGroupByIdRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComponentGroupsGetComponentGroupByIdRequest' from JSON`,
   );
 }
 
@@ -110,50 +64,6 @@ export const ComponentGroupsGetComponentGroupByIdResponse$inboundSchema:
       models
         .V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$inboundSchema,
   });
-
-/** @internal */
-export type ComponentGroupsGetComponentGroupByIdResponse$Outbound = {
-  data:
-    models.V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$Outbound;
-};
-
-/** @internal */
-export const ComponentGroupsGetComponentGroupByIdResponse$outboundSchema:
-  z.ZodType<
-    ComponentGroupsGetComponentGroupByIdResponse$Outbound,
-    z.ZodTypeDef,
-    ComponentGroupsGetComponentGroupByIdResponse
-  > = z.object({
-    data:
-      models
-        .V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentGroupsGetComponentGroupByIdResponse$ {
-  /** @deprecated use `ComponentGroupsGetComponentGroupByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentGroupsGetComponentGroupByIdResponse$inboundSchema;
-  /** @deprecated use `ComponentGroupsGetComponentGroupByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentGroupsGetComponentGroupByIdResponse$outboundSchema;
-  /** @deprecated use `ComponentGroupsGetComponentGroupByIdResponse$Outbound` instead. */
-  export type Outbound = ComponentGroupsGetComponentGroupByIdResponse$Outbound;
-}
-
-export function componentGroupsGetComponentGroupByIdResponseToJSON(
-  componentGroupsGetComponentGroupByIdResponse:
-    ComponentGroupsGetComponentGroupByIdResponse,
-): string {
-  return JSON.stringify(
-    ComponentGroupsGetComponentGroupByIdResponse$outboundSchema.parse(
-      componentGroupsGetComponentGroupByIdResponse,
-    ),
-  );
-}
 
 export function componentGroupsGetComponentGroupByIdResponseFromJSON(
   jsonString: string,

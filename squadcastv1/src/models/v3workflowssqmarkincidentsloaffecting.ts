@@ -29,24 +29,10 @@ export type V3WorkflowsSqMarkIncidentSLOAffecting = {
 export const V3WorkflowsSqMarkIncidentSLOAffectingName$inboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqMarkIncidentSLOAffectingName> = z
     .nativeEnum(V3WorkflowsSqMarkIncidentSLOAffectingName);
-
 /** @internal */
 export const V3WorkflowsSqMarkIncidentSLOAffectingName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqMarkIncidentSLOAffectingName> =
     V3WorkflowsSqMarkIncidentSLOAffectingName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMarkIncidentSLOAffectingName$ {
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffectingName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffectingName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsSqMarkIncidentSLOAffectingData$inboundSchema: z.ZodType<
@@ -57,7 +43,6 @@ export const V3WorkflowsSqMarkIncidentSLOAffectingData$inboundSchema: z.ZodType<
   slis: z.array(z.string()),
   slo: z.number().int(),
 });
-
 /** @internal */
 export type V3WorkflowsSqMarkIncidentSLOAffectingData$Outbound = {
   slis: Array<string>;
@@ -75,21 +60,6 @@ export const V3WorkflowsSqMarkIncidentSLOAffectingData$outboundSchema:
     slo: z.number().int(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMarkIncidentSLOAffectingData$ {
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffectingData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffectingData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffectingData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqMarkIncidentSLOAffectingData$Outbound;
-}
-
 export function v3WorkflowsSqMarkIncidentSLOAffectingDataToJSON(
   v3WorkflowsSqMarkIncidentSLOAffectingData:
     V3WorkflowsSqMarkIncidentSLOAffectingData,
@@ -100,7 +70,6 @@ export function v3WorkflowsSqMarkIncidentSLOAffectingDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqMarkIncidentSLOAffectingDataFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -126,7 +95,6 @@ export const V3WorkflowsSqMarkIncidentSLOAffecting$inboundSchema: z.ZodType<
   name: V3WorkflowsSqMarkIncidentSLOAffectingName$inboundSchema,
   data: z.lazy(() => V3WorkflowsSqMarkIncidentSLOAffectingData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsSqMarkIncidentSLOAffecting$Outbound = {
   name: string;
@@ -143,21 +111,6 @@ export const V3WorkflowsSqMarkIncidentSLOAffecting$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsSqMarkIncidentSLOAffectingData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMarkIncidentSLOAffecting$ {
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffecting$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffecting$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffecting$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqMarkIncidentSLOAffecting$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqMarkIncidentSLOAffecting$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqMarkIncidentSLOAffecting$Outbound;
-}
-
 export function v3WorkflowsSqMarkIncidentSLOAffectingToJSON(
   v3WorkflowsSqMarkIncidentSLOAffecting: V3WorkflowsSqMarkIncidentSLOAffecting,
 ): string {
@@ -167,7 +120,6 @@ export function v3WorkflowsSqMarkIncidentSLOAffectingToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqMarkIncidentSLOAffectingFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqMarkIncidentSLOAffecting, SDKValidationError> {

@@ -10,8 +10,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesSuppressionRulesSuppressionRule,
   V3ServicesSuppressionRulesSuppressionRule$inboundSchema,
-  V3ServicesSuppressionRulesSuppressionRule$Outbound,
-  V3ServicesSuppressionRulesSuppressionRule$outboundSchema,
 } from "./v3servicessuppressionrulessuppressionrule.js";
 
 export type V3ServicesSuppressionRulesSuppressionRulesContainerResponse = {
@@ -48,65 +46,6 @@ export const V3ServicesSuppressionRulesSuppressionRulesContainerResponse$inbound
       "organization_id": "organizationId",
     });
   });
-
-/** @internal */
-export type V3ServicesSuppressionRulesSuppressionRulesContainerResponse$Outbound =
-  {
-    id: string;
-    created_at: string;
-    updated_at: string;
-    service_id: string;
-    organization_id: string;
-    rules: Array<V3ServicesSuppressionRulesSuppressionRule$Outbound>;
-  };
-
-/** @internal */
-export const V3ServicesSuppressionRulesSuppressionRulesContainerResponse$outboundSchema:
-  z.ZodType<
-    V3ServicesSuppressionRulesSuppressionRulesContainerResponse$Outbound,
-    z.ZodTypeDef,
-    V3ServicesSuppressionRulesSuppressionRulesContainerResponse
-  > = z.object({
-    id: z.string(),
-    createdAt: z.date().transform(v => v.toISOString()),
-    updatedAt: z.date().transform(v => v.toISOString()),
-    serviceId: z.string(),
-    organizationId: z.string(),
-    rules: z.array(V3ServicesSuppressionRulesSuppressionRule$outboundSchema),
-  }).transform((v) => {
-    return remap$(v, {
-      createdAt: "created_at",
-      updatedAt: "updated_at",
-      serviceId: "service_id",
-      organizationId: "organization_id",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesSuppressionRulesSuppressionRulesContainerResponse$ {
-  /** @deprecated use `V3ServicesSuppressionRulesSuppressionRulesContainerResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesSuppressionRulesSuppressionRulesContainerResponse$inboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesSuppressionRulesContainerResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesSuppressionRulesSuppressionRulesContainerResponse$outboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesSuppressionRulesContainerResponse$Outbound` instead. */
-  export type Outbound =
-    V3ServicesSuppressionRulesSuppressionRulesContainerResponse$Outbound;
-}
-
-export function v3ServicesSuppressionRulesSuppressionRulesContainerResponseToJSON(
-  v3ServicesSuppressionRulesSuppressionRulesContainerResponse:
-    V3ServicesSuppressionRulesSuppressionRulesContainerResponse,
-): string {
-  return JSON.stringify(
-    V3ServicesSuppressionRulesSuppressionRulesContainerResponse$outboundSchema
-      .parse(v3ServicesSuppressionRulesSuppressionRulesContainerResponse),
-  );
-}
 
 export function v3ServicesSuppressionRulesSuppressionRulesContainerResponseFromJSON(
   jsonString: string,

@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 /**
  * Request body for updating an existing note.
@@ -14,16 +11,6 @@ export type V3IncidentsNotesUpdateNoteRequest = {
   message: string;
   attachments: Array<string>;
 };
-
-/** @internal */
-export const V3IncidentsNotesUpdateNoteRequest$inboundSchema: z.ZodType<
-  V3IncidentsNotesUpdateNoteRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  message: z.string(),
-  attachments: z.array(z.string()),
-});
 
 /** @internal */
 export type V3IncidentsNotesUpdateNoteRequest$Outbound = {
@@ -41,20 +28,6 @@ export const V3IncidentsNotesUpdateNoteRequest$outboundSchema: z.ZodType<
   attachments: z.array(z.string()),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsNotesUpdateNoteRequest$ {
-  /** @deprecated use `V3IncidentsNotesUpdateNoteRequest$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsNotesUpdateNoteRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsNotesUpdateNoteRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsNotesUpdateNoteRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsNotesUpdateNoteRequest$Outbound` instead. */
-  export type Outbound = V3IncidentsNotesUpdateNoteRequest$Outbound;
-}
-
 export function v3IncidentsNotesUpdateNoteRequestToJSON(
   v3IncidentsNotesUpdateNoteRequest: V3IncidentsNotesUpdateNoteRequest,
 ): string {
@@ -62,15 +35,5 @@ export function v3IncidentsNotesUpdateNoteRequestToJSON(
     V3IncidentsNotesUpdateNoteRequest$outboundSchema.parse(
       v3IncidentsNotesUpdateNoteRequest,
     ),
-  );
-}
-
-export function v3IncidentsNotesUpdateNoteRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3IncidentsNotesUpdateNoteRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3IncidentsNotesUpdateNoteRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsNotesUpdateNoteRequest' from JSON`,
   );
 }

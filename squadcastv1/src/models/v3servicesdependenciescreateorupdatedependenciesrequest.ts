@@ -3,23 +3,10 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3ServicesDependenciesCreateOrUpdateDependenciesRequest = {
   dependencies: Array<string>;
 };
-
-/** @internal */
-export const V3ServicesDependenciesCreateOrUpdateDependenciesRequest$inboundSchema:
-  z.ZodType<
-    V3ServicesDependenciesCreateOrUpdateDependenciesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    dependencies: z.array(z.string()),
-  });
 
 /** @internal */
 export type V3ServicesDependenciesCreateOrUpdateDependenciesRequest$Outbound = {
@@ -36,22 +23,6 @@ export const V3ServicesDependenciesCreateOrUpdateDependenciesRequest$outboundSch
     dependencies: z.array(z.string()),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesDependenciesCreateOrUpdateDependenciesRequest$ {
-  /** @deprecated use `V3ServicesDependenciesCreateOrUpdateDependenciesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesDependenciesCreateOrUpdateDependenciesRequest$inboundSchema;
-  /** @deprecated use `V3ServicesDependenciesCreateOrUpdateDependenciesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesDependenciesCreateOrUpdateDependenciesRequest$outboundSchema;
-  /** @deprecated use `V3ServicesDependenciesCreateOrUpdateDependenciesRequest$Outbound` instead. */
-  export type Outbound =
-    V3ServicesDependenciesCreateOrUpdateDependenciesRequest$Outbound;
-}
-
 export function v3ServicesDependenciesCreateOrUpdateDependenciesRequestToJSON(
   v3ServicesDependenciesCreateOrUpdateDependenciesRequest:
     V3ServicesDependenciesCreateOrUpdateDependenciesRequest,
@@ -59,20 +30,5 @@ export function v3ServicesDependenciesCreateOrUpdateDependenciesRequestToJSON(
   return JSON.stringify(
     V3ServicesDependenciesCreateOrUpdateDependenciesRequest$outboundSchema
       .parse(v3ServicesDependenciesCreateOrUpdateDependenciesRequest),
-  );
-}
-
-export function v3ServicesDependenciesCreateOrUpdateDependenciesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesDependenciesCreateOrUpdateDependenciesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesDependenciesCreateOrUpdateDependenciesRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesDependenciesCreateOrUpdateDependenciesRequest' from JSON`,
   );
 }

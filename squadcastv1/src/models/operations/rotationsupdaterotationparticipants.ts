@@ -24,21 +24,6 @@ export type RotationsUpdateRotationParticipantsResponse = {
 };
 
 /** @internal */
-export const RotationsUpdateRotationParticipantsRequest$inboundSchema:
-  z.ZodType<RotationsUpdateRotationParticipantsRequest, z.ZodTypeDef, unknown> =
-    z.object({
-      scheduleID: z.string(),
-      rotationID: z.string(),
-      "V4.UpdateRotationParticipantsRequest":
-        models.V4UpdateRotationParticipantsRequest$inboundSchema,
-    }).transform((v) => {
-      return remap$(v, {
-        "V4.UpdateRotationParticipantsRequest":
-          "v4UpdateRotationParticipantsRequest",
-      });
-    });
-
-/** @internal */
 export type RotationsUpdateRotationParticipantsRequest$Outbound = {
   scheduleID: string;
   rotationID: string;
@@ -64,21 +49,6 @@ export const RotationsUpdateRotationParticipantsRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RotationsUpdateRotationParticipantsRequest$ {
-  /** @deprecated use `RotationsUpdateRotationParticipantsRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    RotationsUpdateRotationParticipantsRequest$inboundSchema;
-  /** @deprecated use `RotationsUpdateRotationParticipantsRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    RotationsUpdateRotationParticipantsRequest$outboundSchema;
-  /** @deprecated use `RotationsUpdateRotationParticipantsRequest$Outbound` instead. */
-  export type Outbound = RotationsUpdateRotationParticipantsRequest$Outbound;
-}
-
 export function rotationsUpdateRotationParticipantsRequestToJSON(
   rotationsUpdateRotationParticipantsRequest:
     RotationsUpdateRotationParticipantsRequest,
@@ -87,22 +57,6 @@ export function rotationsUpdateRotationParticipantsRequestToJSON(
     RotationsUpdateRotationParticipantsRequest$outboundSchema.parse(
       rotationsUpdateRotationParticipantsRequest,
     ),
-  );
-}
-
-export function rotationsUpdateRotationParticipantsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  RotationsUpdateRotationParticipantsRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      RotationsUpdateRotationParticipantsRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'RotationsUpdateRotationParticipantsRequest' from JSON`,
   );
 }
 
@@ -115,47 +69,6 @@ export const RotationsUpdateRotationParticipantsResponse$inboundSchema:
   > = z.object({
     data: models.V4RotationParticipantsResponse$inboundSchema,
   });
-
-/** @internal */
-export type RotationsUpdateRotationParticipantsResponse$Outbound = {
-  data: models.V4RotationParticipantsResponse$Outbound;
-};
-
-/** @internal */
-export const RotationsUpdateRotationParticipantsResponse$outboundSchema:
-  z.ZodType<
-    RotationsUpdateRotationParticipantsResponse$Outbound,
-    z.ZodTypeDef,
-    RotationsUpdateRotationParticipantsResponse
-  > = z.object({
-    data: models.V4RotationParticipantsResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RotationsUpdateRotationParticipantsResponse$ {
-  /** @deprecated use `RotationsUpdateRotationParticipantsResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    RotationsUpdateRotationParticipantsResponse$inboundSchema;
-  /** @deprecated use `RotationsUpdateRotationParticipantsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    RotationsUpdateRotationParticipantsResponse$outboundSchema;
-  /** @deprecated use `RotationsUpdateRotationParticipantsResponse$Outbound` instead. */
-  export type Outbound = RotationsUpdateRotationParticipantsResponse$Outbound;
-}
-
-export function rotationsUpdateRotationParticipantsResponseToJSON(
-  rotationsUpdateRotationParticipantsResponse:
-    RotationsUpdateRotationParticipantsResponse,
-): string {
-  return JSON.stringify(
-    RotationsUpdateRotationParticipantsResponse$outboundSchema.parse(
-      rotationsUpdateRotationParticipantsResponse,
-    ),
-  );
-}
 
 export function rotationsUpdateRotationParticipantsResponseFromJSON(
   jsonString: string,

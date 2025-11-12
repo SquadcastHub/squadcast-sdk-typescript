@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 /**
  * Request body for creating a Slack channel in a communication card.
@@ -15,22 +12,6 @@ export type V3IncidentsCommunicationCardsCreateSlackChannelRequest = {
   channelName: string;
   incidentId: string;
 };
-
-/** @internal */
-export const V3IncidentsCommunicationCardsCreateSlackChannelRequest$inboundSchema:
-  z.ZodType<
-    V3IncidentsCommunicationCardsCreateSlackChannelRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    channel_name: z.string(),
-    incident_id: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      "channel_name": "channelName",
-      "incident_id": "incidentId",
-    });
-  });
 
 /** @internal */
 export type V3IncidentsCommunicationCardsCreateSlackChannelRequest$Outbound = {
@@ -54,22 +35,6 @@ export const V3IncidentsCommunicationCardsCreateSlackChannelRequest$outboundSche
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsCommunicationCardsCreateSlackChannelRequest$ {
-  /** @deprecated use `V3IncidentsCommunicationCardsCreateSlackChannelRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsCommunicationCardsCreateSlackChannelRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsCommunicationCardsCreateSlackChannelRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsCommunicationCardsCreateSlackChannelRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsCommunicationCardsCreateSlackChannelRequest$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsCommunicationCardsCreateSlackChannelRequest$Outbound;
-}
-
 export function v3IncidentsCommunicationCardsCreateSlackChannelRequestToJSON(
   v3IncidentsCommunicationCardsCreateSlackChannelRequest:
     V3IncidentsCommunicationCardsCreateSlackChannelRequest,
@@ -78,20 +43,5 @@ export function v3IncidentsCommunicationCardsCreateSlackChannelRequestToJSON(
     V3IncidentsCommunicationCardsCreateSlackChannelRequest$outboundSchema.parse(
       v3IncidentsCommunicationCardsCreateSlackChannelRequest,
     ),
-  );
-}
-
-export function v3IncidentsCommunicationCardsCreateSlackChannelRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3IncidentsCommunicationCardsCreateSlackChannelRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3IncidentsCommunicationCardsCreateSlackChannelRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsCommunicationCardsCreateSlackChannelRequest' from JSON`,
   );
 }

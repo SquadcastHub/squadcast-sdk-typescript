@@ -25,27 +25,6 @@ export type GlobalEventRulesReorderRulesetResponse = {
 };
 
 /** @internal */
-export const GlobalEventRulesReorderRulesetRequest$inboundSchema: z.ZodType<
-  GlobalEventRulesReorderRulesetRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  ger_id: z.number().int(),
-  alert_source_version: z.string(),
-  alert_source_shortname: z.string(),
-  "V3.GlobalEventRules.ReorderRulesetRequest":
-    models.V3GlobalEventRulesReorderRulesetRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "ger_id": "gerId",
-    "alert_source_version": "alertSourceVersion",
-    "alert_source_shortname": "alertSourceShortname",
-    "V3.GlobalEventRules.ReorderRulesetRequest":
-      "v3GlobalEventRulesReorderRulesetRequest",
-  });
-});
-
-/** @internal */
 export type GlobalEventRulesReorderRulesetRequest$Outbound = {
   ger_id: number;
   alert_source_version: string;
@@ -75,21 +54,6 @@ export const GlobalEventRulesReorderRulesetRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesReorderRulesetRequest$ {
-  /** @deprecated use `GlobalEventRulesReorderRulesetRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesReorderRulesetRequest$inboundSchema;
-  /** @deprecated use `GlobalEventRulesReorderRulesetRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesReorderRulesetRequest$outboundSchema;
-  /** @deprecated use `GlobalEventRulesReorderRulesetRequest$Outbound` instead. */
-  export type Outbound = GlobalEventRulesReorderRulesetRequest$Outbound;
-}
-
 export function globalEventRulesReorderRulesetRequestToJSON(
   globalEventRulesReorderRulesetRequest: GlobalEventRulesReorderRulesetRequest,
 ): string {
@@ -97,17 +61,6 @@ export function globalEventRulesReorderRulesetRequestToJSON(
     GlobalEventRulesReorderRulesetRequest$outboundSchema.parse(
       globalEventRulesReorderRulesetRequest,
     ),
-  );
-}
-
-export function globalEventRulesReorderRulesetRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GlobalEventRulesReorderRulesetRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      GlobalEventRulesReorderRulesetRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GlobalEventRulesReorderRulesetRequest' from JSON`,
   );
 }
 
@@ -119,46 +72,6 @@ export const GlobalEventRulesReorderRulesetResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3GlobalEventRulesOrderingResponse$inboundSchema,
 });
-
-/** @internal */
-export type GlobalEventRulesReorderRulesetResponse$Outbound = {
-  data: models.V3GlobalEventRulesOrderingResponse$Outbound;
-};
-
-/** @internal */
-export const GlobalEventRulesReorderRulesetResponse$outboundSchema: z.ZodType<
-  GlobalEventRulesReorderRulesetResponse$Outbound,
-  z.ZodTypeDef,
-  GlobalEventRulesReorderRulesetResponse
-> = z.object({
-  data: models.V3GlobalEventRulesOrderingResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesReorderRulesetResponse$ {
-  /** @deprecated use `GlobalEventRulesReorderRulesetResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesReorderRulesetResponse$inboundSchema;
-  /** @deprecated use `GlobalEventRulesReorderRulesetResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesReorderRulesetResponse$outboundSchema;
-  /** @deprecated use `GlobalEventRulesReorderRulesetResponse$Outbound` instead. */
-  export type Outbound = GlobalEventRulesReorderRulesetResponse$Outbound;
-}
-
-export function globalEventRulesReorderRulesetResponseToJSON(
-  globalEventRulesReorderRulesetResponse:
-    GlobalEventRulesReorderRulesetResponse,
-): string {
-  return JSON.stringify(
-    GlobalEventRulesReorderRulesetResponse$outboundSchema.parse(
-      globalEventRulesReorderRulesetResponse,
-    ),
-  );
-}
 
 export function globalEventRulesReorderRulesetResponseFromJSON(
   jsonString: string,

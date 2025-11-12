@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4StatusPagesComponentGroupsComponentStatus,
   V4StatusPagesComponentGroupsComponentStatus$inboundSchema,
-  V4StatusPagesComponentGroupsComponentStatus$Outbound,
-  V4StatusPagesComponentGroupsComponentStatus$outboundSchema,
 } from "./v4statuspagescomponentgroupscomponentstatus.js";
 
 export type V4StatusPagesComponentGroupsComponent = {
@@ -46,70 +44,6 @@ export const V4StatusPagesComponentGroupsComponent$inboundSchema: z.ZodType<
   ).optional(),
   isHidden: z.boolean().optional(),
 });
-
-/** @internal */
-export type V4StatusPagesComponentGroupsComponent$Outbound = {
-  id?: number | undefined;
-  type?: string | undefined;
-  name?: string | undefined;
-  allowSubscription?: boolean | undefined;
-  description?: string | undefined;
-  status?: V4StatusPagesComponentGroupsComponentStatus$Outbound | undefined;
-  underMaintenance?: boolean | undefined;
-  statusMaintenance?:
-    | V4StatusPagesComponentGroupsComponentStatus$Outbound
-    | undefined;
-  components?:
-    | Array<V4StatusPagesComponentGroupsComponent$Outbound>
-    | undefined;
-  isHidden?: boolean | undefined;
-};
-
-/** @internal */
-export const V4StatusPagesComponentGroupsComponent$outboundSchema: z.ZodType<
-  V4StatusPagesComponentGroupsComponent$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesComponentGroupsComponent
-> = z.object({
-  id: z.number().int().optional(),
-  type: z.string().optional(),
-  name: z.string().optional(),
-  allowSubscription: z.boolean().optional(),
-  description: z.string().optional(),
-  status: V4StatusPagesComponentGroupsComponentStatus$outboundSchema.optional(),
-  underMaintenance: z.boolean().optional(),
-  statusMaintenance: V4StatusPagesComponentGroupsComponentStatus$outboundSchema
-    .optional(),
-  components: z.array(
-    z.lazy(() => V4StatusPagesComponentGroupsComponent$outboundSchema),
-  ).optional(),
-  isHidden: z.boolean().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesComponentGroupsComponent$ {
-  /** @deprecated use `V4StatusPagesComponentGroupsComponent$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesComponentGroupsComponent$inboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsComponent$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesComponentGroupsComponent$outboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsComponent$Outbound` instead. */
-  export type Outbound = V4StatusPagesComponentGroupsComponent$Outbound;
-}
-
-export function v4StatusPagesComponentGroupsComponentToJSON(
-  v4StatusPagesComponentGroupsComponent: V4StatusPagesComponentGroupsComponent,
-): string {
-  return JSON.stringify(
-    V4StatusPagesComponentGroupsComponent$outboundSchema.parse(
-      v4StatusPagesComponentGroupsComponent,
-    ),
-  );
-}
 
 export function v4StatusPagesComponentGroupsComponentFromJSON(
   jsonString: string,

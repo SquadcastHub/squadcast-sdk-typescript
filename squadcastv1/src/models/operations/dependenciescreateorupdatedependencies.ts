@@ -27,24 +27,6 @@ export type DependenciesCreateOrUpdateDependenciesResponse = {
 };
 
 /** @internal */
-export const DependenciesCreateOrUpdateDependenciesRequest$inboundSchema:
-  z.ZodType<
-    DependenciesCreateOrUpdateDependenciesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-    "V3.Services.Dependencies.CreateOrUpdateDependenciesRequest":
-      models
-        .V3ServicesDependenciesCreateOrUpdateDependenciesRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.Services.Dependencies.CreateOrUpdateDependenciesRequest":
-        "v3ServicesDependenciesCreateOrUpdateDependenciesRequest",
-    });
-  });
-
-/** @internal */
 export type DependenciesCreateOrUpdateDependenciesRequest$Outbound = {
   serviceID: string;
   "V3.Services.Dependencies.CreateOrUpdateDependenciesRequest":
@@ -69,21 +51,6 @@ export const DependenciesCreateOrUpdateDependenciesRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DependenciesCreateOrUpdateDependenciesRequest$ {
-  /** @deprecated use `DependenciesCreateOrUpdateDependenciesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    DependenciesCreateOrUpdateDependenciesRequest$inboundSchema;
-  /** @deprecated use `DependenciesCreateOrUpdateDependenciesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    DependenciesCreateOrUpdateDependenciesRequest$outboundSchema;
-  /** @deprecated use `DependenciesCreateOrUpdateDependenciesRequest$Outbound` instead. */
-  export type Outbound = DependenciesCreateOrUpdateDependenciesRequest$Outbound;
-}
-
 export function dependenciesCreateOrUpdateDependenciesRequestToJSON(
   dependenciesCreateOrUpdateDependenciesRequest:
     DependenciesCreateOrUpdateDependenciesRequest,
@@ -95,69 +62,12 @@ export function dependenciesCreateOrUpdateDependenciesRequestToJSON(
   );
 }
 
-export function dependenciesCreateOrUpdateDependenciesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  DependenciesCreateOrUpdateDependenciesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      DependenciesCreateOrUpdateDependenciesRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'DependenciesCreateOrUpdateDependenciesRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const DependenciesCreateOrUpdateDependenciesData$inboundSchema:
   z.ZodType<DependenciesCreateOrUpdateDependenciesData, z.ZodTypeDef, unknown> =
     z.object({
       ok: z.boolean(),
     });
-
-/** @internal */
-export type DependenciesCreateOrUpdateDependenciesData$Outbound = {
-  ok: boolean;
-};
-
-/** @internal */
-export const DependenciesCreateOrUpdateDependenciesData$outboundSchema:
-  z.ZodType<
-    DependenciesCreateOrUpdateDependenciesData$Outbound,
-    z.ZodTypeDef,
-    DependenciesCreateOrUpdateDependenciesData
-  > = z.object({
-    ok: z.boolean(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DependenciesCreateOrUpdateDependenciesData$ {
-  /** @deprecated use `DependenciesCreateOrUpdateDependenciesData$inboundSchema` instead. */
-  export const inboundSchema =
-    DependenciesCreateOrUpdateDependenciesData$inboundSchema;
-  /** @deprecated use `DependenciesCreateOrUpdateDependenciesData$outboundSchema` instead. */
-  export const outboundSchema =
-    DependenciesCreateOrUpdateDependenciesData$outboundSchema;
-  /** @deprecated use `DependenciesCreateOrUpdateDependenciesData$Outbound` instead. */
-  export type Outbound = DependenciesCreateOrUpdateDependenciesData$Outbound;
-}
-
-export function dependenciesCreateOrUpdateDependenciesDataToJSON(
-  dependenciesCreateOrUpdateDependenciesData:
-    DependenciesCreateOrUpdateDependenciesData,
-): string {
-  return JSON.stringify(
-    DependenciesCreateOrUpdateDependenciesData$outboundSchema.parse(
-      dependenciesCreateOrUpdateDependenciesData,
-    ),
-  );
-}
 
 export function dependenciesCreateOrUpdateDependenciesDataFromJSON(
   jsonString: string,
@@ -186,50 +96,6 @@ export const DependenciesCreateOrUpdateDependenciesResponse$inboundSchema:
       DependenciesCreateOrUpdateDependenciesData$inboundSchema
     ),
   });
-
-/** @internal */
-export type DependenciesCreateOrUpdateDependenciesResponse$Outbound = {
-  data: DependenciesCreateOrUpdateDependenciesData$Outbound;
-};
-
-/** @internal */
-export const DependenciesCreateOrUpdateDependenciesResponse$outboundSchema:
-  z.ZodType<
-    DependenciesCreateOrUpdateDependenciesResponse$Outbound,
-    z.ZodTypeDef,
-    DependenciesCreateOrUpdateDependenciesResponse
-  > = z.object({
-    data: z.lazy(() =>
-      DependenciesCreateOrUpdateDependenciesData$outboundSchema
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DependenciesCreateOrUpdateDependenciesResponse$ {
-  /** @deprecated use `DependenciesCreateOrUpdateDependenciesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    DependenciesCreateOrUpdateDependenciesResponse$inboundSchema;
-  /** @deprecated use `DependenciesCreateOrUpdateDependenciesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    DependenciesCreateOrUpdateDependenciesResponse$outboundSchema;
-  /** @deprecated use `DependenciesCreateOrUpdateDependenciesResponse$Outbound` instead. */
-  export type Outbound =
-    DependenciesCreateOrUpdateDependenciesResponse$Outbound;
-}
-
-export function dependenciesCreateOrUpdateDependenciesResponseToJSON(
-  dependenciesCreateOrUpdateDependenciesResponse:
-    DependenciesCreateOrUpdateDependenciesResponse,
-): string {
-  return JSON.stringify(
-    DependenciesCreateOrUpdateDependenciesResponse$outboundSchema.parse(
-      dependenciesCreateOrUpdateDependenciesResponse,
-    ),
-  );
-}
 
 export function dependenciesCreateOrUpdateDependenciesResponseFromJSON(
   jsonString: string,

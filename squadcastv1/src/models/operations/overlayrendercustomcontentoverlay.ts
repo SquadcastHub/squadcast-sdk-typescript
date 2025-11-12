@@ -23,22 +23,6 @@ export type OverlayRenderCustomContentOverlayResponse = {
 };
 
 /** @internal */
-export const OverlayRenderCustomContentOverlayRequest$inboundSchema: z.ZodType<
-  OverlayRenderCustomContentOverlayRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  serviceID: z.string(),
-  "V3.Services.Overlay.RenderCustomContentOverlayRequest":
-    models.V3ServicesOverlayRenderCustomContentOverlayRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Services.Overlay.RenderCustomContentOverlayRequest":
-      "v3ServicesOverlayRenderCustomContentOverlayRequest",
-  });
-});
-
-/** @internal */
 export type OverlayRenderCustomContentOverlayRequest$Outbound = {
   serviceID: string;
   "V3.Services.Overlay.RenderCustomContentOverlayRequest":
@@ -61,21 +45,6 @@ export const OverlayRenderCustomContentOverlayRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayRenderCustomContentOverlayRequest$ {
-  /** @deprecated use `OverlayRenderCustomContentOverlayRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayRenderCustomContentOverlayRequest$inboundSchema;
-  /** @deprecated use `OverlayRenderCustomContentOverlayRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayRenderCustomContentOverlayRequest$outboundSchema;
-  /** @deprecated use `OverlayRenderCustomContentOverlayRequest$Outbound` instead. */
-  export type Outbound = OverlayRenderCustomContentOverlayRequest$Outbound;
-}
-
 export function overlayRenderCustomContentOverlayRequestToJSON(
   overlayRenderCustomContentOverlayRequest:
     OverlayRenderCustomContentOverlayRequest,
@@ -87,22 +56,6 @@ export function overlayRenderCustomContentOverlayRequestToJSON(
   );
 }
 
-export function overlayRenderCustomContentOverlayRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  OverlayRenderCustomContentOverlayRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverlayRenderCustomContentOverlayRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'OverlayRenderCustomContentOverlayRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const OverlayRenderCustomContentOverlayResponse$inboundSchema: z.ZodType<
   OverlayRenderCustomContentOverlayResponse,
@@ -111,47 +64,6 @@ export const OverlayRenderCustomContentOverlayResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.string(),
 });
-
-/** @internal */
-export type OverlayRenderCustomContentOverlayResponse$Outbound = {
-  data: string;
-};
-
-/** @internal */
-export const OverlayRenderCustomContentOverlayResponse$outboundSchema:
-  z.ZodType<
-    OverlayRenderCustomContentOverlayResponse$Outbound,
-    z.ZodTypeDef,
-    OverlayRenderCustomContentOverlayResponse
-  > = z.object({
-    data: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayRenderCustomContentOverlayResponse$ {
-  /** @deprecated use `OverlayRenderCustomContentOverlayResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayRenderCustomContentOverlayResponse$inboundSchema;
-  /** @deprecated use `OverlayRenderCustomContentOverlayResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayRenderCustomContentOverlayResponse$outboundSchema;
-  /** @deprecated use `OverlayRenderCustomContentOverlayResponse$Outbound` instead. */
-  export type Outbound = OverlayRenderCustomContentOverlayResponse$Outbound;
-}
-
-export function overlayRenderCustomContentOverlayResponseToJSON(
-  overlayRenderCustomContentOverlayResponse:
-    OverlayRenderCustomContentOverlayResponse,
-): string {
-  return JSON.stringify(
-    OverlayRenderCustomContentOverlayResponse$outboundSchema.parse(
-      overlayRenderCustomContentOverlayResponse,
-    ),
-  );
-}
 
 export function overlayRenderCustomContentOverlayResponseFromJSON(
   jsonString: string,

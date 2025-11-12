@@ -20,44 +20,6 @@ export const V4StatusPagesTotalSubscribersCount$inboundSchema: z.ZodType<
   totalCount: z.number().int(),
 });
 
-/** @internal */
-export type V4StatusPagesTotalSubscribersCount$Outbound = {
-  totalCount: number;
-};
-
-/** @internal */
-export const V4StatusPagesTotalSubscribersCount$outboundSchema: z.ZodType<
-  V4StatusPagesTotalSubscribersCount$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesTotalSubscribersCount
-> = z.object({
-  totalCount: z.number().int(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesTotalSubscribersCount$ {
-  /** @deprecated use `V4StatusPagesTotalSubscribersCount$inboundSchema` instead. */
-  export const inboundSchema = V4StatusPagesTotalSubscribersCount$inboundSchema;
-  /** @deprecated use `V4StatusPagesTotalSubscribersCount$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesTotalSubscribersCount$outboundSchema;
-  /** @deprecated use `V4StatusPagesTotalSubscribersCount$Outbound` instead. */
-  export type Outbound = V4StatusPagesTotalSubscribersCount$Outbound;
-}
-
-export function v4StatusPagesTotalSubscribersCountToJSON(
-  v4StatusPagesTotalSubscribersCount: V4StatusPagesTotalSubscribersCount,
-): string {
-  return JSON.stringify(
-    V4StatusPagesTotalSubscribersCount$outboundSchema.parse(
-      v4StatusPagesTotalSubscribersCount,
-    ),
-  );
-}
-
 export function v4StatusPagesTotalSubscribersCountFromJSON(
   jsonString: string,
 ): SafeParseResult<V4StatusPagesTotalSubscribersCount, SDKValidationError> {

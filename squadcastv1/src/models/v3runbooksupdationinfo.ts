@@ -9,8 +9,6 @@ import { Result as SafeParseResult } from "../types/fp.js";
 import {
   CommonV3EntityOwner,
   CommonV3EntityOwner$inboundSchema,
-  CommonV3EntityOwner$Outbound,
-  CommonV3EntityOwner$outboundSchema,
 } from "./commonv3entityowner.js";
 import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
@@ -59,56 +57,6 @@ export const V3RunbooksUpdationInfo$inboundSchema: z.ZodType<
     "entity_owner": "entityOwner",
   });
 });
-
-/** @internal */
-export type V3RunbooksUpdationInfo$Outbound = {
-  user_name: string;
-  username_for_display: string;
-  user_id: string;
-  at: string;
-  entity_owner?: CommonV3EntityOwner$Outbound | undefined;
-};
-
-/** @internal */
-export const V3RunbooksUpdationInfo$outboundSchema: z.ZodType<
-  V3RunbooksUpdationInfo$Outbound,
-  z.ZodTypeDef,
-  V3RunbooksUpdationInfo
-> = z.object({
-  userName: z.string(),
-  usernameForDisplay: z.string(),
-  userId: z.string(),
-  at: z.date().transform(v => v.toISOString()),
-  entityOwner: CommonV3EntityOwner$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    userName: "user_name",
-    usernameForDisplay: "username_for_display",
-    userId: "user_id",
-    entityOwner: "entity_owner",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3RunbooksUpdationInfo$ {
-  /** @deprecated use `V3RunbooksUpdationInfo$inboundSchema` instead. */
-  export const inboundSchema = V3RunbooksUpdationInfo$inboundSchema;
-  /** @deprecated use `V3RunbooksUpdationInfo$outboundSchema` instead. */
-  export const outboundSchema = V3RunbooksUpdationInfo$outboundSchema;
-  /** @deprecated use `V3RunbooksUpdationInfo$Outbound` instead. */
-  export type Outbound = V3RunbooksUpdationInfo$Outbound;
-}
-
-export function v3RunbooksUpdationInfoToJSON(
-  v3RunbooksUpdationInfo: V3RunbooksUpdationInfo,
-): string {
-  return JSON.stringify(
-    V3RunbooksUpdationInfo$outboundSchema.parse(v3RunbooksUpdationInfo),
-  );
-}
 
 export function v3RunbooksUpdationInfoFromJSON(
   jsonString: string,

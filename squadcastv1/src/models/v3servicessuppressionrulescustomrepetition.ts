@@ -30,7 +30,6 @@ export const V3ServicesSuppressionRulesCustomRepetition$inboundSchema:
         "repeats_on_month": "repeatsOnMonth",
       });
     });
-
 /** @internal */
 export type V3ServicesSuppressionRulesCustomRepetition$Outbound = {
   repeats_count: number;
@@ -58,21 +57,6 @@ export const V3ServicesSuppressionRulesCustomRepetition$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesSuppressionRulesCustomRepetition$ {
-  /** @deprecated use `V3ServicesSuppressionRulesCustomRepetition$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesSuppressionRulesCustomRepetition$inboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesCustomRepetition$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesSuppressionRulesCustomRepetition$outboundSchema;
-  /** @deprecated use `V3ServicesSuppressionRulesCustomRepetition$Outbound` instead. */
-  export type Outbound = V3ServicesSuppressionRulesCustomRepetition$Outbound;
-}
-
 export function v3ServicesSuppressionRulesCustomRepetitionToJSON(
   v3ServicesSuppressionRulesCustomRepetition:
     V3ServicesSuppressionRulesCustomRepetition,
@@ -83,7 +67,6 @@ export function v3ServicesSuppressionRulesCustomRepetitionToJSON(
     ),
   );
 }
-
 export function v3ServicesSuppressionRulesCustomRepetitionFromJSON(
   jsonString: string,
 ): SafeParseResult<

@@ -22,43 +22,6 @@ export const V3WorkflowsRunbookResponse$inboundSchema: z.ZodType<
   name: z.string(),
 });
 
-/** @internal */
-export type V3WorkflowsRunbookResponse$Outbound = {
-  id: string;
-  name: string;
-};
-
-/** @internal */
-export const V3WorkflowsRunbookResponse$outboundSchema: z.ZodType<
-  V3WorkflowsRunbookResponse$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsRunbookResponse
-> = z.object({
-  id: z.string(),
-  name: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsRunbookResponse$ {
-  /** @deprecated use `V3WorkflowsRunbookResponse$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsRunbookResponse$inboundSchema;
-  /** @deprecated use `V3WorkflowsRunbookResponse$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsRunbookResponse$outboundSchema;
-  /** @deprecated use `V3WorkflowsRunbookResponse$Outbound` instead. */
-  export type Outbound = V3WorkflowsRunbookResponse$Outbound;
-}
-
-export function v3WorkflowsRunbookResponseToJSON(
-  v3WorkflowsRunbookResponse: V3WorkflowsRunbookResponse,
-): string {
-  return JSON.stringify(
-    V3WorkflowsRunbookResponse$outboundSchema.parse(v3WorkflowsRunbookResponse),
-  );
-}
-
 export function v3WorkflowsRunbookResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsRunbookResponse, SDKValidationError> {

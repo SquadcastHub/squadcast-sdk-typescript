@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 /**
  * Request body for creating a new note.
@@ -14,16 +11,6 @@ export type V3IncidentsNotesCreateNoteRequest = {
   message: string;
   attachments: Array<string>;
 };
-
-/** @internal */
-export const V3IncidentsNotesCreateNoteRequest$inboundSchema: z.ZodType<
-  V3IncidentsNotesCreateNoteRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  message: z.string(),
-  attachments: z.array(z.string()),
-});
 
 /** @internal */
 export type V3IncidentsNotesCreateNoteRequest$Outbound = {
@@ -41,20 +28,6 @@ export const V3IncidentsNotesCreateNoteRequest$outboundSchema: z.ZodType<
   attachments: z.array(z.string()),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsNotesCreateNoteRequest$ {
-  /** @deprecated use `V3IncidentsNotesCreateNoteRequest$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsNotesCreateNoteRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsNotesCreateNoteRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsNotesCreateNoteRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsNotesCreateNoteRequest$Outbound` instead. */
-  export type Outbound = V3IncidentsNotesCreateNoteRequest$Outbound;
-}
-
 export function v3IncidentsNotesCreateNoteRequestToJSON(
   v3IncidentsNotesCreateNoteRequest: V3IncidentsNotesCreateNoteRequest,
 ): string {
@@ -62,15 +35,5 @@ export function v3IncidentsNotesCreateNoteRequestToJSON(
     V3IncidentsNotesCreateNoteRequest$outboundSchema.parse(
       v3IncidentsNotesCreateNoteRequest,
     ),
-  );
-}
-
-export function v3IncidentsNotesCreateNoteRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3IncidentsNotesCreateNoteRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3IncidentsNotesCreateNoteRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsNotesCreateNoteRequest' from JSON`,
   );
 }

@@ -28,24 +28,10 @@ export type V3WorkflowsCommunicationChannel = {
 export const V3WorkflowsCommunicationChannelType$inboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsCommunicationChannelType
 > = z.nativeEnum(V3WorkflowsCommunicationChannelType);
-
 /** @internal */
 export const V3WorkflowsCommunicationChannelType$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsCommunicationChannelType> =
     V3WorkflowsCommunicationChannelType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsCommunicationChannelType$ {
-  /** @deprecated use `V3WorkflowsCommunicationChannelType$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsCommunicationChannelType$inboundSchema;
-  /** @deprecated use `V3WorkflowsCommunicationChannelType$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsCommunicationChannelType$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsCommunicationChannel$inboundSchema: z.ZodType<
@@ -61,7 +47,6 @@ export const V3WorkflowsCommunicationChannel$inboundSchema: z.ZodType<
     "display_text": "displayText",
   });
 });
-
 /** @internal */
 export type V3WorkflowsCommunicationChannel$Outbound = {
   display_text: string;
@@ -84,19 +69,6 @@ export const V3WorkflowsCommunicationChannel$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsCommunicationChannel$ {
-  /** @deprecated use `V3WorkflowsCommunicationChannel$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsCommunicationChannel$inboundSchema;
-  /** @deprecated use `V3WorkflowsCommunicationChannel$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsCommunicationChannel$outboundSchema;
-  /** @deprecated use `V3WorkflowsCommunicationChannel$Outbound` instead. */
-  export type Outbound = V3WorkflowsCommunicationChannel$Outbound;
-}
-
 export function v3WorkflowsCommunicationChannelToJSON(
   v3WorkflowsCommunicationChannel: V3WorkflowsCommunicationChannel,
 ): string {
@@ -106,7 +78,6 @@ export function v3WorkflowsCommunicationChannelToJSON(
     ),
   );
 }
-
 export function v3WorkflowsCommunicationChannelFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsCommunicationChannel, SDKValidationError> {

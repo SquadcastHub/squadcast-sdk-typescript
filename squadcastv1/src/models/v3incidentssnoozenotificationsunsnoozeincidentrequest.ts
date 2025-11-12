@@ -4,12 +4,8 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3IncidentsSnoozeNotificationsReassignTo,
-  V3IncidentsSnoozeNotificationsReassignTo$inboundSchema,
   V3IncidentsSnoozeNotificationsReassignTo$Outbound,
   V3IncidentsSnoozeNotificationsReassignTo$outboundSchema,
 } from "./v3incidentssnoozenotificationsreassignto.js";
@@ -17,20 +13,6 @@ import {
 export type V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest = {
   reassignTo: V3IncidentsSnoozeNotificationsReassignTo;
 };
-
-/** @internal */
-export const V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$inboundSchema:
-  z.ZodType<
-    V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    reassign_to: V3IncidentsSnoozeNotificationsReassignTo$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "reassign_to": "reassignTo",
-    });
-  });
 
 /** @internal */
 export type V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$Outbound = {
@@ -51,22 +33,6 @@ export const V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$outboundSchem
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$ {
-  /** @deprecated use `V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$Outbound;
-}
-
 export function v3IncidentsSnoozeNotificationsUnsnoozeIncidentRequestToJSON(
   v3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest:
     V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest,
@@ -75,21 +41,5 @@ export function v3IncidentsSnoozeNotificationsUnsnoozeIncidentRequestToJSON(
     V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$outboundSchema.parse(
       v3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest,
     ),
-  );
-}
-
-export function v3IncidentsSnoozeNotificationsUnsnoozeIncidentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest' from JSON`,
   );
 }

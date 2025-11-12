@@ -23,15 +23,6 @@ export type UsersGetUserByIdResponse = {
 };
 
 /** @internal */
-export const UsersGetUserByIdRequest$inboundSchema: z.ZodType<
-  UsersGetUserByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  userID: z.string(),
-});
-
-/** @internal */
 export type UsersGetUserByIdRequest$Outbound = {
   userID: string;
 };
@@ -45,34 +36,11 @@ export const UsersGetUserByIdRequest$outboundSchema: z.ZodType<
   userID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersGetUserByIdRequest$ {
-  /** @deprecated use `UsersGetUserByIdRequest$inboundSchema` instead. */
-  export const inboundSchema = UsersGetUserByIdRequest$inboundSchema;
-  /** @deprecated use `UsersGetUserByIdRequest$outboundSchema` instead. */
-  export const outboundSchema = UsersGetUserByIdRequest$outboundSchema;
-  /** @deprecated use `UsersGetUserByIdRequest$Outbound` instead. */
-  export type Outbound = UsersGetUserByIdRequest$Outbound;
-}
-
 export function usersGetUserByIdRequestToJSON(
   usersGetUserByIdRequest: UsersGetUserByIdRequest,
 ): string {
   return JSON.stringify(
     UsersGetUserByIdRequest$outboundSchema.parse(usersGetUserByIdRequest),
-  );
-}
-
-export function usersGetUserByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UsersGetUserByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UsersGetUserByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UsersGetUserByIdRequest' from JSON`,
   );
 }
 
@@ -84,41 +52,6 @@ export const UsersGetUserByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3UsersUserResponse$inboundSchema,
 });
-
-/** @internal */
-export type UsersGetUserByIdResponse$Outbound = {
-  data: models.V3UsersUserResponse$Outbound;
-};
-
-/** @internal */
-export const UsersGetUserByIdResponse$outboundSchema: z.ZodType<
-  UsersGetUserByIdResponse$Outbound,
-  z.ZodTypeDef,
-  UsersGetUserByIdResponse
-> = z.object({
-  data: models.V3UsersUserResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersGetUserByIdResponse$ {
-  /** @deprecated use `UsersGetUserByIdResponse$inboundSchema` instead. */
-  export const inboundSchema = UsersGetUserByIdResponse$inboundSchema;
-  /** @deprecated use `UsersGetUserByIdResponse$outboundSchema` instead. */
-  export const outboundSchema = UsersGetUserByIdResponse$outboundSchema;
-  /** @deprecated use `UsersGetUserByIdResponse$Outbound` instead. */
-  export type Outbound = UsersGetUserByIdResponse$Outbound;
-}
-
-export function usersGetUserByIdResponseToJSON(
-  usersGetUserByIdResponse: UsersGetUserByIdResponse,
-): string {
-  return JSON.stringify(
-    UsersGetUserByIdResponse$outboundSchema.parse(usersGetUserByIdResponse),
-  );
-}
 
 export function usersGetUserByIdResponseFromJSON(
   jsonString: string,

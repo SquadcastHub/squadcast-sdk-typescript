@@ -3,12 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3TeamsAbilities,
-  V3TeamsAbilities$inboundSchema,
   V3TeamsAbilities$Outbound,
   V3TeamsAbilities$outboundSchema,
 } from "./v3teamsabilities.js";
@@ -17,16 +13,6 @@ export type V3TeamsCreateTeamRoleRequest = {
   name: string;
   abilities: V3TeamsAbilities;
 };
-
-/** @internal */
-export const V3TeamsCreateTeamRoleRequest$inboundSchema: z.ZodType<
-  V3TeamsCreateTeamRoleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  abilities: V3TeamsAbilities$inboundSchema,
-});
 
 /** @internal */
 export type V3TeamsCreateTeamRoleRequest$Outbound = {
@@ -44,19 +30,6 @@ export const V3TeamsCreateTeamRoleRequest$outboundSchema: z.ZodType<
   abilities: V3TeamsAbilities$outboundSchema,
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsCreateTeamRoleRequest$ {
-  /** @deprecated use `V3TeamsCreateTeamRoleRequest$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsCreateTeamRoleRequest$inboundSchema;
-  /** @deprecated use `V3TeamsCreateTeamRoleRequest$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsCreateTeamRoleRequest$outboundSchema;
-  /** @deprecated use `V3TeamsCreateTeamRoleRequest$Outbound` instead. */
-  export type Outbound = V3TeamsCreateTeamRoleRequest$Outbound;
-}
-
 export function v3TeamsCreateTeamRoleRequestToJSON(
   v3TeamsCreateTeamRoleRequest: V3TeamsCreateTeamRoleRequest,
 ): string {
@@ -64,15 +37,5 @@ export function v3TeamsCreateTeamRoleRequestToJSON(
     V3TeamsCreateTeamRoleRequest$outboundSchema.parse(
       v3TeamsCreateTeamRoleRequest,
     ),
-  );
-}
-
-export function v3TeamsCreateTeamRoleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3TeamsCreateTeamRoleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3TeamsCreateTeamRoleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3TeamsCreateTeamRoleRequest' from JSON`,
   );
 }

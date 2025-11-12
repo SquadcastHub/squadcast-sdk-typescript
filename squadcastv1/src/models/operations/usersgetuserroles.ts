@@ -24,41 +24,6 @@ export const UsersGetUserRolesResponse$inboundSchema: z.ZodType<
   data: z.array(models.V3UsersUserRoleResponse$inboundSchema),
 });
 
-/** @internal */
-export type UsersGetUserRolesResponse$Outbound = {
-  data: Array<models.V3UsersUserRoleResponse$Outbound>;
-};
-
-/** @internal */
-export const UsersGetUserRolesResponse$outboundSchema: z.ZodType<
-  UsersGetUserRolesResponse$Outbound,
-  z.ZodTypeDef,
-  UsersGetUserRolesResponse
-> = z.object({
-  data: z.array(models.V3UsersUserRoleResponse$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersGetUserRolesResponse$ {
-  /** @deprecated use `UsersGetUserRolesResponse$inboundSchema` instead. */
-  export const inboundSchema = UsersGetUserRolesResponse$inboundSchema;
-  /** @deprecated use `UsersGetUserRolesResponse$outboundSchema` instead. */
-  export const outboundSchema = UsersGetUserRolesResponse$outboundSchema;
-  /** @deprecated use `UsersGetUserRolesResponse$Outbound` instead. */
-  export type Outbound = UsersGetUserRolesResponse$Outbound;
-}
-
-export function usersGetUserRolesResponseToJSON(
-  usersGetUserRolesResponse: UsersGetUserRolesResponse,
-): string {
-  return JSON.stringify(
-    UsersGetUserRolesResponse$outboundSchema.parse(usersGetUserRolesResponse),
-  );
-}
-
 export function usersGetUserRolesResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<UsersGetUserRolesResponse, SDKValidationError> {

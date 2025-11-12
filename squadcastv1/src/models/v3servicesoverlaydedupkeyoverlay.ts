@@ -22,45 +22,6 @@ export const V3ServicesOverlayDedupKeyOverlay$inboundSchema: z.ZodType<
   duration: z.number().int(),
 });
 
-/** @internal */
-export type V3ServicesOverlayDedupKeyOverlay$Outbound = {
-  template: string;
-  duration: number;
-};
-
-/** @internal */
-export const V3ServicesOverlayDedupKeyOverlay$outboundSchema: z.ZodType<
-  V3ServicesOverlayDedupKeyOverlay$Outbound,
-  z.ZodTypeDef,
-  V3ServicesOverlayDedupKeyOverlay
-> = z.object({
-  template: z.string(),
-  duration: z.number().int(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesOverlayDedupKeyOverlay$ {
-  /** @deprecated use `V3ServicesOverlayDedupKeyOverlay$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesOverlayDedupKeyOverlay$inboundSchema;
-  /** @deprecated use `V3ServicesOverlayDedupKeyOverlay$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesOverlayDedupKeyOverlay$outboundSchema;
-  /** @deprecated use `V3ServicesOverlayDedupKeyOverlay$Outbound` instead. */
-  export type Outbound = V3ServicesOverlayDedupKeyOverlay$Outbound;
-}
-
-export function v3ServicesOverlayDedupKeyOverlayToJSON(
-  v3ServicesOverlayDedupKeyOverlay: V3ServicesOverlayDedupKeyOverlay,
-): string {
-  return JSON.stringify(
-    V3ServicesOverlayDedupKeyOverlay$outboundSchema.parse(
-      v3ServicesOverlayDedupKeyOverlay,
-    ),
-  );
-}
-
 export function v3ServicesOverlayDedupKeyOverlayFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesOverlayDedupKeyOverlay, SDKValidationError> {

@@ -4,10 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3WorkflowsMsTeamsMessageChannelUpdateName = {
   MsteamsMessageChannel: "msteams_message_channel",
@@ -27,39 +24,9 @@ export type V3WorkflowsMsTeamsMessageChannelUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsMsTeamsMessageChannelUpdateName$inboundSchema:
+export const V3WorkflowsMsTeamsMessageChannelUpdateName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsMsTeamsMessageChannelUpdateName> = z
     .nativeEnum(V3WorkflowsMsTeamsMessageChannelUpdateName);
-
-/** @internal */
-export const V3WorkflowsMsTeamsMessageChannelUpdateName$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsMsTeamsMessageChannelUpdateName> =
-    V3WorkflowsMsTeamsMessageChannelUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsMessageChannelUpdateName$ {
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelUpdateName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsMsTeamsMessageChannelUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelUpdateName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsMsTeamsMessageChannelUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsMsTeamsMessageChannelUpdateData$inboundSchema:
-  z.ZodType<V3WorkflowsMsTeamsMessageChannelUpdateData, z.ZodTypeDef, unknown> =
-    z.object({
-      channel_id: z.string().optional(),
-      message: z.string().optional(),
-    }).transform((v) => {
-      return remap$(v, {
-        "channel_id": "channelId",
-      });
-    });
 
 /** @internal */
 export type V3WorkflowsMsTeamsMessageChannelUpdateData$Outbound = {
@@ -82,21 +49,6 @@ export const V3WorkflowsMsTeamsMessageChannelUpdateData$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsMessageChannelUpdateData$ {
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelUpdateData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsMsTeamsMessageChannelUpdateData$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelUpdateData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsMsTeamsMessageChannelUpdateData$outboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelUpdateData$Outbound` instead. */
-  export type Outbound = V3WorkflowsMsTeamsMessageChannelUpdateData$Outbound;
-}
-
 export function v3WorkflowsMsTeamsMessageChannelUpdateDataToJSON(
   v3WorkflowsMsTeamsMessageChannelUpdateData:
     V3WorkflowsMsTeamsMessageChannelUpdateData,
@@ -107,33 +59,6 @@ export function v3WorkflowsMsTeamsMessageChannelUpdateDataToJSON(
     ),
   );
 }
-
-export function v3WorkflowsMsTeamsMessageChannelUpdateDataFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsMsTeamsMessageChannelUpdateData,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsMsTeamsMessageChannelUpdateData$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsMsTeamsMessageChannelUpdateData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsMsTeamsMessageChannelUpdate$inboundSchema: z.ZodType<
-  V3WorkflowsMsTeamsMessageChannelUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: V3WorkflowsMsTeamsMessageChannelUpdateName$inboundSchema,
-  data: z.lazy(() => V3WorkflowsMsTeamsMessageChannelUpdateData$inboundSchema)
-    .optional(),
-});
 
 /** @internal */
 export type V3WorkflowsMsTeamsMessageChannelUpdate$Outbound = {
@@ -152,21 +77,6 @@ export const V3WorkflowsMsTeamsMessageChannelUpdate$outboundSchema: z.ZodType<
     .optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsMsTeamsMessageChannelUpdate$ {
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelUpdate$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsMsTeamsMessageChannelUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsMsTeamsMessageChannelUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsMsTeamsMessageChannelUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsMsTeamsMessageChannelUpdate$Outbound;
-}
-
 export function v3WorkflowsMsTeamsMessageChannelUpdateToJSON(
   v3WorkflowsMsTeamsMessageChannelUpdate:
     V3WorkflowsMsTeamsMessageChannelUpdate,
@@ -175,16 +85,5 @@ export function v3WorkflowsMsTeamsMessageChannelUpdateToJSON(
     V3WorkflowsMsTeamsMessageChannelUpdate$outboundSchema.parse(
       v3WorkflowsMsTeamsMessageChannelUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsMsTeamsMessageChannelUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsMsTeamsMessageChannelUpdate, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsMsTeamsMessageChannelUpdate$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsMsTeamsMessageChannelUpdate' from JSON`,
   );
 }

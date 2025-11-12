@@ -17,15 +17,6 @@ export type SquadsDeleteSquadRequest = {
 export type SquadsDeleteSquadResponseBody = {};
 
 /** @internal */
-export const SquadsDeleteSquadRequest$inboundSchema: z.ZodType<
-  SquadsDeleteSquadRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  squadID: z.string(),
-});
-
-/** @internal */
 export type SquadsDeleteSquadRequest$Outbound = {
   squadID: string;
 };
@@ -39,34 +30,11 @@ export const SquadsDeleteSquadRequest$outboundSchema: z.ZodType<
   squadID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SquadsDeleteSquadRequest$ {
-  /** @deprecated use `SquadsDeleteSquadRequest$inboundSchema` instead. */
-  export const inboundSchema = SquadsDeleteSquadRequest$inboundSchema;
-  /** @deprecated use `SquadsDeleteSquadRequest$outboundSchema` instead. */
-  export const outboundSchema = SquadsDeleteSquadRequest$outboundSchema;
-  /** @deprecated use `SquadsDeleteSquadRequest$Outbound` instead. */
-  export type Outbound = SquadsDeleteSquadRequest$Outbound;
-}
-
 export function squadsDeleteSquadRequestToJSON(
   squadsDeleteSquadRequest: SquadsDeleteSquadRequest,
 ): string {
   return JSON.stringify(
     SquadsDeleteSquadRequest$outboundSchema.parse(squadsDeleteSquadRequest),
-  );
-}
-
-export function squadsDeleteSquadRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SquadsDeleteSquadRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SquadsDeleteSquadRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SquadsDeleteSquadRequest' from JSON`,
   );
 }
 
@@ -76,39 +44,6 @@ export const SquadsDeleteSquadResponseBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type SquadsDeleteSquadResponseBody$Outbound = {};
-
-/** @internal */
-export const SquadsDeleteSquadResponseBody$outboundSchema: z.ZodType<
-  SquadsDeleteSquadResponseBody$Outbound,
-  z.ZodTypeDef,
-  SquadsDeleteSquadResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SquadsDeleteSquadResponseBody$ {
-  /** @deprecated use `SquadsDeleteSquadResponseBody$inboundSchema` instead. */
-  export const inboundSchema = SquadsDeleteSquadResponseBody$inboundSchema;
-  /** @deprecated use `SquadsDeleteSquadResponseBody$outboundSchema` instead. */
-  export const outboundSchema = SquadsDeleteSquadResponseBody$outboundSchema;
-  /** @deprecated use `SquadsDeleteSquadResponseBody$Outbound` instead. */
-  export type Outbound = SquadsDeleteSquadResponseBody$Outbound;
-}
-
-export function squadsDeleteSquadResponseBodyToJSON(
-  squadsDeleteSquadResponseBody: SquadsDeleteSquadResponseBody,
-): string {
-  return JSON.stringify(
-    SquadsDeleteSquadResponseBody$outboundSchema.parse(
-      squadsDeleteSquadResponseBody,
-    ),
-  );
-}
 
 export function squadsDeleteSquadResponseBodyFromJSON(
   jsonString: string,

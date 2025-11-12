@@ -72,43 +72,6 @@ export const BuildParameters$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type BuildParameters$Outbound = {
-  CIRCLE_JOB: string;
-};
-
-/** @internal */
-export const BuildParameters$outboundSchema: z.ZodType<
-  BuildParameters$Outbound,
-  z.ZodTypeDef,
-  BuildParameters
-> = z.object({
-  circleJob: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    circleJob: "CIRCLE_JOB",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace BuildParameters$ {
-  /** @deprecated use `BuildParameters$inboundSchema` instead. */
-  export const inboundSchema = BuildParameters$inboundSchema;
-  /** @deprecated use `BuildParameters$outboundSchema` instead. */
-  export const outboundSchema = BuildParameters$outboundSchema;
-  /** @deprecated use `BuildParameters$Outbound` instead. */
-  export type Outbound = BuildParameters$Outbound;
-}
-
-export function buildParametersToJSON(
-  buildParameters: BuildParameters,
-): string {
-  return JSON.stringify(BuildParameters$outboundSchema.parse(buildParameters));
-}
-
 export function buildParametersFromJSON(
   jsonString: string,
 ): SafeParseResult<BuildParameters, SDKValidationError> {
@@ -135,46 +98,6 @@ export const Previous$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type Previous$Outbound = {
-  build_num: number;
-  build_time_millis: number;
-  status: string;
-};
-
-/** @internal */
-export const Previous$outboundSchema: z.ZodType<
-  Previous$Outbound,
-  z.ZodTypeDef,
-  Previous
-> = z.object({
-  buildNum: z.number().int(),
-  buildTimeMillis: z.number().int(),
-  status: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    buildNum: "build_num",
-    buildTimeMillis: "build_time_millis",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Previous$ {
-  /** @deprecated use `Previous$inboundSchema` instead. */
-  export const inboundSchema = Previous$inboundSchema;
-  /** @deprecated use `Previous$outboundSchema` instead. */
-  export const outboundSchema = Previous$outboundSchema;
-  /** @deprecated use `Previous$Outbound` instead. */
-  export type Outbound = Previous$Outbound;
-}
-
-export function previousToJSON(previous: Previous): string {
-  return JSON.stringify(Previous$outboundSchema.parse(previous));
-}
-
 export function previousFromJSON(
   jsonString: string,
 ): SafeParseResult<Previous, SDKValidationError> {
@@ -200,50 +123,6 @@ export const PreviousSuccessfulBuild$inboundSchema: z.ZodType<
     "build_time_millis": "buildTimeMillis",
   });
 });
-
-/** @internal */
-export type PreviousSuccessfulBuild$Outbound = {
-  build_num: number;
-  build_time_millis: number;
-  status: string;
-};
-
-/** @internal */
-export const PreviousSuccessfulBuild$outboundSchema: z.ZodType<
-  PreviousSuccessfulBuild$Outbound,
-  z.ZodTypeDef,
-  PreviousSuccessfulBuild
-> = z.object({
-  buildNum: z.number().int(),
-  buildTimeMillis: z.number().int(),
-  status: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    buildNum: "build_num",
-    buildTimeMillis: "build_time_millis",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PreviousSuccessfulBuild$ {
-  /** @deprecated use `PreviousSuccessfulBuild$inboundSchema` instead. */
-  export const inboundSchema = PreviousSuccessfulBuild$inboundSchema;
-  /** @deprecated use `PreviousSuccessfulBuild$outboundSchema` instead. */
-  export const outboundSchema = PreviousSuccessfulBuild$outboundSchema;
-  /** @deprecated use `PreviousSuccessfulBuild$Outbound` instead. */
-  export type Outbound = PreviousSuccessfulBuild$Outbound;
-}
-
-export function previousSuccessfulBuildToJSON(
-  previousSuccessfulBuild: PreviousSuccessfulBuild,
-): string {
-  return JSON.stringify(
-    PreviousSuccessfulBuild$outboundSchema.parse(previousSuccessfulBuild),
-  );
-}
 
 export function previousSuccessfulBuildFromJSON(
   jsonString: string,
@@ -307,105 +186,6 @@ export const CircleciResponse$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type CircleciResponse$Outbound = {
-  username: string;
-  reponame: string;
-  build_num: number;
-  build_url: string;
-  build_parameters: BuildParameters$Outbound;
-  previous: Previous$Outbound;
-  previous_successful_build: PreviousSuccessfulBuild$Outbound;
-  retry_of: number;
-  body: string;
-  subject: string;
-  status: string;
-  lifecycle: string;
-  outcome: string;
-  committer_date: string;
-  committer_email: string;
-  committer_name: string;
-  author_date: string;
-  author_email: string;
-  author_name: string;
-  branch: string;
-  vcs_type: string;
-  vcs_url: string;
-  start_time: string;
-  stop_time: string;
-};
-
-/** @internal */
-export const CircleciResponse$outboundSchema: z.ZodType<
-  CircleciResponse$Outbound,
-  z.ZodTypeDef,
-  CircleciResponse
-> = z.object({
-  username: z.string(),
-  reponame: z.string(),
-  buildNum: z.number().int(),
-  buildUrl: z.string(),
-  buildParameters: z.lazy(() => BuildParameters$outboundSchema),
-  previous: z.lazy(() => Previous$outboundSchema),
-  previousSuccessfulBuild: z.lazy(() => PreviousSuccessfulBuild$outboundSchema),
-  retryOf: z.number().int(),
-  body: z.string(),
-  subject: z.string(),
-  status: z.string(),
-  lifecycle: z.string(),
-  outcome: z.string(),
-  committerDate: z.string(),
-  committerEmail: z.string(),
-  committerName: z.string(),
-  authorDate: z.string(),
-  authorEmail: z.string(),
-  authorName: z.string(),
-  branch: z.string(),
-  vcsType: z.string(),
-  vcsUrl: z.string(),
-  startTime: z.string(),
-  stopTime: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    buildNum: "build_num",
-    buildUrl: "build_url",
-    buildParameters: "build_parameters",
-    previousSuccessfulBuild: "previous_successful_build",
-    retryOf: "retry_of",
-    committerDate: "committer_date",
-    committerEmail: "committer_email",
-    committerName: "committer_name",
-    authorDate: "author_date",
-    authorEmail: "author_email",
-    authorName: "author_name",
-    vcsType: "vcs_type",
-    vcsUrl: "vcs_url",
-    startTime: "start_time",
-    stopTime: "stop_time",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CircleciResponse$ {
-  /** @deprecated use `CircleciResponse$inboundSchema` instead. */
-  export const inboundSchema = CircleciResponse$inboundSchema;
-  /** @deprecated use `CircleciResponse$outboundSchema` instead. */
-  export const outboundSchema = CircleciResponse$outboundSchema;
-  /** @deprecated use `CircleciResponse$Outbound` instead. */
-  export type Outbound = CircleciResponse$Outbound;
-}
-
-export function circleciResponseToJSON(
-  circleciResponse: CircleciResponse,
-): string {
-  return JSON.stringify(
-    CircleciResponse$outboundSchema.parse(circleciResponse),
-  );
-}
-
 export function circleciResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<CircleciResponse, SDKValidationError> {
@@ -431,55 +211,6 @@ export const V3IncidentsIncidentActionsCircleCIRebuildResponse$inboundSchema:
       "circleci_response": "circleciResponse",
     });
   });
-
-/** @internal */
-export type V3IncidentsIncidentActionsCircleCIRebuildResponse$Outbound = {
-  action_id: string;
-  circleci_response: CircleciResponse$Outbound;
-};
-
-/** @internal */
-export const V3IncidentsIncidentActionsCircleCIRebuildResponse$outboundSchema:
-  z.ZodType<
-    V3IncidentsIncidentActionsCircleCIRebuildResponse$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsIncidentActionsCircleCIRebuildResponse
-  > = z.object({
-    actionId: z.string(),
-    circleciResponse: z.lazy(() => CircleciResponse$outboundSchema),
-  }).transform((v) => {
-    return remap$(v, {
-      actionId: "action_id",
-      circleciResponse: "circleci_response",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentActionsCircleCIRebuildResponse$ {
-  /** @deprecated use `V3IncidentsIncidentActionsCircleCIRebuildResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsIncidentActionsCircleCIRebuildResponse$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentActionsCircleCIRebuildResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIncidentActionsCircleCIRebuildResponse$outboundSchema;
-  /** @deprecated use `V3IncidentsIncidentActionsCircleCIRebuildResponse$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsIncidentActionsCircleCIRebuildResponse$Outbound;
-}
-
-export function v3IncidentsIncidentActionsCircleCIRebuildResponseToJSON(
-  v3IncidentsIncidentActionsCircleCIRebuildResponse:
-    V3IncidentsIncidentActionsCircleCIRebuildResponse,
-): string {
-  return JSON.stringify(
-    V3IncidentsIncidentActionsCircleCIRebuildResponse$outboundSchema.parse(
-      v3IncidentsIncidentActionsCircleCIRebuildResponse,
-    ),
-  );
-}
 
 export function v3IncidentsIncidentActionsCircleCIRebuildResponseFromJSON(
   jsonString: string,

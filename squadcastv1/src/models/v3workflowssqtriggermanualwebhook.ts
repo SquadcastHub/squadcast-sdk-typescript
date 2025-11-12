@@ -29,24 +29,10 @@ export const V3WorkflowsSqTriggerManualWebhookName$inboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqTriggerManualWebhookName> = z.nativeEnum(
     V3WorkflowsSqTriggerManualWebhookName,
   );
-
 /** @internal */
 export const V3WorkflowsSqTriggerManualWebhookName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqTriggerManualWebhookName> =
     V3WorkflowsSqTriggerManualWebhookName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqTriggerManualWebhookName$ {
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqTriggerManualWebhookName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqTriggerManualWebhookName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsSqTriggerManualWebhookData$inboundSchema: z.ZodType<
@@ -56,7 +42,6 @@ export const V3WorkflowsSqTriggerManualWebhookData$inboundSchema: z.ZodType<
 > = z.object({
   id: z.string(),
 });
-
 /** @internal */
 export type V3WorkflowsSqTriggerManualWebhookData$Outbound = {
   id: string;
@@ -71,21 +56,6 @@ export const V3WorkflowsSqTriggerManualWebhookData$outboundSchema: z.ZodType<
   id: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqTriggerManualWebhookData$ {
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqTriggerManualWebhookData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqTriggerManualWebhookData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhookData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqTriggerManualWebhookData$Outbound;
-}
-
 export function v3WorkflowsSqTriggerManualWebhookDataToJSON(
   v3WorkflowsSqTriggerManualWebhookData: V3WorkflowsSqTriggerManualWebhookData,
 ): string {
@@ -95,7 +65,6 @@ export function v3WorkflowsSqTriggerManualWebhookDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqTriggerManualWebhookDataFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqTriggerManualWebhookData, SDKValidationError> {
@@ -116,7 +85,6 @@ export const V3WorkflowsSqTriggerManualWebhook$inboundSchema: z.ZodType<
   name: V3WorkflowsSqTriggerManualWebhookName$inboundSchema,
   data: z.lazy(() => V3WorkflowsSqTriggerManualWebhookData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsSqTriggerManualWebhook$Outbound = {
   name: string;
@@ -133,20 +101,6 @@ export const V3WorkflowsSqTriggerManualWebhook$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsSqTriggerManualWebhookData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqTriggerManualWebhook$ {
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhook$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqTriggerManualWebhook$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhook$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqTriggerManualWebhook$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqTriggerManualWebhook$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqTriggerManualWebhook$Outbound;
-}
-
 export function v3WorkflowsSqTriggerManualWebhookToJSON(
   v3WorkflowsSqTriggerManualWebhook: V3WorkflowsSqTriggerManualWebhook,
 ): string {
@@ -156,7 +110,6 @@ export function v3WorkflowsSqTriggerManualWebhookToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqTriggerManualWebhookFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqTriggerManualWebhook, SDKValidationError> {

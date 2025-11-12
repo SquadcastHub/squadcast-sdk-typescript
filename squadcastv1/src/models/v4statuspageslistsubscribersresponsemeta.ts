@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4StatusPagesTotalSubscribersCount,
   V4StatusPagesTotalSubscribersCount$inboundSchema,
-  V4StatusPagesTotalSubscribersCount$Outbound,
-  V4StatusPagesTotalSubscribersCount$outboundSchema,
 } from "./v4statuspagestotalsubscriberscount.js";
 
 export type V4StatusPagesListSubscribersResponseMeta = {
@@ -30,53 +28,6 @@ export const V4StatusPagesListSubscribersResponseMeta$inboundSchema: z.ZodType<
   maximumSubscribersLimit: z.number().int(),
   lastWeekSubscribersCount: z.number().int(),
 });
-
-/** @internal */
-export type V4StatusPagesListSubscribersResponseMeta$Outbound = {
-  totalSubscribersCount?:
-    | V4StatusPagesTotalSubscribersCount$Outbound
-    | undefined;
-  maximumSubscribersLimit: number;
-  lastWeekSubscribersCount: number;
-};
-
-/** @internal */
-export const V4StatusPagesListSubscribersResponseMeta$outboundSchema: z.ZodType<
-  V4StatusPagesListSubscribersResponseMeta$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesListSubscribersResponseMeta
-> = z.object({
-  totalSubscribersCount: V4StatusPagesTotalSubscribersCount$outboundSchema
-    .optional(),
-  maximumSubscribersLimit: z.number().int(),
-  lastWeekSubscribersCount: z.number().int(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesListSubscribersResponseMeta$ {
-  /** @deprecated use `V4StatusPagesListSubscribersResponseMeta$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesListSubscribersResponseMeta$inboundSchema;
-  /** @deprecated use `V4StatusPagesListSubscribersResponseMeta$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesListSubscribersResponseMeta$outboundSchema;
-  /** @deprecated use `V4StatusPagesListSubscribersResponseMeta$Outbound` instead. */
-  export type Outbound = V4StatusPagesListSubscribersResponseMeta$Outbound;
-}
-
-export function v4StatusPagesListSubscribersResponseMetaToJSON(
-  v4StatusPagesListSubscribersResponseMeta:
-    V4StatusPagesListSubscribersResponseMeta,
-): string {
-  return JSON.stringify(
-    V4StatusPagesListSubscribersResponseMeta$outboundSchema.parse(
-      v4StatusPagesListSubscribersResponseMeta,
-    ),
-  );
-}
 
 export function v4StatusPagesListSubscribersResponseMetaFromJSON(
   jsonString: string,

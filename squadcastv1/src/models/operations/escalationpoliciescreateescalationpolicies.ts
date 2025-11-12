@@ -28,48 +28,6 @@ export const EscalationPoliciesCreateEscalationPoliciesResponse$inboundSchema:
     data: models.V3EscalationPoliciesEscalationPolicyResponse$inboundSchema,
   });
 
-/** @internal */
-export type EscalationPoliciesCreateEscalationPoliciesResponse$Outbound = {
-  data: models.V3EscalationPoliciesEscalationPolicyResponse$Outbound;
-};
-
-/** @internal */
-export const EscalationPoliciesCreateEscalationPoliciesResponse$outboundSchema:
-  z.ZodType<
-    EscalationPoliciesCreateEscalationPoliciesResponse$Outbound,
-    z.ZodTypeDef,
-    EscalationPoliciesCreateEscalationPoliciesResponse
-  > = z.object({
-    data: models.V3EscalationPoliciesEscalationPolicyResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EscalationPoliciesCreateEscalationPoliciesResponse$ {
-  /** @deprecated use `EscalationPoliciesCreateEscalationPoliciesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    EscalationPoliciesCreateEscalationPoliciesResponse$inboundSchema;
-  /** @deprecated use `EscalationPoliciesCreateEscalationPoliciesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    EscalationPoliciesCreateEscalationPoliciesResponse$outboundSchema;
-  /** @deprecated use `EscalationPoliciesCreateEscalationPoliciesResponse$Outbound` instead. */
-  export type Outbound =
-    EscalationPoliciesCreateEscalationPoliciesResponse$Outbound;
-}
-
-export function escalationPoliciesCreateEscalationPoliciesResponseToJSON(
-  escalationPoliciesCreateEscalationPoliciesResponse:
-    EscalationPoliciesCreateEscalationPoliciesResponse,
-): string {
-  return JSON.stringify(
-    EscalationPoliciesCreateEscalationPoliciesResponse$outboundSchema.parse(
-      escalationPoliciesCreateEscalationPoliciesResponse,
-    ),
-  );
-}
-
 export function escalationPoliciesCreateEscalationPoliciesResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

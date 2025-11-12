@@ -23,22 +23,6 @@ export type WebformsUpdateWebformResponse = {
 };
 
 /** @internal */
-export const WebformsUpdateWebformRequest$inboundSchema: z.ZodType<
-  WebformsUpdateWebformRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  webformId: z.number().int(),
-  "V3.Webforms.CreateOrUpdateWebformRequest":
-    models.V3WebformsCreateOrUpdateWebformRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Webforms.CreateOrUpdateWebformRequest":
-      "v3WebformsCreateOrUpdateWebformRequest",
-  });
-});
-
-/** @internal */
 export type WebformsUpdateWebformRequest$Outbound = {
   webformId: number;
   "V3.Webforms.CreateOrUpdateWebformRequest":
@@ -61,19 +45,6 @@ export const WebformsUpdateWebformRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebformsUpdateWebformRequest$ {
-  /** @deprecated use `WebformsUpdateWebformRequest$inboundSchema` instead. */
-  export const inboundSchema = WebformsUpdateWebformRequest$inboundSchema;
-  /** @deprecated use `WebformsUpdateWebformRequest$outboundSchema` instead. */
-  export const outboundSchema = WebformsUpdateWebformRequest$outboundSchema;
-  /** @deprecated use `WebformsUpdateWebformRequest$Outbound` instead. */
-  export type Outbound = WebformsUpdateWebformRequest$Outbound;
-}
-
 export function webformsUpdateWebformRequestToJSON(
   webformsUpdateWebformRequest: WebformsUpdateWebformRequest,
 ): string {
@@ -81,16 +52,6 @@ export function webformsUpdateWebformRequestToJSON(
     WebformsUpdateWebformRequest$outboundSchema.parse(
       webformsUpdateWebformRequest,
     ),
-  );
-}
-
-export function webformsUpdateWebformRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WebformsUpdateWebformRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => WebformsUpdateWebformRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WebformsUpdateWebformRequest' from JSON`,
   );
 }
 
@@ -102,43 +63,6 @@ export const WebformsUpdateWebformResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3WebformsWebformResponse$inboundSchema,
 });
-
-/** @internal */
-export type WebformsUpdateWebformResponse$Outbound = {
-  data: models.V3WebformsWebformResponse$Outbound;
-};
-
-/** @internal */
-export const WebformsUpdateWebformResponse$outboundSchema: z.ZodType<
-  WebformsUpdateWebformResponse$Outbound,
-  z.ZodTypeDef,
-  WebformsUpdateWebformResponse
-> = z.object({
-  data: models.V3WebformsWebformResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebformsUpdateWebformResponse$ {
-  /** @deprecated use `WebformsUpdateWebformResponse$inboundSchema` instead. */
-  export const inboundSchema = WebformsUpdateWebformResponse$inboundSchema;
-  /** @deprecated use `WebformsUpdateWebformResponse$outboundSchema` instead. */
-  export const outboundSchema = WebformsUpdateWebformResponse$outboundSchema;
-  /** @deprecated use `WebformsUpdateWebformResponse$Outbound` instead. */
-  export type Outbound = WebformsUpdateWebformResponse$Outbound;
-}
-
-export function webformsUpdateWebformResponseToJSON(
-  webformsUpdateWebformResponse: WebformsUpdateWebformResponse,
-): string {
-  return JSON.stringify(
-    WebformsUpdateWebformResponse$outboundSchema.parse(
-      webformsUpdateWebformResponse,
-    ),
-  );
-}
 
 export function webformsUpdateWebformResponseFromJSON(
   jsonString: string,

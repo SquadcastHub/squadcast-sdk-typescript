@@ -10,8 +10,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3GlobalOncallReminderRulesRule,
   V3GlobalOncallReminderRulesRule$inboundSchema,
-  V3GlobalOncallReminderRulesRule$Outbound,
-  V3GlobalOncallReminderRulesRule$outboundSchema,
 } from "./v3globaloncallreminderrulesrule.js";
 
 export type V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse = {
@@ -38,59 +36,6 @@ export const V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$inbound
       "owner_id": "ownerId",
     });
   });
-
-/** @internal */
-export type V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$Outbound =
-  {
-    id: number;
-    is_enabled: boolean;
-    owner_id: string;
-    rules: Array<V3GlobalOncallReminderRulesRule$Outbound>;
-  };
-
-/** @internal */
-export const V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$outboundSchema:
-  z.ZodType<
-    V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$Outbound,
-    z.ZodTypeDef,
-    V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse
-  > = z.object({
-    id: z.number().int(),
-    isEnabled: z.boolean(),
-    ownerId: z.string(),
-    rules: z.array(V3GlobalOncallReminderRulesRule$outboundSchema),
-  }).transform((v) => {
-    return remap$(v, {
-      isEnabled: "is_enabled",
-      ownerId: "owner_id",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$ {
-  /** @deprecated use `V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$inboundSchema;
-  /** @deprecated use `V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$outboundSchema;
-  /** @deprecated use `V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$Outbound` instead. */
-  export type Outbound =
-    V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$Outbound;
-}
-
-export function v3GlobalOncallReminderRulesGlobalOncallReminderRuleResponseToJSON(
-  v3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse:
-    V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse,
-): string {
-  return JSON.stringify(
-    V3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse$outboundSchema
-      .parse(v3GlobalOncallReminderRulesGlobalOncallReminderRuleResponse),
-  );
-}
 
 export function v3GlobalOncallReminderRulesGlobalOncallReminderRuleResponseFromJSON(
   jsonString: string,

@@ -29,56 +29,6 @@ export const V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$inboundSc
     allowSubscription: z.boolean(),
   });
 
-/** @internal */
-export type V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$Outbound =
-  {
-    id: number;
-    pageID: number;
-    name: string;
-    description?: string | undefined;
-    allowSubscription: boolean;
-  };
-
-/** @internal */
-export const V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$outboundSchema:
-  z.ZodType<
-    V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesComponentGroupsGetComponentGroupByIdResponse
-  > = z.object({
-    id: z.number().int(),
-    pageID: z.number().int(),
-    name: z.string(),
-    description: z.string().optional(),
-    allowSubscription: z.boolean(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$ {
-  /** @deprecated use `V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$Outbound;
-}
-
-export function v4StatusPagesComponentGroupsGetComponentGroupByIdResponseToJSON(
-  v4StatusPagesComponentGroupsGetComponentGroupByIdResponse:
-    V4StatusPagesComponentGroupsGetComponentGroupByIdResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesComponentGroupsGetComponentGroupByIdResponse$outboundSchema
-      .parse(v4StatusPagesComponentGroupsGetComponentGroupByIdResponse),
-  );
-}
-
 export function v4StatusPagesComponentGroupsGetComponentGroupByIdResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

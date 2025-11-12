@@ -34,43 +34,6 @@ export const IncidentsIncidentExportAsyncBody$inboundSchema: z.ZodType<
   data: models.V3IncidentsIncidentExportAsyncResponse$inboundSchema,
 });
 
-/** @internal */
-export type IncidentsIncidentExportAsyncBody$Outbound = {
-  data: models.V3IncidentsIncidentExportAsyncResponse$Outbound;
-};
-
-/** @internal */
-export const IncidentsIncidentExportAsyncBody$outboundSchema: z.ZodType<
-  IncidentsIncidentExportAsyncBody$Outbound,
-  z.ZodTypeDef,
-  IncidentsIncidentExportAsyncBody
-> = z.object({
-  data: models.V3IncidentsIncidentExportAsyncResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsIncidentExportAsyncBody$ {
-  /** @deprecated use `IncidentsIncidentExportAsyncBody$inboundSchema` instead. */
-  export const inboundSchema = IncidentsIncidentExportAsyncBody$inboundSchema;
-  /** @deprecated use `IncidentsIncidentExportAsyncBody$outboundSchema` instead. */
-  export const outboundSchema = IncidentsIncidentExportAsyncBody$outboundSchema;
-  /** @deprecated use `IncidentsIncidentExportAsyncBody$Outbound` instead. */
-  export type Outbound = IncidentsIncidentExportAsyncBody$Outbound;
-}
-
-export function incidentsIncidentExportAsyncBodyToJSON(
-  incidentsIncidentExportAsyncBody: IncidentsIncidentExportAsyncBody,
-): string {
-  return JSON.stringify(
-    IncidentsIncidentExportAsyncBody$outboundSchema.parse(
-      incidentsIncidentExportAsyncBody,
-    ),
-  );
-}
-
 export function incidentsIncidentExportAsyncBodyFromJSON(
   jsonString: string,
 ): SafeParseResult<IncidentsIncidentExportAsyncBody, SDKValidationError> {
@@ -89,46 +52,6 @@ export const IncidentsIncidentExportAsyncResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   body: z.lazy(() => IncidentsIncidentExportAsyncBody$inboundSchema),
 });
-
-/** @internal */
-export type IncidentsIncidentExportAsyncResponseBody$Outbound = {
-  body: IncidentsIncidentExportAsyncBody$Outbound;
-};
-
-/** @internal */
-export const IncidentsIncidentExportAsyncResponseBody$outboundSchema: z.ZodType<
-  IncidentsIncidentExportAsyncResponseBody$Outbound,
-  z.ZodTypeDef,
-  IncidentsIncidentExportAsyncResponseBody
-> = z.object({
-  body: z.lazy(() => IncidentsIncidentExportAsyncBody$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsIncidentExportAsyncResponseBody$ {
-  /** @deprecated use `IncidentsIncidentExportAsyncResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsIncidentExportAsyncResponseBody$inboundSchema;
-  /** @deprecated use `IncidentsIncidentExportAsyncResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsIncidentExportAsyncResponseBody$outboundSchema;
-  /** @deprecated use `IncidentsIncidentExportAsyncResponseBody$Outbound` instead. */
-  export type Outbound = IncidentsIncidentExportAsyncResponseBody$Outbound;
-}
-
-export function incidentsIncidentExportAsyncResponseBodyToJSON(
-  incidentsIncidentExportAsyncResponseBody:
-    IncidentsIncidentExportAsyncResponseBody,
-): string {
-  return JSON.stringify(
-    IncidentsIncidentExportAsyncResponseBody$outboundSchema.parse(
-      incidentsIncidentExportAsyncResponseBody,
-    ),
-  );
-}
 
 export function incidentsIncidentExportAsyncResponseBodyFromJSON(
   jsonString: string,

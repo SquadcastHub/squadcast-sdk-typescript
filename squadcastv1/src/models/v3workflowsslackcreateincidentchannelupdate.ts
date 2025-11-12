@@ -4,10 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3WorkflowsSlackCreateIncidentChannelUpdateName = {
   SlackCreateIncidentChannel: "slack_create_incident_channel",
@@ -27,43 +24,9 @@ export type V3WorkflowsSlackCreateIncidentChannelUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsSlackCreateIncidentChannelUpdateName$inboundSchema:
+export const V3WorkflowsSlackCreateIncidentChannelUpdateName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSlackCreateIncidentChannelUpdateName> = z
     .nativeEnum(V3WorkflowsSlackCreateIncidentChannelUpdateName);
-
-/** @internal */
-export const V3WorkflowsSlackCreateIncidentChannelUpdateName$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsSlackCreateIncidentChannelUpdateName> =
-    V3WorkflowsSlackCreateIncidentChannelUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackCreateIncidentChannelUpdateName$ {
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelUpdateName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSlackCreateIncidentChannelUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelUpdateName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSlackCreateIncidentChannelUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsSlackCreateIncidentChannelUpdateData$inboundSchema:
-  z.ZodType<
-    V3WorkflowsSlackCreateIncidentChannelUpdateData,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    auto_name: z.boolean().optional(),
-    channel_name: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "auto_name": "autoName",
-      "channel_name": "channelName",
-    });
-  });
 
 /** @internal */
 export type V3WorkflowsSlackCreateIncidentChannelUpdateData$Outbound = {
@@ -87,22 +50,6 @@ export const V3WorkflowsSlackCreateIncidentChannelUpdateData$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackCreateIncidentChannelUpdateData$ {
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelUpdateData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSlackCreateIncidentChannelUpdateData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelUpdateData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSlackCreateIncidentChannelUpdateData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelUpdateData$Outbound` instead. */
-  export type Outbound =
-    V3WorkflowsSlackCreateIncidentChannelUpdateData$Outbound;
-}
-
 export function v3WorkflowsSlackCreateIncidentChannelUpdateDataToJSON(
   v3WorkflowsSlackCreateIncidentChannelUpdateData:
     V3WorkflowsSlackCreateIncidentChannelUpdateData,
@@ -113,35 +60,6 @@ export function v3WorkflowsSlackCreateIncidentChannelUpdateDataToJSON(
     ),
   );
 }
-
-export function v3WorkflowsSlackCreateIncidentChannelUpdateDataFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsSlackCreateIncidentChannelUpdateData,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSlackCreateIncidentChannelUpdateData$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsSlackCreateIncidentChannelUpdateData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsSlackCreateIncidentChannelUpdate$inboundSchema:
-  z.ZodType<
-    V3WorkflowsSlackCreateIncidentChannelUpdate,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: V3WorkflowsSlackCreateIncidentChannelUpdateName$inboundSchema,
-    data: z.lazy(() =>
-      V3WorkflowsSlackCreateIncidentChannelUpdateData$inboundSchema
-    ).optional(),
-  });
 
 /** @internal */
 export type V3WorkflowsSlackCreateIncidentChannelUpdate$Outbound = {
@@ -162,21 +80,6 @@ export const V3WorkflowsSlackCreateIncidentChannelUpdate$outboundSchema:
     ).optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSlackCreateIncidentChannelUpdate$ {
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelUpdate$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSlackCreateIncidentChannelUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSlackCreateIncidentChannelUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsSlackCreateIncidentChannelUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsSlackCreateIncidentChannelUpdate$Outbound;
-}
-
 export function v3WorkflowsSlackCreateIncidentChannelUpdateToJSON(
   v3WorkflowsSlackCreateIncidentChannelUpdate:
     V3WorkflowsSlackCreateIncidentChannelUpdate,
@@ -185,21 +88,5 @@ export function v3WorkflowsSlackCreateIncidentChannelUpdateToJSON(
     V3WorkflowsSlackCreateIncidentChannelUpdate$outboundSchema.parse(
       v3WorkflowsSlackCreateIncidentChannelUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsSlackCreateIncidentChannelUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsSlackCreateIncidentChannelUpdate,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSlackCreateIncidentChannelUpdate$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsSlackCreateIncidentChannelUpdate' from JSON`,
   );
 }

@@ -34,7 +34,6 @@ export const V3ExtensionsMSTeamsSquadCastServiceMapping$inboundSchema:
         "squadcast_service_name": "squadcastServiceName",
       });
     });
-
 /** @internal */
 export type V3ExtensionsMSTeamsSquadCastServiceMapping$Outbound = {
   squadcast_service_id: string;
@@ -57,21 +56,6 @@ export const V3ExtensionsMSTeamsSquadCastServiceMapping$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsMSTeamsSquadCastServiceMapping$ {
-  /** @deprecated use `V3ExtensionsMSTeamsSquadCastServiceMapping$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsMSTeamsSquadCastServiceMapping$inboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsSquadCastServiceMapping$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsMSTeamsSquadCastServiceMapping$outboundSchema;
-  /** @deprecated use `V3ExtensionsMSTeamsSquadCastServiceMapping$Outbound` instead. */
-  export type Outbound = V3ExtensionsMSTeamsSquadCastServiceMapping$Outbound;
-}
-
 export function v3ExtensionsMSTeamsSquadCastServiceMappingToJSON(
   v3ExtensionsMSTeamsSquadCastServiceMapping:
     V3ExtensionsMSTeamsSquadCastServiceMapping,
@@ -82,7 +66,6 @@ export function v3ExtensionsMSTeamsSquadCastServiceMappingToJSON(
     ),
   );
 }
-
 export function v3ExtensionsMSTeamsSquadCastServiceMappingFromJSON(
   jsonString: string,
 ): SafeParseResult<

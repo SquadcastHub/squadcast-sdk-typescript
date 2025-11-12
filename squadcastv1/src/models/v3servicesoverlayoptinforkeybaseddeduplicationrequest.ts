@@ -4,27 +4,10 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3ServicesOverlayOptInForKeyBasedDeduplicationRequest = {
   dedupKeyEnabled?: boolean | undefined;
 };
-
-/** @internal */
-export const V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$inboundSchema:
-  z.ZodType<
-    V3ServicesOverlayOptInForKeyBasedDeduplicationRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    dedup_key_enabled: z.boolean().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "dedup_key_enabled": "dedupKeyEnabled",
-    });
-  });
 
 /** @internal */
 export type V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$Outbound = {
@@ -45,22 +28,6 @@ export const V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$outboundSchem
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$ {
-  /** @deprecated use `V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$inboundSchema;
-  /** @deprecated use `V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$outboundSchema;
-  /** @deprecated use `V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$Outbound` instead. */
-  export type Outbound =
-    V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$Outbound;
-}
-
 export function v3ServicesOverlayOptInForKeyBasedDeduplicationRequestToJSON(
   v3ServicesOverlayOptInForKeyBasedDeduplicationRequest:
     V3ServicesOverlayOptInForKeyBasedDeduplicationRequest,
@@ -69,21 +36,5 @@ export function v3ServicesOverlayOptInForKeyBasedDeduplicationRequestToJSON(
     V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$outboundSchema.parse(
       v3ServicesOverlayOptInForKeyBasedDeduplicationRequest,
     ),
-  );
-}
-
-export function v3ServicesOverlayOptInForKeyBasedDeduplicationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesOverlayOptInForKeyBasedDeduplicationRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3ServicesOverlayOptInForKeyBasedDeduplicationRequest' from JSON`,
   );
 }

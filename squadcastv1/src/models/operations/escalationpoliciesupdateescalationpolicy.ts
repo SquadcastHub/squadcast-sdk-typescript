@@ -32,27 +32,6 @@ export type EscalationPoliciesUpdateEscalationPolicyResponse = {
 };
 
 /** @internal */
-export const EscalationPoliciesUpdateEscalationPolicyRequest$inboundSchema:
-  z.ZodType<
-    EscalationPoliciesUpdateEscalationPolicyRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    escalationPolicyID: z.string(),
-    "V3.EscalationPolicies.UpdateEscalationPolicyRequest": z.union([
-      z.instanceof(ReadableStream<Uint8Array>),
-      z.instanceof(Blob),
-      z.instanceof(ArrayBuffer),
-      z.instanceof(Uint8Array),
-    ]),
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.EscalationPolicies.UpdateEscalationPolicyRequest":
-        "v3EscalationPoliciesUpdateEscalationPolicyRequest",
-    });
-  });
-
-/** @internal */
 export type EscalationPoliciesUpdateEscalationPolicyRequest$Outbound = {
   escalationPolicyID: string;
   "V3.EscalationPolicies.UpdateEscalationPolicyRequest":
@@ -83,22 +62,6 @@ export const EscalationPoliciesUpdateEscalationPolicyRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EscalationPoliciesUpdateEscalationPolicyRequest$ {
-  /** @deprecated use `EscalationPoliciesUpdateEscalationPolicyRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    EscalationPoliciesUpdateEscalationPolicyRequest$inboundSchema;
-  /** @deprecated use `EscalationPoliciesUpdateEscalationPolicyRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    EscalationPoliciesUpdateEscalationPolicyRequest$outboundSchema;
-  /** @deprecated use `EscalationPoliciesUpdateEscalationPolicyRequest$Outbound` instead. */
-  export type Outbound =
-    EscalationPoliciesUpdateEscalationPolicyRequest$Outbound;
-}
-
 export function escalationPoliciesUpdateEscalationPolicyRequestToJSON(
   escalationPoliciesUpdateEscalationPolicyRequest:
     EscalationPoliciesUpdateEscalationPolicyRequest,
@@ -107,22 +70,6 @@ export function escalationPoliciesUpdateEscalationPolicyRequestToJSON(
     EscalationPoliciesUpdateEscalationPolicyRequest$outboundSchema.parse(
       escalationPoliciesUpdateEscalationPolicyRequest,
     ),
-  );
-}
-
-export function escalationPoliciesUpdateEscalationPolicyRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  EscalationPoliciesUpdateEscalationPolicyRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      EscalationPoliciesUpdateEscalationPolicyRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'EscalationPoliciesUpdateEscalationPolicyRequest' from JSON`,
   );
 }
 
@@ -135,48 +82,6 @@ export const EscalationPoliciesUpdateEscalationPolicyResponse$inboundSchema:
   > = z.object({
     data: models.V3EscalationPoliciesEscalationPolicyResponse$inboundSchema,
   });
-
-/** @internal */
-export type EscalationPoliciesUpdateEscalationPolicyResponse$Outbound = {
-  data: models.V3EscalationPoliciesEscalationPolicyResponse$Outbound;
-};
-
-/** @internal */
-export const EscalationPoliciesUpdateEscalationPolicyResponse$outboundSchema:
-  z.ZodType<
-    EscalationPoliciesUpdateEscalationPolicyResponse$Outbound,
-    z.ZodTypeDef,
-    EscalationPoliciesUpdateEscalationPolicyResponse
-  > = z.object({
-    data: models.V3EscalationPoliciesEscalationPolicyResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EscalationPoliciesUpdateEscalationPolicyResponse$ {
-  /** @deprecated use `EscalationPoliciesUpdateEscalationPolicyResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    EscalationPoliciesUpdateEscalationPolicyResponse$inboundSchema;
-  /** @deprecated use `EscalationPoliciesUpdateEscalationPolicyResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    EscalationPoliciesUpdateEscalationPolicyResponse$outboundSchema;
-  /** @deprecated use `EscalationPoliciesUpdateEscalationPolicyResponse$Outbound` instead. */
-  export type Outbound =
-    EscalationPoliciesUpdateEscalationPolicyResponse$Outbound;
-}
-
-export function escalationPoliciesUpdateEscalationPolicyResponseToJSON(
-  escalationPoliciesUpdateEscalationPolicyResponse:
-    EscalationPoliciesUpdateEscalationPolicyResponse,
-): string {
-  return JSON.stringify(
-    EscalationPoliciesUpdateEscalationPolicyResponse$outboundSchema.parse(
-      escalationPoliciesUpdateEscalationPolicyResponse,
-    ),
-  );
-}
 
 export function escalationPoliciesUpdateEscalationPolicyResponseFromJSON(
   jsonString: string,

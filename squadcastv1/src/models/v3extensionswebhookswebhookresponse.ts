@@ -10,20 +10,14 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ExtensionsWebhooksWebhookFilter,
   V3ExtensionsWebhooksWebhookFilter$inboundSchema,
-  V3ExtensionsWebhooksWebhookFilter$Outbound,
-  V3ExtensionsWebhooksWebhookFilter$outboundSchema,
 } from "./v3extensionswebhookswebhookfilter.js";
 import {
   V3ExtensionsWebhooksWebhookTrigger,
   V3ExtensionsWebhooksWebhookTrigger$inboundSchema,
-  V3ExtensionsWebhooksWebhookTrigger$Outbound,
-  V3ExtensionsWebhooksWebhookTrigger$outboundSchema,
 } from "./v3extensionswebhookswebhooktrigger.js";
 import {
   V3ExtensionsWebhooksWebhookUrl,
   V3ExtensionsWebhooksWebhookUrl$inboundSchema,
-  V3ExtensionsWebhooksWebhookUrl$Outbound,
-  V3ExtensionsWebhooksWebhookUrl$outboundSchema,
 } from "./v3extensionswebhookswebhookurl.js";
 
 export type V3ExtensionsWebhooksWebhookResponseHeader = {};
@@ -105,43 +99,6 @@ export const V3ExtensionsWebhooksWebhookResponseHeader$inboundSchema: z.ZodType<
   unknown
 > = z.object({});
 
-/** @internal */
-export type V3ExtensionsWebhooksWebhookResponseHeader$Outbound = {};
-
-/** @internal */
-export const V3ExtensionsWebhooksWebhookResponseHeader$outboundSchema:
-  z.ZodType<
-    V3ExtensionsWebhooksWebhookResponseHeader$Outbound,
-    z.ZodTypeDef,
-    V3ExtensionsWebhooksWebhookResponseHeader
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksWebhookResponseHeader$ {
-  /** @deprecated use `V3ExtensionsWebhooksWebhookResponseHeader$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsWebhooksWebhookResponseHeader$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookResponseHeader$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsWebhooksWebhookResponseHeader$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookResponseHeader$Outbound` instead. */
-  export type Outbound = V3ExtensionsWebhooksWebhookResponseHeader$Outbound;
-}
-
-export function v3ExtensionsWebhooksWebhookResponseHeaderToJSON(
-  v3ExtensionsWebhooksWebhookResponseHeader:
-    V3ExtensionsWebhooksWebhookResponseHeader,
-): string {
-  return JSON.stringify(
-    V3ExtensionsWebhooksWebhookResponseHeader$outboundSchema.parse(
-      v3ExtensionsWebhooksWebhookResponseHeader,
-    ),
-  );
-}
-
 export function v3ExtensionsWebhooksWebhookResponseHeaderFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -204,107 +161,6 @@ export const V3ExtensionsWebhooksWebhookResponse$inboundSchema: z.ZodType<
     "author_id": "authorId",
   });
 });
-
-/** @internal */
-export type V3ExtensionsWebhooksWebhookResponse$Outbound = {
-  name: string;
-  description?: string | undefined;
-  triggers: Array<V3ExtensionsWebhooksWebhookTrigger$Outbound>;
-  urls: Array<V3ExtensionsWebhooksWebhookUrl$Outbound>;
-  header?:
-    | V3ExtensionsWebhooksWebhookResponseHeader$Outbound
-    | null
-    | undefined;
-  filters?: V3ExtensionsWebhooksWebhookFilter$Outbound | null | undefined;
-  max_retry?: number | undefined;
-  teams?: Array<string> | null | undefined;
-  is_all_teams_configured?: boolean | undefined;
-  custom_payload_template_slug?: string | undefined;
-  language?: string | undefined;
-  mail_ids?: Array<string> | null | undefined;
-  trigger_type: string;
-  custom_payload?: string | undefined;
-  payload_type?: string | undefined;
-  id: string;
-  created_at: string;
-  updated_at: string;
-  organization_id?: string | undefined;
-  author_id: string;
-  slug: string;
-  version?: string | undefined;
-};
-
-/** @internal */
-export const V3ExtensionsWebhooksWebhookResponse$outboundSchema: z.ZodType<
-  V3ExtensionsWebhooksWebhookResponse$Outbound,
-  z.ZodTypeDef,
-  V3ExtensionsWebhooksWebhookResponse
-> = z.object({
-  name: z.string(),
-  description: z.string().optional(),
-  triggers: z.array(V3ExtensionsWebhooksWebhookTrigger$outboundSchema),
-  urls: z.array(V3ExtensionsWebhooksWebhookUrl$outboundSchema),
-  header: z.nullable(
-    z.lazy(() => V3ExtensionsWebhooksWebhookResponseHeader$outboundSchema),
-  ).optional(),
-  filters: z.nullable(V3ExtensionsWebhooksWebhookFilter$outboundSchema)
-    .optional(),
-  maxRetry: z.number().int().optional(),
-  teams: z.nullable(z.array(z.string())).optional(),
-  isAllTeamsConfigured: z.boolean().optional(),
-  customPayloadTemplateSlug: z.string().optional(),
-  language: z.string().optional(),
-  mailIds: z.nullable(z.array(z.string())).optional(),
-  triggerType: z.string(),
-  customPayload: z.string().optional(),
-  payloadType: z.string().optional(),
-  id: z.string(),
-  createdAt: z.string(),
-  updatedAt: z.string(),
-  organizationId: z.string().optional(),
-  authorId: z.string(),
-  slug: z.string(),
-  version: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    maxRetry: "max_retry",
-    isAllTeamsConfigured: "is_all_teams_configured",
-    customPayloadTemplateSlug: "custom_payload_template_slug",
-    mailIds: "mail_ids",
-    triggerType: "trigger_type",
-    customPayload: "custom_payload",
-    payloadType: "payload_type",
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-    organizationId: "organization_id",
-    authorId: "author_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksWebhookResponse$ {
-  /** @deprecated use `V3ExtensionsWebhooksWebhookResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsWebhooksWebhookResponse$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsWebhooksWebhookResponse$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksWebhookResponse$Outbound` instead. */
-  export type Outbound = V3ExtensionsWebhooksWebhookResponse$Outbound;
-}
-
-export function v3ExtensionsWebhooksWebhookResponseToJSON(
-  v3ExtensionsWebhooksWebhookResponse: V3ExtensionsWebhooksWebhookResponse,
-): string {
-  return JSON.stringify(
-    V3ExtensionsWebhooksWebhookResponse$outboundSchema.parse(
-      v3ExtensionsWebhooksWebhookResponse,
-    ),
-  );
-}
 
 export function v3ExtensionsWebhooksWebhookResponseFromJSON(
   jsonString: string,

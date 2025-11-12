@@ -21,19 +21,6 @@ export type ExportGetExportDetailsResponse = {
 };
 
 /** @internal */
-export const ExportGetExportDetailsRequest$inboundSchema: z.ZodType<
-  ExportGetExportDetailsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  export_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "export_id": "exportId",
-  });
-});
-
-/** @internal */
 export type ExportGetExportDetailsRequest$Outbound = {
   export_id: string;
 };
@@ -51,19 +38,6 @@ export const ExportGetExportDetailsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ExportGetExportDetailsRequest$ {
-  /** @deprecated use `ExportGetExportDetailsRequest$inboundSchema` instead. */
-  export const inboundSchema = ExportGetExportDetailsRequest$inboundSchema;
-  /** @deprecated use `ExportGetExportDetailsRequest$outboundSchema` instead. */
-  export const outboundSchema = ExportGetExportDetailsRequest$outboundSchema;
-  /** @deprecated use `ExportGetExportDetailsRequest$Outbound` instead. */
-  export type Outbound = ExportGetExportDetailsRequest$Outbound;
-}
-
 export function exportGetExportDetailsRequestToJSON(
   exportGetExportDetailsRequest: ExportGetExportDetailsRequest,
 ): string {
@@ -71,16 +45,6 @@ export function exportGetExportDetailsRequestToJSON(
     ExportGetExportDetailsRequest$outboundSchema.parse(
       exportGetExportDetailsRequest,
     ),
-  );
-}
-
-export function exportGetExportDetailsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ExportGetExportDetailsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ExportGetExportDetailsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ExportGetExportDetailsRequest' from JSON`,
   );
 }
 
@@ -92,43 +56,6 @@ export const ExportGetExportDetailsResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3ExportExportResponse$inboundSchema,
 });
-
-/** @internal */
-export type ExportGetExportDetailsResponse$Outbound = {
-  data: models.V3ExportExportResponse$Outbound;
-};
-
-/** @internal */
-export const ExportGetExportDetailsResponse$outboundSchema: z.ZodType<
-  ExportGetExportDetailsResponse$Outbound,
-  z.ZodTypeDef,
-  ExportGetExportDetailsResponse
-> = z.object({
-  data: models.V3ExportExportResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ExportGetExportDetailsResponse$ {
-  /** @deprecated use `ExportGetExportDetailsResponse$inboundSchema` instead. */
-  export const inboundSchema = ExportGetExportDetailsResponse$inboundSchema;
-  /** @deprecated use `ExportGetExportDetailsResponse$outboundSchema` instead. */
-  export const outboundSchema = ExportGetExportDetailsResponse$outboundSchema;
-  /** @deprecated use `ExportGetExportDetailsResponse$Outbound` instead. */
-  export type Outbound = ExportGetExportDetailsResponse$Outbound;
-}
-
-export function exportGetExportDetailsResponseToJSON(
-  exportGetExportDetailsResponse: ExportGetExportDetailsResponse,
-): string {
-  return JSON.stringify(
-    ExportGetExportDetailsResponse$outboundSchema.parse(
-      exportGetExportDetailsResponse,
-    ),
-  );
-}
 
 export function exportGetExportDetailsResponseFromJSON(
   jsonString: string,

@@ -27,51 +27,6 @@ export const CommunicationCardsCreateSlackChannelInCommunicationCardResponse$inb
         .V3IncidentsCommunicationCardsCommunicationCardResponse$inboundSchema,
   });
 
-/** @internal */
-export type CommunicationCardsCreateSlackChannelInCommunicationCardResponse$Outbound =
-  {
-    data:
-      models.V3IncidentsCommunicationCardsCommunicationCardResponse$Outbound;
-  };
-
-/** @internal */
-export const CommunicationCardsCreateSlackChannelInCommunicationCardResponse$outboundSchema:
-  z.ZodType<
-    CommunicationCardsCreateSlackChannelInCommunicationCardResponse$Outbound,
-    z.ZodTypeDef,
-    CommunicationCardsCreateSlackChannelInCommunicationCardResponse
-  > = z.object({
-    data:
-      models
-        .V3IncidentsCommunicationCardsCommunicationCardResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommunicationCardsCreateSlackChannelInCommunicationCardResponse$ {
-  /** @deprecated use `CommunicationCardsCreateSlackChannelInCommunicationCardResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    CommunicationCardsCreateSlackChannelInCommunicationCardResponse$inboundSchema;
-  /** @deprecated use `CommunicationCardsCreateSlackChannelInCommunicationCardResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    CommunicationCardsCreateSlackChannelInCommunicationCardResponse$outboundSchema;
-  /** @deprecated use `CommunicationCardsCreateSlackChannelInCommunicationCardResponse$Outbound` instead. */
-  export type Outbound =
-    CommunicationCardsCreateSlackChannelInCommunicationCardResponse$Outbound;
-}
-
-export function communicationCardsCreateSlackChannelInCommunicationCardResponseToJSON(
-  communicationCardsCreateSlackChannelInCommunicationCardResponse:
-    CommunicationCardsCreateSlackChannelInCommunicationCardResponse,
-): string {
-  return JSON.stringify(
-    CommunicationCardsCreateSlackChannelInCommunicationCardResponse$outboundSchema
-      .parse(communicationCardsCreateSlackChannelInCommunicationCardResponse),
-  );
-}
-
 export function communicationCardsCreateSlackChannelInCommunicationCardResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

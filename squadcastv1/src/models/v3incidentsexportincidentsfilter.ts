@@ -4,17 +4,12 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3IncidentsIncidentPriority,
-  V3IncidentsIncidentPriority$inboundSchema,
   V3IncidentsIncidentPriority$outboundSchema,
 } from "./v3incidentsincidentpriority.js";
 import {
   V3IncidentsServiceOwnerFilter,
-  V3IncidentsServiceOwnerFilter$inboundSchema,
   V3IncidentsServiceOwnerFilter$Outbound,
   V3IncidentsServiceOwnerFilter$outboundSchema,
 } from "./v3incidentsserviceownerfilter.js";
@@ -36,27 +31,6 @@ export type V3IncidentsExportIncidentsFilter = {
   tags: Array<string>;
   notes: string;
 };
-
-/** @internal */
-export const V3IncidentsExportIncidentsFilter$inboundSchema: z.ZodType<
-  V3IncidentsExportIncidentsFilter,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  services: z.array(z.string()),
-  sources: z.array(z.string()),
-  serviceOwner: V3IncidentsServiceOwnerFilter$inboundSchema,
-  assigned_to: z.array(z.string()),
-  assignedToUserIDsAndTheirSquads: z.array(z.string()),
-  statuses: z.array(z.string()),
-  priority: z.array(V3IncidentsIncidentPriority$inboundSchema),
-  tags: z.array(z.string()),
-  notes: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "assigned_to": "assignedTo",
-  });
-});
 
 /** @internal */
 export type V3IncidentsExportIncidentsFilter$Outbound = {
@@ -92,19 +66,6 @@ export const V3IncidentsExportIncidentsFilter$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsExportIncidentsFilter$ {
-  /** @deprecated use `V3IncidentsExportIncidentsFilter$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsExportIncidentsFilter$inboundSchema;
-  /** @deprecated use `V3IncidentsExportIncidentsFilter$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsExportIncidentsFilter$outboundSchema;
-  /** @deprecated use `V3IncidentsExportIncidentsFilter$Outbound` instead. */
-  export type Outbound = V3IncidentsExportIncidentsFilter$Outbound;
-}
-
 export function v3IncidentsExportIncidentsFilterToJSON(
   v3IncidentsExportIncidentsFilter: V3IncidentsExportIncidentsFilter,
 ): string {
@@ -112,15 +73,5 @@ export function v3IncidentsExportIncidentsFilterToJSON(
     V3IncidentsExportIncidentsFilter$outboundSchema.parse(
       v3IncidentsExportIncidentsFilter,
     ),
-  );
-}
-
-export function v3IncidentsExportIncidentsFilterFromJSON(
-  jsonString: string,
-): SafeParseResult<V3IncidentsExportIncidentsFilter, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3IncidentsExportIncidentsFilter$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsExportIncidentsFilter' from JSON`,
   );
 }

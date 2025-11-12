@@ -17,15 +17,6 @@ export type TeamsRemoveTeamRequest = {
 export type TeamsRemoveTeamResponseBody = {};
 
 /** @internal */
-export const TeamsRemoveTeamRequest$inboundSchema: z.ZodType<
-  TeamsRemoveTeamRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  teamId: z.string(),
-});
-
-/** @internal */
 export type TeamsRemoveTeamRequest$Outbound = {
   teamId: string;
 };
@@ -39,34 +30,11 @@ export const TeamsRemoveTeamRequest$outboundSchema: z.ZodType<
   teamId: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsRemoveTeamRequest$ {
-  /** @deprecated use `TeamsRemoveTeamRequest$inboundSchema` instead. */
-  export const inboundSchema = TeamsRemoveTeamRequest$inboundSchema;
-  /** @deprecated use `TeamsRemoveTeamRequest$outboundSchema` instead. */
-  export const outboundSchema = TeamsRemoveTeamRequest$outboundSchema;
-  /** @deprecated use `TeamsRemoveTeamRequest$Outbound` instead. */
-  export type Outbound = TeamsRemoveTeamRequest$Outbound;
-}
-
 export function teamsRemoveTeamRequestToJSON(
   teamsRemoveTeamRequest: TeamsRemoveTeamRequest,
 ): string {
   return JSON.stringify(
     TeamsRemoveTeamRequest$outboundSchema.parse(teamsRemoveTeamRequest),
-  );
-}
-
-export function teamsRemoveTeamRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<TeamsRemoveTeamRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => TeamsRemoveTeamRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'TeamsRemoveTeamRequest' from JSON`,
   );
 }
 
@@ -76,39 +44,6 @@ export const TeamsRemoveTeamResponseBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type TeamsRemoveTeamResponseBody$Outbound = {};
-
-/** @internal */
-export const TeamsRemoveTeamResponseBody$outboundSchema: z.ZodType<
-  TeamsRemoveTeamResponseBody$Outbound,
-  z.ZodTypeDef,
-  TeamsRemoveTeamResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsRemoveTeamResponseBody$ {
-  /** @deprecated use `TeamsRemoveTeamResponseBody$inboundSchema` instead. */
-  export const inboundSchema = TeamsRemoveTeamResponseBody$inboundSchema;
-  /** @deprecated use `TeamsRemoveTeamResponseBody$outboundSchema` instead. */
-  export const outboundSchema = TeamsRemoveTeamResponseBody$outboundSchema;
-  /** @deprecated use `TeamsRemoveTeamResponseBody$Outbound` instead. */
-  export type Outbound = TeamsRemoveTeamResponseBody$Outbound;
-}
-
-export function teamsRemoveTeamResponseBodyToJSON(
-  teamsRemoveTeamResponseBody: TeamsRemoveTeamResponseBody,
-): string {
-  return JSON.stringify(
-    TeamsRemoveTeamResponseBody$outboundSchema.parse(
-      teamsRemoveTeamResponseBody,
-    ),
-  );
-}
 
 export function teamsRemoveTeamResponseBodyFromJSON(
   jsonString: string,

@@ -39,22 +39,6 @@ export const CommonV3RBACOwnerType$inboundSchema: z.ZodNativeEnum<
 > = z.nativeEnum(CommonV3RBACOwnerType);
 
 /** @internal */
-export const CommonV3RBACOwnerType$outboundSchema: z.ZodNativeEnum<
-  typeof CommonV3RBACOwnerType
-> = CommonV3RBACOwnerType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommonV3RBACOwnerType$ {
-  /** @deprecated use `CommonV3RBACOwnerType$inboundSchema` instead. */
-  export const inboundSchema = CommonV3RBACOwnerType$inboundSchema;
-  /** @deprecated use `CommonV3RBACOwnerType$outboundSchema` instead. */
-  export const outboundSchema = CommonV3RBACOwnerType$outboundSchema;
-}
-
-/** @internal */
 export const CommonV3RBACOwner$inboundSchema: z.ZodType<
   CommonV3RBACOwner,
   z.ZodTypeDef,
@@ -63,43 +47,6 @@ export const CommonV3RBACOwner$inboundSchema: z.ZodType<
   id: z.string(),
   type: CommonV3RBACOwnerType$inboundSchema,
 });
-
-/** @internal */
-export type CommonV3RBACOwner$Outbound = {
-  id: string;
-  type: string;
-};
-
-/** @internal */
-export const CommonV3RBACOwner$outboundSchema: z.ZodType<
-  CommonV3RBACOwner$Outbound,
-  z.ZodTypeDef,
-  CommonV3RBACOwner
-> = z.object({
-  id: z.string(),
-  type: CommonV3RBACOwnerType$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommonV3RBACOwner$ {
-  /** @deprecated use `CommonV3RBACOwner$inboundSchema` instead. */
-  export const inboundSchema = CommonV3RBACOwner$inboundSchema;
-  /** @deprecated use `CommonV3RBACOwner$outboundSchema` instead. */
-  export const outboundSchema = CommonV3RBACOwner$outboundSchema;
-  /** @deprecated use `CommonV3RBACOwner$Outbound` instead. */
-  export type Outbound = CommonV3RBACOwner$Outbound;
-}
-
-export function commonV3RBACOwnerToJSON(
-  commonV3RBACOwner: CommonV3RBACOwner,
-): string {
-  return JSON.stringify(
-    CommonV3RBACOwner$outboundSchema.parse(commonV3RBACOwner),
-  );
-}
 
 export function commonV3RBACOwnerFromJSON(
   jsonString: string,

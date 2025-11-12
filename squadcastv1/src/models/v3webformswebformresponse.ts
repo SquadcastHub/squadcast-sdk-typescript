@@ -10,20 +10,14 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3WebformsRecaptchaSecrets,
   V3WebformsRecaptchaSecrets$inboundSchema,
-  V3WebformsRecaptchaSecrets$Outbound,
-  V3WebformsRecaptchaSecrets$outboundSchema,
 } from "./v3webformsrecaptchasecrets.js";
 import {
   V3WebformsWFInputField,
   V3WebformsWFInputField$inboundSchema,
-  V3WebformsWFInputField$Outbound,
-  V3WebformsWFInputField$outboundSchema,
 } from "./v3webformswfinputfield.js";
 import {
   V3WebformsWFService,
   V3WebformsWFService$inboundSchema,
-  V3WebformsWFService$Outbound,
-  V3WebformsWFService$outboundSchema,
 } from "./v3webformswfservice.js";
 
 export type V3WebformsWebformResponseTags = {};
@@ -67,39 +61,6 @@ export const V3WebformsWebformResponseTags$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type V3WebformsWebformResponseTags$Outbound = {};
-
-/** @internal */
-export const V3WebformsWebformResponseTags$outboundSchema: z.ZodType<
-  V3WebformsWebformResponseTags$Outbound,
-  z.ZodTypeDef,
-  V3WebformsWebformResponseTags
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WebformsWebformResponseTags$ {
-  /** @deprecated use `V3WebformsWebformResponseTags$inboundSchema` instead. */
-  export const inboundSchema = V3WebformsWebformResponseTags$inboundSchema;
-  /** @deprecated use `V3WebformsWebformResponseTags$outboundSchema` instead. */
-  export const outboundSchema = V3WebformsWebformResponseTags$outboundSchema;
-  /** @deprecated use `V3WebformsWebformResponseTags$Outbound` instead. */
-  export type Outbound = V3WebformsWebformResponseTags$Outbound;
-}
-
-export function v3WebformsWebformResponseTagsToJSON(
-  v3WebformsWebformResponseTags: V3WebformsWebformResponseTags,
-): string {
-  return JSON.stringify(
-    V3WebformsWebformResponseTags$outboundSchema.parse(
-      v3WebformsWebformResponseTags,
-    ),
-  );
-}
 
 export function v3WebformsWebformResponseTagsFromJSON(
   jsonString: string,
@@ -167,115 +128,6 @@ export const V3WebformsWebformResponse$inboundSchema: z.ZodType<
     "deleted_at": "deletedAt",
   });
 });
-
-/** @internal */
-export type V3WebformsWebformResponse$Outbound = {
-  id: number;
-  org_id: string;
-  owner_id: string;
-  name: string;
-  is_cname: boolean;
-  public_url: string;
-  host_name?: string | undefined;
-  tags: V3WebformsWebformResponseTags$Outbound;
-  is_captcha_enabled: boolean;
-  captcha_provider: string;
-  captcha_secret: V3WebformsRecaptchaSecrets$Outbound;
-  form_owner_type: string;
-  form_owner_id: string;
-  form_owner_name: string;
-  services: Array<V3WebformsWFService$Outbound>;
-  input_field: Array<V3WebformsWFInputField$Outbound>;
-  header: string;
-  title: string;
-  logo_url?: string | undefined;
-  footer_text: string;
-  footer_link: string;
-  email_on: Array<string>;
-  description?: string | undefined;
-  incident_count: number;
-  mttr: number;
-  is_deleted: boolean;
-  deleted_at: string;
-};
-
-/** @internal */
-export const V3WebformsWebformResponse$outboundSchema: z.ZodType<
-  V3WebformsWebformResponse$Outbound,
-  z.ZodTypeDef,
-  V3WebformsWebformResponse
-> = z.object({
-  id: z.number().int(),
-  orgId: z.string(),
-  ownerId: z.string(),
-  name: z.string(),
-  isCname: z.boolean(),
-  publicUrl: z.string(),
-  hostName: z.string().optional(),
-  tags: z.lazy(() => V3WebformsWebformResponseTags$outboundSchema),
-  isCaptchaEnabled: z.boolean(),
-  captchaProvider: z.string(),
-  captchaSecret: V3WebformsRecaptchaSecrets$outboundSchema,
-  formOwnerType: z.string(),
-  formOwnerId: z.string(),
-  formOwnerName: z.string(),
-  services: z.array(V3WebformsWFService$outboundSchema),
-  inputField: z.array(V3WebformsWFInputField$outboundSchema),
-  header: z.string(),
-  title: z.string(),
-  logoUrl: z.string().optional(),
-  footerText: z.string(),
-  footerLink: z.string(),
-  emailOn: z.array(z.string()),
-  description: z.string().optional(),
-  incidentCount: z.number().int(),
-  mttr: z.number(),
-  isDeleted: z.boolean(),
-  deletedAt: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    orgId: "org_id",
-    ownerId: "owner_id",
-    isCname: "is_cname",
-    publicUrl: "public_url",
-    hostName: "host_name",
-    isCaptchaEnabled: "is_captcha_enabled",
-    captchaProvider: "captcha_provider",
-    captchaSecret: "captcha_secret",
-    formOwnerType: "form_owner_type",
-    formOwnerId: "form_owner_id",
-    formOwnerName: "form_owner_name",
-    inputField: "input_field",
-    logoUrl: "logo_url",
-    footerText: "footer_text",
-    footerLink: "footer_link",
-    emailOn: "email_on",
-    incidentCount: "incident_count",
-    isDeleted: "is_deleted",
-    deletedAt: "deleted_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WebformsWebformResponse$ {
-  /** @deprecated use `V3WebformsWebformResponse$inboundSchema` instead. */
-  export const inboundSchema = V3WebformsWebformResponse$inboundSchema;
-  /** @deprecated use `V3WebformsWebformResponse$outboundSchema` instead. */
-  export const outboundSchema = V3WebformsWebformResponse$outboundSchema;
-  /** @deprecated use `V3WebformsWebformResponse$Outbound` instead. */
-  export type Outbound = V3WebformsWebformResponse$Outbound;
-}
-
-export function v3WebformsWebformResponseToJSON(
-  v3WebformsWebformResponse: V3WebformsWebformResponse,
-): string {
-  return JSON.stringify(
-    V3WebformsWebformResponse$outboundSchema.parse(v3WebformsWebformResponse),
-  );
-}
 
 export function v3WebformsWebformResponseFromJSON(
   jsonString: string,

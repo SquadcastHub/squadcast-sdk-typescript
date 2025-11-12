@@ -20,16 +20,6 @@ export type EscalationPoliciesRemoveEscalationPolicyRequest = {
 export type EscalationPoliciesRemoveEscalationPolicyResponseBody = {};
 
 /** @internal */
-export const EscalationPoliciesRemoveEscalationPolicyRequest$inboundSchema:
-  z.ZodType<
-    EscalationPoliciesRemoveEscalationPolicyRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    escalationPolicyID: z.string(),
-  });
-
-/** @internal */
 export type EscalationPoliciesRemoveEscalationPolicyRequest$Outbound = {
   escalationPolicyID: string;
 };
@@ -44,22 +34,6 @@ export const EscalationPoliciesRemoveEscalationPolicyRequest$outboundSchema:
     escalationPolicyID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EscalationPoliciesRemoveEscalationPolicyRequest$ {
-  /** @deprecated use `EscalationPoliciesRemoveEscalationPolicyRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    EscalationPoliciesRemoveEscalationPolicyRequest$inboundSchema;
-  /** @deprecated use `EscalationPoliciesRemoveEscalationPolicyRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    EscalationPoliciesRemoveEscalationPolicyRequest$outboundSchema;
-  /** @deprecated use `EscalationPoliciesRemoveEscalationPolicyRequest$Outbound` instead. */
-  export type Outbound =
-    EscalationPoliciesRemoveEscalationPolicyRequest$Outbound;
-}
-
 export function escalationPoliciesRemoveEscalationPolicyRequestToJSON(
   escalationPoliciesRemoveEscalationPolicyRequest:
     EscalationPoliciesRemoveEscalationPolicyRequest,
@@ -71,22 +45,6 @@ export function escalationPoliciesRemoveEscalationPolicyRequestToJSON(
   );
 }
 
-export function escalationPoliciesRemoveEscalationPolicyRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  EscalationPoliciesRemoveEscalationPolicyRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      EscalationPoliciesRemoveEscalationPolicyRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'EscalationPoliciesRemoveEscalationPolicyRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const EscalationPoliciesRemoveEscalationPolicyResponseBody$inboundSchema:
   z.ZodType<
@@ -94,44 +52,6 @@ export const EscalationPoliciesRemoveEscalationPolicyResponseBody$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.object({});
-
-/** @internal */
-export type EscalationPoliciesRemoveEscalationPolicyResponseBody$Outbound = {};
-
-/** @internal */
-export const EscalationPoliciesRemoveEscalationPolicyResponseBody$outboundSchema:
-  z.ZodType<
-    EscalationPoliciesRemoveEscalationPolicyResponseBody$Outbound,
-    z.ZodTypeDef,
-    EscalationPoliciesRemoveEscalationPolicyResponseBody
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EscalationPoliciesRemoveEscalationPolicyResponseBody$ {
-  /** @deprecated use `EscalationPoliciesRemoveEscalationPolicyResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    EscalationPoliciesRemoveEscalationPolicyResponseBody$inboundSchema;
-  /** @deprecated use `EscalationPoliciesRemoveEscalationPolicyResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    EscalationPoliciesRemoveEscalationPolicyResponseBody$outboundSchema;
-  /** @deprecated use `EscalationPoliciesRemoveEscalationPolicyResponseBody$Outbound` instead. */
-  export type Outbound =
-    EscalationPoliciesRemoveEscalationPolicyResponseBody$Outbound;
-}
-
-export function escalationPoliciesRemoveEscalationPolicyResponseBodyToJSON(
-  escalationPoliciesRemoveEscalationPolicyResponseBody:
-    EscalationPoliciesRemoveEscalationPolicyResponseBody,
-): string {
-  return JSON.stringify(
-    EscalationPoliciesRemoveEscalationPolicyResponseBody$outboundSchema.parse(
-      escalationPoliciesRemoveEscalationPolicyResponseBody,
-    ),
-  );
-}
 
 export function escalationPoliciesRemoveEscalationPolicyResponseBodyFromJSON(
   jsonString: string,

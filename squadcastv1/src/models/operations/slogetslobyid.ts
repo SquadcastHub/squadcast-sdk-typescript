@@ -22,20 +22,6 @@ export type SLOGetSLOByIdResponse = {
 };
 
 /** @internal */
-export const SLOGetSLOByIdRequest$inboundSchema: z.ZodType<
-  SLOGetSLOByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  sloID: z.number().int(),
-  owner_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-  });
-});
-
-/** @internal */
 export type SLOGetSLOByIdRequest$Outbound = {
   sloID: number;
   owner_id: string;
@@ -55,34 +41,11 @@ export const SLOGetSLOByIdRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOGetSLOByIdRequest$ {
-  /** @deprecated use `SLOGetSLOByIdRequest$inboundSchema` instead. */
-  export const inboundSchema = SLOGetSLOByIdRequest$inboundSchema;
-  /** @deprecated use `SLOGetSLOByIdRequest$outboundSchema` instead. */
-  export const outboundSchema = SLOGetSLOByIdRequest$outboundSchema;
-  /** @deprecated use `SLOGetSLOByIdRequest$Outbound` instead. */
-  export type Outbound = SLOGetSLOByIdRequest$Outbound;
-}
-
 export function sloGetSLOByIdRequestToJSON(
   sloGetSLOByIdRequest: SLOGetSLOByIdRequest,
 ): string {
   return JSON.stringify(
     SLOGetSLOByIdRequest$outboundSchema.parse(sloGetSLOByIdRequest),
-  );
-}
-
-export function sloGetSLOByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SLOGetSLOByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SLOGetSLOByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SLOGetSLOByIdRequest' from JSON`,
   );
 }
 
@@ -94,41 +57,6 @@ export const SLOGetSLOByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3SLOSLOWithInsightsResponse$inboundSchema,
 });
-
-/** @internal */
-export type SLOGetSLOByIdResponse$Outbound = {
-  data: models.V3SLOSLOWithInsightsResponse$Outbound;
-};
-
-/** @internal */
-export const SLOGetSLOByIdResponse$outboundSchema: z.ZodType<
-  SLOGetSLOByIdResponse$Outbound,
-  z.ZodTypeDef,
-  SLOGetSLOByIdResponse
-> = z.object({
-  data: models.V3SLOSLOWithInsightsResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOGetSLOByIdResponse$ {
-  /** @deprecated use `SLOGetSLOByIdResponse$inboundSchema` instead. */
-  export const inboundSchema = SLOGetSLOByIdResponse$inboundSchema;
-  /** @deprecated use `SLOGetSLOByIdResponse$outboundSchema` instead. */
-  export const outboundSchema = SLOGetSLOByIdResponse$outboundSchema;
-  /** @deprecated use `SLOGetSLOByIdResponse$Outbound` instead. */
-  export type Outbound = SLOGetSLOByIdResponse$Outbound;
-}
-
-export function sloGetSLOByIdResponseToJSON(
-  sloGetSLOByIdResponse: SLOGetSLOByIdResponse,
-): string {
-  return JSON.stringify(
-    SLOGetSLOByIdResponse$outboundSchema.parse(sloGetSLOByIdResponse),
-  );
-}
 
 export function sloGetSLOByIdResponseFromJSON(
   jsonString: string,

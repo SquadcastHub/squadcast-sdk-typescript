@@ -23,15 +23,6 @@ export type WebhooksGetWebhookByIdResponse = {
 };
 
 /** @internal */
-export const WebhooksGetWebhookByIdRequest$inboundSchema: z.ZodType<
-  WebhooksGetWebhookByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  eventWebhookID: z.string(),
-});
-
-/** @internal */
 export type WebhooksGetWebhookByIdRequest$Outbound = {
   eventWebhookID: string;
 };
@@ -45,19 +36,6 @@ export const WebhooksGetWebhookByIdRequest$outboundSchema: z.ZodType<
   eventWebhookID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebhooksGetWebhookByIdRequest$ {
-  /** @deprecated use `WebhooksGetWebhookByIdRequest$inboundSchema` instead. */
-  export const inboundSchema = WebhooksGetWebhookByIdRequest$inboundSchema;
-  /** @deprecated use `WebhooksGetWebhookByIdRequest$outboundSchema` instead. */
-  export const outboundSchema = WebhooksGetWebhookByIdRequest$outboundSchema;
-  /** @deprecated use `WebhooksGetWebhookByIdRequest$Outbound` instead. */
-  export type Outbound = WebhooksGetWebhookByIdRequest$Outbound;
-}
-
 export function webhooksGetWebhookByIdRequestToJSON(
   webhooksGetWebhookByIdRequest: WebhooksGetWebhookByIdRequest,
 ): string {
@@ -65,16 +43,6 @@ export function webhooksGetWebhookByIdRequestToJSON(
     WebhooksGetWebhookByIdRequest$outboundSchema.parse(
       webhooksGetWebhookByIdRequest,
     ),
-  );
-}
-
-export function webhooksGetWebhookByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WebhooksGetWebhookByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => WebhooksGetWebhookByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WebhooksGetWebhookByIdRequest' from JSON`,
   );
 }
 
@@ -86,43 +54,6 @@ export const WebhooksGetWebhookByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3ExtensionsWebhooksWebhookResponse$inboundSchema,
 });
-
-/** @internal */
-export type WebhooksGetWebhookByIdResponse$Outbound = {
-  data: models.V3ExtensionsWebhooksWebhookResponse$Outbound;
-};
-
-/** @internal */
-export const WebhooksGetWebhookByIdResponse$outboundSchema: z.ZodType<
-  WebhooksGetWebhookByIdResponse$Outbound,
-  z.ZodTypeDef,
-  WebhooksGetWebhookByIdResponse
-> = z.object({
-  data: models.V3ExtensionsWebhooksWebhookResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebhooksGetWebhookByIdResponse$ {
-  /** @deprecated use `WebhooksGetWebhookByIdResponse$inboundSchema` instead. */
-  export const inboundSchema = WebhooksGetWebhookByIdResponse$inboundSchema;
-  /** @deprecated use `WebhooksGetWebhookByIdResponse$outboundSchema` instead. */
-  export const outboundSchema = WebhooksGetWebhookByIdResponse$outboundSchema;
-  /** @deprecated use `WebhooksGetWebhookByIdResponse$Outbound` instead. */
-  export type Outbound = WebhooksGetWebhookByIdResponse$Outbound;
-}
-
-export function webhooksGetWebhookByIdResponseToJSON(
-  webhooksGetWebhookByIdResponse: WebhooksGetWebhookByIdResponse,
-): string {
-  return JSON.stringify(
-    WebhooksGetWebhookByIdResponse$outboundSchema.parse(
-      webhooksGetWebhookByIdResponse,
-    ),
-  );
-}
 
 export function webhooksGetWebhookByIdResponseFromJSON(
   jsonString: string,

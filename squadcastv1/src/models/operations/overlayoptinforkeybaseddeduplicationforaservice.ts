@@ -21,24 +21,6 @@ export type OverlayOptinForKeyBasedDeduplicationForAServiceRequest = {
 export type OverlayOptinForKeyBasedDeduplicationForAServiceResponse = {};
 
 /** @internal */
-export const OverlayOptinForKeyBasedDeduplicationForAServiceRequest$inboundSchema:
-  z.ZodType<
-    OverlayOptinForKeyBasedDeduplicationForAServiceRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-    "V3.Services.Overlay.OptInForKeyBasedDeduplicationRequest":
-      models
-        .V3ServicesOverlayOptInForKeyBasedDeduplicationRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.Services.Overlay.OptInForKeyBasedDeduplicationRequest":
-        "v3ServicesOverlayOptInForKeyBasedDeduplicationRequest",
-    });
-  });
-
-/** @internal */
 export type OverlayOptinForKeyBasedDeduplicationForAServiceRequest$Outbound = {
   serviceID: string;
   "V3.Services.Overlay.OptInForKeyBasedDeduplicationRequest":
@@ -63,22 +45,6 @@ export const OverlayOptinForKeyBasedDeduplicationForAServiceRequest$outboundSche
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayOptinForKeyBasedDeduplicationForAServiceRequest$ {
-  /** @deprecated use `OverlayOptinForKeyBasedDeduplicationForAServiceRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayOptinForKeyBasedDeduplicationForAServiceRequest$inboundSchema;
-  /** @deprecated use `OverlayOptinForKeyBasedDeduplicationForAServiceRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayOptinForKeyBasedDeduplicationForAServiceRequest$outboundSchema;
-  /** @deprecated use `OverlayOptinForKeyBasedDeduplicationForAServiceRequest$Outbound` instead. */
-  export type Outbound =
-    OverlayOptinForKeyBasedDeduplicationForAServiceRequest$Outbound;
-}
-
 export function overlayOptinForKeyBasedDeduplicationForAServiceRequestToJSON(
   overlayOptinForKeyBasedDeduplicationForAServiceRequest:
     OverlayOptinForKeyBasedDeduplicationForAServiceRequest,
@@ -90,21 +56,6 @@ export function overlayOptinForKeyBasedDeduplicationForAServiceRequestToJSON(
   );
 }
 
-export function overlayOptinForKeyBasedDeduplicationForAServiceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  OverlayOptinForKeyBasedDeduplicationForAServiceRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverlayOptinForKeyBasedDeduplicationForAServiceRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'OverlayOptinForKeyBasedDeduplicationForAServiceRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const OverlayOptinForKeyBasedDeduplicationForAServiceResponse$inboundSchema:
   z.ZodType<
@@ -112,44 +63,6 @@ export const OverlayOptinForKeyBasedDeduplicationForAServiceResponse$inboundSche
     z.ZodTypeDef,
     unknown
   > = z.object({});
-
-/** @internal */
-export type OverlayOptinForKeyBasedDeduplicationForAServiceResponse$Outbound =
-  {};
-
-/** @internal */
-export const OverlayOptinForKeyBasedDeduplicationForAServiceResponse$outboundSchema:
-  z.ZodType<
-    OverlayOptinForKeyBasedDeduplicationForAServiceResponse$Outbound,
-    z.ZodTypeDef,
-    OverlayOptinForKeyBasedDeduplicationForAServiceResponse
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayOptinForKeyBasedDeduplicationForAServiceResponse$ {
-  /** @deprecated use `OverlayOptinForKeyBasedDeduplicationForAServiceResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayOptinForKeyBasedDeduplicationForAServiceResponse$inboundSchema;
-  /** @deprecated use `OverlayOptinForKeyBasedDeduplicationForAServiceResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayOptinForKeyBasedDeduplicationForAServiceResponse$outboundSchema;
-  /** @deprecated use `OverlayOptinForKeyBasedDeduplicationForAServiceResponse$Outbound` instead. */
-  export type Outbound =
-    OverlayOptinForKeyBasedDeduplicationForAServiceResponse$Outbound;
-}
-
-export function overlayOptinForKeyBasedDeduplicationForAServiceResponseToJSON(
-  overlayOptinForKeyBasedDeduplicationForAServiceResponse:
-    OverlayOptinForKeyBasedDeduplicationForAServiceResponse,
-): string {
-  return JSON.stringify(
-    OverlayOptinForKeyBasedDeduplicationForAServiceResponse$outboundSchema
-      .parse(overlayOptinForKeyBasedDeduplicationForAServiceResponse),
-  );
-}
 
 export function overlayOptinForKeyBasedDeduplicationForAServiceResponseFromJSON(
   jsonString: string,

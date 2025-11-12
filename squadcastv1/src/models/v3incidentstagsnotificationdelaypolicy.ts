@@ -10,8 +10,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3IncidentsTagsAssignTo,
   V3IncidentsTagsAssignTo$inboundSchema,
-  V3IncidentsTagsAssignTo$Outbound,
-  V3IncidentsTagsAssignTo$outboundSchema,
 } from "./v3incidentstagsassignto.js";
 
 /**
@@ -44,56 +42,6 @@ export const V3IncidentsTagsNotificationDelayPolicy$inboundSchema: z.ZodType<
     "assign_to": "assignTo",
   });
 });
-
-/** @internal */
-export type V3IncidentsTagsNotificationDelayPolicy$Outbound = {
-  is_notification_delayed: boolean;
-  delayed_until: string;
-  assign_to: V3IncidentsTagsAssignTo$Outbound;
-};
-
-/** @internal */
-export const V3IncidentsTagsNotificationDelayPolicy$outboundSchema: z.ZodType<
-  V3IncidentsTagsNotificationDelayPolicy$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsTagsNotificationDelayPolicy
-> = z.object({
-  isNotificationDelayed: z.boolean(),
-  delayedUntil: z.date().transform(v => v.toISOString()),
-  assignTo: V3IncidentsTagsAssignTo$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    isNotificationDelayed: "is_notification_delayed",
-    delayedUntil: "delayed_until",
-    assignTo: "assign_to",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsNotificationDelayPolicy$ {
-  /** @deprecated use `V3IncidentsTagsNotificationDelayPolicy$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsTagsNotificationDelayPolicy$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsNotificationDelayPolicy$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsTagsNotificationDelayPolicy$outboundSchema;
-  /** @deprecated use `V3IncidentsTagsNotificationDelayPolicy$Outbound` instead. */
-  export type Outbound = V3IncidentsTagsNotificationDelayPolicy$Outbound;
-}
-
-export function v3IncidentsTagsNotificationDelayPolicyToJSON(
-  v3IncidentsTagsNotificationDelayPolicy:
-    V3IncidentsTagsNotificationDelayPolicy,
-): string {
-  return JSON.stringify(
-    V3IncidentsTagsNotificationDelayPolicy$outboundSchema.parse(
-      v3IncidentsTagsNotificationDelayPolicy,
-    ),
-  );
-}
 
 export function v3IncidentsTagsNotificationDelayPolicyFromJSON(
   jsonString: string,

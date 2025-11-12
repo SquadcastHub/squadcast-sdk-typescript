@@ -23,22 +23,6 @@ export type ExtensionsUpdateSlackExtensionResponse = {
 };
 
 /** @internal */
-export const ExtensionsUpdateSlackExtensionRequest$inboundSchema: z.ZodType<
-  ExtensionsUpdateSlackExtensionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  serviceID: z.string(),
-  "V3.Services.Extensions.UpdateSlackExtensionRequest":
-    models.V3ServicesExtensionsUpdateSlackExtensionRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Services.Extensions.UpdateSlackExtensionRequest":
-      "v3ServicesExtensionsUpdateSlackExtensionRequest",
-  });
-});
-
-/** @internal */
 export type ExtensionsUpdateSlackExtensionRequest$Outbound = {
   serviceID: string;
   "V3.Services.Extensions.UpdateSlackExtensionRequest":
@@ -61,21 +45,6 @@ export const ExtensionsUpdateSlackExtensionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ExtensionsUpdateSlackExtensionRequest$ {
-  /** @deprecated use `ExtensionsUpdateSlackExtensionRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ExtensionsUpdateSlackExtensionRequest$inboundSchema;
-  /** @deprecated use `ExtensionsUpdateSlackExtensionRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ExtensionsUpdateSlackExtensionRequest$outboundSchema;
-  /** @deprecated use `ExtensionsUpdateSlackExtensionRequest$Outbound` instead. */
-  export type Outbound = ExtensionsUpdateSlackExtensionRequest$Outbound;
-}
-
 export function extensionsUpdateSlackExtensionRequestToJSON(
   extensionsUpdateSlackExtensionRequest: ExtensionsUpdateSlackExtensionRequest,
 ): string {
@@ -83,17 +52,6 @@ export function extensionsUpdateSlackExtensionRequestToJSON(
     ExtensionsUpdateSlackExtensionRequest$outboundSchema.parse(
       extensionsUpdateSlackExtensionRequest,
     ),
-  );
-}
-
-export function extensionsUpdateSlackExtensionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ExtensionsUpdateSlackExtensionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ExtensionsUpdateSlackExtensionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ExtensionsUpdateSlackExtensionRequest' from JSON`,
   );
 }
 
@@ -105,46 +63,6 @@ export const ExtensionsUpdateSlackExtensionResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3ServicesExtensionsSlackExtensionResponse$inboundSchema,
 });
-
-/** @internal */
-export type ExtensionsUpdateSlackExtensionResponse$Outbound = {
-  data: models.V3ServicesExtensionsSlackExtensionResponse$Outbound;
-};
-
-/** @internal */
-export const ExtensionsUpdateSlackExtensionResponse$outboundSchema: z.ZodType<
-  ExtensionsUpdateSlackExtensionResponse$Outbound,
-  z.ZodTypeDef,
-  ExtensionsUpdateSlackExtensionResponse
-> = z.object({
-  data: models.V3ServicesExtensionsSlackExtensionResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ExtensionsUpdateSlackExtensionResponse$ {
-  /** @deprecated use `ExtensionsUpdateSlackExtensionResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    ExtensionsUpdateSlackExtensionResponse$inboundSchema;
-  /** @deprecated use `ExtensionsUpdateSlackExtensionResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ExtensionsUpdateSlackExtensionResponse$outboundSchema;
-  /** @deprecated use `ExtensionsUpdateSlackExtensionResponse$Outbound` instead. */
-  export type Outbound = ExtensionsUpdateSlackExtensionResponse$Outbound;
-}
-
-export function extensionsUpdateSlackExtensionResponseToJSON(
-  extensionsUpdateSlackExtensionResponse:
-    ExtensionsUpdateSlackExtensionResponse,
-): string {
-  return JSON.stringify(
-    ExtensionsUpdateSlackExtensionResponse$outboundSchema.parse(
-      extensionsUpdateSlackExtensionResponse,
-    ),
-  );
-}
 
 export function extensionsUpdateSlackExtensionResponseFromJSON(
   jsonString: string,

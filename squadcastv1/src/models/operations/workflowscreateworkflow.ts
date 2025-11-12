@@ -24,43 +24,6 @@ export const WorkflowsCreateWorkflowResponse$inboundSchema: z.ZodType<
   data: models.V3WorkflowsWorkflowAPIResponse$inboundSchema,
 });
 
-/** @internal */
-export type WorkflowsCreateWorkflowResponse$Outbound = {
-  data: models.V3WorkflowsWorkflowAPIResponse$Outbound;
-};
-
-/** @internal */
-export const WorkflowsCreateWorkflowResponse$outboundSchema: z.ZodType<
-  WorkflowsCreateWorkflowResponse$Outbound,
-  z.ZodTypeDef,
-  WorkflowsCreateWorkflowResponse
-> = z.object({
-  data: models.V3WorkflowsWorkflowAPIResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WorkflowsCreateWorkflowResponse$ {
-  /** @deprecated use `WorkflowsCreateWorkflowResponse$inboundSchema` instead. */
-  export const inboundSchema = WorkflowsCreateWorkflowResponse$inboundSchema;
-  /** @deprecated use `WorkflowsCreateWorkflowResponse$outboundSchema` instead. */
-  export const outboundSchema = WorkflowsCreateWorkflowResponse$outboundSchema;
-  /** @deprecated use `WorkflowsCreateWorkflowResponse$Outbound` instead. */
-  export type Outbound = WorkflowsCreateWorkflowResponse$Outbound;
-}
-
-export function workflowsCreateWorkflowResponseToJSON(
-  workflowsCreateWorkflowResponse: WorkflowsCreateWorkflowResponse,
-): string {
-  return JSON.stringify(
-    WorkflowsCreateWorkflowResponse$outboundSchema.parse(
-      workflowsCreateWorkflowResponse,
-    ),
-  );
-}
-
 export function workflowsCreateWorkflowResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowsCreateWorkflowResponse, SDKValidationError> {

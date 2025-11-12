@@ -26,24 +26,6 @@ export type NotesUpdateNoteResponse = {
 };
 
 /** @internal */
-export const NotesUpdateNoteRequest$inboundSchema: z.ZodType<
-  NotesUpdateNoteRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  IncidentId: z.string(),
-  NoteId: z.string(),
-  "V3.Incidents.Notes.UpdateNoteRequest":
-    models.V3IncidentsNotesUpdateNoteRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "IncidentId": "incidentId",
-    "NoteId": "noteId",
-    "V3.Incidents.Notes.UpdateNoteRequest": "v3IncidentsNotesUpdateNoteRequest",
-  });
-});
-
-/** @internal */
 export type NotesUpdateNoteRequest$Outbound = {
   IncidentId: string;
   NoteId: string;
@@ -69,34 +51,11 @@ export const NotesUpdateNoteRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NotesUpdateNoteRequest$ {
-  /** @deprecated use `NotesUpdateNoteRequest$inboundSchema` instead. */
-  export const inboundSchema = NotesUpdateNoteRequest$inboundSchema;
-  /** @deprecated use `NotesUpdateNoteRequest$outboundSchema` instead. */
-  export const outboundSchema = NotesUpdateNoteRequest$outboundSchema;
-  /** @deprecated use `NotesUpdateNoteRequest$Outbound` instead. */
-  export type Outbound = NotesUpdateNoteRequest$Outbound;
-}
-
 export function notesUpdateNoteRequestToJSON(
   notesUpdateNoteRequest: NotesUpdateNoteRequest,
 ): string {
   return JSON.stringify(
     NotesUpdateNoteRequest$outboundSchema.parse(notesUpdateNoteRequest),
-  );
-}
-
-export function notesUpdateNoteRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<NotesUpdateNoteRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => NotesUpdateNoteRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'NotesUpdateNoteRequest' from JSON`,
   );
 }
 
@@ -108,41 +67,6 @@ export const NotesUpdateNoteResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3IncidentsNotesNoteResponse$inboundSchema,
 });
-
-/** @internal */
-export type NotesUpdateNoteResponse$Outbound = {
-  data: models.V3IncidentsNotesNoteResponse$Outbound;
-};
-
-/** @internal */
-export const NotesUpdateNoteResponse$outboundSchema: z.ZodType<
-  NotesUpdateNoteResponse$Outbound,
-  z.ZodTypeDef,
-  NotesUpdateNoteResponse
-> = z.object({
-  data: models.V3IncidentsNotesNoteResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NotesUpdateNoteResponse$ {
-  /** @deprecated use `NotesUpdateNoteResponse$inboundSchema` instead. */
-  export const inboundSchema = NotesUpdateNoteResponse$inboundSchema;
-  /** @deprecated use `NotesUpdateNoteResponse$outboundSchema` instead. */
-  export const outboundSchema = NotesUpdateNoteResponse$outboundSchema;
-  /** @deprecated use `NotesUpdateNoteResponse$Outbound` instead. */
-  export type Outbound = NotesUpdateNoteResponse$Outbound;
-}
-
-export function notesUpdateNoteResponseToJSON(
-  notesUpdateNoteResponse: NotesUpdateNoteResponse,
-): string {
-  return JSON.stringify(
-    NotesUpdateNoteResponse$outboundSchema.parse(notesUpdateNoteResponse),
-  );
-}
 
 export function notesUpdateNoteResponseFromJSON(
   jsonString: string,

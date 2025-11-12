@@ -10,24 +10,18 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3SLOSLOAction,
   V3SLOSLOAction$inboundSchema,
-  V3SLOSLOAction$Outbound,
-  V3SLOSLOAction$outboundSchema,
 } from "./v3slosloaction.js";
 import {
   V3SLOSLOMonitoringCheck,
   V3SLOSLOMonitoringCheck$inboundSchema,
-  V3SLOSLOMonitoringCheck$Outbound,
-  V3SLOSLOMonitoringCheck$outboundSchema,
 } from "./v3sloslomonitoringcheck.js";
 import {
   V3SLOSLOOwnerType,
   V3SLOSLOOwnerType$inboundSchema,
-  V3SLOSLOOwnerType$outboundSchema,
 } from "./v3slosloownertype.js";
 import {
   V3SLOTimeIntervalType,
   V3SLOTimeIntervalType$inboundSchema,
-  V3SLOTimeIntervalType$outboundSchema,
 } from "./v3slotimeintervaltype.js";
 
 export type V3SLOSLOResponseTags = {};
@@ -69,37 +63,6 @@ export const V3SLOSLOResponseTags$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type V3SLOSLOResponseTags$Outbound = {};
-
-/** @internal */
-export const V3SLOSLOResponseTags$outboundSchema: z.ZodType<
-  V3SLOSLOResponseTags$Outbound,
-  z.ZodTypeDef,
-  V3SLOSLOResponseTags
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3SLOSLOResponseTags$ {
-  /** @deprecated use `V3SLOSLOResponseTags$inboundSchema` instead. */
-  export const inboundSchema = V3SLOSLOResponseTags$inboundSchema;
-  /** @deprecated use `V3SLOSLOResponseTags$outboundSchema` instead. */
-  export const outboundSchema = V3SLOSLOResponseTags$outboundSchema;
-  /** @deprecated use `V3SLOSLOResponseTags$Outbound` instead. */
-  export type Outbound = V3SLOSLOResponseTags$Outbound;
-}
-
-export function v3SLOSLOResponseTagsToJSON(
-  v3SLOSLOResponseTags: V3SLOSLOResponseTags,
-): string {
-  return JSON.stringify(
-    V3SLOSLOResponseTags$outboundSchema.parse(v3SLOSLOResponseTags),
-  );
-}
 
 export function v3SLOSLOResponseTagsFromJSON(
   jsonString: string,
@@ -177,123 +140,6 @@ export const V3SLOSLOResponse$inboundSchema: z.ZodType<
     "duration_in_days": "durationInDays",
   });
 });
-
-/** @internal */
-export type V3SLOSLOResponse$Outbound = {
-  id: number;
-  name: string;
-  description?: string | undefined;
-  time_interval_type: string;
-  service_ids: Array<string>;
-  slis: Array<string>;
-  target_slo: number;
-  current_slo?: number | undefined;
-  start_time: string;
-  end_time: string;
-  is_healthy?: boolean | undefined;
-  remaining_error_budget?: number | undefined;
-  allocated_error_budget: number;
-  is_active: boolean;
-  tags?: V3SLOSLOResponseTags$Outbound | null | undefined;
-  incident_count?: number | undefined;
-  false_positive_count?: number | undefined;
-  slo_monitoring_checks?: Array<V3SLOSLOMonitoringCheck$Outbound> | undefined;
-  slo_actions?: Array<V3SLOSLOAction$Outbound> | null | undefined;
-  owner_type: string;
-  owner_id: string;
-  org_id: string;
-  slo_owner_id?: string | undefined;
-  slo_owner_type?: string | undefined;
-  created_at?: string | undefined;
-  updated_at?: string | undefined;
-  deleted_at?: string | null | undefined;
-  duration_in_days?: number | undefined;
-};
-
-/** @internal */
-export const V3SLOSLOResponse$outboundSchema: z.ZodType<
-  V3SLOSLOResponse$Outbound,
-  z.ZodTypeDef,
-  V3SLOSLOResponse
-> = z.object({
-  id: z.number().int(),
-  name: z.string(),
-  description: z.string().optional(),
-  timeIntervalType: V3SLOTimeIntervalType$outboundSchema,
-  serviceIds: z.array(z.string()),
-  slis: z.array(z.string()),
-  targetSlo: z.number(),
-  currentSlo: z.number().optional(),
-  startTime: z.date().transform(v => v.toISOString()),
-  endTime: z.date().transform(v => v.toISOString()),
-  isHealthy: z.boolean().optional(),
-  remainingErrorBudget: z.number().optional(),
-  allocatedErrorBudget: z.number(),
-  isActive: z.boolean(),
-  tags: z.nullable(z.lazy(() => V3SLOSLOResponseTags$outboundSchema))
-    .optional(),
-  incidentCount: z.number().int().optional(),
-  falsePositiveCount: z.number().int().optional(),
-  sloMonitoringChecks: z.array(V3SLOSLOMonitoringCheck$outboundSchema)
-    .optional(),
-  sloActions: z.nullable(z.array(V3SLOSLOAction$outboundSchema)).optional(),
-  ownerType: z.string(),
-  ownerId: z.string(),
-  orgId: z.string(),
-  sloOwnerId: z.string().optional(),
-  sloOwnerType: V3SLOSLOOwnerType$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  deletedAt: z.nullable(z.date().transform(v => v.toISOString())).optional(),
-  durationInDays: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    timeIntervalType: "time_interval_type",
-    serviceIds: "service_ids",
-    targetSlo: "target_slo",
-    currentSlo: "current_slo",
-    startTime: "start_time",
-    endTime: "end_time",
-    isHealthy: "is_healthy",
-    remainingErrorBudget: "remaining_error_budget",
-    allocatedErrorBudget: "allocated_error_budget",
-    isActive: "is_active",
-    incidentCount: "incident_count",
-    falsePositiveCount: "false_positive_count",
-    sloMonitoringChecks: "slo_monitoring_checks",
-    sloActions: "slo_actions",
-    ownerType: "owner_type",
-    ownerId: "owner_id",
-    orgId: "org_id",
-    sloOwnerId: "slo_owner_id",
-    sloOwnerType: "slo_owner_type",
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-    deletedAt: "deleted_at",
-    durationInDays: "duration_in_days",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3SLOSLOResponse$ {
-  /** @deprecated use `V3SLOSLOResponse$inboundSchema` instead. */
-  export const inboundSchema = V3SLOSLOResponse$inboundSchema;
-  /** @deprecated use `V3SLOSLOResponse$outboundSchema` instead. */
-  export const outboundSchema = V3SLOSLOResponse$outboundSchema;
-  /** @deprecated use `V3SLOSLOResponse$Outbound` instead. */
-  export type Outbound = V3SLOSLOResponse$Outbound;
-}
-
-export function v3SLOSLOResponseToJSON(
-  v3SLOSLOResponse: V3SLOSLOResponse,
-): string {
-  return JSON.stringify(
-    V3SLOSLOResponse$outboundSchema.parse(v3SLOSLOResponse),
-  );
-}
 
 export function v3SLOSLOResponseFromJSON(
   jsonString: string,

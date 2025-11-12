@@ -40,60 +40,6 @@ export const V3UsersApiTokenResponse$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3UsersApiTokenResponse$Outbound = {
-  id: string;
-  organization_id: string;
-  user_id: string;
-  token: string;
-  last_refresh: string;
-  rate_limit: number;
-  deleted: boolean;
-};
-
-/** @internal */
-export const V3UsersApiTokenResponse$outboundSchema: z.ZodType<
-  V3UsersApiTokenResponse$Outbound,
-  z.ZodTypeDef,
-  V3UsersApiTokenResponse
-> = z.object({
-  id: z.string(),
-  organizationId: z.string(),
-  userId: z.string(),
-  token: z.string(),
-  lastRefresh: z.string(),
-  rateLimit: z.number().int(),
-  deleted: z.boolean(),
-}).transform((v) => {
-  return remap$(v, {
-    organizationId: "organization_id",
-    userId: "user_id",
-    lastRefresh: "last_refresh",
-    rateLimit: "rate_limit",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3UsersApiTokenResponse$ {
-  /** @deprecated use `V3UsersApiTokenResponse$inboundSchema` instead. */
-  export const inboundSchema = V3UsersApiTokenResponse$inboundSchema;
-  /** @deprecated use `V3UsersApiTokenResponse$outboundSchema` instead. */
-  export const outboundSchema = V3UsersApiTokenResponse$outboundSchema;
-  /** @deprecated use `V3UsersApiTokenResponse$Outbound` instead. */
-  export type Outbound = V3UsersApiTokenResponse$Outbound;
-}
-
-export function v3UsersApiTokenResponseToJSON(
-  v3UsersApiTokenResponse: V3UsersApiTokenResponse,
-): string {
-  return JSON.stringify(
-    V3UsersApiTokenResponse$outboundSchema.parse(v3UsersApiTokenResponse),
-  );
-}
-
 export function v3UsersApiTokenResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V3UsersApiTokenResponse, SDKValidationError> {

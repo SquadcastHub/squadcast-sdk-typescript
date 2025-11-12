@@ -45,24 +45,10 @@ export type V3ServicesDeduplicationRulesExpressionBranch = {
 export const V3ServicesDeduplicationRulesExpressionBranchOp$inboundSchema:
   z.ZodNativeEnum<typeof V3ServicesDeduplicationRulesExpressionBranchOp> = z
     .nativeEnum(V3ServicesDeduplicationRulesExpressionBranchOp);
-
 /** @internal */
 export const V3ServicesDeduplicationRulesExpressionBranchOp$outboundSchema:
   z.ZodNativeEnum<typeof V3ServicesDeduplicationRulesExpressionBranchOp> =
     V3ServicesDeduplicationRulesExpressionBranchOp$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesDeduplicationRulesExpressionBranchOp$ {
-  /** @deprecated use `V3ServicesDeduplicationRulesExpressionBranchOp$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesDeduplicationRulesExpressionBranchOp$inboundSchema;
-  /** @deprecated use `V3ServicesDeduplicationRulesExpressionBranchOp$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesDeduplicationRulesExpressionBranchOp$outboundSchema;
-}
 
 /** @internal */
 export const V3ServicesDeduplicationRulesExpressionBranchRhs$inboundSchema:
@@ -71,7 +57,6 @@ export const V3ServicesDeduplicationRulesExpressionBranchRhs$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.union([z.string(), z.boolean(), z.number().int(), z.number()]);
-
 /** @internal */
 export type V3ServicesDeduplicationRulesExpressionBranchRhs$Outbound =
   | string
@@ -87,22 +72,6 @@ export const V3ServicesDeduplicationRulesExpressionBranchRhs$outboundSchema:
     V3ServicesDeduplicationRulesExpressionBranchRhs
   > = z.union([z.string(), z.boolean(), z.number().int(), z.number()]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesDeduplicationRulesExpressionBranchRhs$ {
-  /** @deprecated use `V3ServicesDeduplicationRulesExpressionBranchRhs$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesDeduplicationRulesExpressionBranchRhs$inboundSchema;
-  /** @deprecated use `V3ServicesDeduplicationRulesExpressionBranchRhs$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesDeduplicationRulesExpressionBranchRhs$outboundSchema;
-  /** @deprecated use `V3ServicesDeduplicationRulesExpressionBranchRhs$Outbound` instead. */
-  export type Outbound =
-    V3ServicesDeduplicationRulesExpressionBranchRhs$Outbound;
-}
-
 export function v3ServicesDeduplicationRulesExpressionBranchRhsToJSON(
   v3ServicesDeduplicationRulesExpressionBranchRhs:
     V3ServicesDeduplicationRulesExpressionBranchRhs,
@@ -113,7 +82,6 @@ export function v3ServicesDeduplicationRulesExpressionBranchRhsToJSON(
     ),
   );
 }
-
 export function v3ServicesDeduplicationRulesExpressionBranchRhsFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -141,7 +109,6 @@ export const V3ServicesDeduplicationRulesExpressionBranch$inboundSchema:
     op: V3ServicesDeduplicationRulesExpressionBranchOp$inboundSchema.optional(),
     rhs: z.union([z.string(), z.boolean(), z.number().int(), z.number()]),
   });
-
 /** @internal */
 export type V3ServicesDeduplicationRulesExpressionBranch$Outbound = {
   lhs: string;
@@ -162,21 +129,6 @@ export const V3ServicesDeduplicationRulesExpressionBranch$outboundSchema:
     rhs: z.union([z.string(), z.boolean(), z.number().int(), z.number()]),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesDeduplicationRulesExpressionBranch$ {
-  /** @deprecated use `V3ServicesDeduplicationRulesExpressionBranch$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesDeduplicationRulesExpressionBranch$inboundSchema;
-  /** @deprecated use `V3ServicesDeduplicationRulesExpressionBranch$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesDeduplicationRulesExpressionBranch$outboundSchema;
-  /** @deprecated use `V3ServicesDeduplicationRulesExpressionBranch$Outbound` instead. */
-  export type Outbound = V3ServicesDeduplicationRulesExpressionBranch$Outbound;
-}
-
 export function v3ServicesDeduplicationRulesExpressionBranchToJSON(
   v3ServicesDeduplicationRulesExpressionBranch:
     V3ServicesDeduplicationRulesExpressionBranch,
@@ -187,7 +139,6 @@ export function v3ServicesDeduplicationRulesExpressionBranchToJSON(
     ),
   );
 }
-
 export function v3ServicesDeduplicationRulesExpressionBranchFromJSON(
   jsonString: string,
 ): SafeParseResult<

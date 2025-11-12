@@ -10,8 +10,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3GlobalEventRulesRuleAction,
   V3GlobalEventRulesRuleAction$inboundSchema,
-  V3GlobalEventRulesRuleAction$Outbound,
-  V3GlobalEventRulesRuleAction$outboundSchema,
 } from "./v3globaleventrulesruleaction.js";
 
 export type V3GlobalEventRulesRuleset = {
@@ -57,70 +55,6 @@ export const V3GlobalEventRulesRuleset$inboundSchema: z.ZodType<
     "updated_by": "updatedBy",
   });
 });
-
-/** @internal */
-export type V3GlobalEventRulesRuleset$Outbound = {
-  id?: number | undefined;
-  global_event_rule_id?: number | undefined;
-  alert_source_shortname?: string | undefined;
-  alert_source_version?: string | undefined;
-  ordering?: Array<number> | undefined;
-  catch_all_action?: V3GlobalEventRulesRuleAction$Outbound | undefined;
-  created_at?: string | undefined;
-  created_by?: string | undefined;
-  updated_at?: string | undefined;
-  updated_by?: string | undefined;
-};
-
-/** @internal */
-export const V3GlobalEventRulesRuleset$outboundSchema: z.ZodType<
-  V3GlobalEventRulesRuleset$Outbound,
-  z.ZodTypeDef,
-  V3GlobalEventRulesRuleset
-> = z.object({
-  id: z.number().int().optional(),
-  globalEventRuleId: z.number().int().optional(),
-  alertSourceShortname: z.string().optional(),
-  alertSourceVersion: z.string().optional(),
-  ordering: z.array(z.number().int()).optional(),
-  catchAllAction: V3GlobalEventRulesRuleAction$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  createdBy: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  updatedBy: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    globalEventRuleId: "global_event_rule_id",
-    alertSourceShortname: "alert_source_shortname",
-    alertSourceVersion: "alert_source_version",
-    catchAllAction: "catch_all_action",
-    createdAt: "created_at",
-    createdBy: "created_by",
-    updatedAt: "updated_at",
-    updatedBy: "updated_by",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesRuleset$ {
-  /** @deprecated use `V3GlobalEventRulesRuleset$inboundSchema` instead. */
-  export const inboundSchema = V3GlobalEventRulesRuleset$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesRuleset$outboundSchema` instead. */
-  export const outboundSchema = V3GlobalEventRulesRuleset$outboundSchema;
-  /** @deprecated use `V3GlobalEventRulesRuleset$Outbound` instead. */
-  export type Outbound = V3GlobalEventRulesRuleset$Outbound;
-}
-
-export function v3GlobalEventRulesRulesetToJSON(
-  v3GlobalEventRulesRuleset: V3GlobalEventRulesRuleset,
-): string {
-  return JSON.stringify(
-    V3GlobalEventRulesRuleset$outboundSchema.parse(v3GlobalEventRulesRuleset),
-  );
-}
 
 export function v3GlobalEventRulesRulesetFromJSON(
   jsonString: string,

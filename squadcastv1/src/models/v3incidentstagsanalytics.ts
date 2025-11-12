@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3IncidentsTagsAnalyticsMetrics,
   V3IncidentsTagsAnalyticsMetrics$inboundSchema,
-  V3IncidentsTagsAnalyticsMetrics$Outbound,
-  V3IncidentsTagsAnalyticsMetrics$outboundSchema,
 } from "./v3incidentstagsanalyticsmetrics.js";
 
 /**
@@ -36,43 +34,6 @@ export const V3IncidentsTagsAnalytics$inboundSchema: z.ZodType<
   tta: V3IncidentsTagsAnalyticsMetrics$inboundSchema,
   ttr: V3IncidentsTagsAnalyticsMetrics$inboundSchema,
 });
-
-/** @internal */
-export type V3IncidentsTagsAnalytics$Outbound = {
-  tta: V3IncidentsTagsAnalyticsMetrics$Outbound;
-  ttr: V3IncidentsTagsAnalyticsMetrics$Outbound;
-};
-
-/** @internal */
-export const V3IncidentsTagsAnalytics$outboundSchema: z.ZodType<
-  V3IncidentsTagsAnalytics$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsTagsAnalytics
-> = z.object({
-  tta: V3IncidentsTagsAnalyticsMetrics$outboundSchema,
-  ttr: V3IncidentsTagsAnalyticsMetrics$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsAnalytics$ {
-  /** @deprecated use `V3IncidentsTagsAnalytics$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsTagsAnalytics$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsAnalytics$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsTagsAnalytics$outboundSchema;
-  /** @deprecated use `V3IncidentsTagsAnalytics$Outbound` instead. */
-  export type Outbound = V3IncidentsTagsAnalytics$Outbound;
-}
-
-export function v3IncidentsTagsAnalyticsToJSON(
-  v3IncidentsTagsAnalytics: V3IncidentsTagsAnalytics,
-): string {
-  return JSON.stringify(
-    V3IncidentsTagsAnalytics$outboundSchema.parse(v3IncidentsTagsAnalytics),
-  );
-}
 
 export function v3IncidentsTagsAnalyticsFromJSON(
   jsonString: string,

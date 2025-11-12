@@ -4,30 +4,12 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3TeamsCreateTeamRequest = {
   name: string;
   description?: string | undefined;
   memberIds: Array<string>;
 };
-
-/** @internal */
-export const V3TeamsCreateTeamRequest$inboundSchema: z.ZodType<
-  V3TeamsCreateTeamRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  description: z.string().optional(),
-  member_ids: z.array(z.string()),
-}).transform((v) => {
-  return remap$(v, {
-    "member_ids": "memberIds",
-  });
-});
 
 /** @internal */
 export type V3TeamsCreateTeamRequest$Outbound = {
@@ -51,33 +33,10 @@ export const V3TeamsCreateTeamRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsCreateTeamRequest$ {
-  /** @deprecated use `V3TeamsCreateTeamRequest$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsCreateTeamRequest$inboundSchema;
-  /** @deprecated use `V3TeamsCreateTeamRequest$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsCreateTeamRequest$outboundSchema;
-  /** @deprecated use `V3TeamsCreateTeamRequest$Outbound` instead. */
-  export type Outbound = V3TeamsCreateTeamRequest$Outbound;
-}
-
 export function v3TeamsCreateTeamRequestToJSON(
   v3TeamsCreateTeamRequest: V3TeamsCreateTeamRequest,
 ): string {
   return JSON.stringify(
     V3TeamsCreateTeamRequest$outboundSchema.parse(v3TeamsCreateTeamRequest),
-  );
-}
-
-export function v3TeamsCreateTeamRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3TeamsCreateTeamRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3TeamsCreateTeamRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3TeamsCreateTeamRequest' from JSON`,
   );
 }

@@ -29,49 +29,6 @@ export const V3IncidentsAnalyticsMetrics$inboundSchema: z.ZodType<
   squadId: z.string(),
 });
 
-/** @internal */
-export type V3IncidentsAnalyticsMetrics$Outbound = {
-  time: number;
-  userId: string;
-  escalationPolicyId: string;
-  squadId: string;
-};
-
-/** @internal */
-export const V3IncidentsAnalyticsMetrics$outboundSchema: z.ZodType<
-  V3IncidentsAnalyticsMetrics$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsAnalyticsMetrics
-> = z.object({
-  time: z.number().int(),
-  userId: z.string(),
-  escalationPolicyId: z.string(),
-  squadId: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsAnalyticsMetrics$ {
-  /** @deprecated use `V3IncidentsAnalyticsMetrics$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsAnalyticsMetrics$inboundSchema;
-  /** @deprecated use `V3IncidentsAnalyticsMetrics$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsAnalyticsMetrics$outboundSchema;
-  /** @deprecated use `V3IncidentsAnalyticsMetrics$Outbound` instead. */
-  export type Outbound = V3IncidentsAnalyticsMetrics$Outbound;
-}
-
-export function v3IncidentsAnalyticsMetricsToJSON(
-  v3IncidentsAnalyticsMetrics: V3IncidentsAnalyticsMetrics,
-): string {
-  return JSON.stringify(
-    V3IncidentsAnalyticsMetrics$outboundSchema.parse(
-      v3IncidentsAnalyticsMetrics,
-    ),
-  );
-}
-
 export function v3IncidentsAnalyticsMetricsFromJSON(
   jsonString: string,
 ): SafeParseResult<V3IncidentsAnalyticsMetrics, SDKValidationError> {

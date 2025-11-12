@@ -17,15 +17,6 @@ export type WorkflowsDeleteWorkflowRequest = {
 export type WorkflowsDeleteWorkflowResponseBody = {};
 
 /** @internal */
-export const WorkflowsDeleteWorkflowRequest$inboundSchema: z.ZodType<
-  WorkflowsDeleteWorkflowRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  workflowID: z.string(),
-});
-
-/** @internal */
 export type WorkflowsDeleteWorkflowRequest$Outbound = {
   workflowID: string;
 };
@@ -39,19 +30,6 @@ export const WorkflowsDeleteWorkflowRequest$outboundSchema: z.ZodType<
   workflowID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WorkflowsDeleteWorkflowRequest$ {
-  /** @deprecated use `WorkflowsDeleteWorkflowRequest$inboundSchema` instead. */
-  export const inboundSchema = WorkflowsDeleteWorkflowRequest$inboundSchema;
-  /** @deprecated use `WorkflowsDeleteWorkflowRequest$outboundSchema` instead. */
-  export const outboundSchema = WorkflowsDeleteWorkflowRequest$outboundSchema;
-  /** @deprecated use `WorkflowsDeleteWorkflowRequest$Outbound` instead. */
-  export type Outbound = WorkflowsDeleteWorkflowRequest$Outbound;
-}
-
 export function workflowsDeleteWorkflowRequestToJSON(
   workflowsDeleteWorkflowRequest: WorkflowsDeleteWorkflowRequest,
 ): string {
@@ -62,57 +40,12 @@ export function workflowsDeleteWorkflowRequestToJSON(
   );
 }
 
-export function workflowsDeleteWorkflowRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WorkflowsDeleteWorkflowRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => WorkflowsDeleteWorkflowRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WorkflowsDeleteWorkflowRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const WorkflowsDeleteWorkflowResponseBody$inboundSchema: z.ZodType<
   WorkflowsDeleteWorkflowResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type WorkflowsDeleteWorkflowResponseBody$Outbound = {};
-
-/** @internal */
-export const WorkflowsDeleteWorkflowResponseBody$outboundSchema: z.ZodType<
-  WorkflowsDeleteWorkflowResponseBody$Outbound,
-  z.ZodTypeDef,
-  WorkflowsDeleteWorkflowResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WorkflowsDeleteWorkflowResponseBody$ {
-  /** @deprecated use `WorkflowsDeleteWorkflowResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    WorkflowsDeleteWorkflowResponseBody$inboundSchema;
-  /** @deprecated use `WorkflowsDeleteWorkflowResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    WorkflowsDeleteWorkflowResponseBody$outboundSchema;
-  /** @deprecated use `WorkflowsDeleteWorkflowResponseBody$Outbound` instead. */
-  export type Outbound = WorkflowsDeleteWorkflowResponseBody$Outbound;
-}
-
-export function workflowsDeleteWorkflowResponseBodyToJSON(
-  workflowsDeleteWorkflowResponseBody: WorkflowsDeleteWorkflowResponseBody,
-): string {
-  return JSON.stringify(
-    WorkflowsDeleteWorkflowResponseBody$outboundSchema.parse(
-      workflowsDeleteWorkflowResponseBody,
-    ),
-  );
-}
 
 export function workflowsDeleteWorkflowResponseBodyFromJSON(
   jsonString: string,

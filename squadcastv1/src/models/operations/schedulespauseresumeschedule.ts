@@ -33,32 +33,8 @@ export type SchedulesPauseresumeScheduleResponse = {
 };
 
 /** @internal */
-export const Action$inboundSchema: z.ZodNativeEnum<typeof Action> = z
+export const Action$outboundSchema: z.ZodNativeEnum<typeof Action> = z
   .nativeEnum(Action);
-
-/** @internal */
-export const Action$outboundSchema: z.ZodNativeEnum<typeof Action> =
-  Action$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Action$ {
-  /** @deprecated use `Action$inboundSchema` instead. */
-  export const inboundSchema = Action$inboundSchema;
-  /** @deprecated use `Action$outboundSchema` instead. */
-  export const outboundSchema = Action$outboundSchema;
-}
-
-/** @internal */
-export const SchedulesPauseresumeScheduleRequestBody$inboundSchema: z.ZodType<
-  SchedulesPauseresumeScheduleRequestBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  action: Action$inboundSchema.optional(),
-});
 
 /** @internal */
 export type SchedulesPauseresumeScheduleRequestBody$Outbound = {
@@ -74,21 +50,6 @@ export const SchedulesPauseresumeScheduleRequestBody$outboundSchema: z.ZodType<
   action: Action$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesPauseresumeScheduleRequestBody$ {
-  /** @deprecated use `SchedulesPauseresumeScheduleRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    SchedulesPauseresumeScheduleRequestBody$inboundSchema;
-  /** @deprecated use `SchedulesPauseresumeScheduleRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    SchedulesPauseresumeScheduleRequestBody$outboundSchema;
-  /** @deprecated use `SchedulesPauseresumeScheduleRequestBody$Outbound` instead. */
-  export type Outbound = SchedulesPauseresumeScheduleRequestBody$Outbound;
-}
-
 export function schedulesPauseresumeScheduleRequestBodyToJSON(
   schedulesPauseresumeScheduleRequestBody:
     SchedulesPauseresumeScheduleRequestBody,
@@ -99,38 +60,6 @@ export function schedulesPauseresumeScheduleRequestBodyToJSON(
     ),
   );
 }
-
-export function schedulesPauseresumeScheduleRequestBodyFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  SchedulesPauseresumeScheduleRequestBody,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      SchedulesPauseresumeScheduleRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'SchedulesPauseresumeScheduleRequestBody' from JSON`,
-  );
-}
-
-/** @internal */
-export const SchedulesPauseresumeScheduleRequest$inboundSchema: z.ZodType<
-  SchedulesPauseresumeScheduleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  RequestBody: z.lazy(() =>
-    SchedulesPauseresumeScheduleRequestBody$inboundSchema
-  ),
-}).transform((v) => {
-  return remap$(v, {
-    "RequestBody": "requestBody",
-  });
-});
 
 /** @internal */
 export type SchedulesPauseresumeScheduleRequest$Outbound = {
@@ -154,21 +83,6 @@ export const SchedulesPauseresumeScheduleRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesPauseresumeScheduleRequest$ {
-  /** @deprecated use `SchedulesPauseresumeScheduleRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    SchedulesPauseresumeScheduleRequest$inboundSchema;
-  /** @deprecated use `SchedulesPauseresumeScheduleRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    SchedulesPauseresumeScheduleRequest$outboundSchema;
-  /** @deprecated use `SchedulesPauseresumeScheduleRequest$Outbound` instead. */
-  export type Outbound = SchedulesPauseresumeScheduleRequest$Outbound;
-}
-
 export function schedulesPauseresumeScheduleRequestToJSON(
   schedulesPauseresumeScheduleRequest: SchedulesPauseresumeScheduleRequest,
 ): string {
@@ -176,17 +90,6 @@ export function schedulesPauseresumeScheduleRequestToJSON(
     SchedulesPauseresumeScheduleRequest$outboundSchema.parse(
       schedulesPauseresumeScheduleRequest,
     ),
-  );
-}
-
-export function schedulesPauseresumeScheduleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SchedulesPauseresumeScheduleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      SchedulesPauseresumeScheduleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SchedulesPauseresumeScheduleRequest' from JSON`,
   );
 }
 
@@ -198,45 +101,6 @@ export const SchedulesPauseresumeScheduleResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4PauseResumeScheduleResponse$inboundSchema,
 });
-
-/** @internal */
-export type SchedulesPauseresumeScheduleResponse$Outbound = {
-  data: models.V4PauseResumeScheduleResponse$Outbound;
-};
-
-/** @internal */
-export const SchedulesPauseresumeScheduleResponse$outboundSchema: z.ZodType<
-  SchedulesPauseresumeScheduleResponse$Outbound,
-  z.ZodTypeDef,
-  SchedulesPauseresumeScheduleResponse
-> = z.object({
-  data: models.V4PauseResumeScheduleResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesPauseresumeScheduleResponse$ {
-  /** @deprecated use `SchedulesPauseresumeScheduleResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    SchedulesPauseresumeScheduleResponse$inboundSchema;
-  /** @deprecated use `SchedulesPauseresumeScheduleResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    SchedulesPauseresumeScheduleResponse$outboundSchema;
-  /** @deprecated use `SchedulesPauseresumeScheduleResponse$Outbound` instead. */
-  export type Outbound = SchedulesPauseresumeScheduleResponse$Outbound;
-}
-
-export function schedulesPauseresumeScheduleResponseToJSON(
-  schedulesPauseresumeScheduleResponse: SchedulesPauseresumeScheduleResponse,
-): string {
-  return JSON.stringify(
-    SchedulesPauseresumeScheduleResponse$outboundSchema.parse(
-      schedulesPauseresumeScheduleResponse,
-    ),
-  );
-}
 
 export function schedulesPauseresumeScheduleResponseFromJSON(
   jsonString: string,

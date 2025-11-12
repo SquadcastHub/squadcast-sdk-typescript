@@ -11,8 +11,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesDeduplicationRulesExpressionBranch,
   V3ServicesDeduplicationRulesExpressionBranch$inboundSchema,
-  V3ServicesDeduplicationRulesExpressionBranch$Outbound,
-  V3ServicesDeduplicationRulesExpressionBranch$outboundSchema,
 } from "./v3servicesdeduplicationrulesexpressionbranch.js";
 
 export const V3ServicesDeduplicationRulesDeduplicationRuleResponseTimeUnit = {
@@ -45,26 +43,6 @@ export const V3ServicesDeduplicationRulesDeduplicationRuleResponseTimeUnit$inbou
   );
 
 /** @internal */
-export const V3ServicesDeduplicationRulesDeduplicationRuleResponseTimeUnit$outboundSchema:
-  z.ZodNativeEnum<
-    typeof V3ServicesDeduplicationRulesDeduplicationRuleResponseTimeUnit
-  > =
-    V3ServicesDeduplicationRulesDeduplicationRuleResponseTimeUnit$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesDeduplicationRulesDeduplicationRuleResponseTimeUnit$ {
-  /** @deprecated use `V3ServicesDeduplicationRulesDeduplicationRuleResponseTimeUnit$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesDeduplicationRulesDeduplicationRuleResponseTimeUnit$inboundSchema;
-  /** @deprecated use `V3ServicesDeduplicationRulesDeduplicationRuleResponseTimeUnit$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesDeduplicationRulesDeduplicationRuleResponseTimeUnit$outboundSchema;
-}
-
-/** @internal */
 export const V3ServicesDeduplicationRulesDeduplicationRuleResponse$inboundSchema:
   z.ZodType<
     V3ServicesDeduplicationRulesDeduplicationRuleResponse,
@@ -90,73 +68,6 @@ export const V3ServicesDeduplicationRulesDeduplicationRuleResponse$inboundSchema
       "dependency_deduplication": "dependencyDeduplication",
     });
   });
-
-/** @internal */
-export type V3ServicesDeduplicationRulesDeduplicationRuleResponse$Outbound = {
-  expression: string;
-  time_window: number;
-  time_unit: string;
-  is_basic: boolean;
-  basic_expression?:
-    | Array<V3ServicesDeduplicationRulesExpressionBranch$Outbound>
-    | undefined;
-  dependency_deduplication?: boolean | undefined;
-  description?: string | undefined;
-};
-
-/** @internal */
-export const V3ServicesDeduplicationRulesDeduplicationRuleResponse$outboundSchema:
-  z.ZodType<
-    V3ServicesDeduplicationRulesDeduplicationRuleResponse$Outbound,
-    z.ZodTypeDef,
-    V3ServicesDeduplicationRulesDeduplicationRuleResponse
-  > = z.object({
-    expression: z.string(),
-    timeWindow: z.number().int(),
-    timeUnit:
-      V3ServicesDeduplicationRulesDeduplicationRuleResponseTimeUnit$outboundSchema,
-    isBasic: z.boolean(),
-    basicExpression: z.array(
-      V3ServicesDeduplicationRulesExpressionBranch$outboundSchema,
-    ).optional(),
-    dependencyDeduplication: z.boolean().optional(),
-    description: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      timeWindow: "time_window",
-      timeUnit: "time_unit",
-      isBasic: "is_basic",
-      basicExpression: "basic_expression",
-      dependencyDeduplication: "dependency_deduplication",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesDeduplicationRulesDeduplicationRuleResponse$ {
-  /** @deprecated use `V3ServicesDeduplicationRulesDeduplicationRuleResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesDeduplicationRulesDeduplicationRuleResponse$inboundSchema;
-  /** @deprecated use `V3ServicesDeduplicationRulesDeduplicationRuleResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesDeduplicationRulesDeduplicationRuleResponse$outboundSchema;
-  /** @deprecated use `V3ServicesDeduplicationRulesDeduplicationRuleResponse$Outbound` instead. */
-  export type Outbound =
-    V3ServicesDeduplicationRulesDeduplicationRuleResponse$Outbound;
-}
-
-export function v3ServicesDeduplicationRulesDeduplicationRuleResponseToJSON(
-  v3ServicesDeduplicationRulesDeduplicationRuleResponse:
-    V3ServicesDeduplicationRulesDeduplicationRuleResponse,
-): string {
-  return JSON.stringify(
-    V3ServicesDeduplicationRulesDeduplicationRuleResponse$outboundSchema.parse(
-      v3ServicesDeduplicationRulesDeduplicationRuleResponse,
-    ),
-  );
-}
 
 export function v3ServicesDeduplicationRulesDeduplicationRuleResponseFromJSON(
   jsonString: string,

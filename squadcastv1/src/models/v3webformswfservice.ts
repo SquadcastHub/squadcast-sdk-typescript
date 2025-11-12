@@ -40,7 +40,6 @@ export const V3WebformsWFService$inboundSchema: z.ZodType<
     "service_id": "serviceId",
   });
 });
-
 /** @internal */
 export type V3WebformsWFService$Outbound = {
   service_id: string;
@@ -63,19 +62,6 @@ export const V3WebformsWFService$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WebformsWFService$ {
-  /** @deprecated use `V3WebformsWFService$inboundSchema` instead. */
-  export const inboundSchema = V3WebformsWFService$inboundSchema;
-  /** @deprecated use `V3WebformsWFService$outboundSchema` instead. */
-  export const outboundSchema = V3WebformsWFService$outboundSchema;
-  /** @deprecated use `V3WebformsWFService$Outbound` instead. */
-  export type Outbound = V3WebformsWFService$Outbound;
-}
-
 export function v3WebformsWFServiceToJSON(
   v3WebformsWFService: V3WebformsWFService,
 ): string {
@@ -83,7 +69,6 @@ export function v3WebformsWFServiceToJSON(
     V3WebformsWFService$outboundSchema.parse(v3WebformsWFService),
   );
 }
-
 export function v3WebformsWFServiceFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WebformsWFService, SDKValidationError> {

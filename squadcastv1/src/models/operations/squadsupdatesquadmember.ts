@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as models from "../index.js";
 
 export type SquadsUpdateSquadMemberRequest = {
@@ -15,23 +12,6 @@ export type SquadsUpdateSquadMemberRequest = {
   replaceWith: string;
   v4SquadsUpdateSquadMemberRequest: models.V4SquadsUpdateSquadMemberRequest;
 };
-
-/** @internal */
-export const SquadsUpdateSquadMemberRequest$inboundSchema: z.ZodType<
-  SquadsUpdateSquadMemberRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  squadID: z.string(),
-  memberID: z.string(),
-  replaceWith: z.string(),
-  "V4.Squads.UpdateSquadMemberRequest":
-    models.V4SquadsUpdateSquadMemberRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V4.Squads.UpdateSquadMemberRequest": "v4SquadsUpdateSquadMemberRequest",
-  });
-});
 
 /** @internal */
 export type SquadsUpdateSquadMemberRequest$Outbound = {
@@ -59,19 +39,6 @@ export const SquadsUpdateSquadMemberRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SquadsUpdateSquadMemberRequest$ {
-  /** @deprecated use `SquadsUpdateSquadMemberRequest$inboundSchema` instead. */
-  export const inboundSchema = SquadsUpdateSquadMemberRequest$inboundSchema;
-  /** @deprecated use `SquadsUpdateSquadMemberRequest$outboundSchema` instead. */
-  export const outboundSchema = SquadsUpdateSquadMemberRequest$outboundSchema;
-  /** @deprecated use `SquadsUpdateSquadMemberRequest$Outbound` instead. */
-  export type Outbound = SquadsUpdateSquadMemberRequest$Outbound;
-}
-
 export function squadsUpdateSquadMemberRequestToJSON(
   squadsUpdateSquadMemberRequest: SquadsUpdateSquadMemberRequest,
 ): string {
@@ -79,15 +46,5 @@ export function squadsUpdateSquadMemberRequestToJSON(
     SquadsUpdateSquadMemberRequest$outboundSchema.parse(
       squadsUpdateSquadMemberRequest,
     ),
-  );
-}
-
-export function squadsUpdateSquadMemberRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SquadsUpdateSquadMemberRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SquadsUpdateSquadMemberRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SquadsUpdateSquadMemberRequest' from JSON`,
   );
 }

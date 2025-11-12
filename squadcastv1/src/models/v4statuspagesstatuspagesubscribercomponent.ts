@@ -20,49 +20,6 @@ export const V4StatusPagesStatusPageSubscriberComponent$inboundSchema:
       name: z.string(),
     });
 
-/** @internal */
-export type V4StatusPagesStatusPageSubscriberComponent$Outbound = {
-  id: number;
-  name: string;
-};
-
-/** @internal */
-export const V4StatusPagesStatusPageSubscriberComponent$outboundSchema:
-  z.ZodType<
-    V4StatusPagesStatusPageSubscriberComponent$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesStatusPageSubscriberComponent
-  > = z.object({
-    id: z.number().int(),
-    name: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesStatusPageSubscriberComponent$ {
-  /** @deprecated use `V4StatusPagesStatusPageSubscriberComponent$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesStatusPageSubscriberComponent$inboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPageSubscriberComponent$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesStatusPageSubscriberComponent$outboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPageSubscriberComponent$Outbound` instead. */
-  export type Outbound = V4StatusPagesStatusPageSubscriberComponent$Outbound;
-}
-
-export function v4StatusPagesStatusPageSubscriberComponentToJSON(
-  v4StatusPagesStatusPageSubscriberComponent:
-    V4StatusPagesStatusPageSubscriberComponent,
-): string {
-  return JSON.stringify(
-    V4StatusPagesStatusPageSubscriberComponent$outboundSchema.parse(
-      v4StatusPagesStatusPageSubscriberComponent,
-    ),
-  );
-}
-
 export function v4StatusPagesStatusPageSubscriberComponentFromJSON(
   jsonString: string,
 ): SafeParseResult<

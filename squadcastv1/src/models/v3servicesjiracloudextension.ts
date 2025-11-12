@@ -10,20 +10,14 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesJiraIssueType,
   V3ServicesJiraIssueType$inboundSchema,
-  V3ServicesJiraIssueType$Outbound,
-  V3ServicesJiraIssueType$outboundSchema,
 } from "./v3servicesjiraissuetype.js";
 import {
   V3ServicesJiraProject,
   V3ServicesJiraProject$inboundSchema,
-  V3ServicesJiraProject$Outbound,
-  V3ServicesJiraProject$outboundSchema,
 } from "./v3servicesjiraproject.js";
 import {
   V3ServicesJiraStatusMap,
   V3ServicesJiraStatusMap$inboundSchema,
-  V3ServicesJiraStatusMap$Outbound,
-  V3ServicesJiraStatusMap$outboundSchema,
 } from "./v3servicesjirastatusmap.js";
 
 export type V3ServicesJiraCloudExtension = {
@@ -53,58 +47,6 @@ export const V3ServicesJiraCloudExtension$inboundSchema: z.ZodType<
     "is_manual": "isManual",
   });
 });
-
-/** @internal */
-export type V3ServicesJiraCloudExtension$Outbound = {
-  jira_client_key: string;
-  project: V3ServicesJiraProject$Outbound;
-  issue_type: V3ServicesJiraIssueType$Outbound;
-  statusmaps?: Array<V3ServicesJiraStatusMap$Outbound> | null | undefined;
-  is_manual: boolean;
-};
-
-/** @internal */
-export const V3ServicesJiraCloudExtension$outboundSchema: z.ZodType<
-  V3ServicesJiraCloudExtension$Outbound,
-  z.ZodTypeDef,
-  V3ServicesJiraCloudExtension
-> = z.object({
-  jiraClientKey: z.string(),
-  project: V3ServicesJiraProject$outboundSchema,
-  issueType: V3ServicesJiraIssueType$outboundSchema,
-  statusmaps: z.nullable(z.array(V3ServicesJiraStatusMap$outboundSchema))
-    .optional(),
-  isManual: z.boolean(),
-}).transform((v) => {
-  return remap$(v, {
-    jiraClientKey: "jira_client_key",
-    issueType: "issue_type",
-    isManual: "is_manual",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesJiraCloudExtension$ {
-  /** @deprecated use `V3ServicesJiraCloudExtension$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesJiraCloudExtension$inboundSchema;
-  /** @deprecated use `V3ServicesJiraCloudExtension$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesJiraCloudExtension$outboundSchema;
-  /** @deprecated use `V3ServicesJiraCloudExtension$Outbound` instead. */
-  export type Outbound = V3ServicesJiraCloudExtension$Outbound;
-}
-
-export function v3ServicesJiraCloudExtensionToJSON(
-  v3ServicesJiraCloudExtension: V3ServicesJiraCloudExtension,
-): string {
-  return JSON.stringify(
-    V3ServicesJiraCloudExtension$outboundSchema.parse(
-      v3ServicesJiraCloudExtension,
-    ),
-  );
-}
 
 export function v3ServicesJiraCloudExtensionFromJSON(
   jsonString: string,

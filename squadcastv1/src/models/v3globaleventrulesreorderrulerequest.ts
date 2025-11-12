@@ -4,29 +4,11 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3GlobalEventRulesReorderRuleRequest = {
   shiftTo?: string | undefined;
   shiftIndexBy?: number | undefined;
 };
-
-/** @internal */
-export const V3GlobalEventRulesReorderRuleRequest$inboundSchema: z.ZodType<
-  V3GlobalEventRulesReorderRuleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  shift_to: z.string().optional(),
-  shift_index_by: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "shift_to": "shiftTo",
-    "shift_index_by": "shiftIndexBy",
-  });
-});
 
 /** @internal */
 export type V3GlobalEventRulesReorderRuleRequest$Outbound = {
@@ -49,21 +31,6 @@ export const V3GlobalEventRulesReorderRuleRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesReorderRuleRequest$ {
-  /** @deprecated use `V3GlobalEventRulesReorderRuleRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3GlobalEventRulesReorderRuleRequest$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesReorderRuleRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3GlobalEventRulesReorderRuleRequest$outboundSchema;
-  /** @deprecated use `V3GlobalEventRulesReorderRuleRequest$Outbound` instead. */
-  export type Outbound = V3GlobalEventRulesReorderRuleRequest$Outbound;
-}
-
 export function v3GlobalEventRulesReorderRuleRequestToJSON(
   v3GlobalEventRulesReorderRuleRequest: V3GlobalEventRulesReorderRuleRequest,
 ): string {
@@ -71,16 +38,5 @@ export function v3GlobalEventRulesReorderRuleRequestToJSON(
     V3GlobalEventRulesReorderRuleRequest$outboundSchema.parse(
       v3GlobalEventRulesReorderRuleRequest,
     ),
-  );
-}
-
-export function v3GlobalEventRulesReorderRuleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3GlobalEventRulesReorderRuleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3GlobalEventRulesReorderRuleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3GlobalEventRulesReorderRuleRequest' from JSON`,
   );
 }

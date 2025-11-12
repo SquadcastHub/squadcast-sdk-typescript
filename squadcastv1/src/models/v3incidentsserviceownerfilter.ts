@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 /**
  * Filter criteria for service owner in an export.
@@ -15,17 +12,6 @@ export type V3IncidentsServiceOwnerFilter = {
   squadIDs: Array<string>;
   userIDsAndTheirSquads?: Array<string> | undefined;
 };
-
-/** @internal */
-export const V3IncidentsServiceOwnerFilter$inboundSchema: z.ZodType<
-  V3IncidentsServiceOwnerFilter,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  userIDs: z.array(z.string()),
-  squadIDs: z.array(z.string()),
-  userIDsAndTheirSquads: z.array(z.string()).optional(),
-});
 
 /** @internal */
 export type V3IncidentsServiceOwnerFilter$Outbound = {
@@ -45,19 +31,6 @@ export const V3IncidentsServiceOwnerFilter$outboundSchema: z.ZodType<
   userIDsAndTheirSquads: z.array(z.string()).optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsServiceOwnerFilter$ {
-  /** @deprecated use `V3IncidentsServiceOwnerFilter$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsServiceOwnerFilter$inboundSchema;
-  /** @deprecated use `V3IncidentsServiceOwnerFilter$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsServiceOwnerFilter$outboundSchema;
-  /** @deprecated use `V3IncidentsServiceOwnerFilter$Outbound` instead. */
-  export type Outbound = V3IncidentsServiceOwnerFilter$Outbound;
-}
-
 export function v3IncidentsServiceOwnerFilterToJSON(
   v3IncidentsServiceOwnerFilter: V3IncidentsServiceOwnerFilter,
 ): string {
@@ -65,15 +38,5 @@ export function v3IncidentsServiceOwnerFilterToJSON(
     V3IncidentsServiceOwnerFilter$outboundSchema.parse(
       v3IncidentsServiceOwnerFilter,
     ),
-  );
-}
-
-export function v3IncidentsServiceOwnerFilterFromJSON(
-  jsonString: string,
-): SafeParseResult<V3IncidentsServiceOwnerFilter, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3IncidentsServiceOwnerFilter$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsServiceOwnerFilter' from JSON`,
   );
 }

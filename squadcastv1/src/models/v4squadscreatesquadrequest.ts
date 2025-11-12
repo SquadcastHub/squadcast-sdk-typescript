@@ -4,12 +4,8 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4SquadsSquadMember,
-  V4SquadsSquadMember$inboundSchema,
   V4SquadsSquadMember$Outbound,
   V4SquadsSquadMember$outboundSchema,
 } from "./v4squadssquadmember.js";
@@ -19,21 +15,6 @@ export type V4SquadsCreateSquadRequest = {
   name: string;
   members: Array<V4SquadsSquadMember>;
 };
-
-/** @internal */
-export const V4SquadsCreateSquadRequest$inboundSchema: z.ZodType<
-  V4SquadsCreateSquadRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  owner_id: z.string(),
-  name: z.string(),
-  members: z.array(V4SquadsSquadMember$inboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-  });
-});
 
 /** @internal */
 export type V4SquadsCreateSquadRequest$Outbound = {
@@ -57,33 +38,10 @@ export const V4SquadsCreateSquadRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4SquadsCreateSquadRequest$ {
-  /** @deprecated use `V4SquadsCreateSquadRequest$inboundSchema` instead. */
-  export const inboundSchema = V4SquadsCreateSquadRequest$inboundSchema;
-  /** @deprecated use `V4SquadsCreateSquadRequest$outboundSchema` instead. */
-  export const outboundSchema = V4SquadsCreateSquadRequest$outboundSchema;
-  /** @deprecated use `V4SquadsCreateSquadRequest$Outbound` instead. */
-  export type Outbound = V4SquadsCreateSquadRequest$Outbound;
-}
-
 export function v4SquadsCreateSquadRequestToJSON(
   v4SquadsCreateSquadRequest: V4SquadsCreateSquadRequest,
 ): string {
   return JSON.stringify(
     V4SquadsCreateSquadRequest$outboundSchema.parse(v4SquadsCreateSquadRequest),
-  );
-}
-
-export function v4SquadsCreateSquadRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V4SquadsCreateSquadRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V4SquadsCreateSquadRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V4SquadsCreateSquadRequest' from JSON`,
   );
 }

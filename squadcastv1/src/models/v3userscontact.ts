@@ -28,44 +28,6 @@ export const V3UsersContact$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3UsersContact$Outbound = {
-  dial_code: string;
-  phone_number: string;
-};
-
-/** @internal */
-export const V3UsersContact$outboundSchema: z.ZodType<
-  V3UsersContact$Outbound,
-  z.ZodTypeDef,
-  V3UsersContact
-> = z.object({
-  dialCode: z.string(),
-  phoneNumber: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    dialCode: "dial_code",
-    phoneNumber: "phone_number",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3UsersContact$ {
-  /** @deprecated use `V3UsersContact$inboundSchema` instead. */
-  export const inboundSchema = V3UsersContact$inboundSchema;
-  /** @deprecated use `V3UsersContact$outboundSchema` instead. */
-  export const outboundSchema = V3UsersContact$outboundSchema;
-  /** @deprecated use `V3UsersContact$Outbound` instead. */
-  export type Outbound = V3UsersContact$Outbound;
-}
-
-export function v3UsersContactToJSON(v3UsersContact: V3UsersContact): string {
-  return JSON.stringify(V3UsersContact$outboundSchema.parse(v3UsersContact));
-}
-
 export function v3UsersContactFromJSON(
   jsonString: string,
 ): SafeParseResult<V3UsersContact, SDKValidationError> {

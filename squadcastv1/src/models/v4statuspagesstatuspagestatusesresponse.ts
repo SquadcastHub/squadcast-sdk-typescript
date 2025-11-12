@@ -28,54 +28,6 @@ export const V4StatusPagesStatusPageStatusesResponse$inboundSchema: z.ZodType<
   color: z.string(),
 });
 
-/** @internal */
-export type V4StatusPagesStatusPageStatusesResponse$Outbound = {
-  id: number;
-  name: string;
-  status: string;
-  description: string;
-  color: string;
-};
-
-/** @internal */
-export const V4StatusPagesStatusPageStatusesResponse$outboundSchema: z.ZodType<
-  V4StatusPagesStatusPageStatusesResponse$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesStatusPageStatusesResponse
-> = z.object({
-  id: z.number().int(),
-  name: z.string(),
-  status: z.string(),
-  description: z.string(),
-  color: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesStatusPageStatusesResponse$ {
-  /** @deprecated use `V4StatusPagesStatusPageStatusesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesStatusPageStatusesResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPageStatusesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesStatusPageStatusesResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPageStatusesResponse$Outbound` instead. */
-  export type Outbound = V4StatusPagesStatusPageStatusesResponse$Outbound;
-}
-
-export function v4StatusPagesStatusPageStatusesResponseToJSON(
-  v4StatusPagesStatusPageStatusesResponse:
-    V4StatusPagesStatusPageStatusesResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesStatusPageStatusesResponse$outboundSchema.parse(
-      v4StatusPagesStatusPageStatusesResponse,
-    ),
-  );
-}
-
 export function v4StatusPagesStatusPageStatusesResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

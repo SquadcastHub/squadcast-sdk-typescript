@@ -19,20 +19,6 @@ export type GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody
   {};
 
 /** @internal */
-export const GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest$inboundSchema:
-  z.ZodType<
-    GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    owner_id: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      "owner_id": "ownerId",
-    });
-  });
-
-/** @internal */
 export type GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest$Outbound =
   {
     owner_id: string;
@@ -52,22 +38,6 @@ export const GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest$out
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest$ {
-  /** @deprecated use `GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest$inboundSchema;
-  /** @deprecated use `GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest$outboundSchema;
-  /** @deprecated use `GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest$Outbound` instead. */
-  export type Outbound =
-    GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest$Outbound;
-}
-
 export function globalOncallReminderRulesDeleteGlobalOncallReminderRulesRequestToJSON(
   globalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest:
     GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest,
@@ -78,21 +48,6 @@ export function globalOncallReminderRulesDeleteGlobalOncallReminderRulesRequestT
   );
 }
 
-export function globalOncallReminderRulesDeleteGlobalOncallReminderRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$inboundSchema:
   z.ZodType<
@@ -100,46 +55,6 @@ export const GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBod
     z.ZodTypeDef,
     unknown
   > = z.object({});
-
-/** @internal */
-export type GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$Outbound =
-  {};
-
-/** @internal */
-export const GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$outboundSchema:
-  z.ZodType<
-    GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$Outbound,
-    z.ZodTypeDef,
-    GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$ {
-  /** @deprecated use `GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$inboundSchema;
-  /** @deprecated use `GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$outboundSchema;
-  /** @deprecated use `GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$Outbound` instead. */
-  export type Outbound =
-    GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$Outbound;
-}
-
-export function globalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBodyToJSON(
-  globalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody:
-    GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody,
-): string {
-  return JSON.stringify(
-    GlobalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody$outboundSchema
-      .parse(
-        globalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBody,
-      ),
-  );
-}
 
 export function globalOncallReminderRulesDeleteGlobalOncallReminderRulesResponseBodyFromJSON(
   jsonString: string,

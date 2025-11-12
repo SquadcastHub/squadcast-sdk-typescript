@@ -23,22 +23,6 @@ export type OverridesUpdateScheduleOverrideResponse = {
 };
 
 /** @internal */
-export const OverridesUpdateScheduleOverrideRequest$inboundSchema: z.ZodType<
-  OverridesUpdateScheduleOverrideRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  overrideID: z.string(),
-  "V4.UpdateScheduleOverrideRequest":
-    models.V4UpdateScheduleOverrideRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V4.UpdateScheduleOverrideRequest": "v4UpdateScheduleOverrideRequest",
-  });
-});
-
-/** @internal */
 export type OverridesUpdateScheduleOverrideRequest$Outbound = {
   scheduleID: string;
   overrideID: string;
@@ -62,21 +46,6 @@ export const OverridesUpdateScheduleOverrideRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverridesUpdateScheduleOverrideRequest$ {
-  /** @deprecated use `OverridesUpdateScheduleOverrideRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverridesUpdateScheduleOverrideRequest$inboundSchema;
-  /** @deprecated use `OverridesUpdateScheduleOverrideRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverridesUpdateScheduleOverrideRequest$outboundSchema;
-  /** @deprecated use `OverridesUpdateScheduleOverrideRequest$Outbound` instead. */
-  export type Outbound = OverridesUpdateScheduleOverrideRequest$Outbound;
-}
-
 export function overridesUpdateScheduleOverrideRequestToJSON(
   overridesUpdateScheduleOverrideRequest:
     OverridesUpdateScheduleOverrideRequest,
@@ -88,17 +57,6 @@ export function overridesUpdateScheduleOverrideRequestToJSON(
   );
 }
 
-export function overridesUpdateScheduleOverrideRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<OverridesUpdateScheduleOverrideRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverridesUpdateScheduleOverrideRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'OverridesUpdateScheduleOverrideRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const OverridesUpdateScheduleOverrideResponse$inboundSchema: z.ZodType<
   OverridesUpdateScheduleOverrideResponse,
@@ -107,46 +65,6 @@ export const OverridesUpdateScheduleOverrideResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4OverrideResponse$inboundSchema,
 });
-
-/** @internal */
-export type OverridesUpdateScheduleOverrideResponse$Outbound = {
-  data: models.V4OverrideResponse$Outbound;
-};
-
-/** @internal */
-export const OverridesUpdateScheduleOverrideResponse$outboundSchema: z.ZodType<
-  OverridesUpdateScheduleOverrideResponse$Outbound,
-  z.ZodTypeDef,
-  OverridesUpdateScheduleOverrideResponse
-> = z.object({
-  data: models.V4OverrideResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverridesUpdateScheduleOverrideResponse$ {
-  /** @deprecated use `OverridesUpdateScheduleOverrideResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    OverridesUpdateScheduleOverrideResponse$inboundSchema;
-  /** @deprecated use `OverridesUpdateScheduleOverrideResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    OverridesUpdateScheduleOverrideResponse$outboundSchema;
-  /** @deprecated use `OverridesUpdateScheduleOverrideResponse$Outbound` instead. */
-  export type Outbound = OverridesUpdateScheduleOverrideResponse$Outbound;
-}
-
-export function overridesUpdateScheduleOverrideResponseToJSON(
-  overridesUpdateScheduleOverrideResponse:
-    OverridesUpdateScheduleOverrideResponse,
-): string {
-  return JSON.stringify(
-    OverridesUpdateScheduleOverrideResponse$outboundSchema.parse(
-      overridesUpdateScheduleOverrideResponse,
-    ),
-  );
-}
 
 export function overridesUpdateScheduleOverrideResponseFromJSON(
   jsonString: string,

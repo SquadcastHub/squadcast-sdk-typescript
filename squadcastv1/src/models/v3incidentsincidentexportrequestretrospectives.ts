@@ -14,24 +14,6 @@ export type V3IncidentsIncidentExportRequestRetrospectives = ClosedEnum<
 >;
 
 /** @internal */
-export const V3IncidentsIncidentExportRequestRetrospectives$inboundSchema:
+export const V3IncidentsIncidentExportRequestRetrospectives$outboundSchema:
   z.ZodNativeEnum<typeof V3IncidentsIncidentExportRequestRetrospectives> = z
     .nativeEnum(V3IncidentsIncidentExportRequestRetrospectives);
-
-/** @internal */
-export const V3IncidentsIncidentExportRequestRetrospectives$outboundSchema:
-  z.ZodNativeEnum<typeof V3IncidentsIncidentExportRequestRetrospectives> =
-    V3IncidentsIncidentExportRequestRetrospectives$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentExportRequestRetrospectives$ {
-  /** @deprecated use `V3IncidentsIncidentExportRequestRetrospectives$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsIncidentExportRequestRetrospectives$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentExportRequestRetrospectives$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIncidentExportRequestRetrospectives$outboundSchema;
-}

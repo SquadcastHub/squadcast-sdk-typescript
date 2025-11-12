@@ -10,104 +10,70 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3WorkflowsJiraCreateTicket,
   V3WorkflowsJiraCreateTicket$inboundSchema,
-  V3WorkflowsJiraCreateTicket$Outbound,
-  V3WorkflowsJiraCreateTicket$outboundSchema,
 } from "./v3workflowsjiracreateticket.js";
 import {
   V3WorkflowsMsTeamsCreateMeetingLink,
   V3WorkflowsMsTeamsCreateMeetingLink$inboundSchema,
-  V3WorkflowsMsTeamsCreateMeetingLink$Outbound,
-  V3WorkflowsMsTeamsCreateMeetingLink$outboundSchema,
 } from "./v3workflowsmsteamscreatemeetinglink.js";
 import {
   V3WorkflowsMsTeamsMessageChannel,
   V3WorkflowsMsTeamsMessageChannel$inboundSchema,
-  V3WorkflowsMsTeamsMessageChannel$Outbound,
-  V3WorkflowsMsTeamsMessageChannel$outboundSchema,
 } from "./v3workflowsmsteamsmessagechannel.js";
 import {
   V3WorkflowsMsTeamsMessageUser,
   V3WorkflowsMsTeamsMessageUser$inboundSchema,
-  V3WorkflowsMsTeamsMessageUser$Outbound,
-  V3WorkflowsMsTeamsMessageUser$outboundSchema,
 } from "./v3workflowsmsteamsmessageuser.js";
 import {
   V3WorkflowsRunbookResponse,
   V3WorkflowsRunbookResponse$inboundSchema,
-  V3WorkflowsRunbookResponse$Outbound,
-  V3WorkflowsRunbookResponse$outboundSchema,
 } from "./v3workflowsrunbookresponse.js";
 import {
   V3WorkflowsSlackArchiveChannel,
   V3WorkflowsSlackArchiveChannel$inboundSchema,
-  V3WorkflowsSlackArchiveChannel$Outbound,
-  V3WorkflowsSlackArchiveChannel$outboundSchema,
 } from "./v3workflowsslackarchivechannel.js";
 import {
   V3WorkflowsSlackCreateIncidentChannel,
   V3WorkflowsSlackCreateIncidentChannel$inboundSchema,
-  V3WorkflowsSlackCreateIncidentChannel$Outbound,
-  V3WorkflowsSlackCreateIncidentChannel$outboundSchema,
 } from "./v3workflowsslackcreateincidentchannel.js";
 import {
   V3WorkflowsSlackMessageChannel,
   V3WorkflowsSlackMessageChannel$inboundSchema,
-  V3WorkflowsSlackMessageChannel$Outbound,
-  V3WorkflowsSlackMessageChannel$outboundSchema,
 } from "./v3workflowsslackmessagechannel.js";
 import {
   V3WorkflowsSlackMessageUser,
   V3WorkflowsSlackMessageUser$inboundSchema,
-  V3WorkflowsSlackMessageUser$Outbound,
-  V3WorkflowsSlackMessageUser$outboundSchema,
 } from "./v3workflowsslackmessageuser.js";
 import {
   V3WorkflowsSqAddCommunicationChannel,
   V3WorkflowsSqAddCommunicationChannel$inboundSchema,
-  V3WorkflowsSqAddCommunicationChannel$Outbound,
-  V3WorkflowsSqAddCommunicationChannel$outboundSchema,
 } from "./v3workflowssqaddcommunicationchannel.js";
 import {
   V3WorkflowsSqAddIncidentNote,
   V3WorkflowsSqAddIncidentNote$inboundSchema,
-  V3WorkflowsSqAddIncidentNote$Outbound,
-  V3WorkflowsSqAddIncidentNote$outboundSchema,
 } from "./v3workflowssqaddincidentnote.js";
 import {
   V3WorkflowsSqCreateStatusPageIssue,
   V3WorkflowsSqCreateStatusPageIssue$inboundSchema,
-  V3WorkflowsSqCreateStatusPageIssue$Outbound,
-  V3WorkflowsSqCreateStatusPageIssue$outboundSchema,
 } from "./v3workflowssqcreatestatuspageissue.js";
 import {
   V3WorkflowsSqMakeHTTPCall,
   V3WorkflowsSqMakeHTTPCall$inboundSchema,
-  V3WorkflowsSqMakeHTTPCall$Outbound,
-  V3WorkflowsSqMakeHTTPCall$outboundSchema,
 } from "./v3workflowssqmakehttpcall.js";
 import {
   V3WorkflowsSqMarkIncidentSLOAffecting,
   V3WorkflowsSqMarkIncidentSLOAffecting$inboundSchema,
-  V3WorkflowsSqMarkIncidentSLOAffecting$Outbound,
-  V3WorkflowsSqMarkIncidentSLOAffecting$outboundSchema,
 } from "./v3workflowssqmarkincidentsloaffecting.js";
 import {
   V3WorkflowsSqSendEmail,
   V3WorkflowsSqSendEmail$inboundSchema,
-  V3WorkflowsSqSendEmail$Outbound,
-  V3WorkflowsSqSendEmail$outboundSchema,
 } from "./v3workflowssqsendemail.js";
 import {
   V3WorkflowsSqTriggerManualWebhook,
   V3WorkflowsSqTriggerManualWebhook$inboundSchema,
-  V3WorkflowsSqTriggerManualWebhook$Outbound,
-  V3WorkflowsSqTriggerManualWebhook$outboundSchema,
 } from "./v3workflowssqtriggermanualwebhook.js";
 import {
   V3WorkflowsUpdateIncidentPriority,
   V3WorkflowsUpdateIncidentPriority$inboundSchema,
-  V3WorkflowsUpdateIncidentPriority$Outbound,
-  V3WorkflowsUpdateIncidentPriority$outboundSchema,
 } from "./v3workflowsupdateincidentpriority.js";
 
 export const V3WorkflowsActionResponseName = {
@@ -152,22 +118,6 @@ export const V3WorkflowsActionResponseName$inboundSchema: z.ZodNativeEnum<
 > = z.nativeEnum(V3WorkflowsActionResponseName);
 
 /** @internal */
-export const V3WorkflowsActionResponseName$outboundSchema: z.ZodNativeEnum<
-  typeof V3WorkflowsActionResponseName
-> = V3WorkflowsActionResponseName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsActionResponseName$ {
-  /** @deprecated use `V3WorkflowsActionResponseName$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsActionResponseName$inboundSchema;
-  /** @deprecated use `V3WorkflowsActionResponseName$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsActionResponseName$outboundSchema;
-}
-
-/** @internal */
 export const V3WorkflowsActionResponseData$inboundSchema: z.ZodType<
   V3WorkflowsActionResponseData,
   z.ZodTypeDef,
@@ -175,43 +125,6 @@ export const V3WorkflowsActionResponseData$inboundSchema: z.ZodType<
 > = z.object({
   runbooks: z.array(V3WorkflowsRunbookResponse$inboundSchema),
 });
-
-/** @internal */
-export type V3WorkflowsActionResponseData$Outbound = {
-  runbooks: Array<V3WorkflowsRunbookResponse$Outbound>;
-};
-
-/** @internal */
-export const V3WorkflowsActionResponseData$outboundSchema: z.ZodType<
-  V3WorkflowsActionResponseData$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsActionResponseData
-> = z.object({
-  runbooks: z.array(V3WorkflowsRunbookResponse$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsActionResponseData$ {
-  /** @deprecated use `V3WorkflowsActionResponseData$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsActionResponseData$inboundSchema;
-  /** @deprecated use `V3WorkflowsActionResponseData$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsActionResponseData$outboundSchema;
-  /** @deprecated use `V3WorkflowsActionResponseData$Outbound` instead. */
-  export type Outbound = V3WorkflowsActionResponseData$Outbound;
-}
-
-export function v3WorkflowsActionResponseDataToJSON(
-  v3WorkflowsActionResponseData: V3WorkflowsActionResponseData,
-): string {
-  return JSON.stringify(
-    V3WorkflowsActionResponseData$outboundSchema.parse(
-      v3WorkflowsActionResponseData,
-    ),
-  );
-}
 
 export function v3WorkflowsActionResponseDataFromJSON(
   jsonString: string,
@@ -232,49 +145,6 @@ export const V3WorkflowsActionResponseSqAttachRunbooks$inboundSchema: z.ZodType<
   name: V3WorkflowsActionResponseName$inboundSchema,
   data: z.lazy(() => V3WorkflowsActionResponseData$inboundSchema),
 });
-
-/** @internal */
-export type V3WorkflowsActionResponseSqAttachRunbooks$Outbound = {
-  name: string;
-  data: V3WorkflowsActionResponseData$Outbound;
-};
-
-/** @internal */
-export const V3WorkflowsActionResponseSqAttachRunbooks$outboundSchema:
-  z.ZodType<
-    V3WorkflowsActionResponseSqAttachRunbooks$Outbound,
-    z.ZodTypeDef,
-    V3WorkflowsActionResponseSqAttachRunbooks
-  > = z.object({
-    name: V3WorkflowsActionResponseName$outboundSchema,
-    data: z.lazy(() => V3WorkflowsActionResponseData$outboundSchema),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsActionResponseSqAttachRunbooks$ {
-  /** @deprecated use `V3WorkflowsActionResponseSqAttachRunbooks$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsActionResponseSqAttachRunbooks$inboundSchema;
-  /** @deprecated use `V3WorkflowsActionResponseSqAttachRunbooks$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsActionResponseSqAttachRunbooks$outboundSchema;
-  /** @deprecated use `V3WorkflowsActionResponseSqAttachRunbooks$Outbound` instead. */
-  export type Outbound = V3WorkflowsActionResponseSqAttachRunbooks$Outbound;
-}
-
-export function v3WorkflowsActionResponseSqAttachRunbooksToJSON(
-  v3WorkflowsActionResponseSqAttachRunbooks:
-    V3WorkflowsActionResponseSqAttachRunbooks,
-): string {
-  return JSON.stringify(
-    V3WorkflowsActionResponseSqAttachRunbooks$outboundSchema.parse(
-      v3WorkflowsActionResponseSqAttachRunbooks,
-    ),
-  );
-}
 
 export function v3WorkflowsActionResponseSqAttachRunbooksFromJSON(
   jsonString: string,
@@ -317,74 +187,6 @@ export const V3WorkflowsActionResponse$inboundSchema: z.ZodType<
   V3WorkflowsMsTeamsCreateMeetingLink$inboundSchema,
   z.any(),
 ]);
-
-/** @internal */
-export type V3WorkflowsActionResponse$Outbound =
-  | V3WorkflowsActionResponseSqAttachRunbooks$Outbound
-  | V3WorkflowsSqMarkIncidentSLOAffecting$Outbound
-  | V3WorkflowsSqTriggerManualWebhook$Outbound
-  | V3WorkflowsUpdateIncidentPriority$Outbound
-  | V3WorkflowsSqCreateStatusPageIssue$Outbound
-  | V3WorkflowsSqAddIncidentNote$Outbound
-  | V3WorkflowsSqAddCommunicationChannel$Outbound
-  | V3WorkflowsSlackMessageChannel$Outbound
-  | V3WorkflowsSlackMessageUser$Outbound
-  | V3WorkflowsSqMakeHTTPCall$Outbound
-  | V3WorkflowsSlackCreateIncidentChannel$Outbound
-  | V3WorkflowsJiraCreateTicket$Outbound
-  | V3WorkflowsMsTeamsMessageChannel$Outbound
-  | V3WorkflowsMsTeamsMessageUser$Outbound
-  | V3WorkflowsSqSendEmail$Outbound
-  | V3WorkflowsSlackArchiveChannel$Outbound
-  | V3WorkflowsMsTeamsCreateMeetingLink$Outbound
-  | any;
-
-/** @internal */
-export const V3WorkflowsActionResponse$outboundSchema: z.ZodType<
-  V3WorkflowsActionResponse$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsActionResponse
-> = z.union([
-  z.lazy(() => V3WorkflowsActionResponseSqAttachRunbooks$outboundSchema),
-  V3WorkflowsSqMarkIncidentSLOAffecting$outboundSchema,
-  V3WorkflowsSqTriggerManualWebhook$outboundSchema,
-  V3WorkflowsUpdateIncidentPriority$outboundSchema,
-  V3WorkflowsSqCreateStatusPageIssue$outboundSchema,
-  V3WorkflowsSqAddIncidentNote$outboundSchema,
-  V3WorkflowsSqAddCommunicationChannel$outboundSchema,
-  V3WorkflowsSlackMessageChannel$outboundSchema,
-  V3WorkflowsSlackMessageUser$outboundSchema,
-  V3WorkflowsSqMakeHTTPCall$outboundSchema,
-  V3WorkflowsSlackCreateIncidentChannel$outboundSchema,
-  V3WorkflowsJiraCreateTicket$outboundSchema,
-  V3WorkflowsMsTeamsMessageChannel$outboundSchema,
-  V3WorkflowsMsTeamsMessageUser$outboundSchema,
-  V3WorkflowsSqSendEmail$outboundSchema,
-  V3WorkflowsSlackArchiveChannel$outboundSchema,
-  V3WorkflowsMsTeamsCreateMeetingLink$outboundSchema,
-  z.any(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsActionResponse$ {
-  /** @deprecated use `V3WorkflowsActionResponse$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsActionResponse$inboundSchema;
-  /** @deprecated use `V3WorkflowsActionResponse$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsActionResponse$outboundSchema;
-  /** @deprecated use `V3WorkflowsActionResponse$Outbound` instead. */
-  export type Outbound = V3WorkflowsActionResponse$Outbound;
-}
-
-export function v3WorkflowsActionResponseToJSON(
-  v3WorkflowsActionResponse: V3WorkflowsActionResponse,
-): string {
-  return JSON.stringify(
-    V3WorkflowsActionResponse$outboundSchema.parse(v3WorkflowsActionResponse),
-  );
-}
 
 export function v3WorkflowsActionResponseFromJSON(
   jsonString: string,

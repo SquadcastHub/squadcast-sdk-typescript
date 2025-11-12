@@ -34,24 +34,10 @@ export type V3WorkflowsSqAddCommunicationChannel = {
 export const V3WorkflowsSqAddCommunicationChannelName$inboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqAddCommunicationChannelName> = z
     .nativeEnum(V3WorkflowsSqAddCommunicationChannelName);
-
 /** @internal */
 export const V3WorkflowsSqAddCommunicationChannelName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsSqAddCommunicationChannelName> =
     V3WorkflowsSqAddCommunicationChannelName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqAddCommunicationChannelName$ {
-  /** @deprecated use `V3WorkflowsSqAddCommunicationChannelName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqAddCommunicationChannelName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddCommunicationChannelName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqAddCommunicationChannelName$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsSqAddCommunicationChannelData$inboundSchema: z.ZodType<
@@ -61,7 +47,6 @@ export const V3WorkflowsSqAddCommunicationChannelData$inboundSchema: z.ZodType<
 > = z.object({
   channels: z.array(V3WorkflowsCommunicationChannel$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsSqAddCommunicationChannelData$Outbound = {
   channels: Array<V3WorkflowsCommunicationChannel$Outbound>;
@@ -76,21 +61,6 @@ export const V3WorkflowsSqAddCommunicationChannelData$outboundSchema: z.ZodType<
   channels: z.array(V3WorkflowsCommunicationChannel$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqAddCommunicationChannelData$ {
-  /** @deprecated use `V3WorkflowsSqAddCommunicationChannelData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqAddCommunicationChannelData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddCommunicationChannelData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqAddCommunicationChannelData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddCommunicationChannelData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqAddCommunicationChannelData$Outbound;
-}
-
 export function v3WorkflowsSqAddCommunicationChannelDataToJSON(
   v3WorkflowsSqAddCommunicationChannelData:
     V3WorkflowsSqAddCommunicationChannelData,
@@ -101,7 +71,6 @@ export function v3WorkflowsSqAddCommunicationChannelDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqAddCommunicationChannelDataFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -127,7 +96,6 @@ export const V3WorkflowsSqAddCommunicationChannel$inboundSchema: z.ZodType<
   name: V3WorkflowsSqAddCommunicationChannelName$inboundSchema,
   data: z.lazy(() => V3WorkflowsSqAddCommunicationChannelData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsSqAddCommunicationChannel$Outbound = {
   name: string;
@@ -144,21 +112,6 @@ export const V3WorkflowsSqAddCommunicationChannel$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsSqAddCommunicationChannelData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqAddCommunicationChannel$ {
-  /** @deprecated use `V3WorkflowsSqAddCommunicationChannel$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqAddCommunicationChannel$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddCommunicationChannel$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqAddCommunicationChannel$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqAddCommunicationChannel$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqAddCommunicationChannel$Outbound;
-}
-
 export function v3WorkflowsSqAddCommunicationChannelToJSON(
   v3WorkflowsSqAddCommunicationChannel: V3WorkflowsSqAddCommunicationChannel,
 ): string {
@@ -168,7 +121,6 @@ export function v3WorkflowsSqAddCommunicationChannelToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqAddCommunicationChannelFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqAddCommunicationChannel, SDKValidationError> {

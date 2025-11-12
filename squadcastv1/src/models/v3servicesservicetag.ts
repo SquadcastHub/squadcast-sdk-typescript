@@ -21,7 +21,6 @@ export const V3ServicesServiceTag$inboundSchema: z.ZodType<
   key: z.string(),
   value: z.string(),
 });
-
 /** @internal */
 export type V3ServicesServiceTag$Outbound = {
   key: string;
@@ -38,19 +37,6 @@ export const V3ServicesServiceTag$outboundSchema: z.ZodType<
   value: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesServiceTag$ {
-  /** @deprecated use `V3ServicesServiceTag$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesServiceTag$inboundSchema;
-  /** @deprecated use `V3ServicesServiceTag$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesServiceTag$outboundSchema;
-  /** @deprecated use `V3ServicesServiceTag$Outbound` instead. */
-  export type Outbound = V3ServicesServiceTag$Outbound;
-}
-
 export function v3ServicesServiceTagToJSON(
   v3ServicesServiceTag: V3ServicesServiceTag,
 ): string {
@@ -58,7 +44,6 @@ export function v3ServicesServiceTagToJSON(
     V3ServicesServiceTag$outboundSchema.parse(v3ServicesServiceTag),
   );
 }
-
 export function v3ServicesServiceTagFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesServiceTag, SDKValidationError> {

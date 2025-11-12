@@ -4,18 +4,13 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesTaggingRulesExpressionBranch,
-  V3ServicesTaggingRulesExpressionBranch$inboundSchema,
   V3ServicesTaggingRulesExpressionBranch$Outbound,
   V3ServicesTaggingRulesExpressionBranch$outboundSchema,
 } from "./v3servicestaggingrulesexpressionbranch.js";
 import {
   V3ServicesTaggingRulesTagsObject,
-  V3ServicesTaggingRulesTagsObject$inboundSchema,
   V3ServicesTaggingRulesTagsObject$Outbound,
   V3ServicesTaggingRulesTagsObject$outboundSchema,
 } from "./v3servicestaggingrulestagsobject.js";
@@ -29,25 +24,6 @@ export type V3ServicesTaggingRulesTagRule = {
   isBasic?: boolean | undefined;
   basicExpression?: Array<V3ServicesTaggingRulesExpressionBranch> | undefined;
 };
-
-/** @internal */
-export const V3ServicesTaggingRulesTagRule$inboundSchema: z.ZodType<
-  V3ServicesTaggingRulesTagRule,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  expression: z.string().optional(),
-  tags: V3ServicesTaggingRulesTagsObject$inboundSchema.optional(),
-  is_basic: z.boolean().optional(),
-  basic_expression: z.array(
-    V3ServicesTaggingRulesExpressionBranch$inboundSchema,
-  ).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_basic": "isBasic",
-    "basic_expression": "basicExpression",
-  });
-});
 
 /** @internal */
 export type V3ServicesTaggingRulesTagRule$Outbound = {
@@ -78,19 +54,6 @@ export const V3ServicesTaggingRulesTagRule$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesTaggingRulesTagRule$ {
-  /** @deprecated use `V3ServicesTaggingRulesTagRule$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesTaggingRulesTagRule$inboundSchema;
-  /** @deprecated use `V3ServicesTaggingRulesTagRule$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesTaggingRulesTagRule$outboundSchema;
-  /** @deprecated use `V3ServicesTaggingRulesTagRule$Outbound` instead. */
-  export type Outbound = V3ServicesTaggingRulesTagRule$Outbound;
-}
-
 export function v3ServicesTaggingRulesTagRuleToJSON(
   v3ServicesTaggingRulesTagRule: V3ServicesTaggingRulesTagRule,
 ): string {
@@ -98,15 +61,5 @@ export function v3ServicesTaggingRulesTagRuleToJSON(
     V3ServicesTaggingRulesTagRule$outboundSchema.parse(
       v3ServicesTaggingRulesTagRule,
     ),
-  );
-}
-
-export function v3ServicesTaggingRulesTagRuleFromJSON(
-  jsonString: string,
-): SafeParseResult<V3ServicesTaggingRulesTagRule, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3ServicesTaggingRulesTagRule$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesTaggingRulesTagRule' from JSON`,
   );
 }

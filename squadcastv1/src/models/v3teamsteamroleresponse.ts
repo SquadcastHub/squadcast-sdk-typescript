@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3TeamsAbilities,
   V3TeamsAbilities$inboundSchema,
-  V3TeamsAbilities$Outbound,
-  V3TeamsAbilities$outboundSchema,
 } from "./v3teamsabilities.js";
 
 export type V3TeamsTeamRoleResponse = {
@@ -33,49 +31,6 @@ export const V3TeamsTeamRoleResponse$inboundSchema: z.ZodType<
   default: z.boolean(),
   abilities: V3TeamsAbilities$inboundSchema.optional(),
 });
-
-/** @internal */
-export type V3TeamsTeamRoleResponse$Outbound = {
-  id: string;
-  name: string;
-  slug: string;
-  default: boolean;
-  abilities?: V3TeamsAbilities$Outbound | undefined;
-};
-
-/** @internal */
-export const V3TeamsTeamRoleResponse$outboundSchema: z.ZodType<
-  V3TeamsTeamRoleResponse$Outbound,
-  z.ZodTypeDef,
-  V3TeamsTeamRoleResponse
-> = z.object({
-  id: z.string(),
-  name: z.string(),
-  slug: z.string(),
-  default: z.boolean(),
-  abilities: V3TeamsAbilities$outboundSchema.optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsTeamRoleResponse$ {
-  /** @deprecated use `V3TeamsTeamRoleResponse$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsTeamRoleResponse$inboundSchema;
-  /** @deprecated use `V3TeamsTeamRoleResponse$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsTeamRoleResponse$outboundSchema;
-  /** @deprecated use `V3TeamsTeamRoleResponse$Outbound` instead. */
-  export type Outbound = V3TeamsTeamRoleResponse$Outbound;
-}
-
-export function v3TeamsTeamRoleResponseToJSON(
-  v3TeamsTeamRoleResponse: V3TeamsTeamRoleResponse,
-): string {
-  return JSON.stringify(
-    V3TeamsTeamRoleResponse$outboundSchema.parse(v3TeamsTeamRoleResponse),
-  );
-}
 
 export function v3TeamsTeamRoleResponseFromJSON(
   jsonString: string,

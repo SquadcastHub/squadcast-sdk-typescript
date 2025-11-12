@@ -24,15 +24,6 @@ export type TaggingRulesGetTaggingRulesResponse = {
 };
 
 /** @internal */
-export const TaggingRulesGetTaggingRulesRequest$inboundSchema: z.ZodType<
-  TaggingRulesGetTaggingRulesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  serviceID: z.string(),
-});
-
-/** @internal */
 export type TaggingRulesGetTaggingRulesRequest$Outbound = {
   serviceID: string;
 };
@@ -46,20 +37,6 @@ export const TaggingRulesGetTaggingRulesRequest$outboundSchema: z.ZodType<
   serviceID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaggingRulesGetTaggingRulesRequest$ {
-  /** @deprecated use `TaggingRulesGetTaggingRulesRequest$inboundSchema` instead. */
-  export const inboundSchema = TaggingRulesGetTaggingRulesRequest$inboundSchema;
-  /** @deprecated use `TaggingRulesGetTaggingRulesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    TaggingRulesGetTaggingRulesRequest$outboundSchema;
-  /** @deprecated use `TaggingRulesGetTaggingRulesRequest$Outbound` instead. */
-  export type Outbound = TaggingRulesGetTaggingRulesRequest$Outbound;
-}
-
 export function taggingRulesGetTaggingRulesRequestToJSON(
   taggingRulesGetTaggingRulesRequest: TaggingRulesGetTaggingRulesRequest,
 ): string {
@@ -67,17 +44,6 @@ export function taggingRulesGetTaggingRulesRequestToJSON(
     TaggingRulesGetTaggingRulesRequest$outboundSchema.parse(
       taggingRulesGetTaggingRulesRequest,
     ),
-  );
-}
-
-export function taggingRulesGetTaggingRulesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<TaggingRulesGetTaggingRulesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      TaggingRulesGetTaggingRulesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'TaggingRulesGetTaggingRulesRequest' from JSON`,
   );
 }
 
@@ -91,45 +57,6 @@ export const TaggingRulesGetTaggingRulesData$inboundSchema: z.ZodType<
     models.V3ServicesTaggingRulesTaggingRuleResponse$inboundSchema,
   ),
 });
-
-/** @internal */
-export type TaggingRulesGetTaggingRulesData$Outbound = {
-  rules: Array<models.V3ServicesTaggingRulesTaggingRuleResponse$Outbound>;
-};
-
-/** @internal */
-export const TaggingRulesGetTaggingRulesData$outboundSchema: z.ZodType<
-  TaggingRulesGetTaggingRulesData$Outbound,
-  z.ZodTypeDef,
-  TaggingRulesGetTaggingRulesData
-> = z.object({
-  rules: z.array(
-    models.V3ServicesTaggingRulesTaggingRuleResponse$outboundSchema,
-  ),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaggingRulesGetTaggingRulesData$ {
-  /** @deprecated use `TaggingRulesGetTaggingRulesData$inboundSchema` instead. */
-  export const inboundSchema = TaggingRulesGetTaggingRulesData$inboundSchema;
-  /** @deprecated use `TaggingRulesGetTaggingRulesData$outboundSchema` instead. */
-  export const outboundSchema = TaggingRulesGetTaggingRulesData$outboundSchema;
-  /** @deprecated use `TaggingRulesGetTaggingRulesData$Outbound` instead. */
-  export type Outbound = TaggingRulesGetTaggingRulesData$Outbound;
-}
-
-export function taggingRulesGetTaggingRulesDataToJSON(
-  taggingRulesGetTaggingRulesData: TaggingRulesGetTaggingRulesData,
-): string {
-  return JSON.stringify(
-    TaggingRulesGetTaggingRulesData$outboundSchema.parse(
-      taggingRulesGetTaggingRulesData,
-    ),
-  );
-}
 
 export function taggingRulesGetTaggingRulesDataFromJSON(
   jsonString: string,
@@ -149,45 +76,6 @@ export const TaggingRulesGetTaggingRulesResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => TaggingRulesGetTaggingRulesData$inboundSchema),
 });
-
-/** @internal */
-export type TaggingRulesGetTaggingRulesResponse$Outbound = {
-  data: TaggingRulesGetTaggingRulesData$Outbound;
-};
-
-/** @internal */
-export const TaggingRulesGetTaggingRulesResponse$outboundSchema: z.ZodType<
-  TaggingRulesGetTaggingRulesResponse$Outbound,
-  z.ZodTypeDef,
-  TaggingRulesGetTaggingRulesResponse
-> = z.object({
-  data: z.lazy(() => TaggingRulesGetTaggingRulesData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaggingRulesGetTaggingRulesResponse$ {
-  /** @deprecated use `TaggingRulesGetTaggingRulesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    TaggingRulesGetTaggingRulesResponse$inboundSchema;
-  /** @deprecated use `TaggingRulesGetTaggingRulesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    TaggingRulesGetTaggingRulesResponse$outboundSchema;
-  /** @deprecated use `TaggingRulesGetTaggingRulesResponse$Outbound` instead. */
-  export type Outbound = TaggingRulesGetTaggingRulesResponse$Outbound;
-}
-
-export function taggingRulesGetTaggingRulesResponseToJSON(
-  taggingRulesGetTaggingRulesResponse: TaggingRulesGetTaggingRulesResponse,
-): string {
-  return JSON.stringify(
-    TaggingRulesGetTaggingRulesResponse$outboundSchema.parse(
-      taggingRulesGetTaggingRulesResponse,
-    ),
-  );
-}
 
 export function taggingRulesGetTaggingRulesResponseFromJSON(
   jsonString: string,

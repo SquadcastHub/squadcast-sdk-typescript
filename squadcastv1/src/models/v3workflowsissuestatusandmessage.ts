@@ -26,7 +26,6 @@ export const V3WorkflowsIssueStatusAndMessage$inboundSchema: z.ZodType<
     "status_id": "statusId",
   });
 });
-
 /** @internal */
 export type V3WorkflowsIssueStatusAndMessage$Outbound = {
   messages: Array<string>;
@@ -47,19 +46,6 @@ export const V3WorkflowsIssueStatusAndMessage$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsIssueStatusAndMessage$ {
-  /** @deprecated use `V3WorkflowsIssueStatusAndMessage$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsIssueStatusAndMessage$inboundSchema;
-  /** @deprecated use `V3WorkflowsIssueStatusAndMessage$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsIssueStatusAndMessage$outboundSchema;
-  /** @deprecated use `V3WorkflowsIssueStatusAndMessage$Outbound` instead. */
-  export type Outbound = V3WorkflowsIssueStatusAndMessage$Outbound;
-}
-
 export function v3WorkflowsIssueStatusAndMessageToJSON(
   v3WorkflowsIssueStatusAndMessage: V3WorkflowsIssueStatusAndMessage,
 ): string {
@@ -69,7 +55,6 @@ export function v3WorkflowsIssueStatusAndMessageToJSON(
     ),
   );
 }
-
 export function v3WorkflowsIssueStatusAndMessageFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsIssueStatusAndMessage, SDKValidationError> {

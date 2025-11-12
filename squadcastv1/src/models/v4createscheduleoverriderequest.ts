@@ -3,12 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4OverrideParticipantGroup,
-  V4OverrideParticipantGroup$inboundSchema,
   V4OverrideParticipantGroup$Outbound,
   V4OverrideParticipantGroup$outboundSchema,
 } from "./v4overrideparticipantgroup.js";
@@ -20,19 +16,6 @@ export type V4CreateScheduleOverrideRequest = {
   overriddenParticipant: V4OverrideParticipantGroup;
   overrideWith: V4OverrideParticipantGroup;
 };
-
-/** @internal */
-export const V4CreateScheduleOverrideRequest$inboundSchema: z.ZodType<
-  V4CreateScheduleOverrideRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  startTime: z.string(),
-  endTime: z.string(),
-  reason: z.string(),
-  overriddenParticipant: V4OverrideParticipantGroup$inboundSchema,
-  overrideWith: V4OverrideParticipantGroup$inboundSchema,
-});
 
 /** @internal */
 export type V4CreateScheduleOverrideRequest$Outbound = {
@@ -56,19 +39,6 @@ export const V4CreateScheduleOverrideRequest$outboundSchema: z.ZodType<
   overrideWith: V4OverrideParticipantGroup$outboundSchema,
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4CreateScheduleOverrideRequest$ {
-  /** @deprecated use `V4CreateScheduleOverrideRequest$inboundSchema` instead. */
-  export const inboundSchema = V4CreateScheduleOverrideRequest$inboundSchema;
-  /** @deprecated use `V4CreateScheduleOverrideRequest$outboundSchema` instead. */
-  export const outboundSchema = V4CreateScheduleOverrideRequest$outboundSchema;
-  /** @deprecated use `V4CreateScheduleOverrideRequest$Outbound` instead. */
-  export type Outbound = V4CreateScheduleOverrideRequest$Outbound;
-}
-
 export function v4CreateScheduleOverrideRequestToJSON(
   v4CreateScheduleOverrideRequest: V4CreateScheduleOverrideRequest,
 ): string {
@@ -76,15 +46,5 @@ export function v4CreateScheduleOverrideRequestToJSON(
     V4CreateScheduleOverrideRequest$outboundSchema.parse(
       v4CreateScheduleOverrideRequest,
     ),
-  );
-}
-
-export function v4CreateScheduleOverrideRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V4CreateScheduleOverrideRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V4CreateScheduleOverrideRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V4CreateScheduleOverrideRequest' from JSON`,
   );
 }

@@ -45,24 +45,10 @@ export type V3ServicesTaggingRulesExpressionBranch = {
 export const V3ServicesTaggingRulesExpressionBranchOp$inboundSchema:
   z.ZodNativeEnum<typeof V3ServicesTaggingRulesExpressionBranchOp> = z
     .nativeEnum(V3ServicesTaggingRulesExpressionBranchOp);
-
 /** @internal */
 export const V3ServicesTaggingRulesExpressionBranchOp$outboundSchema:
   z.ZodNativeEnum<typeof V3ServicesTaggingRulesExpressionBranchOp> =
     V3ServicesTaggingRulesExpressionBranchOp$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesTaggingRulesExpressionBranchOp$ {
-  /** @deprecated use `V3ServicesTaggingRulesExpressionBranchOp$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesTaggingRulesExpressionBranchOp$inboundSchema;
-  /** @deprecated use `V3ServicesTaggingRulesExpressionBranchOp$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesTaggingRulesExpressionBranchOp$outboundSchema;
-}
 
 /** @internal */
 export const V3ServicesTaggingRulesExpressionBranchRhs$inboundSchema: z.ZodType<
@@ -70,7 +56,6 @@ export const V3ServicesTaggingRulesExpressionBranchRhs$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([z.string(), z.boolean(), z.number().int(), z.number()]);
-
 /** @internal */
 export type V3ServicesTaggingRulesExpressionBranchRhs$Outbound =
   | string
@@ -86,21 +71,6 @@ export const V3ServicesTaggingRulesExpressionBranchRhs$outboundSchema:
     V3ServicesTaggingRulesExpressionBranchRhs
   > = z.union([z.string(), z.boolean(), z.number().int(), z.number()]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesTaggingRulesExpressionBranchRhs$ {
-  /** @deprecated use `V3ServicesTaggingRulesExpressionBranchRhs$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesTaggingRulesExpressionBranchRhs$inboundSchema;
-  /** @deprecated use `V3ServicesTaggingRulesExpressionBranchRhs$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesTaggingRulesExpressionBranchRhs$outboundSchema;
-  /** @deprecated use `V3ServicesTaggingRulesExpressionBranchRhs$Outbound` instead. */
-  export type Outbound = V3ServicesTaggingRulesExpressionBranchRhs$Outbound;
-}
-
 export function v3ServicesTaggingRulesExpressionBranchRhsToJSON(
   v3ServicesTaggingRulesExpressionBranchRhs:
     V3ServicesTaggingRulesExpressionBranchRhs,
@@ -111,7 +81,6 @@ export function v3ServicesTaggingRulesExpressionBranchRhsToJSON(
     ),
   );
 }
-
 export function v3ServicesTaggingRulesExpressionBranchRhsFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -138,7 +107,6 @@ export const V3ServicesTaggingRulesExpressionBranch$inboundSchema: z.ZodType<
   op: V3ServicesTaggingRulesExpressionBranchOp$inboundSchema.optional(),
   rhs: z.union([z.string(), z.boolean(), z.number().int(), z.number()]),
 });
-
 /** @internal */
 export type V3ServicesTaggingRulesExpressionBranch$Outbound = {
   lhs: string;
@@ -157,21 +125,6 @@ export const V3ServicesTaggingRulesExpressionBranch$outboundSchema: z.ZodType<
   rhs: z.union([z.string(), z.boolean(), z.number().int(), z.number()]),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesTaggingRulesExpressionBranch$ {
-  /** @deprecated use `V3ServicesTaggingRulesExpressionBranch$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesTaggingRulesExpressionBranch$inboundSchema;
-  /** @deprecated use `V3ServicesTaggingRulesExpressionBranch$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesTaggingRulesExpressionBranch$outboundSchema;
-  /** @deprecated use `V3ServicesTaggingRulesExpressionBranch$Outbound` instead. */
-  export type Outbound = V3ServicesTaggingRulesExpressionBranch$Outbound;
-}
-
 export function v3ServicesTaggingRulesExpressionBranchToJSON(
   v3ServicesTaggingRulesExpressionBranch:
     V3ServicesTaggingRulesExpressionBranch,
@@ -182,7 +135,6 @@ export function v3ServicesTaggingRulesExpressionBranchToJSON(
     ),
   );
 }
-
 export function v3ServicesTaggingRulesExpressionBranchFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesTaggingRulesExpressionBranch, SDKValidationError> {

@@ -4,28 +4,11 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type WebhooksGetAllWebhooksRequest = {
   pageLimit?: string | undefined;
   offset?: string | undefined;
 };
-
-/** @internal */
-export const WebhooksGetAllWebhooksRequest$inboundSchema: z.ZodType<
-  WebhooksGetAllWebhooksRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  "page-limit": z.string().optional(),
-  offset: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "page-limit": "pageLimit",
-  });
-});
 
 /** @internal */
 export type WebhooksGetAllWebhooksRequest$Outbound = {
@@ -47,19 +30,6 @@ export const WebhooksGetAllWebhooksRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebhooksGetAllWebhooksRequest$ {
-  /** @deprecated use `WebhooksGetAllWebhooksRequest$inboundSchema` instead. */
-  export const inboundSchema = WebhooksGetAllWebhooksRequest$inboundSchema;
-  /** @deprecated use `WebhooksGetAllWebhooksRequest$outboundSchema` instead. */
-  export const outboundSchema = WebhooksGetAllWebhooksRequest$outboundSchema;
-  /** @deprecated use `WebhooksGetAllWebhooksRequest$Outbound` instead. */
-  export type Outbound = WebhooksGetAllWebhooksRequest$Outbound;
-}
-
 export function webhooksGetAllWebhooksRequestToJSON(
   webhooksGetAllWebhooksRequest: WebhooksGetAllWebhooksRequest,
 ): string {
@@ -67,15 +37,5 @@ export function webhooksGetAllWebhooksRequestToJSON(
     WebhooksGetAllWebhooksRequest$outboundSchema.parse(
       webhooksGetAllWebhooksRequest,
     ),
-  );
-}
-
-export function webhooksGetAllWebhooksRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WebhooksGetAllWebhooksRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => WebhooksGetAllWebhooksRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WebhooksGetAllWebhooksRequest' from JSON`,
   );
 }

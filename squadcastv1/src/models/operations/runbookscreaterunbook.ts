@@ -24,43 +24,6 @@ export const RunbooksCreateRunbookResponse$inboundSchema: z.ZodType<
   data: models.V3RunbooksRunbookResponse$inboundSchema,
 });
 
-/** @internal */
-export type RunbooksCreateRunbookResponse$Outbound = {
-  data: models.V3RunbooksRunbookResponse$Outbound;
-};
-
-/** @internal */
-export const RunbooksCreateRunbookResponse$outboundSchema: z.ZodType<
-  RunbooksCreateRunbookResponse$Outbound,
-  z.ZodTypeDef,
-  RunbooksCreateRunbookResponse
-> = z.object({
-  data: models.V3RunbooksRunbookResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RunbooksCreateRunbookResponse$ {
-  /** @deprecated use `RunbooksCreateRunbookResponse$inboundSchema` instead. */
-  export const inboundSchema = RunbooksCreateRunbookResponse$inboundSchema;
-  /** @deprecated use `RunbooksCreateRunbookResponse$outboundSchema` instead. */
-  export const outboundSchema = RunbooksCreateRunbookResponse$outboundSchema;
-  /** @deprecated use `RunbooksCreateRunbookResponse$Outbound` instead. */
-  export type Outbound = RunbooksCreateRunbookResponse$Outbound;
-}
-
-export function runbooksCreateRunbookResponseToJSON(
-  runbooksCreateRunbookResponse: RunbooksCreateRunbookResponse,
-): string {
-  return JSON.stringify(
-    RunbooksCreateRunbookResponse$outboundSchema.parse(
-      runbooksCreateRunbookResponse,
-    ),
-  );
-}
-
 export function runbooksCreateRunbookResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<RunbooksCreateRunbookResponse, SDKValidationError> {

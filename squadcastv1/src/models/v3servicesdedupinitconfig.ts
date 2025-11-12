@@ -4,10 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3ServicesDedupInitConfigTimeUnit = {
   Minute: "minute",
@@ -23,41 +20,9 @@ export type V3ServicesDedupInitConfig = {
 };
 
 /** @internal */
-export const V3ServicesDedupInitConfigTimeUnit$inboundSchema: z.ZodNativeEnum<
-  typeof V3ServicesDedupInitConfigTimeUnit
-> = z.nativeEnum(V3ServicesDedupInitConfigTimeUnit);
-
-/** @internal */
 export const V3ServicesDedupInitConfigTimeUnit$outboundSchema: z.ZodNativeEnum<
   typeof V3ServicesDedupInitConfigTimeUnit
-> = V3ServicesDedupInitConfigTimeUnit$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesDedupInitConfigTimeUnit$ {
-  /** @deprecated use `V3ServicesDedupInitConfigTimeUnit$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesDedupInitConfigTimeUnit$inboundSchema;
-  /** @deprecated use `V3ServicesDedupInitConfigTimeUnit$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesDedupInitConfigTimeUnit$outboundSchema;
-}
-
-/** @internal */
-export const V3ServicesDedupInitConfig$inboundSchema: z.ZodType<
-  V3ServicesDedupInitConfig,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  time_window: z.number().int(),
-  time_unit: V3ServicesDedupInitConfigTimeUnit$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "time_window": "timeWindow",
-    "time_unit": "timeUnit",
-  });
-});
+> = z.nativeEnum(V3ServicesDedupInitConfigTimeUnit);
 
 /** @internal */
 export type V3ServicesDedupInitConfig$Outbound = {
@@ -80,33 +45,10 @@ export const V3ServicesDedupInitConfig$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesDedupInitConfig$ {
-  /** @deprecated use `V3ServicesDedupInitConfig$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesDedupInitConfig$inboundSchema;
-  /** @deprecated use `V3ServicesDedupInitConfig$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesDedupInitConfig$outboundSchema;
-  /** @deprecated use `V3ServicesDedupInitConfig$Outbound` instead. */
-  export type Outbound = V3ServicesDedupInitConfig$Outbound;
-}
-
 export function v3ServicesDedupInitConfigToJSON(
   v3ServicesDedupInitConfig: V3ServicesDedupInitConfig,
 ): string {
   return JSON.stringify(
     V3ServicesDedupInitConfig$outboundSchema.parse(v3ServicesDedupInitConfig),
-  );
-}
-
-export function v3ServicesDedupInitConfigFromJSON(
-  jsonString: string,
-): SafeParseResult<V3ServicesDedupInitConfig, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3ServicesDedupInitConfig$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesDedupInitConfig' from JSON`,
   );
 }

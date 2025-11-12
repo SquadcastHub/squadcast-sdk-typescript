@@ -20,15 +20,6 @@ export type TeamsGetAllTeamMembersResponse = {
 };
 
 /** @internal */
-export const TeamsGetAllTeamMembersRequest$inboundSchema: z.ZodType<
-  TeamsGetAllTeamMembersRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  teamId: z.string(),
-});
-
-/** @internal */
 export type TeamsGetAllTeamMembersRequest$Outbound = {
   teamId: string;
 };
@@ -42,19 +33,6 @@ export const TeamsGetAllTeamMembersRequest$outboundSchema: z.ZodType<
   teamId: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsGetAllTeamMembersRequest$ {
-  /** @deprecated use `TeamsGetAllTeamMembersRequest$inboundSchema` instead. */
-  export const inboundSchema = TeamsGetAllTeamMembersRequest$inboundSchema;
-  /** @deprecated use `TeamsGetAllTeamMembersRequest$outboundSchema` instead. */
-  export const outboundSchema = TeamsGetAllTeamMembersRequest$outboundSchema;
-  /** @deprecated use `TeamsGetAllTeamMembersRequest$Outbound` instead. */
-  export type Outbound = TeamsGetAllTeamMembersRequest$Outbound;
-}
-
 export function teamsGetAllTeamMembersRequestToJSON(
   teamsGetAllTeamMembersRequest: TeamsGetAllTeamMembersRequest,
 ): string {
@@ -62,16 +40,6 @@ export function teamsGetAllTeamMembersRequestToJSON(
     TeamsGetAllTeamMembersRequest$outboundSchema.parse(
       teamsGetAllTeamMembersRequest,
     ),
-  );
-}
-
-export function teamsGetAllTeamMembersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<TeamsGetAllTeamMembersRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => TeamsGetAllTeamMembersRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'TeamsGetAllTeamMembersRequest' from JSON`,
   );
 }
 
@@ -83,43 +51,6 @@ export const TeamsGetAllTeamMembersResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.array(models.V3TeamsTeamMemberResponse$inboundSchema),
 });
-
-/** @internal */
-export type TeamsGetAllTeamMembersResponse$Outbound = {
-  data: Array<models.V3TeamsTeamMemberResponse$Outbound>;
-};
-
-/** @internal */
-export const TeamsGetAllTeamMembersResponse$outboundSchema: z.ZodType<
-  TeamsGetAllTeamMembersResponse$Outbound,
-  z.ZodTypeDef,
-  TeamsGetAllTeamMembersResponse
-> = z.object({
-  data: z.array(models.V3TeamsTeamMemberResponse$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsGetAllTeamMembersResponse$ {
-  /** @deprecated use `TeamsGetAllTeamMembersResponse$inboundSchema` instead. */
-  export const inboundSchema = TeamsGetAllTeamMembersResponse$inboundSchema;
-  /** @deprecated use `TeamsGetAllTeamMembersResponse$outboundSchema` instead. */
-  export const outboundSchema = TeamsGetAllTeamMembersResponse$outboundSchema;
-  /** @deprecated use `TeamsGetAllTeamMembersResponse$Outbound` instead. */
-  export type Outbound = TeamsGetAllTeamMembersResponse$Outbound;
-}
-
-export function teamsGetAllTeamMembersResponseToJSON(
-  teamsGetAllTeamMembersResponse: TeamsGetAllTeamMembersResponse,
-): string {
-  return JSON.stringify(
-    TeamsGetAllTeamMembersResponse$outboundSchema.parse(
-      teamsGetAllTeamMembersResponse,
-    ),
-  );
-}
 
 export function teamsGetAllTeamMembersResponseFromJSON(
   jsonString: string,

@@ -27,7 +27,6 @@ export const V3ServicesAPTAConfig$inboundSchema: z.ZodType<
     "timeout_in_mins": "timeoutInMins",
   });
 });
-
 /** @internal */
 export type V3ServicesAPTAConfig$Outbound = {
   is_enabled: boolean;
@@ -49,19 +48,6 @@ export const V3ServicesAPTAConfig$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesAPTAConfig$ {
-  /** @deprecated use `V3ServicesAPTAConfig$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesAPTAConfig$inboundSchema;
-  /** @deprecated use `V3ServicesAPTAConfig$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesAPTAConfig$outboundSchema;
-  /** @deprecated use `V3ServicesAPTAConfig$Outbound` instead. */
-  export type Outbound = V3ServicesAPTAConfig$Outbound;
-}
-
 export function v3ServicesAPTAConfigToJSON(
   v3ServicesAPTAConfig: V3ServicesAPTAConfig,
 ): string {
@@ -69,7 +55,6 @@ export function v3ServicesAPTAConfigToJSON(
     V3ServicesAPTAConfig$outboundSchema.parse(v3ServicesAPTAConfig),
   );
 }
-
 export function v3ServicesAPTAConfigFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesAPTAConfig, SDKValidationError> {

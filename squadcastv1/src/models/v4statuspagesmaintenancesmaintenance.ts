@@ -36,51 +36,6 @@ export const V4StatusPagesMaintenancesMaintenanceComponent$inboundSchema:
     groupName: z.string().optional(),
   });
 
-/** @internal */
-export type V4StatusPagesMaintenancesMaintenanceComponent$Outbound = {
-  id?: number | undefined;
-  name?: string | undefined;
-  groupName?: string | undefined;
-};
-
-/** @internal */
-export const V4StatusPagesMaintenancesMaintenanceComponent$outboundSchema:
-  z.ZodType<
-    V4StatusPagesMaintenancesMaintenanceComponent$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesMaintenancesMaintenanceComponent
-  > = z.object({
-    id: z.number().int().optional(),
-    name: z.string().optional(),
-    groupName: z.string().optional(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesMaintenancesMaintenanceComponent$ {
-  /** @deprecated use `V4StatusPagesMaintenancesMaintenanceComponent$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesMaintenancesMaintenanceComponent$inboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesMaintenanceComponent$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesMaintenancesMaintenanceComponent$outboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesMaintenanceComponent$Outbound` instead. */
-  export type Outbound = V4StatusPagesMaintenancesMaintenanceComponent$Outbound;
-}
-
-export function v4StatusPagesMaintenancesMaintenanceComponentToJSON(
-  v4StatusPagesMaintenancesMaintenanceComponent:
-    V4StatusPagesMaintenancesMaintenanceComponent,
-): string {
-  return JSON.stringify(
-    V4StatusPagesMaintenancesMaintenanceComponent$outboundSchema.parse(
-      v4StatusPagesMaintenancesMaintenanceComponent,
-    ),
-  );
-}
-
 export function v4StatusPagesMaintenancesMaintenanceComponentFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -116,63 +71,6 @@ export const V4StatusPagesMaintenancesMaintenance$inboundSchema: z.ZodType<
     .optional(),
   maintenanceState: z.string().optional(),
 });
-
-/** @internal */
-export type V4StatusPagesMaintenancesMaintenance$Outbound = {
-  id?: number | undefined;
-  title?: string | undefined;
-  pageID?: number | undefined;
-  note?: string | undefined;
-  components?:
-    | Array<V4StatusPagesMaintenancesMaintenanceComponent$Outbound>
-    | undefined;
-  startTime?: string | undefined;
-  endTime?: string | undefined;
-  maintenanceState?: string | undefined;
-};
-
-/** @internal */
-export const V4StatusPagesMaintenancesMaintenance$outboundSchema: z.ZodType<
-  V4StatusPagesMaintenancesMaintenance$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesMaintenancesMaintenance
-> = z.object({
-  id: z.number().int().optional(),
-  title: z.string().optional(),
-  pageID: z.number().int().optional(),
-  note: z.string().optional(),
-  components: z.array(
-    z.lazy(() => V4StatusPagesMaintenancesMaintenanceComponent$outboundSchema),
-  ).optional(),
-  startTime: z.date().transform(v => v.toISOString()).optional(),
-  endTime: z.date().transform(v => v.toISOString()).optional(),
-  maintenanceState: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesMaintenancesMaintenance$ {
-  /** @deprecated use `V4StatusPagesMaintenancesMaintenance$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesMaintenancesMaintenance$inboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesMaintenance$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesMaintenancesMaintenance$outboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesMaintenance$Outbound` instead. */
-  export type Outbound = V4StatusPagesMaintenancesMaintenance$Outbound;
-}
-
-export function v4StatusPagesMaintenancesMaintenanceToJSON(
-  v4StatusPagesMaintenancesMaintenance: V4StatusPagesMaintenancesMaintenance,
-): string {
-  return JSON.stringify(
-    V4StatusPagesMaintenancesMaintenance$outboundSchema.parse(
-      v4StatusPagesMaintenancesMaintenance,
-    ),
-  );
-}
 
 export function v4StatusPagesMaintenancesMaintenanceFromJSON(
   jsonString: string,

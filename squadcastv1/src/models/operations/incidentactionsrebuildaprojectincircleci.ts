@@ -32,25 +32,6 @@ export type IncidentActionsRebuildAProjectInCircleciResponse = {
 };
 
 /** @internal */
-export const IncidentActionsRebuildAProjectInCircleciRequest$inboundSchema:
-  z.ZodType<
-    IncidentActionsRebuildAProjectInCircleciRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incidentID: z.string(),
-    buildNumber: z.string(),
-    "V3.Incidents.IncidentActions.RebuildCircleCIProjectRequest":
-      models
-        .V3IncidentsIncidentActionsRebuildCircleCIProjectRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.Incidents.IncidentActions.RebuildCircleCIProjectRequest":
-        "v3IncidentsIncidentActionsRebuildCircleCIProjectRequest",
-    });
-  });
-
-/** @internal */
 export type IncidentActionsRebuildAProjectInCircleciRequest$Outbound = {
   incidentID: string;
   buildNumber: string;
@@ -77,22 +58,6 @@ export const IncidentActionsRebuildAProjectInCircleciRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentActionsRebuildAProjectInCircleciRequest$ {
-  /** @deprecated use `IncidentActionsRebuildAProjectInCircleciRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentActionsRebuildAProjectInCircleciRequest$inboundSchema;
-  /** @deprecated use `IncidentActionsRebuildAProjectInCircleciRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentActionsRebuildAProjectInCircleciRequest$outboundSchema;
-  /** @deprecated use `IncidentActionsRebuildAProjectInCircleciRequest$Outbound` instead. */
-  export type Outbound =
-    IncidentActionsRebuildAProjectInCircleciRequest$Outbound;
-}
-
 export function incidentActionsRebuildAProjectInCircleciRequestToJSON(
   incidentActionsRebuildAProjectInCircleciRequest:
     IncidentActionsRebuildAProjectInCircleciRequest,
@@ -101,22 +66,6 @@ export function incidentActionsRebuildAProjectInCircleciRequestToJSON(
     IncidentActionsRebuildAProjectInCircleciRequest$outboundSchema.parse(
       incidentActionsRebuildAProjectInCircleciRequest,
     ),
-  );
-}
-
-export function incidentActionsRebuildAProjectInCircleciRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  IncidentActionsRebuildAProjectInCircleciRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      IncidentActionsRebuildAProjectInCircleciRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'IncidentActionsRebuildAProjectInCircleciRequest' from JSON`,
   );
 }
 
@@ -133,51 +82,6 @@ export const IncidentActionsRebuildAProjectInCircleciMeta$inboundSchema:
       "status_code": "statusCode",
     });
   });
-
-/** @internal */
-export type IncidentActionsRebuildAProjectInCircleciMeta$Outbound = {
-  status_code: number;
-};
-
-/** @internal */
-export const IncidentActionsRebuildAProjectInCircleciMeta$outboundSchema:
-  z.ZodType<
-    IncidentActionsRebuildAProjectInCircleciMeta$Outbound,
-    z.ZodTypeDef,
-    IncidentActionsRebuildAProjectInCircleciMeta
-  > = z.object({
-    statusCode: z.number().int(),
-  }).transform((v) => {
-    return remap$(v, {
-      statusCode: "status_code",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentActionsRebuildAProjectInCircleciMeta$ {
-  /** @deprecated use `IncidentActionsRebuildAProjectInCircleciMeta$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentActionsRebuildAProjectInCircleciMeta$inboundSchema;
-  /** @deprecated use `IncidentActionsRebuildAProjectInCircleciMeta$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentActionsRebuildAProjectInCircleciMeta$outboundSchema;
-  /** @deprecated use `IncidentActionsRebuildAProjectInCircleciMeta$Outbound` instead. */
-  export type Outbound = IncidentActionsRebuildAProjectInCircleciMeta$Outbound;
-}
-
-export function incidentActionsRebuildAProjectInCircleciMetaToJSON(
-  incidentActionsRebuildAProjectInCircleciMeta:
-    IncidentActionsRebuildAProjectInCircleciMeta,
-): string {
-  return JSON.stringify(
-    IncidentActionsRebuildAProjectInCircleciMeta$outboundSchema.parse(
-      incidentActionsRebuildAProjectInCircleciMeta,
-    ),
-  );
-}
 
 export function incidentActionsRebuildAProjectInCircleciMetaFromJSON(
   jsonString: string,
@@ -208,53 +112,6 @@ export const IncidentActionsRebuildAProjectInCircleciResponse$inboundSchema:
       IncidentActionsRebuildAProjectInCircleciMeta$inboundSchema
     ).optional(),
   });
-
-/** @internal */
-export type IncidentActionsRebuildAProjectInCircleciResponse$Outbound = {
-  data: models.V3IncidentsIncidentActionsCircleCIRebuildResponse$Outbound;
-  meta?: IncidentActionsRebuildAProjectInCircleciMeta$Outbound | undefined;
-};
-
-/** @internal */
-export const IncidentActionsRebuildAProjectInCircleciResponse$outboundSchema:
-  z.ZodType<
-    IncidentActionsRebuildAProjectInCircleciResponse$Outbound,
-    z.ZodTypeDef,
-    IncidentActionsRebuildAProjectInCircleciResponse
-  > = z.object({
-    data:
-      models.V3IncidentsIncidentActionsCircleCIRebuildResponse$outboundSchema,
-    meta: z.lazy(() =>
-      IncidentActionsRebuildAProjectInCircleciMeta$outboundSchema
-    ).optional(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentActionsRebuildAProjectInCircleciResponse$ {
-  /** @deprecated use `IncidentActionsRebuildAProjectInCircleciResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentActionsRebuildAProjectInCircleciResponse$inboundSchema;
-  /** @deprecated use `IncidentActionsRebuildAProjectInCircleciResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentActionsRebuildAProjectInCircleciResponse$outboundSchema;
-  /** @deprecated use `IncidentActionsRebuildAProjectInCircleciResponse$Outbound` instead. */
-  export type Outbound =
-    IncidentActionsRebuildAProjectInCircleciResponse$Outbound;
-}
-
-export function incidentActionsRebuildAProjectInCircleciResponseToJSON(
-  incidentActionsRebuildAProjectInCircleciResponse:
-    IncidentActionsRebuildAProjectInCircleciResponse,
-): string {
-  return JSON.stringify(
-    IncidentActionsRebuildAProjectInCircleciResponse$outboundSchema.parse(
-      incidentActionsRebuildAProjectInCircleciResponse,
-    ),
-  );
-}
 
 export function incidentActionsRebuildAProjectInCircleciResponseFromJSON(
   jsonString: string,

@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3WorkflowsWorkflowAPIResponse,
   V3WorkflowsWorkflowAPIResponse$inboundSchema,
-  V3WorkflowsWorkflowAPIResponse$Outbound,
-  V3WorkflowsWorkflowAPIResponse$outboundSchema,
 } from "./v3workflowsworkflowapiresponse.js";
 
 export type V3WorkflowsGetWorkflowByIdResponse = {
@@ -25,44 +23,6 @@ export const V3WorkflowsGetWorkflowByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: V3WorkflowsWorkflowAPIResponse$inboundSchema,
 });
-
-/** @internal */
-export type V3WorkflowsGetWorkflowByIdResponse$Outbound = {
-  data: V3WorkflowsWorkflowAPIResponse$Outbound;
-};
-
-/** @internal */
-export const V3WorkflowsGetWorkflowByIdResponse$outboundSchema: z.ZodType<
-  V3WorkflowsGetWorkflowByIdResponse$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsGetWorkflowByIdResponse
-> = z.object({
-  data: V3WorkflowsWorkflowAPIResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsGetWorkflowByIdResponse$ {
-  /** @deprecated use `V3WorkflowsGetWorkflowByIdResponse$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsGetWorkflowByIdResponse$inboundSchema;
-  /** @deprecated use `V3WorkflowsGetWorkflowByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsGetWorkflowByIdResponse$outboundSchema;
-  /** @deprecated use `V3WorkflowsGetWorkflowByIdResponse$Outbound` instead. */
-  export type Outbound = V3WorkflowsGetWorkflowByIdResponse$Outbound;
-}
-
-export function v3WorkflowsGetWorkflowByIdResponseToJSON(
-  v3WorkflowsGetWorkflowByIdResponse: V3WorkflowsGetWorkflowByIdResponse,
-): string {
-  return JSON.stringify(
-    V3WorkflowsGetWorkflowByIdResponse$outboundSchema.parse(
-      v3WorkflowsGetWorkflowByIdResponse,
-    ),
-  );
-}
 
 export function v3WorkflowsGetWorkflowByIdResponseFromJSON(
   jsonString: string,

@@ -22,21 +22,6 @@ export type OverridesCreateScheduleOverrideResponse = {
 };
 
 /** @internal */
-export const OverridesCreateScheduleOverrideRequest$inboundSchema: z.ZodType<
-  OverridesCreateScheduleOverrideRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-  "V4.CreateScheduleOverrideRequest":
-    models.V4CreateScheduleOverrideRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V4.CreateScheduleOverrideRequest": "v4CreateScheduleOverrideRequest",
-  });
-});
-
-/** @internal */
 export type OverridesCreateScheduleOverrideRequest$Outbound = {
   scheduleID: string;
   "V4.CreateScheduleOverrideRequest":
@@ -58,21 +43,6 @@ export const OverridesCreateScheduleOverrideRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverridesCreateScheduleOverrideRequest$ {
-  /** @deprecated use `OverridesCreateScheduleOverrideRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverridesCreateScheduleOverrideRequest$inboundSchema;
-  /** @deprecated use `OverridesCreateScheduleOverrideRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverridesCreateScheduleOverrideRequest$outboundSchema;
-  /** @deprecated use `OverridesCreateScheduleOverrideRequest$Outbound` instead. */
-  export type Outbound = OverridesCreateScheduleOverrideRequest$Outbound;
-}
-
 export function overridesCreateScheduleOverrideRequestToJSON(
   overridesCreateScheduleOverrideRequest:
     OverridesCreateScheduleOverrideRequest,
@@ -84,17 +54,6 @@ export function overridesCreateScheduleOverrideRequestToJSON(
   );
 }
 
-export function overridesCreateScheduleOverrideRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<OverridesCreateScheduleOverrideRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverridesCreateScheduleOverrideRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'OverridesCreateScheduleOverrideRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const OverridesCreateScheduleOverrideResponse$inboundSchema: z.ZodType<
   OverridesCreateScheduleOverrideResponse,
@@ -103,46 +62,6 @@ export const OverridesCreateScheduleOverrideResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4OverrideResponse$inboundSchema,
 });
-
-/** @internal */
-export type OverridesCreateScheduleOverrideResponse$Outbound = {
-  data: models.V4OverrideResponse$Outbound;
-};
-
-/** @internal */
-export const OverridesCreateScheduleOverrideResponse$outboundSchema: z.ZodType<
-  OverridesCreateScheduleOverrideResponse$Outbound,
-  z.ZodTypeDef,
-  OverridesCreateScheduleOverrideResponse
-> = z.object({
-  data: models.V4OverrideResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverridesCreateScheduleOverrideResponse$ {
-  /** @deprecated use `OverridesCreateScheduleOverrideResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    OverridesCreateScheduleOverrideResponse$inboundSchema;
-  /** @deprecated use `OverridesCreateScheduleOverrideResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    OverridesCreateScheduleOverrideResponse$outboundSchema;
-  /** @deprecated use `OverridesCreateScheduleOverrideResponse$Outbound` instead. */
-  export type Outbound = OverridesCreateScheduleOverrideResponse$Outbound;
-}
-
-export function overridesCreateScheduleOverrideResponseToJSON(
-  overridesCreateScheduleOverrideResponse:
-    OverridesCreateScheduleOverrideResponse,
-): string {
-  return JSON.stringify(
-    OverridesCreateScheduleOverrideResponse$outboundSchema.parse(
-      overridesCreateScheduleOverrideResponse,
-    ),
-  );
-}
 
 export function overridesCreateScheduleOverrideResponseFromJSON(
   jsonString: string,

@@ -23,24 +23,6 @@ export type MaintenanceModeCreateOrUpdateMaintenanceModeResponse = {
 };
 
 /** @internal */
-export const MaintenanceModeCreateOrUpdateMaintenanceModeRequest$inboundSchema:
-  z.ZodType<
-    MaintenanceModeCreateOrUpdateMaintenanceModeRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-    "V3.Services.MaintenanceMode.CreateOrUpdateMaintenanceModeRequest":
-      models
-        .V3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.Services.MaintenanceMode.CreateOrUpdateMaintenanceModeRequest":
-        "v3ServicesMaintenanceModeCreateOrUpdateMaintenanceModeRequest",
-    });
-  });
-
-/** @internal */
 export type MaintenanceModeCreateOrUpdateMaintenanceModeRequest$Outbound = {
   serviceID: string;
   "V3.Services.MaintenanceMode.CreateOrUpdateMaintenanceModeRequest":
@@ -65,22 +47,6 @@ export const MaintenanceModeCreateOrUpdateMaintenanceModeRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaintenanceModeCreateOrUpdateMaintenanceModeRequest$ {
-  /** @deprecated use `MaintenanceModeCreateOrUpdateMaintenanceModeRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    MaintenanceModeCreateOrUpdateMaintenanceModeRequest$inboundSchema;
-  /** @deprecated use `MaintenanceModeCreateOrUpdateMaintenanceModeRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    MaintenanceModeCreateOrUpdateMaintenanceModeRequest$outboundSchema;
-  /** @deprecated use `MaintenanceModeCreateOrUpdateMaintenanceModeRequest$Outbound` instead. */
-  export type Outbound =
-    MaintenanceModeCreateOrUpdateMaintenanceModeRequest$Outbound;
-}
-
 export function maintenanceModeCreateOrUpdateMaintenanceModeRequestToJSON(
   maintenanceModeCreateOrUpdateMaintenanceModeRequest:
     MaintenanceModeCreateOrUpdateMaintenanceModeRequest,
@@ -89,22 +55,6 @@ export function maintenanceModeCreateOrUpdateMaintenanceModeRequestToJSON(
     MaintenanceModeCreateOrUpdateMaintenanceModeRequest$outboundSchema.parse(
       maintenanceModeCreateOrUpdateMaintenanceModeRequest,
     ),
-  );
-}
-
-export function maintenanceModeCreateOrUpdateMaintenanceModeRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  MaintenanceModeCreateOrUpdateMaintenanceModeRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      MaintenanceModeCreateOrUpdateMaintenanceModeRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'MaintenanceModeCreateOrUpdateMaintenanceModeRequest' from JSON`,
   );
 }
 
@@ -117,48 +67,6 @@ export const MaintenanceModeCreateOrUpdateMaintenanceModeResponse$inboundSchema:
   > = z.object({
     data: z.string(),
   });
-
-/** @internal */
-export type MaintenanceModeCreateOrUpdateMaintenanceModeResponse$Outbound = {
-  data: string;
-};
-
-/** @internal */
-export const MaintenanceModeCreateOrUpdateMaintenanceModeResponse$outboundSchema:
-  z.ZodType<
-    MaintenanceModeCreateOrUpdateMaintenanceModeResponse$Outbound,
-    z.ZodTypeDef,
-    MaintenanceModeCreateOrUpdateMaintenanceModeResponse
-  > = z.object({
-    data: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaintenanceModeCreateOrUpdateMaintenanceModeResponse$ {
-  /** @deprecated use `MaintenanceModeCreateOrUpdateMaintenanceModeResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    MaintenanceModeCreateOrUpdateMaintenanceModeResponse$inboundSchema;
-  /** @deprecated use `MaintenanceModeCreateOrUpdateMaintenanceModeResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    MaintenanceModeCreateOrUpdateMaintenanceModeResponse$outboundSchema;
-  /** @deprecated use `MaintenanceModeCreateOrUpdateMaintenanceModeResponse$Outbound` instead. */
-  export type Outbound =
-    MaintenanceModeCreateOrUpdateMaintenanceModeResponse$Outbound;
-}
-
-export function maintenanceModeCreateOrUpdateMaintenanceModeResponseToJSON(
-  maintenanceModeCreateOrUpdateMaintenanceModeResponse:
-    MaintenanceModeCreateOrUpdateMaintenanceModeResponse,
-): string {
-  return JSON.stringify(
-    MaintenanceModeCreateOrUpdateMaintenanceModeResponse$outboundSchema.parse(
-      maintenanceModeCreateOrUpdateMaintenanceModeResponse,
-    ),
-  );
-}
 
 export function maintenanceModeCreateOrUpdateMaintenanceModeResponseFromJSON(
   jsonString: string,

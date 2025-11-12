@@ -10,8 +10,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4SquadsSquadMember,
   V4SquadsSquadMember$inboundSchema,
-  V4SquadsSquadMember$Outbound,
-  V4SquadsSquadMember$outboundSchema,
 } from "./v4squadssquadmember.js";
 
 export type V4SquadsCreateSquadResponse = {
@@ -47,64 +45,6 @@ export const V4SquadsCreateSquadResponse$inboundSchema: z.ZodType<
     "created_by": "createdBy",
   });
 });
-
-/** @internal */
-export type V4SquadsCreateSquadResponse$Outbound = {
-  organization_id: string;
-  owner_id: string;
-  id: string;
-  name: string;
-  slug: string;
-  members: Array<V4SquadsSquadMember$Outbound>;
-  created_at: string;
-  created_by: string;
-};
-
-/** @internal */
-export const V4SquadsCreateSquadResponse$outboundSchema: z.ZodType<
-  V4SquadsCreateSquadResponse$Outbound,
-  z.ZodTypeDef,
-  V4SquadsCreateSquadResponse
-> = z.object({
-  organizationId: z.string(),
-  ownerId: z.string(),
-  id: z.string(),
-  name: z.string(),
-  slug: z.string(),
-  members: z.array(V4SquadsSquadMember$outboundSchema),
-  createdAt: z.string(),
-  createdBy: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    organizationId: "organization_id",
-    ownerId: "owner_id",
-    createdAt: "created_at",
-    createdBy: "created_by",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4SquadsCreateSquadResponse$ {
-  /** @deprecated use `V4SquadsCreateSquadResponse$inboundSchema` instead. */
-  export const inboundSchema = V4SquadsCreateSquadResponse$inboundSchema;
-  /** @deprecated use `V4SquadsCreateSquadResponse$outboundSchema` instead. */
-  export const outboundSchema = V4SquadsCreateSquadResponse$outboundSchema;
-  /** @deprecated use `V4SquadsCreateSquadResponse$Outbound` instead. */
-  export type Outbound = V4SquadsCreateSquadResponse$Outbound;
-}
-
-export function v4SquadsCreateSquadResponseToJSON(
-  v4SquadsCreateSquadResponse: V4SquadsCreateSquadResponse,
-): string {
-  return JSON.stringify(
-    V4SquadsCreateSquadResponse$outboundSchema.parse(
-      v4SquadsCreateSquadResponse,
-    ),
-  );
-}
 
 export function v4SquadsCreateSquadResponseFromJSON(
   jsonString: string,

@@ -29,51 +29,6 @@ export const V3WorkflowsUpdateActionsOrderResponseData$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type V3WorkflowsUpdateActionsOrderResponseData$Outbound = {
-  action_order: Array<number>;
-};
-
-/** @internal */
-export const V3WorkflowsUpdateActionsOrderResponseData$outboundSchema:
-  z.ZodType<
-    V3WorkflowsUpdateActionsOrderResponseData$Outbound,
-    z.ZodTypeDef,
-    V3WorkflowsUpdateActionsOrderResponseData
-  > = z.object({
-    actionOrder: z.array(z.number().int()),
-  }).transform((v) => {
-    return remap$(v, {
-      actionOrder: "action_order",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsUpdateActionsOrderResponseData$ {
-  /** @deprecated use `V3WorkflowsUpdateActionsOrderResponseData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsUpdateActionsOrderResponseData$inboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateActionsOrderResponseData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsUpdateActionsOrderResponseData$outboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateActionsOrderResponseData$Outbound` instead. */
-  export type Outbound = V3WorkflowsUpdateActionsOrderResponseData$Outbound;
-}
-
-export function v3WorkflowsUpdateActionsOrderResponseDataToJSON(
-  v3WorkflowsUpdateActionsOrderResponseData:
-    V3WorkflowsUpdateActionsOrderResponseData,
-): string {
-  return JSON.stringify(
-    V3WorkflowsUpdateActionsOrderResponseData$outboundSchema.parse(
-      v3WorkflowsUpdateActionsOrderResponseData,
-    ),
-  );
-}
-
 export function v3WorkflowsUpdateActionsOrderResponseDataFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -98,45 +53,6 @@ export const V3WorkflowsUpdateActionsOrderResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => V3WorkflowsUpdateActionsOrderResponseData$inboundSchema),
 });
-
-/** @internal */
-export type V3WorkflowsUpdateActionsOrderResponse$Outbound = {
-  data: V3WorkflowsUpdateActionsOrderResponseData$Outbound;
-};
-
-/** @internal */
-export const V3WorkflowsUpdateActionsOrderResponse$outboundSchema: z.ZodType<
-  V3WorkflowsUpdateActionsOrderResponse$Outbound,
-  z.ZodTypeDef,
-  V3WorkflowsUpdateActionsOrderResponse
-> = z.object({
-  data: z.lazy(() => V3WorkflowsUpdateActionsOrderResponseData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsUpdateActionsOrderResponse$ {
-  /** @deprecated use `V3WorkflowsUpdateActionsOrderResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsUpdateActionsOrderResponse$inboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateActionsOrderResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsUpdateActionsOrderResponse$outboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateActionsOrderResponse$Outbound` instead. */
-  export type Outbound = V3WorkflowsUpdateActionsOrderResponse$Outbound;
-}
-
-export function v3WorkflowsUpdateActionsOrderResponseToJSON(
-  v3WorkflowsUpdateActionsOrderResponse: V3WorkflowsUpdateActionsOrderResponse,
-): string {
-  return JSON.stringify(
-    V3WorkflowsUpdateActionsOrderResponse$outboundSchema.parse(
-      v3WorkflowsUpdateActionsOrderResponse,
-    ),
-  );
-}
 
 export function v3WorkflowsUpdateActionsOrderResponseFromJSON(
   jsonString: string,

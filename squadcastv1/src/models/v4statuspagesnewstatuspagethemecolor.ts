@@ -21,7 +21,6 @@ export const V4StatusPagesNewStatusPageThemeColor$inboundSchema: z.ZodType<
   primary: z.string().optional(),
   secondary: z.string().optional(),
 });
-
 /** @internal */
 export type V4StatusPagesNewStatusPageThemeColor$Outbound = {
   primary?: string | undefined;
@@ -38,21 +37,6 @@ export const V4StatusPagesNewStatusPageThemeColor$outboundSchema: z.ZodType<
   secondary: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesNewStatusPageThemeColor$ {
-  /** @deprecated use `V4StatusPagesNewStatusPageThemeColor$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesNewStatusPageThemeColor$inboundSchema;
-  /** @deprecated use `V4StatusPagesNewStatusPageThemeColor$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesNewStatusPageThemeColor$outboundSchema;
-  /** @deprecated use `V4StatusPagesNewStatusPageThemeColor$Outbound` instead. */
-  export type Outbound = V4StatusPagesNewStatusPageThemeColor$Outbound;
-}
-
 export function v4StatusPagesNewStatusPageThemeColorToJSON(
   v4StatusPagesNewStatusPageThemeColor: V4StatusPagesNewStatusPageThemeColor,
 ): string {
@@ -62,7 +46,6 @@ export function v4StatusPagesNewStatusPageThemeColorToJSON(
     ),
   );
 }
-
 export function v4StatusPagesNewStatusPageThemeColorFromJSON(
   jsonString: string,
 ): SafeParseResult<V4StatusPagesNewStatusPageThemeColor, SDKValidationError> {

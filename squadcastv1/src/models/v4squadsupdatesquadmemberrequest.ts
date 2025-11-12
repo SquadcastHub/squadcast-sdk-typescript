@@ -3,22 +3,10 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V4SquadsUpdateSquadMemberRequest = {
   role: string;
 };
-
-/** @internal */
-export const V4SquadsUpdateSquadMemberRequest$inboundSchema: z.ZodType<
-  V4SquadsUpdateSquadMemberRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  role: z.string(),
-});
 
 /** @internal */
 export type V4SquadsUpdateSquadMemberRequest$Outbound = {
@@ -34,19 +22,6 @@ export const V4SquadsUpdateSquadMemberRequest$outboundSchema: z.ZodType<
   role: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4SquadsUpdateSquadMemberRequest$ {
-  /** @deprecated use `V4SquadsUpdateSquadMemberRequest$inboundSchema` instead. */
-  export const inboundSchema = V4SquadsUpdateSquadMemberRequest$inboundSchema;
-  /** @deprecated use `V4SquadsUpdateSquadMemberRequest$outboundSchema` instead. */
-  export const outboundSchema = V4SquadsUpdateSquadMemberRequest$outboundSchema;
-  /** @deprecated use `V4SquadsUpdateSquadMemberRequest$Outbound` instead. */
-  export type Outbound = V4SquadsUpdateSquadMemberRequest$Outbound;
-}
-
 export function v4SquadsUpdateSquadMemberRequestToJSON(
   v4SquadsUpdateSquadMemberRequest: V4SquadsUpdateSquadMemberRequest,
 ): string {
@@ -54,15 +29,5 @@ export function v4SquadsUpdateSquadMemberRequestToJSON(
     V4SquadsUpdateSquadMemberRequest$outboundSchema.parse(
       v4SquadsUpdateSquadMemberRequest,
     ),
-  );
-}
-
-export function v4SquadsUpdateSquadMemberRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V4SquadsUpdateSquadMemberRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V4SquadsUpdateSquadMemberRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V4SquadsUpdateSquadMemberRequest' from JSON`,
   );
 }

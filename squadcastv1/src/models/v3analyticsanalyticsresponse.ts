@@ -22,45 +22,6 @@ export const V3AnalyticsAnalyticsResponse$inboundSchema: z.ZodType<
   mttr: z.number(),
 });
 
-/** @internal */
-export type V3AnalyticsAnalyticsResponse$Outbound = {
-  mtta: number;
-  mttr: number;
-};
-
-/** @internal */
-export const V3AnalyticsAnalyticsResponse$outboundSchema: z.ZodType<
-  V3AnalyticsAnalyticsResponse$Outbound,
-  z.ZodTypeDef,
-  V3AnalyticsAnalyticsResponse
-> = z.object({
-  mtta: z.number(),
-  mttr: z.number(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3AnalyticsAnalyticsResponse$ {
-  /** @deprecated use `V3AnalyticsAnalyticsResponse$inboundSchema` instead. */
-  export const inboundSchema = V3AnalyticsAnalyticsResponse$inboundSchema;
-  /** @deprecated use `V3AnalyticsAnalyticsResponse$outboundSchema` instead. */
-  export const outboundSchema = V3AnalyticsAnalyticsResponse$outboundSchema;
-  /** @deprecated use `V3AnalyticsAnalyticsResponse$Outbound` instead. */
-  export type Outbound = V3AnalyticsAnalyticsResponse$Outbound;
-}
-
-export function v3AnalyticsAnalyticsResponseToJSON(
-  v3AnalyticsAnalyticsResponse: V3AnalyticsAnalyticsResponse,
-): string {
-  return JSON.stringify(
-    V3AnalyticsAnalyticsResponse$outboundSchema.parse(
-      v3AnalyticsAnalyticsResponse,
-    ),
-  );
-}
-
 export function v3AnalyticsAnalyticsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V3AnalyticsAnalyticsResponse, SDKValidationError> {

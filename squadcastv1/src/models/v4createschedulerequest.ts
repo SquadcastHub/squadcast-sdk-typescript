@@ -3,16 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
-import {
-  V4Tag,
-  V4Tag$inboundSchema,
-  V4Tag$Outbound,
-  V4Tag$outboundSchema,
-} from "./v4tag.js";
+import { V4Tag, V4Tag$Outbound, V4Tag$outboundSchema } from "./v4tag.js";
 
 export const V4CreateScheduleRequestOwnerType = {
   User: "user",
@@ -33,40 +25,9 @@ export type V4CreateScheduleRequest = {
 };
 
 /** @internal */
-export const V4CreateScheduleRequestOwnerType$inboundSchema: z.ZodNativeEnum<
-  typeof V4CreateScheduleRequestOwnerType
-> = z.nativeEnum(V4CreateScheduleRequestOwnerType);
-
-/** @internal */
 export const V4CreateScheduleRequestOwnerType$outboundSchema: z.ZodNativeEnum<
   typeof V4CreateScheduleRequestOwnerType
-> = V4CreateScheduleRequestOwnerType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4CreateScheduleRequestOwnerType$ {
-  /** @deprecated use `V4CreateScheduleRequestOwnerType$inboundSchema` instead. */
-  export const inboundSchema = V4CreateScheduleRequestOwnerType$inboundSchema;
-  /** @deprecated use `V4CreateScheduleRequestOwnerType$outboundSchema` instead. */
-  export const outboundSchema = V4CreateScheduleRequestOwnerType$outboundSchema;
-}
-
-/** @internal */
-export const V4CreateScheduleRequest$inboundSchema: z.ZodType<
-  V4CreateScheduleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  description: z.string(),
-  teamID: z.string(),
-  ownerID: z.string(),
-  ownerType: V4CreateScheduleRequestOwnerType$inboundSchema,
-  timeZone: z.string(),
-  tags: z.array(V4Tag$inboundSchema),
-});
+> = z.nativeEnum(V4CreateScheduleRequestOwnerType);
 
 /** @internal */
 export type V4CreateScheduleRequest$Outbound = {
@@ -94,33 +55,10 @@ export const V4CreateScheduleRequest$outboundSchema: z.ZodType<
   tags: z.array(V4Tag$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4CreateScheduleRequest$ {
-  /** @deprecated use `V4CreateScheduleRequest$inboundSchema` instead. */
-  export const inboundSchema = V4CreateScheduleRequest$inboundSchema;
-  /** @deprecated use `V4CreateScheduleRequest$outboundSchema` instead. */
-  export const outboundSchema = V4CreateScheduleRequest$outboundSchema;
-  /** @deprecated use `V4CreateScheduleRequest$Outbound` instead. */
-  export type Outbound = V4CreateScheduleRequest$Outbound;
-}
-
 export function v4CreateScheduleRequestToJSON(
   v4CreateScheduleRequest: V4CreateScheduleRequest,
 ): string {
   return JSON.stringify(
     V4CreateScheduleRequest$outboundSchema.parse(v4CreateScheduleRequest),
-  );
-}
-
-export function v4CreateScheduleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V4CreateScheduleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V4CreateScheduleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V4CreateScheduleRequest' from JSON`,
   );
 }

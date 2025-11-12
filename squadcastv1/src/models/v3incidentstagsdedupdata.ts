@@ -22,43 +22,6 @@ export const V3IncidentsTagsDedupData$inboundSchema: z.ZodType<
   hash: z.string().optional(),
 });
 
-/** @internal */
-export type V3IncidentsTagsDedupData$Outbound = {
-  key?: string | undefined;
-  hash?: string | undefined;
-};
-
-/** @internal */
-export const V3IncidentsTagsDedupData$outboundSchema: z.ZodType<
-  V3IncidentsTagsDedupData$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsTagsDedupData
-> = z.object({
-  key: z.string().optional(),
-  hash: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsDedupData$ {
-  /** @deprecated use `V3IncidentsTagsDedupData$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsTagsDedupData$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsDedupData$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsTagsDedupData$outboundSchema;
-  /** @deprecated use `V3IncidentsTagsDedupData$Outbound` instead. */
-  export type Outbound = V3IncidentsTagsDedupData$Outbound;
-}
-
-export function v3IncidentsTagsDedupDataToJSON(
-  v3IncidentsTagsDedupData: V3IncidentsTagsDedupData,
-): string {
-  return JSON.stringify(
-    V3IncidentsTagsDedupData$outboundSchema.parse(v3IncidentsTagsDedupData),
-  );
-}
-
 export function v3IncidentsTagsDedupDataFromJSON(
   jsonString: string,
 ): SafeParseResult<V3IncidentsTagsDedupData, SDKValidationError> {

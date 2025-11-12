@@ -10,14 +10,10 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3UsersContact,
   V3UsersContact$inboundSchema,
-  V3UsersContact$Outbound,
-  V3UsersContact$outboundSchema,
 } from "./v3userscontact.js";
 import {
   V3UsersNotificationRule,
   V3UsersNotificationRule$inboundSchema,
-  V3UsersNotificationRule$Outbound,
-  V3UsersNotificationRule$outboundSchema,
 } from "./v3usersnotificationrule.js";
 
 export type V3UsersUserResponse = {
@@ -72,81 +68,6 @@ export const V3UsersUserResponse$inboundSchema: z.ZodType<
     "role_id": "roleId",
   });
 });
-
-/** @internal */
-export type V3UsersUserResponse$Outbound = {
-  id: string;
-  first_name: string;
-  last_name: string;
-  username_for_display: string;
-  email: string;
-  contact: V3UsersContact$Outbound;
-  secondary_emails: Array<string> | null;
-  email_verified: boolean;
-  time_zone: string;
-  title: string;
-  bio: string;
-  notification_rules: Array<V3UsersNotificationRule$Outbound>;
-  user_image: boolean;
-  role_id?: string | undefined;
-  role?: string | undefined;
-};
-
-/** @internal */
-export const V3UsersUserResponse$outboundSchema: z.ZodType<
-  V3UsersUserResponse$Outbound,
-  z.ZodTypeDef,
-  V3UsersUserResponse
-> = z.object({
-  id: z.string(),
-  firstName: z.string(),
-  lastName: z.string(),
-  usernameForDisplay: z.string(),
-  email: z.string(),
-  contact: V3UsersContact$outboundSchema,
-  secondaryEmails: z.nullable(z.array(z.string())),
-  emailVerified: z.boolean(),
-  timeZone: z.string(),
-  title: z.string(),
-  bio: z.string(),
-  notificationRules: z.array(V3UsersNotificationRule$outboundSchema),
-  userImage: z.boolean(),
-  roleId: z.string().optional(),
-  role: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    firstName: "first_name",
-    lastName: "last_name",
-    usernameForDisplay: "username_for_display",
-    secondaryEmails: "secondary_emails",
-    emailVerified: "email_verified",
-    timeZone: "time_zone",
-    notificationRules: "notification_rules",
-    userImage: "user_image",
-    roleId: "role_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3UsersUserResponse$ {
-  /** @deprecated use `V3UsersUserResponse$inboundSchema` instead. */
-  export const inboundSchema = V3UsersUserResponse$inboundSchema;
-  /** @deprecated use `V3UsersUserResponse$outboundSchema` instead. */
-  export const outboundSchema = V3UsersUserResponse$outboundSchema;
-  /** @deprecated use `V3UsersUserResponse$Outbound` instead. */
-  export type Outbound = V3UsersUserResponse$Outbound;
-}
-
-export function v3UsersUserResponseToJSON(
-  v3UsersUserResponse: V3UsersUserResponse,
-): string {
-  return JSON.stringify(
-    V3UsersUserResponse$outboundSchema.parse(v3UsersUserResponse),
-  );
-}
 
 export function v3UsersUserResponseFromJSON(
   jsonString: string,

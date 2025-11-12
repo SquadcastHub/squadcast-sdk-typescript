@@ -39,41 +39,6 @@ export const V3IncidentsIncidentEventResponseTags$inboundSchema: z.ZodType<
   unknown
 > = z.object({});
 
-/** @internal */
-export type V3IncidentsIncidentEventResponseTags$Outbound = {};
-
-/** @internal */
-export const V3IncidentsIncidentEventResponseTags$outboundSchema: z.ZodType<
-  V3IncidentsIncidentEventResponseTags$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsIncidentEventResponseTags
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentEventResponseTags$ {
-  /** @deprecated use `V3IncidentsIncidentEventResponseTags$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsIncidentEventResponseTags$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentEventResponseTags$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIncidentEventResponseTags$outboundSchema;
-  /** @deprecated use `V3IncidentsIncidentEventResponseTags$Outbound` instead. */
-  export type Outbound = V3IncidentsIncidentEventResponseTags$Outbound;
-}
-
-export function v3IncidentsIncidentEventResponseTagsToJSON(
-  v3IncidentsIncidentEventResponseTags: V3IncidentsIncidentEventResponseTags,
-): string {
-  return JSON.stringify(
-    V3IncidentsIncidentEventResponseTags$outboundSchema.parse(
-      v3IncidentsIncidentEventResponseTags,
-    ),
-  );
-}
-
 export function v3IncidentsIncidentEventResponseTagsFromJSON(
   jsonString: string,
 ): SafeParseResult<V3IncidentsIncidentEventResponseTags, SDKValidationError> {
@@ -102,51 +67,6 @@ export const DeduplicationReason$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type DeduplicationReason$Outbound = {
-  matched_event_id: string;
-  evaluated_expression: string;
-  time_window: number;
-};
-
-/** @internal */
-export const DeduplicationReason$outboundSchema: z.ZodType<
-  DeduplicationReason$Outbound,
-  z.ZodTypeDef,
-  DeduplicationReason
-> = z.object({
-  matchedEventId: z.string(),
-  evaluatedExpression: z.string(),
-  timeWindow: z.number().int(),
-}).transform((v) => {
-  return remap$(v, {
-    matchedEventId: "matched_event_id",
-    evaluatedExpression: "evaluated_expression",
-    timeWindow: "time_window",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DeduplicationReason$ {
-  /** @deprecated use `DeduplicationReason$inboundSchema` instead. */
-  export const inboundSchema = DeduplicationReason$inboundSchema;
-  /** @deprecated use `DeduplicationReason$outboundSchema` instead. */
-  export const outboundSchema = DeduplicationReason$outboundSchema;
-  /** @deprecated use `DeduplicationReason$Outbound` instead. */
-  export type Outbound = DeduplicationReason$Outbound;
-}
-
-export function deduplicationReasonToJSON(
-  deduplicationReason: DeduplicationReason,
-): string {
-  return JSON.stringify(
-    DeduplicationReason$outboundSchema.parse(deduplicationReason),
-  );
-}
-
 export function deduplicationReasonFromJSON(
   jsonString: string,
 ): SafeParseResult<DeduplicationReason, SDKValidationError> {
@@ -160,33 +80,6 @@ export function deduplicationReasonFromJSON(
 /** @internal */
 export const Payload$inboundSchema: z.ZodType<Payload, z.ZodTypeDef, unknown> =
   z.object({});
-
-/** @internal */
-export type Payload$Outbound = {};
-
-/** @internal */
-export const Payload$outboundSchema: z.ZodType<
-  Payload$Outbound,
-  z.ZodTypeDef,
-  Payload
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Payload$ {
-  /** @deprecated use `Payload$inboundSchema` instead. */
-  export const inboundSchema = Payload$inboundSchema;
-  /** @deprecated use `Payload$outboundSchema` instead. */
-  export const outboundSchema = Payload$outboundSchema;
-  /** @deprecated use `Payload$Outbound` instead. */
-  export type Outbound = Payload$Outbound;
-}
-
-export function payloadToJSON(payload: Payload): string {
-  return JSON.stringify(Payload$outboundSchema.parse(payload));
-}
 
 export function payloadFromJSON(
   jsonString: string,
@@ -225,67 +118,6 @@ export const V3IncidentsIncidentEventResponse$inboundSchema: z.ZodType<
     "deduplication_reason": "deduplicationReason",
   });
 });
-
-/** @internal */
-export type V3IncidentsIncidentEventResponse$Outbound = {
-  incident_id: string;
-  alert_source_id: string;
-  message: string;
-  description: string;
-  time_of_creation: string;
-  tags: V3IncidentsIncidentEventResponseTags$Outbound | null;
-  deduplication_reason?: DeduplicationReason$Outbound | undefined;
-  payload: Payload$Outbound;
-};
-
-/** @internal */
-export const V3IncidentsIncidentEventResponse$outboundSchema: z.ZodType<
-  V3IncidentsIncidentEventResponse$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsIncidentEventResponse
-> = z.object({
-  incidentId: z.string(),
-  alertSourceId: z.string(),
-  message: z.string(),
-  description: z.string(),
-  timeOfCreation: z.date().transform(v => v.toISOString()),
-  tags: z.nullable(
-    z.lazy(() => V3IncidentsIncidentEventResponseTags$outboundSchema),
-  ),
-  deduplicationReason: z.lazy(() => DeduplicationReason$outboundSchema)
-    .optional(),
-  payload: z.lazy(() => Payload$outboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    incidentId: "incident_id",
-    alertSourceId: "alert_source_id",
-    timeOfCreation: "time_of_creation",
-    deduplicationReason: "deduplication_reason",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentEventResponse$ {
-  /** @deprecated use `V3IncidentsIncidentEventResponse$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsIncidentEventResponse$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentEventResponse$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsIncidentEventResponse$outboundSchema;
-  /** @deprecated use `V3IncidentsIncidentEventResponse$Outbound` instead. */
-  export type Outbound = V3IncidentsIncidentEventResponse$Outbound;
-}
-
-export function v3IncidentsIncidentEventResponseToJSON(
-  v3IncidentsIncidentEventResponse: V3IncidentsIncidentEventResponse,
-): string {
-  return JSON.stringify(
-    V3IncidentsIncidentEventResponse$outboundSchema.parse(
-      v3IncidentsIncidentEventResponse,
-    ),
-  );
-}
 
 export function v3IncidentsIncidentEventResponseFromJSON(
   jsonString: string,

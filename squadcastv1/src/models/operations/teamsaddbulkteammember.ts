@@ -32,21 +32,6 @@ export type TeamsAddBulkTeamMemberResponse = {
 };
 
 /** @internal */
-export const TeamsAddBulkTeamMemberRequest$inboundSchema: z.ZodType<
-  TeamsAddBulkTeamMemberRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  teamId: z.string(),
-  "V3.Teams.AddBulkTeamMemberRequest":
-    models.V3TeamsAddBulkTeamMemberRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Teams.AddBulkTeamMemberRequest": "v3TeamsAddBulkTeamMemberRequest",
-  });
-});
-
-/** @internal */
 export type TeamsAddBulkTeamMemberRequest$Outbound = {
   teamId: string;
   "V3.Teams.AddBulkTeamMemberRequest":
@@ -68,19 +53,6 @@ export const TeamsAddBulkTeamMemberRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsAddBulkTeamMemberRequest$ {
-  /** @deprecated use `TeamsAddBulkTeamMemberRequest$inboundSchema` instead. */
-  export const inboundSchema = TeamsAddBulkTeamMemberRequest$inboundSchema;
-  /** @deprecated use `TeamsAddBulkTeamMemberRequest$outboundSchema` instead. */
-  export const outboundSchema = TeamsAddBulkTeamMemberRequest$outboundSchema;
-  /** @deprecated use `TeamsAddBulkTeamMemberRequest$Outbound` instead. */
-  export type Outbound = TeamsAddBulkTeamMemberRequest$Outbound;
-}
-
 export function teamsAddBulkTeamMemberRequestToJSON(
   teamsAddBulkTeamMemberRequest: TeamsAddBulkTeamMemberRequest,
 ): string {
@@ -88,16 +60,6 @@ export function teamsAddBulkTeamMemberRequestToJSON(
     TeamsAddBulkTeamMemberRequest$outboundSchema.parse(
       teamsAddBulkTeamMemberRequest,
     ),
-  );
-}
-
-export function teamsAddBulkTeamMemberRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<TeamsAddBulkTeamMemberRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => TeamsAddBulkTeamMemberRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'TeamsAddBulkTeamMemberRequest' from JSON`,
   );
 }
 
@@ -112,44 +74,6 @@ export const Member$inboundSchema: z.ZodType<Member, z.ZodTypeDef, unknown> = z
       "role_ids": "roleIds",
     });
   });
-
-/** @internal */
-export type Member$Outbound = {
-  user_id?: string | undefined;
-  role_ids?: Array<string> | undefined;
-};
-
-/** @internal */
-export const Member$outboundSchema: z.ZodType<
-  Member$Outbound,
-  z.ZodTypeDef,
-  Member
-> = z.object({
-  userId: z.string().optional(),
-  roleIds: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    userId: "user_id",
-    roleIds: "role_ids",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Member$ {
-  /** @deprecated use `Member$inboundSchema` instead. */
-  export const inboundSchema = Member$inboundSchema;
-  /** @deprecated use `Member$outboundSchema` instead. */
-  export const outboundSchema = Member$outboundSchema;
-  /** @deprecated use `Member$Outbound` instead. */
-  export type Outbound = Member$Outbound;
-}
-
-export function memberToJSON(member: Member): string {
-  return JSON.stringify(Member$outboundSchema.parse(member));
-}
 
 export function memberFromJSON(
   jsonString: string,
@@ -175,47 +99,6 @@ export const TeamsAddBulkTeamMemberData$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type TeamsAddBulkTeamMemberData$Outbound = {
-  team_id: string;
-  members: Array<Member$Outbound>;
-};
-
-/** @internal */
-export const TeamsAddBulkTeamMemberData$outboundSchema: z.ZodType<
-  TeamsAddBulkTeamMemberData$Outbound,
-  z.ZodTypeDef,
-  TeamsAddBulkTeamMemberData
-> = z.object({
-  teamId: z.string(),
-  members: z.array(z.lazy(() => Member$outboundSchema)),
-}).transform((v) => {
-  return remap$(v, {
-    teamId: "team_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsAddBulkTeamMemberData$ {
-  /** @deprecated use `TeamsAddBulkTeamMemberData$inboundSchema` instead. */
-  export const inboundSchema = TeamsAddBulkTeamMemberData$inboundSchema;
-  /** @deprecated use `TeamsAddBulkTeamMemberData$outboundSchema` instead. */
-  export const outboundSchema = TeamsAddBulkTeamMemberData$outboundSchema;
-  /** @deprecated use `TeamsAddBulkTeamMemberData$Outbound` instead. */
-  export type Outbound = TeamsAddBulkTeamMemberData$Outbound;
-}
-
-export function teamsAddBulkTeamMemberDataToJSON(
-  teamsAddBulkTeamMemberData: TeamsAddBulkTeamMemberData,
-): string {
-  return JSON.stringify(
-    TeamsAddBulkTeamMemberData$outboundSchema.parse(teamsAddBulkTeamMemberData),
-  );
-}
-
 export function teamsAddBulkTeamMemberDataFromJSON(
   jsonString: string,
 ): SafeParseResult<TeamsAddBulkTeamMemberData, SDKValidationError> {
@@ -234,43 +117,6 @@ export const TeamsAddBulkTeamMemberResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => TeamsAddBulkTeamMemberData$inboundSchema),
 });
-
-/** @internal */
-export type TeamsAddBulkTeamMemberResponse$Outbound = {
-  data: TeamsAddBulkTeamMemberData$Outbound;
-};
-
-/** @internal */
-export const TeamsAddBulkTeamMemberResponse$outboundSchema: z.ZodType<
-  TeamsAddBulkTeamMemberResponse$Outbound,
-  z.ZodTypeDef,
-  TeamsAddBulkTeamMemberResponse
-> = z.object({
-  data: z.lazy(() => TeamsAddBulkTeamMemberData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsAddBulkTeamMemberResponse$ {
-  /** @deprecated use `TeamsAddBulkTeamMemberResponse$inboundSchema` instead. */
-  export const inboundSchema = TeamsAddBulkTeamMemberResponse$inboundSchema;
-  /** @deprecated use `TeamsAddBulkTeamMemberResponse$outboundSchema` instead. */
-  export const outboundSchema = TeamsAddBulkTeamMemberResponse$outboundSchema;
-  /** @deprecated use `TeamsAddBulkTeamMemberResponse$Outbound` instead. */
-  export type Outbound = TeamsAddBulkTeamMemberResponse$Outbound;
-}
-
-export function teamsAddBulkTeamMemberResponseToJSON(
-  teamsAddBulkTeamMemberResponse: TeamsAddBulkTeamMemberResponse,
-): string {
-  return JSON.stringify(
-    TeamsAddBulkTeamMemberResponse$outboundSchema.parse(
-      teamsAddBulkTeamMemberResponse,
-    ),
-  );
-}
 
 export function teamsAddBulkTeamMemberResponseFromJSON(
   jsonString: string,

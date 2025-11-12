@@ -10,8 +10,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3TeamsAbilities,
   V3TeamsAbilities$inboundSchema,
-  V3TeamsAbilities$Outbound,
-  V3TeamsAbilities$outboundSchema,
 } from "./v3teamsabilities.js";
 
 export type V3TeamsTeamMemberResponse = {
@@ -37,52 +35,6 @@ export const V3TeamsTeamMemberResponse$inboundSchema: z.ZodType<
     "role_ids": "roleIds",
   });
 });
-
-/** @internal */
-export type V3TeamsTeamMemberResponse$Outbound = {
-  user_id: string;
-  role?: string | undefined;
-  role_ids?: Array<string> | undefined;
-  abilities?: V3TeamsAbilities$Outbound | undefined;
-};
-
-/** @internal */
-export const V3TeamsTeamMemberResponse$outboundSchema: z.ZodType<
-  V3TeamsTeamMemberResponse$Outbound,
-  z.ZodTypeDef,
-  V3TeamsTeamMemberResponse
-> = z.object({
-  userId: z.string(),
-  role: z.string().optional(),
-  roleIds: z.array(z.string()).optional(),
-  abilities: V3TeamsAbilities$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    userId: "user_id",
-    roleIds: "role_ids",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsTeamMemberResponse$ {
-  /** @deprecated use `V3TeamsTeamMemberResponse$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsTeamMemberResponse$inboundSchema;
-  /** @deprecated use `V3TeamsTeamMemberResponse$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsTeamMemberResponse$outboundSchema;
-  /** @deprecated use `V3TeamsTeamMemberResponse$Outbound` instead. */
-  export type Outbound = V3TeamsTeamMemberResponse$Outbound;
-}
-
-export function v3TeamsTeamMemberResponseToJSON(
-  v3TeamsTeamMemberResponse: V3TeamsTeamMemberResponse,
-): string {
-  return JSON.stringify(
-    V3TeamsTeamMemberResponse$outboundSchema.parse(v3TeamsTeamMemberResponse),
-  );
-}
 
 export function v3TeamsTeamMemberResponseFromJSON(
   jsonString: string,

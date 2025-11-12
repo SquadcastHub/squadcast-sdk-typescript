@@ -9,14 +9,10 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4StatusPagesComponentGroupsComponent,
   V4StatusPagesComponentGroupsComponent$inboundSchema,
-  V4StatusPagesComponentGroupsComponent$Outbound,
-  V4StatusPagesComponentGroupsComponent$outboundSchema,
 } from "./v4statuspagescomponentgroupscomponent.js";
 import {
   V4StatusPagesComponentGroupsComponentStatus,
   V4StatusPagesComponentGroupsComponentStatus$inboundSchema,
-  V4StatusPagesComponentGroupsComponentStatus$Outbound,
-  V4StatusPagesComponentGroupsComponentStatus$outboundSchema,
 } from "./v4statuspagescomponentgroupscomponentstatus.js";
 
 export type V4StatusPagesComponentGroupsComponentGroupResponse = {
@@ -53,73 +49,6 @@ export const V4StatusPagesComponentGroupsComponentGroupResponse$inboundSchema:
       .optional(),
     isHidden: z.boolean().optional(),
   });
-
-/** @internal */
-export type V4StatusPagesComponentGroupsComponentGroupResponse$Outbound = {
-  id: number;
-  type: string;
-  name: string;
-  allowSubscription: boolean;
-  description?: string | undefined;
-  status?: V4StatusPagesComponentGroupsComponentStatus$Outbound | undefined;
-  underMaintenance?: boolean | undefined;
-  statusMaintenance?:
-    | V4StatusPagesComponentGroupsComponentStatus$Outbound
-    | undefined;
-  components?:
-    | Array<V4StatusPagesComponentGroupsComponent$Outbound>
-    | undefined;
-  isHidden?: boolean | undefined;
-};
-
-/** @internal */
-export const V4StatusPagesComponentGroupsComponentGroupResponse$outboundSchema:
-  z.ZodType<
-    V4StatusPagesComponentGroupsComponentGroupResponse$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesComponentGroupsComponentGroupResponse
-  > = z.object({
-    id: z.number().int(),
-    type: z.string(),
-    name: z.string(),
-    allowSubscription: z.boolean(),
-    description: z.string().optional(),
-    status: V4StatusPagesComponentGroupsComponentStatus$outboundSchema
-      .optional(),
-    underMaintenance: z.boolean().optional(),
-    statusMaintenance:
-      V4StatusPagesComponentGroupsComponentStatus$outboundSchema.optional(),
-    components: z.array(V4StatusPagesComponentGroupsComponent$outboundSchema)
-      .optional(),
-    isHidden: z.boolean().optional(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesComponentGroupsComponentGroupResponse$ {
-  /** @deprecated use `V4StatusPagesComponentGroupsComponentGroupResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesComponentGroupsComponentGroupResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsComponentGroupResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesComponentGroupsComponentGroupResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsComponentGroupResponse$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesComponentGroupsComponentGroupResponse$Outbound;
-}
-
-export function v4StatusPagesComponentGroupsComponentGroupResponseToJSON(
-  v4StatusPagesComponentGroupsComponentGroupResponse:
-    V4StatusPagesComponentGroupsComponentGroupResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesComponentGroupsComponentGroupResponse$outboundSchema.parse(
-      v4StatusPagesComponentGroupsComponentGroupResponse,
-    ),
-  );
-}
 
 export function v4StatusPagesComponentGroupsComponentGroupResponseFromJSON(
   jsonString: string,

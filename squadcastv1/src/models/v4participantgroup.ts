@@ -25,7 +25,6 @@ export const V4ParticipantGroup$inboundSchema: z.ZodType<
 > = z.object({
   participants: z.array(V4Participant$inboundSchema),
 });
-
 /** @internal */
 export type V4ParticipantGroup$Outbound = {
   participants: Array<V4Participant$Outbound>;
@@ -40,19 +39,6 @@ export const V4ParticipantGroup$outboundSchema: z.ZodType<
   participants: z.array(V4Participant$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4ParticipantGroup$ {
-  /** @deprecated use `V4ParticipantGroup$inboundSchema` instead. */
-  export const inboundSchema = V4ParticipantGroup$inboundSchema;
-  /** @deprecated use `V4ParticipantGroup$outboundSchema` instead. */
-  export const outboundSchema = V4ParticipantGroup$outboundSchema;
-  /** @deprecated use `V4ParticipantGroup$Outbound` instead. */
-  export type Outbound = V4ParticipantGroup$Outbound;
-}
-
 export function v4ParticipantGroupToJSON(
   v4ParticipantGroup: V4ParticipantGroup,
 ): string {
@@ -60,7 +46,6 @@ export function v4ParticipantGroupToJSON(
     V4ParticipantGroup$outboundSchema.parse(v4ParticipantGroup),
   );
 }
-
 export function v4ParticipantGroupFromJSON(
   jsonString: string,
 ): SafeParseResult<V4ParticipantGroup, SDKValidationError> {

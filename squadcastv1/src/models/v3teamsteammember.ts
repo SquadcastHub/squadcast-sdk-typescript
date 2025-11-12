@@ -10,8 +10,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3TeamsAbilities,
   V3TeamsAbilities$inboundSchema,
-  V3TeamsAbilities$Outbound,
-  V3TeamsAbilities$outboundSchema,
 } from "./v3teamsabilities.js";
 
 export type V3TeamsTeamMember = {
@@ -37,52 +35,6 @@ export const V3TeamsTeamMember$inboundSchema: z.ZodType<
     "role_ids": "roleIds",
   });
 });
-
-/** @internal */
-export type V3TeamsTeamMember$Outbound = {
-  user_id: string;
-  role?: string | undefined;
-  role_ids?: Array<string> | undefined;
-  abilities?: V3TeamsAbilities$Outbound | undefined;
-};
-
-/** @internal */
-export const V3TeamsTeamMember$outboundSchema: z.ZodType<
-  V3TeamsTeamMember$Outbound,
-  z.ZodTypeDef,
-  V3TeamsTeamMember
-> = z.object({
-  userId: z.string(),
-  role: z.string().optional(),
-  roleIds: z.array(z.string()).optional(),
-  abilities: V3TeamsAbilities$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    userId: "user_id",
-    roleIds: "role_ids",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsTeamMember$ {
-  /** @deprecated use `V3TeamsTeamMember$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsTeamMember$inboundSchema;
-  /** @deprecated use `V3TeamsTeamMember$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsTeamMember$outboundSchema;
-  /** @deprecated use `V3TeamsTeamMember$Outbound` instead. */
-  export type Outbound = V3TeamsTeamMember$Outbound;
-}
-
-export function v3TeamsTeamMemberToJSON(
-  v3TeamsTeamMember: V3TeamsTeamMember,
-): string {
-  return JSON.stringify(
-    V3TeamsTeamMember$outboundSchema.parse(v3TeamsTeamMember),
-  );
-}
 
 export function v3TeamsTeamMemberFromJSON(
   jsonString: string,

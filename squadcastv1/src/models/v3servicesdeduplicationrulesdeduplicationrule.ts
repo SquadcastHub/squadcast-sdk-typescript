@@ -4,13 +4,9 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesDeduplicationRulesExpressionBranch,
-  V3ServicesDeduplicationRulesExpressionBranch$inboundSchema,
   V3ServicesDeduplicationRulesExpressionBranch$Outbound,
   V3ServicesDeduplicationRulesExpressionBranch$outboundSchema,
 } from "./v3servicesdeduplicationrulesexpressionbranch.js";
@@ -36,56 +32,10 @@ export type V3ServicesDeduplicationRulesDeduplicationRule = {
 };
 
 /** @internal */
-export const V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit$inboundSchema:
-  z.ZodNativeEnum<
-    typeof V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit
-  > = z.nativeEnum(V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit);
-
-/** @internal */
 export const V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit$outboundSchema:
   z.ZodNativeEnum<
     typeof V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit
-  > = V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit$ {
-  /** @deprecated use `V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit$inboundSchema;
-  /** @deprecated use `V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit$outboundSchema;
-}
-
-/** @internal */
-export const V3ServicesDeduplicationRulesDeduplicationRule$inboundSchema:
-  z.ZodType<
-    V3ServicesDeduplicationRulesDeduplicationRule,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    expression: z.string(),
-    time_window: z.number().int(),
-    time_unit:
-      V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit$inboundSchema,
-    is_basic: z.boolean(),
-    basic_expression: z.array(
-      V3ServicesDeduplicationRulesExpressionBranch$inboundSchema,
-    ).optional(),
-    dependency_deduplication: z.boolean().optional(),
-    description: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "time_window": "timeWindow",
-      "time_unit": "timeUnit",
-      "is_basic": "isBasic",
-      "basic_expression": "basicExpression",
-      "dependency_deduplication": "dependencyDeduplication",
-    });
-  });
+  > = z.nativeEnum(V3ServicesDeduplicationRulesDeduplicationRuleTimeUnit);
 
 /** @internal */
 export type V3ServicesDeduplicationRulesDeduplicationRule$Outbound = {
@@ -127,21 +77,6 @@ export const V3ServicesDeduplicationRulesDeduplicationRule$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesDeduplicationRulesDeduplicationRule$ {
-  /** @deprecated use `V3ServicesDeduplicationRulesDeduplicationRule$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesDeduplicationRulesDeduplicationRule$inboundSchema;
-  /** @deprecated use `V3ServicesDeduplicationRulesDeduplicationRule$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesDeduplicationRulesDeduplicationRule$outboundSchema;
-  /** @deprecated use `V3ServicesDeduplicationRulesDeduplicationRule$Outbound` instead. */
-  export type Outbound = V3ServicesDeduplicationRulesDeduplicationRule$Outbound;
-}
-
 export function v3ServicesDeduplicationRulesDeduplicationRuleToJSON(
   v3ServicesDeduplicationRulesDeduplicationRule:
     V3ServicesDeduplicationRulesDeduplicationRule,
@@ -150,21 +85,5 @@ export function v3ServicesDeduplicationRulesDeduplicationRuleToJSON(
     V3ServicesDeduplicationRulesDeduplicationRule$outboundSchema.parse(
       v3ServicesDeduplicationRulesDeduplicationRule,
     ),
-  );
-}
-
-export function v3ServicesDeduplicationRulesDeduplicationRuleFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesDeduplicationRulesDeduplicationRule,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesDeduplicationRulesDeduplicationRule$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3ServicesDeduplicationRulesDeduplicationRule' from JSON`,
   );
 }

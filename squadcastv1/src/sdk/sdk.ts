@@ -4,6 +4,7 @@
 
 import { ClientSDK } from "../lib/sdks.js";
 import { Analytics } from "./analytics.js";
+import { AuditLogs } from "./auditlogs.js";
 import { CommunicationCards } from "./communicationcards.js";
 import { Components } from "./components.js";
 import { DedupKeyOverlays } from "./dedupkeyoverlays.js";
@@ -52,6 +53,11 @@ export class SquadcastSDK extends ClientSDK {
   private _analytics?: Analytics;
   get analytics(): Analytics {
     return (this._analytics ??= new Analytics(this._options));
+  }
+
+  private _auditLogs?: AuditLogs;
+  get auditLogs(): AuditLogs {
+    return (this._auditLogs ??= new AuditLogs(this._options));
   }
 
   private _escalationPolicies?: EscalationPolicies;

@@ -25,27 +25,6 @@ export type GlobalEventRulesCreateRuleResponse = {
 };
 
 /** @internal */
-export const GlobalEventRulesCreateRuleRequest$inboundSchema: z.ZodType<
-  GlobalEventRulesCreateRuleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  ger_id: z.number().int(),
-  alert_source_version: z.string(),
-  alert_source_shortname: z.string(),
-  "V3.GlobalEventRules.CreateOrUpdateRuleRequest":
-    models.V3GlobalEventRulesCreateOrUpdateRuleRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "ger_id": "gerId",
-    "alert_source_version": "alertSourceVersion",
-    "alert_source_shortname": "alertSourceShortname",
-    "V3.GlobalEventRules.CreateOrUpdateRuleRequest":
-      "v3GlobalEventRulesCreateOrUpdateRuleRequest",
-  });
-});
-
-/** @internal */
 export type GlobalEventRulesCreateRuleRequest$Outbound = {
   ger_id: number;
   alert_source_version: string;
@@ -75,20 +54,6 @@ export const GlobalEventRulesCreateRuleRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesCreateRuleRequest$ {
-  /** @deprecated use `GlobalEventRulesCreateRuleRequest$inboundSchema` instead. */
-  export const inboundSchema = GlobalEventRulesCreateRuleRequest$inboundSchema;
-  /** @deprecated use `GlobalEventRulesCreateRuleRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesCreateRuleRequest$outboundSchema;
-  /** @deprecated use `GlobalEventRulesCreateRuleRequest$Outbound` instead. */
-  export type Outbound = GlobalEventRulesCreateRuleRequest$Outbound;
-}
-
 export function globalEventRulesCreateRuleRequestToJSON(
   globalEventRulesCreateRuleRequest: GlobalEventRulesCreateRuleRequest,
 ): string {
@@ -96,16 +61,6 @@ export function globalEventRulesCreateRuleRequestToJSON(
     GlobalEventRulesCreateRuleRequest$outboundSchema.parse(
       globalEventRulesCreateRuleRequest,
     ),
-  );
-}
-
-export function globalEventRulesCreateRuleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GlobalEventRulesCreateRuleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GlobalEventRulesCreateRuleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GlobalEventRulesCreateRuleRequest' from JSON`,
   );
 }
 
@@ -117,44 +72,6 @@ export const GlobalEventRulesCreateRuleResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3GlobalEventRulesRulesetRuleResponse$inboundSchema,
 });
-
-/** @internal */
-export type GlobalEventRulesCreateRuleResponse$Outbound = {
-  data: models.V3GlobalEventRulesRulesetRuleResponse$Outbound;
-};
-
-/** @internal */
-export const GlobalEventRulesCreateRuleResponse$outboundSchema: z.ZodType<
-  GlobalEventRulesCreateRuleResponse$Outbound,
-  z.ZodTypeDef,
-  GlobalEventRulesCreateRuleResponse
-> = z.object({
-  data: models.V3GlobalEventRulesRulesetRuleResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesCreateRuleResponse$ {
-  /** @deprecated use `GlobalEventRulesCreateRuleResponse$inboundSchema` instead. */
-  export const inboundSchema = GlobalEventRulesCreateRuleResponse$inboundSchema;
-  /** @deprecated use `GlobalEventRulesCreateRuleResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesCreateRuleResponse$outboundSchema;
-  /** @deprecated use `GlobalEventRulesCreateRuleResponse$Outbound` instead. */
-  export type Outbound = GlobalEventRulesCreateRuleResponse$Outbound;
-}
-
-export function globalEventRulesCreateRuleResponseToJSON(
-  globalEventRulesCreateRuleResponse: GlobalEventRulesCreateRuleResponse,
-): string {
-  return JSON.stringify(
-    GlobalEventRulesCreateRuleResponse$outboundSchema.parse(
-      globalEventRulesCreateRuleResponse,
-    ),
-  );
-}
 
 export function globalEventRulesCreateRuleResponseFromJSON(
   jsonString: string,

@@ -28,41 +28,6 @@ export const SLOCreateSLOData$inboundSchema: z.ZodType<
   slo: models.V3SLOSLODetailedResponse$inboundSchema,
 });
 
-/** @internal */
-export type SLOCreateSLOData$Outbound = {
-  slo: models.V3SLOSLODetailedResponse$Outbound;
-};
-
-/** @internal */
-export const SLOCreateSLOData$outboundSchema: z.ZodType<
-  SLOCreateSLOData$Outbound,
-  z.ZodTypeDef,
-  SLOCreateSLOData
-> = z.object({
-  slo: models.V3SLOSLODetailedResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOCreateSLOData$ {
-  /** @deprecated use `SLOCreateSLOData$inboundSchema` instead. */
-  export const inboundSchema = SLOCreateSLOData$inboundSchema;
-  /** @deprecated use `SLOCreateSLOData$outboundSchema` instead. */
-  export const outboundSchema = SLOCreateSLOData$outboundSchema;
-  /** @deprecated use `SLOCreateSLOData$Outbound` instead. */
-  export type Outbound = SLOCreateSLOData$Outbound;
-}
-
-export function sloCreateSLODataToJSON(
-  sloCreateSLOData: SLOCreateSLOData,
-): string {
-  return JSON.stringify(
-    SLOCreateSLOData$outboundSchema.parse(sloCreateSLOData),
-  );
-}
-
 export function sloCreateSLODataFromJSON(
   jsonString: string,
 ): SafeParseResult<SLOCreateSLOData, SDKValidationError> {
@@ -81,41 +46,6 @@ export const SLOCreateSLOResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => SLOCreateSLOData$inboundSchema),
 });
-
-/** @internal */
-export type SLOCreateSLOResponse$Outbound = {
-  data: SLOCreateSLOData$Outbound;
-};
-
-/** @internal */
-export const SLOCreateSLOResponse$outboundSchema: z.ZodType<
-  SLOCreateSLOResponse$Outbound,
-  z.ZodTypeDef,
-  SLOCreateSLOResponse
-> = z.object({
-  data: z.lazy(() => SLOCreateSLOData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOCreateSLOResponse$ {
-  /** @deprecated use `SLOCreateSLOResponse$inboundSchema` instead. */
-  export const inboundSchema = SLOCreateSLOResponse$inboundSchema;
-  /** @deprecated use `SLOCreateSLOResponse$outboundSchema` instead. */
-  export const outboundSchema = SLOCreateSLOResponse$outboundSchema;
-  /** @deprecated use `SLOCreateSLOResponse$Outbound` instead. */
-  export type Outbound = SLOCreateSLOResponse$Outbound;
-}
-
-export function sloCreateSLOResponseToJSON(
-  sloCreateSLOResponse: SLOCreateSLOResponse,
-): string {
-  return JSON.stringify(
-    SLOCreateSLOResponse$outboundSchema.parse(sloCreateSLOResponse),
-  );
-}
 
 export function sloCreateSLOResponseFromJSON(
   jsonString: string,

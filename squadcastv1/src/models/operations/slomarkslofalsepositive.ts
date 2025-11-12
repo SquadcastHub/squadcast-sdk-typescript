@@ -31,13 +31,6 @@ export type SLOMarkSLOFalsePositiveResponse = {
 };
 
 /** @internal */
-export const SLOMarkSLOFalsePositiveRequestBody$inboundSchema: z.ZodType<
-  SLOMarkSLOFalsePositiveRequestBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
 export type SLOMarkSLOFalsePositiveRequestBody$Outbound = {};
 
 /** @internal */
@@ -46,20 +39,6 @@ export const SLOMarkSLOFalsePositiveRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   SLOMarkSLOFalsePositiveRequestBody
 > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOMarkSLOFalsePositiveRequestBody$ {
-  /** @deprecated use `SLOMarkSLOFalsePositiveRequestBody$inboundSchema` instead. */
-  export const inboundSchema = SLOMarkSLOFalsePositiveRequestBody$inboundSchema;
-  /** @deprecated use `SLOMarkSLOFalsePositiveRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    SLOMarkSLOFalsePositiveRequestBody$outboundSchema;
-  /** @deprecated use `SLOMarkSLOFalsePositiveRequestBody$Outbound` instead. */
-  export type Outbound = SLOMarkSLOFalsePositiveRequestBody$Outbound;
-}
 
 export function sloMarkSLOFalsePositiveRequestBodyToJSON(
   sloMarkSLOFalsePositiveRequestBody: SLOMarkSLOFalsePositiveRequestBody,
@@ -70,35 +49,6 @@ export function sloMarkSLOFalsePositiveRequestBodyToJSON(
     ),
   );
 }
-
-export function sloMarkSLOFalsePositiveRequestBodyFromJSON(
-  jsonString: string,
-): SafeParseResult<SLOMarkSLOFalsePositiveRequestBody, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      SLOMarkSLOFalsePositiveRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SLOMarkSLOFalsePositiveRequestBody' from JSON`,
-  );
-}
-
-/** @internal */
-export const SLOMarkSLOFalsePositiveRequest$inboundSchema: z.ZodType<
-  SLOMarkSLOFalsePositiveRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  sloID: z.number().int(),
-  incidentID: z.number().int(),
-  value: z.boolean(),
-  owner_id: z.string(),
-  RequestBody: z.lazy(() => SLOMarkSLOFalsePositiveRequestBody$inboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-    "RequestBody": "requestBody",
-  });
-});
 
 /** @internal */
 export type SLOMarkSLOFalsePositiveRequest$Outbound = {
@@ -127,19 +77,6 @@ export const SLOMarkSLOFalsePositiveRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOMarkSLOFalsePositiveRequest$ {
-  /** @deprecated use `SLOMarkSLOFalsePositiveRequest$inboundSchema` instead. */
-  export const inboundSchema = SLOMarkSLOFalsePositiveRequest$inboundSchema;
-  /** @deprecated use `SLOMarkSLOFalsePositiveRequest$outboundSchema` instead. */
-  export const outboundSchema = SLOMarkSLOFalsePositiveRequest$outboundSchema;
-  /** @deprecated use `SLOMarkSLOFalsePositiveRequest$Outbound` instead. */
-  export type Outbound = SLOMarkSLOFalsePositiveRequest$Outbound;
-}
-
 export function sloMarkSLOFalsePositiveRequestToJSON(
   sloMarkSLOFalsePositiveRequest: SLOMarkSLOFalsePositiveRequest,
 ): string {
@@ -147,16 +84,6 @@ export function sloMarkSLOFalsePositiveRequestToJSON(
     SLOMarkSLOFalsePositiveRequest$outboundSchema.parse(
       sloMarkSLOFalsePositiveRequest,
     ),
-  );
-}
-
-export function sloMarkSLOFalsePositiveRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SLOMarkSLOFalsePositiveRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SLOMarkSLOFalsePositiveRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SLOMarkSLOFalsePositiveRequest' from JSON`,
   );
 }
 
@@ -173,47 +100,6 @@ export const SLOMarkSLOFalsePositiveData$inboundSchema: z.ZodType<
     "slo_violating_incident": "sloViolatingIncident",
   });
 });
-
-/** @internal */
-export type SLOMarkSLOFalsePositiveData$Outbound = {
-  slo_violating_incident: models.V3SLOSLOViolatingIncidentResponse$Outbound;
-};
-
-/** @internal */
-export const SLOMarkSLOFalsePositiveData$outboundSchema: z.ZodType<
-  SLOMarkSLOFalsePositiveData$Outbound,
-  z.ZodTypeDef,
-  SLOMarkSLOFalsePositiveData
-> = z.object({
-  sloViolatingIncident: models.V3SLOSLOViolatingIncidentResponse$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    sloViolatingIncident: "slo_violating_incident",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOMarkSLOFalsePositiveData$ {
-  /** @deprecated use `SLOMarkSLOFalsePositiveData$inboundSchema` instead. */
-  export const inboundSchema = SLOMarkSLOFalsePositiveData$inboundSchema;
-  /** @deprecated use `SLOMarkSLOFalsePositiveData$outboundSchema` instead. */
-  export const outboundSchema = SLOMarkSLOFalsePositiveData$outboundSchema;
-  /** @deprecated use `SLOMarkSLOFalsePositiveData$Outbound` instead. */
-  export type Outbound = SLOMarkSLOFalsePositiveData$Outbound;
-}
-
-export function sloMarkSLOFalsePositiveDataToJSON(
-  sloMarkSLOFalsePositiveData: SLOMarkSLOFalsePositiveData,
-): string {
-  return JSON.stringify(
-    SLOMarkSLOFalsePositiveData$outboundSchema.parse(
-      sloMarkSLOFalsePositiveData,
-    ),
-  );
-}
 
 export function sloMarkSLOFalsePositiveDataFromJSON(
   jsonString: string,
@@ -233,43 +119,6 @@ export const SLOMarkSLOFalsePositiveResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => SLOMarkSLOFalsePositiveData$inboundSchema),
 });
-
-/** @internal */
-export type SLOMarkSLOFalsePositiveResponse$Outbound = {
-  data: SLOMarkSLOFalsePositiveData$Outbound;
-};
-
-/** @internal */
-export const SLOMarkSLOFalsePositiveResponse$outboundSchema: z.ZodType<
-  SLOMarkSLOFalsePositiveResponse$Outbound,
-  z.ZodTypeDef,
-  SLOMarkSLOFalsePositiveResponse
-> = z.object({
-  data: z.lazy(() => SLOMarkSLOFalsePositiveData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOMarkSLOFalsePositiveResponse$ {
-  /** @deprecated use `SLOMarkSLOFalsePositiveResponse$inboundSchema` instead. */
-  export const inboundSchema = SLOMarkSLOFalsePositiveResponse$inboundSchema;
-  /** @deprecated use `SLOMarkSLOFalsePositiveResponse$outboundSchema` instead. */
-  export const outboundSchema = SLOMarkSLOFalsePositiveResponse$outboundSchema;
-  /** @deprecated use `SLOMarkSLOFalsePositiveResponse$Outbound` instead. */
-  export type Outbound = SLOMarkSLOFalsePositiveResponse$Outbound;
-}
-
-export function sloMarkSLOFalsePositiveResponseToJSON(
-  sloMarkSLOFalsePositiveResponse: SLOMarkSLOFalsePositiveResponse,
-): string {
-  return JSON.stringify(
-    SLOMarkSLOFalsePositiveResponse$outboundSchema.parse(
-      sloMarkSLOFalsePositiveResponse,
-    ),
-  );
-}
 
 export function sloMarkSLOFalsePositiveResponseFromJSON(
   jsonString: string,

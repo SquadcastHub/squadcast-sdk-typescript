@@ -18,17 +18,6 @@ export type AdditionalRespondersRemoveAdditionalRespondersRequest = {
 export type AdditionalRespondersRemoveAdditionalRespondersResponseBody = {};
 
 /** @internal */
-export const AdditionalRespondersRemoveAdditionalRespondersRequest$inboundSchema:
-  z.ZodType<
-    AdditionalRespondersRemoveAdditionalRespondersRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incidentID: z.string(),
-    responderID: z.string(),
-  });
-
-/** @internal */
 export type AdditionalRespondersRemoveAdditionalRespondersRequest$Outbound = {
   incidentID: string;
   responderID: string;
@@ -45,22 +34,6 @@ export const AdditionalRespondersRemoveAdditionalRespondersRequest$outboundSchem
     responderID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AdditionalRespondersRemoveAdditionalRespondersRequest$ {
-  /** @deprecated use `AdditionalRespondersRemoveAdditionalRespondersRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    AdditionalRespondersRemoveAdditionalRespondersRequest$inboundSchema;
-  /** @deprecated use `AdditionalRespondersRemoveAdditionalRespondersRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    AdditionalRespondersRemoveAdditionalRespondersRequest$outboundSchema;
-  /** @deprecated use `AdditionalRespondersRemoveAdditionalRespondersRequest$Outbound` instead. */
-  export type Outbound =
-    AdditionalRespondersRemoveAdditionalRespondersRequest$Outbound;
-}
-
 export function additionalRespondersRemoveAdditionalRespondersRequestToJSON(
   additionalRespondersRemoveAdditionalRespondersRequest:
     AdditionalRespondersRemoveAdditionalRespondersRequest,
@@ -72,22 +45,6 @@ export function additionalRespondersRemoveAdditionalRespondersRequestToJSON(
   );
 }
 
-export function additionalRespondersRemoveAdditionalRespondersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  AdditionalRespondersRemoveAdditionalRespondersRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      AdditionalRespondersRemoveAdditionalRespondersRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'AdditionalRespondersRemoveAdditionalRespondersRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const AdditionalRespondersRemoveAdditionalRespondersResponseBody$inboundSchema:
   z.ZodType<
@@ -95,44 +52,6 @@ export const AdditionalRespondersRemoveAdditionalRespondersResponseBody$inboundS
     z.ZodTypeDef,
     unknown
   > = z.object({});
-
-/** @internal */
-export type AdditionalRespondersRemoveAdditionalRespondersResponseBody$Outbound =
-  {};
-
-/** @internal */
-export const AdditionalRespondersRemoveAdditionalRespondersResponseBody$outboundSchema:
-  z.ZodType<
-    AdditionalRespondersRemoveAdditionalRespondersResponseBody$Outbound,
-    z.ZodTypeDef,
-    AdditionalRespondersRemoveAdditionalRespondersResponseBody
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AdditionalRespondersRemoveAdditionalRespondersResponseBody$ {
-  /** @deprecated use `AdditionalRespondersRemoveAdditionalRespondersResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    AdditionalRespondersRemoveAdditionalRespondersResponseBody$inboundSchema;
-  /** @deprecated use `AdditionalRespondersRemoveAdditionalRespondersResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    AdditionalRespondersRemoveAdditionalRespondersResponseBody$outboundSchema;
-  /** @deprecated use `AdditionalRespondersRemoveAdditionalRespondersResponseBody$Outbound` instead. */
-  export type Outbound =
-    AdditionalRespondersRemoveAdditionalRespondersResponseBody$Outbound;
-}
-
-export function additionalRespondersRemoveAdditionalRespondersResponseBodyToJSON(
-  additionalRespondersRemoveAdditionalRespondersResponseBody:
-    AdditionalRespondersRemoveAdditionalRespondersResponseBody,
-): string {
-  return JSON.stringify(
-    AdditionalRespondersRemoveAdditionalRespondersResponseBody$outboundSchema
-      .parse(additionalRespondersRemoveAdditionalRespondersResponseBody),
-  );
-}
 
 export function additionalRespondersRemoveAdditionalRespondersResponseBodyFromJSON(
   jsonString: string,

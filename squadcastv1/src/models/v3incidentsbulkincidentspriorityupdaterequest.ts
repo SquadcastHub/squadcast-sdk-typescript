@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 /**
  * Request body for bulk updating incident priority.
@@ -15,21 +12,6 @@ export type V3IncidentsBulkIncidentsPriorityUpdateRequest = {
   incidentIds: Array<string>;
   priority: string;
 };
-
-/** @internal */
-export const V3IncidentsBulkIncidentsPriorityUpdateRequest$inboundSchema:
-  z.ZodType<
-    V3IncidentsBulkIncidentsPriorityUpdateRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incident_ids: z.array(z.string()),
-    priority: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      "incident_ids": "incidentIds",
-    });
-  });
 
 /** @internal */
 export type V3IncidentsBulkIncidentsPriorityUpdateRequest$Outbound = {
@@ -52,21 +34,6 @@ export const V3IncidentsBulkIncidentsPriorityUpdateRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsBulkIncidentsPriorityUpdateRequest$ {
-  /** @deprecated use `V3IncidentsBulkIncidentsPriorityUpdateRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsBulkIncidentsPriorityUpdateRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsBulkIncidentsPriorityUpdateRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsBulkIncidentsPriorityUpdateRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsBulkIncidentsPriorityUpdateRequest$Outbound` instead. */
-  export type Outbound = V3IncidentsBulkIncidentsPriorityUpdateRequest$Outbound;
-}
-
 export function v3IncidentsBulkIncidentsPriorityUpdateRequestToJSON(
   v3IncidentsBulkIncidentsPriorityUpdateRequest:
     V3IncidentsBulkIncidentsPriorityUpdateRequest,
@@ -75,21 +42,5 @@ export function v3IncidentsBulkIncidentsPriorityUpdateRequestToJSON(
     V3IncidentsBulkIncidentsPriorityUpdateRequest$outboundSchema.parse(
       v3IncidentsBulkIncidentsPriorityUpdateRequest,
     ),
-  );
-}
-
-export function v3IncidentsBulkIncidentsPriorityUpdateRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3IncidentsBulkIncidentsPriorityUpdateRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3IncidentsBulkIncidentsPriorityUpdateRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3IncidentsBulkIncidentsPriorityUpdateRequest' from JSON`,
   );
 }

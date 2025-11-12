@@ -58,45 +58,6 @@ export const V4StatusPagesStatusPageComponent$inboundSchema: z.ZodType<
   name: z.string(),
 });
 
-/** @internal */
-export type V4StatusPagesStatusPageComponent$Outbound = {
-  id: number;
-  name: string;
-};
-
-/** @internal */
-export const V4StatusPagesStatusPageComponent$outboundSchema: z.ZodType<
-  V4StatusPagesStatusPageComponent$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesStatusPageComponent
-> = z.object({
-  id: z.number().int(),
-  name: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesStatusPageComponent$ {
-  /** @deprecated use `V4StatusPagesStatusPageComponent$inboundSchema` instead. */
-  export const inboundSchema = V4StatusPagesStatusPageComponent$inboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPageComponent$outboundSchema` instead. */
-  export const outboundSchema = V4StatusPagesStatusPageComponent$outboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPageComponent$Outbound` instead. */
-  export type Outbound = V4StatusPagesStatusPageComponent$Outbound;
-}
-
-export function v4StatusPagesStatusPageComponentToJSON(
-  v4StatusPagesStatusPageComponent: V4StatusPagesStatusPageComponent,
-): string {
-  return JSON.stringify(
-    V4StatusPagesStatusPageComponent$outboundSchema.parse(
-      v4StatusPagesStatusPageComponent,
-    ),
-  );
-}
-
 export function v4StatusPagesStatusPageComponentFromJSON(
   jsonString: string,
 ): SafeParseResult<V4StatusPagesStatusPageComponent, SDKValidationError> {
@@ -119,49 +80,6 @@ export const V4StatusPagesStatusPageStatus$inboundSchema: z.ZodType<
   slug: z.string(),
 });
 
-/** @internal */
-export type V4StatusPagesStatusPageStatus$Outbound = {
-  id: number;
-  name: string;
-  color: string;
-  slug: string;
-};
-
-/** @internal */
-export const V4StatusPagesStatusPageStatus$outboundSchema: z.ZodType<
-  V4StatusPagesStatusPageStatus$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesStatusPageStatus
-> = z.object({
-  id: z.number().int(),
-  name: z.string(),
-  color: z.string(),
-  slug: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesStatusPageStatus$ {
-  /** @deprecated use `V4StatusPagesStatusPageStatus$inboundSchema` instead. */
-  export const inboundSchema = V4StatusPagesStatusPageStatus$inboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPageStatus$outboundSchema` instead. */
-  export const outboundSchema = V4StatusPagesStatusPageStatus$outboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPageStatus$Outbound` instead. */
-  export type Outbound = V4StatusPagesStatusPageStatus$Outbound;
-}
-
-export function v4StatusPagesStatusPageStatusToJSON(
-  v4StatusPagesStatusPageStatus: V4StatusPagesStatusPageStatus,
-): string {
-  return JSON.stringify(
-    V4StatusPagesStatusPageStatus$outboundSchema.parse(
-      v4StatusPagesStatusPageStatus,
-    ),
-  );
-}
-
 export function v4StatusPagesStatusPageStatusFromJSON(
   jsonString: string,
 ): SafeParseResult<V4StatusPagesStatusPageStatus, SDKValidationError> {
@@ -183,47 +101,6 @@ export const StatusMaintenance$inboundSchema: z.ZodType<
   color: z.string(),
   slug: z.string(),
 });
-
-/** @internal */
-export type StatusMaintenance$Outbound = {
-  id: number;
-  name: string;
-  color: string;
-  slug: string;
-};
-
-/** @internal */
-export const StatusMaintenance$outboundSchema: z.ZodType<
-  StatusMaintenance$Outbound,
-  z.ZodTypeDef,
-  StatusMaintenance
-> = z.object({
-  id: z.number().int(),
-  name: z.string(),
-  color: z.string(),
-  slug: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusMaintenance$ {
-  /** @deprecated use `StatusMaintenance$inboundSchema` instead. */
-  export const inboundSchema = StatusMaintenance$inboundSchema;
-  /** @deprecated use `StatusMaintenance$outboundSchema` instead. */
-  export const outboundSchema = StatusMaintenance$outboundSchema;
-  /** @deprecated use `StatusMaintenance$Outbound` instead. */
-  export type Outbound = StatusMaintenance$Outbound;
-}
-
-export function statusMaintenanceToJSON(
-  statusMaintenance: StatusMaintenance,
-): string {
-  return JSON.stringify(
-    StatusMaintenance$outboundSchema.parse(statusMaintenance),
-  );
-}
 
 export function statusMaintenanceFromJSON(
   jsonString: string,
@@ -263,79 +140,6 @@ export const V4StatusPagesStatusPage$inboundSchema: z.ZodType<
   ownerType: z.string(),
   ownerID: z.string(),
 });
-
-/** @internal */
-export type V4StatusPagesStatusPage$Outbound = {
-  id: number;
-  name: string;
-  isPublic: boolean;
-  domainName: string;
-  customDomainName: string;
-  timezone: string;
-  logoUrl: string;
-  components: Array<V4StatusPagesStatusPageComponent$Outbound>;
-  isCustomDomainEnabled: boolean;
-  isCustomARecordVerified: boolean;
-  isCustomTxtVerified: boolean;
-  txtRecord: string;
-  aRecord: string;
-  subscribersCount: number;
-  status: V4StatusPagesStatusPageStatus$Outbound;
-  underMaintenance: boolean;
-  statusMaintenance: StatusMaintenance$Outbound;
-  ownerType: string;
-  ownerID: string;
-};
-
-/** @internal */
-export const V4StatusPagesStatusPage$outboundSchema: z.ZodType<
-  V4StatusPagesStatusPage$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesStatusPage
-> = z.object({
-  id: z.number().int(),
-  name: z.string(),
-  isPublic: z.boolean(),
-  domainName: z.string(),
-  customDomainName: z.string(),
-  timezone: z.string(),
-  logoUrl: z.string(),
-  components: z.array(
-    z.lazy(() => V4StatusPagesStatusPageComponent$outboundSchema),
-  ),
-  isCustomDomainEnabled: z.boolean(),
-  isCustomARecordVerified: z.boolean(),
-  isCustomTxtVerified: z.boolean(),
-  txtRecord: z.string(),
-  aRecord: z.string(),
-  subscribersCount: z.number().int(),
-  status: z.lazy(() => V4StatusPagesStatusPageStatus$outboundSchema),
-  underMaintenance: z.boolean(),
-  statusMaintenance: z.lazy(() => StatusMaintenance$outboundSchema),
-  ownerType: z.string(),
-  ownerID: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesStatusPage$ {
-  /** @deprecated use `V4StatusPagesStatusPage$inboundSchema` instead. */
-  export const inboundSchema = V4StatusPagesStatusPage$inboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPage$outboundSchema` instead. */
-  export const outboundSchema = V4StatusPagesStatusPage$outboundSchema;
-  /** @deprecated use `V4StatusPagesStatusPage$Outbound` instead. */
-  export type Outbound = V4StatusPagesStatusPage$Outbound;
-}
-
-export function v4StatusPagesStatusPageToJSON(
-  v4StatusPagesStatusPage: V4StatusPagesStatusPage,
-): string {
-  return JSON.stringify(
-    V4StatusPagesStatusPage$outboundSchema.parse(v4StatusPagesStatusPage),
-  );
-}
 
 export function v4StatusPagesStatusPageFromJSON(
   jsonString: string,

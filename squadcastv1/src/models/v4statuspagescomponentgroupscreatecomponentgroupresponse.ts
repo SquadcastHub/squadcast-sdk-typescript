@@ -29,56 +29,6 @@ export const V4StatusPagesComponentGroupsCreateComponentGroupResponse$inboundSch
     allowSubscription: z.boolean(),
   });
 
-/** @internal */
-export type V4StatusPagesComponentGroupsCreateComponentGroupResponse$Outbound =
-  {
-    id: number;
-    pageID: number;
-    name: string;
-    description?: string | undefined;
-    allowSubscription: boolean;
-  };
-
-/** @internal */
-export const V4StatusPagesComponentGroupsCreateComponentGroupResponse$outboundSchema:
-  z.ZodType<
-    V4StatusPagesComponentGroupsCreateComponentGroupResponse$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesComponentGroupsCreateComponentGroupResponse
-  > = z.object({
-    id: z.number().int(),
-    pageID: z.number().int(),
-    name: z.string(),
-    description: z.string().optional(),
-    allowSubscription: z.boolean(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesComponentGroupsCreateComponentGroupResponse$ {
-  /** @deprecated use `V4StatusPagesComponentGroupsCreateComponentGroupResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesComponentGroupsCreateComponentGroupResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsCreateComponentGroupResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesComponentGroupsCreateComponentGroupResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesComponentGroupsCreateComponentGroupResponse$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesComponentGroupsCreateComponentGroupResponse$Outbound;
-}
-
-export function v4StatusPagesComponentGroupsCreateComponentGroupResponseToJSON(
-  v4StatusPagesComponentGroupsCreateComponentGroupResponse:
-    V4StatusPagesComponentGroupsCreateComponentGroupResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesComponentGroupsCreateComponentGroupResponse$outboundSchema
-      .parse(v4StatusPagesComponentGroupsCreateComponentGroupResponse),
-  );
-}
-
 export function v4StatusPagesComponentGroupsCreateComponentGroupResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

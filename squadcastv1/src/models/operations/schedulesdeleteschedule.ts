@@ -17,15 +17,6 @@ export type SchedulesDeleteScheduleRequest = {
 export type SchedulesDeleteScheduleResponseBody = {};
 
 /** @internal */
-export const SchedulesDeleteScheduleRequest$inboundSchema: z.ZodType<
-  SchedulesDeleteScheduleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  scheduleID: z.string(),
-});
-
-/** @internal */
 export type SchedulesDeleteScheduleRequest$Outbound = {
   scheduleID: string;
 };
@@ -39,19 +30,6 @@ export const SchedulesDeleteScheduleRequest$outboundSchema: z.ZodType<
   scheduleID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesDeleteScheduleRequest$ {
-  /** @deprecated use `SchedulesDeleteScheduleRequest$inboundSchema` instead. */
-  export const inboundSchema = SchedulesDeleteScheduleRequest$inboundSchema;
-  /** @deprecated use `SchedulesDeleteScheduleRequest$outboundSchema` instead. */
-  export const outboundSchema = SchedulesDeleteScheduleRequest$outboundSchema;
-  /** @deprecated use `SchedulesDeleteScheduleRequest$Outbound` instead. */
-  export type Outbound = SchedulesDeleteScheduleRequest$Outbound;
-}
-
 export function schedulesDeleteScheduleRequestToJSON(
   schedulesDeleteScheduleRequest: SchedulesDeleteScheduleRequest,
 ): string {
@@ -62,57 +40,12 @@ export function schedulesDeleteScheduleRequestToJSON(
   );
 }
 
-export function schedulesDeleteScheduleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SchedulesDeleteScheduleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SchedulesDeleteScheduleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SchedulesDeleteScheduleRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const SchedulesDeleteScheduleResponseBody$inboundSchema: z.ZodType<
   SchedulesDeleteScheduleResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type SchedulesDeleteScheduleResponseBody$Outbound = {};
-
-/** @internal */
-export const SchedulesDeleteScheduleResponseBody$outboundSchema: z.ZodType<
-  SchedulesDeleteScheduleResponseBody$Outbound,
-  z.ZodTypeDef,
-  SchedulesDeleteScheduleResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SchedulesDeleteScheduleResponseBody$ {
-  /** @deprecated use `SchedulesDeleteScheduleResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    SchedulesDeleteScheduleResponseBody$inboundSchema;
-  /** @deprecated use `SchedulesDeleteScheduleResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    SchedulesDeleteScheduleResponseBody$outboundSchema;
-  /** @deprecated use `SchedulesDeleteScheduleResponseBody$Outbound` instead. */
-  export type Outbound = SchedulesDeleteScheduleResponseBody$Outbound;
-}
-
-export function schedulesDeleteScheduleResponseBodyToJSON(
-  schedulesDeleteScheduleResponseBody: SchedulesDeleteScheduleResponseBody,
-): string {
-  return JSON.stringify(
-    SchedulesDeleteScheduleResponseBody$outboundSchema.parse(
-      schedulesDeleteScheduleResponseBody,
-    ),
-  );
-}
 
 export function schedulesDeleteScheduleResponseBodyFromJSON(
   jsonString: string,

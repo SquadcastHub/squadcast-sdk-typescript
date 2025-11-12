@@ -3,10 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3WorkflowsUpdateIncidentPriorityUpdateName = {
   SqUpdateIncidentPriority: "sq_update_incident_priority",
@@ -37,61 +34,14 @@ export type V3WorkflowsUpdateIncidentPriorityUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsUpdateIncidentPriorityUpdateName$inboundSchema:
+export const V3WorkflowsUpdateIncidentPriorityUpdateName$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsUpdateIncidentPriorityUpdateName> = z
     .nativeEnum(V3WorkflowsUpdateIncidentPriorityUpdateName);
 
 /** @internal */
-export const V3WorkflowsUpdateIncidentPriorityUpdateName$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsUpdateIncidentPriorityUpdateName> =
-    V3WorkflowsUpdateIncidentPriorityUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsUpdateIncidentPriorityUpdateName$ {
-  /** @deprecated use `V3WorkflowsUpdateIncidentPriorityUpdateName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsUpdateIncidentPriorityUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateIncidentPriorityUpdateName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsUpdateIncidentPriorityUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsUpdateIncidentPriorityUpdatePriority$inboundSchema:
+export const V3WorkflowsUpdateIncidentPriorityUpdatePriority$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsUpdateIncidentPriorityUpdatePriority> = z
     .nativeEnum(V3WorkflowsUpdateIncidentPriorityUpdatePriority);
-
-/** @internal */
-export const V3WorkflowsUpdateIncidentPriorityUpdatePriority$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsUpdateIncidentPriorityUpdatePriority> =
-    V3WorkflowsUpdateIncidentPriorityUpdatePriority$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsUpdateIncidentPriorityUpdatePriority$ {
-  /** @deprecated use `V3WorkflowsUpdateIncidentPriorityUpdatePriority$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsUpdateIncidentPriorityUpdatePriority$inboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateIncidentPriorityUpdatePriority$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsUpdateIncidentPriorityUpdatePriority$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsUpdateIncidentPriorityUpdateData$inboundSchema:
-  z.ZodType<
-    V3WorkflowsUpdateIncidentPriorityUpdateData,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    priority: V3WorkflowsUpdateIncidentPriorityUpdatePriority$inboundSchema
-      .optional(),
-  });
 
 /** @internal */
 export type V3WorkflowsUpdateIncidentPriorityUpdateData$Outbound = {
@@ -109,21 +59,6 @@ export const V3WorkflowsUpdateIncidentPriorityUpdateData$outboundSchema:
       .optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsUpdateIncidentPriorityUpdateData$ {
-  /** @deprecated use `V3WorkflowsUpdateIncidentPriorityUpdateData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsUpdateIncidentPriorityUpdateData$inboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateIncidentPriorityUpdateData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsUpdateIncidentPriorityUpdateData$outboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateIncidentPriorityUpdateData$Outbound` instead. */
-  export type Outbound = V3WorkflowsUpdateIncidentPriorityUpdateData$Outbound;
-}
-
 export function v3WorkflowsUpdateIncidentPriorityUpdateDataToJSON(
   v3WorkflowsUpdateIncidentPriorityUpdateData:
     V3WorkflowsUpdateIncidentPriorityUpdateData,
@@ -134,33 +69,6 @@ export function v3WorkflowsUpdateIncidentPriorityUpdateDataToJSON(
     ),
   );
 }
-
-export function v3WorkflowsUpdateIncidentPriorityUpdateDataFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsUpdateIncidentPriorityUpdateData,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsUpdateIncidentPriorityUpdateData$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsUpdateIncidentPriorityUpdateData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsUpdateIncidentPriorityUpdate$inboundSchema: z.ZodType<
-  V3WorkflowsUpdateIncidentPriorityUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: V3WorkflowsUpdateIncidentPriorityUpdateName$inboundSchema,
-  data: z.lazy(() => V3WorkflowsUpdateIncidentPriorityUpdateData$inboundSchema)
-    .optional(),
-});
 
 /** @internal */
 export type V3WorkflowsUpdateIncidentPriorityUpdate$Outbound = {
@@ -179,21 +87,6 @@ export const V3WorkflowsUpdateIncidentPriorityUpdate$outboundSchema: z.ZodType<
     .optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsUpdateIncidentPriorityUpdate$ {
-  /** @deprecated use `V3WorkflowsUpdateIncidentPriorityUpdate$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsUpdateIncidentPriorityUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateIncidentPriorityUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsUpdateIncidentPriorityUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsUpdateIncidentPriorityUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsUpdateIncidentPriorityUpdate$Outbound;
-}
-
 export function v3WorkflowsUpdateIncidentPriorityUpdateToJSON(
   v3WorkflowsUpdateIncidentPriorityUpdate:
     V3WorkflowsUpdateIncidentPriorityUpdate,
@@ -202,21 +95,5 @@ export function v3WorkflowsUpdateIncidentPriorityUpdateToJSON(
     V3WorkflowsUpdateIncidentPriorityUpdate$outboundSchema.parse(
       v3WorkflowsUpdateIncidentPriorityUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsUpdateIncidentPriorityUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3WorkflowsUpdateIncidentPriorityUpdate,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsUpdateIncidentPriorityUpdate$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3WorkflowsUpdateIncidentPriorityUpdate' from JSON`,
   );
 }

@@ -19,15 +19,6 @@ export type IncidentsAcknowledgeIncidentResponse = {
 };
 
 /** @internal */
-export const IncidentsAcknowledgeIncidentRequest$inboundSchema: z.ZodType<
-  IncidentsAcknowledgeIncidentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  incidentID: z.string(),
-});
-
-/** @internal */
 export type IncidentsAcknowledgeIncidentRequest$Outbound = {
   incidentID: string;
 };
@@ -41,21 +32,6 @@ export const IncidentsAcknowledgeIncidentRequest$outboundSchema: z.ZodType<
   incidentID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsAcknowledgeIncidentRequest$ {
-  /** @deprecated use `IncidentsAcknowledgeIncidentRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsAcknowledgeIncidentRequest$inboundSchema;
-  /** @deprecated use `IncidentsAcknowledgeIncidentRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsAcknowledgeIncidentRequest$outboundSchema;
-  /** @deprecated use `IncidentsAcknowledgeIncidentRequest$Outbound` instead. */
-  export type Outbound = IncidentsAcknowledgeIncidentRequest$Outbound;
-}
-
 export function incidentsAcknowledgeIncidentRequestToJSON(
   incidentsAcknowledgeIncidentRequest: IncidentsAcknowledgeIncidentRequest,
 ): string {
@@ -63,17 +39,6 @@ export function incidentsAcknowledgeIncidentRequestToJSON(
     IncidentsAcknowledgeIncidentRequest$outboundSchema.parse(
       incidentsAcknowledgeIncidentRequest,
     ),
-  );
-}
-
-export function incidentsAcknowledgeIncidentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<IncidentsAcknowledgeIncidentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      IncidentsAcknowledgeIncidentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IncidentsAcknowledgeIncidentRequest' from JSON`,
   );
 }
 
@@ -85,45 +50,6 @@ export const IncidentsAcknowledgeIncidentResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.string(),
 });
-
-/** @internal */
-export type IncidentsAcknowledgeIncidentResponse$Outbound = {
-  data: string;
-};
-
-/** @internal */
-export const IncidentsAcknowledgeIncidentResponse$outboundSchema: z.ZodType<
-  IncidentsAcknowledgeIncidentResponse$Outbound,
-  z.ZodTypeDef,
-  IncidentsAcknowledgeIncidentResponse
-> = z.object({
-  data: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsAcknowledgeIncidentResponse$ {
-  /** @deprecated use `IncidentsAcknowledgeIncidentResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsAcknowledgeIncidentResponse$inboundSchema;
-  /** @deprecated use `IncidentsAcknowledgeIncidentResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsAcknowledgeIncidentResponse$outboundSchema;
-  /** @deprecated use `IncidentsAcknowledgeIncidentResponse$Outbound` instead. */
-  export type Outbound = IncidentsAcknowledgeIncidentResponse$Outbound;
-}
-
-export function incidentsAcknowledgeIncidentResponseToJSON(
-  incidentsAcknowledgeIncidentResponse: IncidentsAcknowledgeIncidentResponse,
-): string {
-  return JSON.stringify(
-    IncidentsAcknowledgeIncidentResponse$outboundSchema.parse(
-      incidentsAcknowledgeIncidentResponse,
-    ),
-  );
-}
 
 export function incidentsAcknowledgeIncidentResponseFromJSON(
   jsonString: string,

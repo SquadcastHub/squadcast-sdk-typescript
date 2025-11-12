@@ -25,7 +25,6 @@ export const V4ShiftTimeSlot$inboundSchema: z.ZodType<
   duration: z.number().int(),
   dayOfWeek: z.string().optional(),
 });
-
 /** @internal */
 export type V4ShiftTimeSlot$Outbound = {
   startHour: number;
@@ -46,25 +45,11 @@ export const V4ShiftTimeSlot$outboundSchema: z.ZodType<
   dayOfWeek: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4ShiftTimeSlot$ {
-  /** @deprecated use `V4ShiftTimeSlot$inboundSchema` instead. */
-  export const inboundSchema = V4ShiftTimeSlot$inboundSchema;
-  /** @deprecated use `V4ShiftTimeSlot$outboundSchema` instead. */
-  export const outboundSchema = V4ShiftTimeSlot$outboundSchema;
-  /** @deprecated use `V4ShiftTimeSlot$Outbound` instead. */
-  export type Outbound = V4ShiftTimeSlot$Outbound;
-}
-
 export function v4ShiftTimeSlotToJSON(
   v4ShiftTimeSlot: V4ShiftTimeSlot,
 ): string {
   return JSON.stringify(V4ShiftTimeSlot$outboundSchema.parse(v4ShiftTimeSlot));
 }
-
 export function v4ShiftTimeSlotFromJSON(
   jsonString: string,
 ): SafeParseResult<V4ShiftTimeSlot, SDKValidationError> {

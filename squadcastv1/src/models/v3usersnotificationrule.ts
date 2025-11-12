@@ -22,43 +22,6 @@ export const V3UsersNotificationRule$inboundSchema: z.ZodType<
   time: z.number().int(),
 });
 
-/** @internal */
-export type V3UsersNotificationRule$Outbound = {
-  type: string;
-  time: number;
-};
-
-/** @internal */
-export const V3UsersNotificationRule$outboundSchema: z.ZodType<
-  V3UsersNotificationRule$Outbound,
-  z.ZodTypeDef,
-  V3UsersNotificationRule
-> = z.object({
-  type: z.string(),
-  time: z.number().int(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3UsersNotificationRule$ {
-  /** @deprecated use `V3UsersNotificationRule$inboundSchema` instead. */
-  export const inboundSchema = V3UsersNotificationRule$inboundSchema;
-  /** @deprecated use `V3UsersNotificationRule$outboundSchema` instead. */
-  export const outboundSchema = V3UsersNotificationRule$outboundSchema;
-  /** @deprecated use `V3UsersNotificationRule$Outbound` instead. */
-  export type Outbound = V3UsersNotificationRule$Outbound;
-}
-
-export function v3UsersNotificationRuleToJSON(
-  v3UsersNotificationRule: V3UsersNotificationRule,
-): string {
-  return JSON.stringify(
-    V3UsersNotificationRule$outboundSchema.parse(v3UsersNotificationRule),
-  );
-}
-
 export function v3UsersNotificationRuleFromJSON(
   jsonString: string,
 ): SafeParseResult<V3UsersNotificationRule, SDKValidationError> {

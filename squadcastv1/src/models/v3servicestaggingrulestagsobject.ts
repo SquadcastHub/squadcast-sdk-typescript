@@ -25,7 +25,6 @@ export const V3ServicesTaggingRulesTagsObject$inboundSchema: z.ZodType<
 > = z.object({
   severity: V3ServicesTaggingRulesTagConfigObject$inboundSchema.optional(),
 });
-
 /** @internal */
 export type V3ServicesTaggingRulesTagsObject$Outbound = {
   severity?: V3ServicesTaggingRulesTagConfigObject$Outbound | undefined;
@@ -40,19 +39,6 @@ export const V3ServicesTaggingRulesTagsObject$outboundSchema: z.ZodType<
   severity: V3ServicesTaggingRulesTagConfigObject$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesTaggingRulesTagsObject$ {
-  /** @deprecated use `V3ServicesTaggingRulesTagsObject$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesTaggingRulesTagsObject$inboundSchema;
-  /** @deprecated use `V3ServicesTaggingRulesTagsObject$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesTaggingRulesTagsObject$outboundSchema;
-  /** @deprecated use `V3ServicesTaggingRulesTagsObject$Outbound` instead. */
-  export type Outbound = V3ServicesTaggingRulesTagsObject$Outbound;
-}
-
 export function v3ServicesTaggingRulesTagsObjectToJSON(
   v3ServicesTaggingRulesTagsObject: V3ServicesTaggingRulesTagsObject,
 ): string {
@@ -62,7 +48,6 @@ export function v3ServicesTaggingRulesTagsObjectToJSON(
     ),
   );
 }
-
 export function v3ServicesTaggingRulesTagsObjectFromJSON(
   jsonString: string,
 ): SafeParseResult<V3ServicesTaggingRulesTagsObject, SDKValidationError> {

@@ -23,22 +23,6 @@ export type ServicesGetServicesResponse = {
 };
 
 /** @internal */
-export const ServicesGetServicesRequest$inboundSchema: z.ZodType<
-  ServicesGetServicesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  owner_id: z.string(),
-  entity_owner: z.string().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-    "entity_owner": "entityOwner",
-  });
-});
-
-/** @internal */
 export type ServicesGetServicesRequest$Outbound = {
   owner_id: string;
   entity_owner?: string | undefined;
@@ -61,34 +45,11 @@ export const ServicesGetServicesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesGetServicesRequest$ {
-  /** @deprecated use `ServicesGetServicesRequest$inboundSchema` instead. */
-  export const inboundSchema = ServicesGetServicesRequest$inboundSchema;
-  /** @deprecated use `ServicesGetServicesRequest$outboundSchema` instead. */
-  export const outboundSchema = ServicesGetServicesRequest$outboundSchema;
-  /** @deprecated use `ServicesGetServicesRequest$Outbound` instead. */
-  export type Outbound = ServicesGetServicesRequest$Outbound;
-}
-
 export function servicesGetServicesRequestToJSON(
   servicesGetServicesRequest: ServicesGetServicesRequest,
 ): string {
   return JSON.stringify(
     ServicesGetServicesRequest$outboundSchema.parse(servicesGetServicesRequest),
-  );
-}
-
-export function servicesGetServicesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ServicesGetServicesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ServicesGetServicesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ServicesGetServicesRequest' from JSON`,
   );
 }
 
@@ -100,43 +61,6 @@ export const ServicesGetServicesResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.array(models.V3ServicesServiceResponse$inboundSchema),
 });
-
-/** @internal */
-export type ServicesGetServicesResponse$Outbound = {
-  data: Array<models.V3ServicesServiceResponse$Outbound>;
-};
-
-/** @internal */
-export const ServicesGetServicesResponse$outboundSchema: z.ZodType<
-  ServicesGetServicesResponse$Outbound,
-  z.ZodTypeDef,
-  ServicesGetServicesResponse
-> = z.object({
-  data: z.array(models.V3ServicesServiceResponse$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ServicesGetServicesResponse$ {
-  /** @deprecated use `ServicesGetServicesResponse$inboundSchema` instead. */
-  export const inboundSchema = ServicesGetServicesResponse$inboundSchema;
-  /** @deprecated use `ServicesGetServicesResponse$outboundSchema` instead. */
-  export const outboundSchema = ServicesGetServicesResponse$outboundSchema;
-  /** @deprecated use `ServicesGetServicesResponse$Outbound` instead. */
-  export type Outbound = ServicesGetServicesResponse$Outbound;
-}
-
-export function servicesGetServicesResponseToJSON(
-  servicesGetServicesResponse: ServicesGetServicesResponse,
-): string {
-  return JSON.stringify(
-    ServicesGetServicesResponse$outboundSchema.parse(
-      servicesGetServicesResponse,
-    ),
-  );
-}
 
 export function servicesGetServicesResponseFromJSON(
   jsonString: string,

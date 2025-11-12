@@ -10,8 +10,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ExtensionsWebhooksWebhookListItem,
   V3ExtensionsWebhooksWebhookListItem$inboundSchema,
-  V3ExtensionsWebhooksWebhookListItem$Outbound,
-  V3ExtensionsWebhooksWebhookListItem$outboundSchema,
 } from "./v3extensionswebhookswebhooklistitem.js";
 
 export type V3ExtensionsWebhooksGetAllWebhooksResponseMeta = {
@@ -40,52 +38,6 @@ export const V3ExtensionsWebhooksGetAllWebhooksResponseMeta$inboundSchema:
       "total_count": "totalCount",
     });
   });
-
-/** @internal */
-export type V3ExtensionsWebhooksGetAllWebhooksResponseMeta$Outbound = {
-  total_count: number;
-};
-
-/** @internal */
-export const V3ExtensionsWebhooksGetAllWebhooksResponseMeta$outboundSchema:
-  z.ZodType<
-    V3ExtensionsWebhooksGetAllWebhooksResponseMeta$Outbound,
-    z.ZodTypeDef,
-    V3ExtensionsWebhooksGetAllWebhooksResponseMeta
-  > = z.object({
-    totalCount: z.number().int(),
-  }).transform((v) => {
-    return remap$(v, {
-      totalCount: "total_count",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksGetAllWebhooksResponseMeta$ {
-  /** @deprecated use `V3ExtensionsWebhooksGetAllWebhooksResponseMeta$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsWebhooksGetAllWebhooksResponseMeta$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksGetAllWebhooksResponseMeta$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsWebhooksGetAllWebhooksResponseMeta$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksGetAllWebhooksResponseMeta$Outbound` instead. */
-  export type Outbound =
-    V3ExtensionsWebhooksGetAllWebhooksResponseMeta$Outbound;
-}
-
-export function v3ExtensionsWebhooksGetAllWebhooksResponseMetaToJSON(
-  v3ExtensionsWebhooksGetAllWebhooksResponseMeta:
-    V3ExtensionsWebhooksGetAllWebhooksResponseMeta,
-): string {
-  return JSON.stringify(
-    V3ExtensionsWebhooksGetAllWebhooksResponseMeta$outboundSchema.parse(
-      v3ExtensionsWebhooksGetAllWebhooksResponseMeta,
-    ),
-  );
-}
 
 export function v3ExtensionsWebhooksGetAllWebhooksResponseMetaFromJSON(
   jsonString: string,
@@ -116,52 +68,6 @@ export const V3ExtensionsWebhooksGetAllWebhooksResponseData$inboundSchema:
     ),
   });
 
-/** @internal */
-export type V3ExtensionsWebhooksGetAllWebhooksResponseData$Outbound = {
-  result: Array<V3ExtensionsWebhooksWebhookListItem$Outbound>;
-  meta: V3ExtensionsWebhooksGetAllWebhooksResponseMeta$Outbound;
-};
-
-/** @internal */
-export const V3ExtensionsWebhooksGetAllWebhooksResponseData$outboundSchema:
-  z.ZodType<
-    V3ExtensionsWebhooksGetAllWebhooksResponseData$Outbound,
-    z.ZodTypeDef,
-    V3ExtensionsWebhooksGetAllWebhooksResponseData
-  > = z.object({
-    result: z.array(V3ExtensionsWebhooksWebhookListItem$outboundSchema),
-    meta: z.lazy(() =>
-      V3ExtensionsWebhooksGetAllWebhooksResponseMeta$outboundSchema
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksGetAllWebhooksResponseData$ {
-  /** @deprecated use `V3ExtensionsWebhooksGetAllWebhooksResponseData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsWebhooksGetAllWebhooksResponseData$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksGetAllWebhooksResponseData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsWebhooksGetAllWebhooksResponseData$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksGetAllWebhooksResponseData$Outbound` instead. */
-  export type Outbound =
-    V3ExtensionsWebhooksGetAllWebhooksResponseData$Outbound;
-}
-
-export function v3ExtensionsWebhooksGetAllWebhooksResponseDataToJSON(
-  v3ExtensionsWebhooksGetAllWebhooksResponseData:
-    V3ExtensionsWebhooksGetAllWebhooksResponseData,
-): string {
-  return JSON.stringify(
-    V3ExtensionsWebhooksGetAllWebhooksResponseData$outboundSchema.parse(
-      v3ExtensionsWebhooksGetAllWebhooksResponseData,
-    ),
-  );
-}
-
 export function v3ExtensionsWebhooksGetAllWebhooksResponseDataFromJSON(
   jsonString: string,
 ): SafeParseResult<
@@ -186,49 +92,6 @@ export const V3ExtensionsWebhooksGetAllWebhooksResponse$inboundSchema:
         V3ExtensionsWebhooksGetAllWebhooksResponseData$inboundSchema
       ),
     });
-
-/** @internal */
-export type V3ExtensionsWebhooksGetAllWebhooksResponse$Outbound = {
-  data: V3ExtensionsWebhooksGetAllWebhooksResponseData$Outbound;
-};
-
-/** @internal */
-export const V3ExtensionsWebhooksGetAllWebhooksResponse$outboundSchema:
-  z.ZodType<
-    V3ExtensionsWebhooksGetAllWebhooksResponse$Outbound,
-    z.ZodTypeDef,
-    V3ExtensionsWebhooksGetAllWebhooksResponse
-  > = z.object({
-    data: z.lazy(() =>
-      V3ExtensionsWebhooksGetAllWebhooksResponseData$outboundSchema
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ExtensionsWebhooksGetAllWebhooksResponse$ {
-  /** @deprecated use `V3ExtensionsWebhooksGetAllWebhooksResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ExtensionsWebhooksGetAllWebhooksResponse$inboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksGetAllWebhooksResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ExtensionsWebhooksGetAllWebhooksResponse$outboundSchema;
-  /** @deprecated use `V3ExtensionsWebhooksGetAllWebhooksResponse$Outbound` instead. */
-  export type Outbound = V3ExtensionsWebhooksGetAllWebhooksResponse$Outbound;
-}
-
-export function v3ExtensionsWebhooksGetAllWebhooksResponseToJSON(
-  v3ExtensionsWebhooksGetAllWebhooksResponse:
-    V3ExtensionsWebhooksGetAllWebhooksResponse,
-): string {
-  return JSON.stringify(
-    V3ExtensionsWebhooksGetAllWebhooksResponse$outboundSchema.parse(
-      v3ExtensionsWebhooksGetAllWebhooksResponse,
-    ),
-  );
-}
 
 export function v3ExtensionsWebhooksGetAllWebhooksResponseFromJSON(
   jsonString: string,

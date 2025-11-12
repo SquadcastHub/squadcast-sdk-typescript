@@ -25,39 +25,6 @@ export const Detail$inboundSchema: z.ZodType<Detail, z.ZodTypeDef, unknown> = z
     message: z.string(),
   });
 
-/** @internal */
-export type Detail$Outbound = {
-  field: string;
-  message: string;
-};
-
-/** @internal */
-export const Detail$outboundSchema: z.ZodType<
-  Detail$Outbound,
-  z.ZodTypeDef,
-  Detail
-> = z.object({
-  field: z.string(),
-  message: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Detail$ {
-  /** @deprecated use `Detail$inboundSchema` instead. */
-  export const inboundSchema = Detail$inboundSchema;
-  /** @deprecated use `Detail$outboundSchema` instead. */
-  export const outboundSchema = Detail$outboundSchema;
-  /** @deprecated use `Detail$Outbound` instead. */
-  export type Outbound = Detail$Outbound;
-}
-
-export function detailToJSON(detail: Detail): string {
-  return JSON.stringify(Detail$outboundSchema.parse(detail));
-}
-
 export function detailFromJSON(
   jsonString: string,
 ): SafeParseResult<Detail, SDKValidationError> {
@@ -75,41 +42,6 @@ export const ErrorT$inboundSchema: z.ZodType<ErrorT, z.ZodTypeDef, unknown> = z
     message: z.string(),
     details: z.array(z.lazy(() => Detail$inboundSchema)).optional(),
   });
-
-/** @internal */
-export type ErrorT$Outbound = {
-  code: string;
-  message: string;
-  details?: Array<Detail$Outbound> | undefined;
-};
-
-/** @internal */
-export const ErrorT$outboundSchema: z.ZodType<
-  ErrorT$Outbound,
-  z.ZodTypeDef,
-  ErrorT
-> = z.object({
-  code: z.string(),
-  message: z.string(),
-  details: z.array(z.lazy(() => Detail$outboundSchema)).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ErrorT$ {
-  /** @deprecated use `ErrorT$inboundSchema` instead. */
-  export const inboundSchema = ErrorT$inboundSchema;
-  /** @deprecated use `ErrorT$outboundSchema` instead. */
-  export const outboundSchema = ErrorT$outboundSchema;
-  /** @deprecated use `ErrorT$Outbound` instead. */
-  export type Outbound = ErrorT$Outbound;
-}
-
-export function errorToJSON(errorT: ErrorT): string {
-  return JSON.stringify(ErrorT$outboundSchema.parse(errorT));
-}
 
 export function errorFromJSON(
   jsonString: string,

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type AdditionalResponder = {
   id: string;
@@ -19,16 +16,6 @@ export type AdditionalResponder = {
 export type V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest = {
   additionalResponders: Array<AdditionalResponder>;
 };
-
-/** @internal */
-export const AdditionalResponder$inboundSchema: z.ZodType<
-  AdditionalResponder,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string(),
-  type: z.string(),
-});
 
 /** @internal */
 export type AdditionalResponder$Outbound = {
@@ -46,19 +33,6 @@ export const AdditionalResponder$outboundSchema: z.ZodType<
   type: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AdditionalResponder$ {
-  /** @deprecated use `AdditionalResponder$inboundSchema` instead. */
-  export const inboundSchema = AdditionalResponder$inboundSchema;
-  /** @deprecated use `AdditionalResponder$outboundSchema` instead. */
-  export const outboundSchema = AdditionalResponder$outboundSchema;
-  /** @deprecated use `AdditionalResponder$Outbound` instead. */
-  export type Outbound = AdditionalResponder$Outbound;
-}
-
 export function additionalResponderToJSON(
   additionalResponder: AdditionalResponder,
 ): string {
@@ -66,32 +40,6 @@ export function additionalResponderToJSON(
     AdditionalResponder$outboundSchema.parse(additionalResponder),
   );
 }
-
-export function additionalResponderFromJSON(
-  jsonString: string,
-): SafeParseResult<AdditionalResponder, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AdditionalResponder$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AdditionalResponder' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$inboundSchema:
-  z.ZodType<
-    V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    additional_responders: z.array(
-      z.lazy(() => AdditionalResponder$inboundSchema),
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      "additional_responders": "additionalResponders",
-    });
-  });
 
 /** @internal */
 export type V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$Outbound =
@@ -115,22 +63,6 @@ export const V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$outbo
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$ {
-  /** @deprecated use `V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$Outbound;
-}
-
 export function v3IncidentsAdditionalRespondersAddAdditionalRespondersRequestToJSON(
   v3IncidentsAdditionalRespondersAddAdditionalRespondersRequest:
     V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest,
@@ -138,20 +70,5 @@ export function v3IncidentsAdditionalRespondersAddAdditionalRespondersRequestToJ
   return JSON.stringify(
     V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$outboundSchema
       .parse(v3IncidentsAdditionalRespondersAddAdditionalRespondersRequest),
-  );
-}
-
-export function v3IncidentsAdditionalRespondersAddAdditionalRespondersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsAdditionalRespondersAddAdditionalRespondersRequest' from JSON`,
   );
 }

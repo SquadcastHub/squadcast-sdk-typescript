@@ -24,23 +24,6 @@ export type AnalyticsGetOrgAnalyticsResponse = {
 };
 
 /** @internal */
-export const AnalyticsGetOrgAnalyticsRequest$inboundSchema: z.ZodType<
-  AnalyticsGetOrgAnalyticsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  from: z.string(),
-  to: z.string(),
-  team_id: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "team_id": "teamId",
-    "user_id": "userId",
-  });
-});
-
-/** @internal */
 export type AnalyticsGetOrgAnalyticsRequest$Outbound = {
   from: string;
   to: string;
@@ -65,19 +48,6 @@ export const AnalyticsGetOrgAnalyticsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AnalyticsGetOrgAnalyticsRequest$ {
-  /** @deprecated use `AnalyticsGetOrgAnalyticsRequest$inboundSchema` instead. */
-  export const inboundSchema = AnalyticsGetOrgAnalyticsRequest$inboundSchema;
-  /** @deprecated use `AnalyticsGetOrgAnalyticsRequest$outboundSchema` instead. */
-  export const outboundSchema = AnalyticsGetOrgAnalyticsRequest$outboundSchema;
-  /** @deprecated use `AnalyticsGetOrgAnalyticsRequest$Outbound` instead. */
-  export type Outbound = AnalyticsGetOrgAnalyticsRequest$Outbound;
-}
-
 export function analyticsGetOrgAnalyticsRequestToJSON(
   analyticsGetOrgAnalyticsRequest: AnalyticsGetOrgAnalyticsRequest,
 ): string {
@@ -85,16 +55,6 @@ export function analyticsGetOrgAnalyticsRequestToJSON(
     AnalyticsGetOrgAnalyticsRequest$outboundSchema.parse(
       analyticsGetOrgAnalyticsRequest,
     ),
-  );
-}
-
-export function analyticsGetOrgAnalyticsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<AnalyticsGetOrgAnalyticsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AnalyticsGetOrgAnalyticsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AnalyticsGetOrgAnalyticsRequest' from JSON`,
   );
 }
 
@@ -106,43 +66,6 @@ export const AnalyticsGetOrgAnalyticsResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3AnalyticsAnalyticsResponse$inboundSchema,
 });
-
-/** @internal */
-export type AnalyticsGetOrgAnalyticsResponse$Outbound = {
-  data: models.V3AnalyticsAnalyticsResponse$Outbound;
-};
-
-/** @internal */
-export const AnalyticsGetOrgAnalyticsResponse$outboundSchema: z.ZodType<
-  AnalyticsGetOrgAnalyticsResponse$Outbound,
-  z.ZodTypeDef,
-  AnalyticsGetOrgAnalyticsResponse
-> = z.object({
-  data: models.V3AnalyticsAnalyticsResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AnalyticsGetOrgAnalyticsResponse$ {
-  /** @deprecated use `AnalyticsGetOrgAnalyticsResponse$inboundSchema` instead. */
-  export const inboundSchema = AnalyticsGetOrgAnalyticsResponse$inboundSchema;
-  /** @deprecated use `AnalyticsGetOrgAnalyticsResponse$outboundSchema` instead. */
-  export const outboundSchema = AnalyticsGetOrgAnalyticsResponse$outboundSchema;
-  /** @deprecated use `AnalyticsGetOrgAnalyticsResponse$Outbound` instead. */
-  export type Outbound = AnalyticsGetOrgAnalyticsResponse$Outbound;
-}
-
-export function analyticsGetOrgAnalyticsResponseToJSON(
-  analyticsGetOrgAnalyticsResponse: AnalyticsGetOrgAnalyticsResponse,
-): string {
-  return JSON.stringify(
-    AnalyticsGetOrgAnalyticsResponse$outboundSchema.parse(
-      analyticsGetOrgAnalyticsResponse,
-    ),
-  );
-}
 
 export function analyticsGetOrgAnalyticsResponseFromJSON(
   jsonString: string,

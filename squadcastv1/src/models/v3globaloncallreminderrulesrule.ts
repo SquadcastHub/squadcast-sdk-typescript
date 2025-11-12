@@ -21,7 +21,6 @@ export const V3GlobalOncallReminderRulesRule$inboundSchema: z.ZodType<
   type: z.string(),
   time: z.number().int(),
 });
-
 /** @internal */
 export type V3GlobalOncallReminderRulesRule$Outbound = {
   type: string;
@@ -38,19 +37,6 @@ export const V3GlobalOncallReminderRulesRule$outboundSchema: z.ZodType<
   time: z.number().int(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalOncallReminderRulesRule$ {
-  /** @deprecated use `V3GlobalOncallReminderRulesRule$inboundSchema` instead. */
-  export const inboundSchema = V3GlobalOncallReminderRulesRule$inboundSchema;
-  /** @deprecated use `V3GlobalOncallReminderRulesRule$outboundSchema` instead. */
-  export const outboundSchema = V3GlobalOncallReminderRulesRule$outboundSchema;
-  /** @deprecated use `V3GlobalOncallReminderRulesRule$Outbound` instead. */
-  export type Outbound = V3GlobalOncallReminderRulesRule$Outbound;
-}
-
 export function v3GlobalOncallReminderRulesRuleToJSON(
   v3GlobalOncallReminderRulesRule: V3GlobalOncallReminderRulesRule,
 ): string {
@@ -60,7 +46,6 @@ export function v3GlobalOncallReminderRulesRuleToJSON(
     ),
   );
 }
-
 export function v3GlobalOncallReminderRulesRuleFromJSON(
   jsonString: string,
 ): SafeParseResult<V3GlobalOncallReminderRulesRule, SDKValidationError> {

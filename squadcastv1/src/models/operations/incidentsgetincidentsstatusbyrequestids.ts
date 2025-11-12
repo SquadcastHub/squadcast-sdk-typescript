@@ -30,33 +30,6 @@ export const RequestsStatus$inboundSchema: z.ZodType<
   unknown
 > = z.object({});
 
-/** @internal */
-export type RequestsStatus$Outbound = {};
-
-/** @internal */
-export const RequestsStatus$outboundSchema: z.ZodType<
-  RequestsStatus$Outbound,
-  z.ZodTypeDef,
-  RequestsStatus
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RequestsStatus$ {
-  /** @deprecated use `RequestsStatus$inboundSchema` instead. */
-  export const inboundSchema = RequestsStatus$inboundSchema;
-  /** @deprecated use `RequestsStatus$outboundSchema` instead. */
-  export const outboundSchema = RequestsStatus$outboundSchema;
-  /** @deprecated use `RequestsStatus$Outbound` instead. */
-  export type Outbound = RequestsStatus$Outbound;
-}
-
-export function requestsStatusToJSON(requestsStatus: RequestsStatus): string {
-  return JSON.stringify(RequestsStatus$outboundSchema.parse(requestsStatus));
-}
-
 export function requestsStatusFromJSON(
   jsonString: string,
 ): SafeParseResult<RequestsStatus, SDKValidationError> {
@@ -82,54 +55,6 @@ export const IncidentsGetIncidentsStatusByRequestidsMeta$inboundSchema:
       "success_count": "successCount",
     });
   });
-
-/** @internal */
-export type IncidentsGetIncidentsStatusByRequestidsMeta$Outbound = {
-  error_count: number;
-  success_count: number;
-};
-
-/** @internal */
-export const IncidentsGetIncidentsStatusByRequestidsMeta$outboundSchema:
-  z.ZodType<
-    IncidentsGetIncidentsStatusByRequestidsMeta$Outbound,
-    z.ZodTypeDef,
-    IncidentsGetIncidentsStatusByRequestidsMeta
-  > = z.object({
-    errorCount: z.number().int(),
-    successCount: z.number().int(),
-  }).transform((v) => {
-    return remap$(v, {
-      errorCount: "error_count",
-      successCount: "success_count",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsGetIncidentsStatusByRequestidsMeta$ {
-  /** @deprecated use `IncidentsGetIncidentsStatusByRequestidsMeta$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsGetIncidentsStatusByRequestidsMeta$inboundSchema;
-  /** @deprecated use `IncidentsGetIncidentsStatusByRequestidsMeta$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsGetIncidentsStatusByRequestidsMeta$outboundSchema;
-  /** @deprecated use `IncidentsGetIncidentsStatusByRequestidsMeta$Outbound` instead. */
-  export type Outbound = IncidentsGetIncidentsStatusByRequestidsMeta$Outbound;
-}
-
-export function incidentsGetIncidentsStatusByRequestidsMetaToJSON(
-  incidentsGetIncidentsStatusByRequestidsMeta:
-    IncidentsGetIncidentsStatusByRequestidsMeta,
-): string {
-  return JSON.stringify(
-    IncidentsGetIncidentsStatusByRequestidsMeta$outboundSchema.parse(
-      incidentsGetIncidentsStatusByRequestidsMeta,
-    ),
-  );
-}
 
 export function incidentsGetIncidentsStatusByRequestidsMetaFromJSON(
   jsonString: string,
@@ -163,56 +88,6 @@ export const IncidentsGetIncidentsStatusByRequestidsResponse$inboundSchema:
       "requests_status": "requestsStatus",
     });
   });
-
-/** @internal */
-export type IncidentsGetIncidentsStatusByRequestidsResponse$Outbound = {
-  requests_status: RequestsStatus$Outbound;
-  meta: IncidentsGetIncidentsStatusByRequestidsMeta$Outbound;
-};
-
-/** @internal */
-export const IncidentsGetIncidentsStatusByRequestidsResponse$outboundSchema:
-  z.ZodType<
-    IncidentsGetIncidentsStatusByRequestidsResponse$Outbound,
-    z.ZodTypeDef,
-    IncidentsGetIncidentsStatusByRequestidsResponse
-  > = z.object({
-    requestsStatus: z.lazy(() => RequestsStatus$outboundSchema),
-    meta: z.lazy(() =>
-      IncidentsGetIncidentsStatusByRequestidsMeta$outboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      requestsStatus: "requests_status",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsGetIncidentsStatusByRequestidsResponse$ {
-  /** @deprecated use `IncidentsGetIncidentsStatusByRequestidsResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsGetIncidentsStatusByRequestidsResponse$inboundSchema;
-  /** @deprecated use `IncidentsGetIncidentsStatusByRequestidsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsGetIncidentsStatusByRequestidsResponse$outboundSchema;
-  /** @deprecated use `IncidentsGetIncidentsStatusByRequestidsResponse$Outbound` instead. */
-  export type Outbound =
-    IncidentsGetIncidentsStatusByRequestidsResponse$Outbound;
-}
-
-export function incidentsGetIncidentsStatusByRequestidsResponseToJSON(
-  incidentsGetIncidentsStatusByRequestidsResponse:
-    IncidentsGetIncidentsStatusByRequestidsResponse,
-): string {
-  return JSON.stringify(
-    IncidentsGetIncidentsStatusByRequestidsResponse$outboundSchema.parse(
-      incidentsGetIncidentsStatusByRequestidsResponse,
-    ),
-  );
-}
 
 export function incidentsGetIncidentsStatusByRequestidsResponseFromJSON(
   jsonString: string,

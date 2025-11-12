@@ -21,17 +21,6 @@ export type OverlayGetDedupKeyOverlayForAlertSourceResponse = {
 };
 
 /** @internal */
-export const OverlayGetDedupKeyOverlayForAlertSourceRequest$inboundSchema:
-  z.ZodType<
-    OverlayGetDedupKeyOverlayForAlertSourceRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    serviceID: z.string(),
-    alertSource: z.string(),
-  });
-
-/** @internal */
 export type OverlayGetDedupKeyOverlayForAlertSourceRequest$Outbound = {
   serviceID: string;
   alertSource: string;
@@ -48,22 +37,6 @@ export const OverlayGetDedupKeyOverlayForAlertSourceRequest$outboundSchema:
     alertSource: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayGetDedupKeyOverlayForAlertSourceRequest$ {
-  /** @deprecated use `OverlayGetDedupKeyOverlayForAlertSourceRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayGetDedupKeyOverlayForAlertSourceRequest$inboundSchema;
-  /** @deprecated use `OverlayGetDedupKeyOverlayForAlertSourceRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayGetDedupKeyOverlayForAlertSourceRequest$outboundSchema;
-  /** @deprecated use `OverlayGetDedupKeyOverlayForAlertSourceRequest$Outbound` instead. */
-  export type Outbound =
-    OverlayGetDedupKeyOverlayForAlertSourceRequest$Outbound;
-}
-
 export function overlayGetDedupKeyOverlayForAlertSourceRequestToJSON(
   overlayGetDedupKeyOverlayForAlertSourceRequest:
     OverlayGetDedupKeyOverlayForAlertSourceRequest,
@@ -72,22 +45,6 @@ export function overlayGetDedupKeyOverlayForAlertSourceRequestToJSON(
     OverlayGetDedupKeyOverlayForAlertSourceRequest$outboundSchema.parse(
       overlayGetDedupKeyOverlayForAlertSourceRequest,
     ),
-  );
-}
-
-export function overlayGetDedupKeyOverlayForAlertSourceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  OverlayGetDedupKeyOverlayForAlertSourceRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      OverlayGetDedupKeyOverlayForAlertSourceRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'OverlayGetDedupKeyOverlayForAlertSourceRequest' from JSON`,
   );
 }
 
@@ -100,48 +57,6 @@ export const OverlayGetDedupKeyOverlayForAlertSourceResponse$inboundSchema:
   > = z.object({
     data: models.V3ServicesOverlayOverlayResponse$inboundSchema,
   });
-
-/** @internal */
-export type OverlayGetDedupKeyOverlayForAlertSourceResponse$Outbound = {
-  data: models.V3ServicesOverlayOverlayResponse$Outbound;
-};
-
-/** @internal */
-export const OverlayGetDedupKeyOverlayForAlertSourceResponse$outboundSchema:
-  z.ZodType<
-    OverlayGetDedupKeyOverlayForAlertSourceResponse$Outbound,
-    z.ZodTypeDef,
-    OverlayGetDedupKeyOverlayForAlertSourceResponse
-  > = z.object({
-    data: models.V3ServicesOverlayOverlayResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace OverlayGetDedupKeyOverlayForAlertSourceResponse$ {
-  /** @deprecated use `OverlayGetDedupKeyOverlayForAlertSourceResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    OverlayGetDedupKeyOverlayForAlertSourceResponse$inboundSchema;
-  /** @deprecated use `OverlayGetDedupKeyOverlayForAlertSourceResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    OverlayGetDedupKeyOverlayForAlertSourceResponse$outboundSchema;
-  /** @deprecated use `OverlayGetDedupKeyOverlayForAlertSourceResponse$Outbound` instead. */
-  export type Outbound =
-    OverlayGetDedupKeyOverlayForAlertSourceResponse$Outbound;
-}
-
-export function overlayGetDedupKeyOverlayForAlertSourceResponseToJSON(
-  overlayGetDedupKeyOverlayForAlertSourceResponse:
-    OverlayGetDedupKeyOverlayForAlertSourceResponse,
-): string {
-  return JSON.stringify(
-    OverlayGetDedupKeyOverlayForAlertSourceResponse$outboundSchema.parse(
-      overlayGetDedupKeyOverlayForAlertSourceResponse,
-    ),
-  );
-}
 
 export function overlayGetDedupKeyOverlayForAlertSourceResponseFromJSON(
   jsonString: string,

@@ -20,15 +20,6 @@ export type WebhooksDeleteWebhookRequest = {
 export type WebhooksDeleteWebhookResponseBody = {};
 
 /** @internal */
-export const WebhooksDeleteWebhookRequest$inboundSchema: z.ZodType<
-  WebhooksDeleteWebhookRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  eventWebhookID: z.string(),
-});
-
-/** @internal */
 export type WebhooksDeleteWebhookRequest$Outbound = {
   eventWebhookID: string;
 };
@@ -42,19 +33,6 @@ export const WebhooksDeleteWebhookRequest$outboundSchema: z.ZodType<
   eventWebhookID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebhooksDeleteWebhookRequest$ {
-  /** @deprecated use `WebhooksDeleteWebhookRequest$inboundSchema` instead. */
-  export const inboundSchema = WebhooksDeleteWebhookRequest$inboundSchema;
-  /** @deprecated use `WebhooksDeleteWebhookRequest$outboundSchema` instead. */
-  export const outboundSchema = WebhooksDeleteWebhookRequest$outboundSchema;
-  /** @deprecated use `WebhooksDeleteWebhookRequest$Outbound` instead. */
-  export type Outbound = WebhooksDeleteWebhookRequest$Outbound;
-}
-
 export function webhooksDeleteWebhookRequestToJSON(
   webhooksDeleteWebhookRequest: WebhooksDeleteWebhookRequest,
 ): string {
@@ -65,56 +43,12 @@ export function webhooksDeleteWebhookRequestToJSON(
   );
 }
 
-export function webhooksDeleteWebhookRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WebhooksDeleteWebhookRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => WebhooksDeleteWebhookRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WebhooksDeleteWebhookRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const WebhooksDeleteWebhookResponseBody$inboundSchema: z.ZodType<
   WebhooksDeleteWebhookResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type WebhooksDeleteWebhookResponseBody$Outbound = {};
-
-/** @internal */
-export const WebhooksDeleteWebhookResponseBody$outboundSchema: z.ZodType<
-  WebhooksDeleteWebhookResponseBody$Outbound,
-  z.ZodTypeDef,
-  WebhooksDeleteWebhookResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebhooksDeleteWebhookResponseBody$ {
-  /** @deprecated use `WebhooksDeleteWebhookResponseBody$inboundSchema` instead. */
-  export const inboundSchema = WebhooksDeleteWebhookResponseBody$inboundSchema;
-  /** @deprecated use `WebhooksDeleteWebhookResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    WebhooksDeleteWebhookResponseBody$outboundSchema;
-  /** @deprecated use `WebhooksDeleteWebhookResponseBody$Outbound` instead. */
-  export type Outbound = WebhooksDeleteWebhookResponseBody$Outbound;
-}
-
-export function webhooksDeleteWebhookResponseBodyToJSON(
-  webhooksDeleteWebhookResponseBody: WebhooksDeleteWebhookResponseBody,
-): string {
-  return JSON.stringify(
-    WebhooksDeleteWebhookResponseBody$outboundSchema.parse(
-      webhooksDeleteWebhookResponseBody,
-    ),
-  );
-}
 
 export function webhooksDeleteWebhookResponseBodyFromJSON(
   jsonString: string,

@@ -25,43 +25,6 @@ export const V3IncidentsTagsAssignTo$inboundSchema: z.ZodType<
   type: z.string().optional(),
 });
 
-/** @internal */
-export type V3IncidentsTagsAssignTo$Outbound = {
-  id: string;
-  type?: string | undefined;
-};
-
-/** @internal */
-export const V3IncidentsTagsAssignTo$outboundSchema: z.ZodType<
-  V3IncidentsTagsAssignTo$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsTagsAssignTo
-> = z.object({
-  id: z.string(),
-  type: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsTagsAssignTo$ {
-  /** @deprecated use `V3IncidentsTagsAssignTo$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsTagsAssignTo$inboundSchema;
-  /** @deprecated use `V3IncidentsTagsAssignTo$outboundSchema` instead. */
-  export const outboundSchema = V3IncidentsTagsAssignTo$outboundSchema;
-  /** @deprecated use `V3IncidentsTagsAssignTo$Outbound` instead. */
-  export type Outbound = V3IncidentsTagsAssignTo$Outbound;
-}
-
-export function v3IncidentsTagsAssignToToJSON(
-  v3IncidentsTagsAssignTo: V3IncidentsTagsAssignTo,
-): string {
-  return JSON.stringify(
-    V3IncidentsTagsAssignTo$outboundSchema.parse(v3IncidentsTagsAssignTo),
-  );
-}
-
 export function v3IncidentsTagsAssignToFromJSON(
   jsonString: string,
 ): SafeParseResult<V3IncidentsTagsAssignTo, SDKValidationError> {

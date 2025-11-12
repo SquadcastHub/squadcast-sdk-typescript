@@ -23,23 +23,6 @@ export type RunbooksAttachRunbooksResponse = {
 };
 
 /** @internal */
-export const RunbooksAttachRunbooksRequest$inboundSchema: z.ZodType<
-  RunbooksAttachRunbooksRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  IncidentId: z.string(),
-  "V3.Incidents.Runbooks.AttachRunbooksRequest":
-    models.V3IncidentsRunbooksAttachRunbooksRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "IncidentId": "incidentId",
-    "V3.Incidents.Runbooks.AttachRunbooksRequest":
-      "v3IncidentsRunbooksAttachRunbooksRequest",
-  });
-});
-
-/** @internal */
 export type RunbooksAttachRunbooksRequest$Outbound = {
   IncidentId: string;
   "V3.Incidents.Runbooks.AttachRunbooksRequest":
@@ -63,19 +46,6 @@ export const RunbooksAttachRunbooksRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RunbooksAttachRunbooksRequest$ {
-  /** @deprecated use `RunbooksAttachRunbooksRequest$inboundSchema` instead. */
-  export const inboundSchema = RunbooksAttachRunbooksRequest$inboundSchema;
-  /** @deprecated use `RunbooksAttachRunbooksRequest$outboundSchema` instead. */
-  export const outboundSchema = RunbooksAttachRunbooksRequest$outboundSchema;
-  /** @deprecated use `RunbooksAttachRunbooksRequest$Outbound` instead. */
-  export type Outbound = RunbooksAttachRunbooksRequest$Outbound;
-}
-
 export function runbooksAttachRunbooksRequestToJSON(
   runbooksAttachRunbooksRequest: RunbooksAttachRunbooksRequest,
 ): string {
@@ -83,16 +53,6 @@ export function runbooksAttachRunbooksRequestToJSON(
     RunbooksAttachRunbooksRequest$outboundSchema.parse(
       runbooksAttachRunbooksRequest,
     ),
-  );
-}
-
-export function runbooksAttachRunbooksRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RunbooksAttachRunbooksRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RunbooksAttachRunbooksRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RunbooksAttachRunbooksRequest' from JSON`,
   );
 }
 
@@ -104,43 +64,6 @@ export const RunbooksAttachRunbooksResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.array(models.V3IncidentsRunbooksRunbookResponse$inboundSchema),
 });
-
-/** @internal */
-export type RunbooksAttachRunbooksResponse$Outbound = {
-  data: Array<models.V3IncidentsRunbooksRunbookResponse$Outbound>;
-};
-
-/** @internal */
-export const RunbooksAttachRunbooksResponse$outboundSchema: z.ZodType<
-  RunbooksAttachRunbooksResponse$Outbound,
-  z.ZodTypeDef,
-  RunbooksAttachRunbooksResponse
-> = z.object({
-  data: z.array(models.V3IncidentsRunbooksRunbookResponse$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RunbooksAttachRunbooksResponse$ {
-  /** @deprecated use `RunbooksAttachRunbooksResponse$inboundSchema` instead. */
-  export const inboundSchema = RunbooksAttachRunbooksResponse$inboundSchema;
-  /** @deprecated use `RunbooksAttachRunbooksResponse$outboundSchema` instead. */
-  export const outboundSchema = RunbooksAttachRunbooksResponse$outboundSchema;
-  /** @deprecated use `RunbooksAttachRunbooksResponse$Outbound` instead. */
-  export type Outbound = RunbooksAttachRunbooksResponse$Outbound;
-}
-
-export function runbooksAttachRunbooksResponseToJSON(
-  runbooksAttachRunbooksResponse: RunbooksAttachRunbooksResponse,
-): string {
-  return JSON.stringify(
-    RunbooksAttachRunbooksResponse$outboundSchema.parse(
-      runbooksAttachRunbooksResponse,
-    ),
-  );
-}
 
 export function runbooksAttachRunbooksResponseFromJSON(
   jsonString: string,

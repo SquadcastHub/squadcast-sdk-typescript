@@ -20,41 +20,6 @@ export const V4ChangeTimezoneResponse$inboundSchema: z.ZodType<
   timeZone: z.string(),
 });
 
-/** @internal */
-export type V4ChangeTimezoneResponse$Outbound = {
-  timeZone: string;
-};
-
-/** @internal */
-export const V4ChangeTimezoneResponse$outboundSchema: z.ZodType<
-  V4ChangeTimezoneResponse$Outbound,
-  z.ZodTypeDef,
-  V4ChangeTimezoneResponse
-> = z.object({
-  timeZone: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4ChangeTimezoneResponse$ {
-  /** @deprecated use `V4ChangeTimezoneResponse$inboundSchema` instead. */
-  export const inboundSchema = V4ChangeTimezoneResponse$inboundSchema;
-  /** @deprecated use `V4ChangeTimezoneResponse$outboundSchema` instead. */
-  export const outboundSchema = V4ChangeTimezoneResponse$outboundSchema;
-  /** @deprecated use `V4ChangeTimezoneResponse$Outbound` instead. */
-  export type Outbound = V4ChangeTimezoneResponse$Outbound;
-}
-
-export function v4ChangeTimezoneResponseToJSON(
-  v4ChangeTimezoneResponse: V4ChangeTimezoneResponse,
-): string {
-  return JSON.stringify(
-    V4ChangeTimezoneResponse$outboundSchema.parse(v4ChangeTimezoneResponse),
-  );
-}
-
 export function v4ChangeTimezoneResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<V4ChangeTimezoneResponse, SDKValidationError> {

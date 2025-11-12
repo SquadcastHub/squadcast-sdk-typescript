@@ -52,36 +52,6 @@ export const Url$inboundSchema: z.ZodType<Url, z.ZodTypeDef, unknown> = z
     method: z.string().optional(),
   });
 
-/** @internal */
-export type Url$Outbound = {
-  url?: string | undefined;
-  method?: string | undefined;
-};
-
-/** @internal */
-export const Url$outboundSchema: z.ZodType<Url$Outbound, z.ZodTypeDef, Url> = z
-  .object({
-    url: z.string().optional(),
-    method: z.string().optional(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Url$ {
-  /** @deprecated use `Url$inboundSchema` instead. */
-  export const inboundSchema = Url$inboundSchema;
-  /** @deprecated use `Url$outboundSchema` instead. */
-  export const outboundSchema = Url$outboundSchema;
-  /** @deprecated use `Url$Outbound` instead. */
-  export type Outbound = Url$Outbound;
-}
-
-export function urlToJSON(url: Url): string {
-  return JSON.stringify(Url$outboundSchema.parse(url));
-}
-
 export function urlFromJSON(
   jsonString: string,
 ): SafeParseResult<Url, SDKValidationError> {
@@ -105,52 +75,6 @@ export const V3IncidentsIncidentActionsWebhookActionResponseHeader$inboundSchema
       "Content-Type": "contentType",
     });
   });
-
-/** @internal */
-export type V3IncidentsIncidentActionsWebhookActionResponseHeader$Outbound = {
-  "Content-Type": string;
-};
-
-/** @internal */
-export const V3IncidentsIncidentActionsWebhookActionResponseHeader$outboundSchema:
-  z.ZodType<
-    V3IncidentsIncidentActionsWebhookActionResponseHeader$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsIncidentActionsWebhookActionResponseHeader
-  > = z.object({
-    contentType: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      contentType: "Content-Type",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentActionsWebhookActionResponseHeader$ {
-  /** @deprecated use `V3IncidentsIncidentActionsWebhookActionResponseHeader$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsIncidentActionsWebhookActionResponseHeader$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentActionsWebhookActionResponseHeader$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIncidentActionsWebhookActionResponseHeader$outboundSchema;
-  /** @deprecated use `V3IncidentsIncidentActionsWebhookActionResponseHeader$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsIncidentActionsWebhookActionResponseHeader$Outbound;
-}
-
-export function v3IncidentsIncidentActionsWebhookActionResponseHeaderToJSON(
-  v3IncidentsIncidentActionsWebhookActionResponseHeader:
-    V3IncidentsIncidentActionsWebhookActionResponseHeader,
-): string {
-  return JSON.stringify(
-    V3IncidentsIncidentActionsWebhookActionResponseHeader$outboundSchema.parse(
-      v3IncidentsIncidentActionsWebhookActionResponseHeader,
-    ),
-  );
-}
 
 export function v3IncidentsIncidentActionsWebhookActionResponseHeaderFromJSON(
   jsonString: string,
@@ -214,106 +138,6 @@ export const V3IncidentsIncidentActionsWebhookActionResponse$inboundSchema:
       "custom_payload": "customPayload",
     });
   });
-
-/** @internal */
-export type V3IncidentsIncidentActionsWebhookActionResponse$Outbound = {
-  id: string;
-  created_at: string;
-  updated_at: string;
-  version: string;
-  organization_id: string;
-  author_id: string;
-  name: string;
-  slug: string;
-  description: string;
-  triggers: Array<string>;
-  urls: Array<Url$Outbound>;
-  teams: Array<string>;
-  is_all_teams_configured: boolean;
-  custom_payload_template_slug: string;
-  header: V3IncidentsIncidentActionsWebhookActionResponseHeader$Outbound;
-  filters?: any | undefined;
-  trigger_type: string;
-  language: string;
-  max_retry: number;
-  mail_ids: Array<string>;
-  payload_type: string;
-  custom_payload: string;
-};
-
-/** @internal */
-export const V3IncidentsIncidentActionsWebhookActionResponse$outboundSchema:
-  z.ZodType<
-    V3IncidentsIncidentActionsWebhookActionResponse$Outbound,
-    z.ZodTypeDef,
-    V3IncidentsIncidentActionsWebhookActionResponse
-  > = z.object({
-    id: z.string(),
-    createdAt: z.string(),
-    updatedAt: z.string(),
-    version: z.string(),
-    organizationId: z.string(),
-    authorId: z.string(),
-    name: z.string(),
-    slug: z.string(),
-    description: z.string(),
-    triggers: z.array(z.string()),
-    urls: z.array(z.lazy(() => Url$outboundSchema)),
-    teams: z.array(z.string()),
-    isAllTeamsConfigured: z.boolean(),
-    customPayloadTemplateSlug: z.string(),
-    header: z.lazy(() =>
-      V3IncidentsIncidentActionsWebhookActionResponseHeader$outboundSchema
-    ),
-    filters: z.any().optional(),
-    triggerType: z.string(),
-    language: z.string(),
-    maxRetry: z.number().int(),
-    mailIds: z.array(z.string()),
-    payloadType: z.string(),
-    customPayload: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      createdAt: "created_at",
-      updatedAt: "updated_at",
-      organizationId: "organization_id",
-      authorId: "author_id",
-      isAllTeamsConfigured: "is_all_teams_configured",
-      customPayloadTemplateSlug: "custom_payload_template_slug",
-      triggerType: "trigger_type",
-      maxRetry: "max_retry",
-      mailIds: "mail_ids",
-      payloadType: "payload_type",
-      customPayload: "custom_payload",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsIncidentActionsWebhookActionResponse$ {
-  /** @deprecated use `V3IncidentsIncidentActionsWebhookActionResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsIncidentActionsWebhookActionResponse$inboundSchema;
-  /** @deprecated use `V3IncidentsIncidentActionsWebhookActionResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsIncidentActionsWebhookActionResponse$outboundSchema;
-  /** @deprecated use `V3IncidentsIncidentActionsWebhookActionResponse$Outbound` instead. */
-  export type Outbound =
-    V3IncidentsIncidentActionsWebhookActionResponse$Outbound;
-}
-
-export function v3IncidentsIncidentActionsWebhookActionResponseToJSON(
-  v3IncidentsIncidentActionsWebhookActionResponse:
-    V3IncidentsIncidentActionsWebhookActionResponse,
-): string {
-  return JSON.stringify(
-    V3IncidentsIncidentActionsWebhookActionResponse$outboundSchema.parse(
-      v3IncidentsIncidentActionsWebhookActionResponse,
-    ),
-  );
-}
 
 export function v3IncidentsIncidentActionsWebhookActionResponseFromJSON(
   jsonString: string,

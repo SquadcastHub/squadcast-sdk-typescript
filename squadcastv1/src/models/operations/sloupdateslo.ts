@@ -27,22 +27,6 @@ export type SLOUpdateSLOResponse = {
 };
 
 /** @internal */
-export const SLOUpdateSLORequest$inboundSchema: z.ZodType<
-  SLOUpdateSLORequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  sloID: z.number().int(),
-  owner_id: z.string(),
-  "V3.SLO.CreateSLORequest": models.V3SLOCreateSLORequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-    "V3.SLO.CreateSLORequest": "v3SLOCreateSLORequest",
-  });
-});
-
-/** @internal */
 export type SLOUpdateSLORequest$Outbound = {
   sloID: number;
   owner_id: string;
@@ -65,34 +49,11 @@ export const SLOUpdateSLORequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOUpdateSLORequest$ {
-  /** @deprecated use `SLOUpdateSLORequest$inboundSchema` instead. */
-  export const inboundSchema = SLOUpdateSLORequest$inboundSchema;
-  /** @deprecated use `SLOUpdateSLORequest$outboundSchema` instead. */
-  export const outboundSchema = SLOUpdateSLORequest$outboundSchema;
-  /** @deprecated use `SLOUpdateSLORequest$Outbound` instead. */
-  export type Outbound = SLOUpdateSLORequest$Outbound;
-}
-
 export function sloUpdateSLORequestToJSON(
   sloUpdateSLORequest: SLOUpdateSLORequest,
 ): string {
   return JSON.stringify(
     SLOUpdateSLORequest$outboundSchema.parse(sloUpdateSLORequest),
-  );
-}
-
-export function sloUpdateSLORequestFromJSON(
-  jsonString: string,
-): SafeParseResult<SLOUpdateSLORequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => SLOUpdateSLORequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'SLOUpdateSLORequest' from JSON`,
   );
 }
 
@@ -104,41 +65,6 @@ export const SLOUpdateSLOData$inboundSchema: z.ZodType<
 > = z.object({
   slo: models.V3SLOSLODetailedResponse$inboundSchema,
 });
-
-/** @internal */
-export type SLOUpdateSLOData$Outbound = {
-  slo: models.V3SLOSLODetailedResponse$Outbound;
-};
-
-/** @internal */
-export const SLOUpdateSLOData$outboundSchema: z.ZodType<
-  SLOUpdateSLOData$Outbound,
-  z.ZodTypeDef,
-  SLOUpdateSLOData
-> = z.object({
-  slo: models.V3SLOSLODetailedResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOUpdateSLOData$ {
-  /** @deprecated use `SLOUpdateSLOData$inboundSchema` instead. */
-  export const inboundSchema = SLOUpdateSLOData$inboundSchema;
-  /** @deprecated use `SLOUpdateSLOData$outboundSchema` instead. */
-  export const outboundSchema = SLOUpdateSLOData$outboundSchema;
-  /** @deprecated use `SLOUpdateSLOData$Outbound` instead. */
-  export type Outbound = SLOUpdateSLOData$Outbound;
-}
-
-export function sloUpdateSLODataToJSON(
-  sloUpdateSLOData: SLOUpdateSLOData,
-): string {
-  return JSON.stringify(
-    SLOUpdateSLOData$outboundSchema.parse(sloUpdateSLOData),
-  );
-}
 
 export function sloUpdateSLODataFromJSON(
   jsonString: string,
@@ -158,41 +84,6 @@ export const SLOUpdateSLOResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.lazy(() => SLOUpdateSLOData$inboundSchema),
 });
-
-/** @internal */
-export type SLOUpdateSLOResponse$Outbound = {
-  data: SLOUpdateSLOData$Outbound;
-};
-
-/** @internal */
-export const SLOUpdateSLOResponse$outboundSchema: z.ZodType<
-  SLOUpdateSLOResponse$Outbound,
-  z.ZodTypeDef,
-  SLOUpdateSLOResponse
-> = z.object({
-  data: z.lazy(() => SLOUpdateSLOData$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SLOUpdateSLOResponse$ {
-  /** @deprecated use `SLOUpdateSLOResponse$inboundSchema` instead. */
-  export const inboundSchema = SLOUpdateSLOResponse$inboundSchema;
-  /** @deprecated use `SLOUpdateSLOResponse$outboundSchema` instead. */
-  export const outboundSchema = SLOUpdateSLOResponse$outboundSchema;
-  /** @deprecated use `SLOUpdateSLOResponse$Outbound` instead. */
-  export type Outbound = SLOUpdateSLOResponse$Outbound;
-}
-
-export function sloUpdateSLOResponseToJSON(
-  sloUpdateSLOResponse: SLOUpdateSLOResponse,
-): string {
-  return JSON.stringify(
-    SLOUpdateSLOResponse$outboundSchema.parse(sloUpdateSLOResponse),
-  );
-}
 
 export function sloUpdateSLOResponseFromJSON(
   jsonString: string,

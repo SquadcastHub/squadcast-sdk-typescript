@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type MessageOverlay = {
   template: string;
@@ -23,15 +20,6 @@ export type V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest = {
 };
 
 /** @internal */
-export const MessageOverlay$inboundSchema: z.ZodType<
-  MessageOverlay,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  template: z.string(),
-});
-
-/** @internal */
 export type MessageOverlay$Outbound = {
   template: string;
 };
@@ -45,41 +33,9 @@ export const MessageOverlay$outboundSchema: z.ZodType<
   template: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MessageOverlay$ {
-  /** @deprecated use `MessageOverlay$inboundSchema` instead. */
-  export const inboundSchema = MessageOverlay$inboundSchema;
-  /** @deprecated use `MessageOverlay$outboundSchema` instead. */
-  export const outboundSchema = MessageOverlay$outboundSchema;
-  /** @deprecated use `MessageOverlay$Outbound` instead. */
-  export type Outbound = MessageOverlay$Outbound;
-}
-
 export function messageOverlayToJSON(messageOverlay: MessageOverlay): string {
   return JSON.stringify(MessageOverlay$outboundSchema.parse(messageOverlay));
 }
-
-export function messageOverlayFromJSON(
-  jsonString: string,
-): SafeParseResult<MessageOverlay, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => MessageOverlay$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'MessageOverlay' from JSON`,
-  );
-}
-
-/** @internal */
-export const DescriptionOverlay$inboundSchema: z.ZodType<
-  DescriptionOverlay,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  template: z.string(),
-});
 
 /** @internal */
 export type DescriptionOverlay$Outbound = {
@@ -95,19 +51,6 @@ export const DescriptionOverlay$outboundSchema: z.ZodType<
   template: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DescriptionOverlay$ {
-  /** @deprecated use `DescriptionOverlay$inboundSchema` instead. */
-  export const inboundSchema = DescriptionOverlay$inboundSchema;
-  /** @deprecated use `DescriptionOverlay$outboundSchema` instead. */
-  export const outboundSchema = DescriptionOverlay$outboundSchema;
-  /** @deprecated use `DescriptionOverlay$Outbound` instead. */
-  export type Outbound = DescriptionOverlay$Outbound;
-}
-
 export function descriptionOverlayToJSON(
   descriptionOverlay: DescriptionOverlay,
 ): string {
@@ -115,34 +58,6 @@ export function descriptionOverlayToJSON(
     DescriptionOverlay$outboundSchema.parse(descriptionOverlay),
   );
 }
-
-export function descriptionOverlayFromJSON(
-  jsonString: string,
-): SafeParseResult<DescriptionOverlay, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DescriptionOverlay$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DescriptionOverlay' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$inboundSchema:
-  z.ZodType<
-    V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    overlay_template_type: z.string(),
-    message_overlay: z.lazy(() => MessageOverlay$inboundSchema),
-    description_overlay: z.lazy(() => DescriptionOverlay$inboundSchema),
-  }).transform((v) => {
-    return remap$(v, {
-      "overlay_template_type": "overlayTemplateType",
-      "message_overlay": "messageOverlay",
-      "description_overlay": "descriptionOverlay",
-    });
-  });
 
 /** @internal */
 export type V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$Outbound =
@@ -170,22 +85,6 @@ export const V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$outbound
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$ {
-  /** @deprecated use `V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$inboundSchema;
-  /** @deprecated use `V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$outboundSchema;
-  /** @deprecated use `V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$Outbound` instead. */
-  export type Outbound =
-    V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$Outbound;
-}
-
 export function v3ServicesOverlayUpdateCustomContentTemplateOverlayRequestToJSON(
   v3ServicesOverlayUpdateCustomContentTemplateOverlayRequest:
     V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest,
@@ -193,20 +92,5 @@ export function v3ServicesOverlayUpdateCustomContentTemplateOverlayRequestToJSON
   return JSON.stringify(
     V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$outboundSchema
       .parse(v3ServicesOverlayUpdateCustomContentTemplateOverlayRequest),
-  );
-}
-
-export function v3ServicesOverlayUpdateCustomContentTemplateOverlayRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'V3ServicesOverlayUpdateCustomContentTemplateOverlayRequest' from JSON`,
   );
 }

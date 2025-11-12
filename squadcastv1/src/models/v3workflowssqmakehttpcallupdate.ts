@@ -3,10 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3WorkflowsSqMakeHTTPCallUpdateName = {
   SqMakeHttpCall: "sq_make_http_call",
@@ -44,61 +41,16 @@ export type V3WorkflowsSqMakeHTTPCallUpdate = {
 };
 
 /** @internal */
-export const V3WorkflowsSqMakeHTTPCallUpdateName$inboundSchema: z.ZodNativeEnum<
-  typeof V3WorkflowsSqMakeHTTPCallUpdateName
-> = z.nativeEnum(V3WorkflowsSqMakeHTTPCallUpdateName);
-
-/** @internal */
 export const V3WorkflowsSqMakeHTTPCallUpdateName$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsSqMakeHTTPCallUpdateName> =
-    V3WorkflowsSqMakeHTTPCallUpdateName$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMakeHTTPCallUpdateName$ {
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdateName$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqMakeHTTPCallUpdateName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdateName$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqMakeHTTPCallUpdateName$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsSqMakeHTTPCallUpdateMethod$inboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsSqMakeHTTPCallUpdateMethod> = z.nativeEnum(
-    V3WorkflowsSqMakeHTTPCallUpdateMethod,
+  z.ZodNativeEnum<typeof V3WorkflowsSqMakeHTTPCallUpdateName> = z.nativeEnum(
+    V3WorkflowsSqMakeHTTPCallUpdateName,
   );
 
 /** @internal */
 export const V3WorkflowsSqMakeHTTPCallUpdateMethod$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsSqMakeHTTPCallUpdateMethod> =
-    V3WorkflowsSqMakeHTTPCallUpdateMethod$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMakeHTTPCallUpdateMethod$ {
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdateMethod$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqMakeHTTPCallUpdateMethod$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdateMethod$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqMakeHTTPCallUpdateMethod$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsSqMakeHTTPCallUpdateHeader$inboundSchema: z.ZodType<
-  V3WorkflowsSqMakeHTTPCallUpdateHeader,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  key: z.string(),
-  value: z.string(),
-});
+  z.ZodNativeEnum<typeof V3WorkflowsSqMakeHTTPCallUpdateMethod> = z.nativeEnum(
+    V3WorkflowsSqMakeHTTPCallUpdateMethod,
+  );
 
 /** @internal */
 export type V3WorkflowsSqMakeHTTPCallUpdateHeader$Outbound = {
@@ -116,21 +68,6 @@ export const V3WorkflowsSqMakeHTTPCallUpdateHeader$outboundSchema: z.ZodType<
   value: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMakeHTTPCallUpdateHeader$ {
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdateHeader$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqMakeHTTPCallUpdateHeader$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdateHeader$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqMakeHTTPCallUpdateHeader$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdateHeader$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqMakeHTTPCallUpdateHeader$Outbound;
-}
-
 export function v3WorkflowsSqMakeHTTPCallUpdateHeaderToJSON(
   v3WorkflowsSqMakeHTTPCallUpdateHeader: V3WorkflowsSqMakeHTTPCallUpdateHeader,
 ): string {
@@ -140,31 +77,6 @@ export function v3WorkflowsSqMakeHTTPCallUpdateHeaderToJSON(
     ),
   );
 }
-
-export function v3WorkflowsSqMakeHTTPCallUpdateHeaderFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsSqMakeHTTPCallUpdateHeader, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSqMakeHTTPCallUpdateHeader$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsSqMakeHTTPCallUpdateHeader' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsSqMakeHTTPCallUpdateData$inboundSchema: z.ZodType<
-  V3WorkflowsSqMakeHTTPCallUpdateData,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  method: V3WorkflowsSqMakeHTTPCallUpdateMethod$inboundSchema.optional(),
-  url: z.string().optional(),
-  headers: z.array(
-    z.lazy(() => V3WorkflowsSqMakeHTTPCallUpdateHeader$inboundSchema),
-  ).optional(),
-  body: z.string().optional(),
-});
 
 /** @internal */
 export type V3WorkflowsSqMakeHTTPCallUpdateData$Outbound = {
@@ -188,21 +100,6 @@ export const V3WorkflowsSqMakeHTTPCallUpdateData$outboundSchema: z.ZodType<
   body: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMakeHTTPCallUpdateData$ {
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdateData$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsSqMakeHTTPCallUpdateData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdateData$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsSqMakeHTTPCallUpdateData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdateData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqMakeHTTPCallUpdateData$Outbound;
-}
-
 export function v3WorkflowsSqMakeHTTPCallUpdateDataToJSON(
   v3WorkflowsSqMakeHTTPCallUpdateData: V3WorkflowsSqMakeHTTPCallUpdateData,
 ): string {
@@ -212,28 +109,6 @@ export function v3WorkflowsSqMakeHTTPCallUpdateDataToJSON(
     ),
   );
 }
-
-export function v3WorkflowsSqMakeHTTPCallUpdateDataFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsSqMakeHTTPCallUpdateData, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3WorkflowsSqMakeHTTPCallUpdateData$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsSqMakeHTTPCallUpdateData' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3WorkflowsSqMakeHTTPCallUpdate$inboundSchema: z.ZodType<
-  V3WorkflowsSqMakeHTTPCallUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: V3WorkflowsSqMakeHTTPCallUpdateName$inboundSchema,
-  data: z.lazy(() => V3WorkflowsSqMakeHTTPCallUpdateData$inboundSchema)
-    .optional(),
-});
 
 /** @internal */
 export type V3WorkflowsSqMakeHTTPCallUpdate$Outbound = {
@@ -252,19 +127,6 @@ export const V3WorkflowsSqMakeHTTPCallUpdate$outboundSchema: z.ZodType<
     .optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMakeHTTPCallUpdate$ {
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdate$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqMakeHTTPCallUpdate$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdate$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqMakeHTTPCallUpdate$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallUpdate$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqMakeHTTPCallUpdate$Outbound;
-}
-
 export function v3WorkflowsSqMakeHTTPCallUpdateToJSON(
   v3WorkflowsSqMakeHTTPCallUpdate: V3WorkflowsSqMakeHTTPCallUpdate,
 ): string {
@@ -272,15 +134,5 @@ export function v3WorkflowsSqMakeHTTPCallUpdateToJSON(
     V3WorkflowsSqMakeHTTPCallUpdate$outboundSchema.parse(
       v3WorkflowsSqMakeHTTPCallUpdate,
     ),
-  );
-}
-
-export function v3WorkflowsSqMakeHTTPCallUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsSqMakeHTTPCallUpdate, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3WorkflowsSqMakeHTTPCallUpdate$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsSqMakeHTTPCallUpdate' from JSON`,
   );
 }

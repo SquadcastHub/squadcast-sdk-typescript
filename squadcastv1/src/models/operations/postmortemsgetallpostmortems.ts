@@ -38,22 +38,6 @@ export type PostmortemsGetAllPostmortemsResponse = {
 };
 
 /** @internal */
-export const PostmortemsGetAllPostmortemsRequest$inboundSchema: z.ZodType<
-  PostmortemsGetAllPostmortemsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  fromDate: z.string(),
-  toDate: z.string(),
-  owner_id: z.string(),
-  limit: z.number().int(),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-  });
-});
-
-/** @internal */
 export type PostmortemsGetAllPostmortemsRequest$Outbound = {
   fromDate: string;
   toDate: string;
@@ -77,21 +61,6 @@ export const PostmortemsGetAllPostmortemsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PostmortemsGetAllPostmortemsRequest$ {
-  /** @deprecated use `PostmortemsGetAllPostmortemsRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    PostmortemsGetAllPostmortemsRequest$inboundSchema;
-  /** @deprecated use `PostmortemsGetAllPostmortemsRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    PostmortemsGetAllPostmortemsRequest$outboundSchema;
-  /** @deprecated use `PostmortemsGetAllPostmortemsRequest$Outbound` instead. */
-  export type Outbound = PostmortemsGetAllPostmortemsRequest$Outbound;
-}
-
 export function postmortemsGetAllPostmortemsRequestToJSON(
   postmortemsGetAllPostmortemsRequest: PostmortemsGetAllPostmortemsRequest,
 ): string {
@@ -99,17 +68,6 @@ export function postmortemsGetAllPostmortemsRequestToJSON(
     PostmortemsGetAllPostmortemsRequest$outboundSchema.parse(
       postmortemsGetAllPostmortemsRequest,
     ),
-  );
-}
-
-export function postmortemsGetAllPostmortemsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PostmortemsGetAllPostmortemsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      PostmortemsGetAllPostmortemsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PostmortemsGetAllPostmortemsRequest' from JSON`,
   );
 }
 
@@ -131,55 +89,6 @@ export const PostmortemsGetAllPostmortemsData$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type PostmortemsGetAllPostmortemsData$Outbound = {
-  result: Array<models.V3IncidentsPostmortemsPostmortemListResult$Outbound>;
-  total_count: Array<
-    models.V3IncidentsPostmortemsTotalPostmortemCount$Outbound
-  >;
-};
-
-/** @internal */
-export const PostmortemsGetAllPostmortemsData$outboundSchema: z.ZodType<
-  PostmortemsGetAllPostmortemsData$Outbound,
-  z.ZodTypeDef,
-  PostmortemsGetAllPostmortemsData
-> = z.object({
-  result: z.array(
-    models.V3IncidentsPostmortemsPostmortemListResult$outboundSchema,
-  ),
-  totalCount: z.array(
-    models.V3IncidentsPostmortemsTotalPostmortemCount$outboundSchema,
-  ),
-}).transform((v) => {
-  return remap$(v, {
-    totalCount: "total_count",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PostmortemsGetAllPostmortemsData$ {
-  /** @deprecated use `PostmortemsGetAllPostmortemsData$inboundSchema` instead. */
-  export const inboundSchema = PostmortemsGetAllPostmortemsData$inboundSchema;
-  /** @deprecated use `PostmortemsGetAllPostmortemsData$outboundSchema` instead. */
-  export const outboundSchema = PostmortemsGetAllPostmortemsData$outboundSchema;
-  /** @deprecated use `PostmortemsGetAllPostmortemsData$Outbound` instead. */
-  export type Outbound = PostmortemsGetAllPostmortemsData$Outbound;
-}
-
-export function postmortemsGetAllPostmortemsDataToJSON(
-  postmortemsGetAllPostmortemsData: PostmortemsGetAllPostmortemsData,
-): string {
-  return JSON.stringify(
-    PostmortemsGetAllPostmortemsData$outboundSchema.parse(
-      postmortemsGetAllPostmortemsData,
-    ),
-  );
-}
-
 export function postmortemsGetAllPostmortemsDataFromJSON(
   jsonString: string,
 ): SafeParseResult<PostmortemsGetAllPostmortemsData, SDKValidationError> {
@@ -198,45 +107,6 @@ export const PostmortemsGetAllPostmortemsResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: z.array(z.lazy(() => PostmortemsGetAllPostmortemsData$inboundSchema)),
 });
-
-/** @internal */
-export type PostmortemsGetAllPostmortemsResponse$Outbound = {
-  data: Array<PostmortemsGetAllPostmortemsData$Outbound>;
-};
-
-/** @internal */
-export const PostmortemsGetAllPostmortemsResponse$outboundSchema: z.ZodType<
-  PostmortemsGetAllPostmortemsResponse$Outbound,
-  z.ZodTypeDef,
-  PostmortemsGetAllPostmortemsResponse
-> = z.object({
-  data: z.array(z.lazy(() => PostmortemsGetAllPostmortemsData$outboundSchema)),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PostmortemsGetAllPostmortemsResponse$ {
-  /** @deprecated use `PostmortemsGetAllPostmortemsResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    PostmortemsGetAllPostmortemsResponse$inboundSchema;
-  /** @deprecated use `PostmortemsGetAllPostmortemsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    PostmortemsGetAllPostmortemsResponse$outboundSchema;
-  /** @deprecated use `PostmortemsGetAllPostmortemsResponse$Outbound` instead. */
-  export type Outbound = PostmortemsGetAllPostmortemsResponse$Outbound;
-}
-
-export function postmortemsGetAllPostmortemsResponseToJSON(
-  postmortemsGetAllPostmortemsResponse: PostmortemsGetAllPostmortemsResponse,
-): string {
-  return JSON.stringify(
-    PostmortemsGetAllPostmortemsResponse$outboundSchema.parse(
-      postmortemsGetAllPostmortemsResponse,
-    ),
-  );
-}
 
 export function postmortemsGetAllPostmortemsResponseFromJSON(
   jsonString: string,

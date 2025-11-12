@@ -22,21 +22,6 @@ export type ComponentGroupsDeleteComponentGroupByIdResponse = {
 };
 
 /** @internal */
-export const ComponentGroupsDeleteComponentGroupByIdRequest$inboundSchema:
-  z.ZodType<
-    ComponentGroupsDeleteComponentGroupByIdRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    statuspageID: z.string(),
-    group_id: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      "group_id": "groupId",
-    });
-  });
-
-/** @internal */
 export type ComponentGroupsDeleteComponentGroupByIdRequest$Outbound = {
   statuspageID: string;
   group_id: string;
@@ -57,22 +42,6 @@ export const ComponentGroupsDeleteComponentGroupByIdRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentGroupsDeleteComponentGroupByIdRequest$ {
-  /** @deprecated use `ComponentGroupsDeleteComponentGroupByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentGroupsDeleteComponentGroupByIdRequest$inboundSchema;
-  /** @deprecated use `ComponentGroupsDeleteComponentGroupByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentGroupsDeleteComponentGroupByIdRequest$outboundSchema;
-  /** @deprecated use `ComponentGroupsDeleteComponentGroupByIdRequest$Outbound` instead. */
-  export type Outbound =
-    ComponentGroupsDeleteComponentGroupByIdRequest$Outbound;
-}
-
 export function componentGroupsDeleteComponentGroupByIdRequestToJSON(
   componentGroupsDeleteComponentGroupByIdRequest:
     ComponentGroupsDeleteComponentGroupByIdRequest,
@@ -81,22 +50,6 @@ export function componentGroupsDeleteComponentGroupByIdRequestToJSON(
     ComponentGroupsDeleteComponentGroupByIdRequest$outboundSchema.parse(
       componentGroupsDeleteComponentGroupByIdRequest,
     ),
-  );
-}
-
-export function componentGroupsDeleteComponentGroupByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  ComponentGroupsDeleteComponentGroupByIdRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ComponentGroupsDeleteComponentGroupByIdRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComponentGroupsDeleteComponentGroupByIdRequest' from JSON`,
   );
 }
 
@@ -111,51 +64,6 @@ export const ComponentGroupsDeleteComponentGroupByIdResponse$inboundSchema:
       models
         .V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$inboundSchema,
   });
-
-/** @internal */
-export type ComponentGroupsDeleteComponentGroupByIdResponse$Outbound = {
-  data:
-    models.V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$Outbound;
-};
-
-/** @internal */
-export const ComponentGroupsDeleteComponentGroupByIdResponse$outboundSchema:
-  z.ZodType<
-    ComponentGroupsDeleteComponentGroupByIdResponse$Outbound,
-    z.ZodTypeDef,
-    ComponentGroupsDeleteComponentGroupByIdResponse
-  > = z.object({
-    data:
-      models
-        .V4StatusPagesComponentGroupsDeleteComponentGroupByIdResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentGroupsDeleteComponentGroupByIdResponse$ {
-  /** @deprecated use `ComponentGroupsDeleteComponentGroupByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    ComponentGroupsDeleteComponentGroupByIdResponse$inboundSchema;
-  /** @deprecated use `ComponentGroupsDeleteComponentGroupByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentGroupsDeleteComponentGroupByIdResponse$outboundSchema;
-  /** @deprecated use `ComponentGroupsDeleteComponentGroupByIdResponse$Outbound` instead. */
-  export type Outbound =
-    ComponentGroupsDeleteComponentGroupByIdResponse$Outbound;
-}
-
-export function componentGroupsDeleteComponentGroupByIdResponseToJSON(
-  componentGroupsDeleteComponentGroupByIdResponse:
-    ComponentGroupsDeleteComponentGroupByIdResponse,
-): string {
-  return JSON.stringify(
-    ComponentGroupsDeleteComponentGroupByIdResponse$outboundSchema.parse(
-      componentGroupsDeleteComponentGroupByIdResponse,
-    ),
-  );
-}
 
 export function componentGroupsDeleteComponentGroupByIdResponseFromJSON(
   jsonString: string,

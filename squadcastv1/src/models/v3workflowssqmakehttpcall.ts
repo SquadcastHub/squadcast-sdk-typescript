@@ -47,43 +47,19 @@ export type V3WorkflowsSqMakeHTTPCall = {
 export const V3WorkflowsSqMakeHTTPCallName$inboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSqMakeHTTPCallName
 > = z.nativeEnum(V3WorkflowsSqMakeHTTPCallName);
-
 /** @internal */
 export const V3WorkflowsSqMakeHTTPCallName$outboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSqMakeHTTPCallName
 > = V3WorkflowsSqMakeHTTPCallName$inboundSchema;
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMakeHTTPCallName$ {
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallName$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqMakeHTTPCallName$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallName$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqMakeHTTPCallName$outboundSchema;
-}
-
 /** @internal */
 export const V3WorkflowsSqMakeHTTPCallMethod$inboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSqMakeHTTPCallMethod
 > = z.nativeEnum(V3WorkflowsSqMakeHTTPCallMethod);
-
 /** @internal */
 export const V3WorkflowsSqMakeHTTPCallMethod$outboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsSqMakeHTTPCallMethod
 > = V3WorkflowsSqMakeHTTPCallMethod$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMakeHTTPCallMethod$ {
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallMethod$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqMakeHTTPCallMethod$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallMethod$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqMakeHTTPCallMethod$outboundSchema;
-}
 
 /** @internal */
 export const V3WorkflowsSqMakeHTTPCallHeader$inboundSchema: z.ZodType<
@@ -94,7 +70,6 @@ export const V3WorkflowsSqMakeHTTPCallHeader$inboundSchema: z.ZodType<
   key: z.string(),
   value: z.string(),
 });
-
 /** @internal */
 export type V3WorkflowsSqMakeHTTPCallHeader$Outbound = {
   key: string;
@@ -111,19 +86,6 @@ export const V3WorkflowsSqMakeHTTPCallHeader$outboundSchema: z.ZodType<
   value: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMakeHTTPCallHeader$ {
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallHeader$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqMakeHTTPCallHeader$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallHeader$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqMakeHTTPCallHeader$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallHeader$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqMakeHTTPCallHeader$Outbound;
-}
-
 export function v3WorkflowsSqMakeHTTPCallHeaderToJSON(
   v3WorkflowsSqMakeHTTPCallHeader: V3WorkflowsSqMakeHTTPCallHeader,
 ): string {
@@ -133,7 +95,6 @@ export function v3WorkflowsSqMakeHTTPCallHeaderToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqMakeHTTPCallHeaderFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqMakeHTTPCallHeader, SDKValidationError> {
@@ -156,7 +117,6 @@ export const V3WorkflowsSqMakeHTTPCallData$inboundSchema: z.ZodType<
     .optional(),
   body: z.string().optional(),
 });
-
 /** @internal */
 export type V3WorkflowsSqMakeHTTPCallData$Outbound = {
   method: string;
@@ -178,19 +138,6 @@ export const V3WorkflowsSqMakeHTTPCallData$outboundSchema: z.ZodType<
   body: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMakeHTTPCallData$ {
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallData$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqMakeHTTPCallData$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallData$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqMakeHTTPCallData$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCallData$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqMakeHTTPCallData$Outbound;
-}
-
 export function v3WorkflowsSqMakeHTTPCallDataToJSON(
   v3WorkflowsSqMakeHTTPCallData: V3WorkflowsSqMakeHTTPCallData,
 ): string {
@@ -200,7 +147,6 @@ export function v3WorkflowsSqMakeHTTPCallDataToJSON(
     ),
   );
 }
-
 export function v3WorkflowsSqMakeHTTPCallDataFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqMakeHTTPCallData, SDKValidationError> {
@@ -220,7 +166,6 @@ export const V3WorkflowsSqMakeHTTPCall$inboundSchema: z.ZodType<
   name: V3WorkflowsSqMakeHTTPCallName$inboundSchema,
   data: z.lazy(() => V3WorkflowsSqMakeHTTPCallData$inboundSchema),
 });
-
 /** @internal */
 export type V3WorkflowsSqMakeHTTPCall$Outbound = {
   name: string;
@@ -237,19 +182,6 @@ export const V3WorkflowsSqMakeHTTPCall$outboundSchema: z.ZodType<
   data: z.lazy(() => V3WorkflowsSqMakeHTTPCallData$outboundSchema),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsSqMakeHTTPCall$ {
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCall$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsSqMakeHTTPCall$inboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCall$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsSqMakeHTTPCall$outboundSchema;
-  /** @deprecated use `V3WorkflowsSqMakeHTTPCall$Outbound` instead. */
-  export type Outbound = V3WorkflowsSqMakeHTTPCall$Outbound;
-}
-
 export function v3WorkflowsSqMakeHTTPCallToJSON(
   v3WorkflowsSqMakeHTTPCall: V3WorkflowsSqMakeHTTPCall,
 ): string {
@@ -257,7 +189,6 @@ export function v3WorkflowsSqMakeHTTPCallToJSON(
     V3WorkflowsSqMakeHTTPCall$outboundSchema.parse(v3WorkflowsSqMakeHTTPCall),
   );
 }
-
 export function v3WorkflowsSqMakeHTTPCallFromJSON(
   jsonString: string,
 ): SafeParseResult<V3WorkflowsSqMakeHTTPCall, SDKValidationError> {

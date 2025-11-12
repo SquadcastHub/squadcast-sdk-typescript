@@ -48,32 +48,3 @@ export const CommonV4Error$inboundSchema: z.ZodType<
       body: v.body$,
     });
   });
-
-/** @internal */
-export type CommonV4Error$Outbound = {
-  error: models.ErrorT$Outbound;
-};
-
-/** @internal */
-export const CommonV4Error$outboundSchema: z.ZodType<
-  CommonV4Error$Outbound,
-  z.ZodTypeDef,
-  CommonV4Error
-> = z.instanceof(CommonV4Error)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: z.lazy(() => models.ErrorT$outboundSchema),
-  }));
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommonV4Error$ {
-  /** @deprecated use `CommonV4Error$inboundSchema` instead. */
-  export const inboundSchema = CommonV4Error$inboundSchema;
-  /** @deprecated use `CommonV4Error$outboundSchema` instead. */
-  export const outboundSchema = CommonV4Error$outboundSchema;
-  /** @deprecated use `CommonV4Error$Outbound` instead. */
-  export type Outbound = CommonV4Error$Outbound;
-}

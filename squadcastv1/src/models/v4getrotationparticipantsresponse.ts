@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4ParticipantGroup,
   V4ParticipantGroup$inboundSchema,
-  V4ParticipantGroup$Outbound,
-  V4ParticipantGroup$outboundSchema,
 } from "./v4participantgroup.js";
 
 export type V4GetRotationParticipantsResponse = {
@@ -27,46 +25,6 @@ export const V4GetRotationParticipantsResponse$inboundSchema: z.ZodType<
   rotationID: z.number().int(),
   participants: z.array(V4ParticipantGroup$inboundSchema),
 });
-
-/** @internal */
-export type V4GetRotationParticipantsResponse$Outbound = {
-  rotationID: number;
-  participants: Array<V4ParticipantGroup$Outbound>;
-};
-
-/** @internal */
-export const V4GetRotationParticipantsResponse$outboundSchema: z.ZodType<
-  V4GetRotationParticipantsResponse$Outbound,
-  z.ZodTypeDef,
-  V4GetRotationParticipantsResponse
-> = z.object({
-  rotationID: z.number().int(),
-  participants: z.array(V4ParticipantGroup$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4GetRotationParticipantsResponse$ {
-  /** @deprecated use `V4GetRotationParticipantsResponse$inboundSchema` instead. */
-  export const inboundSchema = V4GetRotationParticipantsResponse$inboundSchema;
-  /** @deprecated use `V4GetRotationParticipantsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4GetRotationParticipantsResponse$outboundSchema;
-  /** @deprecated use `V4GetRotationParticipantsResponse$Outbound` instead. */
-  export type Outbound = V4GetRotationParticipantsResponse$Outbound;
-}
-
-export function v4GetRotationParticipantsResponseToJSON(
-  v4GetRotationParticipantsResponse: V4GetRotationParticipantsResponse,
-): string {
-  return JSON.stringify(
-    V4GetRotationParticipantsResponse$outboundSchema.parse(
-      v4GetRotationParticipantsResponse,
-    ),
-  );
-}
 
 export function v4GetRotationParticipantsResponseFromJSON(
   jsonString: string,

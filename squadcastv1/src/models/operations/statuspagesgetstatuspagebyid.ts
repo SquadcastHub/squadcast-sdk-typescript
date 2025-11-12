@@ -20,15 +20,6 @@ export type StatusPagesGetStatusPageByIdResponse = {
 };
 
 /** @internal */
-export const StatusPagesGetStatusPageByIdRequest$inboundSchema: z.ZodType<
-  StatusPagesGetStatusPageByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-});
-
-/** @internal */
 export type StatusPagesGetStatusPageByIdRequest$Outbound = {
   statuspageID: string;
 };
@@ -42,21 +33,6 @@ export const StatusPagesGetStatusPageByIdRequest$outboundSchema: z.ZodType<
   statuspageID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusPagesGetStatusPageByIdRequest$ {
-  /** @deprecated use `StatusPagesGetStatusPageByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    StatusPagesGetStatusPageByIdRequest$inboundSchema;
-  /** @deprecated use `StatusPagesGetStatusPageByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    StatusPagesGetStatusPageByIdRequest$outboundSchema;
-  /** @deprecated use `StatusPagesGetStatusPageByIdRequest$Outbound` instead. */
-  export type Outbound = StatusPagesGetStatusPageByIdRequest$Outbound;
-}
-
 export function statusPagesGetStatusPageByIdRequestToJSON(
   statusPagesGetStatusPageByIdRequest: StatusPagesGetStatusPageByIdRequest,
 ): string {
@@ -64,17 +40,6 @@ export function statusPagesGetStatusPageByIdRequestToJSON(
     StatusPagesGetStatusPageByIdRequest$outboundSchema.parse(
       statusPagesGetStatusPageByIdRequest,
     ),
-  );
-}
-
-export function statusPagesGetStatusPageByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<StatusPagesGetStatusPageByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      StatusPagesGetStatusPageByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'StatusPagesGetStatusPageByIdRequest' from JSON`,
   );
 }
 
@@ -86,45 +51,6 @@ export const StatusPagesGetStatusPageByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4StatusPagesGetStatusPageByIdResponse$inboundSchema,
 });
-
-/** @internal */
-export type StatusPagesGetStatusPageByIdResponse$Outbound = {
-  data: models.V4StatusPagesGetStatusPageByIdResponse$Outbound;
-};
-
-/** @internal */
-export const StatusPagesGetStatusPageByIdResponse$outboundSchema: z.ZodType<
-  StatusPagesGetStatusPageByIdResponse$Outbound,
-  z.ZodTypeDef,
-  StatusPagesGetStatusPageByIdResponse
-> = z.object({
-  data: models.V4StatusPagesGetStatusPageByIdResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusPagesGetStatusPageByIdResponse$ {
-  /** @deprecated use `StatusPagesGetStatusPageByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    StatusPagesGetStatusPageByIdResponse$inboundSchema;
-  /** @deprecated use `StatusPagesGetStatusPageByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    StatusPagesGetStatusPageByIdResponse$outboundSchema;
-  /** @deprecated use `StatusPagesGetStatusPageByIdResponse$Outbound` instead. */
-  export type Outbound = StatusPagesGetStatusPageByIdResponse$Outbound;
-}
-
-export function statusPagesGetStatusPageByIdResponseToJSON(
-  statusPagesGetStatusPageByIdResponse: StatusPagesGetStatusPageByIdResponse,
-): string {
-  return JSON.stringify(
-    StatusPagesGetStatusPageByIdResponse$outboundSchema.parse(
-      statusPagesGetStatusPageByIdResponse,
-    ),
-  );
-}
 
 export function statusPagesGetStatusPageByIdResponseFromJSON(
   jsonString: string,

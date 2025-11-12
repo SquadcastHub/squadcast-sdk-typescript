@@ -9,20 +9,14 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4StatusPagesIssuesComponentStatus,
   V4StatusPagesIssuesComponentStatus$inboundSchema,
-  V4StatusPagesIssuesComponentStatus$Outbound,
-  V4StatusPagesIssuesComponentStatus$outboundSchema,
 } from "./v4statuspagesissuescomponentstatus.js";
 import {
   V4StatusPagesIssuesIssueComponentDetail,
   V4StatusPagesIssuesIssueComponentDetail$inboundSchema,
-  V4StatusPagesIssuesIssueComponentDetail$Outbound,
-  V4StatusPagesIssuesIssueComponentDetail$outboundSchema,
 } from "./v4statuspagesissuesissuecomponentdetail.js";
 import {
   V4StatusPagesIssuesIssueDetail,
   V4StatusPagesIssuesIssueDetail$inboundSchema,
-  V4StatusPagesIssuesIssueDetail$Outbound,
-  V4StatusPagesIssuesIssueDetail$outboundSchema,
 } from "./v4statuspagesissuesissuedetail.js";
 
 export type V4StatusPagesIssuesGetIssueByIdResponse = {
@@ -59,66 +53,6 @@ export const V4StatusPagesIssuesGetIssueByIdResponse$inboundSchema: z.ZodType<
   pageID: z.number().int(),
   isMigrated: z.boolean(),
 });
-
-/** @internal */
-export type V4StatusPagesIssuesGetIssueByIdResponse$Outbound = {
-  id: number;
-  title: string;
-  lastUpdatedAt: string;
-  components: Array<V4StatusPagesIssuesIssueComponentDetail$Outbound>;
-  issues: Array<V4StatusPagesIssuesIssueDetail$Outbound>;
-  currentIssueState: V4StatusPagesIssuesComponentStatus$Outbound;
-  pageStatus: V4StatusPagesIssuesComponentStatus$Outbound;
-  underMaintenance: boolean;
-  statusMaintenance: V4StatusPagesIssuesComponentStatus$Outbound;
-  pageID: number;
-  isMigrated: boolean;
-};
-
-/** @internal */
-export const V4StatusPagesIssuesGetIssueByIdResponse$outboundSchema: z.ZodType<
-  V4StatusPagesIssuesGetIssueByIdResponse$Outbound,
-  z.ZodTypeDef,
-  V4StatusPagesIssuesGetIssueByIdResponse
-> = z.object({
-  id: z.number().int(),
-  title: z.string(),
-  lastUpdatedAt: z.date().transform(v => v.toISOString()),
-  components: z.array(V4StatusPagesIssuesIssueComponentDetail$outboundSchema),
-  issues: z.array(V4StatusPagesIssuesIssueDetail$outboundSchema),
-  currentIssueState: V4StatusPagesIssuesComponentStatus$outboundSchema,
-  pageStatus: V4StatusPagesIssuesComponentStatus$outboundSchema,
-  underMaintenance: z.boolean(),
-  statusMaintenance: V4StatusPagesIssuesComponentStatus$outboundSchema,
-  pageID: z.number().int(),
-  isMigrated: z.boolean(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesIssuesGetIssueByIdResponse$ {
-  /** @deprecated use `V4StatusPagesIssuesGetIssueByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesIssuesGetIssueByIdResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesGetIssueByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesIssuesGetIssueByIdResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesIssuesGetIssueByIdResponse$Outbound` instead. */
-  export type Outbound = V4StatusPagesIssuesGetIssueByIdResponse$Outbound;
-}
-
-export function v4StatusPagesIssuesGetIssueByIdResponseToJSON(
-  v4StatusPagesIssuesGetIssueByIdResponse:
-    V4StatusPagesIssuesGetIssueByIdResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesIssuesGetIssueByIdResponse$outboundSchema.parse(
-      v4StatusPagesIssuesGetIssueByIdResponse,
-    ),
-  );
-}
 
 export function v4StatusPagesIssuesGetIssueByIdResponseFromJSON(
   jsonString: string,

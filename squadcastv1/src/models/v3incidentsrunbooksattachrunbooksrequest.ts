@@ -3,22 +3,10 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3IncidentsRunbooksAttachRunbooksRequest = {
   runbooks: Array<string>;
 };
-
-/** @internal */
-export const V3IncidentsRunbooksAttachRunbooksRequest$inboundSchema: z.ZodType<
-  V3IncidentsRunbooksAttachRunbooksRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  runbooks: z.array(z.string()),
-});
 
 /** @internal */
 export type V3IncidentsRunbooksAttachRunbooksRequest$Outbound = {
@@ -34,21 +22,6 @@ export const V3IncidentsRunbooksAttachRunbooksRequest$outboundSchema: z.ZodType<
   runbooks: z.array(z.string()),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsRunbooksAttachRunbooksRequest$ {
-  /** @deprecated use `V3IncidentsRunbooksAttachRunbooksRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsRunbooksAttachRunbooksRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsRunbooksAttachRunbooksRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsRunbooksAttachRunbooksRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsRunbooksAttachRunbooksRequest$Outbound` instead. */
-  export type Outbound = V3IncidentsRunbooksAttachRunbooksRequest$Outbound;
-}
-
 export function v3IncidentsRunbooksAttachRunbooksRequestToJSON(
   v3IncidentsRunbooksAttachRunbooksRequest:
     V3IncidentsRunbooksAttachRunbooksRequest,
@@ -57,21 +30,5 @@ export function v3IncidentsRunbooksAttachRunbooksRequestToJSON(
     V3IncidentsRunbooksAttachRunbooksRequest$outboundSchema.parse(
       v3IncidentsRunbooksAttachRunbooksRequest,
     ),
-  );
-}
-
-export function v3IncidentsRunbooksAttachRunbooksRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3IncidentsRunbooksAttachRunbooksRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3IncidentsRunbooksAttachRunbooksRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3IncidentsRunbooksAttachRunbooksRequest' from JSON`,
   );
 }

@@ -22,20 +22,6 @@ export type TeamsUpdateTeamResponse = {
 };
 
 /** @internal */
-export const TeamsUpdateTeamRequest$inboundSchema: z.ZodType<
-  TeamsUpdateTeamRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  teamId: z.string(),
-  "V3.Teams.UpdateTeamRequest": models.V3TeamsUpdateTeamRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V3.Teams.UpdateTeamRequest": "v3TeamsUpdateTeamRequest",
-  });
-});
-
-/** @internal */
 export type TeamsUpdateTeamRequest$Outbound = {
   teamId: string;
   "V3.Teams.UpdateTeamRequest": models.V3TeamsUpdateTeamRequest$Outbound;
@@ -55,34 +41,11 @@ export const TeamsUpdateTeamRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsUpdateTeamRequest$ {
-  /** @deprecated use `TeamsUpdateTeamRequest$inboundSchema` instead. */
-  export const inboundSchema = TeamsUpdateTeamRequest$inboundSchema;
-  /** @deprecated use `TeamsUpdateTeamRequest$outboundSchema` instead. */
-  export const outboundSchema = TeamsUpdateTeamRequest$outboundSchema;
-  /** @deprecated use `TeamsUpdateTeamRequest$Outbound` instead. */
-  export type Outbound = TeamsUpdateTeamRequest$Outbound;
-}
-
 export function teamsUpdateTeamRequestToJSON(
   teamsUpdateTeamRequest: TeamsUpdateTeamRequest,
 ): string {
   return JSON.stringify(
     TeamsUpdateTeamRequest$outboundSchema.parse(teamsUpdateTeamRequest),
-  );
-}
-
-export function teamsUpdateTeamRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<TeamsUpdateTeamRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => TeamsUpdateTeamRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'TeamsUpdateTeamRequest' from JSON`,
   );
 }
 
@@ -94,41 +57,6 @@ export const TeamsUpdateTeamResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V3TeamsTeamResponse$inboundSchema,
 });
-
-/** @internal */
-export type TeamsUpdateTeamResponse$Outbound = {
-  data: models.V3TeamsTeamResponse$Outbound;
-};
-
-/** @internal */
-export const TeamsUpdateTeamResponse$outboundSchema: z.ZodType<
-  TeamsUpdateTeamResponse$Outbound,
-  z.ZodTypeDef,
-  TeamsUpdateTeamResponse
-> = z.object({
-  data: models.V3TeamsTeamResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TeamsUpdateTeamResponse$ {
-  /** @deprecated use `TeamsUpdateTeamResponse$inboundSchema` instead. */
-  export const inboundSchema = TeamsUpdateTeamResponse$inboundSchema;
-  /** @deprecated use `TeamsUpdateTeamResponse$outboundSchema` instead. */
-  export const outboundSchema = TeamsUpdateTeamResponse$outboundSchema;
-  /** @deprecated use `TeamsUpdateTeamResponse$Outbound` instead. */
-  export type Outbound = TeamsUpdateTeamResponse$Outbound;
-}
-
-export function teamsUpdateTeamResponseToJSON(
-  teamsUpdateTeamResponse: TeamsUpdateTeamResponse,
-): string {
-  return JSON.stringify(
-    TeamsUpdateTeamResponse$outboundSchema.parse(teamsUpdateTeamResponse),
-  );
-}
 
 export function teamsUpdateTeamResponseFromJSON(
   jsonString: string,

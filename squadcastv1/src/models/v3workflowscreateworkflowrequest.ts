@@ -4,37 +4,29 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3WorkflowsActionRequest,
-  V3WorkflowsActionRequest$inboundSchema,
   V3WorkflowsActionRequest$Outbound,
   V3WorkflowsActionRequest$outboundSchema,
 } from "./v3workflowsactionrequest.js";
 import {
   V3WorkflowsCreateWorkflowFilter,
-  V3WorkflowsCreateWorkflowFilter$inboundSchema,
   V3WorkflowsCreateWorkflowFilter$Outbound,
   V3WorkflowsCreateWorkflowFilter$outboundSchema,
 } from "./v3workflowscreateworkflowfilter.js";
 import {
   V3WorkflowsEntityOwner,
-  V3WorkflowsEntityOwner$inboundSchema,
   V3WorkflowsEntityOwner$Outbound,
   V3WorkflowsEntityOwner$outboundSchema,
 } from "./v3workflowsentityowner.js";
 import {
   V3WorkflowsTag,
-  V3WorkflowsTag$inboundSchema,
   V3WorkflowsTag$Outbound,
   V3WorkflowsTag$outboundSchema,
 } from "./v3workflowstag.js";
 import {
   V3WorkflowsWorkflowTrigger,
-  V3WorkflowsWorkflowTrigger$inboundSchema,
   V3WorkflowsWorkflowTrigger$outboundSchema,
 } from "./v3workflowsworkflowtrigger.js";
 
@@ -60,52 +52,9 @@ export type V3WorkflowsCreateWorkflowRequest = {
 };
 
 /** @internal */
-export const V3WorkflowsCreateWorkflowRequestOwnerType$inboundSchema:
+export const V3WorkflowsCreateWorkflowRequestOwnerType$outboundSchema:
   z.ZodNativeEnum<typeof V3WorkflowsCreateWorkflowRequestOwnerType> = z
     .nativeEnum(V3WorkflowsCreateWorkflowRequestOwnerType);
-
-/** @internal */
-export const V3WorkflowsCreateWorkflowRequestOwnerType$outboundSchema:
-  z.ZodNativeEnum<typeof V3WorkflowsCreateWorkflowRequestOwnerType> =
-    V3WorkflowsCreateWorkflowRequestOwnerType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsCreateWorkflowRequestOwnerType$ {
-  /** @deprecated use `V3WorkflowsCreateWorkflowRequestOwnerType$inboundSchema` instead. */
-  export const inboundSchema =
-    V3WorkflowsCreateWorkflowRequestOwnerType$inboundSchema;
-  /** @deprecated use `V3WorkflowsCreateWorkflowRequestOwnerType$outboundSchema` instead. */
-  export const outboundSchema =
-    V3WorkflowsCreateWorkflowRequestOwnerType$outboundSchema;
-}
-
-/** @internal */
-export const V3WorkflowsCreateWorkflowRequest$inboundSchema: z.ZodType<
-  V3WorkflowsCreateWorkflowRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  title: z.string(),
-  description: z.string().optional(),
-  owner_id: z.string(),
-  owner_type: V3WorkflowsCreateWorkflowRequestOwnerType$inboundSchema
-    .optional(),
-  entity_owner: V3WorkflowsEntityOwner$inboundSchema.optional(),
-  tags: z.array(V3WorkflowsTag$inboundSchema).optional(),
-  trigger: V3WorkflowsWorkflowTrigger$inboundSchema,
-  filters: V3WorkflowsCreateWorkflowFilter$inboundSchema,
-  actions: z.array(V3WorkflowsActionRequest$inboundSchema),
-  enabled: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "owner_id": "ownerId",
-    "owner_type": "ownerType",
-    "entity_owner": "entityOwner",
-  });
-});
 
 /** @internal */
 export type V3WorkflowsCreateWorkflowRequest$Outbound = {
@@ -146,19 +95,6 @@ export const V3WorkflowsCreateWorkflowRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsCreateWorkflowRequest$ {
-  /** @deprecated use `V3WorkflowsCreateWorkflowRequest$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsCreateWorkflowRequest$inboundSchema;
-  /** @deprecated use `V3WorkflowsCreateWorkflowRequest$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsCreateWorkflowRequest$outboundSchema;
-  /** @deprecated use `V3WorkflowsCreateWorkflowRequest$Outbound` instead. */
-  export type Outbound = V3WorkflowsCreateWorkflowRequest$Outbound;
-}
-
 export function v3WorkflowsCreateWorkflowRequestToJSON(
   v3WorkflowsCreateWorkflowRequest: V3WorkflowsCreateWorkflowRequest,
 ): string {
@@ -166,15 +102,5 @@ export function v3WorkflowsCreateWorkflowRequestToJSON(
     V3WorkflowsCreateWorkflowRequest$outboundSchema.parse(
       v3WorkflowsCreateWorkflowRequest,
     ),
-  );
-}
-
-export function v3WorkflowsCreateWorkflowRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsCreateWorkflowRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3WorkflowsCreateWorkflowRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsCreateWorkflowRequest' from JSON`,
   );
 }

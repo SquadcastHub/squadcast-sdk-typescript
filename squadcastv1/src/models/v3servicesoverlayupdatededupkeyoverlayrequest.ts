@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type DedupKeyOverlay = {
   template: string;
@@ -17,16 +14,6 @@ export type V3ServicesOverlayUpdateDedupKeyOverlayRequest = {
   overlayTemplateType: string;
   dedupKeyOverlay: DedupKeyOverlay;
 };
-
-/** @internal */
-export const DedupKeyOverlay$inboundSchema: z.ZodType<
-  DedupKeyOverlay,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  template: z.string(),
-  duration: z.number().int(),
-});
 
 /** @internal */
 export type DedupKeyOverlay$Outbound = {
@@ -44,50 +31,11 @@ export const DedupKeyOverlay$outboundSchema: z.ZodType<
   duration: z.number().int(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DedupKeyOverlay$ {
-  /** @deprecated use `DedupKeyOverlay$inboundSchema` instead. */
-  export const inboundSchema = DedupKeyOverlay$inboundSchema;
-  /** @deprecated use `DedupKeyOverlay$outboundSchema` instead. */
-  export const outboundSchema = DedupKeyOverlay$outboundSchema;
-  /** @deprecated use `DedupKeyOverlay$Outbound` instead. */
-  export type Outbound = DedupKeyOverlay$Outbound;
-}
-
 export function dedupKeyOverlayToJSON(
   dedupKeyOverlay: DedupKeyOverlay,
 ): string {
   return JSON.stringify(DedupKeyOverlay$outboundSchema.parse(dedupKeyOverlay));
 }
-
-export function dedupKeyOverlayFromJSON(
-  jsonString: string,
-): SafeParseResult<DedupKeyOverlay, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => DedupKeyOverlay$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'DedupKeyOverlay' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3ServicesOverlayUpdateDedupKeyOverlayRequest$inboundSchema:
-  z.ZodType<
-    V3ServicesOverlayUpdateDedupKeyOverlayRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    overlay_template_type: z.string(),
-    dedup_key_overlay: z.lazy(() => DedupKeyOverlay$inboundSchema),
-  }).transform((v) => {
-    return remap$(v, {
-      "overlay_template_type": "overlayTemplateType",
-      "dedup_key_overlay": "dedupKeyOverlay",
-    });
-  });
 
 /** @internal */
 export type V3ServicesOverlayUpdateDedupKeyOverlayRequest$Outbound = {
@@ -111,21 +59,6 @@ export const V3ServicesOverlayUpdateDedupKeyOverlayRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesOverlayUpdateDedupKeyOverlayRequest$ {
-  /** @deprecated use `V3ServicesOverlayUpdateDedupKeyOverlayRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3ServicesOverlayUpdateDedupKeyOverlayRequest$inboundSchema;
-  /** @deprecated use `V3ServicesOverlayUpdateDedupKeyOverlayRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3ServicesOverlayUpdateDedupKeyOverlayRequest$outboundSchema;
-  /** @deprecated use `V3ServicesOverlayUpdateDedupKeyOverlayRequest$Outbound` instead. */
-  export type Outbound = V3ServicesOverlayUpdateDedupKeyOverlayRequest$Outbound;
-}
-
 export function v3ServicesOverlayUpdateDedupKeyOverlayRequestToJSON(
   v3ServicesOverlayUpdateDedupKeyOverlayRequest:
     V3ServicesOverlayUpdateDedupKeyOverlayRequest,
@@ -134,21 +67,5 @@ export function v3ServicesOverlayUpdateDedupKeyOverlayRequestToJSON(
     V3ServicesOverlayUpdateDedupKeyOverlayRequest$outboundSchema.parse(
       v3ServicesOverlayUpdateDedupKeyOverlayRequest,
     ),
-  );
-}
-
-export function v3ServicesOverlayUpdateDedupKeyOverlayRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3ServicesOverlayUpdateDedupKeyOverlayRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3ServicesOverlayUpdateDedupKeyOverlayRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3ServicesOverlayUpdateDedupKeyOverlayRequest' from JSON`,
   );
 }

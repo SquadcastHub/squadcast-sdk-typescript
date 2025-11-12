@@ -20,44 +20,6 @@ export const IncidentsBulkIncidentsPriorityUpdateResponseBody$inboundSchema:
     unknown
   > = z.object({});
 
-/** @internal */
-export type IncidentsBulkIncidentsPriorityUpdateResponseBody$Outbound = {};
-
-/** @internal */
-export const IncidentsBulkIncidentsPriorityUpdateResponseBody$outboundSchema:
-  z.ZodType<
-    IncidentsBulkIncidentsPriorityUpdateResponseBody$Outbound,
-    z.ZodTypeDef,
-    IncidentsBulkIncidentsPriorityUpdateResponseBody
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentsBulkIncidentsPriorityUpdateResponseBody$ {
-  /** @deprecated use `IncidentsBulkIncidentsPriorityUpdateResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentsBulkIncidentsPriorityUpdateResponseBody$inboundSchema;
-  /** @deprecated use `IncidentsBulkIncidentsPriorityUpdateResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentsBulkIncidentsPriorityUpdateResponseBody$outboundSchema;
-  /** @deprecated use `IncidentsBulkIncidentsPriorityUpdateResponseBody$Outbound` instead. */
-  export type Outbound =
-    IncidentsBulkIncidentsPriorityUpdateResponseBody$Outbound;
-}
-
-export function incidentsBulkIncidentsPriorityUpdateResponseBodyToJSON(
-  incidentsBulkIncidentsPriorityUpdateResponseBody:
-    IncidentsBulkIncidentsPriorityUpdateResponseBody,
-): string {
-  return JSON.stringify(
-    IncidentsBulkIncidentsPriorityUpdateResponseBody$outboundSchema.parse(
-      incidentsBulkIncidentsPriorityUpdateResponseBody,
-    ),
-  );
-}
-
 export function incidentsBulkIncidentsPriorityUpdateResponseBodyFromJSON(
   jsonString: string,
 ): SafeParseResult<

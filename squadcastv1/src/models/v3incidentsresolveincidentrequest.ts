@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type ResolutionReason = {
   message: string;
@@ -18,15 +15,6 @@ export type ResolutionReason = {
 export type V3IncidentsResolveIncidentRequest = {
   resolutionReason: ResolutionReason;
 };
-
-/** @internal */
-export const ResolutionReason$inboundSchema: z.ZodType<
-  ResolutionReason,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  message: z.string(),
-});
 
 /** @internal */
 export type ResolutionReason$Outbound = {
@@ -42,19 +30,6 @@ export const ResolutionReason$outboundSchema: z.ZodType<
   message: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResolutionReason$ {
-  /** @deprecated use `ResolutionReason$inboundSchema` instead. */
-  export const inboundSchema = ResolutionReason$inboundSchema;
-  /** @deprecated use `ResolutionReason$outboundSchema` instead. */
-  export const outboundSchema = ResolutionReason$outboundSchema;
-  /** @deprecated use `ResolutionReason$Outbound` instead. */
-  export type Outbound = ResolutionReason$Outbound;
-}
-
 export function resolutionReasonToJSON(
   resolutionReason: ResolutionReason,
 ): string {
@@ -62,29 +37,6 @@ export function resolutionReasonToJSON(
     ResolutionReason$outboundSchema.parse(resolutionReason),
   );
 }
-
-export function resolutionReasonFromJSON(
-  jsonString: string,
-): SafeParseResult<ResolutionReason, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResolutionReason$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResolutionReason' from JSON`,
-  );
-}
-
-/** @internal */
-export const V3IncidentsResolveIncidentRequest$inboundSchema: z.ZodType<
-  V3IncidentsResolveIncidentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  resolution_reason: z.lazy(() => ResolutionReason$inboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    "resolution_reason": "resolutionReason",
-  });
-});
 
 /** @internal */
 export type V3IncidentsResolveIncidentRequest$Outbound = {
@@ -104,20 +56,6 @@ export const V3IncidentsResolveIncidentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsResolveIncidentRequest$ {
-  /** @deprecated use `V3IncidentsResolveIncidentRequest$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsResolveIncidentRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsResolveIncidentRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsResolveIncidentRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsResolveIncidentRequest$Outbound` instead. */
-  export type Outbound = V3IncidentsResolveIncidentRequest$Outbound;
-}
-
 export function v3IncidentsResolveIncidentRequestToJSON(
   v3IncidentsResolveIncidentRequest: V3IncidentsResolveIncidentRequest,
 ): string {
@@ -125,15 +63,5 @@ export function v3IncidentsResolveIncidentRequestToJSON(
     V3IncidentsResolveIncidentRequest$outboundSchema.parse(
       v3IncidentsResolveIncidentRequest,
     ),
-  );
-}
-
-export function v3IncidentsResolveIncidentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3IncidentsResolveIncidentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3IncidentsResolveIncidentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3IncidentsResolveIncidentRequest' from JSON`,
   );
 }

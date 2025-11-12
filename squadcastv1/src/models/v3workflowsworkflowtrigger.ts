@@ -19,22 +19,6 @@ export type V3WorkflowsWorkflowTrigger = ClosedEnum<
 >;
 
 /** @internal */
-export const V3WorkflowsWorkflowTrigger$inboundSchema: z.ZodNativeEnum<
-  typeof V3WorkflowsWorkflowTrigger
-> = z.nativeEnum(V3WorkflowsWorkflowTrigger);
-
-/** @internal */
 export const V3WorkflowsWorkflowTrigger$outboundSchema: z.ZodNativeEnum<
   typeof V3WorkflowsWorkflowTrigger
-> = V3WorkflowsWorkflowTrigger$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsWorkflowTrigger$ {
-  /** @deprecated use `V3WorkflowsWorkflowTrigger$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsWorkflowTrigger$inboundSchema;
-  /** @deprecated use `V3WorkflowsWorkflowTrigger$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsWorkflowTrigger$outboundSchema;
-}
+> = z.nativeEnum(V3WorkflowsWorkflowTrigger);

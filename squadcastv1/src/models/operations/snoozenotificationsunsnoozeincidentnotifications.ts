@@ -23,24 +23,6 @@ export type SnoozeNotificationsUnsnoozeIncidentNotificationsResponse = {
 };
 
 /** @internal */
-export const SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$inboundSchema:
-  z.ZodType<
-    SnoozeNotificationsUnsnoozeIncidentNotificationsRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incidentID: z.string(),
-    "V3.Incidents.SnoozeNotifications.UnsnoozeIncidentRequest":
-      models
-        .V3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest$inboundSchema,
-  }).transform((v) => {
-    return remap$(v, {
-      "V3.Incidents.SnoozeNotifications.UnsnoozeIncidentRequest":
-        "v3IncidentsSnoozeNotificationsUnsnoozeIncidentRequest",
-    });
-  });
-
-/** @internal */
 export type SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$Outbound = {
   incidentID: string;
   "V3.Incidents.SnoozeNotifications.UnsnoozeIncidentRequest":
@@ -65,22 +47,6 @@ export const SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$outboundSch
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$ {
-  /** @deprecated use `SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$inboundSchema;
-  /** @deprecated use `SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$outboundSchema;
-  /** @deprecated use `SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$Outbound` instead. */
-  export type Outbound =
-    SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$Outbound;
-}
-
 export function snoozeNotificationsUnsnoozeIncidentNotificationsRequestToJSON(
   snoozeNotificationsUnsnoozeIncidentNotificationsRequest:
     SnoozeNotificationsUnsnoozeIncidentNotificationsRequest,
@@ -88,21 +54,6 @@ export function snoozeNotificationsUnsnoozeIncidentNotificationsRequestToJSON(
   return JSON.stringify(
     SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$outboundSchema
       .parse(snoozeNotificationsUnsnoozeIncidentNotificationsRequest),
-  );
-}
-
-export function snoozeNotificationsUnsnoozeIncidentNotificationsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  SnoozeNotificationsUnsnoozeIncidentNotificationsRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      SnoozeNotificationsUnsnoozeIncidentNotificationsRequest$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'SnoozeNotificationsUnsnoozeIncidentNotificationsRequest' from JSON`,
   );
 }
 
@@ -117,51 +68,6 @@ export const SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$inboundSch
       models
         .V3IncidentsSnoozeNotificationsUnsnoozeIncidentResponse$inboundSchema,
   });
-
-/** @internal */
-export type SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$Outbound =
-  {
-    data:
-      models.V3IncidentsSnoozeNotificationsUnsnoozeIncidentResponse$Outbound;
-  };
-
-/** @internal */
-export const SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$outboundSchema:
-  z.ZodType<
-    SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$Outbound,
-    z.ZodTypeDef,
-    SnoozeNotificationsUnsnoozeIncidentNotificationsResponse
-  > = z.object({
-    data:
-      models
-        .V3IncidentsSnoozeNotificationsUnsnoozeIncidentResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$ {
-  /** @deprecated use `SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$inboundSchema;
-  /** @deprecated use `SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$outboundSchema;
-  /** @deprecated use `SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$Outbound` instead. */
-  export type Outbound =
-    SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$Outbound;
-}
-
-export function snoozeNotificationsUnsnoozeIncidentNotificationsResponseToJSON(
-  snoozeNotificationsUnsnoozeIncidentNotificationsResponse:
-    SnoozeNotificationsUnsnoozeIncidentNotificationsResponse,
-): string {
-  return JSON.stringify(
-    SnoozeNotificationsUnsnoozeIncidentNotificationsResponse$outboundSchema
-      .parse(snoozeNotificationsUnsnoozeIncidentNotificationsResponse),
-  );
-}
 
 export function snoozeNotificationsUnsnoozeIncidentNotificationsResponseFromJSON(
   jsonString: string,

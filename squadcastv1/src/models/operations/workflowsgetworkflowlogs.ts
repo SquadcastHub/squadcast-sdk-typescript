@@ -20,22 +20,6 @@ export type WorkflowsGetWorkflowLogsResponse = {
 };
 
 /** @internal */
-export const WorkflowsGetWorkflowLogsRequest$inboundSchema: z.ZodType<
-  WorkflowsGetWorkflowLogsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  workflowID: z.string(),
-  page_size: z.number().int().optional(),
-  page_number: z.number().int().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "page_size": "pageSize",
-    "page_number": "pageNumber",
-  });
-});
-
-/** @internal */
 export type WorkflowsGetWorkflowLogsRequest$Outbound = {
   workflowID: string;
   page_size?: number | undefined;
@@ -58,19 +42,6 @@ export const WorkflowsGetWorkflowLogsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WorkflowsGetWorkflowLogsRequest$ {
-  /** @deprecated use `WorkflowsGetWorkflowLogsRequest$inboundSchema` instead. */
-  export const inboundSchema = WorkflowsGetWorkflowLogsRequest$inboundSchema;
-  /** @deprecated use `WorkflowsGetWorkflowLogsRequest$outboundSchema` instead. */
-  export const outboundSchema = WorkflowsGetWorkflowLogsRequest$outboundSchema;
-  /** @deprecated use `WorkflowsGetWorkflowLogsRequest$Outbound` instead. */
-  export type Outbound = WorkflowsGetWorkflowLogsRequest$Outbound;
-}
-
 export function workflowsGetWorkflowLogsRequestToJSON(
   workflowsGetWorkflowLogsRequest: WorkflowsGetWorkflowLogsRequest,
 ): string {
@@ -78,16 +49,6 @@ export function workflowsGetWorkflowLogsRequestToJSON(
     WorkflowsGetWorkflowLogsRequest$outboundSchema.parse(
       workflowsGetWorkflowLogsRequest,
     ),
-  );
-}
-
-export function workflowsGetWorkflowLogsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<WorkflowsGetWorkflowLogsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => WorkflowsGetWorkflowLogsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'WorkflowsGetWorkflowLogsRequest' from JSON`,
   );
 }
 
@@ -103,47 +64,6 @@ export const WorkflowsGetWorkflowLogsResponse$inboundSchema: z.ZodType<
     "Result": "result",
   });
 });
-
-/** @internal */
-export type WorkflowsGetWorkflowLogsResponse$Outbound = {
-  Result: models.V3WorkflowsGetWorkflowLogsResponse$Outbound;
-};
-
-/** @internal */
-export const WorkflowsGetWorkflowLogsResponse$outboundSchema: z.ZodType<
-  WorkflowsGetWorkflowLogsResponse$Outbound,
-  z.ZodTypeDef,
-  WorkflowsGetWorkflowLogsResponse
-> = z.object({
-  result: models.V3WorkflowsGetWorkflowLogsResponse$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    result: "Result",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WorkflowsGetWorkflowLogsResponse$ {
-  /** @deprecated use `WorkflowsGetWorkflowLogsResponse$inboundSchema` instead. */
-  export const inboundSchema = WorkflowsGetWorkflowLogsResponse$inboundSchema;
-  /** @deprecated use `WorkflowsGetWorkflowLogsResponse$outboundSchema` instead. */
-  export const outboundSchema = WorkflowsGetWorkflowLogsResponse$outboundSchema;
-  /** @deprecated use `WorkflowsGetWorkflowLogsResponse$Outbound` instead. */
-  export type Outbound = WorkflowsGetWorkflowLogsResponse$Outbound;
-}
-
-export function workflowsGetWorkflowLogsResponseToJSON(
-  workflowsGetWorkflowLogsResponse: WorkflowsGetWorkflowLogsResponse,
-): string {
-  return JSON.stringify(
-    WorkflowsGetWorkflowLogsResponse$outboundSchema.parse(
-      workflowsGetWorkflowLogsResponse,
-    ),
-  );
-}
 
 export function workflowsGetWorkflowLogsResponseFromJSON(
   jsonString: string,

@@ -20,15 +20,6 @@ export type UsersRemoveTokenRequest = {
 export type UsersRemoveTokenResponseBody = {};
 
 /** @internal */
-export const UsersRemoveTokenRequest$inboundSchema: z.ZodType<
-  UsersRemoveTokenRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  refreshTokenID: z.string(),
-});
-
-/** @internal */
 export type UsersRemoveTokenRequest$Outbound = {
   refreshTokenID: string;
 };
@@ -42,34 +33,11 @@ export const UsersRemoveTokenRequest$outboundSchema: z.ZodType<
   refreshTokenID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersRemoveTokenRequest$ {
-  /** @deprecated use `UsersRemoveTokenRequest$inboundSchema` instead. */
-  export const inboundSchema = UsersRemoveTokenRequest$inboundSchema;
-  /** @deprecated use `UsersRemoveTokenRequest$outboundSchema` instead. */
-  export const outboundSchema = UsersRemoveTokenRequest$outboundSchema;
-  /** @deprecated use `UsersRemoveTokenRequest$Outbound` instead. */
-  export type Outbound = UsersRemoveTokenRequest$Outbound;
-}
-
 export function usersRemoveTokenRequestToJSON(
   usersRemoveTokenRequest: UsersRemoveTokenRequest,
 ): string {
   return JSON.stringify(
     UsersRemoveTokenRequest$outboundSchema.parse(usersRemoveTokenRequest),
-  );
-}
-
-export function usersRemoveTokenRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UsersRemoveTokenRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UsersRemoveTokenRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UsersRemoveTokenRequest' from JSON`,
   );
 }
 
@@ -79,39 +47,6 @@ export const UsersRemoveTokenResponseBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type UsersRemoveTokenResponseBody$Outbound = {};
-
-/** @internal */
-export const UsersRemoveTokenResponseBody$outboundSchema: z.ZodType<
-  UsersRemoveTokenResponseBody$Outbound,
-  z.ZodTypeDef,
-  UsersRemoveTokenResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UsersRemoveTokenResponseBody$ {
-  /** @deprecated use `UsersRemoveTokenResponseBody$inboundSchema` instead. */
-  export const inboundSchema = UsersRemoveTokenResponseBody$inboundSchema;
-  /** @deprecated use `UsersRemoveTokenResponseBody$outboundSchema` instead. */
-  export const outboundSchema = UsersRemoveTokenResponseBody$outboundSchema;
-  /** @deprecated use `UsersRemoveTokenResponseBody$Outbound` instead. */
-  export type Outbound = UsersRemoveTokenResponseBody$Outbound;
-}
-
-export function usersRemoveTokenResponseBodyToJSON(
-  usersRemoveTokenResponseBody: UsersRemoveTokenResponseBody,
-): string {
-  return JSON.stringify(
-    UsersRemoveTokenResponseBody$outboundSchema.parse(
-      usersRemoveTokenResponseBody,
-    ),
-  );
-}
 
 export function usersRemoveTokenResponseBodyFromJSON(
   jsonString: string,

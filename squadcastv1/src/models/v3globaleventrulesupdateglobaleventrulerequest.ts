@@ -4,12 +4,8 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3GlobalEventRulesEntityOwnerUpdate,
-  V3GlobalEventRulesEntityOwnerUpdate$inboundSchema,
   V3GlobalEventRulesEntityOwnerUpdate$Outbound,
   V3GlobalEventRulesEntityOwnerUpdate$outboundSchema,
 } from "./v3globaleventrulesentityownerupdate.js";
@@ -19,22 +15,6 @@ export type V3GlobalEventRulesUpdateGlobalEventRuleRequest = {
   description?: string | undefined;
   entityOwner?: V3GlobalEventRulesEntityOwnerUpdate | undefined;
 };
-
-/** @internal */
-export const V3GlobalEventRulesUpdateGlobalEventRuleRequest$inboundSchema:
-  z.ZodType<
-    V3GlobalEventRulesUpdateGlobalEventRuleRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string().optional(),
-    description: z.string().optional(),
-    entity_owner: V3GlobalEventRulesEntityOwnerUpdate$inboundSchema.optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "entity_owner": "entityOwner",
-    });
-  });
 
 /** @internal */
 export type V3GlobalEventRulesUpdateGlobalEventRuleRequest$Outbound = {
@@ -59,22 +39,6 @@ export const V3GlobalEventRulesUpdateGlobalEventRuleRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesUpdateGlobalEventRuleRequest$ {
-  /** @deprecated use `V3GlobalEventRulesUpdateGlobalEventRuleRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3GlobalEventRulesUpdateGlobalEventRuleRequest$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesUpdateGlobalEventRuleRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3GlobalEventRulesUpdateGlobalEventRuleRequest$outboundSchema;
-  /** @deprecated use `V3GlobalEventRulesUpdateGlobalEventRuleRequest$Outbound` instead. */
-  export type Outbound =
-    V3GlobalEventRulesUpdateGlobalEventRuleRequest$Outbound;
-}
-
 export function v3GlobalEventRulesUpdateGlobalEventRuleRequestToJSON(
   v3GlobalEventRulesUpdateGlobalEventRuleRequest:
     V3GlobalEventRulesUpdateGlobalEventRuleRequest,
@@ -83,21 +47,5 @@ export function v3GlobalEventRulesUpdateGlobalEventRuleRequestToJSON(
     V3GlobalEventRulesUpdateGlobalEventRuleRequest$outboundSchema.parse(
       v3GlobalEventRulesUpdateGlobalEventRuleRequest,
     ),
-  );
-}
-
-export function v3GlobalEventRulesUpdateGlobalEventRuleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3GlobalEventRulesUpdateGlobalEventRuleRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3GlobalEventRulesUpdateGlobalEventRuleRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3GlobalEventRulesUpdateGlobalEventRuleRequest' from JSON`,
   );
 }

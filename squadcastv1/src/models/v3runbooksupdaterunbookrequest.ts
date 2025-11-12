@@ -4,18 +4,13 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
 import {
   CommonV3EntityOwner,
-  CommonV3EntityOwner$inboundSchema,
   CommonV3EntityOwner$Outbound,
   CommonV3EntityOwner$outboundSchema,
 } from "./commonv3entityowner.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3RunbooksStep,
-  V3RunbooksStep$inboundSchema,
   V3RunbooksStep$Outbound,
   V3RunbooksStep$outboundSchema,
 } from "./v3runbooksstep.js";
@@ -39,21 +34,6 @@ export type V3RunbooksUpdateRunbookRequest = {
 };
 
 /** @internal */
-export const V3RunbooksUpdateRunbookRequest$inboundSchema: z.ZodType<
-  V3RunbooksUpdateRunbookRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  steps: z.array(V3RunbooksStep$inboundSchema),
-  entity_owner: CommonV3EntityOwner$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "entity_owner": "entityOwner",
-  });
-});
-
-/** @internal */
 export type V3RunbooksUpdateRunbookRequest$Outbound = {
   name: string;
   steps: Array<V3RunbooksStep$Outbound>;
@@ -75,19 +55,6 @@ export const V3RunbooksUpdateRunbookRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3RunbooksUpdateRunbookRequest$ {
-  /** @deprecated use `V3RunbooksUpdateRunbookRequest$inboundSchema` instead. */
-  export const inboundSchema = V3RunbooksUpdateRunbookRequest$inboundSchema;
-  /** @deprecated use `V3RunbooksUpdateRunbookRequest$outboundSchema` instead. */
-  export const outboundSchema = V3RunbooksUpdateRunbookRequest$outboundSchema;
-  /** @deprecated use `V3RunbooksUpdateRunbookRequest$Outbound` instead. */
-  export type Outbound = V3RunbooksUpdateRunbookRequest$Outbound;
-}
-
 export function v3RunbooksUpdateRunbookRequestToJSON(
   v3RunbooksUpdateRunbookRequest: V3RunbooksUpdateRunbookRequest,
 ): string {
@@ -95,15 +62,5 @@ export function v3RunbooksUpdateRunbookRequestToJSON(
     V3RunbooksUpdateRunbookRequest$outboundSchema.parse(
       v3RunbooksUpdateRunbookRequest,
     ),
-  );
-}
-
-export function v3RunbooksUpdateRunbookRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3RunbooksUpdateRunbookRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3RunbooksUpdateRunbookRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3RunbooksUpdateRunbookRequest' from JSON`,
   );
 }

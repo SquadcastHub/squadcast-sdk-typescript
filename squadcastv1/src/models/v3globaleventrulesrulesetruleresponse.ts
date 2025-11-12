@@ -10,8 +10,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3GlobalEventRulesRuleAction,
   V3GlobalEventRulesRuleAction$inboundSchema,
-  V3GlobalEventRulesRuleAction$Outbound,
-  V3GlobalEventRulesRuleAction$outboundSchema,
 } from "./v3globaleventrulesruleaction.js";
 
 export type V3GlobalEventRulesRulesetRuleResponse = {
@@ -52,69 +50,6 @@ export const V3GlobalEventRulesRulesetRuleResponse$inboundSchema: z.ZodType<
     "updated_by": "updatedBy",
   });
 });
-
-/** @internal */
-export type V3GlobalEventRulesRulesetRuleResponse$Outbound = {
-  id?: number | undefined;
-  global_event_rule_id?: number | undefined;
-  description?: string | undefined;
-  expression?: string | undefined;
-  action?: V3GlobalEventRulesRuleAction$Outbound | undefined;
-  created_at?: string | undefined;
-  created_by?: string | undefined;
-  updated_at?: string | undefined;
-  updated_by?: string | undefined;
-};
-
-/** @internal */
-export const V3GlobalEventRulesRulesetRuleResponse$outboundSchema: z.ZodType<
-  V3GlobalEventRulesRulesetRuleResponse$Outbound,
-  z.ZodTypeDef,
-  V3GlobalEventRulesRulesetRuleResponse
-> = z.object({
-  id: z.number().int().optional(),
-  globalEventRuleId: z.number().int().optional(),
-  description: z.string().optional(),
-  expression: z.string().optional(),
-  action: V3GlobalEventRulesRuleAction$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  createdBy: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  updatedBy: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    globalEventRuleId: "global_event_rule_id",
-    createdAt: "created_at",
-    createdBy: "created_by",
-    updatedAt: "updated_at",
-    updatedBy: "updated_by",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesRulesetRuleResponse$ {
-  /** @deprecated use `V3GlobalEventRulesRulesetRuleResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V3GlobalEventRulesRulesetRuleResponse$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesRulesetRuleResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3GlobalEventRulesRulesetRuleResponse$outboundSchema;
-  /** @deprecated use `V3GlobalEventRulesRulesetRuleResponse$Outbound` instead. */
-  export type Outbound = V3GlobalEventRulesRulesetRuleResponse$Outbound;
-}
-
-export function v3GlobalEventRulesRulesetRuleResponseToJSON(
-  v3GlobalEventRulesRulesetRuleResponse: V3GlobalEventRulesRulesetRuleResponse,
-): string {
-  return JSON.stringify(
-    V3GlobalEventRulesRulesetRuleResponse$outboundSchema.parse(
-      v3GlobalEventRulesRulesetRuleResponse,
-    ),
-  );
-}
 
 export function v3GlobalEventRulesRulesetRuleResponseFromJSON(
   jsonString: string,

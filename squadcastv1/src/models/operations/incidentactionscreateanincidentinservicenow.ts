@@ -17,16 +17,6 @@ export type IncidentActionsCreateAnIncidentInServicenowRequest = {
 export type IncidentActionsCreateAnIncidentInServicenowResponse = {};
 
 /** @internal */
-export const IncidentActionsCreateAnIncidentInServicenowRequest$inboundSchema:
-  z.ZodType<
-    IncidentActionsCreateAnIncidentInServicenowRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incidentID: z.string(),
-  });
-
-/** @internal */
 export type IncidentActionsCreateAnIncidentInServicenowRequest$Outbound = {
   incidentID: string;
 };
@@ -41,22 +31,6 @@ export const IncidentActionsCreateAnIncidentInServicenowRequest$outboundSchema:
     incidentID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentActionsCreateAnIncidentInServicenowRequest$ {
-  /** @deprecated use `IncidentActionsCreateAnIncidentInServicenowRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentActionsCreateAnIncidentInServicenowRequest$inboundSchema;
-  /** @deprecated use `IncidentActionsCreateAnIncidentInServicenowRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentActionsCreateAnIncidentInServicenowRequest$outboundSchema;
-  /** @deprecated use `IncidentActionsCreateAnIncidentInServicenowRequest$Outbound` instead. */
-  export type Outbound =
-    IncidentActionsCreateAnIncidentInServicenowRequest$Outbound;
-}
-
 export function incidentActionsCreateAnIncidentInServicenowRequestToJSON(
   incidentActionsCreateAnIncidentInServicenowRequest:
     IncidentActionsCreateAnIncidentInServicenowRequest,
@@ -68,22 +42,6 @@ export function incidentActionsCreateAnIncidentInServicenowRequestToJSON(
   );
 }
 
-export function incidentActionsCreateAnIncidentInServicenowRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  IncidentActionsCreateAnIncidentInServicenowRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      IncidentActionsCreateAnIncidentInServicenowRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'IncidentActionsCreateAnIncidentInServicenowRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const IncidentActionsCreateAnIncidentInServicenowResponse$inboundSchema:
   z.ZodType<
@@ -91,44 +49,6 @@ export const IncidentActionsCreateAnIncidentInServicenowResponse$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.object({});
-
-/** @internal */
-export type IncidentActionsCreateAnIncidentInServicenowResponse$Outbound = {};
-
-/** @internal */
-export const IncidentActionsCreateAnIncidentInServicenowResponse$outboundSchema:
-  z.ZodType<
-    IncidentActionsCreateAnIncidentInServicenowResponse$Outbound,
-    z.ZodTypeDef,
-    IncidentActionsCreateAnIncidentInServicenowResponse
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IncidentActionsCreateAnIncidentInServicenowResponse$ {
-  /** @deprecated use `IncidentActionsCreateAnIncidentInServicenowResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    IncidentActionsCreateAnIncidentInServicenowResponse$inboundSchema;
-  /** @deprecated use `IncidentActionsCreateAnIncidentInServicenowResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    IncidentActionsCreateAnIncidentInServicenowResponse$outboundSchema;
-  /** @deprecated use `IncidentActionsCreateAnIncidentInServicenowResponse$Outbound` instead. */
-  export type Outbound =
-    IncidentActionsCreateAnIncidentInServicenowResponse$Outbound;
-}
-
-export function incidentActionsCreateAnIncidentInServicenowResponseToJSON(
-  incidentActionsCreateAnIncidentInServicenowResponse:
-    IncidentActionsCreateAnIncidentInServicenowResponse,
-): string {
-  return JSON.stringify(
-    IncidentActionsCreateAnIncidentInServicenowResponse$outboundSchema.parse(
-      incidentActionsCreateAnIncidentInServicenowResponse,
-    ),
-  );
-}
 
 export function incidentActionsCreateAnIncidentInServicenowResponseFromJSON(
   jsonString: string,

@@ -3,24 +3,11 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3WorkflowsEntityOwner = {
   id: string;
   type: string;
 };
-
-/** @internal */
-export const V3WorkflowsEntityOwner$inboundSchema: z.ZodType<
-  V3WorkflowsEntityOwner,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string(),
-  type: z.string(),
-});
 
 /** @internal */
 export type V3WorkflowsEntityOwner$Outbound = {
@@ -38,33 +25,10 @@ export const V3WorkflowsEntityOwner$outboundSchema: z.ZodType<
   type: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3WorkflowsEntityOwner$ {
-  /** @deprecated use `V3WorkflowsEntityOwner$inboundSchema` instead. */
-  export const inboundSchema = V3WorkflowsEntityOwner$inboundSchema;
-  /** @deprecated use `V3WorkflowsEntityOwner$outboundSchema` instead. */
-  export const outboundSchema = V3WorkflowsEntityOwner$outboundSchema;
-  /** @deprecated use `V3WorkflowsEntityOwner$Outbound` instead. */
-  export type Outbound = V3WorkflowsEntityOwner$Outbound;
-}
-
 export function v3WorkflowsEntityOwnerToJSON(
   v3WorkflowsEntityOwner: V3WorkflowsEntityOwner,
 ): string {
   return JSON.stringify(
     V3WorkflowsEntityOwner$outboundSchema.parse(v3WorkflowsEntityOwner),
-  );
-}
-
-export function v3WorkflowsEntityOwnerFromJSON(
-  jsonString: string,
-): SafeParseResult<V3WorkflowsEntityOwner, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3WorkflowsEntityOwner$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3WorkflowsEntityOwner' from JSON`,
   );
 }

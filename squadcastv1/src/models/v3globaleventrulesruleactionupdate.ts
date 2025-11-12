@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3GlobalEventRulesRuleActionUpdate = {
   /**
@@ -14,19 +11,6 @@ export type V3GlobalEventRulesRuleActionUpdate = {
    */
   routeTo?: string | undefined;
 };
-
-/** @internal */
-export const V3GlobalEventRulesRuleActionUpdate$inboundSchema: z.ZodType<
-  V3GlobalEventRulesRuleActionUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  route_to: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "route_to": "routeTo",
-  });
-});
 
 /** @internal */
 export type V3GlobalEventRulesRuleActionUpdate$Outbound = {
@@ -46,20 +30,6 @@ export const V3GlobalEventRulesRuleActionUpdate$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesRuleActionUpdate$ {
-  /** @deprecated use `V3GlobalEventRulesRuleActionUpdate$inboundSchema` instead. */
-  export const inboundSchema = V3GlobalEventRulesRuleActionUpdate$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesRuleActionUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3GlobalEventRulesRuleActionUpdate$outboundSchema;
-  /** @deprecated use `V3GlobalEventRulesRuleActionUpdate$Outbound` instead. */
-  export type Outbound = V3GlobalEventRulesRuleActionUpdate$Outbound;
-}
-
 export function v3GlobalEventRulesRuleActionUpdateToJSON(
   v3GlobalEventRulesRuleActionUpdate: V3GlobalEventRulesRuleActionUpdate,
 ): string {
@@ -67,16 +37,5 @@ export function v3GlobalEventRulesRuleActionUpdateToJSON(
     V3GlobalEventRulesRuleActionUpdate$outboundSchema.parse(
       v3GlobalEventRulesRuleActionUpdate,
     ),
-  );
-}
-
-export function v3GlobalEventRulesRuleActionUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<V3GlobalEventRulesRuleActionUpdate, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3GlobalEventRulesRuleActionUpdate$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3GlobalEventRulesRuleActionUpdate' from JSON`,
   );
 }

@@ -10,14 +10,10 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3TeamsTeamMember,
   V3TeamsTeamMember$inboundSchema,
-  V3TeamsTeamMember$Outbound,
-  V3TeamsTeamMember$outboundSchema,
 } from "./v3teamsteammember.js";
 import {
   V3TeamsTeamRole,
   V3TeamsTeamRole$inboundSchema,
-  V3TeamsTeamRole$Outbound,
-  V3TeamsTeamRole$outboundSchema,
 } from "./v3teamsteamrole.js";
 
 export type Organization = {
@@ -51,41 +47,6 @@ export const Organization$inboundSchema: z.ZodType<
   name: z.string(),
   slug: z.string(),
 });
-
-/** @internal */
-export type Organization$Outbound = {
-  id: string;
-  name: string;
-  slug: string;
-};
-
-/** @internal */
-export const Organization$outboundSchema: z.ZodType<
-  Organization$Outbound,
-  z.ZodTypeDef,
-  Organization
-> = z.object({
-  id: z.string(),
-  name: z.string(),
-  slug: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Organization$ {
-  /** @deprecated use `Organization$inboundSchema` instead. */
-  export const inboundSchema = Organization$inboundSchema;
-  /** @deprecated use `Organization$outboundSchema` instead. */
-  export const outboundSchema = Organization$outboundSchema;
-  /** @deprecated use `Organization$Outbound` instead. */
-  export type Outbound = Organization$Outbound;
-}
-
-export function organizationToJSON(organization: Organization): string {
-  return JSON.stringify(Organization$outboundSchema.parse(organization));
-}
 
 export function organizationFromJSON(
   jsonString: string,
@@ -123,70 +84,6 @@ export const V3TeamsTeamResponse$inboundSchema: z.ZodType<
     "organization_id": "organizationId",
   });
 });
-
-/** @internal */
-export type V3TeamsTeamResponse$Outbound = {
-  id: string;
-  created_at: string;
-  updated_at: string;
-  created_by: string;
-  organization_id: string;
-  name: string;
-  description: string;
-  slug: string;
-  members: Array<V3TeamsTeamMember$Outbound>;
-  roles: Array<V3TeamsTeamRole$Outbound>;
-  default: boolean;
-  organization: Organization$Outbound;
-};
-
-/** @internal */
-export const V3TeamsTeamResponse$outboundSchema: z.ZodType<
-  V3TeamsTeamResponse$Outbound,
-  z.ZodTypeDef,
-  V3TeamsTeamResponse
-> = z.object({
-  id: z.string(),
-  createdAt: z.string(),
-  updatedAt: z.string(),
-  createdBy: z.string(),
-  organizationId: z.string(),
-  name: z.string(),
-  description: z.string(),
-  slug: z.string(),
-  members: z.array(V3TeamsTeamMember$outboundSchema),
-  roles: z.array(V3TeamsTeamRole$outboundSchema),
-  default: z.boolean(),
-  organization: z.lazy(() => Organization$outboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-    createdBy: "created_by",
-    organizationId: "organization_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsTeamResponse$ {
-  /** @deprecated use `V3TeamsTeamResponse$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsTeamResponse$inboundSchema;
-  /** @deprecated use `V3TeamsTeamResponse$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsTeamResponse$outboundSchema;
-  /** @deprecated use `V3TeamsTeamResponse$Outbound` instead. */
-  export type Outbound = V3TeamsTeamResponse$Outbound;
-}
-
-export function v3TeamsTeamResponseToJSON(
-  v3TeamsTeamResponse: V3TeamsTeamResponse,
-): string {
-  return JSON.stringify(
-    V3TeamsTeamResponse$outboundSchema.parse(v3TeamsTeamResponse),
-  );
-}
 
 export function v3TeamsTeamResponseFromJSON(
   jsonString: string,

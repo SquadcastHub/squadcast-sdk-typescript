@@ -21,25 +21,6 @@ export type GlobalEventRulesDeleteRuleByIdRequest = {
 export type GlobalEventRulesDeleteRuleByIdResponseBody = {};
 
 /** @internal */
-export const GlobalEventRulesDeleteRuleByIdRequest$inboundSchema: z.ZodType<
-  GlobalEventRulesDeleteRuleByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  ger_id: z.number().int(),
-  alert_source_version: z.string(),
-  alert_source_shortname: z.string(),
-  rule_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "ger_id": "gerId",
-    "alert_source_version": "alertSourceVersion",
-    "alert_source_shortname": "alertSourceShortname",
-    "rule_id": "ruleId",
-  });
-});
-
-/** @internal */
 export type GlobalEventRulesDeleteRuleByIdRequest$Outbound = {
   ger_id: number;
   alert_source_version: string;
@@ -66,21 +47,6 @@ export const GlobalEventRulesDeleteRuleByIdRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesDeleteRuleByIdRequest$ {
-  /** @deprecated use `GlobalEventRulesDeleteRuleByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesDeleteRuleByIdRequest$inboundSchema;
-  /** @deprecated use `GlobalEventRulesDeleteRuleByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesDeleteRuleByIdRequest$outboundSchema;
-  /** @deprecated use `GlobalEventRulesDeleteRuleByIdRequest$Outbound` instead. */
-  export type Outbound = GlobalEventRulesDeleteRuleByIdRequest$Outbound;
-}
-
 export function globalEventRulesDeleteRuleByIdRequestToJSON(
   globalEventRulesDeleteRuleByIdRequest: GlobalEventRulesDeleteRuleByIdRequest,
 ): string {
@@ -91,58 +57,10 @@ export function globalEventRulesDeleteRuleByIdRequestToJSON(
   );
 }
 
-export function globalEventRulesDeleteRuleByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GlobalEventRulesDeleteRuleByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      GlobalEventRulesDeleteRuleByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GlobalEventRulesDeleteRuleByIdRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const GlobalEventRulesDeleteRuleByIdResponseBody$inboundSchema:
   z.ZodType<GlobalEventRulesDeleteRuleByIdResponseBody, z.ZodTypeDef, unknown> =
     z.object({});
-
-/** @internal */
-export type GlobalEventRulesDeleteRuleByIdResponseBody$Outbound = {};
-
-/** @internal */
-export const GlobalEventRulesDeleteRuleByIdResponseBody$outboundSchema:
-  z.ZodType<
-    GlobalEventRulesDeleteRuleByIdResponseBody$Outbound,
-    z.ZodTypeDef,
-    GlobalEventRulesDeleteRuleByIdResponseBody
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GlobalEventRulesDeleteRuleByIdResponseBody$ {
-  /** @deprecated use `GlobalEventRulesDeleteRuleByIdResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    GlobalEventRulesDeleteRuleByIdResponseBody$inboundSchema;
-  /** @deprecated use `GlobalEventRulesDeleteRuleByIdResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    GlobalEventRulesDeleteRuleByIdResponseBody$outboundSchema;
-  /** @deprecated use `GlobalEventRulesDeleteRuleByIdResponseBody$Outbound` instead. */
-  export type Outbound = GlobalEventRulesDeleteRuleByIdResponseBody$Outbound;
-}
-
-export function globalEventRulesDeleteRuleByIdResponseBodyToJSON(
-  globalEventRulesDeleteRuleByIdResponseBody:
-    GlobalEventRulesDeleteRuleByIdResponseBody,
-): string {
-  return JSON.stringify(
-    GlobalEventRulesDeleteRuleByIdResponseBody$outboundSchema.parse(
-      globalEventRulesDeleteRuleByIdResponseBody,
-    ),
-  );
-}
 
 export function globalEventRulesDeleteRuleByIdResponseBodyFromJSON(
   jsonString: string,

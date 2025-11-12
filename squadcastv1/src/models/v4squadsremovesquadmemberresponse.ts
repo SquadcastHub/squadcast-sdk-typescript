@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V4SquadsSquadMember,
   V4SquadsSquadMember$inboundSchema,
-  V4SquadsSquadMember$Outbound,
-  V4SquadsSquadMember$outboundSchema,
 } from "./v4squadssquadmember.js";
 
 export type V4SquadsRemoveSquadMemberResponse = {
@@ -27,46 +25,6 @@ export const V4SquadsRemoveSquadMemberResponse$inboundSchema: z.ZodType<
   id: z.string(),
   members: z.array(V4SquadsSquadMember$inboundSchema),
 });
-
-/** @internal */
-export type V4SquadsRemoveSquadMemberResponse$Outbound = {
-  id: string;
-  members: Array<V4SquadsSquadMember$Outbound>;
-};
-
-/** @internal */
-export const V4SquadsRemoveSquadMemberResponse$outboundSchema: z.ZodType<
-  V4SquadsRemoveSquadMemberResponse$Outbound,
-  z.ZodTypeDef,
-  V4SquadsRemoveSquadMemberResponse
-> = z.object({
-  id: z.string(),
-  members: z.array(V4SquadsSquadMember$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4SquadsRemoveSquadMemberResponse$ {
-  /** @deprecated use `V4SquadsRemoveSquadMemberResponse$inboundSchema` instead. */
-  export const inboundSchema = V4SquadsRemoveSquadMemberResponse$inboundSchema;
-  /** @deprecated use `V4SquadsRemoveSquadMemberResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4SquadsRemoveSquadMemberResponse$outboundSchema;
-  /** @deprecated use `V4SquadsRemoveSquadMemberResponse$Outbound` instead. */
-  export type Outbound = V4SquadsRemoveSquadMemberResponse$Outbound;
-}
-
-export function v4SquadsRemoveSquadMemberResponseToJSON(
-  v4SquadsRemoveSquadMemberResponse: V4SquadsRemoveSquadMemberResponse,
-): string {
-  return JSON.stringify(
-    V4SquadsRemoveSquadMemberResponse$outboundSchema.parse(
-      v4SquadsRemoveSquadMemberResponse,
-    ),
-  );
-}
 
 export function v4SquadsRemoveSquadMemberResponseFromJSON(
   jsonString: string,

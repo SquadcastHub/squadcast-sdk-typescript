@@ -20,16 +20,6 @@ export type PostmortemsDeletePostmortemByIncidentResponse = {
 };
 
 /** @internal */
-export const PostmortemsDeletePostmortemByIncidentRequest$inboundSchema:
-  z.ZodType<
-    PostmortemsDeletePostmortemByIncidentRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    incidentID: z.string(),
-  });
-
-/** @internal */
 export type PostmortemsDeletePostmortemByIncidentRequest$Outbound = {
   incidentID: string;
 };
@@ -44,21 +34,6 @@ export const PostmortemsDeletePostmortemByIncidentRequest$outboundSchema:
     incidentID: z.string(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PostmortemsDeletePostmortemByIncidentRequest$ {
-  /** @deprecated use `PostmortemsDeletePostmortemByIncidentRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    PostmortemsDeletePostmortemByIncidentRequest$inboundSchema;
-  /** @deprecated use `PostmortemsDeletePostmortemByIncidentRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    PostmortemsDeletePostmortemByIncidentRequest$outboundSchema;
-  /** @deprecated use `PostmortemsDeletePostmortemByIncidentRequest$Outbound` instead. */
-  export type Outbound = PostmortemsDeletePostmortemByIncidentRequest$Outbound;
-}
-
 export function postmortemsDeletePostmortemByIncidentRequestToJSON(
   postmortemsDeletePostmortemByIncidentRequest:
     PostmortemsDeletePostmortemByIncidentRequest,
@@ -67,22 +42,6 @@ export function postmortemsDeletePostmortemByIncidentRequestToJSON(
     PostmortemsDeletePostmortemByIncidentRequest$outboundSchema.parse(
       postmortemsDeletePostmortemByIncidentRequest,
     ),
-  );
-}
-
-export function postmortemsDeletePostmortemByIncidentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  PostmortemsDeletePostmortemByIncidentRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      PostmortemsDeletePostmortemByIncidentRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'PostmortemsDeletePostmortemByIncidentRequest' from JSON`,
   );
 }
 
@@ -95,47 +54,6 @@ export const PostmortemsDeletePostmortemByIncidentResponse$inboundSchema:
   > = z.object({
     data: models.V3IncidentsPostmortemsPostmortemResponse$inboundSchema,
   });
-
-/** @internal */
-export type PostmortemsDeletePostmortemByIncidentResponse$Outbound = {
-  data: models.V3IncidentsPostmortemsPostmortemResponse$Outbound;
-};
-
-/** @internal */
-export const PostmortemsDeletePostmortemByIncidentResponse$outboundSchema:
-  z.ZodType<
-    PostmortemsDeletePostmortemByIncidentResponse$Outbound,
-    z.ZodTypeDef,
-    PostmortemsDeletePostmortemByIncidentResponse
-  > = z.object({
-    data: models.V3IncidentsPostmortemsPostmortemResponse$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PostmortemsDeletePostmortemByIncidentResponse$ {
-  /** @deprecated use `PostmortemsDeletePostmortemByIncidentResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    PostmortemsDeletePostmortemByIncidentResponse$inboundSchema;
-  /** @deprecated use `PostmortemsDeletePostmortemByIncidentResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    PostmortemsDeletePostmortemByIncidentResponse$outboundSchema;
-  /** @deprecated use `PostmortemsDeletePostmortemByIncidentResponse$Outbound` instead. */
-  export type Outbound = PostmortemsDeletePostmortemByIncidentResponse$Outbound;
-}
-
-export function postmortemsDeletePostmortemByIncidentResponseToJSON(
-  postmortemsDeletePostmortemByIncidentResponse:
-    PostmortemsDeletePostmortemByIncidentResponse,
-): string {
-  return JSON.stringify(
-    PostmortemsDeletePostmortemByIncidentResponse$outboundSchema.parse(
-      postmortemsDeletePostmortemByIncidentResponse,
-    ),
-  );
-}
 
 export function postmortemsDeletePostmortemByIncidentResponseFromJSON(
   jsonString: string,

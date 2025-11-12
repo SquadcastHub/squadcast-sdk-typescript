@@ -3,10 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../lib/schemas.js";
 import { ClosedEnum } from "../types/enums.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export const V3GlobalEventRulesEntityOwnerUpdateType = {
   Team: "team",
@@ -23,37 +20,9 @@ export type V3GlobalEventRulesEntityOwnerUpdate = {
 };
 
 /** @internal */
-export const V3GlobalEventRulesEntityOwnerUpdateType$inboundSchema:
+export const V3GlobalEventRulesEntityOwnerUpdateType$outboundSchema:
   z.ZodNativeEnum<typeof V3GlobalEventRulesEntityOwnerUpdateType> = z
     .nativeEnum(V3GlobalEventRulesEntityOwnerUpdateType);
-
-/** @internal */
-export const V3GlobalEventRulesEntityOwnerUpdateType$outboundSchema:
-  z.ZodNativeEnum<typeof V3GlobalEventRulesEntityOwnerUpdateType> =
-    V3GlobalEventRulesEntityOwnerUpdateType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesEntityOwnerUpdateType$ {
-  /** @deprecated use `V3GlobalEventRulesEntityOwnerUpdateType$inboundSchema` instead. */
-  export const inboundSchema =
-    V3GlobalEventRulesEntityOwnerUpdateType$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesEntityOwnerUpdateType$outboundSchema` instead. */
-  export const outboundSchema =
-    V3GlobalEventRulesEntityOwnerUpdateType$outboundSchema;
-}
-
-/** @internal */
-export const V3GlobalEventRulesEntityOwnerUpdate$inboundSchema: z.ZodType<
-  V3GlobalEventRulesEntityOwnerUpdate,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string().optional(),
-  type: V3GlobalEventRulesEntityOwnerUpdateType$inboundSchema.optional(),
-});
 
 /** @internal */
 export type V3GlobalEventRulesEntityOwnerUpdate$Outbound = {
@@ -71,21 +40,6 @@ export const V3GlobalEventRulesEntityOwnerUpdate$outboundSchema: z.ZodType<
   type: V3GlobalEventRulesEntityOwnerUpdateType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3GlobalEventRulesEntityOwnerUpdate$ {
-  /** @deprecated use `V3GlobalEventRulesEntityOwnerUpdate$inboundSchema` instead. */
-  export const inboundSchema =
-    V3GlobalEventRulesEntityOwnerUpdate$inboundSchema;
-  /** @deprecated use `V3GlobalEventRulesEntityOwnerUpdate$outboundSchema` instead. */
-  export const outboundSchema =
-    V3GlobalEventRulesEntityOwnerUpdate$outboundSchema;
-  /** @deprecated use `V3GlobalEventRulesEntityOwnerUpdate$Outbound` instead. */
-  export type Outbound = V3GlobalEventRulesEntityOwnerUpdate$Outbound;
-}
-
 export function v3GlobalEventRulesEntityOwnerUpdateToJSON(
   v3GlobalEventRulesEntityOwnerUpdate: V3GlobalEventRulesEntityOwnerUpdate,
 ): string {
@@ -93,16 +47,5 @@ export function v3GlobalEventRulesEntityOwnerUpdateToJSON(
     V3GlobalEventRulesEntityOwnerUpdate$outboundSchema.parse(
       v3GlobalEventRulesEntityOwnerUpdate,
     ),
-  );
-}
-
-export function v3GlobalEventRulesEntityOwnerUpdateFromJSON(
-  jsonString: string,
-): SafeParseResult<V3GlobalEventRulesEntityOwnerUpdate, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3GlobalEventRulesEntityOwnerUpdate$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3GlobalEventRulesEntityOwnerUpdate' from JSON`,
   );
 }

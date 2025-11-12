@@ -35,60 +35,6 @@ export const V4StatusPagesMaintenancesCreateMaintenanceResponse$inboundSchema:
     endTime: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   });
 
-/** @internal */
-export type V4StatusPagesMaintenancesCreateMaintenanceResponse$Outbound = {
-  id: number;
-  title: string;
-  pageID: number;
-  note: string;
-  components?: Array<number> | undefined;
-  startTime: string;
-  endTime: string;
-};
-
-/** @internal */
-export const V4StatusPagesMaintenancesCreateMaintenanceResponse$outboundSchema:
-  z.ZodType<
-    V4StatusPagesMaintenancesCreateMaintenanceResponse$Outbound,
-    z.ZodTypeDef,
-    V4StatusPagesMaintenancesCreateMaintenanceResponse
-  > = z.object({
-    id: z.number().int(),
-    title: z.string(),
-    pageID: z.number().int(),
-    note: z.string(),
-    components: z.array(z.number().int()).optional(),
-    startTime: z.date().transform(v => v.toISOString()),
-    endTime: z.date().transform(v => v.toISOString()),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V4StatusPagesMaintenancesCreateMaintenanceResponse$ {
-  /** @deprecated use `V4StatusPagesMaintenancesCreateMaintenanceResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    V4StatusPagesMaintenancesCreateMaintenanceResponse$inboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesCreateMaintenanceResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V4StatusPagesMaintenancesCreateMaintenanceResponse$outboundSchema;
-  /** @deprecated use `V4StatusPagesMaintenancesCreateMaintenanceResponse$Outbound` instead. */
-  export type Outbound =
-    V4StatusPagesMaintenancesCreateMaintenanceResponse$Outbound;
-}
-
-export function v4StatusPagesMaintenancesCreateMaintenanceResponseToJSON(
-  v4StatusPagesMaintenancesCreateMaintenanceResponse:
-    V4StatusPagesMaintenancesCreateMaintenanceResponse,
-): string {
-  return JSON.stringify(
-    V4StatusPagesMaintenancesCreateMaintenanceResponse$outboundSchema.parse(
-      v4StatusPagesMaintenancesCreateMaintenanceResponse,
-    ),
-  );
-}
-
 export function v4StatusPagesMaintenancesCreateMaintenanceResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<

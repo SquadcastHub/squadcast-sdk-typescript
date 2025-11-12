@@ -17,15 +17,6 @@ export type RunbooksRemoveRunbookRequest = {
 export type RunbooksRemoveRunbookResponseBody = {};
 
 /** @internal */
-export const RunbooksRemoveRunbookRequest$inboundSchema: z.ZodType<
-  RunbooksRemoveRunbookRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  runbookID: z.string(),
-});
-
-/** @internal */
 export type RunbooksRemoveRunbookRequest$Outbound = {
   runbookID: string;
 };
@@ -39,19 +30,6 @@ export const RunbooksRemoveRunbookRequest$outboundSchema: z.ZodType<
   runbookID: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RunbooksRemoveRunbookRequest$ {
-  /** @deprecated use `RunbooksRemoveRunbookRequest$inboundSchema` instead. */
-  export const inboundSchema = RunbooksRemoveRunbookRequest$inboundSchema;
-  /** @deprecated use `RunbooksRemoveRunbookRequest$outboundSchema` instead. */
-  export const outboundSchema = RunbooksRemoveRunbookRequest$outboundSchema;
-  /** @deprecated use `RunbooksRemoveRunbookRequest$Outbound` instead. */
-  export type Outbound = RunbooksRemoveRunbookRequest$Outbound;
-}
-
 export function runbooksRemoveRunbookRequestToJSON(
   runbooksRemoveRunbookRequest: RunbooksRemoveRunbookRequest,
 ): string {
@@ -62,56 +40,12 @@ export function runbooksRemoveRunbookRequestToJSON(
   );
 }
 
-export function runbooksRemoveRunbookRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RunbooksRemoveRunbookRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RunbooksRemoveRunbookRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RunbooksRemoveRunbookRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const RunbooksRemoveRunbookResponseBody$inboundSchema: z.ZodType<
   RunbooksRemoveRunbookResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
-/** @internal */
-export type RunbooksRemoveRunbookResponseBody$Outbound = {};
-
-/** @internal */
-export const RunbooksRemoveRunbookResponseBody$outboundSchema: z.ZodType<
-  RunbooksRemoveRunbookResponseBody$Outbound,
-  z.ZodTypeDef,
-  RunbooksRemoveRunbookResponseBody
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RunbooksRemoveRunbookResponseBody$ {
-  /** @deprecated use `RunbooksRemoveRunbookResponseBody$inboundSchema` instead. */
-  export const inboundSchema = RunbooksRemoveRunbookResponseBody$inboundSchema;
-  /** @deprecated use `RunbooksRemoveRunbookResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    RunbooksRemoveRunbookResponseBody$outboundSchema;
-  /** @deprecated use `RunbooksRemoveRunbookResponseBody$Outbound` instead. */
-  export type Outbound = RunbooksRemoveRunbookResponseBody$Outbound;
-}
-
-export function runbooksRemoveRunbookResponseBodyToJSON(
-  runbooksRemoveRunbookResponseBody: RunbooksRemoveRunbookResponseBody,
-): string {
-  return JSON.stringify(
-    RunbooksRemoveRunbookResponseBody$outboundSchema.parse(
-      runbooksRemoveRunbookResponseBody,
-    ),
-  );
-}
 
 export function runbooksRemoveRunbookResponseBodyFromJSON(
   jsonString: string,

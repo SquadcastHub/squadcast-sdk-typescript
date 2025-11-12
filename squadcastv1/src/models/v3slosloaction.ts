@@ -61,7 +61,6 @@ export const V3SLOSLOAction$inboundSchema: z.ZodType<
     "deleted_at": "deletedAt",
   });
 });
-
 /** @internal */
 export type V3SLOSLOAction$Outbound = {
   id?: number | undefined;
@@ -108,23 +107,9 @@ export const V3SLOSLOAction$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3SLOSLOAction$ {
-  /** @deprecated use `V3SLOSLOAction$inboundSchema` instead. */
-  export const inboundSchema = V3SLOSLOAction$inboundSchema;
-  /** @deprecated use `V3SLOSLOAction$outboundSchema` instead. */
-  export const outboundSchema = V3SLOSLOAction$outboundSchema;
-  /** @deprecated use `V3SLOSLOAction$Outbound` instead. */
-  export type Outbound = V3SLOSLOAction$Outbound;
-}
-
 export function v3SLOSLOActionToJSON(v3SLOSLOAction: V3SLOSLOAction): string {
   return JSON.stringify(V3SLOSLOAction$outboundSchema.parse(v3SLOSLOAction));
 }
-
 export function v3SLOSLOActionFromJSON(
   jsonString: string,
 ): SafeParseResult<V3SLOSLOAction, SDKValidationError> {

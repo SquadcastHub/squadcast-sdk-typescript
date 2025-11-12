@@ -9,8 +9,6 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3ServicesJiraStatus,
   V3ServicesJiraStatus$inboundSchema,
-  V3ServicesJiraStatus$Outbound,
-  V3ServicesJiraStatus$outboundSchema,
 } from "./v3servicesjirastatus.js";
 
 export type V3ServicesJiraIssueType = {
@@ -29,45 +27,6 @@ export const V3ServicesJiraIssueType$inboundSchema: z.ZodType<
   name: z.string(),
   statuses: z.nullable(z.array(V3ServicesJiraStatus$inboundSchema)).optional(),
 });
-
-/** @internal */
-export type V3ServicesJiraIssueType$Outbound = {
-  id: string;
-  name: string;
-  statuses?: Array<V3ServicesJiraStatus$Outbound> | null | undefined;
-};
-
-/** @internal */
-export const V3ServicesJiraIssueType$outboundSchema: z.ZodType<
-  V3ServicesJiraIssueType$Outbound,
-  z.ZodTypeDef,
-  V3ServicesJiraIssueType
-> = z.object({
-  id: z.string(),
-  name: z.string(),
-  statuses: z.nullable(z.array(V3ServicesJiraStatus$outboundSchema)).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3ServicesJiraIssueType$ {
-  /** @deprecated use `V3ServicesJiraIssueType$inboundSchema` instead. */
-  export const inboundSchema = V3ServicesJiraIssueType$inboundSchema;
-  /** @deprecated use `V3ServicesJiraIssueType$outboundSchema` instead. */
-  export const outboundSchema = V3ServicesJiraIssueType$outboundSchema;
-  /** @deprecated use `V3ServicesJiraIssueType$Outbound` instead. */
-  export type Outbound = V3ServicesJiraIssueType$Outbound;
-}
-
-export function v3ServicesJiraIssueTypeToJSON(
-  v3ServicesJiraIssueType: V3ServicesJiraIssueType,
-): string {
-  return JSON.stringify(
-    V3ServicesJiraIssueType$outboundSchema.parse(v3ServicesJiraIssueType),
-  );
-}
 
 export function v3ServicesJiraIssueTypeFromJSON(
   jsonString: string,

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type V3TeamsUpdateTeamMemberRequest = {
   /**
@@ -18,20 +15,6 @@ export type V3TeamsUpdateTeamMemberRequest = {
    */
   role?: string | undefined;
 };
-
-/** @internal */
-export const V3TeamsUpdateTeamMemberRequest$inboundSchema: z.ZodType<
-  V3TeamsUpdateTeamMemberRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  role_ids: z.array(z.string()).optional(),
-  role: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "role_ids": "roleIds",
-  });
-});
 
 /** @internal */
 export type V3TeamsUpdateTeamMemberRequest$Outbound = {
@@ -53,19 +36,6 @@ export const V3TeamsUpdateTeamMemberRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3TeamsUpdateTeamMemberRequest$ {
-  /** @deprecated use `V3TeamsUpdateTeamMemberRequest$inboundSchema` instead. */
-  export const inboundSchema = V3TeamsUpdateTeamMemberRequest$inboundSchema;
-  /** @deprecated use `V3TeamsUpdateTeamMemberRequest$outboundSchema` instead. */
-  export const outboundSchema = V3TeamsUpdateTeamMemberRequest$outboundSchema;
-  /** @deprecated use `V3TeamsUpdateTeamMemberRequest$Outbound` instead. */
-  export type Outbound = V3TeamsUpdateTeamMemberRequest$Outbound;
-}
-
 export function v3TeamsUpdateTeamMemberRequestToJSON(
   v3TeamsUpdateTeamMemberRequest: V3TeamsUpdateTeamMemberRequest,
 ): string {
@@ -73,15 +43,5 @@ export function v3TeamsUpdateTeamMemberRequestToJSON(
     V3TeamsUpdateTeamMemberRequest$outboundSchema.parse(
       v3TeamsUpdateTeamMemberRequest,
     ),
-  );
-}
-
-export function v3TeamsUpdateTeamMemberRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<V3TeamsUpdateTeamMemberRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => V3TeamsUpdateTeamMemberRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V3TeamsUpdateTeamMemberRequest' from JSON`,
   );
 }

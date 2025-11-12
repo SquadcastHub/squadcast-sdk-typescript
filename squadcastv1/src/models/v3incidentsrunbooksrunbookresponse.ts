@@ -38,42 +38,6 @@ export const Step$inboundSchema: z.ZodType<Step, z.ZodTypeDef, unknown> = z
     });
   });
 
-/** @internal */
-export type Step$Outbound = {
-  content: string;
-  completed: boolean;
-  completed_at?: string | undefined;
-};
-
-/** @internal */
-export const Step$outboundSchema: z.ZodType<Step$Outbound, z.ZodTypeDef, Step> =
-  z.object({
-    content: z.string(),
-    completed: z.boolean(),
-    completedAt: z.date().transform(v => v.toISOString()).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      completedAt: "completed_at",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Step$ {
-  /** @deprecated use `Step$inboundSchema` instead. */
-  export const inboundSchema = Step$inboundSchema;
-  /** @deprecated use `Step$outboundSchema` instead. */
-  export const outboundSchema = Step$outboundSchema;
-  /** @deprecated use `Step$Outbound` instead. */
-  export type Outbound = Step$Outbound;
-}
-
-export function stepToJSON(step: Step): string {
-  return JSON.stringify(Step$outboundSchema.parse(step));
-}
-
 export function stepFromJSON(
   jsonString: string,
 ): SafeParseResult<Step, SDKValidationError> {
@@ -105,62 +69,6 @@ export const V3IncidentsRunbooksRunbookResponse$inboundSchema: z.ZodType<
     "deleted_at": "deletedAt",
   });
 });
-
-/** @internal */
-export type V3IncidentsRunbooksRunbookResponse$Outbound = {
-  id?: string | undefined;
-  incident_id: string;
-  runbook_id: string;
-  name: string;
-  steps: Array<Step$Outbound>;
-  deleted?: boolean | undefined;
-  deleted_at?: string | undefined;
-};
-
-/** @internal */
-export const V3IncidentsRunbooksRunbookResponse$outboundSchema: z.ZodType<
-  V3IncidentsRunbooksRunbookResponse$Outbound,
-  z.ZodTypeDef,
-  V3IncidentsRunbooksRunbookResponse
-> = z.object({
-  id: z.string().optional(),
-  incidentId: z.string(),
-  runbookId: z.string(),
-  name: z.string(),
-  steps: z.array(z.lazy(() => Step$outboundSchema)),
-  deleted: z.boolean().optional(),
-  deletedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    incidentId: "incident_id",
-    runbookId: "runbook_id",
-    deletedAt: "deleted_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsRunbooksRunbookResponse$ {
-  /** @deprecated use `V3IncidentsRunbooksRunbookResponse$inboundSchema` instead. */
-  export const inboundSchema = V3IncidentsRunbooksRunbookResponse$inboundSchema;
-  /** @deprecated use `V3IncidentsRunbooksRunbookResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsRunbooksRunbookResponse$outboundSchema;
-  /** @deprecated use `V3IncidentsRunbooksRunbookResponse$Outbound` instead. */
-  export type Outbound = V3IncidentsRunbooksRunbookResponse$Outbound;
-}
-
-export function v3IncidentsRunbooksRunbookResponseToJSON(
-  v3IncidentsRunbooksRunbookResponse: V3IncidentsRunbooksRunbookResponse,
-): string {
-  return JSON.stringify(
-    V3IncidentsRunbooksRunbookResponse$outboundSchema.parse(
-      v3IncidentsRunbooksRunbookResponse,
-    ),
-  );
-}
 
 export function v3IncidentsRunbooksRunbookResponseFromJSON(
   jsonString: string,

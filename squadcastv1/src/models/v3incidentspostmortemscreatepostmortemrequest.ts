@@ -4,24 +4,18 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
-import { Result as SafeParseResult } from "../types/fp.js";
-import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 import {
   V3IncidentsPostmortemsPostmortemAttachmentRequest,
-  V3IncidentsPostmortemsPostmortemAttachmentRequest$inboundSchema,
   V3IncidentsPostmortemsPostmortemAttachmentRequest$Outbound,
   V3IncidentsPostmortemsPostmortemAttachmentRequest$outboundSchema,
 } from "./v3incidentspostmortemspostmortemattachmentrequest.js";
 import {
   V3IncidentsPostmortemsPostmortemFollowUp,
-  V3IncidentsPostmortemsPostmortemFollowUp$inboundSchema,
   V3IncidentsPostmortemsPostmortemFollowUp$Outbound,
   V3IncidentsPostmortemsPostmortemFollowUp$outboundSchema,
 } from "./v3incidentspostmortemspostmortemfollowup.js";
 import {
   V3IncidentsPostmortemsPostmortemStatus,
-  V3IncidentsPostmortemsPostmortemStatus$inboundSchema,
   V3IncidentsPostmortemsPostmortemStatus$outboundSchema,
 } from "./v3incidentspostmortemspostmortemstatus.js";
 
@@ -39,28 +33,6 @@ export type V3IncidentsPostmortemsCreatePostmortemRequest = {
   followUps: Array<V3IncidentsPostmortemsPostmortemFollowUp>;
   attachments: Array<V3IncidentsPostmortemsPostmortemAttachmentRequest>;
 };
-
-/** @internal */
-export const V3IncidentsPostmortemsCreatePostmortemRequest$inboundSchema:
-  z.ZodType<
-    V3IncidentsPostmortemsCreatePostmortemRequest,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    owner_id: z.string(),
-    title: z.string(),
-    postmortem: z.string(),
-    status: V3IncidentsPostmortemsPostmortemStatus$inboundSchema,
-    follow_ups: z.array(V3IncidentsPostmortemsPostmortemFollowUp$inboundSchema),
-    attachments: z.array(
-      V3IncidentsPostmortemsPostmortemAttachmentRequest$inboundSchema,
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      "owner_id": "ownerId",
-      "follow_ups": "followUps",
-    });
-  });
 
 /** @internal */
 export type V3IncidentsPostmortemsCreatePostmortemRequest$Outbound = {
@@ -96,21 +68,6 @@ export const V3IncidentsPostmortemsCreatePostmortemRequest$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V3IncidentsPostmortemsCreatePostmortemRequest$ {
-  /** @deprecated use `V3IncidentsPostmortemsCreatePostmortemRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    V3IncidentsPostmortemsCreatePostmortemRequest$inboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsCreatePostmortemRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    V3IncidentsPostmortemsCreatePostmortemRequest$outboundSchema;
-  /** @deprecated use `V3IncidentsPostmortemsCreatePostmortemRequest$Outbound` instead. */
-  export type Outbound = V3IncidentsPostmortemsCreatePostmortemRequest$Outbound;
-}
-
 export function v3IncidentsPostmortemsCreatePostmortemRequestToJSON(
   v3IncidentsPostmortemsCreatePostmortemRequest:
     V3IncidentsPostmortemsCreatePostmortemRequest,
@@ -119,21 +76,5 @@ export function v3IncidentsPostmortemsCreatePostmortemRequestToJSON(
     V3IncidentsPostmortemsCreatePostmortemRequest$outboundSchema.parse(
       v3IncidentsPostmortemsCreatePostmortemRequest,
     ),
-  );
-}
-
-export function v3IncidentsPostmortemsCreatePostmortemRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  V3IncidentsPostmortemsCreatePostmortemRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      V3IncidentsPostmortemsCreatePostmortemRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V3IncidentsPostmortemsCreatePostmortemRequest' from JSON`,
   );
 }

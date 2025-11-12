@@ -23,22 +23,6 @@ export type StatusPagesUpdateStatusPageByIdResponse = {
 };
 
 /** @internal */
-export const StatusPagesUpdateStatusPageByIdRequest$inboundSchema: z.ZodType<
-  StatusPagesUpdateStatusPageByIdRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-  "V4.StatusPages.UpdateStatusPageByIdRequest":
-    models.V4StatusPagesUpdateStatusPageByIdRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V4.StatusPages.UpdateStatusPageByIdRequest":
-      "v4StatusPagesUpdateStatusPageByIdRequest",
-  });
-});
-
-/** @internal */
 export type StatusPagesUpdateStatusPageByIdRequest$Outbound = {
   statuspageID: string;
   "V4.StatusPages.UpdateStatusPageByIdRequest":
@@ -61,21 +45,6 @@ export const StatusPagesUpdateStatusPageByIdRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusPagesUpdateStatusPageByIdRequest$ {
-  /** @deprecated use `StatusPagesUpdateStatusPageByIdRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    StatusPagesUpdateStatusPageByIdRequest$inboundSchema;
-  /** @deprecated use `StatusPagesUpdateStatusPageByIdRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    StatusPagesUpdateStatusPageByIdRequest$outboundSchema;
-  /** @deprecated use `StatusPagesUpdateStatusPageByIdRequest$Outbound` instead. */
-  export type Outbound = StatusPagesUpdateStatusPageByIdRequest$Outbound;
-}
-
 export function statusPagesUpdateStatusPageByIdRequestToJSON(
   statusPagesUpdateStatusPageByIdRequest:
     StatusPagesUpdateStatusPageByIdRequest,
@@ -87,17 +56,6 @@ export function statusPagesUpdateStatusPageByIdRequestToJSON(
   );
 }
 
-export function statusPagesUpdateStatusPageByIdRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<StatusPagesUpdateStatusPageByIdRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      StatusPagesUpdateStatusPageByIdRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'StatusPagesUpdateStatusPageByIdRequest' from JSON`,
-  );
-}
-
 /** @internal */
 export const StatusPagesUpdateStatusPageByIdResponse$inboundSchema: z.ZodType<
   StatusPagesUpdateStatusPageByIdResponse,
@@ -106,46 +64,6 @@ export const StatusPagesUpdateStatusPageByIdResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4StatusPagesUpdateStatusPageByIdResponse$inboundSchema,
 });
-
-/** @internal */
-export type StatusPagesUpdateStatusPageByIdResponse$Outbound = {
-  data: models.V4StatusPagesUpdateStatusPageByIdResponse$Outbound;
-};
-
-/** @internal */
-export const StatusPagesUpdateStatusPageByIdResponse$outboundSchema: z.ZodType<
-  StatusPagesUpdateStatusPageByIdResponse$Outbound,
-  z.ZodTypeDef,
-  StatusPagesUpdateStatusPageByIdResponse
-> = z.object({
-  data: models.V4StatusPagesUpdateStatusPageByIdResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StatusPagesUpdateStatusPageByIdResponse$ {
-  /** @deprecated use `StatusPagesUpdateStatusPageByIdResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    StatusPagesUpdateStatusPageByIdResponse$inboundSchema;
-  /** @deprecated use `StatusPagesUpdateStatusPageByIdResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    StatusPagesUpdateStatusPageByIdResponse$outboundSchema;
-  /** @deprecated use `StatusPagesUpdateStatusPageByIdResponse$Outbound` instead. */
-  export type Outbound = StatusPagesUpdateStatusPageByIdResponse$Outbound;
-}
-
-export function statusPagesUpdateStatusPageByIdResponseToJSON(
-  statusPagesUpdateStatusPageByIdResponse:
-    StatusPagesUpdateStatusPageByIdResponse,
-): string {
-  return JSON.stringify(
-    StatusPagesUpdateStatusPageByIdResponse$outboundSchema.parse(
-      statusPagesUpdateStatusPageByIdResponse,
-    ),
-  );
-}
 
 export function statusPagesUpdateStatusPageByIdResponseFromJSON(
   jsonString: string,

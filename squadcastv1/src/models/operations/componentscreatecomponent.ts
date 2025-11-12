@@ -23,22 +23,6 @@ export type ComponentsCreateComponentResponse = {
 };
 
 /** @internal */
-export const ComponentsCreateComponentRequest$inboundSchema: z.ZodType<
-  ComponentsCreateComponentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  statuspageID: z.string(),
-  "V4.StatusPages.Components.CreateComponentRequest":
-    models.V4StatusPagesComponentsCreateComponentRequest$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "V4.StatusPages.Components.CreateComponentRequest":
-      "v4StatusPagesComponentsCreateComponentRequest",
-  });
-});
-
-/** @internal */
 export type ComponentsCreateComponentRequest$Outbound = {
   statuspageID: string;
   "V4.StatusPages.Components.CreateComponentRequest":
@@ -61,19 +45,6 @@ export const ComponentsCreateComponentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentsCreateComponentRequest$ {
-  /** @deprecated use `ComponentsCreateComponentRequest$inboundSchema` instead. */
-  export const inboundSchema = ComponentsCreateComponentRequest$inboundSchema;
-  /** @deprecated use `ComponentsCreateComponentRequest$outboundSchema` instead. */
-  export const outboundSchema = ComponentsCreateComponentRequest$outboundSchema;
-  /** @deprecated use `ComponentsCreateComponentRequest$Outbound` instead. */
-  export type Outbound = ComponentsCreateComponentRequest$Outbound;
-}
-
 export function componentsCreateComponentRequestToJSON(
   componentsCreateComponentRequest: ComponentsCreateComponentRequest,
 ): string {
@@ -81,16 +52,6 @@ export function componentsCreateComponentRequestToJSON(
     ComponentsCreateComponentRequest$outboundSchema.parse(
       componentsCreateComponentRequest,
     ),
-  );
-}
-
-export function componentsCreateComponentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ComponentsCreateComponentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ComponentsCreateComponentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComponentsCreateComponentRequest' from JSON`,
   );
 }
 
@@ -102,44 +63,6 @@ export const ComponentsCreateComponentResponse$inboundSchema: z.ZodType<
 > = z.object({
   data: models.V4StatusPagesComponentsCreateComponentResponse$inboundSchema,
 });
-
-/** @internal */
-export type ComponentsCreateComponentResponse$Outbound = {
-  data: models.V4StatusPagesComponentsCreateComponentResponse$Outbound;
-};
-
-/** @internal */
-export const ComponentsCreateComponentResponse$outboundSchema: z.ZodType<
-  ComponentsCreateComponentResponse$Outbound,
-  z.ZodTypeDef,
-  ComponentsCreateComponentResponse
-> = z.object({
-  data: models.V4StatusPagesComponentsCreateComponentResponse$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComponentsCreateComponentResponse$ {
-  /** @deprecated use `ComponentsCreateComponentResponse$inboundSchema` instead. */
-  export const inboundSchema = ComponentsCreateComponentResponse$inboundSchema;
-  /** @deprecated use `ComponentsCreateComponentResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    ComponentsCreateComponentResponse$outboundSchema;
-  /** @deprecated use `ComponentsCreateComponentResponse$Outbound` instead. */
-  export type Outbound = ComponentsCreateComponentResponse$Outbound;
-}
-
-export function componentsCreateComponentResponseToJSON(
-  componentsCreateComponentResponse: ComponentsCreateComponentResponse,
-): string {
-  return JSON.stringify(
-    ComponentsCreateComponentResponse$outboundSchema.parse(
-      componentsCreateComponentResponse,
-    ),
-  );
-}
 
 export function componentsCreateComponentResponseFromJSON(
   jsonString: string,
