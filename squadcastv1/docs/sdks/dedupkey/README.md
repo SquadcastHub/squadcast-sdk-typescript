@@ -1,5 +1,4 @@
-# DedupKey
-(*services.overlays.dedupKey*)
+# Services.Overlays.DedupKey
 
 ## Overview
 

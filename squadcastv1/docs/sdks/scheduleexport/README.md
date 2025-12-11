@@ -1,5 +1,4 @@
-# ScheduleExport
-(*schedule.export*)
+# Schedule.Export
 
 ## Overview
 

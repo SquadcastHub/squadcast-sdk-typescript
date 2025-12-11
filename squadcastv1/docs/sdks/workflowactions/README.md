@@ -1,5 +1,4 @@
 # WorkflowActions
-(*workflowActions*)
 
 ## Overview
 

@@ -1,5 +1,4 @@
-# AutoPauseTransientAlerts
-(*incidents.autoPauseTransientAlerts*)
+# Incidents.AutoPauseTransientAlerts
 
 ## Overview
 

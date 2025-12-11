@@ -11,10 +11,16 @@ Developer-friendly & type-safe Typescript SDK specifically catered to leverage *
 
 <!-- End Summary [summary] -->
 
+<!-- Start Summary [summary] -->
+## Summary
+
+
+<!-- End Summary [summary] -->
+
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [openapi](#openapi)
+* [Squadcast SDK for TypeScript](#squadcast-sdk-for-typescript)
   * [SDK Installation](#sdk-installation)
   * [Requirements](#requirements)
   * [SDK Example Usage](#sdk-example-usage)
@@ -138,44 +144,44 @@ run();
 <details open>
 <summary>Available methods</summary>
 
-### [analytics](docs/sdks/analytics/README.md)
+### [Analytics](docs/sdks/analytics/README.md)
 
 * [getOrganization](docs/sdks/analytics/README.md#getorganization) - Get Org level analytics
 * [getTeam](docs/sdks/analytics/README.md#getteam) - Get Team level analytics
 
-### [auditLogs](docs/sdks/auditlogs/README.md)
+### [AuditLogs](docs/sdks/auditlogs/README.md)
 
 * [list](docs/sdks/auditlogs/README.md#list) - List all Audit Logs
 * [export](docs/sdks/auditlogs/README.md#export) - Initiate an asynchronous export of audit logs based on the provided filters. The export file will be generated and available for download. Use 'Get details of Audit Logs export history by ID' API to retrieve the download URL.
 * [listExportHistory](docs/sdks/auditlogs/README.md#listexporthistory) - List all Audit Logs export history
 * [getById](docs/sdks/auditlogs/README.md#getbyid) - Get audit log by ID
 
-#### [auditLogs.exportHistory](docs/sdks/exporthistory/README.md)
+#### [AuditLogs.ExportHistory](docs/sdks/exporthistory/README.md)
 
 * [get](docs/sdks/exporthistory/README.md#get) - Get details of Audit Logs export history by ID
 
-### [communicationCards](docs/sdks/communicationcards/README.md)
+### [CommunicationCards](docs/sdks/communicationcards/README.md)
 
 * [createSlackChannel](docs/sdks/communicationcards/README.md#createslackchannel) - Create Slack Channel in Communication Card
 * [delete](docs/sdks/communicationcards/README.md#delete) - Delete Communication Card
 
-### [components](docs/sdks/components/README.md)
+### [Components](docs/sdks/components/README.md)
 
 * [list](docs/sdks/components/README.md#list) - List Components
 * [deleteById](docs/sdks/components/README.md#deletebyid) - Delete Component By ID
 
-### [dedupKeyOverlays](docs/sdks/dedupkeyoverlays/README.md)
+### [DedupKeyOverlays](docs/sdks/dedupkeyoverlays/README.md)
 
 * [renderTemplate](docs/sdks/dedupkeyoverlays/README.md#rendertemplate) - Render Dedup Key template
 * [getForAlertSource](docs/sdks/dedupkeyoverlays/README.md#getforalertsource) - Get Dedup Key Overlay for Alert Source
 * [update](docs/sdks/dedupkeyoverlays/README.md#update) - Update Dedup Key Overlay
 
-### [deduplicationRules](docs/sdks/deduplicationrules/README.md)
+### [DeduplicationRules](docs/sdks/deduplicationrules/README.md)
 
 * [getRules](docs/sdks/deduplicationrules/README.md#getrules) - Get Deduplication Rules
 * [createOrUpdate](docs/sdks/deduplicationrules/README.md#createorupdate) - Create or Update Deduplication Rules
 
-### [escalationPolicies](docs/sdks/escalationpolicies/README.md)
+### [EscalationPolicies](docs/sdks/escalationpolicies/README.md)
 
 * [listByTeam](docs/sdks/escalationpolicies/README.md#listbyteam) - Get Escalation Policy By team
 * [create](docs/sdks/escalationpolicies/README.md#create) - Create Escalation Policies
@@ -183,24 +189,24 @@ run();
 * [getById](docs/sdks/escalationpolicies/README.md#getbyid) - Get Escalation Policy By ID
 * [update](docs/sdks/escalationpolicies/README.md#update) - Update Escalation Policy
 
-### [exports](docs/sdks/exports/README.md)
+### [Exports](docs/sdks/exports/README.md)
 
 * [getDetails](docs/sdks/exports/README.md#getdetails) - Get Export Details
 
-### [exportSchedule](docs/sdks/exportschedule/README.md)
+### [ExportSchedule](docs/sdks/exportschedule/README.md)
 
 * [refreshIcalLink](docs/sdks/exportschedule/README.md#refreshicallink) - Refresh Schedule ICal Link
 
-#### [extensions.msteams](docs/sdks/extensionsmsteams/README.md)
+### [Extensions.Msteams](docs/sdks/extensionsmsteams/README.md)
 
 * [getConfig](docs/sdks/extensionsmsteams/README.md#getconfig) - Get MSTeams Config
 
-#### [extensions.webhooks](docs/sdks/extensionswebhooks/README.md)
+### [Extensions.Webhooks](docs/sdks/extensionswebhooks/README.md)
 
 * [create](docs/sdks/extensionswebhooks/README.md#create) - Create Webhook
 * [update](docs/sdks/extensionswebhooks/README.md#update) - Update Webhook
 
-### [globalEventRules](docs/sdks/globaleventrules/README.md)
+### [GlobalEventRules](docs/sdks/globaleventrules/README.md)
 
 * [list](docs/sdks/globaleventrules/README.md#list) - List Global Event Rules
 * [create](docs/sdks/globaleventrules/README.md#create) - Create Global Event Rule
@@ -208,7 +214,7 @@ run();
 * [getById](docs/sdks/globaleventrules/README.md#getbyid) - Get Global Event Rule by ID
 * [updateById](docs/sdks/globaleventrules/README.md#updatebyid) - Update Global Event Rule by ID
 
-#### [globalEventRules.rulesets](docs/sdks/globaleventrulesrulesets/README.md)
+#### [GlobalEventRules.Rulesets](docs/sdks/globaleventrulesrulesets/README.md)
 
 * [create](docs/sdks/globaleventrulesrulesets/README.md#create) - Create Ruleset
 * [get](docs/sdks/globaleventrulesrulesets/README.md#get) - Get Ruleset
@@ -218,23 +224,23 @@ run();
 * [createRule](docs/sdks/globaleventrulesrulesets/README.md#createrule) - Create Rule
 * [updateRule](docs/sdks/globaleventrulesrulesets/README.md#updaterule) - Update Rule by ID
 
-#### [globalEventRules.rulesets.rules](docs/sdks/rulesetsrules/README.md)
+##### [GlobalEventRules.Rulesets.Rules](docs/sdks/rulesetsrules/README.md)
 
 * [get](docs/sdks/rulesetsrules/README.md#get) - Get Rule by ID
 * [reorderByIndex](docs/sdks/rulesetsrules/README.md#reorderbyindex) - Reorder Ruleset By Index
 
-### [globalOncallReminderRules](docs/sdks/globaloncallreminderrules/README.md)
+### [GlobalOncallReminderRules](docs/sdks/globaloncallreminderrules/README.md)
 
 * [delete](docs/sdks/globaloncallreminderrules/README.md#delete) - Delete Global Oncall Reminder Rules
 * [get](docs/sdks/globaloncallreminderrules/README.md#get) - Get Global Oncall Reminder Rules
 * [create](docs/sdks/globaloncallreminderrules/README.md#create) - Create Global Oncall Reminder Rules
 * [update](docs/sdks/globaloncallreminderrules/README.md#update) - Update Global Oncall Reminder Rules
 
-#### [incidentActions.circleci](docs/sdks/circleci/README.md)
+### [IncidentActions.Circleci](docs/sdks/circleci/README.md)
 
 * [rebuild](docs/sdks/circleci/README.md#rebuild) - Rebuild a Project In CircleCI
 
-### [incidents](docs/sdks/incidents/README.md)
+### [Incidents](docs/sdks/incidents/README.md)
 
 * [archiveSlackChannel](docs/sdks/incidents/README.md#archiveslackchannel) - Archive Slack Channel
 * [getAllCommunicationCards](docs/sdks/incidents/README.md#getallcommunicationcards) - Get All Communication Card
@@ -260,86 +266,86 @@ run();
 * [resolve](docs/sdks/incidents/README.md#resolve) - Resolve Incident
 * [getStatusByRequestIds](docs/sdks/incidents/README.md#getstatusbyrequestids) - Get Incidents Status By RequestIDs
 
-#### [incidents.actions.jiraCloud](docs/sdks/jiracloud/README.md)
+#### [Incidents.Actions.JiraCloud](docs/sdks/jiracloud/README.md)
 
 * [createTicket](docs/sdks/jiracloud/README.md#createticket) - Create a Ticket on Jira Cloud
 
-#### [incidents.additionalResponders](docs/sdks/additionalresponders/README.md)
+#### [Incidents.AdditionalResponders](docs/sdks/additionalresponders/README.md)
 
 * [add](docs/sdks/additionalresponders/README.md#add) - Add Additional Responders
 
-#### [incidents.autoPauseTransientAlerts](docs/sdks/autopausetransientalerts/README.md)
+#### [Incidents.AutoPauseTransientAlerts](docs/sdks/autopausetransientalerts/README.md)
 
 * [markAsNotTransient](docs/sdks/autopausetransientalerts/README.md#markasnottransient) - Mark as Not Transient
 
-#### [incidents.communicationCards](docs/sdks/incidentscommunicationcards/README.md)
+#### [Incidents.CommunicationCards](docs/sdks/incidentscommunicationcards/README.md)
 
 * [create](docs/sdks/incidentscommunicationcards/README.md#create) - Create Communication Card
 
-#### [incidents.events](docs/sdks/events/README.md)
+#### [Incidents.Events](docs/sdks/events/README.md)
 
 * [list](docs/sdks/events/README.md#list) - Get Incident Events
 
-#### [incidents.notes](docs/sdks/incidentsnotes/README.md)
+#### [Incidents.Notes](docs/sdks/incidentsnotes/README.md)
 
 * [create](docs/sdks/incidentsnotes/README.md#create) - Create Notes
 * [list](docs/sdks/incidentsnotes/README.md#list) - Get All Notes
 * [update](docs/sdks/incidentsnotes/README.md#update) - Update Note
 
-#### [incidents.postmortems](docs/sdks/incidentspostmortems/README.md)
+#### [Incidents.Postmortems](docs/sdks/incidentspostmortems/README.md)
 
 * [getAll](docs/sdks/incidentspostmortems/README.md#getall) - Get All Postmortems
 * [getByIncident](docs/sdks/incidentspostmortems/README.md#getbyincident) - Get Postmortem By Incident
 * [create](docs/sdks/incidentspostmortems/README.md#create) - Create Postmortem
 
-#### [incidents.snooze](docs/sdks/snooze/README.md)
+#### [Incidents.Snooze](docs/sdks/snooze/README.md)
 
 * [set](docs/sdks/snooze/README.md#set) - Snooze Incident Notifications
 
-#### [incidents.tags](docs/sdks/tags/README.md)
+#### [Incidents.Tags](docs/sdks/tags/README.md)
 
 * [update](docs/sdks/tags/README.md#update) - Update Tag
 * [append](docs/sdks/tags/README.md#append) - Append Tag
 
-### [incidentsV3](docs/sdks/incidentsv3/README.md)
+### [IncidentsV3](docs/sdks/incidentsv3/README.md)
 
 * [bulkAcknowledge](docs/sdks/incidentsv3/README.md#bulkacknowledge) - Bulk Acknowledge Incidents
 
-### [issues](docs/sdks/issues/README.md)
+### [Issues](docs/sdks/issues/README.md)
 
 * [create](docs/sdks/issues/README.md#create) - Create Issue
 * [delete](docs/sdks/issues/README.md#delete) - Delete Issue By ID
 
-### [issueStates](docs/sdks/issuestates/README.md)
+### [IssueStates](docs/sdks/issuestates/README.md)
 
 * [list](docs/sdks/issuestates/README.md#list) - List Status Page Issue States
 
-### [maintenances](docs/sdks/maintenances/README.md)
+### [Maintenances](docs/sdks/maintenances/README.md)
 
 * [create](docs/sdks/maintenances/README.md#create) - Create Maintenance
 * [deleteById](docs/sdks/maintenances/README.md#deletebyid) - Delete Maintenance By ID
 
-### [msteams](docs/sdks/msteams/README.md)
+### [Msteams](docs/sdks/msteams/README.md)
 
 * [createOrUpdateConfiguration](docs/sdks/msteams/README.md#createorupdateconfiguration) - Create Or Update MSTeams Configuration
 
-### [notes](docs/sdks/notes/README.md)
+### [Notes](docs/sdks/notes/README.md)
 
 * [delete](docs/sdks/notes/README.md#delete) - Delete Note
 
-### [overlays](docs/sdks/overlays/README.md)
+### [Overlays](docs/sdks/overlays/README.md)
 
 * [getAllDedupKeysByService](docs/sdks/overlays/README.md#getalldedupkeysbyservice) - Get All Dedup Key Overlay by Service
 
-### [overrides](docs/sdks/overrides/README.md)
+### [Overrides](docs/sdks/overrides/README.md)
 
 * [list](docs/sdks/overrides/README.md#list) - List Overrides
 
-### [postmortems](docs/sdks/postmortems/README.md)
+### [Postmortems](docs/sdks/postmortems/README.md)
 
 * [deleteByIncident](docs/sdks/postmortems/README.md#deletebyincident) - Delete Postmortem By Incident
 
-### [rotations](docs/sdks/rotations/README.md)
+### [Rotations](docs/sdks/rotations/README.md)
 
 * [getScheduleRotations](docs/sdks/rotations/README.md#getschedulerotations) - List Schedule Rotations
 * [delete](docs/sdks/rotations/README.md#delete) - Delete Rotation
@@ -347,20 +353,20 @@ run();
 * [getParticipants](docs/sdks/rotations/README.md#getparticipants) - Get Rotation Participants
 * [updateParticipants](docs/sdks/rotations/README.md#updateparticipants) - Update Rotation Participants
 
-### [routingRules](docs/sdks/routingrules/README.md)
+### [RoutingRules](docs/sdks/routingrules/README.md)
 
 * [get](docs/sdks/routingrules/README.md#get) - Get Routing Rules
 * [createOrUpdate](docs/sdks/routingrules/README.md#createorupdate) - Create or Update Routing Rules
 
-### [rules](docs/sdks/rules/README.md)
+### [Rules](docs/sdks/rules/README.md)
 
 * [deleteById](docs/sdks/rules/README.md#deletebyid) - Delete Rule by ID
 
-### [rulesets](docs/sdks/rulesets/README.md)
+### [Rulesets](docs/sdks/rulesets/README.md)
 
 * [deleteById](docs/sdks/rulesets/README.md#deletebyid) - Delete GER Ruleset
 
-### [runbooks](docs/sdks/runbooks/README.md)
+### [Runbooks](docs/sdks/runbooks/README.md)
 
 * [listByTeam](docs/sdks/runbooks/README.md#listbyteam) - Get All Runbooks By Team
 * [create](docs/sdks/runbooks/README.md#create) - Create Runbook
@@ -368,11 +374,11 @@ run();
 * [getById](docs/sdks/runbooks/README.md#getbyid) - Get Runbook By ID
 * [update](docs/sdks/runbooks/README.md#update) - Update Runbook
 
-#### [schedule.export](docs/sdks/scheduleexport/README.md)
+### [Schedule.Export](docs/sdks/scheduleexport/README.md)
 
 * [deleteICalLink](docs/sdks/scheduleexport/README.md#deleteicallink) - Delete ICal Link
 
-### [schedules](docs/sdks/schedules/README.md)
+### [Schedules](docs/sdks/schedules/README.md)
 
 * [list](docs/sdks/schedules/README.md#list) - List Schedules
 * [create](docs/sdks/schedules/README.md#create) - Create Schedule
@@ -386,24 +392,24 @@ run();
 * [getOverrideById](docs/sdks/schedules/README.md#getoverridebyid) - Get Override by ID
 * [createRotation](docs/sdks/schedules/README.md#createrotation) - Create Rotation
 
-#### [schedules.actions](docs/sdks/schedulesactions/README.md)
+#### [Schedules.Actions](docs/sdks/schedulesactions/README.md)
 
 * [pauseResume](docs/sdks/schedulesactions/README.md#pauseresume) - Pause/Resume Schedule
 
-#### [schedules.export](docs/sdks/schedulesexport/README.md)
+#### [Schedules.Export](docs/sdks/schedulesexport/README.md)
 
 * [getIcalLink](docs/sdks/schedulesexport/README.md#geticallink) - Get Schedule ICal Link
 
-#### [schedules.overrides](docs/sdks/schedulesoverrides/README.md)
+#### [Schedules.Overrides](docs/sdks/schedulesoverrides/README.md)
 
 * [create](docs/sdks/schedulesoverrides/README.md#create) - Create Schedule Override
 * [update](docs/sdks/schedulesoverrides/README.md#update) - Update Schedule Override
 
-#### [schedules.rotations](docs/sdks/schedulesrotations/README.md)
+#### [Schedules.Rotations](docs/sdks/schedulesrotations/README.md)
 
 * [update](docs/sdks/schedulesrotations/README.md#update) - Update Rotation
 
-### [services](docs/sdks/services/README.md)
+### [Services](docs/sdks/services/README.md)
 
 * [list](docs/sdks/services/README.md#list) - Get All Services
 * [create](docs/sdks/services/README.md#create) - Create Service
@@ -416,53 +422,53 @@ run();
 * [updateSlackExtension](docs/sdks/services/README.md#updateslackextension) - Update Slack Extension
 * [getCustomContentTemplates](docs/sdks/services/README.md#getcustomcontenttemplates) - Get All Custom Content Template Overlay by Service
 
-#### [services.aptaConfig](docs/sdks/aptaconfig/README.md)
+### [Services.AptaConfig](docs/sdks/aptaconfig/README.md)
 
 * [createOrUpdate](docs/sdks/aptaconfig/README.md#createorupdate) - Auto Pause Transient Alerts (APTA)
 
-#### [services.dependencies](docs/sdks/dependencies/README.md)
+### [Services.Dependencies](docs/sdks/dependencies/README.md)
 
 * [createOrUpdate](docs/sdks/dependencies/README.md#createorupdate) - Create or Update Dependencies
 
-#### [services.maintenance](docs/sdks/maintenance/README.md)
+### [Services.Maintenance](docs/sdks/maintenance/README.md)
 
 * [get](docs/sdks/maintenance/README.md#get) - Get Maintenance Mode
 * [createOrUpdate](docs/sdks/maintenance/README.md#createorupdate) - Create or Update Maintenance Mode
 
-#### [services.overlay](docs/sdks/overlay/README.md)
+### [Services.Overlay](docs/sdks/overlay/README.md)
 
 * [getOptinForKeyBasedDeduplication](docs/sdks/overlay/README.md#getoptinforkeybaseddeduplication) - Get Opt-in for Key Based Deduplication for a service
 
-#### [services.overlays](docs/sdks/servicesoverlays/README.md)
+### [Services.Overlays](docs/sdks/servicesoverlays/README.md)
 
 * [optinKeyBasedDeduplication](docs/sdks/servicesoverlays/README.md#optinkeybaseddeduplication) - Opt-in for Key Based Deduplication for a service
 * [renderCustomContent](docs/sdks/servicesoverlays/README.md#rendercustomcontent) - Render Custom Content Overlay
 * [deleteCustomContent](docs/sdks/servicesoverlays/README.md#deletecustomcontent) - Delete Notification Template Overlay
 * [getCustomContentTemplate](docs/sdks/servicesoverlays/README.md#getcustomcontenttemplate) - Get Custom Content Template Overlay
 
-#### [services.overlays.customContent](docs/sdks/customcontent/README.md)
+#### [Services.Overlays.CustomContent](docs/sdks/customcontent/README.md)
 
 * [createOrUpdate](docs/sdks/customcontent/README.md#createorupdate) - Create or Update Notification Template Overlay
 
-#### [services.overlays.dedupKey](docs/sdks/dedupkey/README.md)
+#### [Services.Overlays.DedupKey](docs/sdks/dedupkey/README.md)
 
 * [delete](docs/sdks/dedupkey/README.md#delete) - Delete Dedup Key Overlay
 
-#### [services.suppressionRules](docs/sdks/suppressionrules/README.md)
+### [Services.SuppressionRules](docs/sdks/suppressionrules/README.md)
 
 * [list](docs/sdks/suppressionrules/README.md#list) - Get Suppression Rules
 * [createOrUpdate](docs/sdks/suppressionrules/README.md#createorupdate) - Create or Update Suppression Rules
 
-#### [services.taggingRules](docs/sdks/taggingrules/README.md)
+### [Services.TaggingRules](docs/sdks/taggingrules/README.md)
 
 * [list](docs/sdks/taggingrules/README.md#list) - Get Tagging Rules
 * [createOrUpdate](docs/sdks/taggingrules/README.md#createorupdate) - Create or Update Tagging Rules
 
-### [slo](docs/sdks/slo/README.md)
+### [Slo](docs/sdks/slo/README.md)
 
 * [markAffected](docs/sdks/slo/README.md#markaffected) - Mark SLO Affected
 
-### [slos](docs/sdks/slos/README.md)
+### [Slos](docs/sdks/slos/README.md)
 
 * [list](docs/sdks/slos/README.md#list) - Get All SLOs
 * [create](docs/sdks/slos/README.md#create) - Create SLO
@@ -471,7 +477,7 @@ run();
 * [getById](docs/sdks/slos/README.md#getbyid) - Get SLO By ID
 * [markFalsePositive](docs/sdks/slos/README.md#markfalsepositive) - Mark SLO False Positive
 
-### [squads](docs/sdks/squads/README.md)
+### [Squads](docs/sdks/squads/README.md)
 
 * [list](docs/sdks/squads/README.md#list) - Get All Squads
 * [createV4](docs/sdks/squads/README.md#createv4) - Create Squad
@@ -479,16 +485,16 @@ run();
 * [updateName](docs/sdks/squads/README.md#updatename) - Update Squad Name
 * [delete](docs/sdks/squads/README.md#delete) - Delete Squad
 
-#### [squads.members](docs/sdks/squadsmembers/README.md)
+#### [Squads.Members](docs/sdks/squadsmembers/README.md)
 
 * [remove](docs/sdks/squadsmembers/README.md#remove) - Remove Squad Member
 
-### [squadsV4](docs/sdks/squadsv4/README.md)
+### [SquadsV4](docs/sdks/squadsv4/README.md)
 
 * [getById](docs/sdks/squadsv4/README.md#getbyid) - Get Squad By ID
 * [update](docs/sdks/squadsv4/README.md#update) - Update Squad
 
-### [statusPages](docs/sdks/statuspages/README.md)
+### [StatusPages](docs/sdks/statuspages/README.md)
 
 * [list](docs/sdks/statuspages/README.md#list) - List Status Pages
 * [create](docs/sdks/statuspages/README.md#create) - Create Status Page
@@ -498,35 +504,35 @@ run();
 * [getIssueById](docs/sdks/statuspages/README.md#getissuebyid) - Get Issue By ID
 * [listStatuses](docs/sdks/statuspages/README.md#liststatuses) - List Status Page Statuses
 
-#### [statusPages.componentGroups](docs/sdks/componentgroups/README.md)
+#### [StatusPages.ComponentGroups](docs/sdks/componentgroups/README.md)
 
 * [list](docs/sdks/componentgroups/README.md#list) - List Component Groups
 * [create](docs/sdks/componentgroups/README.md#create) - Create Component Group
 * [deleteById](docs/sdks/componentgroups/README.md#deletebyid) - Delete Component Group By ID
 * [getById](docs/sdks/componentgroups/README.md#getbyid) - Get Component Group By ID
 
-#### [statusPages.components](docs/sdks/statuspagescomponents/README.md)
+#### [StatusPages.Components](docs/sdks/statuspagescomponents/README.md)
 
 * [create](docs/sdks/statuspagescomponents/README.md#create) - Create Component
 * [getById](docs/sdks/statuspagescomponents/README.md#getbyid) - Get Component By ID
 * [updateById](docs/sdks/statuspagescomponents/README.md#updatebyid) - Update Component By ID
 
-#### [statusPages.issues](docs/sdks/statuspagesissues/README.md)
+#### [StatusPages.Issues](docs/sdks/statuspagesissues/README.md)
 
 * [list](docs/sdks/statuspagesissues/README.md#list) - List Issues
 * [update](docs/sdks/statuspagesissues/README.md#update) - Update Issue
 
-#### [statusPages.maintenances](docs/sdks/statuspagesmaintenances/README.md)
+#### [StatusPages.Maintenances](docs/sdks/statuspagesmaintenances/README.md)
 
 * [list](docs/sdks/statuspagesmaintenances/README.md#list) - List Maintenances
 * [getById](docs/sdks/statuspagesmaintenances/README.md#getbyid) - Get Maintenance By ID
 * [updateById](docs/sdks/statuspagesmaintenances/README.md#updatebyid) - Update Maintenance By ID
 
-### [statusPageSubscribers](docs/sdks/statuspagesubscribers/README.md)
+### [StatusPageSubscribers](docs/sdks/statuspagesubscribers/README.md)
 
 * [list](docs/sdks/statuspagesubscribers/README.md#list) - List Subscribers
 
-### [teams](docs/sdks/teams/README.md)
+### [Teams](docs/sdks/teams/README.md)
 
 * [list](docs/sdks/teams/README.md#list) - Get All Teams
 * [create](docs/sdks/teams/README.md#create) - Create Team
@@ -536,24 +542,24 @@ run();
 * [listMembers](docs/sdks/teams/README.md#listmembers) - Get All Team Members
 * [getRoles](docs/sdks/teams/README.md#getroles) - Get All Team Roles
 
-#### [teams.members](docs/sdks/teamsmembers/README.md)
+### [Teams.Members](docs/sdks/teamsmembers/README.md)
 
 * [add](docs/sdks/teamsmembers/README.md#add) - Add Team Member
 * [bulkAdd](docs/sdks/teamsmembers/README.md#bulkadd) - Add Bulk Team Member
 * [remove](docs/sdks/teamsmembers/README.md#remove) - Remove Team Member
 * [update](docs/sdks/teamsmembers/README.md#update) - Update Team Member
 
-#### [teams.roles](docs/sdks/roles/README.md)
+### [Teams.Roles](docs/sdks/roles/README.md)
 
 * [create](docs/sdks/roles/README.md#create) - Create Team Role
 * [remove](docs/sdks/roles/README.md#remove) - Remove Team Role
 * [update](docs/sdks/roles/README.md#update) - Update Team Role
 
-### [tokens](docs/sdks/tokens/README.md)
+### [Tokens](docs/sdks/tokens/README.md)
 
 * [create](docs/sdks/tokens/README.md#create) - Create Token
 
-### [users](docs/sdks/users/README.md)
+### [Users](docs/sdks/users/README.md)
 
 * [getAllTokens](docs/sdks/users/README.md#getalltokens) - Get All Tokens
 * [removeToken](docs/sdks/users/README.md#removetoken) - Remove Token
@@ -566,7 +572,7 @@ run();
 * [getById](docs/sdks/users/README.md#getbyid) - Get User By ID
 * [updateById](docs/sdks/users/README.md#updatebyid) - Update User by userID
 
-### [webforms](docs/sdks/webforms/README.md)
+### [Webforms](docs/sdks/webforms/README.md)
 
 * [getAll](docs/sdks/webforms/README.md#getall) - Get All Webforms
 * [create](docs/sdks/webforms/README.md#create) - Create Webform
@@ -574,21 +580,21 @@ run();
 * [remove](docs/sdks/webforms/README.md#remove) - Remove Webform
 * [getById](docs/sdks/webforms/README.md#getbyid) - Get Webform By ID
 
-### [webhooks](docs/sdks/webhooks/README.md)
+### [Webhooks](docs/sdks/webhooks/README.md)
 
 * [getAll](docs/sdks/webhooks/README.md#getall) - Get All Webhooks
 * [delete](docs/sdks/webhooks/README.md#delete) - Delete Webhook
 * [getById](docs/sdks/webhooks/README.md#getbyid) - Get Webhook By ID
 
-### [workflowActions](docs/sdks/workflowactions/README.md)
+### [WorkflowActions](docs/sdks/workflowactions/README.md)
 
 * [getById](docs/sdks/workflowactions/README.md#getbyid) - Get Workflow Action By ID
 
-### [workflowLogs](docs/sdks/workflowlogs/README.md)
+### [WorkflowLogs](docs/sdks/workflowlogs/README.md)
 
 * [get](docs/sdks/workflowlogs/README.md#get) - Get Workflow Logs
 
-### [workflows](docs/sdks/workflows/README.md)
+### [Workflows](docs/sdks/workflows/README.md)
 
 * [list](docs/sdks/workflows/README.md#list) - List Workflows
 * [create](docs/sdks/workflows/README.md#create) - Create Workflow
@@ -601,7 +607,7 @@ run();
 * [updateAction](docs/sdks/workflows/README.md#updateaction) - Update Workflow Action
 * [enableDisable](docs/sdks/workflows/README.md#enabledisable) - Enable/Disable Workflow
 
-#### [workflows.actions](docs/sdks/workflowsactions/README.md)
+### [Workflows.Actions](docs/sdks/workflowsactions/README.md)
 
 * [create](docs/sdks/workflowsactions/README.md#create) - Create Action
 

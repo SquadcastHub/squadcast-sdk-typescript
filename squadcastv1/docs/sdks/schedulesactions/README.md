@@ -1,5 +1,4 @@
-# SchedulesActions
-(*schedules.actions*)
+# Schedules.Actions
 
 ## Overview
 

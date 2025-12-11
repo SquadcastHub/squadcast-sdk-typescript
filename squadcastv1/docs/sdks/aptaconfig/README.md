@@ -1,5 +1,4 @@
-# AptaConfig
-(*services.aptaConfig*)
+# Services.AptaConfig
 
 ## Overview
 

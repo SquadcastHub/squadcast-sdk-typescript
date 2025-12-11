@@ -1,5 +1,4 @@
-# IncidentsCommunicationCards
-(*incidents.communicationCards*)
+# Incidents.CommunicationCards
 
 ## Overview
 

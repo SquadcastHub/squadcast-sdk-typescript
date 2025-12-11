@@ -1,5 +1,4 @@
-# Circleci
-(*incidentActions.circleci*)
+# IncidentActions.Circleci
 
 ## Overview
 

@@ -1,5 +1,4 @@
 # IncidentsV3
-(*incidentsV3*)
 
 ## Overview
 
@@ -9,7 +8,7 @@
 
 ## bulkAcknowledge
 
-- This endpoint is used to bulk acknowledge the incident by IDs.
+- This endpoint is used to bulk acknowledge the incident by IDs. The API can handle a maximum of 100 incident IDs in a single request with 10 such calls per minute."
 - Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header.
 
 ### Example Usage
