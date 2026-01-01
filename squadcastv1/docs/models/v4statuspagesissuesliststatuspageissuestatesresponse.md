@@ -12,9 +12,9 @@ let value: V4StatusPagesIssuesListStatusPageIssueStatesResponse = {
   name: "<value>",
   color: "grey",
   defaultMessage: "<value>",
-  createdAt: new Date("2024-01-29T01:08:07.435Z"),
-  updatedAt: new Date("2023-09-19T17:02:26.696Z"),
-  deletedAt: new Date("2025-11-18T07:15:53.265Z"),
+  createdAt: new Date("2025-01-28T01:08:07.435Z"),
+  updatedAt: new Date("2024-09-18T17:02:26.696Z"),
+  deletedAt: new Date("2026-11-18T07:15:53.265Z"),
 };
 ```
 

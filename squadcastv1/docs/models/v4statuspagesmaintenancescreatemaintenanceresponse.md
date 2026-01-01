@@ -10,8 +10,8 @@ let value: V4StatusPagesMaintenancesCreateMaintenanceResponse = {
   title: "<value>",
   pageID: 285332,
   note: "<value>",
-  startTime: new Date("2023-02-15T21:47:03.249Z"),
-  endTime: new Date("2023-12-25T23:15:51.412Z"),
+  startTime: new Date("2024-02-15T21:47:03.249Z"),
+  endTime: new Date("2024-12-24T23:15:51.412Z"),
 };
 ```
 

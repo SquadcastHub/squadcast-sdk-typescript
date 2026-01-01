@@ -7,8 +7,8 @@ import { V3IncidentsTagsSnoozeDetails } from "@solarwinds/squadcast-sdk-typescri
 
 let value: V3IncidentsTagsSnoozeDetails = {
   isSnoozed: true,
-  startTime: new Date("2023-05-11T22:23:18.078Z"),
-  endTime: new Date("2025-12-25T04:09:07.529Z"),
+  startTime: new Date("2024-05-10T22:23:18.078Z"),
+  endTime: new Date("2026-12-25T04:09:07.529Z"),
   totalTimeInMins: 545171,
 };
 ```

@@ -10,7 +10,7 @@ import { V3IncidentsAssignedTo } from "@solarwinds/squadcast-sdk-typescript/mode
 let value: V3IncidentsAssignedTo = {
   id: "<id>",
   type: "<value>",
-  timeOfAssignment: new Date("2024-05-01T05:58:56.676Z"),
+  timeOfAssignment: new Date("2025-05-01T05:58:56.676Z"),
   reason: "<value>",
 };
 ```

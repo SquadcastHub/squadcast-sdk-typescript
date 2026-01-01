@@ -11,9 +11,9 @@ let value: V3GlobalEventRulesGlobalEventRuleResponse = {
   name: "<value>",
   description: "minus but angrily round gee upon",
   routingKey: "<value>",
-  createdAt: new Date("2024-07-08T08:20:32.876Z"),
+  createdAt: new Date("2025-07-08T08:20:32.876Z"),
   createdBy: "<value>",
-  updatedAt: new Date("2024-07-31T13:48:50.791Z"),
+  updatedAt: new Date("2025-07-31T13:48:50.791Z"),
   updatedBy: "<value>",
 };
 ```

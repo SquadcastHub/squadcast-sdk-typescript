@@ -7,8 +7,8 @@ import { V3ServicesSuppressionRulesSuppressionRule } from "@solarwinds/squadcast
 
 let value: V3ServicesSuppressionRulesSuppressionRule = {
   ruleId: "<id>",
-  createdAt: new Date("2024-07-21T11:26:30.529Z"),
-  updatedAt: new Date("2023-12-28T05:59:34.613Z"),
+  createdAt: new Date("2025-07-21T11:26:30.529Z"),
+  updatedAt: new Date("2024-12-27T05:59:34.613Z"),
   createdBy: "<value>",
   updatedBy: "<value>",
   description: "privilege or amid seafood once excluding",

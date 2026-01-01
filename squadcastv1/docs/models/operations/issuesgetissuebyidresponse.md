@@ -11,7 +11,7 @@ let value: IssuesGetIssueByIdResponse = {
   data: {
     id: 801830,
     title: "<value>",
-    lastUpdatedAt: new Date("2023-01-17T10:06:46.858Z"),
+    lastUpdatedAt: new Date("2024-01-17T10:06:46.858Z"),
     components: [],
     issues: [],
     currentIssueState: {

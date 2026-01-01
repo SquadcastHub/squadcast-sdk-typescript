@@ -8,7 +8,7 @@ Represents a response note in an incident.
 import { V3IncidentsResponseNote } from "@solarwinds/squadcast-sdk-typescript/models";
 
 let value: V3IncidentsResponseNote = {
-  timeOfNote: new Date("2024-12-31T19:57:24.327Z"),
+  timeOfNote: new Date("2025-12-31T19:57:24.327Z"),
   note: "<value>",
   userId: "<id>",
 };

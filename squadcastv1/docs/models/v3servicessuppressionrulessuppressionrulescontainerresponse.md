@@ -7,15 +7,15 @@ import { V3ServicesSuppressionRulesSuppressionRulesContainerResponse } from "@so
 
 let value: V3ServicesSuppressionRulesSuppressionRulesContainerResponse = {
   id: "<id>",
-  createdAt: new Date("2023-08-23T21:08:39.622Z"),
-  updatedAt: new Date("2024-05-04T16:47:30.744Z"),
+  createdAt: new Date("2024-08-22T21:08:39.622Z"),
+  updatedAt: new Date("2025-05-04T16:47:30.744Z"),
   serviceId: "<id>",
   organizationId: "<id>",
   rules: [
     {
       ruleId: "<id>",
-      createdAt: new Date("2023-04-26T13:13:19.342Z"),
-      updatedAt: new Date("2025-10-28T01:31:47.287Z"),
+      createdAt: new Date("2024-04-25T13:13:19.342Z"),
+      updatedAt: new Date("2026-10-28T01:31:47.287Z"),
       createdBy: "<value>",
       updatedBy: "<value>",
       description: "cloudy considering geez solidly",

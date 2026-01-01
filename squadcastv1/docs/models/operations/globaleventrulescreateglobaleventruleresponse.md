@@ -14,9 +14,9 @@ let value: GlobalEventRulesCreateGlobalEventRuleResponse = {
     name: "<value>",
     description: "minus banish dearly where",
     routingKey: "<value>",
-    createdAt: new Date("2024-07-26T16:54:06.576Z"),
+    createdAt: new Date("2025-07-26T16:54:06.576Z"),
     createdBy: "<value>",
-    updatedAt: new Date("2023-04-11T20:17:17.191Z"),
+    updatedAt: new Date("2024-04-10T20:17:17.191Z"),
     updatedBy: "<value>",
   },
 };

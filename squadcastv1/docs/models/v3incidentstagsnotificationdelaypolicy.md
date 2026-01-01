@@ -9,7 +9,7 @@ import { V3IncidentsTagsNotificationDelayPolicy } from "@solarwinds/squadcast-sd
 
 let value: V3IncidentsTagsNotificationDelayPolicy = {
   isNotificationDelayed: false,
-  delayedUntil: new Date("2024-07-11T17:41:49.104Z"),
+  delayedUntil: new Date("2025-07-11T17:41:49.104Z"),
   assignTo: {
     id: "<id>",
   },

@@ -12,8 +12,8 @@ let value: V4StatusPagesMaintenancesCreateMaintenanceRequest = {
     782734,
     139121,
   ],
-  startTime: new Date("2024-10-11T12:59:43.849Z"),
-  endTime: new Date("2024-07-16T23:52:37.002Z"),
+  startTime: new Date("2025-10-11T12:59:43.849Z"),
+  endTime: new Date("2025-07-16T23:52:37.002Z"),
 };
 ```
 

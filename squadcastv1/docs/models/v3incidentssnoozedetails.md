@@ -9,8 +9,8 @@ import { V3IncidentsSnoozeDetails } from "@solarwinds/squadcast-sdk-typescript/m
 
 let value: V3IncidentsSnoozeDetails = {
   isSnoozed: true,
-  startTime: new Date("2023-03-22T01:57:51.433Z"),
-  endTime: new Date("2023-06-19T16:20:39.249Z"),
+  startTime: new Date("2024-03-21T01:57:51.433Z"),
+  endTime: new Date("2024-06-18T16:20:39.249Z"),
   totalTimeInMins: 67401,
 };
 ```

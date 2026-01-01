@@ -6,8 +6,8 @@
 import { IncidentsIncidentExportRequest } from "@solarwinds/squadcast-sdk-typescript/models/operations";
 
 let value: IncidentsIncidentExportRequest = {
-  startTime: new Date("2025-07-27T14:27:51.810Z"),
-  endTime: new Date("2024-12-14T11:29:30.084Z"),
+  startTime: new Date("2026-07-27T14:27:51.810Z"),
+  endTime: new Date("2025-12-14T11:29:30.084Z"),
   type: "csv",
   ownerId: "<id>",
 };
