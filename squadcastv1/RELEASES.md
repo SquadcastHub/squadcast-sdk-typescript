@@ -30,7 +30,7 @@ Based on:
 ### Releases
 - [NPM v0.2.1] https://www.npmjs.com/package/@solarwinds/squadcast-sdk-typescript/v/0.2.1 - squadcastv1
 
-## 2026-01-02 00:36:02
+## 2026-01-03 00:33:37
 ### Changes
 Based on:
 - OpenAPI Doc  
