@@ -75,6 +75,7 @@ typescript:
   outputModelSuffix: output
   packageName: '@solarwinds/squadcast-sdk-typescript'
   preApplyUnionDiscriminators: true
+  preserveModelFieldNames: false
   responseFormat: flat
   sseFlatResponse: true
   templateVersion: v2
