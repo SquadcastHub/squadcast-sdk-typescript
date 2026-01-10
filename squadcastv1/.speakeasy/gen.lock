@@ -3,8 +3,8 @@ id: 0ccdf4ca-5cfc-406b-b8fa-dec00364bec0
 management:
   docChecksum: cd47a65c284f5fb32f8a53de2c7a753d
   docVersion: 1.0.0
-  speakeasyVersion: 1.683.0
-  generationVersion: 2.792.0
+  speakeasyVersion: 1.684.0
+  generationVersion: 2.793.0
   releaseVersion: 1.1.0
   configChecksum: dc0bf73d04198fe2af76b102f7f36e1a
   repoURL: https://github.com/SquadcastHub/squadcast-sdk-typescript.git
@@ -12,13 +12,13 @@ management:
   installationURL: https://gitpkg.now.sh/SquadcastHub/squadcast-sdk-typescript/squadcastv1
   published: true
 persistentEdits:
-  generation_id: 8f3fbae1-7411-4138-8a2b-52ff4f548e9a
-  pristine_commit_hash: 9bea696cb420ee0e231d6e4e39363d1f38c7955d
-  pristine_tree_hash: 1b0b2c69516ec78265aee8ab756d50b8e94ce3bd
+  generation_id: efc5bc39-9fa1-4872-b4d4-f695ecf50f2f
+  pristine_commit_hash: 8bf0dd072e26f3054374e0f8098246875d1ecc07
+  pristine_tree_hash: a47a25a97f8ef9d4d1029182e77969b4541e0934
 features:
   typescript:
     additionalDependencies: 0.1.0
-    core: 3.26.18
+    core: 3.26.19
     defaultEnabledRetries: 0.1.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
@@ -5668,8 +5668,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:7cca2c5e7d7546ad355be6976691b2e37db71726
-    pristine_git_object: d878510c69456e54e6ef2eca1ebcf56289a325c0
+    last_write_checksum: sha1:66f6d456851a3d78a0a431ce4f824496ed5f37b5
+    pristine_git_object: cb761fef306bc31adc50baf691d339dfa2e1ebe0
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -5712,8 +5712,8 @@ trackedFiles:
     pristine_git_object: 47edb9725c2482c667e2ddc8a56b1fec4285c492
   src/lib/sdks.ts:
     id: 8a6d91f1218d
-    last_write_checksum: sha1:c1bcc39504c98c350deaed75c72dd987fb37cfcc
-    pristine_git_object: fb7e9ac575afc4ecb1a4880d61a8b86451973c1c
+    last_write_checksum: sha1:89e76ce028b0e77122b2ffaca4f51319f249b7b9
+    pristine_git_object: 8f81816b8fb09e26c6d20b0719d15f7f2d8826c2
   src/lib/security.ts:
     id: 0502afa7922e
     last_write_checksum: sha1:d94959a28444d0a03b2a136305fab827b7d5cbcb
