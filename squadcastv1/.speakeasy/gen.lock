@@ -12,8 +12,8 @@ management:
   installationURL: https://gitpkg.now.sh/SquadcastHub/squadcast-sdk-typescript/squadcastv1
   published: true
 persistentEdits:
-  generation_id: 2f23d4d6-5517-445d-8375-339bf94193a2
-  pristine_commit_hash: f1154696d036b1ec610c07490bf658651f234e1e
+  generation_id: a30c949c-6dea-409e-83a8-b6de3c4e315c
+  pristine_commit_hash: c9f2522e74a8d37e64d19734bc307d24eec4e957
   pristine_tree_hash: a47a25a97f8ef9d4d1029182e77969b4541e0934
 features:
   typescript:
