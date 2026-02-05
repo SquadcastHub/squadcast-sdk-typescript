@@ -3,8 +3,8 @@ id: 0ccdf4ca-5cfc-406b-b8fa-dec00364bec0
 management:
   docChecksum: 2aa6e1655d48a4532a5ff44873b182d4
   docVersion: 1.0.0
-  speakeasyVersion: 1.701.0
-  generationVersion: 2.803.3
+  speakeasyVersion: 1.704.0
+  generationVersion: 2.806.4
   releaseVersion: 1.1.0
   configChecksum: bd9c6bc67624635233ad2a0df4ad1586
   repoURL: https://github.com/SquadcastHub/squadcast-sdk-typescript.git
@@ -12,13 +12,13 @@ management:
   installationURL: https://gitpkg.now.sh/SquadcastHub/squadcast-sdk-typescript/squadcastv1
   published: true
 persistentEdits:
-  generation_id: c2ececbd-bcaf-4931-aa58-299f557c46e3
-  pristine_commit_hash: a02fb6e381c8e99abfec51b52eb299db32137d4f
-  pristine_tree_hash: 12f6962ff9cc26d2735e63c517d6f110aa9b5402
+  generation_id: 8c03b71d-e837-462a-8860-49d911b7db34
+  pristine_commit_hash: 7e6245896adb0ff519fcb4621f9dcd8630223b9d
+  pristine_tree_hash: ef94a341d3ce27cbd4aac2964c8cefc70e57c5bf
 features:
   typescript:
     additionalDependencies: 0.1.0
-    core: 3.26.23
+    core: 3.26.27
     defaultEnabledRetries: 0.1.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
@@ -35,7 +35,7 @@ features:
     responseFormat: 0.3.0
     retries: 2.83.0
     sdkHooks: 0.4.0
-    unions: 2.86.3
+    unions: 2.86.4
     uploadStreams: 0.1.0
 trackedFiles:
   .gitattributes:
@@ -4736,8 +4736,8 @@ trackedFiles:
     pristine_git_object: 351c2c8663ed9d5dc7f2c4ce08cf6ab8d97491fa
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:1ed61498c7d3d756387ad56a6fba45279d4f3207
-    pristine_git_object: 27f80c46ddd40c6de244e83fc3834af755d6f4ff
+    last_write_checksum: sha1:34d9de97a594ebc5ee2aa26a80f8284d4448d7c8
+    pristine_git_object: 0033655d6cba0512617be0bacb4ed1fc49fb8067
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:e53b998fb3f427fc177c4194efa76da88e8fdb5e
@@ -5684,8 +5684,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:8c0cc48f18c7d17831bcbe2d9a0de86c93781847
-    pristine_git_object: 48210749a6c912cfb8f49f23987991cc868f89b1
+    last_write_checksum: sha1:6accd69f2d24fbfb55373769ac3493ecd5b590f9
+    pristine_git_object: 01b2cf168a22006d8747a7577ae9c4bf9a4a4b51
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
