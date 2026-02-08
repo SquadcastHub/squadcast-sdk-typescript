@@ -3,7 +3,7 @@ id: 0ccdf4ca-5cfc-406b-b8fa-dec00364bec0
 management:
   docChecksum: 2aa6e1655d48a4532a5ff44873b182d4
   docVersion: 1.0.0
-  speakeasyVersion: 1.708.2
+  speakeasyVersion: 1.709.0
   generationVersion: 2.811.4
   releaseVersion: 1.1.0
   configChecksum: bd9c6bc67624635233ad2a0df4ad1586
@@ -12,8 +12,8 @@ management:
   installationURL: https://gitpkg.now.sh/SquadcastHub/squadcast-sdk-typescript/squadcastv1
   published: true
 persistentEdits:
-  generation_id: f243dc4e-2042-4d04-a844-2abf6d57dc0b
-  pristine_commit_hash: 62aba9b1ed2e7fb7ac2a40846592c03a5f1429cf
+  generation_id: 7dc3755c-8b6c-4a1e-8b59-b5a4a090d893
+  pristine_commit_hash: d7398208ae33e39be52666c28eafff488ebed0d2
   pristine_tree_hash: 95b359329fd68806bae94dbadd2ef0a7855d20b9
 features:
   typescript:
