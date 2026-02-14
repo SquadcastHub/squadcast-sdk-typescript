@@ -3,8 +3,8 @@ id: 0ccdf4ca-5cfc-406b-b8fa-dec00364bec0
 management:
   docChecksum: b931a648834589a0e209a6d3d18292bf
   docVersion: 1.0.0
-  speakeasyVersion: 1.713.2
-  generationVersion: 2.821.6
+  speakeasyVersion: 1.716.0
+  generationVersion: 2.823.1
   releaseVersion: 1.1.0
   configChecksum: bd9c6bc67624635233ad2a0df4ad1586
   repoURL: https://github.com/SquadcastHub/squadcast-sdk-typescript.git
@@ -12,9 +12,9 @@ management:
   installationURL: https://gitpkg.now.sh/SquadcastHub/squadcast-sdk-typescript/squadcastv1
   published: true
 persistentEdits:
-  generation_id: d3c388b8-f17a-47bc-9d72-b553ae249719
-  pristine_commit_hash: aeaa0b623461a0cfc0bf6c16d20132758b257e29
-  pristine_tree_hash: 29745cbf11d506a486b6f532a78614f8c3b7f26f
+  generation_id: cabe7c39-5ebf-4c63-b66a-c216ff29038d
+  pristine_commit_hash: c18f49fde97cbcf312406d26e58ea6cdc5e5e9ca
+  pristine_tree_hash: a3fdd3a9d1b7a54f83423346df6b6ad6a56cb45f
 features:
   typescript:
     additionalDependencies: 0.1.0
@@ -5684,8 +5684,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:ecd5c516a4d30a0d232ef4ae5f2e5c6c83897933
-    pristine_git_object: d8158d8987d61b86d950005dc9cf37016658f74e
+    last_write_checksum: sha1:e001b57d2d446e35d68db32f64079bc3d7710729
+    pristine_git_object: cfa56c491af570ab1db9a2bde2897c4b15d50723
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
