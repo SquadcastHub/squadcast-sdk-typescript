@@ -7,15 +7,15 @@ import { V3ServicesMaintenanceModeMaintenanceModeResponse } from "@solarwinds/sq
 
 let value: V3ServicesMaintenanceModeMaintenanceModeResponse = {
   serviceId: "<id>",
-  maintenanceFrom: new Date("2023-01-23T03:25:25.992Z"),
-  maintenanceTill: new Date("2023-01-12T20:27:06.453Z"),
+  maintenanceFrom: new Date("2024-01-23T03:25:25.992Z"),
+  maintenanceTill: new Date("2024-01-12T20:27:06.453Z"),
   repetitionDaily: false,
   repetitionWeekly: true,
   repetitionTwoWeekly: true,
   repetitionThreeWeekly: false,
   repetitionMonthly: false,
   deleted: true,
-  repeatTill: new Date("2024-01-10T06:33:48.150Z"),
+  repeatTill: new Date("2025-01-09T06:33:48.150Z"),
 };
 ```
 

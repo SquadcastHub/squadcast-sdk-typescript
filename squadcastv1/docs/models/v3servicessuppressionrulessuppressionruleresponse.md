@@ -7,8 +7,8 @@ import { V3ServicesSuppressionRulesSuppressionRuleResponse } from "@solarwinds/s
 
 let value: V3ServicesSuppressionRulesSuppressionRuleResponse = {
   ruleId: "<id>",
-  createdAt: new Date("2024-07-04T09:35:27.020Z"),
-  updatedAt: new Date("2025-11-01T17:46:05.208Z"),
+  createdAt: new Date("2025-07-04T09:35:27.020Z"),
+  updatedAt: new Date("2026-11-01T17:46:05.208Z"),
   createdBy: "<value>",
   updatedBy: "<value>",
   description: "excepting surprise finally speedy yogurt chunter tepid near",

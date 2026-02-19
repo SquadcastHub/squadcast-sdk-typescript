@@ -1,5 +1,4 @@
 # GlobalEventRules
-(*globalEventRules*)
 
 ## Overview
 

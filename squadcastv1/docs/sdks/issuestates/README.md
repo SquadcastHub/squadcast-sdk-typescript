@@ -1,5 +1,4 @@
 # IssueStates
-(*issueStates*)
 
 ## Overview
 

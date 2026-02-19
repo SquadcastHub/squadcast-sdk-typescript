@@ -11,8 +11,8 @@ let value: SuppressionRulesCreateOrUpdateSuppressionRulesRequest = {
     rules: [
       {
         ruleId: "<id>",
-        createdAt: new Date("2023-04-26T13:13:19.342Z"),
-        updatedAt: new Date("2025-10-28T01:31:47.287Z"),
+        createdAt: new Date("2024-04-25T13:13:19.342Z"),
+        updatedAt: new Date("2026-10-28T01:31:47.287Z"),
         createdBy: "<value>",
         updatedBy: "<value>",
         description: "cloudy considering geez solidly",

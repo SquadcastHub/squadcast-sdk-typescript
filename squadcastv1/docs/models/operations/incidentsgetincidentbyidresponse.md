@@ -19,13 +19,13 @@ let value: IncidentsGetIncidentByIdResponse = {
     additionalResponders: [],
     description: "bah separately snack indeed scary or usefully depart",
     status: "<value>",
-    timeOfCreation: new Date("2025-04-25T08:10:59.168Z"),
-    updatedAt: new Date("2024-02-03T23:35:35.817Z"),
+    timeOfCreation: new Date("2026-04-25T08:10:59.168Z"),
+    updatedAt: new Date("2025-02-02T23:35:35.817Z"),
     tags: {},
     logs: [
       {
         action: "<value>",
-        time: new Date("2023-12-13T19:34:50.839Z"),
+        time: new Date("2024-12-12T19:34:50.839Z"),
         reason: "<value>",
       },
     ],
@@ -70,7 +70,7 @@ let value: IncidentsGetIncidentByIdResponse = {
     relevantPeopleLogs: [],
     responseNotes: [
       {
-        timeOfNote: new Date("2025-12-11T23:43:42.771Z"),
+        timeOfNote: new Date("2026-12-11T23:43:42.771Z"),
         note: "<value>",
         userId: "<id>",
       },
@@ -84,21 +84,21 @@ let value: IncidentsGetIncidentByIdResponse = {
     ],
     didAutoPause: false,
     didAutoPauseTimeout: false,
-    autoPauseEndsAt: new Date("2024-03-30T01:57:46.871Z"),
+    autoPauseEndsAt: new Date("2025-03-30T01:57:46.871Z"),
     manuallyMarkedTransientAlertFeedbackType: "<value>",
     classificationId: 517246,
     groupedAlertCount: 378608,
     hasPriority: true,
     snoozeDetails: {
       isSnoozed: true,
-      startTime: new Date("2025-08-06T04:59:30.351Z"),
-      endTime: new Date("2025-01-25T04:05:38.341Z"),
+      startTime: new Date("2026-08-06T04:59:30.351Z"),
+      endTime: new Date("2026-01-25T04:05:38.341Z"),
       totalTimeInMins: 584458,
     },
     didNotificationDelay: true,
     notificationDelayPolicy: {
       isNotificationDelayed: true,
-      delayedUntil: new Date("2025-12-16T12:51:38.257Z"),
+      delayedUntil: new Date("2026-12-16T12:51:38.257Z"),
       assignTo: {
         id: "<id>",
       },

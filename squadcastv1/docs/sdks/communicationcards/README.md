@@ -1,5 +1,4 @@
 # CommunicationCards
-(*communicationCards*)
 
 ## Overview
 

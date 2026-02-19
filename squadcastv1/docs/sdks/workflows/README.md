@@ -1,5 +1,4 @@
 # Workflows
-(*workflows*)
 
 ## Overview
 
@@ -801,7 +800,7 @@ run();
 
 ### Response
 
-**Promise\<[models.V3WorkflowsActionResponse](../../models/v3workflowsactionresponse.md)\>**
+**Promise\<[operations.WorkflowsUpdateWorkflowActionResponse](../../models/operations/workflowsupdateworkflowactionresponse.md)\>**
 
 ### Errors
 

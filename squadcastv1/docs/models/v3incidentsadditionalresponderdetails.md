@@ -10,10 +10,10 @@ import { V3IncidentsAdditionalResponderDetails } from "@solarwinds/squadcast-sdk
 let value: V3IncidentsAdditionalResponderDetails = {
   id: "<id>",
   type: "<value>",
-  timeOfAssignment: new Date("2025-06-01T17:40:45.925Z"),
+  timeOfAssignment: new Date("2026-06-01T17:40:45.925Z"),
   reason: "<value>",
   name: "<value>",
-  lastNotifiedAt: new Date("2025-08-20T17:27:55.939Z"),
+  lastNotifiedAt: new Date("2026-08-20T17:27:55.939Z"),
 };
 ```
 

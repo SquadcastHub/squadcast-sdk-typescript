@@ -1,5 +1,4 @@
-# ExportHistory
-(*auditLogs.exportHistory*)
+# AuditLogs.ExportHistory
 
 ## Overview
 

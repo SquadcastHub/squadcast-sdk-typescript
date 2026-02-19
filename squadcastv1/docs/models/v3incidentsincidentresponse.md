@@ -18,7 +18,7 @@ let value: V3IncidentsIncidentResponse = {
     {
       id: "<id>",
       type: "<value>",
-      timeOfAssignment: new Date("2024-02-01T18:45:11.079Z"),
+      timeOfAssignment: new Date("2025-01-31T18:45:11.079Z"),
       reason: "<value>",
     },
   ],
@@ -26,22 +26,22 @@ let value: V3IncidentsIncidentResponse = {
     {
       id: "<id>",
       type: "<value>",
-      timeOfAssignment: new Date("2023-04-06T00:16:27.037Z"),
+      timeOfAssignment: new Date("2024-04-05T00:16:27.037Z"),
       reason: "<value>",
       name: "<value>",
-      lastNotifiedAt: new Date("2023-12-29T17:34:47.601Z"),
+      lastNotifiedAt: new Date("2024-12-28T17:34:47.601Z"),
     },
   ],
   description:
     "graft scale likely even quarrelsomely extract clinch through opposite impassioned",
   status: "<value>",
-  timeOfCreation: new Date("2023-12-04T19:39:08.657Z"),
-  updatedAt: new Date("2025-12-24T09:37:49.727Z"),
+  timeOfCreation: new Date("2024-12-03T19:39:08.657Z"),
+  updatedAt: new Date("2026-12-24T09:37:49.727Z"),
   tags: {},
   logs: [
     {
       action: "<value>",
-      time: new Date("2023-12-13T19:34:50.839Z"),
+      time: new Date("2024-12-12T19:34:50.839Z"),
       reason: "<value>",
     },
   ],
@@ -77,7 +77,7 @@ let value: V3IncidentsIncidentResponse = {
   relevantPeopleLogs: [],
   responseNotes: [
     {
-      timeOfNote: new Date("2025-12-11T23:43:42.771Z"),
+      timeOfNote: new Date("2026-12-11T23:43:42.771Z"),
       note: "<value>",
       userId: "<id>",
     },
@@ -94,21 +94,21 @@ let value: V3IncidentsIncidentResponse = {
   ],
   didAutoPause: true,
   didAutoPauseTimeout: true,
-  autoPauseEndsAt: new Date("2024-01-27T11:23:39.439Z"),
+  autoPauseEndsAt: new Date("2025-01-26T11:23:39.439Z"),
   manuallyMarkedTransientAlertFeedbackType: "<value>",
   classificationId: 727878,
   groupedAlertCount: 760307,
   hasPriority: false,
   snoozeDetails: {
     isSnoozed: true,
-    startTime: new Date("2025-08-06T04:59:30.351Z"),
-    endTime: new Date("2025-01-25T04:05:38.341Z"),
+    startTime: new Date("2026-08-06T04:59:30.351Z"),
+    endTime: new Date("2026-01-25T04:05:38.341Z"),
     totalTimeInMins: 584458,
   },
   didNotificationDelay: false,
   notificationDelayPolicy: {
     isNotificationDelayed: true,
-    delayedUntil: new Date("2025-12-16T12:51:38.257Z"),
+    delayedUntil: new Date("2026-12-16T12:51:38.257Z"),
     assignTo: {
       id: "<id>",
     },

@@ -1,5 +1,4 @@
 # DeduplicationRules
-(*deduplicationRules*)
 
 ## Overview
 

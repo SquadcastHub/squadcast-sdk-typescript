@@ -11,9 +11,9 @@ let value: V3GlobalEventRulesCreatedGlobalEventRuleResponse = {
   name: "<value>",
   description: "upright lotion beside effector woeful yum dependent yum",
   routingKey: "<value>",
-  createdAt: new Date("2024-08-08T02:20:34.685Z"),
+  createdAt: new Date("2025-08-08T02:20:34.685Z"),
   createdBy: "<value>",
-  updatedAt: new Date("2023-08-18T14:02:34.925Z"),
+  updatedAt: new Date("2024-08-17T14:02:34.925Z"),
   updatedBy: "<value>",
 };
 ```

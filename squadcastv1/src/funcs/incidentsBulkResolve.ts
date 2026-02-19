@@ -30,7 +30,7 @@ import { Result } from "../types/fp.js";
  * Bulk Resolve Incidents
  *
  * @remarks
- * - This endpoint is used to bulk resolve the incident by IDs.
+ * - This endpoint is used to bulk resolve the incident by IDs. The API can handle a maximum of 100 incident IDs in a single request with 10 such calls per minute."
  * - Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header.
  */
 export function incidentsBulkResolve(

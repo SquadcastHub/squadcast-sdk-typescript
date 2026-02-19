@@ -1,5 +1,4 @@
 # GlobalOncallReminderRules
-(*globalOncallReminderRules*)
 
 ## Overview
 

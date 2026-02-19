@@ -9,7 +9,7 @@ import { V3IncidentsTagsLogs } from "@solarwinds/squadcast-sdk-typescript/models
 
 let value: V3IncidentsTagsLogs = {
   action: "<value>",
-  time: new Date("2024-11-17T20:16:53.895Z"),
+  time: new Date("2025-11-17T20:16:53.895Z"),
   reason: "<value>",
 };
 ```

@@ -1,5 +1,4 @@
 # Msteams
-(*msteams*)
 
 ## Overview
 

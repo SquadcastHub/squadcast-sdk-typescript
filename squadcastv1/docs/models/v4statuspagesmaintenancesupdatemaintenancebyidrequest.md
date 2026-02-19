@@ -8,8 +8,8 @@ import { V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest } from "@solarwin
 let value: V4StatusPagesMaintenancesUpdateMaintenanceByIdRequest = {
   title: "<value>",
   note: "<value>",
-  startTime: new Date("2024-01-15T14:06:34.563Z"),
-  endTime: new Date("2025-04-01T21:51:49.064Z"),
+  startTime: new Date("2025-01-14T14:06:34.563Z"),
+  endTime: new Date("2026-04-01T21:51:49.064Z"),
 };
 ```
 

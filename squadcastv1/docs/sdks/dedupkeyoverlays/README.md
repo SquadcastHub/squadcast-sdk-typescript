@@ -1,5 +1,4 @@
 # DedupKeyOverlays
-(*dedupKeyOverlays*)
 
 ## Overview
 

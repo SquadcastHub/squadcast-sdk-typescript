@@ -1,5 +1,4 @@
 # Overlays
-(*overlays*)
 
 ## Overview
 

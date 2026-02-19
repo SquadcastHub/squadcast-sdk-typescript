@@ -10,8 +10,8 @@ import { V3IncidentsIncidentExportAsyncRequest } from "@solarwinds/squadcast-sdk
 let value: V3IncidentsIncidentExportAsyncRequest = {
   ownerId: "<id>",
   type: "json",
-  startTime: new Date("2023-04-24T09:05:56.128Z"),
-  endTime: new Date("2023-12-02T00:51:51.160Z"),
+  startTime: new Date("2024-04-23T09:05:56.128Z"),
+  endTime: new Date("2024-12-01T00:51:51.160Z"),
   incidentFilters: {
     services: [
       "<value 1>",

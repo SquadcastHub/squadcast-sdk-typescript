@@ -8,7 +8,7 @@ import { V4StatusPagesIssuesGetIssueByIdResponse } from "@solarwinds/squadcast-s
 let value: V4StatusPagesIssuesGetIssueByIdResponse = {
   id: 15889,
   title: "<value>",
-  lastUpdatedAt: new Date("2024-07-15T04:09:56.376Z"),
+  lastUpdatedAt: new Date("2025-07-15T04:09:56.376Z"),
   components: [],
   issues: [],
   currentIssueState: {

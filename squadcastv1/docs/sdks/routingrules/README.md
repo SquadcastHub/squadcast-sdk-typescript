@@ -1,5 +1,4 @@
 # RoutingRules
-(*routingRules*)
 
 ## Overview
 

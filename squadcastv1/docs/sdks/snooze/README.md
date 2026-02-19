@@ -1,5 +1,4 @@
-# Snooze
-(*incidents.snooze*)
+# Incidents.Snooze
 
 ## Overview
 

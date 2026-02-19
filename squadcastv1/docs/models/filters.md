@@ -7,8 +7,8 @@ import { Filters } from "@solarwinds/squadcast-sdk-typescript/models";
 import { RFCDate } from "@solarwinds/squadcast-sdk-typescript/types";
 
 let value: Filters = {
-  startDate: new RFCDate("2023-02-05"),
-  endDate: new RFCDate("2025-11-27"),
+  startDate: new RFCDate("2024-02-05"),
+  endDate: new RFCDate("2026-11-27"),
 };
 ```
 

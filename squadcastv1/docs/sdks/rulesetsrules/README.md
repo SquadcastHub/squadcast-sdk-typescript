@@ -1,5 +1,4 @@
-# RulesetsRules
-(*globalEventRules.rulesets.rules*)
+# GlobalEventRules.Rulesets.Rules
 
 ## Overview
 

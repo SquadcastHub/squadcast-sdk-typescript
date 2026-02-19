@@ -1,5 +1,4 @@
 # WorkflowLogs
-(*workflowLogs*)
 
 ## Overview
 

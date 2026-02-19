@@ -1,5 +1,4 @@
 # Slo
-(*slo*)
 
 ## Overview
 
