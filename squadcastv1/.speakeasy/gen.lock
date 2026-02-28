@@ -3,22 +3,22 @@ id: 0ccdf4ca-5cfc-406b-b8fa-dec00364bec0
 management:
   docChecksum: b931a648834589a0e209a6d3d18292bf
   docVersion: 1.0.0
-  speakeasyVersion: 1.731.2
-  generationVersion: 2.845.1
+  speakeasyVersion: 1.734.1
+  generationVersion: 2.845.12
   releaseVersion: 1.1.0
   configChecksum: 583922e24ee4da303de8e75bf795d64d
   repoURL: https://github.com/SquadcastHub/squadcast-sdk-typescript.git
   repoSubDirectory: squadcastv1
-  installationURL: https://gitpkg.now.sh/SquadcastHub/squadcast-sdk-typescript/squadcastv1
+  installationURL: https://github.com/SquadcastHub/squadcast-sdk-typescript
   published: true
 persistentEdits:
-  generation_id: 857d10c0-4e08-4bb2-a097-e47747dd0083
-  pristine_commit_hash: 4d60bd8b2c14e21a3ba424c77b3f8ba75f2645b8
-  pristine_tree_hash: 16c04c70170d7df94a15987b5712a11975eb2e23
+  generation_id: 0d638ed2-b7b4-4621-8631-e6282ea86ce4
+  pristine_commit_hash: 8ded97b9236da51ffd61a31fb2fbb5e5062f1791
+  pristine_tree_hash: 5a19f20e79c89e6cca223c294234b77108e04436
 features:
   typescript:
     additionalDependencies: 0.1.0
-    core: 3.26.35
+    core: 3.26.38
     defaultEnabledRetries: 0.1.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
@@ -26,7 +26,7 @@ features:
     globalSecurity: 2.82.15
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.1
-    globalServerURLs: 2.83.0
+    globalServerURLs: 2.83.1
     groups: 2.81.3
     methodArguments: 0.1.2
     nameOverrides: 2.81.4
@@ -5684,8 +5684,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:791e67a98b78e82aa3b700de33e4ddc1a76d4591
-    pristine_git_object: e15ca7c711de6b47ba08973797a7931df749ab2e
+    last_write_checksum: sha1:e1654ffec92196727ebb4bf3477e15b49f5f2cc3
+    pristine_git_object: 0cfb5d25aedcd1d9f0bf31563720f6471df6a654
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
