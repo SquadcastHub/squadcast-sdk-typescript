@@ -109,7 +109,13 @@ async function $do(
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = payload["V3.EscalationPolicies.UpdateEscalationPolicyRequest"];
+  const body =
+    payload["V3.EscalationPolicies.UpdateEscalationPolicyRequest"]
+        instanceof Uint8Array
+      ? new Uint8Array(
+        payload["V3.EscalationPolicies.UpdateEscalationPolicyRequest"],
+      ).buffer
+      : payload["V3.EscalationPolicies.UpdateEscalationPolicyRequest"];
 
   const pathParams = {
     escalationPolicyID: encodeSimple(
