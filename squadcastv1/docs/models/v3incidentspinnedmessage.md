@@ -10,8 +10,8 @@ import { V3IncidentsPinnedMessage } from "@solarwinds/squadcast-sdk-typescript/m
 let value: V3IncidentsPinnedMessage = {
   message: "<value>",
   messageSenderId: "<id>",
-  time: new Date("2024-06-03T18:05:31.420Z"),
-  timeOfPinning: new Date("2024-12-28T11:31:21.923Z"),
+  time: new Date("2025-06-03T18:05:31.420Z"),
+  timeOfPinning: new Date("2025-12-28T11:31:21.923Z"),
   messageId: "<id>",
   messagePinnedBy: "<value>",
   messageSenderName: "<value>",

@@ -12,8 +12,8 @@ let value: SuppressionRulesGetSuppressionRulesResponse = {
     rules: [
       {
         ruleId: "<id>",
-        createdAt: new Date("2023-05-10T05:58:32.375Z"),
-        updatedAt: new Date("2025-03-07T08:56:17.612Z"),
+        createdAt: new Date("2024-05-09T05:58:32.375Z"),
+        updatedAt: new Date("2026-03-07T08:56:17.612Z"),
         createdBy: "<value>",
         updatedBy: "<value>",
         description: "adrenalin after immediately provided angrily sustenance",

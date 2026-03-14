@@ -9,8 +9,8 @@ import { V3AuditLogsFilters } from "@solarwinds/squadcast-sdk-typescript/models"
 import { RFCDate } from "@solarwinds/squadcast-sdk-typescript/types";
 
 let value: V3AuditLogsFilters = {
-  startDate: new RFCDate("2023-01-16"),
-  endDate: new RFCDate("2024-04-23"),
+  startDate: new RFCDate("2024-01-16"),
+  endDate: new RFCDate("2025-04-23"),
 };
 ```
 

@@ -1,5 +1,4 @@
-# StatusPagesMaintenances
-(*statusPages.maintenances*)
+# StatusPages.Maintenances
 
 ## Overview
 

@@ -1,5 +1,4 @@
-# JiraCloud
-(*incidents.actions.jiraCloud*)
+# Incidents.Actions.JiraCloud
 
 ## Overview
 

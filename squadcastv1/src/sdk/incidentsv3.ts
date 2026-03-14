@@ -13,7 +13,7 @@ export class IncidentsV3 extends ClientSDK {
    * Bulk Acknowledge Incidents
    *
    * @remarks
-   * - This endpoint is used to bulk acknowledge the incident by IDs.
+   * - This endpoint is used to bulk acknowledge the incident by IDs. The API can handle a maximum of 100 incident IDs in a single request with 10 such calls per minute."
    * - Requires `access_token` as a `Bearer {{token}}` in the `Authorization` header.
    */
   async bulkAcknowledge(

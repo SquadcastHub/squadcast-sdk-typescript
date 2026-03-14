@@ -11,8 +11,8 @@ let value: MaintenancesCreateMaintenanceRequest = {
     title: "<value>",
     note: "<value>",
     components: [],
-    startTime: new Date("2023-08-29T23:59:34.291Z"),
-    endTime: new Date("2023-03-12T08:36:36.607Z"),
+    startTime: new Date("2024-08-28T23:59:34.291Z"),
+    endTime: new Date("2024-03-11T08:36:36.607Z"),
   },
 };
 ```

@@ -1,5 +1,4 @@
-# SchedulesRotations
-(*schedules.rotations*)
+# Schedules.Rotations
 
 ## Overview
 

@@ -9,8 +9,8 @@ import { RFCDate } from "@solarwinds/squadcast-sdk-typescript/types";
 let value: AuditLogsListAuditLogsRequest = {
   pageSize: 192593,
   pageNumber: 502057,
-  startDate: new RFCDate("2024-10-05"),
-  endDate: new RFCDate("2024-02-24"),
+  startDate: new RFCDate("2025-10-05"),
+  endDate: new RFCDate("2025-02-23"),
 };
 ```
 

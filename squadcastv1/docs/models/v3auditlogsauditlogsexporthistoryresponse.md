@@ -22,8 +22,8 @@ let value: V3AuditLogsAuditLogsExportHistoryResponse = {
   downloadLink: "<value>",
   status: "<value>",
   filters: {
-    startDate: new RFCDate("2023-11-24"),
-    endDate: new RFCDate("2023-04-14"),
+    startDate: new RFCDate("2024-11-23"),
+    endDate: new RFCDate("2024-04-13"),
   },
 };
 ```

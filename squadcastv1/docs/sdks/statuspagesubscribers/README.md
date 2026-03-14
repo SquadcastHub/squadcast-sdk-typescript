@@ -1,5 +1,4 @@
 # StatusPageSubscribers
-(*statusPageSubscribers*)
 
 ## Overview
 

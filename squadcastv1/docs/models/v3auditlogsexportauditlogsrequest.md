@@ -10,8 +10,8 @@ import { RFCDate } from "@solarwinds/squadcast-sdk-typescript/types";
 
 let value: V3AuditLogsExportAuditLogsRequest = {
   filters: {
-    startDate: new RFCDate("2025-09-24"),
-    endDate: new RFCDate("2025-10-21"),
+    startDate: new RFCDate("2026-09-24"),
+    endDate: new RFCDate("2026-10-21"),
   },
   name: "<value>",
   exportType: "json",

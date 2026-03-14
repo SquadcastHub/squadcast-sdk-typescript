@@ -1,5 +1,4 @@
 # Squads
-(*squads*)
 
 ## Overview
 

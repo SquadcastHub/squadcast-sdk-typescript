@@ -11,8 +11,8 @@ let value: MaintenancesUpdateMaintenanceByIdRequest = {
   v4StatusPagesMaintenancesUpdateMaintenanceByIdRequest: {
     title: "<value>",
     note: "<value>",
-    startTime: new Date("2025-11-11T04:30:56.138Z"),
-    endTime: new Date("2023-02-19T02:45:56.975Z"),
+    startTime: new Date("2026-11-11T04:30:56.138Z"),
+    endTime: new Date("2024-02-19T02:45:56.975Z"),
   },
 };
 ```
